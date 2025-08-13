@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>$myboardname - Members</title></head>
+<body bgcolor="{pagebgcolor}" text="{fontcolorfirst}"{hgpicture}{bgproperties} id="bg" background="images/bg.jpg">
+$header <br>
+		
+<table cellpadding=4 cellspacing=1 border=0 width="100%" bgcolor="#000000">
+  <tr id="title"> 
+    <td nowrap align="center" background="images/cellpic2.jpg" height="30"><font size=1 face="{font}" color="{fontcolorsecond}"><b> 
+      <a href="members.php?mode=view&boardid=$boardid$session&by=username&order=ASC">Username</a></b></font></td>
+    <td align="center" background="images/cellpic2.jpg" height="30"><font size=1 face="{font}" color="{fontcolorsecond}"><b> 
+      <a href="members.php?mode=view&boardid=$boardid$session&by=regdate&order=DESC">Date 
+      Registered</a></b></font></td>
+  </tr>
+  $members_view_memberbit 
+</table>
+		$footer 
+</body>
+</html>					
