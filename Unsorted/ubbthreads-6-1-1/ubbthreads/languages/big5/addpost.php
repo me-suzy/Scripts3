@@ -1,0 +1,32 @@
+<?
+$ubbt_lang['FILE_TOO_BIG']="ÀÉ®×¤j¤p¤£¯à¶W¹L {$config['filesize']}";
+$ubbt_lang['FILESALLOWED']  =  "±z¥i¥H¤W¶Ç¥H¤UªþÀÉ¦WªºÀÉ®×";
+$ubbt_lang['FILESEXCLUDE']  =  "±z¤£¥i¥H¤W¶Ç¥H¤UªþÀÉ¦WªºÀÉ®×"; 
+$ubbt_lang['POST_ICON']  =     "¤å³¹¹Ï¥Ü";
+$ubbt_lang['SPELL_CHECK']  = 	"«÷¦rÀË¬d";
+$ubbt_lang['SPELL_BODY']  = 	"«÷¦rÀË¬dµ²ªG¦p¤U.  ¥i¯àªº¿ù»~³Q¼Ð¥H <u>©³½u</u>¡A®ÇÃä«h¦³§Ú­Ìªº«ØÄ³.  ±z¥i¥H¨Ï¥ÎÂsÄý¾¹ªº¤W¤@­¶¦^¥h­×§ï¡C";
+$ubbt_lang['NAME_TAKEN']  = 	"±z©Ò¿ï¾Üªº±b¸¹¦WºÙ¤w¸g¦³¤H¨Ï¥Î¡C";
+$ubbt_lang['BAD_UNAME']  = 	"©êºp ¡A¦W¦r¤¤¤£¯à°ÑÂø HTML ½X ¡A«á­±¤]¤£¯à¦³ªÅ¥Õ¡C";
+$ubbt_lang['LONG_NAME']  = 	"µn¤J¦WºÙªø«×¤£¹ï¡C";
+$ubbt_lang['READ_PERM']  = 	"©êºp¡A±z¦b³o­Ó°Q½×°Ï¥u¦³¾\\ÅªªºÅv­­¡C";
+$ubbt_lang['LOCKED']  = 	"³o­Ó¸ÜÃD¤w¸g³QÂê¦í ¡A±z¥²¶·­n¦³¾A·íªºÅv­­¤~¯à±i¶K¡C";
+$ubbt_lang['TWO_POLLS']  = 	"©êºp¡A¤@½g¤å³¹¥u¯à¥]§t¤@­Ó§ë²¼";
+$ubbt_lang['PREV_POST']  = 	"¹wÄý¤å³¹";
+$ubbt_lang['SUB_VOTE']  = 	"§ë¤U±z¯«¸tªº¤@²¼";
+$ubbt_lang['POST_BODY']  = 	"¤U­±¬O±zªº¤å³¹ªº¹wÄýµe­±. ¦pªG±zÄ±±oº¡·N¡A½Ð«ö¤U­±ªº'Ä~Äò'¡A±zªº¤å³¹´N·|³Q¥[¤J¨t²Î¤¤.  ¦pªG·Q­n§ó§ï¡A½Ð«öÂsÄý¾¹ªº¤W¤@­¶¦^¥h§ó§ï¡C";
+$ubbt_lang['YES_FILE2']  = 	"±z¥i¥H¦b³o¸Ì¤W¶Ç±z·Q­nªþ¥[ªºÀÉ®×.  ÀÉ®×¤j¤p­­¨î¦b  {$config['filesize']} bytes";
+$ubbt_lang['NO_FILE2']  = 	"ÁöµM³o¸Ì¥i¥Hªþ¥[ÀÉ®×¡A¦ý¬O±z¥²¶·¨Ï¥Î Mozilla 4+ ¬Û®eªºÂsÄý¾¹ (¨Ò¦p Netscape 4 ¡AIE4 ¥H«á)¡C";
+$ubbt_lang['EDIT_MORE']  = 	"­×§ï¤º®e";
+$ubbt_lang['POST_TEXT']  = 	"½Ð¿é¤J¤º®e:";
+$ubbt_lang['DO_EMAIL']  = 	"§â©Ò¦³¦^À³ªº¤å³¹±H¨ì§Úªº¯u¹ê email ¸Ì¡C";
+$ubbt_lang['DO_PREVIEW']  = 	"§Ú­n¹wÄý§Úªº¤å³¹";
+$ubbt_lang['CAN_ATTACH']  = 	"¨Ã¥B/©Î¬O ªþ¥[¤@­ÓÀÉ®×";
+$ubbt_lang['NO_DUPS']  = 	"³o½g¤å³¹¤w¸g³Q¥[¤J¨t²Î¤¤¤F";
+$ubbt_lang['UNREGED_USER']  = 	"¥¼µù¥U¨Ï¥ÎªÌ";
+$ubbt_lang['REPLY_SUB']  = 	"¦^À³±zªº¤å³¹";
+$ubbt_lang['REPLY_BOD']  = 	"¦b³o­Óºô¯¸:  ¦^À³¤F±zªº¤å³¹¡C";
+$ubbt_lang['POST_ENTERED']  = 	"±zªº¤å³¹¤w¸g±i¶K¤F¡C";
+$ubbt_lang['MOD_CONFIRM']  = 	"±zªº¤å³¹¤w¸g¥[¨ì¨t²Î¤¤¡A¥»ªOªº¤å³¹»Ý­n¸g¹LªO¥Dªº»{ÃÒ¡A¦]¦¹±zªº¤å³¹¨Ã¤£·|°¨¤WÅã¥Ü¥X¨Ó¡A¥²¶·­nµ¥­ÔªO¥D©Î¬OºÞ²zªÌªº»{ÃÒ¦P·N. ½Ðµy«á¤@·|¨à¡A¨t²Î¦Û°Ê°e±z¦^°Q½×°Ï¡C";
+$ubbt_lang['FORUM_RETURN']  = 	"¦^¨ì°Q½×°Ï";
+$ubbt_lang['VIEW_POST']  = 	"Æ[¬Ý±zªº¤å³¹";
+?>
