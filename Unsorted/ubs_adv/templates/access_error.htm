@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>$master_board_name - Error</title>
+$headinclude
+</head>
+
+<body bgcolor="{pagebgcolor}" text="{fontcolorfirst}"{hgpicture}{bgproperties} id="bg">
+	$header
+		</table><br>
+		<table border=0 bgcolor="{tablebordercolor}" cellpadding=4 cellspacing=1 width=100%>
+			<tr bgcolor="{tablea}" id="title">
+				<TD><FONT face="{font}" size=2 color="{fontcolorsecond}"><B>Error Message</B></font></td>
+			</tr>
+			<tr bgcolor="{tablec}" id="tablec">
+				<td><FONT face="{font}" size=2>You're not login or you have not the permission to enter this page. This could be one of the following reasons: 
+					<ol>
+						<li>You're not logged in. Please fill in all login-fields at the bottom of this site and try again!</li>
+						<li>You have not the permission to enter this page. Are you trying to edit someone else's post or one of the Moderators/Administators Options? Please check if you can do this action in the help of this forum.</li>
+						<li>If you try to post something it could be possible that the Administrator has locked your account or it is not active yet.</li>
+					</ol></font>
+					$login
+			</tr>
+		</form></table>	
+		<table width="100%">
+			<tr>
+				<td align="right">$board_jump</td>
+			</tr>
+		</table>
+	</div>
+	$footer
+</body>
+</html>		
