@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Rayserve Room Reservation Software - Menu Bar</TITLE>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	<META NAME="Description" CONTENT="Rayserve Hotel Reservation Software">
+	<META NAME="Keywords" CONTENT="hotel, reservation, holiday, travel, book room, tariffs, internet, software, program, downlaod, demo">
+
+<STYLE>
+BODY {font-size: 9pt; font-family: Arial, Helvetica, Univers, sans-serif; font-weight: bold;
+      font-style: normal; color: #FFFFFF; text-decoration: none; text-align: center;
+      background-color: #630460; margin-left: 0px; margin-right: 0px; margin-top: 0px;
+      margin-bottom: 0px;}
+TD {font-size: 9pt; font-family: Arial, Helvetica, Univers, sans-serif; font-weight: bold;
+      font-style: normal; color: #FFFFFF; text-decoration: none; background-color: #630460;}
+.input {font-family: "Courier New", courier, mono-spaced;}
+</STYLE>
+
+<SCRIPT LANGUAGE="Javascript" TYPE="text/Javascript">
+var Image_1 = new Image();
+var Image_2 = new Image();
+Image_1.src = "Icons/Off.gif";
+Image_2.src = "Icons/On.gif";
+
+function MouseOver(Img){
+	Img.src = Image_2.src;}
+function MouseOut(Img){
+	Img.src = Image_1.src;}
+</SCRIPT>
+
+</HEAD>
+<BODY onLoad="parent.initApp();parent.salvageDetails();" onUnload="parent.checkAndSave();">
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="90%">
+<TR>
+<TD>
+	<IMG SRC="Images/TopBar.gif" BORDER="0" WIDTH="225" HEIGHT="27" ALT="The Booking Agent">
+	<BR>&nbsp;
+	<IMG SRC="Icons/Off.gif" BORDER="0" WIDTH="13" HEIGHT="13" NAME="B1" ALT="">
+	<A HREF="Intro_2.html" onMouseOver="MouseOver(B1)" onMouseOut="MouseOut(B1)" TARGET="MainFrame"><IMG SRC="Images/Hotel1.gif" BORDER="0" WIDTH="70" HEIGHT="13" ALT="City Hotel"></A>
+	&nbsp;&nbsp;
+	<IMG SRC="Icons/Off.gif" BORDER="0" WIDTH="13" HEIGHT="13" NAME="B2" ALT="">
+	<A HREF="Intro_1.html" onMouseOver="MouseOver(B2)" onMouseOut="MouseOut(B2)" TARGET="MainFrame"><IMG SRC="Images/Hotel2.gif" BORDER="0" WIDTH="105" HEIGHT="13" ALT="Paradise Hotel"></A>
+	<IMG SRC="Icons/Off.gif" BORDER="0" WIDTH="13" HEIGHT="13" NAME="B3" ALT="">
+	<A HREF="javascript:parent.helpMe('MainHelp');" onMouseOver="MouseOver(B3)" onMouseOut="MouseOut(B3)" TARGET="MainFrame"><IMG SRC="Images/Help.gif" BORDER="0" WIDTH="40" HEIGHT="13" ALT="Help!"></A>
+</TD>
+<TD ALIGN="right">
+	<FORM NAME="ShowBookingTotal" ID="ShowBookingTotal">
+	Total cost of bookings:&nbsp;
+	<SPAN CLASS="input"><INPUT TYPE="text" SIZE="10" NAME="Total" VALUE="$0.00"></SPAN>&nbsp;&nbsp;
+	<INPUT TYPE="button" NAME="ShowBtn" VALUE="Details" onClick="parent.goToPage('BookingList.html');">
+	</FORM>
+</TD>
+</TR>
+</TABLE>
+
+</BODY>
+</HTML>
