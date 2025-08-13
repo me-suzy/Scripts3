@@ -1,0 +1,124 @@
+
+<table border=0 cellspacing=0 cellpadding=0 width=100%>
+<tr><td width=250>&nbsp;</td>
+<td align=left><h1 style="color: #427b7b; margin-left: 0px; margin-bottom: 0px; margin-top: 0px;" class=wheader>Listing 
+        Wizard</h1></td>
+</tr></table>
+
+<form action=listwizard.php method=post style="margin-top: 0px; margin-bottom: 0px;" name="form">
+%hiddenfields%
+<input type="hidden" name="step" value="1">
+
+<table border=0 width=100%>
+<tr><td>
+<table border=0 width=80% cellspacing=0 cellpadding=0>
+<tr>
+<td rowspan=10 valign=top width=110>
+<table border=0 cellspacing=0 cellpadding=0>
+<tr><td width=98>
+<ul style="margin-left: 10px;margin-top: 0px;">
+                      <li><b>Step 1<br>
+                        Specifying listing name, type and keywords</b><br>
+                        <br>
+                      <li>Step 2<br>
+                        Specifying price for each keyword<br>
+                        <br>
+                      <li>Step 3<br>
+                        Listing data revision
+                    </ul>
+</td>
+
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr></table>
+</td>
+
+
+            <td colspan=2> You could add keywords on which your ad is showing 
+              on seach engines. For your convience keyword could be classifield 
+              into separate listings because of their price or any other reason 
+              (ex. if your advertize an internet shop selling different product 
+              you could create separate keyword listing for each product). Each 
+              keyword based campaign should contain at list one keyword listing. 
+              Please, use the form below to create it. You will be able to add 
+              more listing to this campaign later if you would like to.<br>
+              <br>
+</td>
+</tr>
+
+<tr>
+<td colspan=2>
+
+<table border=0 cellspacing=0 cellpadding=1>
+<tr>
+<td><b>Name:</b></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td><input type=text name=listing_name value="%listing_name%" class=txt></td>
+</tr>
+</table>
+
+</td>
+</tr>
+<tr><td colspan=2><br></td></tr>
+
+<tr>
+            <td colspan=2><font class=hd>&nbsp; </font>Please, specify keywords price. 
+              If &quot;each keyword has it's own price&quot; is selected you will 
+              be able to set price for each keyword on the next step.<br>
+<br>
+</td>
+</tr>
+
+<tr>
+<td colspan=2>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr>
+                  <td valign="top"><b>Price type:</b></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>
+<input type="radio" name="price_type" value="1" onclick="form.kp.disabled=false;pricelab.disabled=false;" %type1%>Same for each keyword<br>
+<input type="radio" name="price_type" value="2" onclick="form.kp.value='';form.kp.disabled='true';pricelab.disabled=true;" %type2%>Each keywords has it's own price
+</td>
+</tr>
+<tr>
+<td>
+<b><span id="pricelab">Price $:</span></b></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>
+<input type=text name="keyword_price" value="%keyword_price%" class=txt id="kp">
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<br>
+Add your keywords below. One keyword per each line<br><br>
+</td>
+</tr>
+
+<tr>
+<td>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr>
+                  <td valign="top"><b>Keywords:</b></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+                  <td>
+<textarea cols="60" rows="10" class="txt" name="keywords">%keywords%
+</textarea>				  
+				  </td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td colspan=3 align=right><input type=image src="images/button-next.gif" name=next value=next> 
+</td>
+</tr>
+
+</table>
+</td></tr></table>
+
+
+</form>
