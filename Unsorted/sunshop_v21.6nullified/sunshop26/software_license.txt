@@ -1,0 +1,52 @@
+Software License Agreement
+
+This Software is provided to you under license. This license agreement defines the 
+ways in which you can use the Software the graphics and source code it contains.
+
+The SunShop or PHP Live Helper software (herein after referred to as SOFTWARE) 
+IS A PROPRIETARY PRODUCT OF Turnkey Solutions. (herein after referred to as "TS") 
+AND IS PROTECTED BY COPYRIGHT LAWS. USE OF THIS SOFTWARE IS GOVERNED BY THIS 
+LICENSE AGREEMENT AND APPLICABLE LAW INCLUDING COPYRIGHT LAW.
+
+Grant of License
+TS grants you a license for the use of the Software as follows.
+
+a) You may run one instance (a single installation) of the software on one web 
+server and one web site for each license purchased. Each license may power one 
+instance of the software on one domain.
+
+b) Software source code may be altered (at the owner's risk), but the software 
+(altered or otherwise) may not be distributed or resold to entities beyond the 
+license holder without the explicit written permission of Turnkey Solutions.
+
+c) All software copyright notices within design templates must remain unchanged 
+(and visible) at all times.
+
+d) If any terms are violated, Turnkey Solutions reserves the right to revoke the 
+license at any time. No license refunds will be granted for revoked licenses.
+
+e) License fees are non-refundable. Please verify that your server supports MySQL 
+and PHP before purchasing. For complete system requirements, please visit the 
+requirements page for the software.
+
+Copy Restrictions
+Ownership of the legal rights contained in the Software remain solely with TS. These
+may include trade secret, trademark, copyright, patent, international treaty and 
+other rights as applicable. You may not sublicense, rent, lease, disassemble, create 
+derivative works, or include portions of the Software in other Software Programs.
+
+Use of Images
+You may not modify, publish and distribute the button images; create presentations 
+which incorporate the button images; use the button images in developing pages for 
+the World Wide Web and Intranet systems.
+
+Warranty
+TS MAKES NO WARRANTIES, EXPRESS OR IMPLIED, REGARDING THE FITNESS OF THE SOFTWARE FOR 
+ANY PARTICULAR PURPOSE. TS CLAIMS NO LIABILITY FOR DATA LOSS OR OTHER PROBLEMS CAUSED 
+DIRECTLY OR INDIRECTLY BY THE SOFTWARE. TS IS NOT LIABLE FOR THE CONTENT OF ANY 
+WEBSITES POWERED BY OUR SOFTWARE.
+
+From time to time, TS may inspect your registration integrity. Information verified 
+will be your license number and the domain on which the software is run. Should we 
+discover logical discrepancies in the software usage, be aware that you may lose your 
+license and may face legal actions for software piracy.
