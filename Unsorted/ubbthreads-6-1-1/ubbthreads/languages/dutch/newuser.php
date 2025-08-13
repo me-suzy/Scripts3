@@ -1,0 +1,33 @@
+<?
+$ubbt_lang['BOARD_RULES'] = "Board regels";
+$ubbt_lang['I_AGREE'] = "Akkoord";
+$ubbt_lang['DOB_EXIST'] = "Je hebt jouw geboortedatum als volgt ingevuld";
+$ubbt_lang['DOB'] = "Voer jouw geboortedatum in a.u.b.";
+$ubbt_lang['JAN'] = "Januari";
+$ubbt_lang['FEB'] = "Februari";
+$ubbt_lang['MAR'] = "Maart";
+$ubbt_lang['APR'] = "April";
+$ubbt_lang['MAY'] = "Mei";
+$ubbt_lang['JUN'] = "Juni";
+$ubbt_lang['JUL'] = "Juli";
+$ubbt_lang['AUG'] = "Augustus";
+$ubbt_lang['SEP'] = "September";
+$ubbt_lang['OCT'] = "Oktober";
+$ubbt_lang['NOV'] = "November";
+$ubbt_lang['DEC'] = "December";
+$ubbt_lang['SUB_DATE'] = "Voer geboortedatum in";
+$ubbt_lang['PRIV_INFO'] = "Privé informatie";
+$ubbt_lang['PRIV_INFO_DETAIL'] = "De U.S. Federal Trade Commission's Children's Online Privacy Protection Act uit 1998 (COPPA) is er voor bedoeld de privacy van kinderen die het internet gebruiken te beschermen.  Vanaf 21 April 2000, moeten veel websites ouderlijke goekeuring verlangen als kinderen onder de leeftijd van 13 jaar gebruik willen maken van de website.<br /><br /><a href=\"http://www.ftc.gov/opa/1999/9910/childfinal.htm\">COPPA nieuwsberichten</a> | <a href=\"http://www.ftc.gov/os/1999/9910/64fr59888.pdf\">Complete tekst van het Federal Register Notice [Engels, PDF van 270K]</a>";
+$ubbt_lang['PERM_FORM'] = "Toestemmingsformulier";
+$ubbt_lang['PERM_FORM_DETAIL'] = "Een ouder of voogd moet het toestemmingsformlier per fax of email terugsturen naar de administrators van dit forum voordat registratie verwerkt kan worden.<br /><br /><a href=\"{$config['phpurl']}/coppaform.php\">Toestemmingsformulier</a>";
+$ubbt_lang['NO_PERM_FORM'] = "Kinderen onder de leeftijd van 13 jaar worden op dit board niet toegelaten. Voor deze leeftijdsgroep zijn er dus geen formulieren beschikbaar.";
+$ubbt_lang['CONT_INFO'] = "Contact informatie";
+$ubbt_lang['CONT_INFO_DETAIL'] = "Vragen? Email ";
+$ubbt_lang['COPPA'] = "COPPA Test";
+$ubbt_lang['AGE_VER'] = "Registratie - Leeftijdsverificatie";
+$ubbt_lang['NEW_USER2'] = "Om te registreren moeten onderstaande velden ingevuld worden.  Je wachtwoord wordt per toevalsgenerator aangemaakt. Er dient dus een geldig email adres ingevuld te worden zodat wij jouw wachtwoord op kunnen sturen.";
+$ubbt_lang['USER_IN'] = "Gebruikersnaam (moet tussen 3 en 16 alfanumerieke tekens lang zijn)";
+$ubbt_lang['OPT_PASS'] = "Voer nu zelf je gewenste wachtwoord in. (4 tot 20 alfanumerieke tekens)";
+$ubbt_lang['VER_PASS'] = "Wachtwoord nogmaals invoeren.";
+$ubbt_lang['SIMP_EMAIL'] = "Email adres.";
+?>
