@@ -1,0 +1,61 @@
+td.month_title
+{
+	padding: 0px;
+	border-style: outset;
+	border-width: 2px;
+	text-align: center;
+	background-color: #ebebeb;
+}
+
+/* monday,tuesday,wednesday,thursday,friday */
+td.weekday_title
+{
+	text-align: center;
+	vertical-align: middle;
+	font-family: arial;
+	font-size: 10px;
+	text-align: center;
+	color: black;
+	font-weight: bold;
+}
+/* saturday & sunday */
+td.weekend_title
+{
+	text-align: center;
+	vertical-align: middle;
+	font-family: arial;
+	font-size: 10px;
+	text-align: center;
+	color: red;
+	font-weight: bold;
+}
+
+a.month_title:link
+{
+	vertical-align: middle;
+	text-decoration: none;
+	font-family: verdana;
+	font-size: 10px;
+	color: black;
+	font-weight: bold;
+}
+
+a.month_title:hover
+{
+	vertical-align: middle;
+	text-decoration: underline;
+	font-family: verdana;
+	font-size: 10px;
+	color: red;
+	font-weight: bold;
+}
+
+a.month_title:visited
+{
+	vertical-align: middle;
+	text-decoration: none;
+	font-family: verdana;
+	font-size: 10px;
+	color: black;
+	font-weight: bold;
+}
