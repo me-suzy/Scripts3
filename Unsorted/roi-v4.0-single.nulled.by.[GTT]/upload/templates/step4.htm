@@ -1,0 +1,75 @@
+<table border=0 cellspacing=0 cellpadding=0 width=100%>
+<tr><td width=250>&nbsp;</td>
+<td align=left><h1 style="color: #427b7b; margin-left: 0px; margin-bottom: 0px; margin-top: 0px;" class=wheader>Campaign Wizard</h1></td>
+</tr></table>
+
+<form action=wizard.php method=post style="margin-top: 0px; margin-bottom: 0px;">
+%hiddenfields%
+<table border=0 width=100%>
+<tr><td><table border=0 cellpadding=0 width=80%>
+<tr>
+<td rowspan=10 valign=top width=110>
+<table border=0 cellspacing=0 cellpadding=0>
+<tr><td width=98>
+
+<font size=2 color=#427b7b>
+<ul style="margin-left: 18px;margin-top: 2px;">
+<li>Step 1<br>
+Specifying campaign name and URL
+<br><br>
+<li>Step 2<br>
+Specifying campaign price<br><br>
+<li>Step 3<br>
+Adding the tracking link to your advert.<br><br>
+<li><b>Step 4<br>
+Campaign data revision. Moving to Action wizard. </b><br>
+</ul>
+</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+</tr></table>
+</font>
+</td>
+<td valign=top>
+<br>
+Your have created the following  campaign :
+<br><br>
+
+<table border=0 cellspacing=1 cellpadding=3>
+<tr>
+<td><b>Campaign name:</b></td><td>%campaign_name%</td>
+</tr>
+<tr>
+<td><b>Campaign link:</b></td><td>%campaign_link%</td>
+</tr>
+%begin_end%
+<tr><td>
+%pricelab%
+</td><td>
+%price%
+</td></tr>
+</table>
+
+<br>
+Please check if the information above is correct. If you would like to make any changes, please click Previous to move back to the certain step of this wizard.
+<br><br>
+ Click Finish to finish this campaign creation.<br>
+              <br>
+
+<p align=right>
+<input type=image src="images/button-previous.gif" name=prev value=prev title=Previous>
+&nbsp;&nbsp;&nbsp;
+<input type=image src="images/button-finish.gif" name=finish1 value=finish border=0 title="Finish">
+</p>
+</td>
+</tr>
+<tr>
+<td align=right>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
