@@ -1,0 +1,139 @@
+<title>Rate My Hedgehog (Demo of RateMyStuff from PHPLabs.com)</title>
+<body bgcolor="#FFFFCC">
+%header% 
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr> 
+<td width="20%" valign="top"> 
+<table width="90%" border="0" cellspacing="0" cellpadding="1" bgcolor="#000066" align="center">
+<tr> 
+<td> 
+<table width="100%" border="0" cellspacing="0" cellpadding="1" bgcolor="#000066">
+<tr> 
+<td> 
+<center>
+<font color="#FFFFCC" size="1"><b><font face="Verdana, Arial">RATEMYHEDGEHOG</font></b></font> 
+</center>
+</td>
+</tr>
+<tr> 
+<td bgcolor="#FFFFCC"> 
+<p align="center">%lastrate%</p>
+<p align="center"><b><font face="Verdana, Arial" size="1">RANDOM HEDGEHOG:</font></b></p>
+<p align="center">%random%</p>
+<p align="center"><font size="1"><b><font face="Verdana, Arial">OUR FAVORITE LINKS:</font></b></font></p>
+<p align="center"><b><font face="Verdana, Arial" size="1"><a href="http://phplabs.com/scripts.php?script=RateMyStuff">RateMyStuff</a><br>
+<a href="http://www.phplabs.com/">PHP Labs</a><br>
+<a href="http://www.fallendomains.com/">Fallen Domains</a><br>
+<a href="http://www.openproxies.com/">Open Proxy List</a><br>
+<a href="http://www.iconbazaar.com/">Icon Bazaar</a><br>
+<a href="http://www.php.net/">PHP Homepage</a><br>
+<a href="http://www.google.com/">Google Search</a></font></b></p>
+<p align="center"><b><font face="Verdana, Arial" size="1">RANDOM HEDGEHOG:</font></b></p>
+<p align="center">%random%</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td valign="top"> 
+<p align="center"><font face="Verdana, Arial" size="1"><b>WELCOME TO THE USERS 
+AREA</b></font></p>
+
+<table width="90%" border="0" cellspacing="0" cellpadding="1" align="center" bgcolor="#000066">
+<tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#FFFFCC">
+<tr bgcolor="#000066"> 
+<td colspan="2"> 
+<center>
+<font face="Verdana, Arial" size="1"><b><font color="#FFFFCC">RateMyHedgehog User 
+Stats Page for %username%</font></b></font> 
+</center>
+</td>
+</tr>
+<tr> 
+<td colspan="2"> 
+<center>
+<font size="1" face="Verdana, Arial"> <b><font color="#FF0000">%welcomemessage%</font></b></font> 
+</center>
+</td>
+</tr>
+<tr> 
+<td align="center" valign="top"> 
+<center>
+<p><font face="Verdana, Arial" size="1"><b>Your ranking is:</b></font></p>
+<p><font face="Verdana, Arial" size="2"><b><font color="#FF0000" size="5">%score%</font></b></font></p>
+<p><font face="Verdana, Arial" size="1">%yourrank%</font></p>
+<p align="left"><font face="Verdana, Arial" size="1">A total of %numvotes% votes 
+have been counted for your picture.</font></p>
+<p align="left"><font face="Verdana, Arial" size="1">Your rating is better than 
+%lowerrate%% of all other pictures on the site!</font></p>
+<p align="center"><font face="Verdana, Arial" size="1"><a href="vote.php"><b>Go 
+Rate Others</b></a></font></p>
+</center>
+</td>
+<td align="center" valign="middle">
+<img src="getimage.php?tag=%tag%" alt="Your Photo" border="0" height="250" width="300">
+</td>
+</tr>
+<tr> 
+<td><font size="1" face="Verdana, Arial">&nbsp;</font></td>
+<td><font size="1" face="Verdana, Arial">&nbsp;</font></td>
+</tr>
+<tr> 
+<td colspan="2"> 
+<center>
+<p><font size="1" face="Verdana, Arial"> <b>Want your friends to vote on your 
+picture? </b></font><b><font face="Verdana, Arial" size="1">Send them to: <br>
+<font color="#000066">%linkurl%</font></font></b> </p>
+</center>
+</td>
+</tr>
+<tr> 
+<td colspan="2"> 
+<form action="user.php" method="post">
+<center>
+<font size="1" face="Verdana, Arial"></font>
+                      <hr>
+                      <b><font size="1" face="Verdana, Arial">Your User Settings</font></b> 
+                      <p><font size="1" face="Verdana, Arial">Email Address:</font> 
+                        <input name="email" type="text" id="email" value="%email%">
+                      </p>
+                      <p> 
+                        <input name="hookup" value="1" type="checkbox" id="hookup">
+                        <font size="1" face="Verdana, Arial">Let other users HookUp 
+                        with me! (<a href="javascript:;" onClick="window.open('templates/hookup_about.html','Report','width=300,height=400,,location=no,toolbar=no,menubar=no,scrollbars=auto,resizable=no')">What 
+                        is HookUp?</a>)</font></p>
+                      <p><font size="1" face="Verdana, Arial">Enter some text 
+                        about yourself or your photo for others to see before 
+                        they HookUp with you.<br>
+                        <textarea name="bio" cols="50" rows="4" id="bio">%bio%</textarea>
+                        </font></p>
+                      <p> 
+                        <input type="hidden" name="action" value="UPDATE">
+                        <input name="username" type="hidden" id="username" value="%user%">
+                        <input name="password" type="hidden" id="password" value="%pass%">
+                        <input type="submit" name="Submit" value="Update Settings">
+                        <font size="1" face="Verdana, Arial"> </font> </p>
+                    </center>
+</form>
+</td>
+</tr>
+<tr> 
+<td colspan="2"> 
+<center>
+</center>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<p align="center">&nbsp;</p>
+</td>
+</tr>
+</table>
+%footer%
