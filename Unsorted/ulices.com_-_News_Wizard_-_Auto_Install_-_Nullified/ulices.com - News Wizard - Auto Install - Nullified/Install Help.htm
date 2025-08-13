@@ -1,0 +1,219 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Author" content="Oliver Schulz  www.ulices.com">
+<title>@News Wizard *** Documentation *** </title>
+<STYLE type=text/css>
+.link {FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: underline; font-weight: bold}
+.border {BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid}
+.headers {FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #ffffff; FONT-FAMILY: Arial, Helvetica, sans-serif; }
+.text {FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: Arial, Helvetica, sans-serif}
+.textheadline {FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif}
+.textnav {FONT-SIZE: 12px; COLOR: #ffffff; FONT-FAMILY: Arial, Helvetica, sans-serif}
+A {COLOR: #996600; TEXT-DECORATION: underline}
+.headnews {FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffffff; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #CC0000}
+A:hover {TEXT-DECORATION: none}
+.center {TEXT-ALIGN: center}
+.underline {TEXT-DECORATION: underline}
+.textweiss {FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffffff; FONT-FAMILY: Arial, Helvetica, sans-serif}
+.gross {FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: underline}
+</STYLE>
+</head>
+<body text="#000000" link="#333333" vlink="#333333" bgcolor="#006699" TOPMARGIN="2" LEFTMARGIN="2" MARGINWIDTH="2" MARGINHEIGHT="2">
+<table width="620" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr bgcolor="#006699" valign="top"> 
+    <td> 
+      <table width="600" border="0" cellspacing="1" cellpadding="20" align="center" bgcolor="#FFFFFF">
+        <tr valign="top" bgcolor="#666666"> 
+          <td> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="20%">&nbsp;</td>
+                <td width="60%"> 
+                  <div align="center"><b class="headers"><font size="3">@News 
+                    Wizard - Installation</font></b></div>
+                </td>
+                <td width="20%">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr valign="top" bgcolor="#CCCCCC"> 
+          <td class="block"> 
+            <p align="CENTER"></p>
+            <p align="CENTER"><span class="text"><b>Copyright 1999, 2000, 2001 
+              Oliver W. Schulz<br>
+              Contact: Oliver W. Schulz </b><br>
+              (<a href="mailto:scripting@ulices.com"><b>scripting@ulices.com</b></a>)</span></p>
+            <p><span class="text">Thank you very much for choosing @News Wizard.<br>
+              Please read this documentation carefully. It contains all of the 
+              information which is necessary to install @News Wizard on your server.</span></p>
+            <p><span class="text">The installation of @News Wizard is done completely 
+              by the &quot;install.cgi&quot; script.<br>
+              &nbsp;<br>
+              Please note that due to a countless number of different servers 
+              and server-setups, the automatic installation process cannot be 
+              guaranteed to be successful in all cases. Should your server not 
+              execute the installation correctly you will be notified by the installation 
+              script that the automatic installation has failed.<br>
+              In this case please ignore the software bundle &quot;auto-install.tar&quot; 
+              and use the &quot;man-install.tar&quot; instead. In our email to 
+              you you have received the download links to both packages. Please 
+              proceed with the manual installation which is explained in the &quot;documentation-english.htm&quot; 
+              of the &quot;man-install.tar&quot; package.</span></p>
+            <table width="100%" border="0" cellspacing="1" cellpadding="0" bgcolor="#FFFFFF">
+              <tr bgcolor="#666666"> 
+                <td height="20"> 
+                  <div align="center"><b class="headers">Installation</b></div>
+                </td>
+              </tr>
+            </table>
+            <ul>
+              <li><span class="text">Open only the<font color="#006699"> <b>install.cgi</b></font> 
+                script with your favorite text editor and edit the very first 
+                line to reflect the location of PERL on your server.<br>
+                By default this line is set to <font color="#996600">#!/usr/local/bin/perl</font>.<br>
+                If the interpreter is at<font color="#996600"> /usr/bin/perl</font>, 
+                then this line should be <font color="#996600">#!/usr/bin/perl</font>. 
+                You can get this information with the command "<font color="#996600">which 
+                perl</font>" or "<font color="#996600">where perl</font>" on the 
+                command line once you have telnetted to your account. Check with 
+                your system admin if you're not sure.<br>
+                &nbsp;</span></li>
+              <li><span class="text">Now log on to your web account on your server 
+                and create a subdirectory (name of your free choice) in your CGI 
+                directory. This is the name which you will later type into the 
+                setup form as &quot;Name of CGI Directory&quot; after calling 
+                the &quot;<font color="#006699"> <b>install.cgi</b></font>&quot; 
+                script.<br>
+                Example: '<font color="#996600">nwswiz</font>'<br>
+                Set the permission of this directory to full read/write CHMOD 
+                777.<br>
+                &nbsp;</span></li>
+              <li><span class="text">Copy all cgi-files from your package into 
+                this newly created directory.<br>
+                Set the permission of all of them to CHMOD 777.<br>
+                &nbsp;</span></li>
+              <li><span class="text">Now create a subdirectory in your web directory 
+                where @News Wizard's HTML files will reside. Give it a name of 
+                your choice. This is the name which you will later type into the 
+                setup form as<br>
+                &quot; @News Wizard Directory&quot; after calling the &quot;<font color="#006699"> 
+                <b>install.cgi</b></font>&quot; script.<br>
+                Example: '<font color="#996600">nwswiz</font>'<br>
+                Set the permission of this directory to full read/write CHMOD 
+                777.<br>
+                &nbsp;</span></li>
+              <li><span class="text">Copy all image files (GIFs) into this newly 
+                created directory.<br>
+                &nbsp;</span></li>
+              <li><span class="text">Finally call the<font color="#006699"> install.cgi</font> 
+                script from your web browser and complete the setup.</span></li>
+            </ul>
+            <p><span class="text"> Note:<br>
+              </span><span class="text">Your server may possibly show different 
+              directory names than the ones we describe.<br>
+              Commonly found names for the CGI directory on many servers are:<br>
+              '<font color="#996600">cgi-bin</font>', '<font color="#996600">cgi-local</font>' 
+              or simply '<font color="#996600">bin</font>'.<br>
+              Your web directory may have one of the following names:<br>
+              </span><span class="text"> '<font color="#996600">public_html</font>', 
+              '<font color="#996600">www</font>', '<font color="#996600">htdocs</font>' 
+              or '<font color="#996600">httpdocs</font>'<br>
+              &nbsp; <br>
+              That's all you have to do !</span></p>
+            <p><span class="text">The installation form which is displayed to 
+              you when you run the install script asks for a minimum of necessary 
+              information in order to be able to install your @News Wizard.<br>
+              If you are not sure about the requested data, please contact your 
+              system administrator or host service provider.<br>
+              You will find some fields already showing a value. You can either 
+              accept these (if you used the example-names for your setup) or change 
+              them to reflect the situation you have created on your server.</span></p>
+            <p><span class="text">This setup is intended for Unix/Linux type servers 
+              only. If you are on a different server like Windows NT you are required 
+              to do a manual setup !<br>
+              </span> </p>
+            <p></p>
+            <table width="100%" border="0" cellspacing="1" cellpadding="0" bgcolor="#FFFFFF">
+              <tr bgcolor="#666666"> 
+                <td height="20"> 
+                  <div align="center"><b><a name="license"></a><span class="headers">License 
+                    Agreement and Disclaimer</span></b></div>
+                </td>
+              </tr>
+            </table>
+            <p></p>
+            <span class="text"><font color="#660000">@News Wizard - mailing list 
+            / newsletter software<br>
+            Contact: Oliver Schulz (scripting@ulices.com)<br>
+            <br>
+            @News Wizard, Copyright © 1999, 2000, 2001 by Oliver W. Schulz<br>
+            All rights reserved. </font></span> 
+            <p></p>
+            <span class="text"><font color="#660000"><b>THIS IS NOT FREE SOFTWARE 
+            !!!!<br>
+            </b>The copying, distribution, installation and usage of this software 
+            without our consent is illegal.<br>
+            </font></span> 
+            <p></p>
+            <span class="text"><font color="#660000"><b>LICENSE AGREEMENT</b><br>
+            Do not attempt to run the @News Wizard scripts on a site other than 
+            which they were licensed for. Violation of this license agreement 
+            may void your right to technical support and subject you to legal 
+            action. <br>
+            You should carefully read the following terms and conditions before 
+            using this software. Unless you have a different license agreement 
+            signed by Oliver W. Schulz your use of this software indicates that 
+            you accept and respect this license agreement and disclaimer of warranty. 
+            </font></span> 
+            <p></p>
+            <p><span class="text"><font color="#660000"> As a registered user, 
+              you may alter or modify the @News Wizard Software as far as the 
+              <br>
+              HTML output is concerned. Further modification of the script code 
+              require the notification of the author (Just drop us a short note 
+              at <b>scripting@ulices.com</b>)<br>
+              You cannot give anyone else permission to modify the @News Wizard 
+              Software.<br>
+              &nbsp; <br>
+              You are strictly prohibited from distributing copies of this software 
+              without prior permission. <br>
+              You are specifically prohibited from charging, or requesting donations, 
+              for any copies, however made, and from distributing the software 
+              and/or documentation with other products (commercial or otherwise) 
+              without prior written permission ! </font></span></p>
+            <p><span class="text"><font color="#660000">The file 'upload.cgi' 
+              is Copyright (C) 1996 Jeffrey D. Carnahan and has been delivered 
+              to you free of charge and does not constitute a part of this commercial 
+              product. </font></span></p>
+            <p></p>
+            <p> <span class="text"><font color="#660000"><b>DISCLAIMER OF WARRANTY<br>
+              </b>This software, the information, code and/or executables as well 
+              as the accompanying files provided are provided &quot;as is&quot; 
+              without warranty of any kind, either expressed or implied, including 
+              but not limited to the implied warranties of merchantability and 
+              fitness for a particular purpose.<br>
+              In no event shall the author or seller be liable for any damages 
+              whatsoever inlcuding direct, indirect, incidental, consequential, 
+              loss of data, loss of business profits or special damages, even 
+              if the author or seller has been advised of the possibility of such 
+              damages.</font></span></p>
+            <p><span class="text"><font color="#660000">Good data processing procedure 
+              dictates that any program be thoroughly tested with non-critical 
+              data before relying on it.<br>
+              The user must assume the entire risk of using the program.</font></span><span class="text"><br>
+              </span> </p>
+          </td>
+        </tr>
+      </table>
+      <div align="center"><span class="text">&nbsp;<font color="#FFFFFF">Copyright 
+        &copy; 1999, 2000, 2001<a href="http://ulices.com">Oliver W. Schulz</a><br>
+        All rights reserved</font></span><br>
+        &nbsp; </div>
+    </td>
+  </tr>
+</table>
+<br>
+</body>
+</html>
