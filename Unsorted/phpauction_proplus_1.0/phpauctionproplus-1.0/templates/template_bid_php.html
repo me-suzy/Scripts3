@@ -1,0 +1,179 @@
+<?
+#///////////////////////////////////////////////////////
+#//  COPYRIGHT 2002 PHPAuction.org ALL RIGHTS RESERVED//
+#//  For Source code for the GPL version go to        //  
+#//  http://phpauction.org and download               //
+#//  Supplied by CyKuH [WTN]                          //
+#///////////////////////////////////////////////////////
+
+?>
+
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--
+
+function SubmitBidForm()
+
+{
+
+	document.bid.submit();
+
+};
+
+//-->
+
+</SCRIPT>
+
+<TABLE WIDTH="100%" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING="0" CELLSPACING="0">
+
+<TR>
+
+    <TD align="center"> 
+      <CENTER>
+
+<? print $std_font; ?>
+
+<A HREF="item.php?"><? print $MSG_138; ?></A> |
+
+<A HREF="bidhistory.php?"><? echo $MSG_105; ?></A> |
+
+<A HREF="email_request.php?"><? print $MSG_107; ?></A>
+
+
+
+</CENTER>
+
+      <BR>
+      <CENTER><B><? print "$tlt_font $MSG_152"; ?></B></CENTER>
+ 
+        
+     
+      
+      <center><? echo $err_font.$TPL_errmsg;?></center>
+
+<FORM name="bid" action="bid.php" method="POST">
+        <table bordercolor="<?=$FONTCOLOR[$SETTINGS[headercolor]]?>" border="1" cellspacing="0" cellpadding="0" width="43%" height="347">
+          <tr bordercolor="<?=$FONTCOLOR[$SETTINGS[headercolor]]?>">
+            <td height="324" valign="top"> 
+              <table cellspacing="0" cellpadding="8" border="0"  align="center" width="100%" height="344">
+                <tr> 
+                  <td width="65%" height="282" valign="top"> 
+                    <?  if(!$HTTP_SESSION_VARS["PHPAUCTION_LOGGED_IN"])
+						{
+					?>
+                    <? print $std_font.$MSG_273; ?><br>
+                    <?
+					}
+					?>
+                    <? print "$err_font$TPL_new_proxy2"; ?>
+                    <? print "$err_font$TPL_new_proxy3"; ?>
+                    <br>
+                    <img src="images/linea.gif" width="100%" height="6"><br>
+                    <b> <? print $std_font; ?>
+                    <? print $MSG_154; ?></b>
+                     <img src="images/linea.gif" width="100%" height="6"><br>
+                    <b> 
+                    <? print $MSG_155; ?>
+                    </b><br><? print $std_font; ?>
+                    <? echo stripslashes($TPL_title); ?>
+                    <br>
+                    <br>
+                    <b> <? print $std_font; ?>
+                    <? print $MSG_156; ?></b>
+                    <!-- <? echo "$currency".number_format($bid,0,",","."); ?> -->
+                    <? echo $currency; ?>
+                     
+                    <table width="100%" border=0>
+                      <tr align=LEFT> 
+                        <td valign="top" height="52"> 
+                          <table width="100%" align=LEFT border=0 height="47">
+                            <tr valign=MIDDLE> 
+                              <td align=left height="27" valign="top"> 
+                                <? print $std_font; ?>
+                                <input type=TEXT size=5 name="bid" value="<? print $bidH; ?>">
+                                <? print $std_font; ?>
+                                ( 
+                                <? print $MSG_283; ?>
+                                : 
+                                <? print $TPL_next_bid; ?>
+                                ) </td>
+                            </tr>
+                            <script language="PHP"> if ($atype==2): </script>
+                            <tr> 
+                              <td align=left height="2"> 
+                                <? print $std_font.$MSG_284; ?>
+                                : 
+                                <input type=TEXT size=3 name="qty" value="<? print $qtyH; ?>">
+                              </td>
+                            </tr>
+                            <script language="PHP"> endif; </script>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr align=LEFT> 
+                        <td height="121"> 
+                          <table width="100%" border="0" cellpadding="2" cellspacing="0">
+                            <tr> 
+                              <td width="30%" align="right" valign="bottom" height="7"> 
+                                <? print $std_font.$MSG_047; ?>
+                              </td>
+                              <td width="70%" height="7" valign="top"> 
+                                <? print $std_font; ?>
+                                <?
+						if(!$HTTP_SESSION_VARS["PHPAUCTION_LOGGED_IN"])
+						{
+					?>
+                                <a target="_blank" href="register.php?"> 
+                                <? print $MSG_163; ?>
+                                </a> <br>
+                                <input type="text" name="nick" size="20" value="<? echo $nickH; ?>">
+                              </td>
+                            </tr>
+                            <?
+						}
+						else
+						{
+					?>
+                            <? print '&nbsp;<b>' . $HTTP_SESSION_VARS["PHPAUCTION_LOGGED_IN_USERNAME"] . '</b>' ; ?>
+                            <input type="hidden" name="nick" size="20" value="<? echo $HTTP_SESSION_VARS["PHPAUCTION_LOGGED_IN_USERNAME"]; ?>">
+                            <?
+						}
+					?>
+                            <br>
+                            <tr> 
+                              <td width="30%" align="right" height="2"> 
+                                <? print $std_font.$MSG_004; ?>
+                              </td>
+                              <td width="70%" height="2"> 
+                                <input type="password" name="password" size="20"  value="">
+                              </td>
+                            </tr>
+                            <tr> 
+                              <td width="30%" align="right"> </td>
+                              <td width="70%"> 
+                                <input type="hidden" name="id" value="<? echo $id; ?>">
+                                <br>
+                                <input type="hidden" name="action" value="bid">
+                                <input type=submit name="Input">
+                                <input type=reset name="Input">
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        </FORM>
+
+</TD>
+
+</TR>
+
+</TABLE>
