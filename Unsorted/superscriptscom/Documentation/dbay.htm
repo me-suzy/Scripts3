@@ -1,0 +1,290 @@
+<html>
+
+<head>
+<title>Auction Software DBAY Documentation</title>
+
+<meta name="Microsoft Border" content="t, default"></head>
+
+<body><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+
+<table border="0" width="33%" cellpadding="0">
+  <tr>
+    <td width="50%"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/" ONCLICK="parent.f=0"><img src="../pix/banners/miniprizm.gif" alt="cgi scripts" border="0" WIDTH="305" HEIGHT="59"></a></font></td>
+    <td width="50%" bgcolor="#FFFFFF"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/ads/rotate.cgi?url=&amp;user=" target="new" ONCLICK="parent.f=0"><img src="http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user=" border="0" width="468" height="60"></a></font></td>
+  </tr>
+</table>
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="16%"><p align="center"><a href="../dsstoday/index.html"><font color="#000000" face="Arial"><img src="../pix/main/news.jpg" alt="CGI NEWS" align="left" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="16%"><p align="center"><a href="../scripts/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/scripts.jpg" alt="CGI Scripts" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../mastergate/index.html"><font color="#000000" face="Arial"><img src="../pix/main/access.jpg" alt="Access The CGI Archive" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../contact.html"><font color="#000000" face="Arial"><img src="../pix/main/contact.jpg" alt="Contact Superscripts" WIDTH="104" HEIGHT="68"></font></a></td>
+    <td width="17%"><p align="center"><a href="../support.html"><font color="#000000" face="Arial"><img src="../pix/main/dox.jpg" alt="CGI Documentation" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../download/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/download.jpg" alt="Download CGI Scripts Here" align="right" WIDTH="105" HEIGHT="65"></font></a></td>
+  </tr>
+  <tr>
+    <td width="16%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/dsstoday/index.html" style="color: rgb(255,255,255)"><strong>News</strong></a></font></td>
+    <td width="16%" bgcolor="#000000"><p align="center"><a href="/scripts/" style="color: rgb(255,255,255)"><font face="Arial" color="#FFFFFF"><strong>CGI Scripts</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><a style="color: rgb(255,255,255)" href="../mastergate/index.html"><font face="Arial" color="#FFFFFF"><strong>Become A Member</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../contact.html"><strong>Contact
+    Us</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../support.html"><strong>Support</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/download/index.shtml" style="color: rgb(255,255,255)"><strong>Download
+    Area</strong></a></font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+
+<table border="0" width="75%" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <p><font face="Arial"><big><big><font color="#FF0000"><strong>Documentation<br>
+      </strong></font><font color="#000000">DBAY AUCTION SOFTWARE:&nbsp; V1.0</font></big></big></font></p>
+      <p><img src="../pix/logos/authnet.gif" alt="authnet.gif (6418 bytes)" WIDTH="396" HEIGHT="86"></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Copyright 2001 Psybercore, Inc. - All Rights
+        Reserved. </small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Selling redistributing or modifying any or
+        all of the code for this program without prior written consent is expressly forbidden. You
+        must obtain written permission before redistributing this software over the Internet or in
+        any other medium. In all cases copyright and header information must remain intact.</small></font></p>
+      </blockquote>
+      <hr align="left">
+      <p><font face="Arial" color="#FF0000"><strong>WARNING - THIS IS FARILY ADVANCED CGI CODE</strong></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Our support policy confines us to answering
+        SPECIFIC questions about the installation.&nbsp; We do not teach perl, systems
+        configurations or unix as part of the <a href="http://www.superscripts.com/mastergate/">membership</a>.
+        &nbsp; If you require this level of support you will have to <a href="http://www.superscripts.com/mastergate/install.html">pay for installation</a>.
+        &nbsp; Feel free to give it a shot - if you have the time and like to learn you are on the
+        right page.&nbsp; For more information regarding support policies <a href="http://www.superscripts.com/mastergate/faq.html">read the FAQ.</a>&nbsp; If you
+        prefer to have the system installed for you simply <a href="http://www.psybercore.com/contact.html">contact PSYBERCORE</a> to have this
+        arranged.</small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><strong>Preleminary Material for review</strong></font><ul>
+        <li><a href="http://www.mysql.com"><font face="Arial" color="#000000"><small>Mysql Tutorial</small></font></a></li>
+        <li><a href="http://www.authorizenet.com/pages/DirectResponse.html"><font face="Arial" color="#000000"><small>Interfacing to Authorize.net</small></font></a></li>
+        <li><a href="../../tutorial/index.html"><font face="Arial" color="#000000"><small>Perl and
+          Telnet Tutorials</small></font></a></li>
+      </ul>
+      <p><font face="Arial" color="#000000"><strong>System Requirements</strong></font><ul>
+        <li><font face="Arial" color="#000000"><small>Perl 5</small></font></li>
+        <li><font face="Arial" color="#000000"><small><a href="http://www.mysql.com">Mysql</a>
+          Database Software</small></font></li>
+        <li><a href="../../download/Msql-Mysql-modules-1.2200.tar.gz"><font face="Arial" color="#000000"><small>Msql-Mysql Module</small></font></a></li>
+        <li><a href="../../download/DBI-1.09.tar"><font face="Arial" color="#000000"><small>DBI
+          Module</small></font></a></li>
+        <li><small><font face="Arial"><a href="../../scripts/Net_SSLeay.pm-1.05.tar.gz">SSLEAY/Open
+          SSL</a> required for using port 443</font></small></li>
+        <li><font face="Arial" color="#000000"><small>Sendmail</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Crontab Recommended to use bulk email feature</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Supports Authorize.net Version 3.0 or Syntax
+          Verification</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Unix, Linux or NT Operating System </small></font></li>
+        <li><font face="Arial" color="#000000"><small>Secure Webspace with CGI Capability
+          Recommended</small></font></li>
+        <li><font face="Arial" color="#000000"><small><a href="../../online.html">Online merchant
+          account</a> required for real time validation</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Preliminaries</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Determine the path to PERL 5 on your web
+          server host.&nbsp; Note that some web hosting companies run both PERL 4 and PERL 5.&nbsp;
+          Make ABSOLUTELY sure you are not setting this up under PERL 4.&nbsp; Ask your
+          administrator if you are not sure. </small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>If you need to review or learn the basics of
+          CGI and Perl visit <a href="../../tutorial/index.html">the tutorial</a></small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small><a href="http://www.superscripts.com/download/">Download</a> the tarfile for this program and
+          save it to your desktop.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Unpack the tar archive on your desktop using a
+          program that unpacks UNIX TAR ARCHIVES. If you don't have such a program then download
+          WINZIP FREE from <a HREF="http://www.shareware.com/">SHAREWARE.COM</a>.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>After you have unpacked the TAR archive you
+          will have a collection of folders and files on your desktop.&nbsp; Now you have to do some
+          basic editing of each of these files (or at least some of them).&nbsp; Use a text editor
+          such as wordpad, notepad, BBEdit, simpletext, or teachtext to edit the files.&nbsp; These
+          are NOT WORD PROCESSOR DOCUMENTS they are just simple TEXT files so don't save them as
+          word processor documents or save them with extentions such as .txt or they will NOT WORK.
+          &nbsp; Note that there may be a some files inside of folders which are &quot;blank&quot;.
+          &nbsp; This is normal.</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Preparing the CGI scripts</small></font></h2>
+      <blockquote>
+        <h2><font face="Arial" color="#FF0000"><small><small>Define Path To PERL 5</small></small></font></h2>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>The first step is to open up each and every
+        file that has a .cgi extention and edit line number one of each script.&nbsp; Each of the
+        cgi scripts is written in perl 5. For your scripts to run they must know where perl 5 is
+        installed on your web server. The path to perl 5 is defined to a cgi script in the first
+        line of the file. In each of the cgi scripts the first line of code looks something like
+        this: </small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#FF0000"><small>#!/usr/bin/perl</small></font></p>
+        </blockquote>
+        <p><font face="Arial" color="#000000"><small>If the path to perl 5 on your web server is
+        different from /usr/bin/perl you must edit the first line of each cgi script to reflect
+        the correct path. If the path to perl 5 is the same no changes are necessary. If you do
+        not know the path to perl 5 ask the webmaster or system administrator at your server site.
+        &nbsp; </small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big><strong>Configure the .cgi files</strong></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><big>configure.cgi</big></font></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>This is the entire cgi.&nbsp; There are
+        several variables to edit, all of which should be pretty straightforward.&nbsp; You will
+        create a SINGLE configure.cgi file but you will upload 2 COPIES of it</small></font><font SIZE="2"></p>
+        </font>
+      </blockquote>
+      <blockquote>
+        <font SIZE="2"><ul>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$localurl =
+            &quot;http://www.yourdomain.com/&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$datadirectory =
+            &quot;/path/to/cgi-bin/dbay/data&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$cgiurl =
+            &quot;http://www.yourdomain.com/cgi-bin/dbay&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$mysqldatabase = &quot;name of mysql
+            database&quot;;</font><font size="2" color="#000000" face="Arial">Name of your mysql
+            database. </font><font SIZE="2" face="Arial">If you are using a seperate mysql server Set
+            $mysqldatabase to databasenameServername</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$mysqlusername = &quot;mysql
+            username&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$mysqlpassword = &quot;mysql
+            password&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$mailprogram='/path/to/sendmail';</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$adminemail =
+            &quot;you\@yourdomain.com&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$nopic=
+            &quot;http://www.yourdomain.com/dbay/pix/nopic&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$icon
+            =&quot;http://www.yourdomain.com/dbay/pix/icon.gif&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$registrationurl =
+            &quot;http://www.yourdomain.com/dbay/index.html&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$increment = 2;</font><font SIZE="2">
+            &nbsp; (this is the bid increment that is forced by the system) next bid must be $2 higher</li>
+        </ul>
+        </font>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big>Prepare your cgi-bin directories and upload
+      files</big></font></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Create the following directories inside of
+        your cgi-bin and upload files as indicated below.&nbsp; Note that the configure.cgi file
+        is used TWICE - its the EXACT same file just upload 2 copies as shown below.</small></font></p>
+      </blockquote>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>/cgi-bin/dbay/</small></font><ul>
+            <li><font color="#000000" face="Arial"><small>bid.cgi</small></font></li>
+            <li><font color="#000000" face="Arial"><small>comment.cgi</small></font></li>
+            <li><font color="#000000" face="Arial"><small>configure.cgi</small></font></li>
+            <li><font color="#000000" face="Arial"><small>feedback.cgi</small></font></li>
+            <li><font color="#000000" face="Arial"><small>forgot.cgi</small></font></li>
+            <li><font color="#000000" face="Arial"><small>getcloseditem.cgi</small></font></li>
+            <li><font color="#000000" face="Arial"><small>getitem.cgi</small></font></li>
+            <li><font color="#000000" face="Arial"><small>modify.cgi</small></font></li>
+            <li><font color="#000000" face="Arial"><small>premodify.cgi</small></font></li>
+            <li><font color="#000000" face="Arial"><small>register.cgi</small></font></li>
+            <li><font color="#000000" face="Arial"><small>search.cgi</small></font></li>
+            <li><font color="#000000" face="Arial"><small>searchcategory.cgi</small></font></li>
+            <li><font color="#000000" face="Arial"><small>sell.cgi</small></font></li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>/cgi-bin/dbay/data</small></font><ul>
+            <li><font color="#000000" face="Arial"><small>header.html</small></font></li>
+            <li><font color="#000000" face="Arial"><small>footer.html</small></font></li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>/cgi-bin/dbay/admin</small></font><ul>
+            <li><font color="#000000" face="Arial"><small>admin.cgi</small></font></li>
+            <li><font color="#000000" face="Arial"><small>close.cgi</small></font></li>
+            <li><font color="#000000" face="Arial"><small>configure.cgi</small></font></li>
+            <li><font color="#000000" face="Arial"><small>deleteitem.cgi</small></font></li>
+            <li><font color="#000000" face="Arial"><small>modify.cgi</small></font></li>
+          </ul>
+        </li>
+      </ul>
+      <p><font color="#000000" face="Arial"><big>The rest of the files</big></font></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Now create 2 more directories and upload
+        files as follows</small></font><ul>
+          <li><a href="http://www.yourdomain.com/superlinks/"><font color="#000000" face="Arial"><small>http://www.yourdomain.com/dbay/</small></font></a><ul>
+              <li><font color="#000000" face="Arial"><small>index.htmll (main search/welcome page)</small></font></li>
+              <li><font color="#000000" face="Arial"><small>account.html - where users get lost
+                passwords/modify account</small></font></li>
+              <li><font color="#000000" face="Arial"><small>register.html - where newbies register for a
+                profile</small></font></li>
+              <li><font color="#000000" face="Arial"><small>sell.html - page used to sell items</small></font></li>
+            </ul>
+          </li>
+          <li><a href="http://www.yourdomain.com/superlinks/webmasters/"><font color="#000000" face="Arial"><small>http://www.yourdomain.com/dbay/admin</small></font></a><ul>
+              <li><font color="#000000" face="Arial"><small>index.html for admin panel - PASSWORD PROTECT
+                THIS</small></font></li>
+            </ul>
+          </li>
+        </ul>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big>File Access Permissions</big></font></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>File access permissions must be set correctly
+        for this program to run.&nbsp; You must set the access permissions for each of these
+        files.&nbsp; Set all the .cgi files to 755. &nbsp; Set all the rest to 777.</small></font></p>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big>Misc Notes</big></font></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small><strong>Charging your clients for selling
+        items</strong>&nbsp;&nbsp; This system is setup to charge your users to sell items only at
+        the time they PLACE the item up for bid.&nbsp; Future modifications will also do
+        additional processing on closed items but this version does NOT.&nbsp; By default this is
+        setup to only check the syntax of the credit card.&nbsp; The authorize.net routines are in
+        place if you change $validation to realtime they will be called.&nbsp; You may require a
+        programmer to complete this interface however depending on your system configuration.</small></font></p>
+        <p><font color="#000000" face="Arial"><small><strong>Closing Auctions</strong>&nbsp;&nbsp;
+        A crontab file must be setup to automatically close items.&nbsp; Setup an hourly crontab
+        to execute close.cgi.&nbsp; Make sure you change all required libraries by their full
+        paths.</small></font></p>
+        <p><font color="#000000" face="Arial"><small><strong>End of Auction</strong> &nbsp;&nbsp;
+        At the end of the auction the item will no longer be available by searching the database.
+        &nbsp; Email notices are sent to the winner and the seller so they can contact each other
+        and complete the sale.&nbsp; A closeditem url is created if either requires it.</small></font></p>
+        <p><font color="#000000" face="Arial"><small><strong>Feedback</strong>&nbsp;&nbsp; Users
+        may leave positive/neutral/negative feedback about any other user.&nbsp; If you click on
+        the username you will be able to see that users feedback profile.</small></font></p>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big>More on running the system</big></font></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>For more information interfacing to
+        authorize.net <a href="../tutorial/index.html">See the authorize.net documentation</a> for
+        any confusion regarding the structure/syntax of the form fields and their required values.</small></font></p>
+        <p><font color="#000000" face="Arial"><small>To add or modify categories all you need to
+        do is change the dropdown menus on the search form, the sell form and header.html. &nbsp;
+        If you are going to let people browse by category with the text links you need to make
+        analogous changes there.</small></font></p>
+      </blockquote>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
