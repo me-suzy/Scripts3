@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="{WWW_DIR}templates/global.css" />
+
+<script type="text/javascript" src="{WWW_DIR}lib/formcheck.js"></script>
+<script type="text/javascript">
+// reference the form element that associates contacts w/ an account
+// its different in IE & Mozilla
+if(document.all) selectid = 4;
+else selectid = 3;
+
+{RELOAD}
+
+</script>
+
+</head>
+<body class="colored">
+
+<div class="main">
+
+<div class="mode">{TEMPLATE_MODE}</div>
+
+	<form action="{FORM_URL}" {TARGET} method="post" name="accounts_form" onsubmit="selectall(); return check_account();">
+	<input type="hidden" name="account_id" />
+	
+	<table cellpadding="5" cellspacing="0" align="center">
+	 <tr>
+		<td class="form">
+		
+		<table cellspacing="0" cellpadding="0" border="0">
+		 <tr>
+	   		<td valign="top" class="form" align="right" valign="top">
+				<span class="field-titles">Available contacts:</span>
+			</td>
+	    	<td>
+				&nbsp;
+			</td>
+	    	<td>
+				<select multiple size="5" name="avail_contacts" class="form">
+				</select>
+			</td>
+		 </tr>
+		</table>
+		
+		</td>	
+		<td class="form">
+			<input type="button" value="   >>   " onclick="move(this.form.avail_contacts,this.form.elements[selectid])" name="B1" class="form" style="background: #D4D0C8;" />
+			<br>
+			<input type="button" value="   <<   " onclick="move(this.form.elements[selectid],this.form.avail_contacts)" name="B2" class="form" style="background: #D4D0C8;" />
+		</td>
+		
+		<td align="center" class="form">
+		
+		<table cellspacing="0" cellpadding="0" border="0">
+		 <tr>
+	    	<td valign="top" class="form" align="right" valign="top">
+				<span class="field-titles">Account contacts:</span>
+			</td>
+	    	<td>
+				&nbsp;
+			</td>
+	    	<td>
+				<select multiple size="5" name="account_contacts[]" class="form"></select>
+			</td>
+		 </tr>
+		</table>	
+		
+		</td>
+	 </tr>
+	</table>
+	
+	<hr>
+	
+	<script type="text/javascript">
+	document.accounts_form.avail_contacts.options[document.accounts_form.avail_contacts.length] = new Option("","");
+	// fill in the available contacts box on 'add page'
+		{CONTACTS}
+	</script>
+	
+	
+	<table class="form" cellspacing="5" width="350" border="0">
+	  <tr>
+		<td class="form" align="right" valign="top"><span class="field-titles">Name:</span></td>
+		<td width="5">&nbsp;</td>
+		<td><input type="text" name="account_name" size="30" maxlength="250" class="form" /></td>
+	</tr>
+	  <tr>
+		<td class="form" align="right" valign="top"><span class="field-titles">Address:</span></td>
+		<td width="5">&nbsp;</td>
+		<td><input type="text" name="account_address" size="30" maxlength="250" class="form" /></td>
+	</tr>
+	  <tr>
+		<td class="form" align="right" valign="top"><span class="field-titles">City:</span></td>
+		<td width="5">&nbsp;</td>
+		<td><input type="text" name="account_city" size="30" maxlength="250" class="form" /></td>
+	</tr>
+	  <tr>
+		<td class="form" align="right" valign="top"><span class="field-titles">State:</span></td>
+		<td width="5">&nbsp;</td>
+		<td><input type="text" name="account_state" size="30" maxlength="250" class="form" /></td>
+	</tr>
+	  <tr>
+		<td class="form" align="right" valign="top"><span class="field-titles">Zip:</span></td>
+		<td width="5">&nbsp;</td>
+		<td><input type="text" name="account_zip" size="8" maxlength="10" class="form" /></td>
+	</tr>
+	  <tr>
+		<td class="form" align="right" valign="top"><span class="field-titles">Country:</span></td>
+		<td width="5">&nbsp;</td>
+		<td><input type="text" name="account_country" size="30" maxlength="250" class="form" /></td>
+	</tr>
+	  <tr>
+		<td class="form" align="right" valign="top"><span class="field-titles">Web site:</span></td>
+		<td width="5">&nbsp;</td>
+		<td><input type="text" name="account_website" size="30" maxlength="250" class="form" /></td>
+	</tr>
+	  <tr>
+		<td class="form" align="right" valign="top"><span class="field-titles">Status:</span></td>
+		<td width="5">&nbsp;</td>
+		<td><select name="account_status" class="form">
+				<option value="0">Active</option>
+				<option value="1">Inactive</option>
+				<option value="2">Other</option>
+			</select>
+		</td>
+	</tr>
+	  <tr>
+		<td class="form" align="right" valign="top"><span class="field-titles">Description:</span></td>
+		<td width="5">&nbsp;</td>
+		<td><textarea rows="5" cols="35" name="account_desc" class="form" style="background: #ffffff;"></textarea>
+		</td>
+	</tr>
+	</table>
+	
+	
+	
+	<table cellpadding="5" cellspacing="0" width="100%">
+	 <tr>
+		<td class="form" align="center">
+	<hr>
+	<input type="submit" name="action" value="   OK   "  class="form" style="background: #D4D0C8;"/>
+	<input type="{ACTION2}" name="action" value=" {ACTION2_LABEL} " class="form" style="background: #D4D0C8;" />
+	</form>
+	    </td>
+	 </tr>
+	</table>
+
+</div>
+
+<script type="text/javascript" src="{WWW_DIR}account/account.js"></script>
+<!-- hidden loader frame -->
+{LOADER}
+   
+</body>
+</html>
