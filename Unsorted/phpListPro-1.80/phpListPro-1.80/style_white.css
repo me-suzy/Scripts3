@@ -1,0 +1,202 @@
+/*###############################################################################################
+
+
+#
+
+
+#  project           	: phpListPro
+
+
+#  filename          	: style_white.css
+
+
+#  last modified by  	: Erich Fuchs
+
+
+#  e-mail            	: office@smartisoft.com
+
+
+#  purpose           	: Style Configuraion File
+
+
+#
+
+
+###############################################################################################*/
+
+
+
+
+
+body 			{
+
+
+			background: White;
+
+
+			color: Black;
+
+
+			margin-top:10px;
+
+
+			margin-bottom:10px;
+
+
+			font-family: Verdana,Arial,sans-serif;
+
+
+			font-size:10pt;
+
+
+			text-align:center;
+
+
+			}
+
+
+
+
+
+A:link 			{ color: Black; font-weight:bold; text-decoration:underline; font-family: Verdana,Arial,sans-serif; }
+
+
+A:visited 		{ color: Black; font-weight:bold; text-decoration:underline; font-family: Verdana,Arial,sans-serif; }
+
+
+A:active 		{ color:#FF0000; font-weight:bold; text-decoration:underline; font-family: Verdana,Arial,sans-serif; }
+
+
+A:hover 		{ color:#FF0000; font-weight:bold; text-decoration:underline; font-family: Verdana,Arial,sans-serif; }
+
+
+
+
+
+form                    { display : inline;}
+
+
+p,div,td 		{ color: #444444; font-family:Verdana,Arial,sans-serif; font-size:10pt; }
+
+
+form,input,option,select{ color:#111111; font-family:Verdana,Arial,sans-serif; font-size:8pt; }
+
+
+
+
+
+
+
+
+table.menu 		{ background: White; border:0px solid #999999; padding:5px; text-align:center; width:670px; margin-top:5px;}
+
+
+
+
+
+table.list 		{ background: White; border:1px solid #999999; padding:5px; text-align:center; width:670px; margin-top:5px;}
+
+
+
+
+
+td.listtitle		{ background: #EEEEEE; border:0px solid #AAAAAA; padding:5px; text-align:center; height:30px;}
+
+
+div.listtitle		{ color:#000000; font-weight:bold; font-size:10pt; font-family: Verdana,Arial,sans-serif;}
+
+
+
+
+
+td.listhead    		{ background: #CCCCCC; border:0px solid #AAAAAA; padding:5px; text-align:center; height:30px;}
+
+
+div.listhead		{ color:#000000; font-weight:bold; font-size:10pt; font-family: Verdana,Arial,sans-serif;}
+
+
+
+
+
+td.listrowrank 		{ background: #AAAAAA; border:1px solid #AAAAAA; text-align:center; width:40px}
+
+
+div.listrowrank		{ color:#000000; font-weight:bold; font-size:10pt; font-family: Verdana,Arial,sans-serif;}
+
+
+
+
+
+td.listrowsite 		{ background: #E0E0E0; border:1px solid #AAAAAA; padding:5px; text-align:left;}
+
+
+div.listrowsite		{ color:#333333; font-weight:normal; font-size:8pt; font-family: Verdana,Arial,sans-serif;}
+
+
+
+
+
+td.listrowvotes 	{ background: #AAAAAA; border:1px solid #AAAAAA; text-align:center; width:40px;}
+
+
+div.listrowvotes	{ color:#333333; font-weight:normal; font-size:8pt; font-family: Verdana,Arial,sans-serif;}
+
+
+
+
+
+td.listrowhits 		{ background: #E0E0E0; border:1px solid #AAAAAA; text-align:center; width:40px;}
+
+
+div.listrowhits		{ color:#333333; font-weight:normal; font-size:8pt; font-family: Verdana,Arial,sans-serif;}
+
+
+
+
+
+td.listrowrate 		{ background: #AAAAAA; border:1px solid #AAAAAA; text-align:center; width:50px;}
+
+
+div.listrowrate		{ color:#333333; font-weight:normal; font-size:8pt; font-family: Verdana,Arial,sans-serif;}
+
+
+
+
+
+td.ratingbarout		{ background: #FFFFFF; }
+
+
+td.ratingbarin		{ background: #707070; }
+
+
+td.ratingbarinhigh	{ background: #FF0000; }
+
+
+div.ratingbarspace	{ color:#303030; font-family:Verdana,Arial,sans-serif; font-size:4pt; text-align:center;}
+
+
+
+
+
+div.footer 		{ color:#303030; font-family:Verdana,Arial,sans-serif; font-size:8pt; text-align:center;}
+
+
+div.proctime 		{ color:#303030; font-family:Verdana,Arial,sans-serif; font-size:7pt; text-align:center;}
+
+
+div.maincenter		{ color:#303030; font-family:Verdana,Arial,sans-serif; font-size:10pt; text-align:center;}
+
+
+div.mainleft		{ color:#303030; font-family:Verdana,Arial,sans-serif; font-size:10pt; text-align:left;}
+
+
+div.smallright          { color:#303030; font-family:Verdana,Arial,sans-serif; font-size:7pt; text-align:right;}
+
+
+
+
+
+table.standard 		{ background: #FFFFFF; border:1px solid #999999; padding:5px; text-align:left; margin:5px;}
+
+
+
