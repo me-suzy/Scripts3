@@ -1,0 +1,63 @@
+body
+{
+	background: #D4D0C8;
+    border-width: 1px;
+	border-style: outset;
+    border-top-color: #ffffff;
+	border-left-color: #ffffff;
+	height: 49px;
+}
+
+.button
+{
+	background: #D4D0C8;
+	border-style: outset;
+	border-width: 2px;
+	text-align: center;
+	font-size: 10px;
+	font-weight: bold;
+	font-family: verdana;
+	cursor: pointer;
+	cursor: hand;
+	width: 85px;
+	display: block;
+	padding: 3px;
+	position: absolute;
+	top: 12px;
+}
+
+/* almost the same as .button but w/o the positioning */
+.logout-button
+{
+	position: relative;
+	top: -1px;
+	width: 85px;
+	background: #D4D0C8;
+	border-style: outset;
+	border-width: 2px;
+	text-align: center;
+	font-size: 10px;
+	font-weight: bold;
+	font-family: verdana;
+	cursor: pointer;
+	cursor: hand;
+	padding: 3px;
+}
+
+.relata-title
+{
+    font-weight: bold;
+	font-size: 10pts;
+	font-family: verdana;
+	color: #121465;
+}
+#animatedlogo
+{
+	position: relative;
+	left: 0px; 
+	right: 100%;
+	top: 0px;
+	width: 49px; 
+	height: 46px; 
+	background-color: #D4D0C8;
+}
