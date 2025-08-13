@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	<TITLE>Company Logo</TITLE>
+	<LINK REL="stylesheet" HREF="Style/RSV.css" TYPE="text/css">
+
+	<!-- THE AUTO LOADING SCRIPT IS BELOW CHANGE index.html IF NECESSARY -->
+	<SCRIPT LANGUAGE="Javascript" TYPE="text/Javascript">
+		if(!parent.frames['MainFrame']){parent.location.href='index.html';}
+	</SCRIPT>
+
+</HEAD>
+<BODY onLoad="parent.initApp();parent.salvageDetails();" onUnload="parent.checkAndSave();">
+
+<TABLE BORDER="0" CELLSPACING="2" CELLPADDING="0" WIDTH="100%">
+<TR>
+<TD>Put your company logo and/or a menu here</TD>
+<TD>
+<FORM NAME="ShowBookingTotal" ID="ShowBookingTotal">
+	Total cost of bookings:&nbsp;
+	<INPUT TYPE="text" SIZE="10" NAME="Total" VALUE="">
+	&nbsp;&nbsp;
+	<INPUT TYPE="button" NAME="ShowBtn" VALUE="Details" onClick="parent.goToPage('BookingList.html');">
+</FORM>
+</TD>
+</TR>
+</TABLE>
+
+</BODY>
+</HTML>
