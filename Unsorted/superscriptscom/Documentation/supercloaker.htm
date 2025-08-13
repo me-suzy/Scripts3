@@ -1,0 +1,224 @@
+<html>
+
+<head>
+<title>Supercloaker Documentation </title>
+
+<meta name="Microsoft Border" content="t, default"></head>
+
+<body><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+
+<table border="0" width="33%" cellpadding="0">
+  <tr>
+    <td width="50%"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/" ONCLICK="parent.f=0"><img src="../pix/banners/miniprizm.gif" alt="cgi scripts" border="0" WIDTH="305" HEIGHT="59"></a></font></td>
+    <td width="50%" bgcolor="#FFFFFF"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/ads/rotate.cgi?url=&amp;user=" target="new" ONCLICK="parent.f=0"><img src="http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user=" border="0" width="468" height="60"></a></font></td>
+  </tr>
+</table>
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="16%"><p align="center"><a href="../dsstoday/index.html"><font color="#000000" face="Arial"><img src="../pix/main/news.jpg" alt="CGI NEWS" align="left" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="16%"><p align="center"><a href="../scripts/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/scripts.jpg" alt="CGI Scripts" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../mastergate/index.html"><font color="#000000" face="Arial"><img src="../pix/main/access.jpg" alt="Access The CGI Archive" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../contact.html"><font color="#000000" face="Arial"><img src="../pix/main/contact.jpg" alt="Contact Superscripts" WIDTH="104" HEIGHT="68"></font></a></td>
+    <td width="17%"><p align="center"><a href="../support.html"><font color="#000000" face="Arial"><img src="../pix/main/dox.jpg" alt="CGI Documentation" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../download/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/download.jpg" alt="Download CGI Scripts Here" align="right" WIDTH="105" HEIGHT="65"></font></a></td>
+  </tr>
+  <tr>
+    <td width="16%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/dsstoday/index.html" style="color: rgb(255,255,255)"><strong>News</strong></a></font></td>
+    <td width="16%" bgcolor="#000000"><p align="center"><a href="/scripts/" style="color: rgb(255,255,255)"><font face="Arial" color="#FFFFFF"><strong>CGI Scripts</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><a style="color: rgb(255,255,255)" href="../mastergate/index.html"><font face="Arial" color="#FFFFFF"><strong>Become A Member</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../contact.html"><strong>Contact
+    Us</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../support.html"><strong>Support</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/download/index.shtml" style="color: rgb(255,255,255)"><strong>Download
+    Area</strong></a></font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+
+<table border="0" width="75%" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <p><big><big><strong><font face="Arial" color="#FF0000">Documentation<br>
+      </font></strong><font color="#000000" face="Arial">SUPERCLOAKER:&nbsp; V1.0&nbsp; </font></big></big></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Copyright 2001 Psybercore, Inc. - All Rights
+        Reserved. </small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font color="#000000" face="Arial">Selling redistributing or modifying any or
+        all of the code for this program without prior written consent is expressly forbidden. You
+        must obtain written permission before redistributing this software over the Internet or in
+        any other medium. In all cases copyright and header information must remain intact.</font></small></p>
+      </blockquote>
+      <hr align="left">
+      <p><font color="#000000" face="Arial"><strong>Preliminary Material for review</strong></font><ul>
+        <li><a href="../tutorial/index.html"><font color="#000000" face="Arial"><small>Perl,
+          htaccess and Telnet Tutorials</small></font></a></li>
+        <li><font color="#000000" face="Arial"><small>I would recommend installing <a href="../scripts/stealth.html">stealth server</a> first to get an idea how this woks</small></font></li>
+      </ul>
+      <h1><small><font color="#000000" face="Arial"><small>System Requirements</small></font></small></h1>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>Server Sides Includes</small></font></li>
+        <li><font color="#000000" face="Arial"><small>.htaccess full override would be nice but not
+          required</small></font></li>
+        <li><font color="#000000" face="Arial"><small>Perl 5</small></font></li>
+      </ul>
+      <h2><font color="#000000" face="Arial"><small>Preliminaries</small></font></h2>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>Determine the path to PERL 5 on your web
+          server host.&nbsp; Note that some web hosting companies run both PERL 4 and PERL 5.&nbsp;
+          Make ABSOLUTELY sure you are not setting this up under PERL 4.&nbsp; Ask your
+          administrator if you are not sure. </small></font></li>
+      </ul>
+      <ul>
+        <li><a href="../tutorial/index.html"><font color="#000000" face="Arial"><small>If you need
+          to review or learn the basics of CGI and Perl visit the tutorial</small></font></a></li>
+      </ul>
+      <ul>
+        <li><font color="#000000" face="Arial"><small><a href="http://www.superscripts.com/download/">Download</a> the tarfile for this program and
+          save it to your desktop.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>Unpack the tar archive on your desktop using a
+          program that unpacks UNIX TAR ARCHIVES. If you don't have such a program then download
+          WINZIP FREE from <a HREF="http://www.shareware.com/">SHAREWARE.COM</a>.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>After you have unpacked the TAR archive you
+          will have a collection of folders and files on your desktop.&nbsp; Now you have to do some
+          basic editing of each of these files (or at least some of them).&nbsp; Use a text editor
+          such as wordpad, notepad, BBEdit, simpletext, or teachtext to edit the files.&nbsp; These
+          are NOT WORD PROCESSOR DOCUMENTS they are just simple TEXT files so don't save them as
+          word processor documents or save them with extensions such as .txt or they will NOT WORK.
+          &nbsp; Note that there may be a some files inside of folders which are &quot;blank&quot;.
+          &nbsp; This is normal.</small></font></li>
+      </ul>
+      <h2><font color="#000000" face="Arial"><small>Preparing the CGI scripts</small></font></h2>
+      <blockquote>
+        <h2><small><font face="Arial" color="#FF0000"><small>Define Path To PERL 5</small></font></small></h2>
+      </blockquote>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>The first step is to open up each and every
+        file that has a .cgi extention and edit line number one of each script.&nbsp; Each of the
+        cgi scripts is written in perl 5. For your scripts to run they must know where perl 5 is
+        installed on your web server. The path to perl 5 is defined to a cgi script in the first
+        line of the file. In each of the cgi scripts the first line of code looks something like
+        this: </small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#FF0000"><small>#!/usr/bin/perl</small></font></p>
+        </blockquote>
+        <p><font color="#000000" face="Arial"><small>If the path to perl 5 on your web server is
+        different from /usr/bin/perl you must edit the first line of each cgi script to reflect
+        the correct path. If the path to perl 5 is the same no changes are necessary. If you do
+        not know the path to perl 5 ask the webmaster or system administrator at your server site.
+        &nbsp; </small></font></p>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big><strong>Configure the .cgi files </strong></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><big>supercloak.cgi</big></font></p>
+      </blockquote>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>As they say, simplicity is the trademark of
+        genius.&nbsp; This script is very simple and elegant in design but also VERY powerful.
+        &nbsp; Below are the variables used to configure the script.&nbsp; Pretty straight
+        forward.&nbsp; You will need to setup TWO folders.&nbsp; One for the protected HTML you
+        only want the search engines to see and the normal HTML for the rest of the world. &nbsp;
+        First let's go over the variables inside the top of supercloak.cgi.&nbsp; Before getting
+        into that create a directory inside your webspace and chmod it to 777 called cloaked and
+        another called uncloaked.&nbsp; Create a directory inside your cgi-bin called supercloaker
+        and upload all the cgi and chmod them all to 755.&nbsp; These 2 folders &quot;cloaked and
+        uncloaked&quot; contain the protected and normal HTML you will be serving.&nbsp; Thus they
+        are identical in appearance except for that oh so special HTML tags and keywords you use
+        to maximize your search engine positioning that piss you off when some jerk steals your
+        HTML.</small></font><font SIZE="2"><ul>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$cloakedirectory=&quot;/home/psybercore/superscripts.com/htdocs/demo/supercloak/cloaked&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$uncloakedirectory=&quot;/home/psybercore/superscripts.com/htdocs/demo/supercloak/uncloaked&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$robotlist =
+            &quot;/home/psybercore/superscripts.com/htdocs/demo/supercloak/robot.list&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$cloakeuri=&quot;cloaked&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$uncloakeuri=&quot;uncloaked&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$rootdirectory=&quot;/home/psybercore/superscripts.com/htdocs&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$indexpagename=&quot;index.html&quot;;</font><font SIZE="2"></li>
+        </ul>
+        </font>
+      </blockquote>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>$cloakdirectory is the FULL path to the
+        PROTECTED HTML files.&nbsp; These are basically just copies of your normal HTML specially
+        tweaked for search engine optimization.&nbsp; </small></font></p>
+        <p><font color="#000000" face="Arial"><small>Similarly, $uncloakedirectory is the FULL
+        path to the UNPROTECTED html files you wish the general public to view</small></font></p>
+        <p><font color="#000000" face="Arial"><small>$robotlist is a line by line list of all the
+        major search engine spiders (see the dox for stealth server for a fairly recent list but
+        you can EASILY find more up to date lists all over the net with a little searching,</small></font></p>
+        <p><font color="#000000" face="Arial"><small>$cloakeduri is the URI to the cloaked
+        directory.&nbsp; You can also set this up as a canonical domain.&nbsp; For example
+        (cloaked.mydomain.com and likewise uncloaked.mydomaincom for the next variable $uncloaked </small><strong>URI.
+        &nbsp; </strong><small>(see the tutorials if you don't get what a </small><strong>URI </strong><small>is
+        - <strong>NO IT IS NOT a URL</strong>)</small></font></p>
+        <p><font color="#000000" face="Arial"><small>$rootdirectory is the FULL path to your ROOT
+        html directory space.&nbsp; Screw this up and nothing will work right, actually screw any
+        of them up and nothing will wok right.</small></font></p>
+        <p><font color="#000000" face="Arial"><small>$indexpagename is a special variable that you
+        commonly use to name index pages inside directories.&nbsp; For example (index.html,
+        index.htm, welcome.html, etc).&nbsp; This is used because if you clone a URL such as <a href="http://www.yourdomain.com/index.html">http://www.yourdomain.com/index.html</a> it
+        can also be called up as <a href="http://www.yourdomain.com/">http://www.yourdomain.com/</a>
+        and that will cause problems unless you set this variable.</small></font></p>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big>Uploading the files</big></font><ul>
+        <font SIZE="2">
+        <li><font color="#000000" face="Arial">/cgi-bin/</font></font><font SIZE="2" color="#000000" face="Arial">supercloaker/</font><font SIZE="2"><ul>
+            </font>
+            <li><font SIZE="2" color="#000000" face="Arial">supercloaker.cgi</font></li>
+            <font SIZE="2">
+          </ul>
+        </li>
+        </font>
+      </ul>
+      <font SIZE="2"><ul>
+        <li><font face="Arial">/supercloaker (commonly these are just uploaded into the root level
+          of your HTML webspace</font><ul>
+            </font>
+            <li><small><font color="#000000" face="Arial">cloaked directory</font></small></li>
+            <li><small><font color="#000000" face="Arial">uncloaked directory</font></small></li>
+            <font SIZE="2">
+          </ul>
+        </li>
+      </ul>
+      </font><p><strong><font color="#000000" face="Arial">OPTIONAL BUT ADVISED</font></strong></p>
+      <blockquote>
+        <p><small><font color="#000000" face="Arial">If you are one of the fortunate ones with a
+        REAL WEBHOSTING ACCOUNT that doesn't cripple your ability to do all those supercool
+        .htaccess functions you may also want to upload the included .htaccess file into your root
+        HTML directory where your home page would reside.&nbsp; The reason for the file is to
+        re-inform your webserver that .html does the same things as .shtml.&nbsp; Sometimes search
+        engines get upset when you submit .shtml files for the very reason of HTML cloaking.
+        &nbsp; By using the .htaccess file there is literally no way for them to know since they
+        appear as harmless html files.</font></small></p>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big>Server Sides Includes</big></font></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Finally you will need to create server sides
+        includes tags inside the pages you want protected.&nbsp; There is an example file already
+        included for you.&nbsp; Simply cut and paste the </small></font></p>
+        <blockquote>
+          <font SIZE="2"><p><font color="#FF0000">&lt;!--#EXEC
+          CGI=&quot;/cgi-bin/supercloak/supercloak.cgi&quot; --&gt;</font></font></p>
+        </blockquote>
+        <p><font color="#000000" face="Arial"><small>SSI tag inside of the pages you want
+        protected and away you go.&nbsp; Please note that many wannabe ISP's won't have a clue
+        about the .htaccess thing I mentioned earlier or won't care to help you out.&nbsp; Also I
+        wouldn't worry about protecting every damned page on your site.&nbsp; Search engines
+        really get pissed off when they detect deliberate subversion, spamdexing and the like.
+        &nbsp; My advise is to just protect the key gateway entrance pages so you don't get into
+        some battle with the people that should be your best friends (the search engines!)</small></font></p>
+      </blockquote>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
