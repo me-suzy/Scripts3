@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>$master_board_name - Disclaimer</title></head>
+<body id="bg" background="images/bg.jpg">
+$header
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td background="images/bg2.jpg">
+      <div align="center"><br>
+        <table cellpadding=1 cellspacing=02 border=0 width="95%" bgcolor="#000000">
+          <tr id="title"> 
+            <td align=center background="images/cellpic.gif" height="38"><font size=2><b><font color="#FFFFFF">$myboardname 
+              Rules</font></b></font></td>
+          </tr>
+          <tr id="tableb"> 
+            <td background="images/cat1.jpg">$disclamer</td>
+          </tr>
+        </table>
+        <br>
+      </div>
+      <div align="center"> 
+        <form action="register.php" method="GET" name="register">
+          <input type="HIDDEN" name="action" value="register">
+          <input type="HIDDEN" name="boardid" value="$boardid">
+          $session_post 
+          <input class="input" type="SUBMIT" name="Submit" value="I Agree">
+        </form>
+        <form action="main.php" method="get">
+          $session_post 
+          <input class="input" type="SUBMIT" value="I Disagree" name="SUBMIT">
+        </form>
+      </div>
+      $footer </td>
+  </tr>
+</table>
+</body>
+</html>	
