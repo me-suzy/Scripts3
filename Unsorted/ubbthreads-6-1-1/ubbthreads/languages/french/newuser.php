@@ -1,0 +1,33 @@
+<?
+$ubbt_lang['BOARD_RULES'] = "Règles du Forum";
+$ubbt_lang['I_AGREE'] = "J'accèpte";
+$ubbt_lang['DOB_EXIST'] = "Vous avez entré la date de naissance suivante ";
+$ubbt_lang['DOB'] = "Merci d'indiquer votre date de naissance";
+$ubbt_lang['JAN'] = "janvier";
+$ubbt_lang['FEB'] = "février";
+$ubbt_lang['MAR'] = "mars";
+$ubbt_lang['APR'] = "avril";
+$ubbt_lang['MAY'] = "mai";
+$ubbt_lang['JUN'] = "juin";
+$ubbt_lang['JUL'] = "juillet";
+$ubbt_lang['AUG'] = "août";
+$ubbt_lang['SEP'] = "septembre";
+$ubbt_lang['OCT'] = "octobre";
+$ubbt_lang['NOV'] = "novembre";
+$ubbt_lang['DEC'] = "décembre";
+$ubbt_lang['SUB_DATE'] = "Valider Date de Naissance";
+$ubbt_lang['PRIV_INFO'] = "Informations Privés";
+$ubbt_lang['PRIV_INFO_DETAIL'] = "The U.S. Federal Trade Commission's Children's Online Privacy Protection Act of 1998 (COPPA) is intended to protect the privacy of children using the Internet. As of April 21, 2000, many Web sites are required to obtain parental consent before collecting, using, or disclosing personal information from children under 13.<p><a href=\"http://www.ftc.gov/opa/1999/9910/childfinal.htm\">COPPA News Release</a> | <a href=\"http://www.ftc.gov/os/1999/9910/64fr59888.pdf\">Full Text of Federal Register Notice [PDF 270K]</a>";
+$ubbt_lang['PERM_FORM'] = "Formulaire d'autorisation";
+$ubbt_lang['PERM_FORM_DETAIL'] = "A parent or guardian must mail or fax a signed permission form to the administrators of this forum before a user under age 13 can complete the registration.<p><a href=\"{$config['phpurl']}/coppaform.php\">Permission Form</a>";
+$ubbt_lang['NO_PERM_FORM'] = "Nous n'autorisons pas les enfants agés de moins de 13 ans à accéder à notre forum, c'est la raison pour laquelle aucun formulaire d'autorisation parentale n'est disponible.";
+$ubbt_lang['CONT_INFO'] = "Contact Information";
+$ubbt_lang['CONT_INFO_DETAIL'] = "Des question ? Ecrivez à ";
+$ubbt_lang['COPPA'] = "COPPA Test";
+$ubbt_lang['AGE_VER'] = "Enregistrement - Vérification de l'Age";
+$ubbt_lang['NEW_USER2']  = 	"Entrez les informations suivantes pour enregistrer un nom d'utilisateur.  Les mots de passes initials sont générés au hasards (sauf si spécifié autrement), une adresse email valide est donc recquise pour que nous puissions vous l'envoyer.";
+$ubbt_lang['USER_IN']  = 	"Nom d'utilisateur (entre 3 et 16 caractères)";
+$ubbt_lang['OPT_PASS']  = 	"Optionel:  Entrez un mot de passe entre 4 et 20 charactères uniquement alphanumériques.";
+$ubbt_lang['VER_PASS']  = 	"Vérifiez le mot de passe";
+$ubbt_lang['SIMP_EMAIL']  = 	"Adresse email";
+?>
