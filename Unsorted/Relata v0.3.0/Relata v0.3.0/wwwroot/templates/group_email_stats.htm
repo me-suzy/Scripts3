@@ -1,0 +1,52 @@
+ <!--DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+ "http://www.w3.org/TR/html4/strict.dtd"-->
+<html>
+<head>
+
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="{WWW_DIR}templates/global.css">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="{WWW_DIR}templates/group-email.css">
+
+<meta http-equiv="Expires" content="Fri, Jun 12 1981 08:20:00 GMT">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+</head>
+<body class="colored">
+
+<div class="groupemail">
+<br>
+
+<center> 
+<form method="post" action="{FORM_URL}"> 
+
+<table cellspacing="2" cellpadding="2" border="0">
+ <tr bgcolor="#496088">
+ 	<th>
+	 <font color="white" face="Verdana, Arial" size="-1">&nbsp;Group&nbsp;</font>
+	</th>
+	<th>
+	 <font color="white" face="Verdana, Arial" size="-1">&nbsp;Total Number of Contacts&nbsp;</font>
+	</th>
+ </tr>
+ {LIST_ROWS}
+ 	</td>
+ </tr>
+ <tr>
+ 	<td bgcolor="#496088" colspan="2" align="center">
+	 <font color="white" face="Verdana, Arial" size="-1"><b>Total Number of Groups:&nbsp;<b>{NUM_LISTS}</b></font>
+	</td>
+ </tr>
+</table>
+
+<center><br>
+<input type="submit" value="refresh" class="form" style="background: #D4D0C8;">	   	   
+</center>
+</form>
+</center>
+
+<br>
+</div>
+
+
+</body>
+</html>
