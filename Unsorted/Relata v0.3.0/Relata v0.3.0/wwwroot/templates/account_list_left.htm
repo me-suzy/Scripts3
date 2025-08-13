@@ -1,0 +1,39 @@
+<html>
+<head>
+<title></title>
+
+<link rel="stylesheet" type="text/css" href="{WWW_DIR}templates/leftnavbuttons.css" />
+
+</head>
+<body bgcolor="#D4D0C8">
+
+<script type="text/javascript" src="{WWW_DIR}events.js"></script>
+
+<script type="text/javascript" src="{WWW_DIR}leftnavbuttons.js"></script>
+<script type="text/javascript">
+	btn = addbutton("Add Account");
+	session_id = "{SESSION_ID}";
+</script>
+
+<div id="leftnavbox">
+
+<script type="text/javascript" src="{WWW_DIR}list.js"></script>
+
+<script type="text/javascript">
+// the url to go when the button is clicked on
+// the id given to the function on addbtn() is appended to the end
+main_url = "{WWW_DIR}account/account_main.php?session_id={SESSION_ID}&account_id=";
+loader_url = "{WWW_DIR}account/account_loader.php?session_id={SESSION_ID}&account_id=";
+
+var btns = new Array;
+
+{ROWS}
+
+
+</script>
+
+</div>
+
+
+</body>
+</html>
