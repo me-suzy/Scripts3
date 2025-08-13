@@ -1,0 +1,221 @@
+################
+# TopTGP by PurpleStreets.com V.3.00, Aug. 1999
+# Copyright PurpleStreets.com 1999. All rights reserved.
+# Feel free to modify this script anywhere you want and send me better versions
+# and improvements. DO NOT touch the copyright notices and the parts that give me
+# credit for the lonely days of hard work.
+#
+# I waive all liability from all errors this script could cause. By using it, you accept
+# this. Also : do NOT sell this script without prior written permission. Legal actions
+# WILL be undertaken.
+################
+#
+#  Written by Mango, PurpleStreets.com
+#  Email me at toptgp_script@purplestreets.com
+#  Or visit http://purplestreets.com/script
+#
+################################################################################
+
+Want to earn 2.42 Cents per Surfer (not per Click !!) ? Visit
+http://www.pussyamateurs.com/pa-bucks/
+By the makers of Top-TGP
+
+
+		                     INSTALLATION NOTES
+
+                                 Best Read With Notepad or so
+
+Thank you for downloading TopTGP 2.00 ! I'm quite sure you will be satisfied by it's very powerful features. Just sit back, install, wait for submissions and you'll be convinced.
+
+1. What you need
+----------------
+All you need is a server or virtual hosting account which allows the use of cgi-scripts. Nowadays, you can even find adult freehosts which allow cgi on their servers. I don't think you won't need any knowledge of cgi-programming (Perl). There we go... Just take the task step by step, without skipping one.
+
+
+2. What you find in this package
+--------------------------------
+Once unzipped, these files are on your PC :
+
+        admin.cgi -------- the script that will allow you to change your TGP settings
+	footer.txt ------- the file in which you should save any html that should appear
+                           on top of your TGP
+	header.txt ------- the file in which you should save any html that should appear
+                           at the bottom of your TGP
+        install.txt ------ installation manual in .txt-format
+        newuser.cgi ------ the part of the script that handles new gallery submissions
+        manual.htm ------- installation manual in .html-format (nicer to read)
+	refer.cgi -------- the part of the script that enables you to run your own 'submission
+                           referral program'
+	submit.htm ------- the html-file which contains the form from which people should submit
+                           their galleries
+	tgp.cgi ---------- the core of the TGP; creates the output files etc
+	vars.pl ---------- this will be your most loved file : you need to define and adapt the
+                           variables in it. But it will be worth those 2 minutes
+                           of concentration.
+
+
+3. Defining the variables in the vars.pl file
+---------------------------------------------
+This file acts like the config.sys or win.ini file on your PC. It tells the script where it can fine the necessary files and directories. So you should adapt the variables to make them work with your server.
+Open the vars.pl file in a simple text editor like notepad. You will find the same variables as listed below. All you have to do is to change the words/data between the "". Changing the variables in this install.txt file really makes no sence :)
+
+
+	$path_to_tgp ="/doc/user1/html/tgp";
+-> the PATH to where tgp.html should be created (no url!). If you don't know what this is, take a look at your webhost's FAQ pages or contact your system administrator.
+
+	$tgp_location="http://my.domain.com/tgp";
+-> Url to where tgp.html will be located. This file will automatically be written and updated.
+
+	$tgp_location_cgi="http://my.domain.com/cgi-bin/tgp";
+-> Url to the cgi dir where the TopTGP files are; you will upload them to that directory in a next step.
+
+	$mail_prog = "/usr/lib/sendmail";
+-> Path to your mail program. Ask your system administrator if you don't know.
+
+	$use_flock = "0";
+-> Use file locking 0=off, 1=on. The script should normally work when File Locking is turned off.
+
+This part is done.
+
+
+3b. Defining the Perl-path on the server
+----------------------------------------
+Open the files admin.cgi, newuser.cgi, tgp.cgi and refer.cgi in a normal text-editor. The first line is :
+#!/usr/bin/perl
+This should direct to the location of Perl on the server the scripts run on. The 'standard' path which we used should normally work. But on some systems, another path is required for the scripts to work properly. Again I refer to your system's FAQ or to your System Administrator.
+
+
+4. Editing the submit.htm file
+------------------------------
+Every gallery that gets into your TGP will be submitted through the submit.htm file. As many webmasters will read this document, you may wish to add your own text and links. Change everything you want to, but leave the form as it is (otherwise the script will crash...)
+
+In the submit.htm file, you will find the next line :
+<FORM ACTION="http://my.domain.com/cgi-bin/newuser.cgi" METHOD=POST>
+
+Here you MUST change the address into the right one
+(e.g. http://www.thebigtest.com/cgi-bin/tgp/newuser.cgi), pointing to the newuser.cgi file you will upload to your server in the next step.
+
+You can also change the Categories here. Just see the F.A.Q. index (step 7 of this manual).
+
+
+5. Uploading this stuff to your server
+--------------------------------------
+Herefore you should use a good FTP program like WS_FTP or so. Log in to your server and then :
+() go to your cgi-bin directory. Once you're in, create a directory in which you will store
+   the script files. Let's say that you create the directory cgi-bin/tgp (you should create
+   the directory that you defined in the vars.pl file under step 3).
+() now change the permissions for this directory. Set them to 777 (all access for anyone :
+   read, write and execute)
+() upload the files header.txt, footer.txt, the 4 cgi-files and the vars.pl into that
+   directory. This MUST be done in ASCII.
+() chmod those files to 755 (disable last 2 parties to write)
+
+() go to your html-directory (pub ?), and again create a directory there that will store the
+   generated html-files. Make sure you create the directory you defined in vars.pl under (3).
+() change the permissions of that new directory to 777 - VERY important
+() upload the file submit.htm (adapted under step 4) to THAT directory and no other one
+
+Now point your web browser to the admin.cgi file you just uploaded (something like http://www.yourdomain.com/cgi-bin/tgp/admin.cgi). It will ask you for a password (*). The first time you use the script, the password will be 'purple', so enter it. Once you're in the administration section, you should change that password and... make sure you'll never forget it. Enter the variables and press the Save button. You can always come back, enter your new password and change the variables again.
+(*) If you see nothing at all or an error message, something must be wrong with the files you uploaded. Check the variables in the vars.pl file, check the location of Perl on top of the cgi-files, make sure you uploaded the 4 cgi and 1 pl file(s) in ASCII mode and you changed permissions to 757. Check if you changed the permission of the directory you made in your cgi-bin and html-dir to 777. You can always try to point your browser to the newuser.cgi file you uploaded, which can tell you more about the problem.
+
+It should be OK now. Just try going to the submit.htm file from your web-browser. You should use the URL http://www.myserver.com/createddirectory/submit.htm (with the right names...). Fill in the submission form with the data of one of your own thumbnail galleries and press the submission button. If the script returns a screen with your submission's info, everything should be working. If not, it will tell you what's wrong. Just use the link you get to send a hit to the script. You should see the auto-generated tgp.html-file.
+
+
+6. Some good hints to get started
+---------------------------------
+To get massive traffic with a TGP, you need to have submissions. Which you don't have at this point... So convince other gallery owners to submit their galleries using these tricks :
+() build a hit counter on your TGP (using the footer.txt file) and make sure it indicates
+   a good traffic (feed it from your other sites). Webmasters will be encouraged to post
+   their own galleries. Therefore, try to send as much traffic as possible to your TGP in the
+   beginning. Webmasters won't post to a TGP with only 500 hits per day...
+() submit your own galleries and convince your friends to submit theirs too. Because there's
+   no stranger who will submit his/her gallery to an empty TGP. They'll think that something's
+   wrong - a feeling which you can attack by submitting your own galleries.
+() promote your TGP at some webmaster chatboards (don't chat). A good multi-submission is
+   located at http://pornoelite.com/webmasters.html (or so).
+() get your TGP listed in webmaster resource sites like YNot
+() trade surfer- and submission links. Use your submit.htm, header.txt and footer.txt files
+   for this purpose.
+() ... use your magination ...
+
+7. F.A.Q.
+---------
+Q : After installing, there are no galleries in my TGP !?
+A : Of course not - people still have to submit theirs... You find some hints under step 6.
+    After submitting, it takes 24 hours for the galleries to be included IF they send the number
+    of hits you require.
+
+Q : After installing and submitting a gallery, no tgp.html shows up.
+A : This is 99.99% chance due to a wrong path in $path_to_tgp (vars.pl). Contact your server
+    administrator, he knows the path. Or log in through telnet to find the path.
+
+Q : How does the script rank the incoming traffic ?
+A : Ranks are calculated using the average traffic that was sent in during the days after
+    a gallery was submitted. So if a gallery is included for 4 days and sent 10 hits the first
+    day, 20 the second, 30 the third and 40 the fourth, it will get 25 credits on the fifth
+    day.
+
+Q : What about the Webmaster Referral Programme ?
+A : This is a unique invention on the Web... by PurpleStreets.com
+    The trick is to reward webmasters who send you other webmasters, so new submissions, thus
+    traffic. You can choose how many bonus credits you will reward your good souls. This will
+    encourage them to refer other webmasters to your TGP, so that they climb the lists faster
+    than by just sending traffic. Remember that new submissions are your source of traffic...
+
+Q : How can I add or change the Categories of the galleries ?
+A : I could have made this quite difficult, but I didn't. To add or change the Categories, you
+    should just adapt the submit.htm file. There you find a pulldown menu (called 'categ')
+    with the categories in. Some examples :
+    <OPTION VALUE="TEENS....">Teens
+    <OPTION VALUE="BABES....">Babes
+    You see that the Value of the options is always 9 CHARACTERS long (this is to build a
+    nice lay-out on your TGP-index). So if you add categories, always fill the empty spaces
+    of the 9 characters strings USING DOTS. So, for example, new values could be
+    'HARDCORE.', 'SISTERS..', 'PICS.....', ...
+
+Q : Can I change the copyright or the automatic links that credit the author of this script ?
+A : Nope. Only if you're very brave, have too much money and hate freedom, you should try.
+    Because, unlike many claim, this script is REALLY copyrighted. This means that I  have
+    a great weapon to catch fraudulent people and get rich faster than ever before. :-)
+
+Q : Can I change the source code of the script ?
+A : As long as the copyright and the links remain intact, you can. But I ask you to send me
+    a copy of the version you created. After all, it's my work and maybe I could use it for
+    future releases.
+
+
+8. Goodbye, Good luck and... enjoy the Hits
+-------------------------------------------
+Thanks again for choosing this script. You won't complain.
+If you have anything to tell me, you can always send a mail to toptgp_script@purplestreets.com
+Also, if you find any bugs in the script or this manual, please let me know so that I can fix them.
+
+Have a great time,
+
+Mango
+PurpleStreets.com
+
+
+
+
+ADDENDUM : Updates and New Versions
+-----------------------------------
+
+08/11/99 - Corrected small password bug
+08/11/99 - Changed the html-layout of the newuser.cgi-output
+08/11/99 - Added the Statistics Report to the Admin Section
+08/08/99 - Changed newuser.cgi so that reads the setup.txt file before running
+08/08/99 - Added the Online Administration Section. Version 2.00 was born.
+08/06/99 - Added a forgotten $-sign to a variable in the newuser.cgi file. This resulted in
+           the confirmation mail that was not sent
+08/06/99 - Adapted the copyright-notice, according to legal demands
+08/06/99 - Corrected 2 typo's in tgp.cgi and refer.cgi
+08/05/99 - Modified this installation manual for use with both TT and other fonts
+
+
+
+------
+toptgp_script@purplestreets.com
+http://purplestreets.com/script
+------
+Script and Manual (c) Mango, PurpleStreets.com, 1999
