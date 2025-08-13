@@ -1,0 +1,23 @@
+.mXPtable {
+	border-top: 1px solid #93A070;
+	border-left: 1px solid #93A070;
+	border-right: 1px solid #93A070;
+	border-bottom: 1px solid #93A070;
+	background: white;
+}
+.mXPmouto {
+        color: #ffffff;
+	background: #435889;
+}
+.a0{
+	font-family: Tahoma, MS Sans Serif;
+}
+.a1{
+	font-family: Tahoma, MS Sans Serif;
+	background: #435889;
+}
+.cell{
+	color: #000000;
+	font-family: Tahoma, MS Sans Serif;
+
+}
