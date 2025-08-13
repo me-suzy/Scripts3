@@ -1,0 +1,74 @@
+<?
+
+#///////////////////////////////////////////////////////
+#//  COPYRIGHT 2002 PHPAuction.org ALL RIGHTS RESERVED//
+#//  For Source code for the GPL version go to        //  
+#//  http://phpauction.org and download               //
+#//  Supplied by CyKuH [WTN]                          //
+#///////////////////////////////////////////////////////
+
+?>
+
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--
+
+function submitlogin ()
+
+{
+
+	document.user_login.submit ();
+
+}
+
+//-->
+
+</SCRIPT>
+
+<TABLE WIDTH="765" CELLPADDING=0 CELLSPACING=0 BGCOLOR="#FFFFFF" BORDER=0>
+
+<TR>
+
+<TD>
+
+<BR>
+
+<CENTER>
+				<B><? print $tlt_font.$MSG_471." ( ".$TPL_active." )"; ?></B> 
+				</font><? print $std_font; ?><a href="./help.php?topic=Auction Watch">Help</a>
+				<BR>
+				<TABLE WIDTH="50%" ALIGN="CENTER" CELLSPACING="0" CELLPADDING="1" BORDER="0">
+					<TR> 
+						<TD><? echo $TPL_auction_watch; ?>
+			<FORM ACTION=auction_watch.php?insert=true METHOD=POST><TR><TD>
+			<INPUT TYPE=text SIZE=30 NAME=add></TD><TD ALIGN=RIGHT>
+		      <INPUT TYPE=IMAGE SRC="./images/insert.gif" BORDER='0'>
+			</TD></TR></FORM>
+						</TD></TR><TD>
+						<CENTER><BR>
+						</TD>
+					</TR>
+					<TR><TD></TD><TD>
+<? 		// Check that keyword is entered when for is submitted
+		if (($action) && (!$keyword)) { print $err_font.$ERR_062; }
+
+		// Show to user that data is OK.
+		if (($action) && (!$keyword=="")) { print $std_font.$TPL_ok; } 
+?>
+				</TD></TR>
+				</TABLE>
+				<BR>
+          <BR>
+
+
+</CENTER>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+
