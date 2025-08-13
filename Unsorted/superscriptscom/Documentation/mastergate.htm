@@ -1,0 +1,404 @@
+<html>
+
+<head>
+<title>Documentation Mastergate</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="description" content="Need to charge admission to your site? Mastergate provides TOTAL security for pay sites. It is IMPOSSIBLE to bypass the security gate by simply typing in a URL. Mastergate is simply the most comprehensive pay site billing and security system available. No other software package offers such advanced security and administration power. Processes your billing information and automates your password database on the SAME server (either SSL or non SSL). Multiple error checking and anonymous email filtering. Clients are forced to provide a VALID, traceable email address to obtain access to your pay site. Able to interface to online merchant banks for REAL TIME VALIDATION or send invoices through secure or non-secure servers ">
+<meta NAME="keywords" CONTENT="Mastergate, cgi, Web Security, htaccess, Password Automation, Ibill, Adult Security, Pay Site, htpasswd, Password Protection, Internet Billing Company CGI, CGI Scripts, SSL, Security Gateway, Gateway">
+<meta name="robots" content="index">
+<meta name="revisit-after" Content="14 days">
+
+<meta name="Microsoft Border" content="t, default"></head>
+
+<body style="background-image: url('../demo/superclix/background.gif')"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+
+<table border="0" width="33%" cellpadding="0">
+  <tr>
+    <td width="50%"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/" ONCLICK="parent.f=0"><img src="../pix/banners/miniprizm.gif" alt="cgi scripts" border="0" WIDTH="305" HEIGHT="59"></a></font></td>
+    <td width="50%" bgcolor="#FFFFFF"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/ads/rotate.cgi?url=&amp;user=" target="new" ONCLICK="parent.f=0"><img src="http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user=" border="0" width="468" height="60"></a></font></td>
+  </tr>
+</table>
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="16%"><p align="center"><a href="../dsstoday/index.html"><font color="#000000" face="Arial"><img src="../pix/main/news.jpg" alt="CGI NEWS" align="left" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="16%"><p align="center"><a href="../scripts/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/scripts.jpg" alt="CGI Scripts" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../mastergate/index.html"><font color="#000000" face="Arial"><img src="../pix/main/access.jpg" alt="Access The CGI Archive" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../contact.html"><font color="#000000" face="Arial"><img src="../pix/main/contact.jpg" alt="Contact Superscripts" WIDTH="104" HEIGHT="68"></font></a></td>
+    <td width="17%"><p align="center"><a href="../support.html"><font color="#000000" face="Arial"><img src="../pix/main/dox.jpg" alt="CGI Documentation" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../download/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/download.jpg" alt="Download CGI Scripts Here" align="right" WIDTH="105" HEIGHT="65"></font></a></td>
+  </tr>
+  <tr>
+    <td width="16%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/dsstoday/index.html" style="color: rgb(255,255,255)"><strong>News</strong></a></font></td>
+    <td width="16%" bgcolor="#000000"><p align="center"><a href="/scripts/" style="color: rgb(255,255,255)"><font face="Arial" color="#FFFFFF"><strong>CGI Scripts</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><a style="color: rgb(255,255,255)" href="../mastergate/index.html"><font face="Arial" color="#FFFFFF"><strong>Become A Member</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../contact.html"><strong>Contact
+    Us</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../support.html"><strong>Support</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/download/index.shtml" style="color: rgb(255,255,255)"><strong>Download
+    Area</strong></a></font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+
+<table border="0" width="75%" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <p><big><big><font face="Arial" color="#FF0000"><strong>Documentation<br>
+      </strong></font><font face="Arial" color="#000000">MASTERGATE:&nbsp; V6.0</font></big></big><img src="../pix/animated/updated.gif" alt="updated.gif (1754 bytes)" WIDTH="44" HEIGHT="12"></p>
+      <p><img src="../pix/logos/authnet.gif" alt="authnet.gif (6418 bytes)" WIDTH="396" HEIGHT="86"></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Copyright 2001 Psybercore, Inc. - All Rights
+        Reserved. </small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">Selling redistributing or modifying any or
+        all of the code for this program without prior written consent is expressly forbidden. You
+        must obtain written permission before redistributing this software over the Internet or in
+        any other medium. In all cases copyright and header information must remain intact.</font></small></p>
+      </blockquote>
+      <hr align="left">
+      <h1><small><font face="Arial" color="#000000"><small>System Requirements</small></font></small></h1>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Customizable to work with all operating
+          systems</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Customizable to work with all web servers</small></font></li>
+        <li><font face="Arial" color="#000000"><small>If you are using NT you must have <a href="http://www.dafweb.com/daf30">DAF</a> installed</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Perl 5</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Sendmail</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Requires <a href="../online.html">online
+          processor for real-time validation</a></small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Preliminaries</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Determine the path to PERL 5 on your web
+          server host.&nbsp; Note that some web hosting companies run both PERL 4 and PERL 5.&nbsp;
+          Make ABSOLUTELY sure you are not setting this up under PERL 4.&nbsp; Ask your
+          administrator if you are not sure. </small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>If you need to review or learn the basics of
+          CGI and Perl check out the <a href="../tutorial/index.html">superscripts tutorial
+          archives.</a></small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small><a href="http://www.superscripts.com/download/">Download</a> the tarfile for this program and
+          save it to your desktop.</small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Unpack the tar archive on your desktop using a
+          program that unpacks UNIX TAR ARCHIVES. If you don't have such a program then download
+          WINZIP FREE from <a HREF="http://www.shareware.com/">SHAREWARE.COM</a>.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>After you have unpacked the TAR archive you
+          will have a collection of folders and files on your desktop.&nbsp; Now you have to do some
+          basic editing of each of these files (or at least some of them).&nbsp; Use a text editor
+          such as wordpad, notepad, BBEdit, simpletext, or teachtext to edit the files.&nbsp; These
+          are NOT WORD PROCESSOR DOCUMENTS they are just simple TEXT files so don't save them as
+          word processor documents or save them with extentions such as .txt or they will NOT WORK.
+          &nbsp; Note that there may be a some files inside of folders which are &quot;blank&quot;.
+          &nbsp; This is normal.</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Preparing the CGI scripts</small></font></h2>
+      <blockquote>
+        <h2><small><font face="Arial" color="#FF0000"><small>Define Path To PERL 5</small></font></small></h2>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>The first step is to open up each and every
+        file that has a .cgi extention and edit line number one of each script.&nbsp; Each of the
+        cgi scripts is written in perl 5. For your scripts to run they must know where perl 5 is
+        installed on your web server. The path to perl 5 is defined to a cgi script in the first
+        line of the file. In each of the cgi scripts the first line of code looks something like
+        this: </small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#FF0000"><small>#!/usr/bin/perl</small></font></p>
+        </blockquote>
+        <p><font face="Arial" color="#000000"><small>If the path to perl 5 on your web server is
+        different from /usr/bin/perl you must edit the first line of each cgi script to reflect
+        the correct path. If the path to perl 5 is the same no changes are necessary. If you do
+        not know the path to perl 5 ask the webmaster or system administrator at your server site.
+        &nbsp; </small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big><strong>Configure the .cgi files </strong></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><big>configure.cgi (for accountcreate.cgi and admin
+        tools)</big></font></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Below are the variables used for mastergate
+        in ALL of the other cgi scripts.&nbsp; All of the other cgi programs USE configure.cgi to
+        figure out where certain things are.&nbsp; The configure.cgi script located inside the
+        cgibin when you unpack is to be placed inside the same directory as accountcreate.cgi and
+        the rest of the admin tools.&nbsp; If you are using IBILL basic TP or AUTHORIZE NET there
+        is a SECOND configure.cgi script that you will use which is located in a respective folder
+        (authorizenet or ibill basic tp).&nbsp; The second configure.cgi script is described later
+        in this documentation.&nbsp; If you are using syntax verification you do not need any
+        other configure.cgi script except for this one.</small></font></p>
+        <blockquote>
+          <ul>
+            <li><small><font face="Arial" color="#FF0000">$date_command = &quot;/path/to/date&quot;;</font><font face="Arial"><font color="#FF0000">&nbsp; </font>Path to the date function on your
+              webserver</font></small></li>
+            <li><small><font face="Arial" color="#FF0000">$sendmail= &quot;/path/to/sendmail&quot;;
+              &nbsp; </font><font face="Arial" color="#000000">This is the path to sendmail on your
+              webserver</font></small></li>
+            <li><small><font face="Arial" color="#FF0000">$databasefile =
+              &quot;/path/to/cgi-bin/mastergate/database&quot;;&nbsp; </font><font face="Arial" color="#000000">This is the path to the database file</font></small></li>
+            <li><small><font face="Arial" color="#FF0000">$passwordfile =
+              &quot;/path/to/cgi-bin/mastergate/passwords&quot;;&nbsp; </font><font face="Arial" color="#000000">This is the path to the passwords file</font></small></li>
+            <li><small><font face="Arial" color="#FF0000">$logfile =
+              &quot;/path/to/cgi-bin/mastergate/log&quot;;&nbsp; </font><font face="Arial" color="#000000">This is the path to the log file</font></small></li>
+            <li><small><font face="Arial" color="#FF0000">$localurl = &quot;webserverdomain.com&quot;;</font><font face="Arial"><font color="#FF0000">&nbsp; </font>Your domain name</font></small></li>
+            <li><small><font face="Arial" color="#FF0000">$remoteurl =
+              &quot;secureserverdomain.com&quot;;</font><font face="Arial"><font color="#FF0000">&nbsp; </font>Domain
+              name of your secure server if you are using one</font></small></li>
+            <li><small><font face="Arial" color="#FF0000">$adminemail = &quot;you\@yourdomain.com&quot;;</font><font face="Arial"><font color="#FF0000">&nbsp; </font>Your email address (MUST INCLUDE
+              BACKSLASH!)</font></small></li>
+            <li><small><font face="Arial" color="#FF0000">$accountcreatecgi =
+              &quot;http://www.yourdomain.com/cgi-bin/mastergate/accountcreate.cgi&quot;;</font><font face="Arial"><font color="#FF0000"> </font>URL to accountcreate.cgi</font></small></li>
+            <li><small><font face="Arial" color="#FF0000">$modifyurl =
+              &quot;http://www.yourdomain.com/cgi-bin/mastergate/modify.cgi&quot;;</font><font face="Arial"><font color="#FF0000"> </font>URL to modify.cgi</font></small></li>
+            <li><small><font face="Arial" color="#FF0000">$deleteurl =
+              &quot;http://www.yourdomain.com/cgi-bin/mastergate/delete.cgi&quot;;</font><font face="Arial"><font color="#FF0000"> </font>URL to delete.cgi</font></small></li>
+          </ul>
+        </blockquote>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big>Interfacing to Authorize Net (optional)</big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>If you are planning to use this with
+        AUTHORIZE NET you will need to use the mastergate.cgi, configure.cgi and the index.html
+        page plus add the the badcard.html page that are included in the authorize.net folder.
+        &nbsp; The index.html page is the order form you will use to process orders, the cgi files
+        should go in a SEPERATE directory than the rest of the cgifiles associated with
+        accountcreate.cgi and unpacked in the cgibin.&nbsp; These may also reside on a remote
+        secure server.&nbsp;&nbsp; There are some new variables to deal with plus you have to set
+        amounts for the transaction inside of configure.cgi.</small></font><ul>
+          <li><font face="Arial" color="#FF0000" size="2">$date_command =
+            &quot;/path/to/date&quot;;&nbsp; </font><small><font face="Arial">Path to the date
+            function on your webserver</font></small></li>
+          <li><font face="Arial" color="#FF0000" size="2">$mailprog = '/var/qmail/bin/sendmail';&nbsp;
+            </font><font face="Arial" color="#000000"><small>This is the path to sendmail on your
+            webserver</small></font></li>
+          <li><font face="Arial" color="#FF0000" size="2">$adminemail =
+            &quot;info\@yourdomain.com&quot;;&nbsp; </font><small><font face="Arial">Your email
+            address (MUST INCLUDE BACKSLASH!)</font></small></li>
+          <li><font face="Arial" color="#FF0000" size="2">$accountcreatecgi =
+            &quot;http://www.yourdomain.com/cgi-bin/mastergate/accountcreate.cgi&quot;;&nbsp; </font><small><font face="Arial">URL to accountcreate.cgi</font></small></li>
+          <li><font face="Arial" color="#FF0000" size="2">$badcard =
+            &quot;/path/to/badcard.html&quot;;&nbsp; </font><small><font face="Arial">Path to
+            badcard.html</font></small></li>
+          <li><font face="Arial" color="#FF0000" size="2">$referer = &quot;yourdomain.com&quot;; </font><small><font face="Arial">Your domain name</font></small></li>
+          <li><font face="Arial" color="#FF0000" size="2">$remote =
+            &quot;www.authorize.net&quot;;&nbsp; </font><small><font face="Arial">do not change</font></small></li>
+          <li><font face="Arial" color="#FF0000" size="2">$script =
+            &quot;/scripts/authnet25/AuthRequest.asp&quot;;&nbsp; </font><small><font face="Arial">do
+            not change</font></small></li>
+          <li><font face="Arial" color="#FF0000" size="2">$port = &quot;80&quot;; </font><small><font face="Arial">do not change</font></small></li>
+          <li><font face="Arial" color="#FF0000" size="2">$LOGIN=&quot;provided by
+            authorize.net&quot;; </font><small><font face="Arial">see below</font></small></li>
+          <li><font face="Arial" color="#FF0000" size="2">$PASSWORD=&quot;provided by
+            authorize.net&quot;; </font><small><font face="Arial">see below</font></small></li>
+          <li><font face="Arial" color="#FF0000" size="2">$DESCRIPTION = &quot;whatever&quot;; </font><small><font face="Arial">see below</font></small></li>
+          <li><font face="Arial" color="#FF0000" size="2">$TYPE = &quot;PA&quot;; </font><small><font face="Arial">see below</font></small></li>
+          <li><font face="Arial" color="#FF0000" size="2">$AUTHCODE = &quot;whatever&quot;; </font><small><font face="Arial">see below</font></small></li>
+          <li><font face="Arial" color="#FF0000" size="2">$EMAILCUSTOMER = &quot;TRUE&quot;; </font><small><font face="Arial">see below</font></small></li>
+          <li><font face="Arial" color="#FF0000" size="2">$ECHODATA = &quot;TRUE&quot;; </font><small><font face="Arial">see below</font></small></li>
+          <li><font face="Arial" color="#FF0000" size="2">$REJECTAVSMISMATCH = &quot;TRUE&quot;; </font><small><font face="Arial">see below</font></small></li>
+          <li><font face="Arial" color="#FF0000" size="2">$TESTREQUEST = &quot;TRUE&quot;; </font><small><font face="Arial">see below</font></small></li>
+          <li><font face="Arial" color="#FF0000" size="2">$DELIMCHARACTER = &quot;|&quot;; </font><small><font face="Arial">see below</font></small></li>
+          <li><font face="Arial" color="#FF0000" size="2">$ENCAPSULATE = &quot;FALSE&quot;; </font><small><font face="Arial">see below</font></small></li>
+        </ul>
+      </blockquote>
+      <blockquote>
+        <blockquote>
+          <p><small><font face="Arial">LOGIN <br>
+          Required for transactions other than test transactions.&nbsp; This is the assigned
+          Authorize.Net login id. </font></small></p>
+          <p><small><font face="Arial">PASSWORD <br>
+          Required for Credit or Post Authorization transactions. For details on the use of
+          transaction types, see the Authorize.Net User's Guide. </font></small></p>
+          <p><small><font face="Arial">TYPE <br>
+          May be one of: NA (means Normal Authorization) <br>
+          &nbsp;AO (means Authorization Only) <br>
+          &nbsp;CR (means Credit) <br>
+          &nbsp;PA (means Post Authorization) </font></small></p>
+          <p><small><font face="Arial">EMAILCUSTOMER<br>
+          Set this value to &quot;TRUE&quot; if you want an email sent to the Buyer's E-mail(the
+          value specified in the EMAIL field) notifying him of the transaction details.(The fields
+          INVOICE AMOUNT METHOD DESCRIPTION CUSTID NAME ADDRESS CITY STATE ZIP COUNTRY PHONE FAX
+          EMAIL and their values will be included in the email)</font></small></p>
+          <p><small><font face="Arial">ECHODATA <br>
+          If this field is not provided with a value of &quot;TRUE&quot;, only the first 5 RESPONSE
+          fields (see below) will be returned, otherwise all allowed fields provided in the request
+          will be returned in the response. </font></small></p>
+          <p><small><font face="Arial">REJECTAVSMISMATCH <br>
+          If this field is not provided with a value of &quot;TRUE&quot;, the transaction will be
+          accepted if it is authorized by FDC, even if the AVS response is a mismatch. &nbsp;
+          Otherwise, the transaction must pass the &quot;AVS test&quot; with either a matching zip
+          code, address, or both. </font></small></p>
+          <p><small><font face="Arial">TESTREQUEST <br>
+          If this field is provided with a value of &quot;TRUE&quot; the script will perform all
+          validation functions except actually authorizing the transaction and storing it in the
+          merchant's batch, regardless of whether the merchant's configuration is set to LIVE or
+          TEST mode. In other words, the response would be equivalent to the merchant being in TEST
+          mode </font></small></p>
+          <p><small><font face="Arial">DELIMCHARACTER <br>
+          If you want the RESPONSE FIELDS delimited by something other than the default (comma),
+          provide the DELIMCHARACTER here. </font></small></p>
+          <p><small><font face="Arial">ENCAPSULATE <br>
+          If you want the response fields encapsulated in double quotes (ex. &quot;response
+          data&quot;), provide this request field set to &quot;TRUE&quot;; otherwise, the response
+          fields will not be encapsulated. </font></small></p>
+        </blockquote>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big>Edit mastergate.cgi (Interfacing to IBILL Basic
+      TP - optional)</big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>If you are doing real-time validation through
+        IBILL Basic TP you have to do a little editing inside the replacement mastergate.cgi file
+        located inside the onlinetools directory.&nbsp; You will be using this mastergate.cgi file
+        in place of the default mastergate.cgi file.&nbsp; You dont need to replace the
+        configure.cgi file but a copy is provided inside the ibill.basic.tp folder for
+        convenience.</small></font><ul>
+          <li><small><font face="Arial" color="#000000">$remote = &quot;secure.logicom.com&quot;; </font></small></li>
+          <li><small><font face="Arial" color="#000000">$script =
+            &quot;/cgi-win/ccard/tpcard.exe?&quot;; </font></small></li>
+          <li><small><font face="Arial" color="#000000">$port = &quot;80&quot;; </font></small></li>
+        </ul>
+      </blockquote>
+      <h2><font face="Arial" color="#000000"><small>Upload your Edited files to your server</small></font></h2>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Create a directory inside your cgi-bin called
+        mastergate and upload all the non-html files here. The html files go in your webspace.
+        &nbsp; You should password protect the admin directory.</small></font></p>
+      </blockquote>
+      <h2><font face="Arial" color="#000000"><small>Set Your Script Permissions</small></font></h2>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>File access permissions must be set correctly
+        for this program to run. The table below lists the permissions of each file which are to
+        be set by the unix command (chmod) used to set the correct access permissions. You must
+        set the access permissions for each of these files.&nbsp; If you are using WS_FTP then
+        right click on the files located on your webserver.&nbsp; Then you will see a hidden menu
+        pop up.&nbsp; Click on CHMOD(UNIX).&nbsp; Then a box pops up with 9 checkboxes.&nbsp; </small></font></p>
+      </blockquote>
+      <div align="center"><center><table WIDTH="319" HEIGHT="67" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+        <tr>
+          <td WIDTH="188" HEIGHT="17" bgcolor="#000000"><p ALIGN="left"><font face="Arial" color="#FFFFFF"><strong>&nbsp;CHMOD 755</strong></font></td>
+          <td WIDTH="125" bgcolor="#000000"><p ALIGN="left"><font face="Arial" color="#FFFFFF"><strong>&nbsp;CHMOD
+          777</strong></font></td>
+        </tr>
+        <tr>
+          <td WIDTH="188" HEIGHT="41"><p ALIGN="left"><small><font face="Arial" color="#000000">accountcreate.cgi</font></small></p>
+          <p ALIGN="left"><small><font face="Arial" color="#000000">delete.cgi</font></small></p>
+          <p ALIGN="left"><small><font face="Arial" color="#000000">add.cgi</font></small></p>
+          <p ALIGN="left"><small><font face="Arial" color="#000000">mastergate.cgi</font></small></p>
+          <p ALIGN="left"><small><font face="Arial" color="#000000">expire.cgi</font></small></p>
+          <p><small><font face="Arial" color="#000000">modify.cgi</font></small></p>
+          <p><small><font face="Arial" color="#000000">search.cgi</font></small></p>
+          <p><small><font face="Arial" color="#000000">configure.cgi</font></small></p>
+          <p><small><font face="Arial" color="#000000">restore.cgi</font></small></td>
+          <td WIDTH="125"><p ALIGN="left"><small><font face="Arial" color="#000000">passwords</font></small></p>
+          <p ALIGN="left"><small><font face="Arial" color="#000000">database</font></small></p>
+          <p ALIGN="left"><small><font face="Arial" color="#000000">log</font></small></p>
+          <p ALIGN="left"><font face="Arial" color="#000000"><small>badcard.html (if used)</small></font></td>
+        </tr>
+      </table>
+      </center></div><p>&nbsp;</p>
+      <h2><font face="Arial" color="#000000"><small>Editing the HTML forms</small></font></h2>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">Edit the form actions in the admin
+        (index.html) and the order form (index.html) files to point to the correct urls of each
+        cgi file.&nbsp; You will also need to edit the MEMBERSHIP FIELD VALUES on your signup form</font></small></p>
+      </blockquote>
+      <blockquote>
+        <dl>
+          <dt><font face="Arial" color="#000000"><strong>MEMBERSHIP FIELD VALUES&nbsp; SYNTAX
+            VERIFICATION &amp; IBILL BASIC TP</strong></font></dt>
+        </dl>
+      </blockquote>
+      <blockquote>
+        <font size="1"><p></font><font face="Arial" color="#FF0000" size="2">&lt;select
+        name=&quot;membership&quot;&gt;</font><font size="2"></p>
+        <p></font><font face="Arial" size="2" color="#FF0000">&lt;option value=&quot;30&quot;&gt;1
+        Month - $20</font><font size="2"></p>
+        <p></font><font face="Arial" size="2" color="#FF0000">&lt;option
+        value=&quot;180&quot;&gt;6 Months - $100</font><font size="2"></p>
+        <p></font><font face="Arial" size="2" color="#FF0000">&lt;option
+        value=&quot;365&quot;&gt;1 Year - $150</font><font size="2"></p>
+        <p></font><font face="Arial" size="2" color="#FF0000">&lt;/select&gt;</font></p>
+      </blockquote>
+      <dl>
+        <dd><font face="Arial" color="#000000"><small>The VALUE equals the NUMBER OF DAYS this
+          account is valid for (30 days, 180 days, and 365 days in this example).&nbsp; The other
+          part (1 Month - $20) can say anything but the VALUE=&quot;&quot; MUST be a NUMBER.</small></font></dd>
+        <dt>&nbsp;</dt>
+        <blockquote>
+          <dl>
+            <dt><font face="Arial" color="#000000"><strong>MEMBERSHIP FIELD VALUES&nbsp; AUTHORIZE NET</strong></font></dt>
+          </dl>
+        </blockquote>
+        <blockquote>
+          <font size="1"><p></font><font face="Arial" size="2" color="#FF0000">&lt;select
+          name=&quot;membership&quot;&gt;</font><font size="2"></p>
+          <p></font><font face="Arial" size="2" color="#FF0000">&lt;option value=&quot;1&quot;&gt;1
+          Month - $</font><font size="2"><font color="#FF0000"><font face="Arial">9.95</font></font></p>
+          <p></font><font face="Arial" size="2" color="#FF0000">&lt;option value=&quot;2&quot;&gt;6
+          Months - $</font><font size="2"><font color="#FF0000"><font face="Arial">19.95</font></font></p>
+          <p></font><font face="Arial" size="2" color="#FF0000">&lt;option value=&quot;3&quot;&gt;1
+          Year - $</font><font size="2"><font color="#FF0000"><font face="Arial">29.95</font></font></p>
+          <p></font><font face="Arial" size="2" color="#FF0000">&lt;/select&gt;</font></p>
+        </blockquote>
+        <dl>
+          <dd><font face="Arial" color="#000000"><small>Set each membership option to a unique number.
+            &nbsp; Then go inside of the configure.cgi script and edit the following to reflect the $
+            per membership and the number of days ($expire) each membership is worth.</small></font></dd>
+        </dl>
+      </dl>
+      <blockquote>
+        <ul>
+          <li><font face="Arial" size="2" color="#FF0000">if ($MEMBERSHIP eq &quot;1&quot;){</font></li>
+          <li><font face="Arial" size="2" color="#FF0000">$EXPIRE = &quot;30&quot;;</font></li>
+          <li><font face="Arial" size="2" color="#FF0000">$AMOUNT = &quot;9.95&quot;;</font></li>
+          <li><font face="Arial" size="2" color="#FF0000">}</font></li>
+          <li><font face="Arial" size="2" color="#FF0000">if ($MEMBERSHIP eq &quot;2&quot;){</font></li>
+          <li><font face="Arial" size="2" color="#FF0000">$EXPIRE = &quot;60&quot;;</font></li>
+          <li><font face="Arial" size="2" color="#FF0000">$AMOUNT = &quot;19.95&quot;;</font></li>
+          <li><font face="Arial" size="2" color="#FF0000">}</font></li>
+          <li><font face="Arial" size="2" color="#FF0000">if ($MEMBERSHIP eq &quot;3&quot;){</font></li>
+          <li><font face="Arial" size="2" color="#FF0000">$EXPIRE = &quot;90&quot;;</font></li>
+          <li><font face="Arial" size="2" color="#FF0000">$AMOUNT = &quot;29.95&quot;;</font></li>
+          <li><font face="Arial" size="2" color="#FF0000">}</font></li>
+        </ul>
+      </blockquote>
+      <p><big><strong><font face="Arial" color="#000000">UPLOAD THE HTML FORMS</font></strong></big></p>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">When you have uploaded all of your HTML files
+        you should see...</font></small></p>
+        <p><font face="Arial" color="#FF0000"><small>http://www.yourdomain.com/mastergate/admin/index.html</small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#000000"><small>YOUR ADMIN PAGE</small></font></p>
+        </blockquote>
+        <p><font face="Arial" color="#FF0000"><small>http://www.yourdomain.com/mastergate/order.html</small></font></p>
+        <blockquote>
+          <p><small><font face="Arial" color="#000000">YOUR ORDER PAGE (or if you have SSL)...</font></small></p>
+        </blockquote>
+        <p><font face="Arial" color="#FF0000"><small>https://www.secureserver.com/order.html</small></font></p>
+        <p><small><font face="Arial" color="#000000">Finally you need to create one more directory
+        inside the mastergate folder called members.&nbsp; This is what you are selling passwords
+        to.</font></small></p>
+        <p><font face="Arial" color="#FF0000"><small>http://www.yourdomain.com/mastergate/members/</small></font></p>
+        <p><small><font face="Arial" color="#000000">The password control file for this directory
+        should map to the /cgi-bin/mastergate/passwords file</font></small></p>
+      </blockquote>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+
+<blockquote>
+  <p>&nbsp;</p>
+</blockquote>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
