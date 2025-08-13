@@ -1,0 +1,68 @@
+BODY, TD, TH, DL, UL, OL, P {    FONT-FAMILY: Verdana,Sans-serif; FONT-SIZE: 8pt;}
+body { margin: 0; padding: 0; }
+
+a:link
+{
+	color: #2F2C5B;
+	text-decoration: none;
+}
+
+a:visited
+{
+	color: #2F2C5B;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #5650A4;
+	text-decoration: none;
+}
+
+
+.title
+{
+	font-family: Arial, verdana, Geneva;
+	font-size: 20px;
+	font-weight: bold;
+	color: #000000;
+}
+
+
+.txt 
+{
+   font-family: Verdana, Arial, Helvetica, sans-serif; 
+   font-size:11px;
+   background-color: #FFFFFF;
+   border-style: solid;
+   border-width: 1px;
+}
+
+.submit 
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+   	font-size:11px;
+	border-style: solid;
+   	border-width: 1px;	
+}
+
+
+input,select,textarea 
+{
+	border:1 solid #000000;
+	color:#000000;
+	background-color:#FFFFFF;
+	font-family: Verdana, Arial, Geneva;
+	font-size: 10px;
+}
+ 
+
+h3 { font-size:11px; }
+
+
+p { }
+.warn { color: #FF0000; }	
+.star { color: #FF0000; }
+
+UL { list-style-type: square; }
+.red { color: #FF0000; }
