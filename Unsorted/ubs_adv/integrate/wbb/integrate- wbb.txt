@@ -1,0 +1,267 @@
+Ultima Battle System(Standard)- integration for a WBB
+
+Open and edit the current files.
+
+##in templates/thread_postbit.htm-
+
+Find-
+Posts: $posts[userposts] </font><br>$user_on_off
+
+Add below-
+<BR><BR>
+<font size=1 face="{font}">Level: $rpguser[userlevel]</font><BR>
+<font size=1 face="{font}">Hitpoints: $rpguser[userhitpoint]/$rpguser[hpmax]</font>
+<table width="100" border="0" cellspacing="0" cellpadding="0"> 
+<tr> 
+                    <tr> 
+                      <td height="13" width="3"><img src="images/img_left.gif" width="3" height="13"></td>
+                      <td height="13" width="94" background="images/img_backing.gif" align="left"><img src="images/img_fill.gif" width="$nhp" height="13"></td>
+                      <td height="13" width="3"><img src="images/img_right.gif" width="3" height="13"></td>
+                    </tr>
+</tr> 
+</table>
+<font size=1 face="{font}">Next level: $expleft</font>
+<table width="100" border="0" cellspacing="0" cellpadding="0"> 
+<tr> 
+                    <tr> 
+                      <td height="13" width="3"><img src="images/img_left.gif" width="3" height="13"></td>
+                      <td height="13" width="94" background="images/img_backing.gif" align="left"><img src="images/img_fill.gif" width="$nexp" height="13"></td>
+                      <td height="13" width="3"><img src="images/img_right.gif" width="3" height="13"></td>
+                    </tr>
+</tr> 
+</table>  <BR>
+
+Find-
+$signature
+
+Add after-
+<BR>
+Rpg Statistics:<BR>
+<table width="100" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+      <td>
+     <img src=" $rpguser[mypic]">
+      </td>
+   </tr>
+   <tr>
+      <td>
+      <font size=2 face="{font}">$rpguser[userbackground]</font>
+      </td>
+   </tr>
+</table>
+
+
+
+##in main.php
+
+Find-
+<?
+
+after it, add-
+$registerforrpg_stat = $db_zugriff->query_first("select isregisteredrpg from  bb".$n."_user_table where username='$user_name'");
+$registerforrpg = $registerforrpg_stat[isregisteredrpg];
+
+if($registerforrpg == 'no') {
+	$user = $db_zugriff->query_first("select * from  bb".$n."_user_table where username='$user_name'");
+
+	$db_zugriff->query("INSERT INTO db_users (username,userpassword,useremail,regemail,groupid,regdate,lastvisit,lastactivity,activation,useritem1,useritem2,useritem3,useritem4,useritem5,useritem6,useritem7,useritem8,userweapon,usershield,userarmour,usergloves,userhelmet,userboots,userextra1,userextra2,userroom) VALUES ('$user_name','$user[userpassword]','$user[useremail]','$user[useremail]','$user[groupid]','$time','$time','$time','1','Empty','Empty','Empty','Empty','Empty','Empty','Empty','Empty','Empty','Empty','Empty','Empty','Empty','Empty','Empty','useritem1','lobby')");
+	$userid = $db_zugriff->insert_id();
+	$db_zugriff->query("UPDATE bb".$n."_user_table SET isregisteredrpg='yes' WHERE username = '$user_name'");
+}
+
+
+##in thread.php
+
+Find-
+	eval ("\$thread_postbit .= \"".gettemplate("thread_postbit")."\";");
+
+Add before-
+	$level1_stat = $db_zugriff->query_first("select expneeded from db_levels where level='1'");
+	$level1 = $level1_stat[expneeded];
+	$level2_stat = $db_zugriff->query_first("select expneeded from db_levels where level='2'");
+	$level2 = $level2_stat[expneeded];
+	$level3_stat = $db_zugriff->query_first("select expneeded from db_levels where level='3'");
+	$level3 = $level3_stat[expneeded];
+	$level4_stat = $db_zugriff->query_first("select expneeded from db_levels where level='4'");
+	$level4 = $level4_stat[expneeded];
+	$level5_stat = $db_zugriff->query_first("select expneeded from db_levels where level='5'");
+	$level5 = $level5_stat[expneeded];
+	$level6_stat = $db_zugriff->query_first("select expneeded from db_levels where level='6'");
+	$level6 = $level6_stat[expneeded];
+	$level7_stat = $db_zugriff->query_first("select expneeded from db_levels where level='7'");
+	$level7 = $level7_stat[expneeded];
+	$level8_stat = $db_zugriff->query_first("select expneeded from db_levels where level='8'");
+	$level8 = $level8_stat[expneeded];
+	$level9_stat = $db_zugriff->query_first("select expneeded from db_levels where level='9'");
+	$level9 = $level9_stat[expneeded];
+	$level10_stat = $db_zugriff->query_first("select expneeded from db_levels where level='10'");
+	$level10 = $level10_stat[expneeded];
+	$level11_stat = $db_zugriff->query_first("select expneeded from db_levels where level='11'");
+	$level11 = $level11_stat[expneeded];
+	$level12_stat = $db_zugriff->query_first("select expneeded from db_levels where level='12'");
+	$level12 = $level12_stat[expneeded];
+	$level13_stat = $db_zugriff->query_first("select expneeded from db_levels where level='13'");
+	$level13 = $level13_stat[expneeded];
+	$level14_stat = $db_zugriff->query_first("select expneeded from db_levels where level='14'");
+	$level14 = $level14_stat[expneeded];
+	$level15_stat = $db_zugriff->query_first("select expneeded from db_levels where level='15'");
+	$level15 = $level15_stat[expneeded];
+	$level16_stat = $db_zugriff->query_first("select expneeded from db_levels where level='16'");
+	$level16 = $level16_stat[expneeded];
+	$level17_stat = $db_zugriff->query_first("select expneeded from db_levels where level='17'");
+	$level17 = $level17_stat[expneeded];
+	$level18_stat = $db_zugriff->query_first("select expneeded from db_levels where level='18'");
+	$level18 = $level18_stat[expneeded];
+	$level19_stat = $db_zugriff->query_first("select expneeded from db_levels where level='19'");
+	$level19 = $level19_stat[expneeded];
+	$level20_stat = $db_zugriff->query_first("select expneeded from db_levels where level='20'");
+	$level20 = $level20_stat[expneeded];
+	$level21_stat = $db_zugriff->query_first("select expneeded from db_levels where level='21'");
+	$level21 = $level21_stat[expneeded];
+	$level22_stat = $db_zugriff->query_first("select expneeded from db_levels where level='22'");
+	$level22 = $level22_stat[expneeded];
+	$level23_stat = $db_zugriff->query_first("select expneeded from db_levels where level='23'");
+	$level23 = $level23_stat[expneeded];
+	$level24_stat = $db_zugriff->query_first("select expneeded from db_levels where level='24'");
+	$level24 = $level24_stat[expneeded];
+	$level25_stat = $db_zugriff->query_first("select expneeded from db_levels where level='25'");
+	$level25 = $level25_stat[expneeded];
+	$level26_stat = $db_zugriff->query_first("select expneeded from db_levels where level='26'");
+	$level26 = $level26_stat[expneeded];
+	$level27_stat = $db_zugriff->query_first("select expneeded from db_levels where level='27'");
+	$level27 = $level27_stat[expneeded];
+	$level28_stat = $db_zugriff->query_first("select expneeded from db_levels where level='28'");
+	$level28 = $level28_stat[expneeded];
+	$level29_stat = $db_zugriff->query_first("select expneeded from db_levels where level='29'");
+	$level29 = $level29_stat[expneeded];
+	$level30_stat = $db_zugriff->query_first("select expneeded from db_levels where level='30'");
+	$level30 = $level30_stat[expneeded];
+
+	$rpguser = $db_zugriff->query_first("select * from db_users where username='$posts[username]'");
+
+	if($rpguser[userlevel] == 1) {
+		$nextlevel=$level2;
+	}
+
+	if($rpguser[userlevel] == 2) {
+		$nextlevel=$level3;
+	}
+
+	if($rpguser[userlevel] == 3) {
+		$nextlevel=$level4;
+	}
+
+	if($rpguser[userlevel] == 4) {
+		$nextlevel=$level5;
+	}
+
+	if($rpguser[userlevel] == 5) {
+		$nextlevel=$level6;
+	}
+
+	if($rpguser[userlevel] == 6) {
+		$nextlevel=$level7;
+	}
+
+	if($rpguser[userlevel] == 7) {
+		$nextlevel=$level8;
+	}
+
+	if($rpguser[userlevel] == 8) {
+		$nextlevel=$level9;
+	}
+
+	if($rpguser[userlevel] == 9) {
+		$nextlevel=$level10;
+	}
+
+	if($rpguser[userlevel] == 10) {
+		$nextlevel=$level11;
+	}
+
+	if($rpguser[userlevel] == 11) {
+		$nextlevel=$level12;
+	}
+
+	if($rpguser[userlevel] == 12) {
+		$nextlevel=$level13;
+	}
+
+	if($rpguser[userlevel] == 13) {
+		$nextlevel=$level14;
+	}
+
+	if($rpguser[userlevel] == 14) {
+		$nextlevel=$level15;
+	}
+
+	if($rpguser[userlevel] == 15) {
+		$nextlevel=$level16;
+	}
+
+	if($rpguser[userlevel] == 16) {
+		$nextlevel=$level17;
+	}
+
+	if($rpguser[userlevel] == 17) {
+		$nextlevel=$level18;
+	}
+
+	if($rpguser[userlevel] == 18) {
+		$nextlevel=$level19;
+	}
+
+	if($rpguser[userlevel] == 19) {
+		$nextlevel=$level20;
+	}
+
+	if($rpguser[userlevel] == 20) {
+		$nextlevel=$level21;
+	}
+
+	if($rpguser[userlevel] == 21) {
+		$nextlevel=$level22;
+	}
+
+	if($rpguser[userlevel] == 22) {
+		$nextlevel=$level23;
+	}
+
+	if($rpguser[userlevel] == 23) {
+		$nextlevel=$level24;
+	}
+
+	if($rpguser[userlevel] == 24) {
+		$nextlevel=$level25;
+	}
+
+	if($rpguser[userlevel] == 25) {
+		$nextlevel=$level26;
+	}
+
+	if($rpguser[userlevel] == 26) {
+		$nextlevel=$level27;
+	}
+
+	if($rpguser[userlevel] == 27) {
+		$nextlevel=$level28;
+	}
+
+	if($rpguser[userlevel] == 28) {
+		$nextlevel=$level29;
+	}
+
+	if($rpguser[userlevel] == 29) {
+		$nextlevel=$level30;
+	}
+
+	$rpguserlevel=$rpguser[userlevel];
+
+	$expleft=$nextlevel-$rpguserlevel;
+
+	$nexp=$rpguserlevel/$nextlevel*100;
+	$nhp=$rpguser[userhitpoint]/$rpguser[hpmax]*100;
+
+That's it for editing!
+
+Upload the integration files (located in the integration folder that you downloaded) into your FORUMS base folders.
