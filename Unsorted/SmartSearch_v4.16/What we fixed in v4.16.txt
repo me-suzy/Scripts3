@@ -1,0 +1,50 @@
+Listing removal problem fixed
+- go.cgi
+- admin_members.cgi
+
+Special characters problems (quotation marks in particular)
+- accounts_manage.cgi
+- admin_summary.cgi
+- listings.cgi
+- admin_members.cgi
+
+Affiliates don't receive percentage of referral's deposit
+- functions.cgi
+- affiliate.cgi
+- payment.cgi
+
+Rebuild from admin.cgi clears 'misc' directory
+- admin_misc.cgi
+
+Admin affiliates stats problem
+- admin_finance.cgi
+
+Free listings problems
+- listings.cgi
+- admin_members.cgi
+- admin_summary.cgi
+
+Catch-all listings don't show up after "previous" link
+- smartsearch.cgi
+
+
+
+Added:
+
+Minimum bid automatically set on add screen
+- accounts_manage.cgi
+
+Added "activity level" setting to rebuild.pl and update.pl to control use
+of server resources with many users/listings
+- rebuild.pl
+- update.pl
+
+Secure URL (https) also accepted in listings
+- accounts_manage.cgi
+- include.cgi
+
+Member name on approval screen now active link
+- accounts_summary.cgi
+
+Listings displayed alphabetically according to keyword in accounts.cgi
+- accounts_manage.cgi
