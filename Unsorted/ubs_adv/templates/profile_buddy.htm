@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>$master_board_name - Edit Buddy List</title>
+$headinclude
+</head>
+
+<body bgcolor="{pagebgcolor}" text="{fontcolorfirst}"{hgpicture}{bgproperties} id="bg">
+        $header
+                <tr bgcolor="{tableb}" id="tableb">
+			<td><table cellpadding=0 cellspacing=0 border=0 width="100%">
+				<tr>
+					<td><font face="{font}" size=1><b><a href="main.php?styleid=$styleid$session" class="link">$master_board_name</a> » <a href="profile.php?boardid=$boardid&styleid=$styleid$session" class="link">Control Panel of $user_name</a> » Buddy List</b></font></td>
+					<td align="right"><font face="{font}" size=1><b>$navibar_hello</b></font></td>
+				</tr>
+			</table></td>
+		</tr>
+		</table><br>
+                <table border=0 bgcolor="{tablebordercolor}" cellpadding=4 cellspacing=1 width=100%>
+                        <tr bgcolor="{tablea}" id="title">
+                                <TD><FONT face="{font}" size=2 color="{fontcolorsecond}"><B>Buddy List</B></font></td>
+                        </tr>
+                        <tr bgcolor="{tablec}" id="tablec">
+                                <td><table width="100%">
+                                        <tr>
+                                        <td><table border="0" cellpadding="0" cellspacing="0" width="100"><tr><td bgcolor="{pagebgcolor}">
+                                                <table width="100%" cellpadding=2 cellspacing=1 border=0 bgcolor="{tablebordercolor}">
+                                                        <tr bgcolor="{tablea}" id="title">
+                                                                <td align="center" nowrap><FONT face="{font}" size=1 color="{fontcolorsecond}"><B>Buddy List</B></font></td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td align="center" bgcolor="{tableb}" id="tableb" width="100%"><table width="100%" border=0 cellpadding=2 cellspacing=0>
+                                                                        <tr>
+                                                                                <td width="50%" valign="middle"><hr></td>
+                                                                                <td nowrap valign="middle">&nbsp;<FONT face="{font}" size=1><b>Online</b></font>&nbsp;</td>
+                                                                                <td width="50%" valign="middle"><hr></td>
+                                                                        </tr>
+                                                                </table>
+                                                                <font face="{font}" size=1><b>$online</b></font>
+                                                                <table width="100%" border=0 cellpadding=2 cellspacing=0>
+                                                                        <tr>
+                                                                                <td width="50%" valign="middle"><hr></td>
+                                                                                <td nowrap valign="middle">&nbsp;<FONT face="{font}" size=1><b>Offline</b></font>&nbsp;</td>
+                                                                                <td width="50%" valign="middle"><hr></td>
+                                                                        </tr>
+                                                                </table>
+                                                                <font face="{font}" size=1><b>$offline</b></font></td>
+                                                        </tr>
+                                                </table>
+                                        </td></tr></table></td>
+                                        <td align="left"><FORM ACTION="profile.php" METHOD="POST"><table border=0 cellpadding=4 cellspacing=1 width="450" bgcolor="{tablebordercolor}">
+						<tr bgcolor="{tablea}" id="title">
+							<TD><FONT face="{font}" size=2  color="{fontcolorsecond}"><B>Edit Buddy List</B></font></td>
+						</tr>
+						<tr bgcolor="{tableb}" id="tableb">
+							<td nowrap align="center"><INPUT class="input" TYPE="TEXT" NAME="buddylist" size="40"> <INPUT class="input" TYPE="SUBMIT" NAME="Submit" VALUE="Update"></td>
+						</tr>
+						<tr bgcolor="{tablec}" id="tablec">
+							<td><FONT face="{font}" size=1>Add/Delete all usernames you wish to have on/off your buddy list. Please seperate multiple usernames with ", " . A complete members list can you find <a href="members.php?mode=view&boardid=$boardid$session&by=userposts&order=DESC">here</a>.</font></td>
+						</tr>
+					</table>
+					$session_post
+					<input type="hidden" name="mode" value="$mode">
+					<INPUT TYPE="HIDDEN" NAME="boardid" VALUE="$boardid">
+					<INPUT TYPE="HIDDEN" NAME="send" VALUE="send">
+					</form></td></tr></table></td>
+                        </tr>
+                </table>
+                <table width="100%">
+                        <tr>
+                                <td align="right">$board_jump</td>
+                        </tr>
+                </table>
+        </div>
+        $footer
+</body>
+</html>
