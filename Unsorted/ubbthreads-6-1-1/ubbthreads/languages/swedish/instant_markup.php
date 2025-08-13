@@ -1,0 +1,29 @@
+<?
+$ubbt_lang['ENTERCOLOR'] = "Fyll i den färg du vill använda. Det kan antingen vara en färgkod, t ex #ff1123, eller färgens namn, t ex blue";
+$ubbt_lang['FONT_COLOR'] = "Textfärg";
+$ubbt_lang['INST_GRAEMLIN'] = "Instant Graemlins";
+$ubbt_lang['INST_UBB'] = "Instant UBB Code";
+$ubbt_lang['ENTERURL'] = "Fyll i den kompletta URL:en för länken du vill lägga in.";
+$ubbt_lang['ENTERURL2'] = "Fyll i titeln på den webbplats du vill länka till. Om du länkar till Infopop kan du till exempel använda titeln Hemsidan för Infopop";
+$ubbt_lang['ENTERURL3'] = "Webbplats";
+$ubbt_lang['ENTEREMAIL'] = "Fyll i den kompletta e-postadresson du vill lägga in.";
+$ubbt_lang['BOLDIT'] = "Fyll i den text du vill göra till fetstil.";
+$ubbt_lang['ITALICIZE'] = "Fyll i den text du vill göra kursiv.";
+$ubbt_lang['ENTERIMAGE'] = "Fyll i den kompletta URL:en till den bild du vill visa.";
+$ubbt_lang['ENTERITEM'] = "Fyll i det nya listelementet. Observera att varje grupp av \\nlistelement måste föregås av Liststart och avslutas med \\nListslut (för att det ska visas korrekt).";
+$ubbt_lang['ENTERPOLL'] = "Fyll i titeln till denna omröstning";
+$ubbt_lang['ENTEROPTION'] = "Fyll i ett val för denna omröstning. Observera att en omröstning måste föregås av Röststart och avslutas med Röstslut.";
+$ubbt_lang['J_HYPER'] = "URL";
+$ubbt_lang['J_EMAIL'] = "E-post";
+$ubbt_lang['J_BOLD'] = "Fet";
+$ubbt_lang['J_ITALICS'] = "Kursiv";
+$ubbt_lang['J_QUOTE'] = "Citat";
+$ubbt_lang['J_CODE'] = "Kod";
+$ubbt_lang['J_LISTSTART'] = "Liststart";
+$ubbt_lang['J_LISTITEM'] = "Listelement";
+$ubbt_lang['J_LISTEND'] = "Listslut";
+$ubbt_lang['J_IMAGE'] = "Bild";
+$ubbt_lang['J_POLLSTART'] = "Röststart";
+$ubbt_lang['J_POLLOPTION'] = "Röstfråga";
+$ubbt_lang['J_POLLSTOP'] = "Röstslut";
+?>
