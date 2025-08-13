@@ -1,0 +1,64 @@
+body, table, td { 
+	font-family: verdana;
+	font-size: 12px;
+	font-color: #000000
+}
+
+a {
+	text-decoration: none;
+	color: #400000;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #C00000;
+}
+
+form {
+	margin:0
+}
+
+select {
+	font-family: verdana;
+	font-size:10px;
+	font-color:#000000
+}
+
+input {
+	font-family: verdana;
+	font-size:10px;
+	font-color:#000000
+}
+
+textarea {
+	font-family: verdana;
+	font-size:10px;
+	font-color:#000000
+}
+
+.catdis {
+	border:1px solid #808080;
+	background-color: #FAFAFA;
+	padding:4px
+}
+
+.cleardis {
+	border:1px dashed #808080;
+	padding:4px;
+	background-color: #FFFFFF
+}
+
+.heavydis {
+	border:1px solid #808080;
+	background-color: #F0F0F0;
+	padding:4px
+}
+
+
+.small {
+	font-size:9px
+}
+
+.large {
+	font-size:11pt;
+}
