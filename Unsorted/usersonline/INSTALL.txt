@@ -1,0 +1,55 @@
+
+#########################################################
+#                                                       #
+# PHPSelect Web Development Division                    #
+#                                                       #
+# http://www.phpselect.com/                             #
+#                                                       #
+# This script and all included modules, lists or        #
+# images, documentation are distributed through         #
+# PHPSelect (http://www.phpselect.com/) unless          #
+# otherwise stated.                                     #
+#                                                       #
+# Purchasers are granted rights to use this script      #
+# on any site they own. There is no individual site     #
+# license needed per site.                              #
+#                                                       #
+# This and many other fine scripts are available at     #
+# the above website or by emailing the distriuters      #
+# at admin@phpselect.com                                #
+#                                                       #
+#########################################################
+
+
+
+
+
+###########################################################################################
+# Opening Intro                                                                           #
+###########################################################################################
+Please read the LICENSE file included in the distribution to get the license this program
+is subject to.
+
+phpUseronline is a PHP script that allows you to display User's online on your website in
+a very convenient way.
+
+###########################################################################################
+# Script Requirements                                                                     #
+###########################################################################################
+- PHP v3.x OR v4.x
+- MySQL 
+- phpMyAdmin (not required but very useful)
+
+###########################################################################################
+# Script Changelog                                                                        #
+###########################################################################################
+1.10   	(04/20/2001): 	Minor BUG's fixed.
+1.00   	(03/09/2001): 	First public release.
+
+###########################################################################################
+# Installation Instructions                                                               #
+###########################################################################################
+1) Unzip the distribution file into your http documents directory.
+2) Create the MySQL Database (usually phpUseronline) with your MySQL Admin.
+3) Use phpMyAdmin to run the SQL file 'phpUseronline.sql' located in this folder.
+4) Edit the variables in useronline.php to your needs.
