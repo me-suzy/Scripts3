@@ -1,0 +1,150 @@
+This file contains HTML tags and JavaScript code that you can cut and paste into your own
+pages. Before you do this please read the manual.
+
+           ==========================================
+           SECTION ONE - FOR USERS OF WYSIWYG EDITORS
+           ==========================================
+
+-------------------
+Auto Loading Script
+-------------------
+This script is already included in the templates pages. If you wish to add this script to 
+other pages in your site do so as follows. 
+Insert a JavaScript tag into the head section of the page. Cut ad paste the following into
+the script window.
+
+	if(!parent.frames['MainFrame']){parent.location.href='index.html';}
+
+If your Start Page is not called index.html change the code above to suit. Take care not to 
+delete the single quotes.
+
+-------------------------------------------
+Initialising The Total Cost Of Bookings Box
+-------------------------------------------
+Paste this into the onLoad property or attribute.
+
+	parent.initApp();
+
+---------------------------------------
+Updating The Total Cost Of Bookings Box
+---------------------------------------
+Paste this into the onLoad property or attribute.
+	parent.showTotal();
+
+-------------------------------
+Trapping A Refresh Button Press
+-------------------------------
+Paste this into the onLoad propery or attribute.
+
+	parent.salvageDetails();
+
+Paste this into the onUnload propery or attribute.
+
+	onUnload="parent.checkAndSave();
+
+---------------------------------------
+Displaying The Refresh Warning Dialogue
+---------------------------------------
+Parte this into the onLoad property or attribute.
+
+	if(navigator.appName.indexOf('Netscape')!=-1){parent.dialog06()}
+
+This can be added to the recovery code by pasting this into the onLoad attribute.
+
+	parent.salvageDetails(); if(navigator.appName.indexOf('Netscape')!=-1){parent.dialog06()}
+
+
+
+           =======================================
+           SECTION TWO - FOR USERS OF TEXT EDITORS
+           =======================================
+
+-------------------
+Auto Loading Script
+-------------------
+This script is already included in the templates pages. If you wish to add this script to 
+other pages in your site do so as follows. 
+Change index.html to the name of the page that loads Rayserve, ie your start page. Then 
+paste the following script into the HEAD section of your page. 
+
+<SCRIPT LANGUAGE="Javascript" TYPE="text/Javascript">
+	if(!parent.frames['MainFrame']){parent.location.href='index.html';}
+</SCRIPT>
+
+
+-----------------------------------------
+Displaying The Total Cost Of Bookings Box
+-----------------------------------------
+This form will display the total cost of all booking made. If you are using multiple frames put 
+this in one of the "static" frames.
+
+<FORM NAME="ShowBookingTotal" ID="ShowBookingTotal">
+	Total cost of bookings:&nbsp;
+	<INPUT TYPE="text" SIZE="10" NAME="Total" VALUE="">
+	&nbsp;&nbsp;
+	<INPUT TYPE="button" NAME="ShowBtn" VALUE="Details" onClick="parent.goToPage('BookingList.html');">
+</FORM>
+
+If you are using the "frameless" option and you do not want the total box to be visible in the 
+first page that opens after Rayserve is started use this code.
+
+<FORM NAME="ShowBookingTotal" ID="ShowBookingTotal">
+	<INPUT TYPE="hidden"NAME="Total" VALUE="">
+</FORM>
+
+-------------------------------------------
+Initialising The Total Cost Of Bookings Box
+-------------------------------------------
+The total box is initialised by the following code. If you are using a Start Page with multiple 
+frames (layouts 1 t0 8) put this code in the same frame as the total box. If you are using a
+Start Page with a single frame (layout 1) put this code in the first page that opens after 
+Rayserve is started.
+
+<BODY onLoad="parent.initApp();">
+
+---------------------------------------
+Updating The Total Cost Of Bookings Box
+---------------------------------------
+If you are using a Start Page with multiple frame and the total box is in a static frame it will 
+be updated automatically. If you are using a Start Page with a single frame put this code in each
+page that contains the total box except for the first page that opens after Rayserve is started.
+
+<BODY onLoad="parent.showTotal();">
+
+
+-------------------------------
+Trapping A Refresh Button Press
+-------------------------------
+If you are using a Start Page with multiple frames you can tell Rayserve to watch for the visitor
+pressing the browsers Reload or Refresh button. Any booking data will then be saved and placed back
+in the booking list when Rayserve is reloaded. You CANNOT use this featurewith a Start Page that 
+uses a single frame. This feature is only supported by Internet Explorer.
+
+Place this code in a static frame, ie a frame that always displays the same page.
+
+<BODY onLoad="parent.salvageDetails();" onUnload="parent.checkAndSave();">
+
+---------------------------------------
+Displaying The Refresh Warning Dialogue
+---------------------------------------
+
+Because Netscape does not support the recovery feature described in the previous paragraph you may 
+want to display a dialogue to Netscape users warning against using the refresh button.  This code 
+should go in the same frame as the code above, i.e. one of the static frames. Note this dialogue 
+box only displays if the users browser is Netscape.Internet Explorer supports the recovery code built
+into Rayserve so this dialogue is unnecessary.
+
+The code to display the dialogue is: "if(navigator.appName.indexOf('Netscape')!=-1){parent.dialog06()}"
+
+This can be added to the recovery code as follows.
+
+<BODY onLoad="parent.salvageDetails();if(navigator.appName.indexOf('Netscape')!=-1){parent.dialog06()}" onUnload="parent.checkAndSave();">
+
+---------------------------------
+Radio Buttons for Global Commerce
+---------------------------------
+
+<INPUT TYPE="radio" NAME="PayMethod" VALUE="VISA" CHECKED>&nbsp;Visa&nbsp;
+<INPUT TYPE="radio" NAME="PayMethod" VALUE="MC">&nbsp;MasterCard&nbsp;
+<INPUT TYPE="radio" NAME="PayMethod" VALUE="AMEX">&nbsp;Amex&nbsp;
+<INPUT TYPE="radio" NAME="PayMethod" VALUE="PCHK">&nbsp;Electronic Check
