@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<TITLE>Currency Selector</TITLE>
+	<LINK REL="stylesheet" HREF="Style/RSV.css" TYPE="text/css">
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	<META NAME="Description" CONTENT="">
+	<META NAME="Keywords" CONTENT="">
+
+	<!-- DO NOT CHANGE THE SCRIPT BELOW -->
+	<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+	function calcValue(msg){var regexpi=/^\d+$/;var regexpf=/^((\d+(\.\d*)?)|((\d*\.)?\d+))$/;if(regexpi.test(document.forms[0].InputVal.value) || regexpf.test(document.forms[0].InputVal.value))
+	{document.forms[0].OutputVal.value=window.opener.calcAmount(document.forms[0].Currency.options[document.forms[0].Currency.options.selectedIndex].value,document.forms[0].InputVal.value);}
+	else{alert(msg);document.forms[0].InputVal.select();document.forms[0].InputVal.focus();}}
+	</SCRIPT>
+</HEAD>
+<BODY>
+<H3 ALIGN="center">Currency Conversion Calculator</H3>
+<DIV ALIGN="center">
+<FORM>
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="3">
+<TR><TD CLASS="popup">
+<OL>
+<LI>Select the currency from the pick list.</LI>
+<LI>Enter the amount to convert.</LI>
+<LI>Press the &quot;Calculate&quot; button</LI>
+</OL>
+</TD></TR>
+<TR><TD CLASS="popup" ALIGN="center">Currency<BR>
+
+<!-- OPTION VALUES ARE IN THE FORM: CURRENCT SYMBOL*SYMBOL POSITION*CURRENCY FORMAT*EXCHANGE RATE 
+     CHANGE EXCHANGE RATE TO SUIT YOU OWN CURRENCY
+     IF YOU ADD NEW OPTIONS KEEP THE SAME FORMAT. DELETE OPTIONS IF YOU WISH -->
+
+<SELECT NAME="Currency">
+	<OPTION VALUE="$*B*A*1.00">US Dollars</OPTION>
+	<OPTION VALUE="&pound;*B*A*0.685">UK Pounds</OPTION>
+	<OPTION VALUE="&euro;*B*B*1.096">Euros</OPTION>
+	<OPTION VALUE="DM*A*B*2.12">German Marks</OPTION>
+	<OPTION VALUE="Fr*B*B*7.12">French Francs</OPTION>
+	<OPTION VALUE="G*B*B*2.45">Dutch Guilders</OPTION>
+	<OPTION VALUE="Lire *B*E*1713">Italian Lire</OPTION>
+	<OPTION VALUE="C$*B*A*1.63">Canadian Dollars</OPTION>
+	<OPTION VALUE="A$*B*A*1.71">Australian Dollars</OPTION>
+	<OPTION VALUE="&yen;*B*B*166.00">Japanese Yen</OPTION>
+</SELECT>
+<BR>&nbsp;<BR>
+
+<!-- CHANGE AMOUNT IN $'s TO YOUR OWN CURRENCY -->
+
+Amount in $'s to Convert
+
+<BR><INPUT TYPE="text" NAME="InputVal" SIZE="20"><BR>&nbsp;<BR>
+Answer<BR><INPUT TYPE="text" NAME="OutputVal" SIZE="20"><BR>&nbsp;<BR>
+<INPUT TYPE="button" NAME="CalcBtn" VALUE="Calculate" onClick="calcValue('Invalid Entry: Only numbers and decimal point allowed.');">&nbsp;&nbsp;
+<INPUT TYPE="button" NAME="CloseBtn" VALUE="Close" onClick="self.close();">
+</TD></TR></TABLE>
+</FORM></DIV>
+<P></P>
+
+<!-- YOU CAN REMOVE THE LINK TO OUR SITE IF YOU WISH -->
+<DIV CLASS="authinfo"ALIGN="center"><A HREF="http://www.hallisoft.com/RSV/index.html" TARGET="frameFix">Powered by Rayserve</A></DIV>
+
+</BODY>
+</HTML>
+
