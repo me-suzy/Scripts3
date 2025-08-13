@@ -1,0 +1,62 @@
+-----------------------------------------------------------------------
+TriviaShock vBulletin Integration Instructions
+-----------------------------------------------------------------------
+
+The new user module system introduced in TriviaShock 1.2.0 allows
+TriviaShock to share user databases with other software. TriviaShock
+now comes pre-packaged with a vBulletin user module.
+
+This module allows TriviaShock to be directly integrated with your
+vBulletin user database. Currently it integrates in the following
+ways:
+
+ * Users are authenticated directly from your vBulletin database, 
+   giving all of your users access to TriviaShock without having to 
+   register again.
+
+ * All links to registration on TriviaShock go directly to your 
+   vBulletin registration script.
+
+ * All links to user profiles go directly to the vBulletin profile 
+   script for the user.
+
+ * TriviaShock recognizes vBulletin's cookies so users can stay logged 
+   in.
+
+ * You can specify which vBulletin user group id has access to the 
+   TriviaShock control panel.
+
+ * Optionally, TriviaShock can update the "last activity" time for a 
+   vBulletin user if they are using TriviaShock
+
+Setup is very simple using the TriviaShock user module system. Perform 
+the normal TriviaShock installation as specified in README.txt, with 
+the following in mind:
+
+ 1. Make sure to install TriviaShock to the same MySQL database as your
+    vBulletin is installed on. Don't worry - the tables won't overlap 
+    because all of TriviaShock's tables start with "ts_".
+
+ 2. When editing config.inc.php, find the option $C_OPTS['USER_MODULE']
+    Make sure it is set to "vbulletin" instead of "standard".
+
+ 3. Edit the file "inc/ts_user_vbulletin.inc.php". This is the 
+    TriviaShock user module for vBulletin. Edit the first several 
+    options as appropriate for your vBulletin installation.
+
+ 4. After installing TriviaShock and performing these steps, go to the
+    URL where you did the installation. Near the top, the "Registered 
+    Users" and "Newest User" fields should match those on your 
+    vBulletin installation.
+
+ 5. When logging into the control panel, use your vBulletin 
+    administrator username and password, or one for whatever group id 
+    you gave access to TriviaShock (you can set which group gets 
+    access to the control panel by editing 
+    "inc/ts_user_vbulletin.inc.php". Don't worry about the admin 
+    password you set during TriviaShock installation, it won't be used 
+    since you will be using your vBulletin user database.
+
+  
+-----------------------------------------------------------------------
+Copyright (c)2002 Pineapple Technologies. All Rights Reserved.
