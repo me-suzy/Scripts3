@@ -1,0 +1,44 @@
+Thank you for purchasing SunShop.
+Update Version 2.6 - Released 04-12-02
+Copyright 2001-2002 Turnkey Solutions.
+
+To upgrade the from version 2.5 to 2.6 first run the file upgrade.php in the 
+main directory then simply replace the files on your server with the files
+in this full version package. *IMPORTANT* You can leave your config.php
+on your server intact as that information will not change. If you made 
+alterations to any of the older files you may want to back them up to you 
+local hard drive before doing so.
+
+If you need to upgrade from version 2.4 download that package first and only
+upload and run the upgrade.php script from that version. After you have done
+that follow the steps above.
+
+*PLEASE NOTE* - If you or we made any modifications to your script for 
+implementing your merchant account or for any other reason, please
+talk to us before upgrading. 
+
+*Release Notes*
+Below you will find a list of changes implemented in version 2.6.
+Please remember this is a minor release. The next major release will
+be soon.
+
+1.  There was an issue with the cookies on NT machines. That should be
+fixed in this release.
+
+2.  All PHP tags have been changed to long tags.
+
+3.  The handling charge issue has been resolved where it displays only
+the handling charge as the shipping price in some cases.
+
+4. After signup then login you no longer get a error page.
+
+5. Backslases have been removed from the item titles display in the admin
+area.
+
+6. Countries and states have been all moved into one location called 
+state-country.php located in the admin directory. Change this file as
+you wish.
+
+7. Company name field has been enlarged.
+
+8. Fixed a minor security issue.
