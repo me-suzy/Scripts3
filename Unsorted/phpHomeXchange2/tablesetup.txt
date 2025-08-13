@@ -1,0 +1,17 @@
+
+
+CREATE TABLE homexchangetable (
+   username text NOT NULL,
+   password text NOT NULL,
+   email text NOT NULL,
+   lastip text NOT NULL,
+   urls longtext NOT NULL,
+   creditsearned decimal(10,1) DEFAULT '0.0' NOT NULL,
+   creditsused decimal(10,0) DEFAULT '0' NOT NULL,
+   referer text NOT NULL,
+   memberlevel int(11) DEFAULT '0' NOT NULL,
+   checkcode int(11) DEFAULT '0' NOT NULL,
+   refercredits decimal(10,0) DEFAULT '0' NOT NULL,
+   ispaused int(11) DEFAULT '0' NOT NULL,
+   lasttime int(14)
+);
