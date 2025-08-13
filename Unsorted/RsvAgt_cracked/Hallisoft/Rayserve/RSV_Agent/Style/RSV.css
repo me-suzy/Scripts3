@@ -1,0 +1,80 @@
+BODY {font-size: 9pt;
+	font-family: Arial, Helvetica, Univers, sans-serif;
+	font-weight: normal; font-style: normal; color: #000000;
+	text-decoration: none; text-align: left; background-color: #FFFFFF;
+	margin-left: 3px; margin-right: 3px; margin-top: 3px;
+	margin-bottom: 3px;}
+
+TH {font-size: 9pt;
+	font-family: Arial, Helvetica, Univers, sans-serif;
+	font-weight: bold; font-style: normal; color: #000000;
+	text-decoration: none; background-color: #FFFFFF;}
+
+TH.header {color: #FFFFFF; background-color: #630460;}
+
+TD {font-size: 9pt;
+	font-family: Arial, Helvetica, Univers, sans-serif;
+	font-weight: normal; font-style: normal; color: #000000;
+	text-decoration: none; background-color: #FFFFFF;}
+
+TD.detail {background-color: #FFFFF0;}
+
+TD.detail1 {background-color: #FFFFF0;}
+
+TD.detail2 {background-color: #FAF0E6;}
+
+TD.detail3 {background-color: #FFEFD5;}
+
+TD.input {font-family: "Courier New", courier, monospace; background-color: #FFFFF0;}
+
+.popup {font-family: "MS Sans Serif", sans-serif; font-size: 8pt; font-weight: normal;}
+
+.popwarn {font-family: "MS Sans Serif", sans-serif; font-size: 8pt; font-weight: normal;
+	color: #FF0000; background-color: transparent;}
+
+.highlite {font-weight: bold; color: #B22222; background-color: transparent;}
+
+.warning {color: #FF0000; background-color: transparent;}
+
+.hlite {font-weight: bold; color: #006400; background-color: transparent;}
+
+.nsbugfix {font-size: 9pt; font-weight: normal;}
+
+.authinfo {font-size: 8pt; font-weight: bold;}
+
+.urlinfo {font-size: 8pt; color: #A9A9A9; background-color: #FFFFFF;
+	font-weight: normal;}
+
+H1 {font-family: Arial, Helvetica, Univers, sans-serif;
+	font-size: 150%; color: #8B008B; background-color: #FFFFFF;
+	font-weight: bold;}
+
+H2 {font-size: 133%; color: #8B008B; background-color: #FFFFFF;
+	font-weight: bold;}
+
+H3 {font-size: 125%; color: #8B008B; background-color: #FFFFFF;
+	font-weight: bold;}
+
+H4 {font-size: 112%; color: #C71585; background-color: #FFFFFF;
+	font-weight: bold;}
+
+H5 {font-size: 100%; color: #C71585; background-color: #FFFFFF; 
+	font-weight: bold;}
+
+H6 {font-size: 90%; color: #1E90FF; background-color: #FFFFFF; 
+	font-weight: bold;}
+
+.blink {font-size : 9pt; font-weight : bold; color : #8B008B;
+	background-color : #FFFFFF; text-decoration : blink;}
+
+A:Link {font-weight: bold; color: #0000FF; background-color: transparent;
+	text-decoration: underline;}
+
+A:Visited {color: #8B008B; background-color: transparent;
+	font-weight: bold; text-decoration: underline;}
+
+A:Hover {font-weight: bold; color: #FF0000; background-color: transparent;
+	text-decoration: underline;}
+
+A:Active {color: #90EE90; background-color: transparent;
+	font-weight: bold; text-decoration: underline;}
