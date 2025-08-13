@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<TITLE>Hallisoft Internet Software - Rayserve</TITLE>
+	<LINK REL="stylesheet" HREF="RSV_Agent/Setup/Style/RSVSetup.css" TYPE="text/css">
+</HEAD>
+
+<BODY>
+<H1 ALIGN="center">About Rayserve - Agency Version</H1>
+Rayserve is a program that can be used to take bookings for hotels, guest houses or apartments over the Internet. The program calculates the cost of each stay based on information you enter into the program configuration and data files. It can also check to see if the rooms requested are available and automatically update the data file if the visitor decides to make a reservation.
+<P>
+In the booking form you can specify any number of options that a visitor can included with the room (meals or airport pickup for example). Each option can either increase or decrease the room price.
+<P>
+Below is a list of the main program features and configuration options. <A HREF="#feats">Features</A> and configuration options shown in red can be turned on or off.
+<P>
+Rayserve is pre-configured to connect to any one of 17 different <A HREF="#paysys">secure payment systems</A>. In addition there is a custom setting and an add-on module called <A HREF="#sfinf">Transaction Manager</A> that can be used to record credit card transaction data.
+<P><DIV ALIGN="center">
+<A HREF="RSV_Agent/Demos.html">View the Demo Applications</A>
+<P><A NAME="feats"></A>
+<TABLE BORDER="0" CELLSPACING="2" CELLPADDING="1">
+<TR><TH COLSPAN="3" CLASS="header">Program Features &amp; Configuration Options</TH></TR>
+<TR><TH CLASS="header">Feature/Option</TH><TH CLASS="header">Value</TH><TH CLASS="header">Notes</TH></TR>
+<TR>
+<TD CLASS="detail4" VALIGN="top">Room Type:</TD>
+<TD CLASS="detail4" VALIGN="top">Text</TD>
+<TD CLASS="detail4" VALIGN="top">Up to 12 different room types can be specified. These can be anything you like.</TD>
+</TR><TR>
+<TD CLASS="detail4" VALIGN="top">Number of Rooms:</TD>
+<TD CLASS="detail4" VALIGN="top">Any Number</TD>
+<TD CLASS="detail4" VALIGN="top">The number of each room type available in the property.</TD>
+</TR>
+<TR>
+<TD CLASS="detail4" VALIGN="top">Room Rate:</TD>
+<TD CLASS="detail4" VALIGN="top">Any Amount</TD>
+<TD CLASS="detail4" VALIGN="top">Room rates can be specified for each type of room and for each season, or block of days, depending on the charge matrix chosen.</TD>
+</TR><TR>
+<TD CLASS="detail4" VALIGN="top">Charge Matrix:</TD>
+<TD CLASS="detail4" VALIGN="top">Seasonal or Daily</TD>
+<TD CLASS="detail4" VALIGN="top">How you charge for your rooms. This can be &quot;seasonal&quot; or &quot;daily&quot;. Seasonal charges run from one date to another throughout a year. Up to 8 different &quot;seasons&quot; can be specified. Daily charges run from one day to another throughout a week. Up to 3 different day blocks can be specified.</TD>
+</TR><TR>
+<TD CLASS="detail4" VALIGN="top">Charge Basis:</TD>
+<TD CLASS="detail4" VALIGN="top">Per Room or per Person</TD>
+<TD CLASS="detail4" VALIGN="top">Room rates are specified as being per room or per person per room. Any optional extras such as meals have their charge specified on an individual basis. This can be per room, per person or a fixed amount for the entire stay.</TD>
+</TR><TR>
+<TD CLASS="detail5" VALIGN="top">Child Rate:</TD>
+<TD CLASS="detail4" VALIGN="top">0% tp 100%</TD>
+<TD CLASS="detail4" VALIGN="top">A reduced rate for children. This is only applicable when the room charge basis is per person. Child rate is only applied when children are sharing with the specified number of adults. Any optional extras such as meals can have the child rate specified on an individual basis.</TD>
+</TR><TR>
+<TD CLASS="detail5" VALIGN="top">Number Adults:</TD>
+<TD CLASS="detail4" VALIGN="top">Any Number</TD>
+<TD CLASS="detail4" VALIGN="top">The maximum number of adults allowed. This is specified for each room type.</TD>
+</TR><TR>
+<TD CLASS="detail5" VALIGN="top">Number Children:</TD>
+<TD CLASS="detail4" VALIGN="top">Any Number</TD>
+<TD CLASS="detail4" VALIGN="top">The maximum number of children allowed. This is specfied for each room type.</TD>
+</TR><TR>
+<TD CLASS="detail5" VALIGN="top">Number Occupants:</TD>
+<TD CLASS="detail4" VALIGN="top">Any Number</TD>
+<TD CLASS="detail4" VALIGN="top">The minimum number of occupants (adults plus children) allowed. This is specfied for each room type. This configuration option is generally only used when rooms are charged per person.</TD>
+</TR><TR>
+<TD CLASS="detail5" VALIGN="top">Overbooking Allowance:</TD>
+<TD CLASS="detail4" VALIGN="top">Any Number</TD>
+<TD CLASS="detail4" VALIGN="top">The number of rooms that can be overbooked for each room type. This can be used to allow for cancellations or to give you the option to upgrade to another room type.</TD>
+</TR><TR>
+<TD CLASS="detail5" VALIGN="top">Immediate Update:</TD>
+<TD CLASS="detail4" VALIGN="top">On or Off</TD>
+<TD CLASS="detail4" VALIGN="top">When set &quot;On&quot; the number of rooms booked will automatically be updated as new bookings are received.</TD>
+</TR><TR>
+<TD CLASS="detail5" VALIGN="top">Availablity Check:</TD>
+<TD CLASS="detail4" VALIGN="top">On or Off</TD>
+<TD CLASS="detail4" VALIGN="top">When set &quot;On&quot; room availablity will be checked when a visitor attempts to make a booking.</TD>
+</TR><TR>
+<TD CLASS="detail5" VALIGN="top">Lead Time</TD>
+<TD CLASS="detail4">0 to 365</TD>
+<TD CLASS="detail4" VALIGN="top">The number of days before arrival that a booking must be made.</TD>
+</TR><TR>
+<TD CLASS="detail4" VALIGN="top">Maximum Stay:</TD>
+<TD CLASS="detail4" VALIGN="top">1 to 365</TD>
+<TD CLASS="detail4" VALIGN="top">The maximum numbers of days that can be booked at once for any one booking.</TD>
+</TR><TR>
+<TD CLASS="detail4" VALIGN="top">Minimum Stay:</TD>
+<TD CLASS="detail4" VALIGN="top">1 to 365</TD>
+<TD CLASS="detail4" VALIGN="top">The minimum numbers of days that can be booked at once for any one booking.</TD>
+</TR><TR>
+<TD CLASS="detail4" VALIGN="top">First Date:</TD>
+<TD CLASS="detail4">Any Date</TD>
+<TD CLASS="detail4" VALIGN="top">The date before which bookings cannot be accepted.</TD>
+</TR><TR>
+<TD CLASS="detail4" VALIGN="top">Last Date:</TD>
+<TD CLASS="detail4">Any Date</TD>
+<TD CLASS="detail4" VALIGN="top">The date up to which bookings can be accepted.</TD>
+</TR><TR>
+<TD CLASS="detail4" VALIGN="top">Currency</TD>
+<TD CLASS="detail4" VALIGN="top">Any</TD>
+<TD CLASS="detail4" VALIGN="top">You can specify which currency you want Rayserve to use for your site. There is also the option to have the total cost of the booking displayed in two currencies. The one you specify for your site and one chosen by the visitor.</TD>
+</TR><TR>
+<TD CLASS="detail4" VALIGN="top">Currency symbol</TD>
+<TD CLASS="detail4" VALIGN="top">Any Currency</TD>
+<TD CLASS="detail4" VALIGN="top">This can be any symbol that can be displyed by the web browser.</TD>
+</TR><TR>
+<TD CLASS="detail4" VALIGN="top">Symbol Position</TD>
+<TD CLASS="detail4" VALIGN="top">Before or After</TD>
+<TD CLASS="detail4" VALIGN="top">The position for the currency symbol, ie before or after the numbers.</TD>
+</TR><TR>
+<TD CLASS="detail4" VALIGN="top">Currency Format</TD>
+<TD CLASS="detail4" VALIGN="top">One of six formats</TD>
+<TD CLASS="detail4" VALIGN="top">Currencies can be displayed with our without decimal places, and in either &quot;English&quot; or &quot;Continental&quot; format. Some examples are:<BR>$1,999.50&nbsp;&nbsp;&nbsp;&nbsp;&pound;1,999.50&nbsp;&nbsp;&nbsp;&nbsp;1.999,50DM&nbsp;&nbsp;&nbsp;&nbsp;&yen;1,999&nbsp;&nbsp;&nbsp;&nbsp;1.999,50F&nbsp;&nbsp;&nbsp;&nbsp;Baht 1,999<BR>Lire 1.999.999&nbsp;&nbsp;&nbsp;&nbsp;&euro;1.999,50&nbsp;&nbsp;&nbsp;&nbsp;R$1.999,50&nbsp;&nbsp;&nbsp;&nbsp;N$1,999.50&nbsp;&nbsp;&nbsp;&nbsp;Rp1.999</TD>
+</TR><TR>
+<TD CLASS="detail4" VALIGN="top">Date Format:</TD>
+<TD CLASS="detail4" VALIGN="top">MM DD, YY<BR>DD MM, YY</TD>
+<TD CLASS="detail4" VALIGN="top">The format used by Book-Online to display dates. Months can be names, abbreviations or the month number.</TD>
+</TR><TR>
+<TD CLASS="detail5" VALIGN="top">Fixed Charge:</TD>
+<TD CLASS="detail4" VALIGN="top">Any amount</TD>
+<TD CLASS="detail4" VALIGN="top">A fixed amount that is added to, or deducted from, each booking.</TD>
+</TR><TR>
+<TD CLASS="detail5" VALIGN="top">Percentage Rate Charge:</TD>
+<TD CLASS="detail4" VALIGN="top">0.01% to 99.99%</TD>
+<TD CLASS="detail4" VALIGN="top">A percentage amount that is added to, or deducted from, each booking.</TD>
+</TR><TR>
+<TD CLASS="detail5" VALIGN="top">Tax:</TD>
+<TD CLASS="detail4" VALIGN="top">0.01% to 99.99%</TD>
+<TD CLASS="detail4" VALIGN="top">A tax that is added to the total cost of each booking. This total cost will take into account any fixed charges, percentage charges, meals and extras etc.</TD>
+</TR><TR>
+<TD CLASS="detail5" VALIGN="top">Long Stay Discount:</TD>
+<TD CLASS="detail4" VALIGN="top">0.01% to 99.99%</TD>
+<TD CLASS="detail4" VALIGN="top">A discount on the room rate that is applied when the stay reaches a predetermined number of days. This discount is not applied to meals or extras unless these have been included in the room rate.</TD>
+</TR><TR>
+<TD CLASS="detail5" VALIGN="top">Discount After:</TD>
+<TD CLASS="detail4" VALIGN="top">1 to 365</TD>
+<TD CLASS="detail4" VALIGN="top">The minimum number of days that have to be booked before the long stay discount is applied.</TD>
+</TR><TR>
+<TD CLASS="detail5" VALIGN="top">Deposit:</TD>
+<TD CLASS="detail4" VALIGN="top">0% to 100% or any fixed amount</TD>
+<TD CLASS="detail4" VALIGN="top">The amount of deposit that is required with each booking. This can be a fixed amount or a percentage of the total. Only applies if credit card details required at the time of booking.</TD>
+</TR><TR>
+<TD CLASS="detail4" VALIGN="top">Table Borders:</TD>
+<TD CLASS="detail4" VALIGN="top">On or Off</TD>
+<TD CLASS="detail4" VALIGN="top">Tables generated by Book-Online can be displayed with or without borders.</TD>
+</TR>
+</TABLE>
+<P><A NAME="paysys"></A>
+<TABLE BORDER="0" CELLSPACING="2" CELLPADDING="1">
+<TR><TH COLSPAN="3" CLASS="header">Secure Payment Systems</TH></TR>
+<TR>
+<TD ALIGN="center" CLASS="detail4">Authorize Net</TD>
+<TD ALIGN="center" CLASS="detail4">DPILink</TD>
+<TD ALIGN="center" CLASS="detail4">iBill</TD>
+</TR><TR>
+<TD ALIGN="center" CLASS="detail4">JsWeb</TD>
+<TD ALIGN="center" CLASS="detail4">LinkPoint</TD>
+<TD ALIGN="center" CLASS="detail4">Global Commerce</TD>
+</TR><TR>
+<TD ALIGN="center" CLASS="detail4">Metro Credit</TD>
+<TD ALIGN="center" CLASS="detail4">Multicards</TD>
+<TD ALIGN="center" CLASS="detail4">Netbanx</TD>
+</TR><TR>
+<TD ALIGN="center" CLASS="detail4">Net Benefit</TD>
+<TD ALIGN="center" CLASS="detail4">PayPal</TD>
+<TD ALIGN="center" CLASS="detail4">PSIGate</TD>
+</TR><TR>
+<TD ALIGN="center" CLASS="detail4">SECpay</TD>
+<TD ALIGN="center" CLASS="detail4">Secure Hosting</TD>
+<TD ALIGN="center" CLASS="detail4">RTWare</TD>
+</TR><TR>
+<TD ALIGN="center" CLASS="detail4">Secure Trading</TD>
+<TD ALIGN="center" CLASS="detail4">Signio Payflow Link</TD>
+<TD ALIGN="center" CLASS="detail4">WorldPay Junior Select</TD>
+
+</TR>
+</TABLE>
+<P><A NAME="sfinf"></A>
+<TABLE BORDER="0" CELLSPACING="2" CELLPADDING="1">
+<TR><TH COLSPAN="2" CLASS="header">Transaction Manager Add-on Module</TH></TR>
+<TR><TD CLASS="detail4">
+Transaction Manager is an add-on module for Rayserve that can be used on your own secure server or that of your ISP. Rayserve sends data to Transaction Manager which then displays a form where the visitors enter their credit card details. Data sent by Rayserve (guests name, address, booking reference, amount of deposit etc.) is automatically inserted into this form. Transaction data is recorded on the secure server and can be retrieved using a web browser after logging on to Transaction Manager.
+<P>
+Transaction Manager uses one way encryption for the password(s) used to retreive transaction data. All data stored on the server is encrypted for added security.
+</TD></TR></TABLE>
+</DIV>
+<P>
+<DIV CLASS="authinfo" ALIGN="center">Powered by Rayserve</DIV>
+</BODY>
+</HTML>
