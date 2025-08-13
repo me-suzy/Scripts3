@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+
+<title>phpYellow Pages - Connect to a Payment Gateway Processor - How to Make Paypal Work with phpYellow Pages</title>
+
+      <link rel="stylesheet" type="text/css" href="../../yellow.css">
+
+	<META NAME="keywords" CONTENT="phpYellow, Pages, php, Yellow, add, edit, delete, listing, login, below">
+	<META NAME="description" CONTENT="How to Make Paypal Work with phpYellow Pages">
+	<META NAME="Author" CONTENT="Richard Creech, Web: http://www.dreamriver.com Email: richardc@dreamriver.com">
+	<META NAME="GENERATOR" CONTENT="Blood, Sweat & Tears">
+
+	</HEAD>
+
+<BODY>
+<h1>How to Make Paypal Work<br>with phpYellow Pages</h1>
+
+
+
+<!-- start of links to individual gateway instructions -->
+<div align="center">
+<a href="../docs/DOCSpaidListings.html">Guide</a> | 
+<a href="../index.html">General</a> | 
+<a href="../authorizenet/index.html">Authorize.net</a> | 
+<a href="../clickbank/index.html">Clickbank</a> | 
+<a href="../self/index.html">Self</a> | 
+<a href="../worldpay/index.html">Worldpay</a> 
+</div>
+<!-- end of links to individual gateway instructions -->
+
+
+
+<h2>Pretest</h2>
+<p>Before changing anything make sure that your phpYellow Pages is processing paid listings. This is how:
+
+<ol>
+	<li>open util.php</li>
+	<li>set the CONSTANT value for BYPASSCARDPROCESSOR from &quot;no&quot; to &quot;yes&quot;</li>
+	<li>set the CONSTANT value for PAIDLISTINGS from &quot;&quot; to &quot;yes&quot;</li>
+	<li>save util.php to your web server</li>
+	<li>go to phpYellow Pages and add a test listing</li>
+	<li>find your new test listing</li>
+	<li>click on the &quot;Go Premium&quot; button</li>
+	<li>complete the checkout page details and click on &quot;Next Step&quot;</li>
+	<li>on the <i>Proceed to Purchase?</i> page click on &quot;Next Step&quot;</li>
+	<li>the result is an upgraded Premium Listing</li>
+</ol>
+DO NOT PROCEED UNTIL THIS PRETEST IS WORKING TO YOUR SATISFACTION.
+</p>
+
+
+
+
+
+
+<p>
+phpYellow Pages can use Paypal to process Premium Listing payments. 
+A small amount of configuration is needed on the Paypal Administration 
+System to make basic settings. Also, phpYellow Pages must be 
+configured as below:
+</p>
+
+<h2>Makes this change on Paypal Administration System</h2>
+
+<p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_login-run">https://www.paypal.com/cgi-bin/webscr?cmd=_login-run</a></p>
+
+
+<p>Make this change to Paypal :</p>
+<ul>
+	<li>verify you have a Paypal Business Account</li>
+	<li>set Profile -> Selling Preferences  -> Shipping Calculations -> disable the shipping fee calculation</li>
+</ul>
+
+
+
+
+
+<h2>Make changes to phpYellow Pages</h2>
+
+<p>In the file called util.php make these changes:
+
+<ul>
+	<li>define("PAIDLISTINGS", "yes");</li>
+	<li>define("SENDRECEIPT", "yes"); /* [optional] */</li>
+	<li>define("MERCHANTACCOUNT", "Your Paypal login");</li>
+	<li>define("BYPASSCARDPROCESSOR", "no");</li>
+	<li>define("GATEWAYPROCESSOR", "paypal");</li>
+	<li>define("POSTTRANSACTIONSURL", "https://www.paypal.com/cgi-bin/webscr");</li>
+	<li>save and upload to your webserver</li>
+</ul>
+</p>
+
+
+<p>Copy a special file needed by Paypal:
+
+<ul>
+	<li>find the file called premiumBuyForm.php found in /phpYellow/gateways/paypal</li>
+	<li>copy premiumBuyForm.php to /phpYellow</li>
+	<li>the copy operation will overwrite the existing default file in /phpYellow</li>
+</ul>
+
+</p>
+
+<p><br></p>
+
+<h2>Done!</h2>
+<p>
+This completes the steps to integrate your payment processing with phpYellow Pages. Congratulations, 
+you can start earning revenue using online payment and automatically paid listings.
+</p>
+
+<p><br></p>
+
+
+
+<!-- start of links to individual gateway instructions -->
+<div align="center">
+<a href="../docs/DOCSpaidListings.html">Guide</a> | 
+<a href="../index.html">General</a> | 
+<a href="../authorizenet/index.html">Authorize.net</a> | 
+<a href="../clickbank/index.html">Clickbank</a> | 
+<a href="../self/index.html">Self</a> | 
+<a href="../worldpay/index.html">Worldpay</a> 
+</div>
+<!-- end of links to individual gateway instructions -->
+
+
+<p><br></p>
+<p><br></p>
+
+</body>
+</html>
