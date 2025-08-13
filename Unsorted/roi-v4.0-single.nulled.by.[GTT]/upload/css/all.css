@@ -1,0 +1,157 @@
+BODY, PRE, TD, LI, UL, OL, DL, P, FORM, INPUT, SELECT, TEXTAREA {
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #425868;
+}
+H1 {
+	font-family: Tahoma,Verdana,Arial,sans-serif;
+	font-size: 14px;
+	color: #007534;
+	margin-left: 20px;
+	margin-top: 2px;
+	margin-bottom: 5px;
+}
+H2 {
+	font-family: Tahoma,Verdana,Arial,sans-serif;
+	font-size: 12px;
+	color: #425868;
+	margin-left: 20px;
+	margin-top: 10px;	
+	margin-bottom: 5px;
+}
+H3{
+	font-family: Tahoma,Verdana,Arial,sans-serif;
+	font-size: 20px;
+	color: #007534;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+.hd {
+	font-family: Tahoma,Verdana,Arial,sans-serif;
+	font-size: 11px;
+	color: #427b7b;
+}
+IMG {
+	border-color:#666666;
+}
+A {
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #103951;
+	text-decoration: none;
+}
+A:hover {
+	color: #103951;
+	text-decoration : underline;
+}
+.color1 {
+	background-color: #459832;
+}
+.color2 {
+	background-color: #FF9900;
+}
+.title {
+	font-weight: bold;
+	font-size: 11px;
+	color: #007534;
+}
+.copyright {
+	font-size: 10px;
+	color: #425868;
+}
+.copyright A, .copyright A:hover {
+	color: #425868;
+	font-size: 10px;
+	font-weight: bold;
+}
+.fields {
+	font-size: 11px;
+	width: 266px;
+	height: 16px;
+	color: #666666;
+	background-color: #F8F8F8;
+	vertical-align: middle;
+/*/*/
+	border: 1px solid #B4BDC5;
+/*buzz*/
+}
+.txt {
+	font-size: 11px;
+	color: #666666;
+	background-color: #F8F8F8;
+	vertical-align: middle;
+/*/*/
+	border: 1px solid #D4D0C8;
+/*buzz*/
+}
+.texxtarea {
+	font-size: 11px;
+	width: 266px;
+	height: 80px;
+	color: #666666;
+	background-color: #F8F8F8;
+	vertical-align: middle;
+/*/*/
+	border: 1px solid #D4D0C8;
+/*buzz*/
+}
+.cellheaderfirst {
+	padding: 4px 7px;
+	font-size: 10px;
+	font-weight: bold;
+	color: #103951;
+	background-color: #AEC4AF;
+	padding: 5px;
+	text-align: center;
+	border-top: 1px solid #3F3F3F;
+	border-bottom: 1px solid #3F3F3F;
+	background-image: url(../images/1x1white.gif);
+	background-repeat: repeat-x;
+	background-position: 0% 0%;
+	text-transform: uppercase;
+}
+.cellheader {
+	padding: 4px 7px;
+	font-size: 10px;
+	font-weight: bold;
+	color: #103951;
+	background-color: #AEC4AF;
+	padding: 5px;
+	text-align: center;
+	border-left: 1px solid #3F3F3F;
+	border-top: 1px solid #3F3F3F;
+	border-bottom: 1px solid #3F3F3F;
+	background-image: url(../images/tab_border.gif);
+	background-repeat: repeat;
+	background-position: 0% 0%;
+	text-transform: uppercase;
+}
+.cellheader A, .cellheader A:hover, .cellheaderfirst A, .cellheaderfirst A:hover {
+	font-size: 10px;
+}
+.cell1 TD {
+	background-color: #ECECEC;
+	text-align: center;
+	color: #000000;
+	padding: 4px 7px;
+}
+.cell2 TD {
+	padding: 4px 7px;
+	background-color: #ffffff;
+	text-align: center;
+	color: #000000;
+}
+.selcamp{
+  width: 250px;
+  background-color: #f9f9f9;
+}
+.interval{
+  width: 150px;
+  background-color: #f9f9f9;
+}
+select {
+  background-color: #f9f9f9;
+  font-size: 10px
+}
+
