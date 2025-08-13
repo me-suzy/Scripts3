@@ -1,0 +1,77 @@
+
+<HTML>
+<head><title>Relata Login</title>
+
+<meta http-equiv="Expires" content="Fri, Jun 12 1981 08:20:00 GMT">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+<script type="text/javascript" src="{WWW_DIR}templates/login/login.js"></script>
+<script language="JavaScript">
+//<!--
+// break all frames
+if (self != top) top.location.href = window.location.href;
+
+if(!is_ie5up && !is_nav6up && !is_ie6)
+	location.href="{WWW_DIR}upgrade.htm";
+//-->
+
+</script>
+
+<script type="text/javascript" src="{WWW_DIR}lib/md5.js"></script>
+<link rel="stylesheet" type="text/css" href="{WWW_DIR}templates/global.css" />
+</head>
+
+<body text="white" class="colored" onLoad="window.document.login.username.focus();">
+
+
+{ERROR}
+
+<form name="login" action="{WWW_DIR}index.php?session_id={SESSION_ID}" method="post" onsubmit="doChallengeResponse()">
+
+<table align="center" width="578" cellspacing="0" cellpadding="0" border="0" height="100%">
+<tr valign="middle"><td>
+<table align="center" cellspacing="0" cellpadding="1" border="0" bgcolor="000000">
+<tr>
+    <td>
+
+<div align="center"><table cellspacing="0" cellpadding="0" border="0">
+<tr>
+
+    <td height="255" colspan="4"><img src="{WWW_DIR}/templates/login/login_top.jpg" width="640" height="255" border="0" alt=""></td>
+</tr>
+<td width="230" height="45"><img src="{WWW_DIR}/templates/login/login_mid1.gif"></td>
+ <td align="center" width="90" height="45" background="{WWW_DIR}/templates/login/login_mid2.gif">
+	<b><font face="arial" size="1" color="#ffffff">LOGIN:</font></b>
+	<br><input type="text" size="9" name="username">
+	</td><td align="center" width="90" height="45" background="{WWW_DIR}/templates/login/login_mid3.gif">
+	<b><font face="arial" size="1" color="#ffffff">PASSWORD:</font></b>
+	<br><input type="password" size="9" name="password"></td>
+	<td height="45"><img src="{WWW_DIR}/templates/login/login_mid4.gif" width="230" height="45"></td>
+</tr>
+<tr>
+	<td colspan="4" align="center" height="69" valign="top" background="{WWW_DIR}/templates/login/login_bottom.gif">
+<br>
+	<input type="submit" name="submit" value="Login">
+
+	</td>
+</tr>
+
+</table></div>
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+<input type="hidden" name="submit" value="Login">
+<input type="hidden" name="challenge" value="{CHALLENGE}">
+<input type="hidden" name="response">
+</form>
+
+</body>
+
+</HTML>
+
