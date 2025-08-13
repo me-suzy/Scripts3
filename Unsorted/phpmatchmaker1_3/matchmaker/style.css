@@ -1,0 +1,35 @@
+BODY, TD, TH, DL, UL, OL, P {    FONT-FAMILY: Verdana,Sans-serif; FONT-SIZE: 8pt;}
+
+
+A:link{    COLOR: #3333ff; }
+A:visited{    COLOR: #3333ff; }
+A:active{    COLOR: #3333ff; }
+A:hover{    COLOR: #3333ff; }
+
+
+.txt 
+{
+   font-family: Verdana, Arial, Helvetica, sans-serif; 
+   font-size:11px;
+   background-color: #FFFFFF;
+   border-style: solid;
+   border-width: 1px;
+}
+
+.submit 
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+   	font-size:11px;
+	border-style: solid;
+   	border-width: 1px;	
+}
+
+h3 { font-size:11px; }
+
+
+p { }
+.warn { color: #FF0000; }	
+.star { color: #FF0000; }
+
+UL { list-style-type: square; }
+.red { color: #FF0000; }
