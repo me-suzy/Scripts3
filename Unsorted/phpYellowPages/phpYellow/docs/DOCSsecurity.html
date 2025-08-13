@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+
+		<LINK rel=stylesheet type="text/css" href="documentation.css">
+
+<TITLE>phpYellow Pages - Easily create your very own Yellow Page directories on the web! - Dreamriver.com - php software mysql database software download apps</TITLE>
+
+	<META NAME="keywords" CONTENT="yellow, pages, phpYellow, php, software, Yellow, ads, listings">
+	<META NAME="description" CONTENT="Easily create your very own Yellow Page directories on the web!">
+	<META NAME="Author" CONTENT="Richard Creech, DreamRiver.com. Web: http://www.dreamriver.com Email: phpYellow@dreamriver.com">
+
+	</HEAD>
+
+
+<body class="yellow">
+
+
+
+<h1>phpYellow Pages Developer's Guide</h1>
+
+
+
+<!-- start of the dec30 navigation bar for the documentation -->
+<div align="center">
+<a href="DOCSindex.html">Docs Home</a> | 
+<a href="DOCSreadme.html">Read Me</a> | 
+<a href="DOCSfaq.html">FAQ</a> | 
+<a href="DOCSlicense.html">License</a> | 
+<a href="DOCSsecurity.html">Security</a> | 
+<a href="DOCSinstallNotes.html">Install</a> | 
+<a href="DOCSchangeLog.html">ChangeLog</a> | 
+<a href="DOCScustomize.html">Customize</a> | 
+<a href="DOCSpaidListings.html">Paid Listings</a>  
+</div>
+<!-- end of the dec30 navigation bar for the documentation -->
+
+
+
+
+<span style="color:Coral;font-size:48px;">SECURITY</span>
+
+
+<h3>TABLE OF CONTENTS</h3>
+
+<ul>
+<li>A Note <li>Recommendations <li>Summary <li>Feedback 
+</ul>
+ 
+
+<h2>A NOTE</h2>
+
+Every administration script is protected by transparent username and 
+password security. 
+
+
+
+<h2>RECOMMENDATIONS</h2>
+
+<ol>
+<li style="color:red;font-weight:bold;"><p>DELETE all phpYellow files that have the word &quot;install&quot; contained within a filename. This means you will <b>delete eleven (11) install files</b>.</p></LI>
+
+
+<li>Set the &quot;ADMINUSER&quot; &amp; &quot;ADMINPASSWORD&quot; CONSTANTS defined in util.php to your best possible values:
+<p>
+<code>
+define("ADMINUSER", "yourPHPYellowUserName"); // your phpYellow login<br>
+define("ADMINPASSWORD", "yourPHPYellowPassword"); // your phpYellow password
+</code>
+
+</p>
+
+
+<li>
+Change the name of admin.php to yourfilename.php, then set the 
+"admin.php" value below in util.php to the same new changed value:
+
+
+<p>
+<code>
+define("ADMINHOME", "admin.php"); // your phpYellow administration page
+</code>
+</p>
+
+
+<li>
+Make your administration password a good one, keep it safe and don't 
+tell anyone .... change it regularly by changing the value for the 
+ADMINPASSWORD constant.<br><br>
+
+
+<li>
+Make regular and frequent backups. Do not change filename extensions 
+to anything other than php, php3, phtml or a valid php extension. To 
+change a file extension to .html is like inviting hackers in.<br><br>
+
+
+<li>Keep the default notification <b>on</b> for new or changed listings:<br>
+<p>
+<code>
+define("NOTIFYONCHANGE", "yes"); // if you want the WEBMASTER notified
+</code>
+</p>
+
+
+<li>Quickly delete unwanted records submitted by hackers with the 
+Manage-Listings tool.<br><br>
+
+
+<li>
+Use a different password for your database which is NOT the same as 
+your regular internet user account login.<br>
+</ol>
+
+
+
+<h2>SUMMARY</h2>
+
+<p>There are a number of levels of security but no mechanism anywhere is 
+100% safe from unwanted breach. Your best defense is to use a good, 
+long and varied password and be sure to include numbers and other 
+special characters in it. You can also change the admin user name, 
+admin password, the name of the admin php file and other parameters.
+I recommend doing so. This may be performed in util.php</p>
+
+<p>Rather than make hacking easy, additional implemented phpYellow 
+security precautions are embedded into the source code but not documented.
+You would need to go over every line of code to understand the built in 
+security for phpYellow.</p>
+
+<p>Additional web server specific, scripting language specific and database specific security issues 
+are not addressed here. These component specific concerns are best 
+described in the documentation the components are delivered with.</p>
+
+
+<table cellspacing=20>
+<tr>
+	<td style="font-size:18px;font-weight:bold;">Web Server</td>
+	<td><a href="http://www.apache.org"><img src="../appimage/apache.gif" width="537" height="51" border=0 alt="http://www.apache.org"></a></td>
+</tr>
+<tr>
+	<td style="font-size:18px;font-weight:bold;">Scripting Language</td>
+	<td><a href="http://www.php.net"><img src="../appimage/phpSnow.gif" width="120" height="64" border=0 alt="http://www.php.net"></a></td>
+</tr>
+<tr>
+	<td style="font-size:18px;font-weight:bold;">Database</td>
+	<td><a href="http://www.mysql.com/"><img src="../appimage/mysql.png" width="167" height="87" border=0 alt="http://www.mysql.com/"></a></td>
+</tr>
+</table>
+
+
+
+<h2>FEEDBACK</h2>
+
+<p>If you can think of additional useful safety precautions to add to 
+this document please send your thoughts to <a href="mailto:security@dreamriver.com">security@dreamriver.com</a>
+</p>
+
+
+<p>END OF DOCUMENT</p>
+
+
+
+<!-- start of the dec30 navigation bar for the documentation -->
+<div align="center">
+<a href="DOCSindex.html">Docs Home</a> | 
+<a href="DOCSreadme.html">Read Me</a> | 
+<a href="DOCSfaq.html">FAQ</a> | 
+<a href="DOCSlicense.html">License</a> | 
+<a href="DOCSsecurity.html">Security</a> | 
+<a href="DOCSinstallNotes.html">Install</a> | 
+<a href="DOCSchangeLog.html">ChangeLog</a> | 
+<a href="DOCScustomize.html">Customize</a> | 
+<a href="DOCSpaidListings.html">Paid Listings</a>  
+</div>
+<!-- end of the dec30 navigation bar for the documentation -->
+
+
+
+
+<p class="sitedesign">All Pages Copyright&copy;2000,2001,2002 <a href="http://www.dreamriver.com">Dreamriver.com</a>. All rights reserved.</p>
+
+
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+
+</body>
+</html>
+
+
