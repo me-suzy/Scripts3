@@ -1,0 +1,16 @@
+Product code;Product name;Description;Brief description;Price;List price;In stock;Picture;Thumbnail;Enlarged picture
+;Automobiles;;;;;;;;
+;!Lotus;;;;;;;;
+GE733-13;Lotus Esprit;simple description goes here...;V8 complectation;72000;80000;3;picture.jpg;;
+;!Lamborghini;description of Lamborghini category;;;;;;;
+SS20/2003;Lamborghini Diablo;yellow diablo;;190000;230000;1;;;lamb.bmp
+;Computer hardware;;;;;;;;
+;!Monitors;;;;;;;;
+;!!TFT;;;;;;;;
+;!!!Samsung;;;;;;;;
+FSL33;SyncMaster 15;;"15""";200;210;56;;thumb.gif;
+235KKS;SyncMaster 17;;"17""";300;;31;;;
+USD81;SyncMaster 19;19 inch large screen;"19""";400;;9;;;
+;!!!GoldStar;;;;;;;;
+;!!Oldies;;;;;;;;
+;!HDD;;;;;;;;
