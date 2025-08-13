@@ -1,0 +1,122 @@
+.buttonnorm
+{
+	background: transparent;
+	color: #000000;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.buttonover
+{
+	background-color: #D6D6D6;
+	color: #0000000;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.buttonselected
+{
+	border-color: black;
+	border-width: 1px;
+	border-style: outset;
+	background-color: #496088;
+	color: #ffffff;
+	font-weight: bold;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+body
+{
+	background-color: #D4D0C8; 
+	border-width: 1px;
+	border-style: outset;
+	border-top-color: #ffffff;
+	border-left-color: #ffffff;
+	height: 99.6%;
+}
+
+#leftnavbox
+{
+	position: absolute; 
+	left: 5px;
+	top: 25px;
+	width: 160px; 
+	height: 90%; 
+	overflow: auto;
+	background-color: white;
+	border: 2px;
+	border-style: ridge;
+	font-family: verdana;
+	font-size: 8pt;
+    padding: 2px;
+}
+#contact-leftnavbox
+{
+	position: absolute; 
+	left: 5px;
+	top: 65px;
+	width: 160px; 
+	height: 90%; 
+	overflow: auto;
+	background-color: white;
+	border: 2px;
+	border-style: ridge;
+	font-family: verdana;
+	font-size: 8pt;
+    padding: 2px;
+}
+.add-button-norm
+{
+	position: absolute; Top: 3px; left: 7px;
+	width: 115px;
+	padding: 0px;
+	border-style: outset;
+	border-width: 2px;
+	font-family: verdana;
+	font-size: 8pt;
+	cursor: pointer;	/* w3 dom */
+	cursor: hand;		/* ie */
+	text-align: center;
+}
+
+.add-button-over
+{
+
+	position: absolute; Top: 3px; left: 7px;
+	width: 115px;
+	padding: 0px;
+	border-style: outset;
+	border-width: 2px;
+	font-family: verdana;
+	font-size: 8pt;
+	cursor: pointer;	/* w3 dom */
+	cursor: hand;		/* ie */
+	text-align: center;
+}
+
+.add-button-down
+{
+	position: absolute; Top: 3px; left: 7px;
+	width: 115px;
+	padding: 0px;
+	border-style: inset;
+	border-width: 2px;
+	font-family: verdana;
+	font-size: 8pt;
+	cursor: pointer;	/* w3 dom */
+	cursor: hand;		/* ie */
+	text-align: center;
+}
+select.form
+{
+	position: absolute; Top: 42px; left: 7px;
+	background: #ffffff;
+	font-size: 7pt;
+}
