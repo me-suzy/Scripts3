@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+	<TITLE>Rayserve Room Reservation Software - Booking List</TITLE>
+	<LINK REL="stylesheet" HREF="Style/RSV.css" TYPE="text/css">
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	<META NAME="Description" CONTENT="Rayserve Hotel Reservation Software">
+	<META NAME="Keywords" CONTENT="hotel, reservation, holiday, travel, book room, tariffs, internet, software, program, downlaod, demo">
+	<SCRIPT LANGUAGE="Javascript" TYPE="text/Javascript">if(!parent.frames['MainFrame']){parent.location.href='Demo_1.html';}</SCRIPT>
+</HEAD>
+<BODY>
+
+<H1 ALIGN="center">The Booking Agent - Booking List</H1>
+The table below shows a list of the room(s) you specified in the booking form. You can add more rooms, delete the list or confirm bookings using the buttons at the bottom of this page. Individual bookings can be modified using the buttons in the first column of the table. (Top button to change and lower button to delete).
+<P></P>
+
+<!-- START OF GENERATED HTML -->
+
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+parent.showBookingList('ICON','Icons/Edit.gif','Icons/Delete.gif');
+</SCRIPT>
+
+<!-- END OF GENERATED HTML -->
+
+<BR>
+<DIV CLASS="nsbugfix" ALIGN="center">
+<FORM>
+<INPUT TYPE="button" NAME="ConfBtn" VALUE="Confirm All Bookings" onClick="parent.confBooking('Checkout.html');">&nbsp;&nbsp;
+<INPUT TYPE="button" NAME="CancBtn" VALUE="Delete All Bookings" onClick="parent.deleAll('BookingList.html');">&nbsp;&nbsp;
+<INPUT TYPE="button" NAME="HelpBtn" VALUE="Help!" onClick="parent.helpMe('ConfForm');">
+</FORM>
+</DIV>
+<P></P>
+<DIV ALIGN="center">
+<HR WIDTH="90%">
+<SPAN CLASS="hlite">Booking List</SPAN><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="Checkout.html" TARGET="MainFrame">Confirm Bookings</A><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="Email.html" TARGET="MainFrame">Email Us</A><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="javascript:parent.newWin('Currency.html','Currency_Display',370,270,1)">Change Currency</A><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="javascript:parent.newWin('Convert.html','Currency_Convertion',370,340,1)">Currency Conversion</A>
+<HR WIDTH="90%">
+</DIV>
+<DIV CLASS="authinfo" ALIGN="center">Powered by Rayserve</DIV>
+</BODY>
+</HTML>
