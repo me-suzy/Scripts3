@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+
+      <link rel="stylesheet" type="text/css" href="../../yellow.css">
+
+<title>phpYellow Pages - Connect to a Payment Gateway Processor - How to Make Authorizenet Work with phpYellow Pages</title>
+
+	<META NAME="keywords" CONTENT="phpYellow, Pages, php, Yellow, add, edit, delete, listing, login, below">
+	<META NAME="description" CONTENT="How to Make Authorizenet Work with phpYellow Pages ...">
+	<META NAME="Author" CONTENT="Richard Creech, Web: http://www.dreamriver.com Email: richardc@dreamriver.com">
+	<META NAME="GENERATOR" CONTENT="Blood, Sweat & Tears">
+
+	</HEAD>
+
+<BODY>
+<h1>How to Make Authorizenet Work<br> with phpYellow Pages</h1>
+
+
+
+<!-- start of links to individual gateway instructions -->
+<div align="center">
+<a href="../../docs/DOCSpaidListings.html">Guide</a> | 
+<a href="../index.html">General</a> | 
+<a href="../clickbank/index.html">Clickbank</a> | 
+<a href="../paypal/index.html">Paypal</a> | 
+<a href="../self/index.html">Self</a> | 
+<a href="../worldpay/index.html">Worldpay</a> 
+</div>
+<!-- end of links to individual gateway instructions -->
+
+
+
+<h2>Pretest</h2>
+<p>Before changing anything make sure that your phpYellow Pages is processing paid listings. This is how:
+
+<ol>
+	<li>open util.php</li>
+	<li>set the CONSTANT value for BYPASSCARDPROCESSOR from &quot;no&quot; to &quot;yes&quot;</li>
+	<li>set the CONSTANT value for PAIDLISTINGS from &quot;&quot; to &quot;yes&quot;</li>
+	<li>save util.php to your web server</li>
+	<li>go to phpYellow Pages and add a test listing</li>
+	<li>find any test listing</li>
+	<li>click on the &quot;Go Premium&quot; button</li>
+	<li>complete the checkout page details and click on &quot;Next Step&quot;</li>
+	<li>on the <i>Proceed to Purchase?</i> page click on &quot;Next Step&quot;</li>
+	<li>the result is an upgraded Premium Listing</li>
+</ol>
+DO NOT PROCEED UNTIL THIS PRETEST IS WORKING TO YOUR SATISFACTION.
+</p>
+
+
+
+
+
+
+<p>
+phpYellow Pages can use Authorizenet to process Premium Listing payments. 
+Configuration is needed in two (2) places:
+</p>
+
+<ol>
+	<li>configure phpYellow Pages</li>	
+	<li>configure the Authorizenet Administration</li>
+</ol>
+	
+
+
+<h2>1. configure phpYellow Pages Premium Edition</h2>
+
+<p>In the file called util.php make these changes:</p>
+
+<ul>
+	<li>define("PAIDLISTINGS", "yes");</li>
+	<li>define("SENDRECEIPT", "yes"); /* [optional] */</li>
+	<li>define("BYPASSCARDPROCESSOR", "no");</li>
+	<li>define("GATEWAYPROCESSOR", "authorizenet");</li>
+	<li>define("POSTTRANSACTIONSURL", "https://secure.authorize.net/gateway/transact.dll");</li>
+	<li>define("TRANSACTIONTYPE", "weblink");</li>
+	<li>define("X_LOGIN", "yourLoginID"); // identifies you as a merchant</li>
+
+	<li>save and upload to your webserver</li>
+</ul>
+
+
+
+
+<h2>2. Configure the Authorizenet Administration</h2>
+
+
+<p>Next configure your Authorizenet settings. Make all of the settings below.</p>
+
+<ul>
+	<li>make a secure login to the administration area</li>
+	<li>use test mode: Settings > General Merchant Settings > Test Mode</li>
+	<li>Settings > Payment Form / Receipt Settings > General Payment Form / Receipt Settings > Receipt Link Method > POST</li>
+	<li>Settings > Payment Form / Receipt Settings > General Payment Form / Receipt Settings > Receipt Link Text > 'Next Step'</li>
+	<li>Settings > Payment Form / Receipt Settings > General Payment Form / Receipt Settings > E-Mail Receipt Settings > E-Mail Customer > 'Yes'</li>
+	<li>Settings > Payment Form / Weblink Field Settings > uncheck ALL settings below and including 'Shipping First Name' because shipping is not used</li>
+	<li>Settings > Payment Form / Weblink Field Settings > uncheck the Editable column ONLY for Invoice #, Description and Customer ID</li>
+<li>Here is a snapshot of the Add URL settings:
+<img src="addURL.jpg" width="515" height="260" border=0 alt="Add URL snapshot"></li>
+	<li>Settings > Manage URLs > Add URL > http://www.yourdomain.com/phpYellow/premiumProcessPayment.php</li>
+	<li>Settings > Manage URLs > Add URL > Add To List Of Valid Referrers > NOT checked</li>
+	<li>Settings > Manage URLs > Add URL > Add To List Of Valid ADC / Receipt Link URLs > checked</li>
+	<li>Settings > Manage URLs > Add URL > Receipt Link Default URL > checked</li>
+</ul>
+
+<h3>Additional References</h3>
+<p>Authorizenet Developer's Guide:<br> <a href="http://www.authorizenet.com/go2/framed.php?url=https://secure.authorize.net/docs/index.pml">http://www.authorizenet.com/go2/framed.php?url=https://secure.authorize.net/docs/index.pml</a>
+	
+	 
+
+
+<h2>Test</h2>
+<ul>
+	<li>do a live credit card payment transaction from any phpYellow listing (similar to the Pretest above)</li>
+	<li>when satisfied switch Authorizenet settings back to LIVE mode: Settings > General Merchant Settings > NOT Test Mode</li>
+</ul>
+
+
+<h2>Done!</h2>
+<p>
+This completes the steps to integrate your payment processing with phpYellow Pages. Congratulations, 
+you can start earning revenue using online payment and automatically paid listings.
+</p>
+
+<p><br></p>
+
+<!-- start of links to individual gateway instructions -->
+<div align="center">
+<a href="../../docs/DOCSpaidListings.html">Guide</a> | 
+<a href="../index.html">General</a> | 
+<a href="../clickbank/index.html">Clickbank</a> | 
+<a href="../paypal/index.html">Paypal</a> | 
+<a href="../self/index.html">Self</a> | 
+<a href="../worldpay/index.html">Worldpay</a> 
+</div>
+<!-- end of links to individual gateway instructions -->
+
+
+<p><br></p>
+<p><br></p>
+
+</body>
+</html>
