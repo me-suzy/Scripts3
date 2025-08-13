@@ -1,0 +1,158 @@
+<?
+
+/*
+
+
+
+   Copyright (c), 1999, 2000 - phpauction.org
+
+
+
+   This program is free software; you can redistribute it and/or modify
+
+   it under the terms of the GNU General Public License as published by
+
+   the Free Software Foundation (version 2 or later).
+
+
+
+   This program is distributed in the hope that it will be useful,
+
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+
+   GNU General Public License for more details.
+
+
+
+   You should have received a copy of the GNU General Public License
+
+   along with this program; if not, write to the Free Software
+
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+
+
+*/
+
+?>
+
+
+
+<TABLE WIDTH="765" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING="0" CELLSPACING="0">
+
+<TR>
+
+    <TD align="right" height="128"> 
+      <!-- TABLE WITH CATEGORIES -->
+      <TABLE WIDTH="100%" BORDER=0 CELLPADDING=3 CELLSPACING=0 bgcolor="#FFFFFF">
+<TR><TD>&nbsp;</TD></TR>
+<TR>
+	<TD ALIGN=CENTER>
+		<?=$tlt_font?>
+		<?=$MSG_280?>
+		</font>
+	</td>
+</tr>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<TABLE WIDTH="100%" BORDER=0 CELLPADDING=3 CELLSPACING=0 bgcolor="#FFFFFF">
+<TR ALIGN=CENTER BGCOLOR="<?=$FONTCOLOR[$SETTINGS[tableheadercolor]]?>">
+
+	<TD WIDTH="10%">
+
+	<FONT FACE="Verdana,Helvetica,Arial" SIZE="2" COLOR="#FFFFFF">
+
+	<?
+
+		print $MSG_167;
+
+	?>
+
+	</FONT></TD>
+
+	<TD WIDTH="45%">
+
+	<FONT FACE="Verdana,Helvetica,Arial" SIZE="2" COLOR="#FFFFFF">
+
+	<?
+
+		print $MSG_168;
+
+	?>
+
+	</FONT></TD>
+
+	<TD WIDTH="15%">
+
+	<FONT FACE="Verdana,Helvetica,Arial" SIZE="2" COLOR="#FFFFFF">
+
+	<?
+
+		print $MSG_169;
+
+	?>	</FONT></TD>
+
+	<TD WIDTH="15%">
+
+	<FONT FACE="Verdana,Helvetica,Arial" SIZE="2" COLOR="#FFFFFF">
+
+	<?
+
+		print $MSG_170;
+
+	?>	</FONT></TD>
+
+	<TD WIDTH="15%">
+
+	<FONT FACE="Verdana,Helvetica,Arial" SIZE="2" COLOR="#FFFFFF">
+
+	<?
+
+		print $MSG_171;
+
+	?>	</FONT></TD>
+
+</TR>
+
+<? print $TPL_auctions_list_value; ?>
+
+</TABLE>
+
+
+
+</CENTER><br>
+      <?
+	//-- Build navigation line
+
+		print "<b><SPAN CLASS=\"navigation\">";
+		$num_pages = ceil($num_auctions / $limit);
+		$i = 0;
+		while($i < $num_pages ){
+
+			$of = ($i * $limit);
+
+			if($of != $offset){
+				print "<A HREF=\"view_more_ending.php?offset=$of\" CLASS=\"navigation\">".($i + 1)."</A>";
+				if($i != $num_pages) print " | ";
+			}
+			else{
+				print  $i + 1;
+				if($i != $num_pages) print " | ";
+			}
+		
+	
+
+			$i++;
+		}
+		print "</SPAN></b>";
+?>&nbsp;&nbsp;
+    </TD>
+
+</TR>
+
+</TABLE>
+
+
