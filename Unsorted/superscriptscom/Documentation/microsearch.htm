@@ -1,0 +1,271 @@
+<html>
+
+<head>
+<title>Microsearch Customizable Database and Search Engine CGI Script Documentation </title>
+
+<meta name="Microsoft Border" content="t, default"></head>
+
+<body bgcolor="white"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+
+<table border="0" width="33%" cellpadding="0">
+  <tr>
+    <td width="50%"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/" ONCLICK="parent.f=0"><img src="../pix/banners/miniprizm.gif" alt="cgi scripts" border="0" WIDTH="305" HEIGHT="59"></a></font></td>
+    <td width="50%" bgcolor="#FFFFFF"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/ads/rotate.cgi?url=&amp;user=" target="new" ONCLICK="parent.f=0"><img src="http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user=" border="0" width="468" height="60"></a></font></td>
+  </tr>
+</table>
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="16%"><p align="center"><a href="../dsstoday/index.html"><font color="#000000" face="Arial"><img src="../pix/main/news.jpg" alt="CGI NEWS" align="left" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="16%"><p align="center"><a href="../scripts/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/scripts.jpg" alt="CGI Scripts" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../mastergate/index.html"><font color="#000000" face="Arial"><img src="../pix/main/access.jpg" alt="Access The CGI Archive" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../contact.html"><font color="#000000" face="Arial"><img src="../pix/main/contact.jpg" alt="Contact Superscripts" WIDTH="104" HEIGHT="68"></font></a></td>
+    <td width="17%"><p align="center"><a href="../support.html"><font color="#000000" face="Arial"><img src="../pix/main/dox.jpg" alt="CGI Documentation" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../download/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/download.jpg" alt="Download CGI Scripts Here" align="right" WIDTH="105" HEIGHT="65"></font></a></td>
+  </tr>
+  <tr>
+    <td width="16%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/dsstoday/index.html" style="color: rgb(255,255,255)"><strong>News</strong></a></font></td>
+    <td width="16%" bgcolor="#000000"><p align="center"><a href="/scripts/" style="color: rgb(255,255,255)"><font face="Arial" color="#FFFFFF"><strong>CGI Scripts</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><a style="color: rgb(255,255,255)" href="../mastergate/index.html"><font face="Arial" color="#FFFFFF"><strong>Become A Member</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../contact.html"><strong>Contact
+    Us</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../support.html"><strong>Support</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/download/index.shtml" style="color: rgb(255,255,255)"><strong>Download
+    Area</strong></a></font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+
+<table border="0" width="75%" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <p><big><big><font face="Arial" color="#FF0000"><strong>Documentation<br>
+      </strong></font><font color="#000000" face="Arial">MICROSEARCH:&nbsp; V6.0</font></big></big></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Copyright 2001 Psybercore, Inc. - All Rights
+        Reserved. </small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Selling redistributing or modifying any or
+        all of the code for this program without prior written consent is expressly forbidden. You
+        must obtain written permission before redistributing this software over the Internet or in
+        any other medium. In all cases copyright and header information must remain intact.</small></font></p>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><strong>Preleminary Material for review</strong></font><ul>
+        <li><a href="http://www.mysql.com"><font color="#000000" face="Arial"><small>Mysql Tutorial</small></font></a></li>
+        <li><a href="../tutorial/index.html"><font color="#000000" face="Arial"><small>Perl and
+          Telnet Tutorials</small></font></a></li>
+      </ul>
+      <p><font color="#000000" face="Arial"><strong>System Requirements</strong></font><ul>
+        <li><font color="#000000" face="Arial"><small>Perl 5</small></font></li>
+        <li><font color="#000000" face="Arial"><small><a href="http://www.mysql.com">Mysql</a>
+          Database Software</small></font></li>
+        <li><a href="../download/Msql-Mysql-modules-1.2200.tar.gz"><font color="#000000" face="Arial"><small>Msql-Mysql Module</small></font></a></li>
+        <li><a href="../download/DBI-1.09.tar"><font color="#000000" face="Arial"><small>DBI Module</small></font></a></li>
+        <li><font color="#000000" face="Arial"><small>Unix Style Operating System </small></font></li>
+      </ul>
+      <h2><font color="#000000" face="Arial"><small>Preliminaries</small></font></h2>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>Determine the path to PERL 5 on your web
+          server host.&nbsp; Note that some web hosting companies run both PERL 4 and PERL 5.&nbsp;
+          Make ABSOLUTELY sure you are not setting this up under PERL 4.&nbsp; Ask your
+          administrator if you are not sure. </small></font></li>
+      </ul>
+      <ul>
+        <li><a href="../tutorial/index.html"><font color="#000000" face="Arial"><small>If you need
+          to review or learn the basics of CGI and Perl visit the tutorial</small></font></a></li>
+      </ul>
+      <ul>
+        <li><font color="#000000" face="Arial"><small><a href="http://www.superscripts.com/download/">Download</a> the tarfile for this program and
+          save it to your desktop.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>Unpack the tar archive on your desktop using a
+          program that unpacks UNIX TAR ARCHIVES. If you don't have such a program then download
+          WINZIP FREE from <a HREF="http://www.shareware.com/">SHAREWARE.COM</a>.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>After you have unpacked the TAR archive you
+          will have a collection of folders and files on your desktop.&nbsp; Now you have to do some
+          basic editing of each of these files (or at least some of them).&nbsp; Use a text editor
+          such as wordpad, notepad, BBEdit, simpletext, or teachtext to edit the files.&nbsp; These
+          are NOT WORD PROCESSOR DOCUMENTS they are just simple TEXT files so don't save them as
+          word processor documents or save them with extentions such as .txt or they will NOT WORK.
+          &nbsp; Note that there may be a some files inside of folders which are &quot;blank&quot;.
+          &nbsp; This is normal.</small></font></li>
+      </ul>
+      <p><strong><big><font color="#000000" face="Arial"><big>Before you begin</big></font></big></strong></p>
+      <blockquote>
+        <p><small><font color="#000000" face="Arial"><a href="../demo/microsearch/index.html">Take
+        a walk through the demo.</a>&nbsp; The demo is layed out pretty nice to give you a good
+        idea of how this works.</font></small></p>
+      </blockquote>
+      <h2><font color="#000000" face="Arial"><small>Preparing the CGI scripts</small></font></h2>
+      <blockquote>
+        <h2><font face="Arial" color="#FF0000"><small><small>Define Path To PERL 5</small></small></font></h2>
+      </blockquote>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>The first step is to open up each and every
+        file that has a .cgi extention and edit line number one of each script.&nbsp; Each of the
+        cgi scripts is written in perl 5. For your scripts to run they must know where perl 5 is
+        installed on your web server. The path to perl 5 is defined to a cgi script in the first
+        line of the file. In each of the cgi scripts the first line of code looks something like
+        this: </small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#FF0000"><small>#!/usr/bin/perl</small></font></p>
+        </blockquote>
+        <p><font color="#000000" face="Arial"><small>If the path to perl 5 on your web server is
+        different from /usr/bin/perl you must edit the first line of each cgi script to reflect
+        the correct path. If the path to perl 5 is the same no changes are necessary. If you do
+        not know the path to perl 5 ask the webmaster or system administrator at your server site.
+        &nbsp; </small></font></p>
+      </blockquote>
+      <h2><font color="#000000" face="Arial"><small>Create Directories/Upload files</small></font></h2>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Create a directory inside your cgi-bin called
+        microsearch (/cgi-bin/microsearch).&nbsp; Create another directory inside of this called
+        &quot;generated&quot; (/cgi-bin/microsearch/generated).&nbsp; Inside your webspace create
+        a directory called microsearch (http://www.yourdomain.com/microsearch) and also another
+        directory called admin (http://www.yourdomain.com/microsearch/admin).&nbsp; Upload as
+        follows</small></font></p>
+        <p><font face="Arial" color="#FF0000"><small>/microsearch/</small></font><ul>
+          <li><font color="#000000" face="Arial"><small>search.html</small></font></li>
+          <li><font color="#000000" face="Arial"><small>add.html</small></font></li>
+        </ul>
+        <p><small><font face="Arial" color="#FF0000">/microsearch/admin/ <a href="../tutorial/htaccess.html">(password protect)</a> </font><font color="#000000" face="Arial">- note that if you cannot run cgi outside of the cgi-bin you may need to move
+        these files into the cgi-bin, nevertheless you want this directory password protected</font></small><ul>
+          <li><font color="#000000" face="Arial"><small>copy of search.html (rename index.html and
+            point form action to admin.cgi)</small></font></li>
+          <li><font color="#000000" face="Arial"><small>admin.cgi</small></font></li>
+          <li><font color="#000000" face="Arial"><small>configure.cgi (copy of configure.cgi from
+            /cgi-bin/microsearch)</small></font></li>
+          <li><font color="#000000" face="Arial"><small>delete.cgi</small></font></li>
+          <li><font color="#000000" face="Arial"><small>generate.cgi</small></font></li>
+          <li><font color="#000000" face="Arial"><small>modify.cgi</small></font></li>
+          <li><font color="#000000" face="Arial"><strong><small>setup.html (points to generate.cgi)
+            this is where you start</small></strong></font></li>
+          <li><font face="Arial" color="#FF0000"><strong><small>I.E.&nbsp; START HERE
+            http://www.yourdomain.com/microsearch/admin/setup.html</small></strong></font></li>
+          <li><font face="Arial" color="#FF0000"><strong><small>I.E.&nbsp; START HERE
+            http://www.yourdomain.com/microsearch/admin/setup.html</small></strong></font></li>
+          <li><font face="Arial" color="#FF0000"><strong><small>I.E.&nbsp; START HERE
+            http://www.yourdomain.com/microsearch/admin/setup.html</small></strong></font></li>
+        </ul>
+        <p><font face="Arial" color="#FF0000"><small>/cgi-bin/microsearch/</small></font><ul>
+          <li><font color="#000000" face="Arial"><small>add.cgi</small></font></li>
+          <li><font color="#000000" face="Arial"><small>configure.cgi</small></font></li>
+          <li><font color="#000000" face="Arial"><small>footer.html</small></font></li>
+          <li><font color="#000000" face="Arial"><small>header.html</small></font></li>
+          <li><font color="#000000" face="Arial"><small>profile.cgi</small></font></li>
+          <li><font color="#000000" face="Arial"><small>search.cgi</small></font></li>
+          <li><font color="#000000" face="Arial"><small>setup.cgi</small></font></li>
+          <li><font color="#000000" face="Arial"><small>create a folder called generated inside here
+            too (/cgi-bin/generated) this will just be a temporary directory used during the
+            installation.&nbsp; chmod this directory to 666 or 777.&nbsp; After the initial setup
+            process this will contain the database.sql file, the add.html file, and the search.html
+            file.</small></font></li>
+        </ul>
+        <p><font color="#000000" face="Arial"><small>Set all the .cgi files permissions to 755.
+        &nbsp; Set everything else to 777 or 666 depending on what your ISP requires.&nbsp; Chmod
+        the &quot;generated&quot; directory to 666 or 777.</small></font></p>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big><strong>Configure the .cgi files</strong></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><big>configure.cgi</big></font></p>
+      </blockquote>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>There are 2 configure.cgi files but they are
+        identical.&nbsp; So just edit one and upload 2 copies (to /microsearch/admin/ and
+        /cgi-bin/microsearch) Edit the cgi configuration variables - just a bunch of paths, uri's
+        and mysql user/pass/database name.&nbsp; Should be pretty obvious.&nbsp; Note that the
+        variables with /path/to/generated/ are paths to the &quot;generated&quot; directory you
+        created to store the search.html, add.html and database.sql files that are created during
+        setup.</small></font><font SIZE="2"><ul>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$headerhtml =
+            &quot;/path/to/header.html&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$footerhtml =
+            &quot;/path/to/footer.html&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$mysqldatabase= &quot;your mysql
+            database name&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$mysqlusername = &quot;your mysql
+            user name&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$mysqlpassword = &quot;your mysql
+            password&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$sqlfilename =
+            &quot;/path/to/generated/database.sql&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$registrationfilename =
+            &quot;/path/to/generated/add.html&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$searchfilename =
+            &quot;/path/to/generated/search.html&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$cgidir =
+            &quot;/cgi-bin/microsearch&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$admincgidir =
+            &quot;/microsearch/admin&quot;;</font><font SIZE="2"></li>
+        </ul>
+        </font>
+      </blockquote>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Cosmetic adjustments.&nbsp; You can customize
+        the colors, fonts/etc for the search engine results by tweaking these variables.&nbsp; The
+        only thing I should probably explain are the &quot;fieldwidth&quot; variables.&nbsp; These
+        control the table width for the fields displayed in the search results.&nbsp; If you want
+        to customize these it can help make the search results look nicer.&nbsp; I have this set
+        by default to 25%.&nbsp; So if your search results have lets say 5 fields you could set
+        this to 20% so they are all evenly spaced.&nbsp; This isn't necessary though.</small></font><font SIZE="2"><ul>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$headerfonttype= &quot;Arial&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$headercellcolor =
+            &quot;#000000&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$headerfontcolor =
+            &quot;#FFFFFF&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$datafonttype = &quot;Arial&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$datacellcolor = &quot;#FFFFFF&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$datafontcolor = &quot;#000000&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$fieldwidth = &quot;25%&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$overallwidth = &quot;100%&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$bgcolor = &quot;white&quot;;</font><font SIZE="2"></li>
+        </ul>
+        </font>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big>Setting up the database</big></font></p>
+      <blockquote>
+        <p><small><font color="#000000" face="Arial">I assume you already know mysql.&nbsp; <a href="http://www.perlmasters.com/tutorial/">If you do not you need to readup on it here.</a>
+        &nbsp; When you get everything installed go to </font><font face="Arial" color="#FF0000">http://www.yourdomain.com/microsearch/admin/setup.html.
+        &nbsp; </font><font color="#000000" face="Arial">This is a simple one-field form asking
+        you how many fields you are going to need for your database.&nbsp; Play with it a little
+        and you will figure out how this works.&nbsp; There are instructions on the following page
+        that explain how the setup of the database works.&nbsp; The setup procedure creates the
+        .sql file for mysql and the search.html and add.html forms for adding and searching the
+        database.&nbsp; These 3 files are created and stored inside of the folder you created
+        called (generated).&nbsp; You will have to copy these 2 forms to your hard drive and
+        reupload them wherever you want the search.html, add.html forms to be.&nbsp; Also make a
+        second copy of search.html and put it inside of your admin directory.&nbsp; Point the form
+        action for the admin copy to admin.cgi instead of search.cgi.&nbsp; This special search
+        form will allow you to delete data.&nbsp; You should password protect the admin directory
+        if you haven't already figured that out.&nbsp; You probably should also move the
+        administrative cgi scripts to a special protected directory as well.</font></small></p>
+        <p><font color="#000000" face="Arial"><small>When you are setting up the database, the
+        second page of the setup process asks you simple questions about the database structure.
+        &nbsp; The name of the search field, the type of search interface (3 are availabe -
+        dropdown menu, text field, text area), whether or not it is a required field when adding
+        new entries, whether or not it is a UNIQUE field (meaning only one entry per unique
+        element), and whether or not the field should show up on the search results page or on the
+        dataprofile page.</small></font></p>
+        <p><font color="#000000" face="Arial"><small>The best way to explain this is just to set
+        it up.&nbsp; If you play with the setup script and look at how it creates the search.html
+        and add.html forms you will have a good idea of what is going on.&nbsp; Note that you can
+        customize the search and add forms as long as you keep the structural elements together.
+        &nbsp;Drop down menus can be replaced with radio buttons or similar form fields/etc.
+        &nbsp; </small></font></p>
+      </blockquote>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+
+<blockquote>
+  <p>&nbsp;</p>
+</blockquote>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
