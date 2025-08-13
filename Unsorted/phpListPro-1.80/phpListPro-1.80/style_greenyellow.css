@@ -1,0 +1,211 @@
+/*###############################################################################################
+
+
+#
+
+
+#  project           	: phpListPro
+
+
+#  filename          	: style_greenyellow.css
+
+
+#  Build By          	: Erich Fuchs
+
+
+#  e-mail            	: office@smartisoft.com
+
+
+#  purpose           	: Style Configuraion File
+
+
+#
+
+
+#  color modified by 	: Mirko Baschek
+
+
+#  e-mail            	: listmaster@hitdomains.de
+
+
+#
+
+
+###############################################################################################*/
+
+
+
+
+
+body 			{
+
+
+			background:#000000;
+
+
+			color:#AAAAAA;
+
+
+			margin-top:10px;
+
+
+			margin-bottom:10px;
+
+
+			font-family: Verdana,Arial,sans-serif;
+
+
+			font-size:10pt;
+
+
+			text-align:center;
+
+
+			}
+
+
+
+
+
+A:link 			{ color:#009900; font-weight:bold; text-decoration:underline; font-family: Verdana,Arial,sans-serif; }
+
+
+A:visited 		{ color:#009900; font-weight:bold; text-decoration:underline; font-family: Verdana,Arial,sans-serif; }
+
+
+A:active 		{ color:#FF0000; font-weight:bold; text-decoration:underline; font-family: Verdana,Arial,sans-serif; }
+
+
+A:hover 		{ color:#00FF00; font-weight:bold; text-decoration:underline; font-family: Verdana,Arial,sans-serif; }
+
+
+
+
+
+form                    { display : inline;}
+
+
+p,div,td 		{ color:#AAAAAA; font-family:Verdana,Arial,sans-serif; font-size:10pt; }
+
+
+form,input,option,select{ color:#111111; font-family:Verdana,Arial,sans-serif; font-size:8pt; }
+
+
+
+
+
+
+
+
+table.menu 		{ background: #000000; border:0px solid #999999; padding:5px; text-align:center; width:670px; margin-top:5px;}
+
+
+
+
+
+table.list 		{ background: #00FF00; border:1px solid #999999; padding:5px; text-align:center; width:670px; margin-top:5px;}
+
+
+
+
+
+td.listtitle		{ background: #003300; border:0px solid #AAAAAA; padding:5px; text-align:center; height:30px;}
+
+
+div.listtitle		{ color:#FFCC00; font-weight:bold; font-size:10pt; font-family: Verdana,Arial,sans-serif;}
+
+
+
+
+
+td.listhead    		{ background: #003300; border:0px solid #AAAAAA; padding:5px; text-align:center; height:30px;}
+
+
+div.listhead		{ color:#FFCC00; font-weight:bold; font-size:10pt; font-family: Verdana,Arial,sans-serif;}
+
+
+
+
+
+td.listrowrank 		{ background: #003300; border:1px solid #AAAAAA; text-align:center; width:40px}
+
+
+div.listrowrank		{ color:#FFCC00; font-weight:bold; font-size:10pt; font-family: Verdana,Arial,sans-serif;}
+
+
+
+
+
+td.listrowsite 		{ background: #000000; border:1px solid #AAAAAA; padding:5px; text-align:left;}
+
+
+div.listrowsite		{ color:#FFCC00; font-weight:normal; font-size:8pt; font-family: Verdana,Arial,sans-serif;}
+
+
+
+
+
+td.listrowvotes 	{ background: #003300; border:1px solid #AAAAAA; text-align:center; width:40px;}
+
+
+div.listrowvotes	{ color:#FFCC00; font-weight:normal; font-size:8pt; font-family: Verdana,Arial,sans-serif;}
+
+
+
+
+
+td.listrowhits 		{ background: #003300; border:1px solid #AAAAAA; text-align:center; width:40px;}
+
+
+div.listrowhits		{ color:#FFCC00; font-weight:normal; font-size:8pt; font-family: Verdana,Arial,sans-serif;}
+
+
+
+
+
+td.listrowrate 		{ background: #003300; border:1px solid #AAAAAA; text-align:center; width:50px;}
+
+
+div.listrowrate		{ color:#FFCC00; font-weight:normal; font-size:8pt; font-family: Verdana,Arial,sans-serif;}
+
+
+
+
+
+td.ratingbarout		{ background: #FF9900; }
+
+
+td.ratingbarin		{ background: #FF3300; }
+
+
+td.ratingbarinhigh	{ background: #CC0000; }
+
+
+div.ratingbarspace	{ color:#AAAAAA; font-family:Verdana,Arial,sans-serif; font-size:4pt; text-align:center;}
+
+
+
+
+
+div.footer 		{ color:#AAAAAA; font-family:Verdana,Arial,sans-serif; font-size:8pt; text-align:center;}
+
+
+div.proctime 		{ color:#AAAAAA; font-family:Verdana,Arial,sans-serif; font-size:7pt; text-align:center;}
+
+
+div.maincenter		{ color:#AAAAAA; font-family:Verdana,Arial,sans-serif; font-size:10pt; text-align:center;}
+
+
+div.mainleft		{ color:#AAAAAA; font-family:Verdana,Arial,sans-serif; font-size:10pt; text-align:left;}
+
+
+div.smallright		{ color:#AAAAAA; font-family:Verdana,Arial,sans-serif; font-size:7pt; text-align:right;}
+
+
+
+
+
+
+
+
+table.standard 		{ background: #000000; border:1px solid #999999; padding:5px; text-align:left; margin:5px;}
