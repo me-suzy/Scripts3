@@ -1,0 +1,7 @@
+----- Free Version to Version 6
+
+Just replace all of the old files with the new package, except for the main.inc.php, config.inc.php and theme.inc.php files.  This will update your free version to include all features of the commercial version.
+
+Next you will need to bring up the altertable-demo-6.0.php in your web browser, in the same fashion that you originally ran the createtable.php script to setup the demo version.
+
+You will need to relogin and then go into the admin section and run the config editor to update the version #.
