@@ -1,0 +1,57 @@
+To: perl@perl-archiv.de
+From: perl@perl-achiv.de
+Subject: neuer Eintrag in die TopLinks-Liste
+
+Name:   asd
+URL:    http://www.perl-archiv.de
+Mail:   perl@perl-achiv.de
+
+----------------------------------------------------------------------
+SERVER_SOFTWARE = Microsoft-IIS/4.0
+INSTANCE_ID = 1
+PROMPT = !Windows ist aktiv! $P$G
+GATEWAY_INTERFACE = CGI/1.1
+MIDI = SYNTH:1 MAP:E MODE:0
+CLASSPATH = .;g:\develop\java\lib\classes.zip
+REMOTE_ADDR = 127.0.0.1
+QBACKUP = D:\UTIL\DOS-Util\BACKUP
+REQUEST_METHOD = POST
+WINDIR = C:\WINDOWS
+BLASTER = A220 I5 D1 H5 P330 T6 E620
+HTTP_ACCEPT = image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+TMP = C:\WINDOWS\TEMP
+HTTP_ACCEPT_LANGUAGE = en
+HTTPS = off
+DIRCMD = /O
+TEMP = C:\TEMP
+SERVER_NAME = www.perl-archiv.de
+SERVER_PORT = 80
+HTTP_CONTENT_TYPE = application/x-www-form-urlencoded
+HTTP_CONTENT_LENGTH = 70
+CMDLINE = win
+PATH_TRANSLATED = G:\Home\pages\perlarchiv.de\demo\_archiv\tl\cgi-bin\toplinks.cgi
+WINPMT = $p$g
+WINBOOTDIR = C:\WINDOWS
+SERVER_PORT_SECURE = 0
+LOCAL_ADDR = 127.0.0.1
+MAPLELIB = D:\MAPLE\LIB
+XP = D:\XP
+SERVER_PROTOCOL = HTTP/1.0
+SOUND = C:\PROGRA~1\AWE
+REMOTE_HOST = 127.0.0.1
+COMSPEC = C:\COMMAND.COM
+HTTP_REFERER = http://www.perl-archiv.de/demo/_archiv/tl/cgi-bin/toplinks.cgi?form
+HTTP_USER_AGENT = Mozilla/4.05 [en] (Win95; I ;Nav)
+PATH = C:\UTIL\SCANNER\PAGEMGR\IMGFOLIO;C:\UTIL\SCANNER\PAGEMGR;C:\UTIL\WIN98RK;C:\WINDOWS;C:\WINDOWS\COMMAND;C:\;C:\BATCH;C:\UTIL\PACKER;D:\XP;G:\DEVELOP\PERL\BIN;G:\DEVELOP\JAVA\BIN;C:\UTIL\LDCM
+HTTP_CONNECTION = Keep-Alive
+SCRIPT_NAME = /demo/_archiv/tl/cgi-bin/toplinks.cgi
+MGA = C:\MGA\SETUP\
+CS = D:\XP\CROSSEC
+CONFIG = win
+HTTP_ACCEPT_CHARSET = iso-8859-1,*,utf-8
+PATH_INFO = /demo/_archiv/tl/cgi-bin/toplinks.cgi
+CONTENT_LENGTH = 70
+CONTENT_TYPE = application/x-www-form-urlencoded
+HTTP_HOST = www.perl-archiv.de
+PHPRC = c:\windows\php3.ini
+----------------------------------------------------------------------
