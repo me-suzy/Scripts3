@@ -1,0 +1,60 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ 			"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Relata Admin</title>
+
+		<link rel="stylesheet" type="text/css" href="{WWW_DIR}templates/global.css">
+		<link rel="stylesheet" type="text/css" href="{WWW_DIR}templates/admin.css">
+		
+		<meta http-equiv="Expires" content="Fri, Jun 12 1981 08:20:00 GMT">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		
+	</head>
+<body>
+
+
+<h3>Sales Stages</h3>
+<form action="{PHP_SELF}?session_id={SESSION_ID}" method="post">
+
+<table>
+
+{SALES_STAGES}
+ 
+ <tr>
+	<td class="form">New</td>
+	<td><input type="text" size="20" class="form" name="ss_new" class="form" /></td>
+ </tr>
+ <tr>
+ 	<td colspan="2" align="center"><input type="submit" name="action" value="  OK  " class="form" /></td>
+ </tr>
+</table>
+
+<h3>Relata Users</h3>
+
+<table>
+ <tr>
+ 	<td>&nbsp;</td>
+ 	<th class="form" align="center">User name</th>
+	<th class="form" align="center">Password</th>
+ </tr> 
+ {USERS}
+ <tr>
+	<td class="form">New</td>
+		<td class="form">
+		<input type="text" size="10" class="form" name="new_login" class="form" />
+	</td>
+	<td class="form">
+		<input type="password" size="10" class="form" name="new_password" class="form" />
+	</td>
+ </tr>
+ <tr>
+ 	<td colspan="3" align="center"><input type="submit" name="action" value="  OK  " class="form" /></td>
+ </tr>
+</table>
+</form>
+
+
+</body>
+</html>
