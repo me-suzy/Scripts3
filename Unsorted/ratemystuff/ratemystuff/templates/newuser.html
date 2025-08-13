@@ -1,0 +1,158 @@
+<title>Rate My Hedgehog (Demo of RateMyStuff from PHPLabs.com)</title>
+<body bgcolor="#FFFFCC">
+%header% 
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr> 
+<td width="20%" valign="top"> 
+<table width="90%" border="0" cellspacing="0" cellpadding="1" bgcolor="#000066" align="center">
+<tr> 
+<td> 
+<table width="100%" border="0" cellspacing="0" cellpadding="1" bgcolor="#000066">
+<tr> 
+<td> 
+<center>
+<font color="#FFFFCC" size="1"><b><font face="Verdana, Arial">RATEMYHEDGEHOG</font></b></font> 
+</center>
+</td>
+</tr>
+<tr> 
+<td bgcolor="#FFFFCC"> 
+<p align="center">%lastrate%</p>
+<p align="center"><b><font face="Verdana, Arial" size="1">RANDOM HEDGEHOG:</font></b></p>
+<p align="center">%random%</p>
+<p align="center"><font size="1"><b><font face="Verdana, Arial">OUR FAVORITE LINKS:</font></b></font></p>
+<p align="center"><b><font face="Verdana, Arial" size="1"><a href="http://phplabs.com/scripts.php?script=RateMyStuff">RateMyStuff</a><br>
+<a href="http://www.phplabs.com/">PHP Labs</a><br>
+<a href="http://www.fallendomains.com/">Fallen Domains</a><br>
+<a href="http://www.openproxies.com/">Open Proxy List</a><br>
+<a href="http://www.iconbazaar.com/">Icon Bazaar</a><br>
+<a href="http://www.php.net/">PHP Homepage</a><br>
+<a href="http://www.google.com/">Google Search</a></font></b></p>
+<p align="center"><b><font face="Verdana, Arial" size="1">RANDOM HEDGEHOG:</font></b></p>
+<p align="center">%random%</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td valign="top"> 
+<p align="center"><font face="Verdana, Arial" size="1"><b>UPLOAD YOUR OWN HEDGEHOG 
+PHOTO FOR OTHERS TO RATE!</b></font></p>
+<form enctype="multipart/form-data" action="user.php" method="post">
+<table width="90%" border="0" cellspacing="0" cellpadding="1" align="center" bgcolor="#000066">
+<tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#FFFFCC">
+                <tr bgcolor="#000066"> 
+                  <td colspan="2"> <center>
+                      <font face="Verdana, Arial" size="1"><b><font color="#FFFFCC">RateMyHedgehog 
+                      User Signup and Photo Submission </font></b></font> </center></td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> <center>
+                      <font size="1" face="Verdana, Arial"> <b><font color="#FF0000">%errormessage%<br>
+                      </font> Step 1: Choose a username and password </b></font> 
+                      <table width="75%" border="0" cellspacing="0" cellpadding="3">
+                        <tr> 
+                          <td> <div align="right"><font size="1" face="Verdana, Arial">Username: 
+                              </font></div></td>
+                          <td> <font size="1" face="Verdana, Arial"> 
+                            <input type="text" name="username" size="20" value="%username%" maxlength="50">
+                            </font></td>
+                        </tr>
+                        <tr> 
+                          <td> <div align="right"><font size="1" face="Verdana, Arial">Password: 
+                              </font></div></td>
+                          <td> <font size="1" face="Verdana, Arial"> 
+                            <input type="password" name="password1" size="20" maxlength="50">
+                            </font></td>
+                        </tr>
+                        <tr> 
+                          <td> <div align="right"><font size="1" face="Verdana, Arial">Confirm 
+                              Password: </font></div></td>
+                          <td> <font size="1" face="Verdana, Arial"> 
+                            <input type="password" name="password2" size="20" maxlength="50">
+                            </font></td>
+                        </tr>
+                        <tr> 
+                          <td> <div align="right"><font size="1" face="Verdana, Arial">Email 
+                              Address: </font></div></td>
+                          <td> <font size="1" face="Verdana, Arial"> 
+                            <input type="text" name="email" size="20" value="%email%" maxlength="50">
+                            </font></td>
+                        </tr>
+                      </table>
+                    </center></td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> <center>
+                      <p><font size="1" face="Verdana, Arial"> <b>Step 2: Choose 
+                        a photo </b></font></p>
+                      <p><font size="1" face="Verdana, Arial">It is suggested 
+                        that you choose an image no wider than 500 pixels. Wider 
+                        images may force<br>
+                        visitors to scroll sideways in order to view the full 
+                        image, which often results in lower rates.<br>
+                        <input type="file" name="newimage">
+                        <br>
+                        (We accept JPG images <i>only</i>) </font> </p>
+                    </center></td>
+                </tr>
+                <tr> 
+                  <td><font size="1" face="Verdana, Arial">&nbsp;</font></td>
+                  <td><font size="1" face="Verdana, Arial">&nbsp;</font></td>
+                </tr>
+                <tr> 
+                  <td colspan="2"><center>
+                      <p><font size="1" face="Verdana, Arial"><b>Step 3: Bio and 
+                        Contact Options</b></font> </p>
+                      <p> 
+                        <input name="hookup" type="checkbox" id="hookup" value="1" checked>
+                        <font size="1" face="Verdana, Arial">Let other users HookUp 
+                        with me! (<a href="javascript:;" onClick="window.open('templates/hookup_about.html','Report','width=300,height=400,,location=no,toolbar=no,menubar=no,scrollbars=auto,resizable=no')">What is HookUp?</a>)</font></p>
+                      <p><font size="1" face="Verdana, Arial">Enter some text 
+                        about yourself or your photo for others to see before 
+                        they HookUp with you.<br>
+                        <textarea name="bio" cols="50" rows="4" id="bio">Here's my pic! If you like it, let's HookUp.</textarea>
+                        </font> </p>
+                    </center></td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> <center>
+                      <font size="1" face="Verdana, Arial"> <b>Step 4: Agree to 
+                      the terms </b></font> </center></td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> <center>
+                      <font size="1" face="Verdana, Arial"></font><font size="1" face="Verdana, Arial"> 
+                      <textarea name="terms" cols="50" rows="4">RateMyHedgehog Terms of Use Agreement
+
+1. You must not upload any photo which is obscene, vulgar, offensive, or illegal. Photos deemed to be inappropriate for this site will be removed without notice.
+2. You must not upload any photo which contains an advertisement. This includes, but is not limited to, images with URLs or other promotional material located anywhere within the photo.
+3. You agree that any image you upload will be made available to the public, and that other site visitors will be able to view this file.
+4. By uploading, you profess in good faith that you are the owner or copyright holder of the image being uploaded.</textarea>
+                      </font> </center></td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> <center>
+                      <font size="1" face="Verdana, Arial"> 
+                      <input type="hidden" name="action" value="createaccount">
+                      <input type="submit" name="Submit" value="Signup &amp; Upload!">
+                      </font> </center></td>
+                </tr>
+              </table>
+</td>
+</tr>
+</table>
+</form>
+<p align="center">&nbsp;</p>
+</td>
+</tr>
+</table>
+%footer%
