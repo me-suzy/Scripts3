@@ -1,0 +1,128 @@
+<body background="images/bg.jpg">
+$header <font color="white"> </font>
+<form action="editinfo.php?action=submit" method="POST">
+  <input type="HIDDEN" name="$action" value="send">
+
+<font color="white"><BR>
+</font> 
+<div align="center">
+  <table width="99%" border="0" cellspacing="0" cellpadding="0" bordercolor="black" alink="white" vlink="white" link="white">
+    <tr> 
+      <td background="images/bg2.jpg">
+        <div align="center"><font color="white"><BR>
+          </font> 
+          <table width="95%" bgcolor="black">
+            <tr> 
+              <td background="images/cellpic2.jpg"><font color="white"> User-cp 
+                $myerror </font></td>
+            </tr>
+            <tr> 
+              <td background="images/cat1.jpg"> 
+                <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                  <tr> 
+                    <td> 
+                        <font color="#FFFFFF">-Edit information</font> 
+
+                    </td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr> 
+                    <td width="50%" background="images/cellpic.gif"><font color="white"> 
+                      [X]User Name: </font></td>
+                    <td width="50%" background="images/cellpic.gif"><font color="white"> 
+                      -$user_name </font></td>
+                  </tr>
+                  <tr> 
+                    <td width="50%"><font color="white"> [X]User Class: </font></td>
+                      <td width="50%"><font color="white"> -$userclass2</font></td>
+                  </tr>
+                  <tr> 
+                    <td width="50%" background="images/cat2.jpg"><font color="white"> 
+                      [X]User Alignment: </font></td>
+                    <td width="50%" background="images/cat2.jpg"><font color="white"> 
+                      - 
+                      <input class="text" name="useralignment" value="$useralignment2" maxlength=30>
+                      </font></td>
+                  </tr>
+                  <tr> 
+                    <td width="50%" height="23"><font color="white"> [X]User Level: 
+                      </font></td>
+                    <td width="50%" height="23"><font color="white"> -$userlevel</font></td>
+                  </tr>
+                  <tr> 
+                    <td width="50%" background="images/cat2.jpg"><font color="white"> 
+                      [X]User EXP: </font></td>
+                    <td width="50%" background="images/cat2.jpg"><font color="white"> 
+                      -$userexp </font></td>
+                  </tr>
+                  <tr> 
+                    <td width="50%"><font color="white"> [X]User HP: </font></td>
+                    <td width="50%"><font color="white"> -$userhitpoint</font></td>
+                  </tr>
+                  <tr> 
+                    <td width="50%" background="images/cat2.jpg"><font color="white"> 
+                      [X]User MP: </font></td>
+                    <td width="50%" background="images/cat2.jpg"><font color="white"> 
+                      -$usermagicpoint</font></td>
+                  </tr>
+                  <tr> 
+                    <td width="50%"><font color="white"> [X]User Defense Level: 
+                      </font></td>
+                    <td width="50%"><font color="white"> -$userdefense</font></td>
+                  </tr>
+                  <tr> 
+                    <td width="50%" background="images/cat2.jpg"><font color="white"> 
+                      [X]User Strength: </font></td>
+                    <td width="50%" background="images/cat2.jpg"><font color="white"> 
+                      -$userdefense</font></td>
+                  </tr>
+                  <tr> 
+                    <td width="50%"><font color="white"> [X]User Magic: </font></td>
+                    <td width="50%"><font color="white"> -$usermagic</font></td>
+                  </tr>
+                  <tr> 
+                    <td width="50%" background="images/cat2.jpg"><font color="white"> 
+                      [X]User Speed: </font></td>
+                    <td width="50%" background="images/cat2.jpg"><font color="white"> 
+                      -$userspeed</font></td>
+                  </tr>
+                  <tr> 
+                    <td width="50%"><font color="white"> [X]User Money: </font></td>
+                    <td width="50%"><font color="white"> -$usermoney</font></td>
+                  </tr>
+                  <tr> 
+                    <td width="50%" background="images/cat2.jpg"> 
+                      <div align="top"><font color="#FFFFFF">[X]User Picture</font></div>
+                    </td>
+                    <td width="50%" background="images/cat2.jpg"><font color="white"> 
+                      - 
+                        <input class="text" name="mypicurl" value="$mypicurl2" maxlength=255>
+                      </font></td>
+                  </tr>
+                  <tr>
+                    <td width="50%" height="250"><font color="white">[X]User Description:</font></td>
+                    <td width="50%" height="250"><font color="white">- 
+                      <textarea name="userdescription" rows="10" cols="40">$userdescription2</textarea>
+                      </font></td>
+                  </tr>
+				  		                        
+                </table>
+                  <div align="center"><font color="white"><BR>
+					$session_post
+	                <INPUT class="input" NAME="submit" TYPE="SUBMIT" VALUE="Save">
+                    <INPUT class="input" TYPE="RESET" VALUE="Reset">
+                    </font> </div>
+                <BR>
+              </td>
+            </tr>
+          </table>
+          <font color="white"><BR>
+          </font></div>
+      </td>
+    </tr>
+  </table>
+  </div>
+  </form>
+
+<font color="white">$footer </font> 
+</body>
