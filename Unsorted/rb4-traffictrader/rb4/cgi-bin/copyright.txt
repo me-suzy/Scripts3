@@ -1,0 +1,20 @@
+FCJ TRAFFIC MANAGEMENT
+
+WARRANTY DISCLAIMER AND COPYRIGHT NOTICE
+THE DBA STYLUS MAKES NO REPRESENTATION ABOUT THE SUITABILITY OR
+ACCURACY OF THIS SOFTWARE OR DATA FOR ANY PURPOSE, AND MAKES NO WARRANTIES,
+EITHER EXPRESS OR IMPLIED, INCLUDING MERCHANTABILITY AND FITNESS
+FOR A PARTICULAR PURPOSE OR THAT THE USE OF THIS SOFTWARE OR
+DATA WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS,
+TRADEMARKS, OR OTHER RIGHTS. THE SOFTWARE AND DATA ARE PROVIDED "AS IS".
+
+Licensee is not allowed to distribute the binary and source code (if released)
+to third parties. Licensee is not allowed to reverse engineer, disassemble or
+decompile code, or make any modifications of the binary or source code,
+remove or alter any trademark, logo, copyright or other proprietary notices,
+legends, symbols, or labels in the Software.
+Licensee is not allowed to sub-license the Software or any derivative
+work based on or derived from the Software.
+
+Copyright c 2001, 2002 by DBA TYAZHELII SLUCHAI (CHINA)
+All Rights Reserved
