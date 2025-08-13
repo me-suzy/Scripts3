@@ -1,0 +1,159 @@
+<?
+#///////////////////////////////////////////////////////
+#//  COPYRIGHT 2002 PHPAuction.org ALL RIGHTS RESERVED//
+#//  For Source code for the GPL version go to        //  
+#//  http://phpauction.org and download               //
+#//  Supplied by CyKuH [WTN]                          //
+#///////////////////////////////////////////////////////
+?>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function submitlogin ()
+{
+	document.user_login.submit ();
+}
+//-->
+</SCRIPT>
+<TABLE WIDTH="765" CELLPADDING=0 CELLSPACING=0 BGCOLOR="#FFFFFF" BORDER=0>
+<TR>
+<TD>
+<? print $tlt_font; ?>
+<BR>
+<CENTER>
+				<B> 
+				<?
+		print $tlt_font.$MSG_454;
+	?>
+				<BR>
+				</B> 
+				<TABLE WIDTH="600" CELLSPACING="0" CELLPADDING="1" BORDER="0" BGCOLOR="<?=$FONTCOLOR[$SETTINGS[bordercolor]]?>">
+					<TR> 
+						<TD>
+							<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="3">
+								<TR> 
+									<TD COLSPAN="2"> 
+										<? print $nav_font; ?>
+										<? print $MSG_247."<B>$HTTP_SESSION_VARS[PHPAUCTION_LOGGED_IN_USERNAME]</B>"; ?>
+									</TD>
+									<TD ALIGN=RIGHT COLSPAN="2"> <A HREF=user_menu.php> 
+										<?=$nav_font?>
+										<?=$MSG_234?></FONT>
+										</A> </TD>
+								</TR>
+								<?
+									if(is_array($AUCTIONS))
+									{
+										while(list($k,$v) = each($AUCTIONS))
+										{
+								?>
+								<TR VALIGN="TOP" BGCOLOR="#FFFFFF"> 
+									<TD COLSPAN="4"> 
+										<?=$std_font?>
+										<?=$MSG_458?>
+										<B><A HREF=item.php?id=<?=$k?> TARGET=_blank> 
+										<?=$std_font.$v?>
+										</A></B> </TD>
+								</TR>
+								<TR VALIGN="TOP" BGCOLOR="#FFFFFF"> 
+									<TD COLSPAN="4"> 
+										<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+											<TR> 
+												<TD BGCOLOR="#000000"><IMG SRC="./images/transparent.gif" WIDTH="1" HEIGHT="1"></TD>
+											</TR>
+										</TABLE>
+									</TD>
+								</TR>
+								<?
+									if($FEE[$k] == 0)
+									{
+								?>
+								<TR> 
+									<TD WIDTH="33%" BGCOLOR="#EEEEEE"> 
+										<?=$std_font.$MSG_459;?>
+									</TD>
+									<TD WIDTH="33%" BGCOLOR="#EEEEEE"> 
+										<?=$std_font.$MSG_460;?>
+									</TD>
+									<TD WIDTH="17%" BGCOLOR="#EEEEEE"> 
+										<?=$std_font.$MSG_461;?>
+									</TD>
+									<TD WIDTH="17%" BGCOLOR="#EEEEEE"> 
+										<?=$std_font.$MSG_902;?>
+									</TD>
+								</TR>
+								<TR> 
+									<TD WIDTH="33%" BGCOLOR="#FFFFFF"> 
+										<?=$std_font;?>
+										<A HREF=profile.php?user_id=<?=$SELLER[$k]?>> 
+										<?=$SELLER_NICK[$k]?>
+										</A> <BR>
+									</TD>
+									<TD WIDTH="33%" BGCOLOR="#FFFFFF"> 
+										<?=$std_font;?>
+										<A HREF=mailto:<?=$SELLER_EMAIL[$k]?>> 
+										<?=$SELLER_EMAIL[$k]?>
+										</A> </TD>
+									<TD WIDTH="17%" BGCOLOR="#FFFFFF"> 
+										<?=$std_font;?>
+										<?=print_money($BID[$k])?>
+									</TD>
+									<TD WIDTH="17%" BGCOLOR="#FFFFFF"> 
+										<?=$std_font;?>
+										<?
+											if($QTY[$k] > 0)
+											{
+												print $QTY[$k];
+											}
+											else
+											{
+												print "--";
+											}
+										?>
+									</TD>
+								</TR>
+								<?
+									}
+									elseif($FEE[$k] == 1 || $FEE[$k] == 2)
+									{
+								?>
+								<TR> 
+									<TD COLSPAN=4 BGCOLOR="#FFFFFF">
+										<?=$std_font.$MSG_489?>
+										<BR>
+										<?=$std_font.$MSG_493?>&nbsp;<?=print_money($FEE_AMOUNT[$k])?>&nbsp;&nbsp;&nbsp;
+										[<A HREF=pay_buyer_fee.php?auction=<?=$k?>><?=$MSG_492?>]</A>
+									</TD>
+								</TR>
+								<?
+									}
+									elseif($FEE[$k] == 3)
+									{
+								?>
+								<TR> 
+									<TD COLSPAN=4 BGCOLOR="#FFFFFF">
+										<?=$std_font.$MSG_490?>
+									</TD>
+								</TR>
+								<?
+									}
+								?>
+								<TR> 
+									<TD COLSPAN=4 BGCOLOR="#FFFFFF">&nbsp;</TD>
+								</TR>
+								<?
+										}
+									}
+								?>
+							</TABLE>
+						</TD>
+					</TR>
+				</TABLE>
+				<BR>
+          <BR>
+
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+
