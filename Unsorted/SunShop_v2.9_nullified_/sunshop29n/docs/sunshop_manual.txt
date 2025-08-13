@@ -1,0 +1,243 @@
+Thank you for purchasing SunShop.
+Version 2.9 - Released 10-24-02
+Copyright 2001-2002 Turnkey Web Tools.
+
+----------------------------------------------
+   TABLE OF CONTENTS
+----------------------------------------------
+
+1. Before You Get Started.
+    A. MySQL Setup
+    B. Edit config.php
+    C. Uploading Your Files
+    
+2. Installation
+    - Step 1 thru 6
+ 
+3. Administration
+    A. Registered Users
+    B. Categories / Subcategories
+    C. Products
+    D. Specials / Coupons / Discounts
+    E. Transactions
+	F. Templates
+    G. Settings
+    H. Backup
+
+4. Conclusion
+
+----------------------------------------------
+1. Before You Get Started
+----------------------------------------------
+A.  Before you attempt to start the installation first make sure you have access to the 
+MySQL database. Ask your administrator to setup a database entitled "sunshop" or any 
+other name you may want to give it. They should also give you a username and password to 
+use to access this database. You will need to set the database name, username and 
+password in the config.php file located in the admin directory. Extract the files using
+the proper archive software.
+    
+B.  After you collect your database information simply open the config.php file located in 
+the admin directory. You can use any text editor to make changes to this file. Make sure 
+all fields are correct and save the file. It is very important that there are no blank lines
+following the last "?>" in the file. Simply put the curser after the "?>" and hit the 
+"Delete" key multiple times to make sure there are no trailing spaces or lines.
+
+C.  Login to the server where your files will be hosted and upload all files and folders. 
+**IMPORTANT** If your secure connection is on another server you will need to place 
+checkout.php, db_mysql.php, a copy of the config.php and the language file with the 
+appropriate settings.
+
+----------------------------------------------
+2. Installation 
+----------------------------------------------
+The installation file is located in the admin directory. Upload all of the files located in 
+the archive onto your server via FTP, edit the config.php file to your settings if you have 
+not already done so, then point your browser to the location of the admin directory on your
+server and call up the file install.php. (http://www.yourserver.com/sunshop/admin/install.php)confirm Step 1 cofirm the installation. You will need to read the license agreement and agree 
+in order to continue.
+
+B.  Step 2 will make sure you have the appropriate settings in the config.php file and it 
+will make sure it exists. 
+
+C.  Step 3 will attempt to connect to the database using the config.php file. If it cannot 
+connect you will receive an error. If the connection is successful and the database given 
+does not exist it will try to create it. Otherwise, if the database already exists you will be 
+prompted to override the database. If this is the first installation attempt I suggest you 
+override the old database to ensure a clean install. You may not have access to override 
+the database in which case just continue without overriding.
+
+D.  Step 4 will attempt to setup the tables within the database. If errors are reported make 
+sure the tables do not already exist.
+
+E. Step 5 will make sure all settings are inputted successfully and collect the information
+for the administrator setup. You will need to enter you license number at this point. It is 
+very important for verification purposes.
+
+F. Step 6 is the final step. If you reach step 6 you are all done. Make sure you delete 
+install.php before you continue. Leaving it on your server is a great security risk.  
+
+----------------------------------------------
+3. Administration
+----------------------------------------------
+
+A.  "Registered Users" - From here you can view, edit and delete registered users. You 
+can also email all users in the database at the same time using the "Email Users" function.
+
+In this menu, you can also setup other administrators and give them access to certain 
+functions of the admin area.
+
+B.  "Categories / Subcategories" - From here you can view, edit and add item categories 
+and subcategories to the database. When you delete categories and sub categories, be
+aware that all items within hem will be erased. 
+
+C.  "Products" - From here products can be viewed, edited and added. When viewing items you 
+can limit the number of items shown by selecting a specific category, or you can do a 
+search for items containing your search in the title. 
+
+For importing items from a csv please read the import.txt file. When exporting products you 
+MUST allow php to write to the backup directory by setting the chmod to "777". You will also 
+need to chmod "777" your products directory to ensure that the script can upload your product 
+images. 
+
+If your product requires additional options such as color, size, etc... you can set these
+options in this area as well by selecting "Add Options". Also, if your products require
+additional input from the customer, you can create custom fields for them to type messages
+or specifications by selecting "Add Custom Fields". 
+
+D.  "Specials / Coupons / Discounts" - From here you can view, edit and add specials, coupons
+and discounts. 
+
+When adding a special, the description is not necessary but you may want to add 
+something to explain the sale. If the item you would like to run a special on is not listed it 
+probably already has a special associated with it. Cousensitivecase sensative so be sure to add 
+them as you would want your customers to input them. 
+
+Discounts can also be added according to the quantity range of a item purchased. If you wish to 
+add a discount for a single purchase number set both the "from" and "to" to the same amount.
+
+E.  "Transactions" - From here you can view all transactions and change their status. You 
+can also print transactions after the orders have been filled to keep for your own records. 
+It is a good idea to leave them up for a few weeks after they have been filled so that the 
+customer can view the status of their order when needed. When viewing transactions it is
+also possible to print out a packing sheet to send with the shipment.
+
+F. Changingsaroundangeing aroung the layout has never been easier then it is now... If you
+wish to move the specials or maybe the login box to the other side, you can do so by editing the 
+templates. Each template has a description.
+
+G.  "Settings" - This is the main settings area that runs the whole cart. Every setting in this is 
+very important and you will be taken through each one. 
+
+"License Number" - License number is important for verification.
+
+"Shop Title" - This is the name of your shopping cart.
+
+"Home Title" - This is the name of your main site people will return to when they are 
+done buying your products.
+
+"Shop URL" - The URL of you shopping cart. Be sure to add a final "/" to ensure correct
+functionality.
+
+"Home URL" - The URL of your main site. Be sure to add a final "/" to ensure correct
+functionality.
+
+"Secure URL" - This part of the setup is very important. When you customers go to fill 
+out their credit card information, information will need to be passed through a secure 
+connection. The file checkout.php will need to be stored in the directory that this address 
+points to. Secure connections always start with the "https://" (notice the "s" after http) & 
+(make sure to add final "/"). If your secure connection is on a different server, you will 
+need to place checkout.php as well as a copy of db_mysql.php and config.php with the 
+appropriate changes made to it. You will also need to edit the first line of checkout.php to 
+reflect the location of the config.php file.
+
+"Company Info" - The Company information area is self-explanatory. Make sure you fill 
+in all areas completely and accurately. The application runs fine as long as all fields are 
+supplied. You can choose to leave the phone number field empty.
+
+"Shipping Settings" - If you would like your shipping costs to be automatically calculated 
+we recommend that you use the automatic shipping calulations. If you select "Yes" to UPS 
+or USPS all other functions must be turned off, and vice versa for all other functions. The 
+shipping table calculates shipping cost based on your input and the fixed shipping rate uses 
+a fixed shipping cost per item, per pound or per order. *USPS INFO* To use USPS services
+you MUST have a username and password as well as a server URL to use the service. To get those
+visit http://www.uspsprioritymail.com/et_regcert.html.
+
+"Payment Options" - Here you must select the payment options you wish to accept. If you need 
+an addon for real time credit card processing with one of the listed compatable processors
+please send an email to addons@turnkeywebtools.com with your license number and the addon 
+requested. 
+
+"Tax Rate" - Select the tax rate for your state. People outside your state will not be 
+charged tax.
+
+"View Stock Setting" - Select whether or not you want your inventory to be viewed by the 
+public when they select an item. You can also set whether or not items can be added to the 
+cart if the item quantity in stock is at 0. 
+
+"Shop Settings" - These are also very important settings. Each one is explained 
+below.
+
+  Item Order - Select how you would like you products to be ordered.
+
+  Item Listing Image - Select where you would like the image on the product details
+  page to be displayed. This can be set to Right of price or centered above.
+  
+  Listing Setting - This sets the format that the item listings are outputed.
+  
+  Show Bestsellers - Choose whether or not the bestsellers category and table will be 
+  showed.
+  
+  Show Specials - Same as above but regarding the specials category.
+  
+  Show Category Totals - Choose whether or not you would like the totals to be displayed
+  after the category. (i.e. Computers (25))
+  
+  Language File - Select the language file you would like to use for the client side
+  of the cart.
+  
+  Items Per Page - Select the default number of items to be listed per page.
+  
+  Users Must Signup - This toggles whether or not users are required to signup with an account 
+  to checkout. Its always a good idea to require this.
+  
+  Intro - Here you can choose whether you would like to display an intro message or
+  display the bestsellers.
+
+  Sub Categories Display - Choose the number of csubcategories to display at a time when choosing a category.
+  Set this to 0 to display them all.
+
+  Header - The header is the HTML code placed on every page. You may also choose to define a file 
+  for this or use the template.
+
+  Footer - The footer is displayed at the bottom of every page. You may also choose to define a file 
+  for this or use the template. 
+  
+  Secure Header - The secure header is the HTML code placed on every secure page. You may also choose 
+  to define a file for this or use the template.
+
+  Secure Footer - The secure footer is displayed at the bottom of every secure page. You may also choose 
+  to define a file for this or use the template.
+
+  Path To Product Pictures - This is the directory you will be storing your product 
+  pictures. Be sure to set this correctly. *ATTENTION* You must chmod 777 this directory
+  to allow the script to write to it for uploading of images.
+
+  Image Settings: Here you will need to define the location of the images needed for the 
+  shop. Defaults are packaged with sunshop and others are available via the client login. 
+  You will also need to define the height and width for regular and thumbnail images.
+
+  Table Settings - Set these values to the 6 digit alphanumeric values of your 
+  choice.  For a complete list of values visit: http://html-color-codes.com/ or you 
+  can use actual colors like "red" or "blue".
+
+H.  "Backup" - Use this feature to create a php file from the current database. Once 
+this ".php" file is created, you can move it to the main directory in order to restore everything 
+from that file. You must make sure that php has the ability to write to the backup 
+directory otherwise this feature will not work. Chmod 777 will do the trick.
+
+----------------------------------------------
+4. Conclusion 
+----------------------------------------------
+
+If you should need any further assistance feel free to email us at any time at 
+support@turnkeysolutions.com. Once again, thank you for purchasing SunShop.
