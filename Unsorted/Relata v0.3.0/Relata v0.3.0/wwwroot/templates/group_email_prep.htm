@@ -1,0 +1,64 @@
+ <!--DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+ "http://www.w3.org/TR/html4/strict.dtd"-->
+<html>
+<head>
+<title>
+</title>
+
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="{WWW_DIR}templates/global.css">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="{WWW_DIR}templates/group-email.css">
+
+<meta http-equiv="Expires" content="Fri, Jun 12 1981 08:20:00 GMT">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+</head>
+<body class="colored">
+
+<div class="groupemail">
+<center>
+<table>
+ <tr>
+ 	<td colspan="3">
+	 <form method="post" action="{FORM_URL}">
+	 <input type=hidden name="session_id" value={SESSION_ID}>
+	 <input type=hidden name="recipient_count" value={RECIPIENT_COUNT}>
+	 <div align="center">
+     <table cellspacing="5" cellpadding="0" border="0">
+	  <tr>
+	  	<td colspan="2">
+		</td>
+	  </tr> 
+	  <tr>
+	  	<td>
+		 <span class="grouptext"><b>Selected groups(s):</b></span>
+		</td>
+	    <td>
+	     <span class="field-titles">{SELECTED_LISTS}</span>
+	    </td>
+	  </tr>
+	  <tr>
+	  	<td>
+		 <hr size="1"><span class="grouptext"><b>Total number of recipients:</b></span>
+		</td>
+		<td align="center">
+		 <hr size="1"><span class="field-titles">{RECIPIENT_COUNT}</span>
+		</td>
+	  </tr>	   
+	  <tr>
+	  	<td colspan="2" align="center">
+		 <br>
+	     <input type="button" name="choice" value="cancel" class="form" style="background: #D4D0C8;" onclick="location.href='{WWW_DIR}group_email/group_email_select.php?session_id={SESSION_ID}'">
+	     {SEND_OUT}
+		</td>
+	  </tr>	   
+	 </table>
+	 </form>
+	</td>	 	 
+ </tr>  
+</table>
+</center>
+
+</div>
+</body>
+</html>
