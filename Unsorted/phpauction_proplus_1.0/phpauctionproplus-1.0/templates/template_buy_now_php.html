@@ -1,0 +1,190 @@
+<?
+
+#///////////////////////////////////////////////////////
+#//  COPYRIGHT 2002 PHPAuction.org ALL RIGHTS RESERVED//
+#//  For Source code for the GPL version go to        //  
+#//  http://phpauction.org and download               //
+#//  Supplied by CyKuH [WTN]                          //
+#///////////////////////////////////////////////////////
+
+?>
+
+
+
+<SCRIPT Language=Javascript>
+
+
+
+function SubmitBid(){
+
+        document.bid.submit();
+
+}
+
+
+
+function SubmitBid2(){
+
+        document.bid2.submit();
+
+}
+
+</SCRIPT>
+
+<TABLE WIDTH="100%" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING="0" CELLSPACING="0">
+<FORM ACTION="buy_now.php?action=buy&id=<? print $id ?>" METHOD="POST">
+  <TR>
+
+    <TD width="537">
+      <CENTER>
+
+<TABLE WIDTH="100%" BORDER="0">
+
+  <TR VALIGN=top>
+
+  <TD WIDTH="30"></TD>
+
+  <TD COLSPAN="3">
+
+
+
+
+  <FONT FACE="Times New Roman, Times, serif" SIZE="6">
+
+
+<center>
+               <? print $tlt_font.$TPL_title_value ?>
+
+
+  </FONT>
+
+  </TD>
+
+  </TR>
+
+  <TR> <TD WIDTH=30></TD>
+
+  <TD WIDTH=460>
+
+
+
+                                                        <BR>
+
+        <TABLE BORDER=0 WIDTH="100%" CELLSPACING="0" CELLPADDING="2">
+
+        <TR>
+
+        <TD WIDTH="30%">
+
+                <B><? print $std_font.$MSG_017 ?> :</B>
+
+         </TD>
+                  <TD>
+                    <? print $std_font.$TPL_title ?>
+                  </TD>
+                </TR>
+
+        <!--   #Vendedor#    -->
+
+        <TR>
+
+        <TD WIDTH="30%">
+
+                <B><? print $std_font.$MSG_125 ?> :</B>
+
+         </TD>
+                  <TD>
+                    <? print $std_font.$TPL_vendetor_value ?>
+                    <? print $std_font.$TPL_num_feedbacks ?>
+                    <? print $TPL_rate_radio ?>
+                    <!-- Get current number of feedbacks  -->
+                  </TD>
+                </TR>
+
+
+<!--    ** Buy now price  -->
+
+        <TR>
+
+        <TD WIDTH="30%">
+
+                <B><? print $std_font.$MSG_497 ?>:</B>
+
+         </TD> <TD>
+
+
+
+                <? print $std_font.$TPL_buy_now_price ?>
+
+
+
+        </TD></TR>
+
+
+
+
+<div align="left"><IMG SRC="./images/transparent.gif" WIDTH=750 HEIGHT=2></div>
+<TABLE WIDTH="100%" BGCOLOR="#FFFFFF" BORDER="0">
+					<TR> <br>
+						<TD WIDTH="418">&nbsp;</TD>
+						<TD WIDTH="272"> 
+						<CENTER>
+						<? echo "$err_font $TPL_errmsg"; ?>
+						</CENTER>
+							<TABLE CELLPADDING=2>
+<?
+
+
+						if ($buy_done !=1)
+						{
+						if(!$HTTP_SESSION_VARS["PHPAUCTION_LOGGED_IN"])
+						{
+					?>
+								<TR> 
+									<TD ALIGN=right> 
+										<? print $std_font.$MSG_047; ?>
+									</TD>
+									<TD> 
+										<INPUT TYPE=text NAME="nick" SIZE=15 MAXLENGTH=15 VALUE="<? print $nickH; ?>">
+									</TD>
+								</TR>
+								<?
+						}
+						else
+						{
+					?>
+								<TR> 
+									<TD ALIGN=right> 
+										<? print $std_font.$MSG_047; ?>
+									</TD>
+									<TD> 
+										<? print '&nbsp;<b>' . $HTTP_SESSION_VARS["PHPAUCTION_LOGGED_IN_USERNAME"] . '</b>' ; ?>
+										<INPUT TYPE=hidden NAME="nick" VALUE="<? print $HTTP_SESSION_VARS["PHPAUCTION_LOGGED_IN_USERNAME"]; ?>">
+								</TR>
+								<?
+						}
+					?>
+								<TR> 
+									<TD ALIGN=right> 
+										<? print $std_font.$MSG_048; ?>
+									</TD>
+									<TD> 
+										<INPUT TYPE=password NAME="password" SIZE=15 MAXLENGTH=15 VALUE="">
+									</TD>
+								</TR>
+							</TABLE>
+							<INPUT TYPE=submit NAME="">
+							<INPUT TYPE=reset NAME="">
+						</TD>
+					</TR>
+	</FORM>				
+						<? } 
+						else
+						{
+						echo "$MSG_498";
+						} 
+						?>
+        </TABLE>
+
+
+</table>
