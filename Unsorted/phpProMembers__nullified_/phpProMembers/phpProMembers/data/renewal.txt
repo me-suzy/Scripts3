@@ -1,0 +1,11 @@
+Hello <<first_name>> <<last_name>>,
+
+Your monthly subscription is up for renewal at <<site_name>>.
+
+Please visit us at <<renewal_link>> to keep from having any interruptions in your account status.
+
+If you have any questions please e-mail us at <<company_email>>.
+
+Thank You,
+
+<<company_name>>
