@@ -1,0 +1,75 @@
+<title>RateMyStuff Admin</title>
+<body bgcolor="#FFFFFF">
+<h2><font face="Verdana, Arial">RateMyStuff Administrative Menu</font></h2>
+<p align="center"><font face="Verdana, Arial" size="2"><b>At a glance:</b> %numpics% 
+active pictures (%newpics% new today), %numvotes% votes, %numusers% users</font></p>
+<hr noshade size="1">
+<table width="90%" border="0" cellspacing="0" cellpadding="5" align="center">
+<tr> 
+<td colspan="2"> 
+<p><font face="Verdana, Arial" size="1"><b>Offensive Image Reports</b></font></p>
+<blockquote> 
+<p><font face="Verdana, Arial" size="1">Visitors have reported %reportednum% images 
+as offensive. %reviewlist%</font></p>
+</blockquote>
+</td>
+</tr>
+<tr> 
+<td> 
+<form name="form1" method="post" action="admin.php">
+<p><font size="1"><b><font face="Verdana, Arial">Lookup Image Owner</font> </b></font></p>
+<blockquote> 
+<p><font face="Verdana, Arial" size="1">Tag (text ID) 
+<input type="text" name="tag" size="10">
+<input type="submit" name="Submit" value="Lookup">
+<input type="hidden" name="action" value="lookup">
+</font></p>
+</blockquote>
+</form>
+</td>
+<td> 
+<form name="form1" method="post" action="admin.php">
+<p><font size="1"><b><font face="Verdana, Arial">Delete an Image</font> </b></font></p>
+<blockquote> 
+<p><font face="Verdana, Arial" size="1">Tag (text ID) 
+<input type="text" name="tag" size="10">
+<input type="submit" name="Submit" value="Delete">
+<input type="hidden" name="action" value="deletepic">
+</font></p>
+</blockquote>
+</form>
+</td>
+</tr>
+<tr> 
+<td colspan="2">
+<form name="form1" method="post" action="admin.php">
+<p><font size="1"><b><font face="Verdana, Arial">Ban a User</font></b></font></p>
+<blockquote>
+<p><font face="Verdana, Arial" size="1">
+<input type="radio" name="type" value="ip" checked>
+IP Address 
+<input type="radio" name="type" value="email">
+Email Address 
+<input type="text" name="tag">
+<input type="submit" name="Submit" value="Ban 'Em">
+<input type="hidden" name="action" value="banuser">
+</font></p>
+</blockquote>
+</form>
+</td>
+</tr>
+<tr> 
+<td colspan="2"> 
+<p><font face="Verdana, Arial" size="1"><b>User Email Addresses</b></font></p>
+<blockquote> 
+<p><font face="Verdana, Arial" size="1"><a href="%phpself%?action=emaillist">Generate 
+List</a> to send mail to your site users</font></p>
+</blockquote>
+</td>
+</tr>
+</table>
+<hr noshade size="1">
+<center>
+<font face="Verdana, Arial" size="1">RateMyStuff from <a href="http://www.phplabs.com">PHP 
+Labs</a> </font> 
+</center>
