@@ -1,0 +1,48 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1"></head>
+<body aLink="blue" vLink="blue" link="blue" background="images/bg.jpg">
+$headinclude 
+<form method="post" action="admin.php">
+		<input type="hidden" name="send" value="send">
+		<input type="hidden" name="action" value="$action">
+		
+  <table cellpadding=4 cellspacing=1 width="95%" bgcolor="#000000" align="center">
+    <tr> 
+      <td colspan=2 background="images/cellpic.gif" height="38"><font size=2 color="white" face="Tahoma"><b>» 
+        Add Glove/Gauntlet<font size=2 color="white" face="Tahoma"><b>(new id: 
+        $newid )</b></font><font color="red" size=1>$error</font></b></font></td>
+    </tr>
+    <tr> 
+      <td width="50%" background="images/cat1.jpg"><font size=1 color="black" face="Tahoma"><b>Name:</b><br>
+        </font></td>
+      <td width="50%" background="images/cat1.jpg"> 
+        <input type="text" name="glovename" maxLength="255" class="input">
+      </td>
+    </tr>
+	<tr>
+      <td width="50%" background="images/cat1.jpg"><font size=1 color="black" face="Tahoma"><b>Deffense 
+        value:</b></font></td>
+      <td width="50%" background="images/cat1.jpg"> 
+        <input type="text" name="deffense" maxLength="50" class="input">
+      </td>
+    </tr>
+    <tr> 
+      <td width="50%" background="images/cat1.jpg"><font size=1 color="black" face="Tahoma"><b>Price:</b></font></td>
+      <td width="50%" background="images/cat1.jpg"> 
+        <input type="text" name="price" maxLength="50" class="input">
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="2" background="images/cat1.jpg">
+        <div align="center"><font size=1 color="black" face="Tahoma"></font> 
+          <input type="submit" value="Send" class="inputbtn">
+          <input type="reset" value="Reset" class="inputbtn">
+        </div>
+      </td>
+    </tr>
+  </table>
+</form>
+	</body>
+</html>
