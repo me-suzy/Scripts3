@@ -1,0 +1,6 @@
+Uninstall order:
+
+1. Upload file uninst.php to folder of the script in BINARY mode.
+2. Run uninst.php.
+3. Remove uninst.php, folder of the script and other script files
+   remaining on server.
