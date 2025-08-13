@@ -1,0 +1,498 @@
+# ----------------------------------------------------------------------------
+# Realty Manager - Admin Manual v2.0
+# Copyright (C) 1999 interactivetools.com, inc., All Rights Reserved
+# http://www.interactivetools.com/
+# ----------------------------------------------------------------------------
+
+Thanks for purchasing Realty Manager 2.0 ("RM2").
+This document will explain how to install and configure
+the program on your web server.  
+
+TABLE OF CONTENTS
+--------------------------------------------------
+
+    1. Welcome
+        1.1 About the Script
+        1.2 System Requirements
+        1.3 Software License
+    2. Installation
+	2.1 Installation Instructions
+	2.2 Modifying Templates
+	2.3 Configuring Search Engine
+	2.4 Security Concerns
+        2.5 Upgrading from 2.00 to 2.01
+    3. File List
+	3.1 Directories
+	3.2 Readme Files
+	3.3 Program Files
+	3.4 Data Files
+	3.5 Templates
+	3.6 Images
+    4. About interactivetools.com
+	4.1 About Us
+	4.2 Support
+	4.3 Products
+	4.4 Contact
+
+1. Welcome
+====================================================
+
+1.1 About the Script
+----------------------------------------------------
+Realty Manager is a Listings Management program for Real Estate
+web sites.  The program also provides an interface for website visitors to
+browse and search realty listings and provides a powerful password protected
+administration tool that can add, modify and delete realty listings and
+listing images.
+
+1.2 System Requirements
+----------------------------------------------------
+Realty Manager requires the following to run:
+
+    * Perl v5.004+
+    * Web Server (Unix or Windows)
+    * CGI-BIN or access to execute cgi scripts
+
+1.3 Software License
+----------------------------------------------------
+Please take the time to carefully read the license agreement included in this
+package.  The license agreement details the terms and conditions of the
+Software License for Realty Manager. Make sure you have read and
+understand these terms and conditions before using the software. 
+
+2. Installation
+====================================================
+
+2.1 Installation Instructions
+----------------------------------------------------
+
+1. Unzip the distribution archive on to your computer making sure to
+   preserve the directory structure that is stored in the zip file.
+
+2. Double check to make sure the path to Perl is set correctly on the
+   first line of each .cgi script.
+
+3. Create a directory named /rm/ on your web server and upload all
+   files and directories there.  Be sure to upload image files
+   (*.gif or *.jpg) in binary format and everything else in ascii format.
+
+4. Make the following files executable:(757)
+   /rm/exec/*.*
+
+5. Make the following directories and files writeable:(777)
+   /rm/data/
+   /rm/data/*.*
+   /rm/homepages/
+   /rm/homepages/images/
+   /rm/listings/
+   /rm/listings/images/
+
+   NOTES: You need to create the listings and homepages directories.
+   If your installing the script in your /cgi-bin/ directory and you
+   can't read files in /cgi-bin/rm/listings/ in your browser because
+   of security restrictions on your server you will need to create the
+   following directories somewhere else on your server and change the
+   default paths in RM2 under Setup Options.
+
+   /rm/homepages/
+   /rm/homepages/images/
+   /rm/listings/
+   /rm/listings/images/
+
+6. Run the installation program /rm/exec/install.cgi
+
+6. Run the admin program /rm/exec/rm.cgi and login with the username
+   "RM" and the password "welcome".
+
+7. Go to the User Manager Login Accounts and create a superuser account
+   for yourself and change the password on the (or erase) "RM" account.  
+
+8. Setup the Homepage Database Fields and Listing Database Fields under
+   Setup Options and customize your listing and homepage templates.
+
+9. Start entering listings.
+
+
+2.2 Modifying Templates
+----------------------------------------------------
+There are 6 main templates used by the program that can be 
+customized to match the look and feel of your site.  These
+files aren't displayed directly on your site but rather are
+used as templates to "publish" additional files that are.
+
+When editting these template files we recommend you use a 
+text based HTML editor.  The templates use special tags
+to define and insert information and using WYSIWYG HTML
+editor can be problematic.
+
+Each template has a number of variables or "placeholders"
+that can be inserted to tell the program what information
+to insert in the published page.  A placerholder looks like
+this $name$, a word or series or letters and number surrounded
+by two dollar signs.  Another way that placeholders are sometimes
+displayed in the source code is by using a special tag so the
+actual placeholder isn't visable when viewing the template, like this:
+<!-- template insert : $name$ -->
+After each template we will list the placeholders available on that page.
+
+In addition, some templates use TemplateCells.  A template
+cell is a block of HTML that can be displayed or not displayed.
+An example of this is on the user homepage where if the user
+has uploaded any images they will be displayed, otherwise some
+"no image available" text is displayed in there place.  
+TemplateCells are easy to spot and we'll list which ones are
+available after each page.
+
+_publish_homepage.html - This template is used to create an individual 
+page for each user who has an account setup in RM2.  This page 
+contains all the information about that user and up to 10 photos.
+
+Placeholders available on this page:
+
+$cgiurl$	- script filename (for use in form tags)
+$homepage_url$	- URL of homepage directory
+$listing_url$	- URL of listing directory
+$search_url$	- URL of search engine
+
+$images$	- list of images (made of templatecell content)
+$file$		- image filename (used in "image" templatecell)
+
+$hfieldX$	- homepage field X, where X is a number from 1 to 50
+$hfieldX_ue$	- homepage field X url encoded for use in links
+
+$user_num$	- homepage user number
+$user_name$	- homepage user name
+$user_name_ue$	- homepage user name (url encoded)
+$user_file$	- homepage user homepage filename
+
+Templatecells on this page:
+
+image		- displayed for each homepage images
+no_images	- displayed if there are no homepage images
+
+_publish_homepage_index.html - This template is used to create an index or
+listing of all the user homepages.  This page contains a summary and link
+to each homepage along with an optional picture.
+
+Placeholders available on this page:
+
+$cgiurl$	- script filename (for use in form tags)
+$homepage_url$	- URL of homepage directory
+$listing_url$	- URL of listing directory
+$search_url$	- URL of search engine
+
+$list$		- list of users (created using templatecells)
+$file$		- preview image filename (used in "user_image" templatecell)
+
+$hfieldX$	- homepage field value of field X, X is a number from 1 to 50
+$hfieldX_ue$	- homepage field value of field X url encoded for use in links
+
+$user_num$	- user number
+$user_name$	- user name
+$user_name_ue$	- user name (url encoded)
+$user_file$	- user homepage filename
+
+Templatecells on this page:
+
+user_image	- displayed for users with a preview image
+user_noimage	- displayed for users with no preview image
+
+_publish_listing.html - This template is used to create an individual 
+page for each listing created in RM2.  This page contains all the
+information about that listing and up to 10 photos.
+
+Placeholders available on this page:
+
+$cgiurl$	- script filename (for use in form tags)
+$homepage_url$	- URL of homepage directory
+$listing_url$	- URL of listing directory
+$search_url$	- URL of search engine
+
+$images$	- list of images (created using templatecells)
+$file$		- image filename (used in "image" templatecell)
+
+$lfieldX$	- listing field value of field X, X is a number from 1 to 50
+$lfieldX_ue$	- listing field value of field X url encoded for use in links
+
+$user_num$	- user number
+$user_name$	- user name
+$user_name_ue$	- user name (url encoded)
+$user_file$	- user homepage filename
+
+Templatecells on this page:
+
+image		- displayed for each homepage images
+no_images	- displayed if there are no homepage images
+
+_publish_listing_index.html - This template is used to create an index or
+listing of all the listings.  This page contains a summary and link
+to each listing along with an optional picture.
+
+Placeholders available on this page:
+
+$cgiurl$	- script filename (for use in form tags)
+$homepage_url$	- URL of homepage directory
+$listing_url$	- URL of listing directory
+$search_url$	- URL of search engine
+
+$images$	- list of images (created using templatecells)
+$file$		- image filename (used in "listing_image" templatecell)
+
+$lfieldX$	- listing field value of field X, X is a number from 1 to 50
+$lfieldX_ue$	- listing field value of field X url encoded for use in links
+$listing_file$	- listing filename
+
+$user_num$	- user number
+$user_name$	- user name
+$user_name_ue$	- user name (url encoded)
+$user_file$	- user homepage filename
+
+Templatecells on this page:
+
+listing_image		- displayed for each homepage images
+listing_noimages	- displayed if there are no homepage images
+
+_search_query.html - This is the template used to display the initial search
+page allowing the user to search for listings that match specific criteria.
+This page displays the search options and controls how the search engine
+works.
+
+Placeholders available on this page:
+
+$cgiurl$	- script filename (for use in form tags)
+$homepage_url$	- URL of homepage directory
+$listing_url$	- URL of listing directory
+$search_url$	- URL of search engine
+
+$userlist$	- list of all user names for use in pulldown menu, eg:
+
+		  <select name="user_match">
+		  <option value="">Any Agent
+		  $userlist$
+		  </select>
+
+Templatecells on this page:
+
+none
+
+_search_results.html - This template is used to display the results found
+by the search engine.  This lists a brief description for each listing, an
+optional image and a link to the full listing page.
+
+Placeholders available on this page:
+
+$cgiurl$	- script filename (for use in form tags)
+$homepage_url$	- URL of homepage directory
+$listing_url$	- URL of listing directory
+$search_url$	- URL of search engine
+
+$list$		- list of results on this page (created using templatecells)
+$file$		- preview image filename (used in "*_image" templatecells)
+
+$lfieldX$	- listing field value of field X, X is a number from 1 to 50
+$lfieldX_ue$	- listing field value of field X url encoded for use in links
+$listing_file$	- listing filename
+
+$user_num$	- user number
+$user_name$	- user name
+$user_name_ue$	- user name (url encoded)
+$user_file$	- user homepage filename
+
+Templatecells on this page:
+
+row_image	- displayed for listings with preview image
+row_image_new	- displayed for NEW listings with preview image
+row_noimage	- displayed for listings without preview image
+row_noimage_new	- displayed for NEW listings without preview image
+
+
+2.3 Configuring Search Engine
+----------------------------------------------------
+In addition to modifying the look and feel of the templates you can also 
+modify the way the search engine works by modifying the Search Page Template.
+There are several different ways you can search a field.
+
+RANGE SEARCHING
+To search between a range of values create a pulldown for the mininum
+and maximum values.  ie:  bedrooms [min] [max].  The name of the pulldown
+should be set to the name of the field it is to be applied to with _min or
+_max applied to the end.  ie: lfield3_min lfield3_max.
+
+KEYWORD SEARCHING
+To search for a keyword in a specific field number simply create a form field
+and append "_keyword" to the end.  ie:  to search for a keyword in lfield6 setup
+a text field named "lfield6_keyword".
+
+EXACT MATCH SEARCHING
+As keyword searching returns any records that contain that keyword, exact match
+only returns record that match the query exactly.  This is best used to specify
+exact criteria to match.  ie:  bedrooms: 3, MLS# 1235453, etc.  To search
+for exact matches create a form field and append _match, ie: lfield6_match
+
+SEARCH FOR SPECIFIC USER
+You can create a pulldown with all the user names by using the placeholder
+"userlist". You can search for a user or a user keyword with "user_keyword"
+and "user_match" to match the user name or "user_num" to match the user
+number.
+
+SORT ORDER
+You can specify a sort order for results to be returned in with
+the following fields:
+<input type="hidden" name="sort_order" value="14,abc,forward">
+<input type="hidden" name="sort_order" value="14,123,reverse">
+The first part of the value ("14") is the field number to sort by,
+the second part is the type of sorting to do (abc for alphabetical,
+123 for numerical) and the third part is the direction to sort in.
+
+RESULTS PER PAGE
+You can specify the results to be shown per page with the "perpage"
+field like so:  <input type="hidden" name="perpage" value="10">
+
+MARK NEW LISTINGS AS "NEW"
+You can have new listings that have been created or updated in 
+the last few days displayed in a "NEW" templatecell on the 
+search results page by using "marknew" field:
+<input type="hidden" name="marknew" value="2">
+In this example, any listings created or updated in the last
+2 days will be shown as new.
+
+ONLY DISPLAY NEW LISTINGS
+You can have the search engine only display recent listings
+with the "shownew" field allowing users to check what new
+listings have been added without going through the entire
+database:  <input type="hidden" name="shownew" value="7">
+In the above example only listings created or updated in the
+last 7 days will be displayed.
+
+Search form fields that have no value are ignored.  So when you create 
+new fields for your search page the default value should be blank.  
+ie:  value="".
+
+2.4 Security Concerns
+----------------------------------------------------
+Since all the data used in the program is stored in data files it is important
+to ensure that that data is not accessable to users via the web.  For example:
+If your data files are stored in /rm/data/ it is important to ensure that users
+are unable to view or download those data files by typing the URL of the data 
+directory and a data file into their browser.  In most cases your web server can
+be configured to disallow this.  Talk to your Server Administrator for more
+information.
+
+In addition to protecting data files it is important to be aware of file
+permissions.  When giving writen permission to data and other files it is
+important to ensure that you are not allowing other users that may have
+accounts on the web server access to your files.  In some cases where a
+single web server hosts many websites and users, one user may be able to read
+or write another users files if file permissions are setup incorrectly.
+
+If you are concerned about security and would like more information, contact
+your server administrator.
+
+2.4 Upgrading from 2.00 to 2.01
+----------------------------------------------------
+If you have already installed Realty Manager 2.00 and you would
+like to upgrade to 2.01 there is no need re-install the program, all
+you need to do is update the following files:
+
+/rm/exec/rm.cgi					- Administrator Program
+/rm/exec/search.cgi				- Listing Search Engine
+/rm/data/interface.dat.cgi			- Program Interface Data
+
+3.0 File List
+====================================================
+This is a list of all the files included in this archive and a brief
+description of their function.
+
+3.1 Directories
+----------------------------------------------------
+/rm/exec/					- program files
+/rm/data/					- data files
+/rm/templates/					- template files
+/rm/images/					- image files
+
+3.2 Readme Files
+----------------------------------------------------
+/rm/license.txt					- Software License Agreement
+/rm/manual.txt					- Software Manual (this file)
+
+3.3 Program Files
+----------------------------------------------------
+/rm/exec/rm.cgi					- Administrator Program
+/rm/exec/search.cgi				- Listing Search Engine
+/rm/exec/install.cgi				- Installation Program
+
+3.4 Data Files
+----------------------------------------------------
+/rm/data/setup.dat.cgi				- Setup Options Data
+/rm/data/interface.dat.cgi			- Program Interface Data
+/rm/data/listing.dat.cgi			- Listing Database
+/rm/data/user.dat.cgi				- User Database
+/rm/data/help.dat.cgi				- Program Help Data
+
+3.5 Template Files
+----------------------------------------------------
+/rm/templates/_publish_homepage.html		- Homepage Template
+/rm/templates/_publish_homepage_index.html	- Homepage Index Template
+/rm/templates/_publish_listing.html		- Listing Template
+/rm/templates/_publish_listing_index.html	- Listing Index Template
+/rm/templates/_search_query.html		- Search Engine Query Page
+/rm/templates/_search_results.html		- Search Engine Results Page
+
+3.6 Image Files
+----------------------------------------------------
+/rm/images/button_about.gif			- Button : About
+/rm/images/button_add.gif			- Button : Add
+/rm/images/button_cancel.gif			- Button : Cancel
+/rm/images/button_erase.gif			- Button : Erase
+/rm/images/button_listall.gif			- Button : ListAll
+/rm/images/button_login.gif			- Button : Login
+/rm/images/button_ok.gif			- Button : OK
+/rm/images/button_reset.gif			- Button : Reset
+/rm/images/button_save.gif			- Button : Save
+/rm/images/button_upload.gif			- Button : Upload
+/rm/images/help.gif				- Title : Help
+/rm/images/sample_image.jpg			- Sample Image for install.cgi
+/rm/images/spacer.gif				- spacing image
+/rm/images/splash_image.jpg			- Interface Image
+/rm/images/splash_image_blank.gif		- Interface Image
+/rm/images/splash_ne.gif			- Interface Image
+/rm/images/splash_nnw.gif			- Interface Image
+/rm/images/splash_nw.gif			- Interface Image
+/rm/images/window_bg.gif			- Interface Image
+/rm/images/window_buttons.gif			- Interface Image
+/rm/images/window_ne.gif			- Interface Image
+/rm/images/window_nw.gif			- Interface Image
+/rm/images/window_nw2.gif			- Interface Image
+/rm/images/window_se.gif			- Interface Image
+/rm/images/window_sw.gif			- Interface Image
+/rm/images/window_sw2.gif			- Interface Image
+
+4.0 About interactivetools.com
+====================================================
+
+4.1 About Us
+----------------------------------------------------
+interactivetools.com is a new media software company which specializes in 
+developing custom web based applications and publishing tools. We 
+provide fast, friendly support and creative solutions for anyone doing 
+business on the web. If you would like to find out how we can help you 
+with your next internet project don't hesitate to contact us at 
+info@interactivetools.com. 
+
+4.2 Support
+----------------------------------------------------
+If you require support for this product please contact us via 
+email at support@interactivetools.com.com.
+
+4.3 Products
+----------------------------------------------------
+For more information about our other interactivetools.com products
+visit our website at http://www.interactivetools.com/
+
+4.3 Contact
+----------------------------------------------------
+We can be contacted at the following email addresses:
+
+info@interactivetools.com		- General Inquiries
+support@interactivetools.com		- product support
+
