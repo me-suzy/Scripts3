@@ -1,0 +1,342 @@
+.warning {
+	background-color : #FFCCCC;
+}
+.dotted {
+	border : dotted;
+}
+.favcolor {
+	background-color : #EDEDED;
+}
+
+
+
+.favcolor2 {
+	background-color : honeydew;
+}
+
+
+.submit {
+	color : #660000;
+	background-color : #FFCC99;
+	font : bold;
+}
+
+
+.required {
+	color : #FF6633;
+	font-weight : bold;
+}
+
+.systemMessage {
+	background-color : White;
+	color : Red;
+	font : x-small sans-serif;
+	font-weight : normal;
+}
+.label {
+	color : Black;
+	font : bold;
+	font-family : serif;
+}
+
+.instruction {
+	color : Yellow;
+	background-color : Gray;
+}
+
+
+DT {
+	font-weight : 100;
+	padding-left : 15px;
+}
+.back {
+	background-color : #660000;
+	color : #FFCC99;
+	font-weight : bold;
+}
+
+.benefit {
+	color : Black;
+	font-size : small;
+	background-color : transparent;
+	font-style : oblique;
+	font-weight : bold;
+}
+
+
+
+H1  {
+	font-size : 24px;
+	font-weight : bold;
+	color : #006600;
+	text-transform : none;
+	background-color : White;
+	margin-left : auto;
+	background : transparent;
+}
+
+
+H2  {
+	font-size : 16px;
+	font-weight : bold;
+	text-align : left;
+	text-transform : capitalize;
+	color : #FFCC99;
+	background-color : #006600;
+	margin-left : 0px;
+}
+
+
+H3  {
+	font-size : medium;
+	font-family : sans-serif;
+	font-weight : bold;
+	font-style : italic;
+	color : #CC9966;
+	text-transform : none;
+	margin-left : 15px;
+}
+
+
+H4 {
+	background-color : transparent;
+	color : #009966;
+	font-weight : bold;
+	font : normal small-caps monospace;
+}
+
+
+
+.youselected {
+	color : #660000;
+	font-size : x-small;
+	font-family : Arial, Helvetica, sans-serif;
+	font : small;
+}
+
+
+
+
+.implementationname {
+	color : Green;
+	font-size : 32px;
+	font-style : oblique;
+	background-color : transparent;
+}
+
+
+
+
+
+P {
+	margin-left : 15px;
+	font-size : x-small;
+}
+
+
+
+A  {
+	
+}
+
+
+A:LINK {
+	background-color : transparent;
+	color : Blue;
+}
+
+
+
+A:Visited  {
+	color : #7B68EE;
+	background-color : transparent;
+	background : transparent;
+}
+
+
+
+A:Active  {
+	color : #006600;
+	background-color : #FFFF66;
+}
+
+
+
+A:Hover  {
+	color : 006600;
+	background-color : #FFCC99;
+}
+
+
+
+BODY  {
+	font-size : 10px;
+	font-family : Verdana;
+	color : Black;
+	font : serif;
+	text-align : left;
+	margin-top : 0px;
+	margin-left : auto;
+	background-color : White;
+	scrollbar-face-color: #006600;
+	scrollbar-highlight-color: #FFCC99;
+	scrollbar-3dlight-color: CC9966;
+	scrollbar-darkshadow-color: gray;
+	scrollbar-shadow-color: silver;
+	scrollbar-arrow-color: #FFCC99;
+	scrollbar-track-color: #FFCC99;
+}
+
+
+
+.sitedesign  {
+	font-size : xx-small;
+	font-family : sans-serif;
+	color : Gray;
+	text-align : left;
+	text-indent : 0px;
+}
+
+
+
+.info  {
+	font-size : x-small;
+	font-family : sans-serif;
+	font-style : italic;
+	text-indent : 0px;
+}
+
+.note {
+	font-family : sans-serif;
+	font-size : xx-small;
+	font-variant : normal;
+}
+
+
+
+.highlight {
+	background-color : #2F4F4F;
+	color : #FFEFD5;
+}
+
+
+.input {
+	background-color : #FFFFCC;
+	color : #2F4F4F;
+	font-weight : bolder;
+}
+
+
+
+
+
+
+table  {
+	text-align : left;
+}
+
+
+
+th  {
+	font-size : small;
+	font-family : sans-serif;
+	font-weight : bold;
+	color : #FFCC99;
+	background-color : #006600;
+	text-align : left;
+}
+
+
+
+td  {
+	padding : 3px;
+	font-size : x-small;
+}
+
+
+
+
+.form  {
+	border-style : double;
+	background : #F0F8FF;
+	padding-left : 8px;
+	padding-right : 8px;
+	padding-top : 8px;
+	padding-bottom : 8px;
+	padding : 2px;
+	background-color : #FFCC99;
+	margin-left : auto;
+}
+
+
+
+
+
+.accessdenied  {
+
+	font-size : 170px;
+
+	font-family : sans-serif;
+
+	font-weight : bold;
+
+	color : Red;
+
+}
+
+
+.needleFound {
+	background : #66FF33;
+	color : #336600;
+	font-weight : bold;
+}
+.orderbybutton {
+	background : #FFCC00;
+	color : #336600;
+	font-weight : bold;
+}
+
+.tableRowOne {
+	background-color : White;
+}
+
+.tableRowTwo {
+	background-color : #DCDCDC;
+}
+
+
+
+
+
+
+.accessdenied  {
+
+	font-size : 170px;
+
+	font-family : sans-serif;
+
+	font-weight : bold;
+
+	color : Red;
+
+}
+
+
+.needleFound {
+	background : #66FF33;
+	color : #336600;
+	font-weight : bold;
+}
+.orderbybutton {
+	background : #FFCC00;
+	color : #336600;
+	font-weight : bold;
+}
+
+.tableRowOne {
+	background-color : White;
+}
+
+.tableRowTwo {
+	background-color : #DCDCDC;
+}
