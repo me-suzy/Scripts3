@@ -1,0 +1,87 @@
+<?
+
+#///////////////////////////////////////////////////////
+#//  COPYRIGHT 2002 PHPAuction.org ALL RIGHTS RESERVED//
+#//  For Source code for the GPL version go to        //  
+#//  http://phpauction.org and download               //
+#//  Supplied by CyKuH [WTN]                          //
+#///////////////////////////////////////////////////////
+
+?>
+
+
+
+<TABLE WIDTH="100%" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING="0" CELLSPACING="0">
+
+<TR>
+
+<TD>
+
+<CENTER>
+
+<? print $std_font; ?>
+
+
+
+<A HREF="profile.php?user_id=<? print $user_id; ?>">
+
+<?
+
+	print $std_font.$MSG_206;
+
+?>
+
+
+
+</A> |
+
+<A HREF="item.php?id=<? print $auction_id; ?>">
+
+<?
+
+	print $std_font.$MSG_138;
+
+?>
+
+
+
+</A>
+
+
+
+</CENTER>
+
+<BR>
+
+<BR>
+
+<CENTER>
+        <B><? print $MSG_334."  <B>$username</B>"; ?></B>
+</CENTER>
+
+
+
+
+
+<BR><BR>
+
+<CENTER>
+        <?
+
+	print $std_font.$MSG_337.$username;
+
+?> <BR>
+        <BR><BR>
+
+
+
+<BR>
+
+</CENTER></TD>
+
+</TR>
+
+</TABLE>
+
+
+
