@@ -1,0 +1,190 @@
+<html>
+
+<head>
+<title>CGI Super Statistics Log Analyzer Documentation</title>
+
+<meta name="Microsoft Border" content="t, default"></head>
+
+<body><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+
+<table border="0" width="33%" cellpadding="0">
+  <tr>
+    <td width="50%"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/" ONCLICK="parent.f=0"><img src="../pix/banners/miniprizm.gif" alt="cgi scripts" border="0" WIDTH="305" HEIGHT="59"></a></font></td>
+    <td width="50%" bgcolor="#FFFFFF"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/ads/rotate.cgi?url=&amp;user=" target="new" ONCLICK="parent.f=0"><img src="http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user=" border="0" width="468" height="60"></a></font></td>
+  </tr>
+</table>
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="16%"><p align="center"><a href="../dsstoday/index.html"><font color="#000000" face="Arial"><img src="../pix/main/news.jpg" alt="CGI NEWS" align="left" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="16%"><p align="center"><a href="../scripts/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/scripts.jpg" alt="CGI Scripts" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../mastergate/index.html"><font color="#000000" face="Arial"><img src="../pix/main/access.jpg" alt="Access The CGI Archive" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../contact.html"><font color="#000000" face="Arial"><img src="../pix/main/contact.jpg" alt="Contact Superscripts" WIDTH="104" HEIGHT="68"></font></a></td>
+    <td width="17%"><p align="center"><a href="../support.html"><font color="#000000" face="Arial"><img src="../pix/main/dox.jpg" alt="CGI Documentation" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../download/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/download.jpg" alt="Download CGI Scripts Here" align="right" WIDTH="105" HEIGHT="65"></font></a></td>
+  </tr>
+  <tr>
+    <td width="16%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/dsstoday/index.html" style="color: rgb(255,255,255)"><strong>News</strong></a></font></td>
+    <td width="16%" bgcolor="#000000"><p align="center"><a href="/scripts/" style="color: rgb(255,255,255)"><font face="Arial" color="#FFFFFF"><strong>CGI Scripts</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><a style="color: rgb(255,255,255)" href="../mastergate/index.html"><font face="Arial" color="#FFFFFF"><strong>Become A Member</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../contact.html"><strong>Contact
+    Us</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../support.html"><strong>Support</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/download/index.shtml" style="color: rgb(255,255,255)"><strong>Download
+    Area</strong></a></font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+
+<table border="0" width="74%" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <font SIZE="1" COLOR="#000000"><p></font><strong><font face="Arial" color="#FF0000" size="5">CGI Super Statistics Log Analyzer Documentation</font></strong></p>
+      <p><big><big><font color="#000000" face="Arial">SUPERSTATS:&nbsp; V1.0</font></big></big></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Copyright 2001 Psybercore, Inc. - All Rights
+        Reserved. </small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font color="#000000" face="Arial">Selling redistributing or modifying any or
+        all of the code for this program without prior written consent is expressly forbidden. You
+        must obtain written permission before redistributing this software over the Internet or in
+        any other medium. In all cases copyright and header information must remain intact.</font></small></p>
+      </blockquote>
+      <hr align="left">
+      <p><big><strong><font color="#000000" face="Arial">System Requirements</font></strong> </big><ul>
+        <li><small><font color="#000000" face="Arial">Perl 5</font></small></li>
+        <li><font color="#000000" face="Arial"><small>Apache style combined (referer &amp; access)
+          logs recommended (not tested on transfer logs)</small></font></li>
+        <li><font color="#000000" face="Arial"><small>crontab</small></font></li>
+        <li><font color="#000000" face="Arial"><small>Unix recommended</small></font></li>
+      </ul>
+      <h2><font color="#000000" face="Arial"><small>Preliminaries</small></font></h2>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>Determine the path to PERL 5 on your web
+          server host.&nbsp; Note that some web hosting companies run both PERL 4 and PERL 5.&nbsp;
+          Make ABSOLUTELY sure you are not setting this up under PERL 4.&nbsp; Ask your
+          administrator if you are not sure. </small></font></li>
+      </ul>
+      <ul>
+        <li><a href="../tutorial/index.html"><font color="#000000" face="Arial"><small>If you need
+          to review or learn the basics of CGI and Perl visit the tutorial</small></font></a></li>
+      </ul>
+      <ul>
+        <li><font color="#000000" face="Arial"><small><a href="http://www.superscripts.com/download/">Download</a> the tarfile for this program and
+          save it to your desktop.</small></font></li>
+      </ul>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>Unpack the tar archive on your desktop using a
+          program that unpacks UNIX TAR ARCHIVES. If you don't have such a program then download
+          WINZIP FREE from <a HREF="http://www.shareware.com/">SHAREWARE.COM</a>.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>After you have unpacked the TAR archive you
+          will have a collection of folders and files on your desktop.&nbsp; Now you have to do some
+          basic editing of each of these files (or at least some of them).&nbsp; Use a text editor
+          such as wordpad, notepad, BBEdit, simpletext, or teachtext to edit the files.&nbsp; These
+          are NOT WORD PROCESSOR DOCUMENTS they are just simple TEXT files so don't save them as
+          word processor documents or save them with extentions such as .txt or they will NOT WORK.
+          &nbsp; Note that there may be a some files inside of folders which are &quot;blank&quot;.
+          &nbsp; This is normal.</small></font></li>
+      </ul>
+      <h2><font color="#000000" face="Arial"><small>Preparing the CGI scripts</small></font></h2>
+      <blockquote>
+        <h2><small><font face="Arial" color="#FF0000"><small>Define Path To PERL 5</small></font></small></h2>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>The first step is to open up each and every
+        file that has a .cgi extention and edit line number one of each script.&nbsp; Each of the
+        cgi scripts is written in perl 5. For your scripts to run they must know where perl 5 is
+        installed on your web server. The path to perl 5 is defined to a cgi script in the first
+        line of the file. In each of the cgi scripts the first line of code looks something like
+        this: </small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#FF0000"><small>#!/usr/bin/perl</small></font></p>
+        </blockquote>
+        <p><font face="Arial" color="#000000"><small>If the path to perl 5 on your web server is
+        different from /usr/bin/perl you must edit the first line of each cgi script to reflect
+        the correct path. If the path to perl 5 is the same no changes are necessary. If you do
+        not know the path to perl 5 ask the webmaster or system administrator at your server site.
+        &nbsp; </small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big><strong>Configure the .cgi files</strong></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><big>stats.cgi</big></font></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Only one thing to configure here.&nbsp; Open
+        up stats.cgi in your favorite text editor and find the USER CONFIGURATION AREA at the top
+        of the script.&nbsp; There are 6 variables.&nbsp; Most are pretty self explanatory I hope.</small></font><font SIZE="2"><ul>
+          <li></font><font color="#FF0000" face="Arial" size="2">$domain =
+            &quot;yourdomainname.com&quot;;&nbsp; </font><font size="2" face="Arial" color="#000000">(your
+            domain name goes here)</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" size="2">$logfile =
+            &quot;/full/path/to/your/logs&quot;; </font><font size="2" face="Arial" color="#000000">(full
+            path to your REFERER logs)</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" size="2">$outputdir =
+            &quot;/full/path/to/where/you/want/the/stats/&quot;;&nbsp; </font><font size="2" face="Arial" color="#000000">(full path to the stats directory for the results)</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" size="2">$referaldepth = 10;&nbsp; </font><font size="2" face="Arial" color="#000000">(how many top refering sites do you want to count?
+            &nbsp; top 10, 25, ?)</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" size="2">$pagereferaldepth = 10;&nbsp; </font><font size="2" face="Arial" color="#000000">(how many pages do you want to count in the TOP and
+            LEAST hit pages)</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" size="2">$hurlingthreshold = 100;&nbsp; </font><font size="2" face="Arial" color="#000000">(this is the value you consider for password hurler
+            alerts)</font><font SIZE="2"></li>
+        </ul>
+        <p></font><font size="2" face="Arial" color="#000000">T</font><font SIZE="2"><font color="#000000"><font face="Arial"><font size="2">he only 3 that might be a bit confusing
+        (the last 3) are $referaldepth, $pagereferaldepth, and $hurlingthreshold.&nbsp; </font></font></font></p>
+        </font><p><font size="2" face="Arial" color="#000000">$referaldepth is simply how deep you
+        want to count and list the TOP refering sites.&nbsp; If you set this value to 10 (default)
+        then your stats will only show the TOP 10 REFERING SITES.&nbsp; If you set $referaldepth
+        to 25 then your stats will show the TOP 25 REFERING SITES.</font></p>
+        <p><font size="2" face="Arial" color="#000000">$pagereferaldepth is similar but it affects
+        the TOP AND LEAST visited webpages within your site.&nbsp; Thus setting this variable to
+        16 (for example) would show you the TOP 16 visited pages and also the LEAST POPULAR 16
+        pages.</font></p>
+        <p><font size="2" face="Arial" color="#000000">$hurlingthreshold is a value I would leave
+        alone.&nbsp; 100 is a good number for this variable.&nbsp; If your website is being
+        attacked by brute force password hurlers then their IP address will show up in your
+        logfile.&nbsp; You can then contact their ISP and get them in trouble, or just hack their
+        site or blow up their PC with a good ol' syn-flood.</font></p>
+      </blockquote>
+      <h2><font face="Arial" color="#000000"><small>Upload Your Edited CGI </small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Upload stats.cgi into your cgi-bin somewhere</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Make a directory inside of your webspace
+          called stats (http://www.yourdomain.com/stats/)</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Chmod the files</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Chmod stats.cgi to 755.&nbsp; Chmod the stats
+          DIRECTORY either to 666 or preferably 777.&nbsp; You will also want to chmod your REFERER
+          LOGFILE to 777 so it can be reset everynight.</small></font></li>
+      </ul>
+    </blockquote>
+    <blockquote>
+      <h2><font face="Arial" color="#000000"><small>Setup your crontab</small></font></h2>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Setup a crontab to run nightly (say at
+        midnight).&nbsp; The crontab will analyze your logs, print out an HTML dated webpage and
+        store it inside the stats directory.&nbsp; It will also clear out your logfiles for the
+        next day.&nbsp; The crontab entry should be something like this</small></font></p>
+        <p><font face="Arial" color="#000000"><small>0 0 * * * /full/path/to/cgi-bin/stats.cgi</small></font></p>
+        <p><a href="../tutorial/crontab.html"><font face="Arial" color="#000000"><small>For more
+        information on crontab visit the tutorial</small></font></a></p>
+      </blockquote>
+      <h2><font face="Arial" color="#000000"><small>NOTE</small></font></h2>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>This program is designed to work with REFERER
+        LOGS.&nbsp; I have not tested it on ACCESS (transfer) logs.&nbsp; Your isp can easily
+        setup REFERER logs if you ask.&nbsp; If they can't then you need to get a better ISP.
+        &nbsp; REFERER logs contain important information MISSING in transfer logs such as who is
+        sending you traffic, who is trying to hack your site, etc.</small></font></p>
+      </blockquote>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
