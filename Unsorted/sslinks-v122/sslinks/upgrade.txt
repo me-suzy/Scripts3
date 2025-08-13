@@ -1,0 +1,40 @@
+Upgrading from ssLinks v1.1
+===========================
+
+There are several stages involved in succesfully upgrading from ssLinks
+v1.1 to ssLinks v1.22.  Firstly you should be aware of the brand new 
+template system.  Virtually all HTML output by the script can now be
+controlled using templates - these are stored by default in the 
+templates directory.
+
+The header and footer files can still be controlled using the header.html
+and footer.html files found in the sslinks base directory.  As before, 
+these files can include PHP if you set the $template_php variable to true.
+
+Once you have edited global.inc.php to contain your database details you
+should upload everything from the sslinks archive including the full
+templates directory to your web server.  Before you can use the script you
+need to make a slight modification to the database table structure used
+by ssLinks v1.1.  To do this run the upgrade.php script.  The script will
+ask for your database details, and will then alter the sslinkcats table
+to make it compatible with ssLinks v1.22.  This will not affect any of your
+data.
+
+Upgrading to v1.22 from v1.2 or v1.21
+=====================================
+
+The differences between these versions are very small, but significant for some
+users.  In particular v1.22 fixes the Top Rated SQL error bug experienced by 
+anyone using MySQL 3.22 or earlier.
+
+The following files from v1.2 should be replaced with updated files from the
+v1.22 archive:
+
+* footer_menu.tmpl      (updated version number)
+* confirm_catdel.tmpl   (removed rogue \n"; code)
+* global.inc.php        (updated login function and top_rated)
+
+In addition the following file has been added to the archive in between v1.2
+and v1.21:
+
+* login_form.tmpl
