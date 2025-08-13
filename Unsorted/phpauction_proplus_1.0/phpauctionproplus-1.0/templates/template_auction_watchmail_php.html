@@ -1,0 +1,21 @@
+<?
+
+#///////////////////////////////////////////////////////
+#//  COPYRIGHT 2002 PHPAuction.org ALL RIGHTS RESERVED//
+#//  For Source code for the GPL version go to        //  
+#//  http://phpauction.org and download               // 
+#//  Supplied by CyKuH [WTN]                          //
+#///////////////////////////////////////////////////////
+
+$message = "Hello $nickname,
+
+This is Your Auction Watch.
+ 
+The following Auction  has been opened matching your keyword(s) : $keyword
+
+Auction : $title
+$auction_url";
+mail($e_mail,"$sitename - Auction Watch",$message,"From:$SETTINGS[sitename] <$SETTINGS[adminmail]>\nReplyTo:$SETTNGS[adminmail]"); 
+
+
+?>
