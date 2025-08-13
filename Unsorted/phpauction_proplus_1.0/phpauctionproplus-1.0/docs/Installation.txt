@@ -1,0 +1,71 @@
+PhpAuction PRO PLUS- web based auction system
+
+INSTALLATION SCRIPT INSTRUCTIONS
+========================================
+#///////////////////////////////////////////////////////
+#//  COPYRIGHT 2002 PHPAuction.org ALL RIGHTS RESERVED//
+#//  For Source code for the GPL version go to        //  
+#//  http://phpauction.org and download               //
+#///////////////////////////////////////////////////////
+
+Requirements:
+PHP 4. + ( http://www.php.net )
+MySQL database ( http://www.mysql.com )
+
+PHP and MySQL must be installed prior to installing PHPAuction PRO Plus.  See the
+Websites or HOWTO files for those packages for help.
+NOTE: Be sure your web server is configured to recognize .php files as PHP files.
+
+PHPAuction PRO Plus Installation Quick Start:
+
+1. Purchase & Download PHPAuction PRO Plus.
+
+2. Extract or unzip the archive to the folder on your web server in which you want to place PHPAuction.
+
+3. Chmod directories "uploaded" & "counter" to 777.  These two directories need to have write permission by the web server.
+
+4. For the administrative area to function, certain files in the /includes	directory must be writeable by the web server process.  
+    Set these files to writeable using chmod 666:
+	
+    	categories_select_box.inc.php
+		countries.inc.php
+		currency.inc.php
+		passwd.inc.php
+        config.inc.php 
+
+NOTE***YOU MUST SET THESE PERMISSSIONS BEFORE YOU START THE INSTALLATION SCRIPT!  DO NOT GO TO STEP 5 UNTIL YOU HAVE DONE THIS!
+
+5. You will need to know the name of your database, database host name, username & password before you can start your installation. You will also need to know your server path to certain files.
+After you have gathered this information, point your browser to http://yoursite/phpauction/admin/install.php. 
+
+In step one of the installation program, it asks for your Site URL. This URL should point to your PHPAuction's installation. For example, if you have installed PHPAuction PRO under the same structure as it was packaged, you would need to use the following URL.
+http://yoursite.com/phpauction/ 
+You must always use the ending "/" after your URL.
+
+In step three of the installation program, if you have uploaded PHPAuction under the same structure as it was packaged, you may leave the first line that references the includes folder as it is. 
+
+In the second line (Image upload path), it is asking for the absolute path to the uploaded folder. This will be something like: 
+/home/public_html/phpauction/uploaded/ 
+You must always use the ending "/". 
+
+If you do not know the absolute path of your server, contact your server administrator, they will be able to provide you with this information. 
+
+For line three (uploaded path), if you have not changed the package structure of PHPAuction, you may leave it as it is.
+
+ The final step of installation is to create your chosen Admin username & password.  There will be a link to the Admin Back-end at the end of installation.  Click on link to create your   username and password.
+
+6.  After you have created the username and password, immediately log in to Admin Back-end where you can upload your company logo in General Settings.
+
+7.   Banner Management--After you have successfully logged in to the Admin Back-end you may go to the Banners Management link.  Then go to the Access phpAdsNew Administration Back-end.  You may log in there using the username "phpauctionuser" & password of "LetMeIn".  Once logged in go to the Administration tab to add a new client.  Click on add new client near the top of the page.  Submit all client information.  After this, you will see a page with your client name and a folder that you created during the campaign information.  NOTE: default name for folder is "Default"  Click on this folder and then click on "add new banner"  There is where you will upload your 
+ banners.  By default, settings in PHPAuction are set to use 468 x 60 banners.  You may continue to add banners and/or clients.  Banners will be rotated randomly at the top of every page of your auction site.
+
+If you need technical support, use the ticket system taht is located here
+http://pro.phpauction.org/support/support.php
+
+For more information you may go here to the FAQs located at the site
+http://pro.phpauction.org/
+
+Or to the manual located at
+
+http://pro.phpauction.org/promanual
+
