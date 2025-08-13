@@ -1,0 +1,60 @@
+ <!--DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+ "http://www.w3.org/TR/html4/strict.dtd"-->
+<html>
+<head>
+<title>
+</title>
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="{WWW_DIR}templates/global.css">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="{WWW_DIR}templates/group-email.css">
+
+<meta http-equiv="Expires" content="Fri, Jun 12 1981 08:20:00 GMT">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+</head>
+<body  class="colored">
+
+<div class="groupemail" align="center">
+
+<form method="post" action="{FORM_URL}"> 
+<table align="center">
+ <tr>   
+ 	<td colspan="3">
+	 <table border="0" cellpadding="0">
+	 <tr>
+	 	<td>
+		 <br>
+		 <table cellspacing="2" border="0">
+		  <tr bgcolor="#496088">
+		    <th>
+			 <font color="white" face="Verdana, Arial" size="-1">&nbsp;Message Description&nbsp;</font>
+			</th>
+			<th>
+			 <font color="white" face="Verdana, Arial" size="-1">&nbsp;Msg #&nbsp;</font>
+			</th>
+			<th>
+			 <font color="white" face="Verdana, Arial" size="-1">&nbsp;# of Recipients&nbsp;</font>
+			</th>
+			<th>
+			 <font color="white" face="Verdana, Arial" size="-1">&nbsp;Began At&nbsp;</font>
+			</th>
+			<th>
+			 <font color="white" face="Verdana, Arial" size="-1">&nbsp;Completed At&nbsp;</font>
+			</th>
+		  </tr>
+          {EMAIL_LOG_ROWS}
+		 </table>
+		</td>
+	</tr>
+    </table>
+    <center><br>
+    <input type="submit" value="refresh" class="form" style="background: #D4D0C8;">	   	   
+    </center>
+   </td>	 
+ </tr>
+</table>
+</form>
+</div>
+	   
+</body>
+</html>
