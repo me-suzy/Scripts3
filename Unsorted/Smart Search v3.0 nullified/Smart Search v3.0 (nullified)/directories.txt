@@ -1,0 +1,9 @@
+tech/hardware/computers/computer accessories/monitors
+tech/hardware/computers/computer accessories/printers
+tech/hardware/computers/computer accessories/scanners
+tech/hardware/computers/ibm
+tech/hardware/computers/compaq
+tech/hardware/computers/mac
+tech/hardware/laptops
+tech/hardware/keyboards
+tech/software
