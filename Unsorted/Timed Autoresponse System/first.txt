@@ -1,0 +1,16 @@
+This is the subject of your first email
+---------------------------------------------------------------------------------
+                  THIS IS THE BODY OF YOUR FIRST EMAIL
+---------------------------------------------------------------------------------
+
+Remember, EVERYTHING after the first line is the body of the email.
+
+You can personalize the email with these tags:
+<title>
+<first_name>
+<last_name>
+<email>
+
+You can have a "remove" link in the emails by using this syntax:
+
+http://www.yoursite.com/cgi-bin/auto/autoresponder.cgi?action=Remove&email=<email>
