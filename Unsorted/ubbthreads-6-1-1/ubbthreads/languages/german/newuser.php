@@ -1,0 +1,31 @@
+<?
+$ubbt_lang['BOARD_RULES'] = "Boardregeln";
+$ubbt_lang['I_AGREE'] = "Ich erkl&auml;re mich damit einverstanden";
+$ubbt_lang['DOB_EXIST'] = "Sie haben folgendes Geburtsdatum angegeben: ";
+$ubbt_lang['NEW_USER2']  = 	"Geben Sie folgende Daten an, um einen Benutzernamen zu registrieren.  Ohne Angabe des Passwortes wird eines generiert und an die angegebene eMail-Adresse geschickt.";
+$ubbt_lang['USER_IN']  = 	"Benutzername (zwischen 3 und 16 Zeichen)";
+$ubbt_lang['OPT_PASS']  = 	"Optional:  Pa&szlig;wort (zwischen 4 und 20 Zeichen, alphanumerisch)";
+$ubbt_lang['VER_PASS']  = 	"Wiederholung des Passwortes";
+$ubbt_lang['SIMP_EMAIL']  = 	"Email-Adresse";
+$ubbt_lang['DOB'] = "Bitte geben Sie ihr Geburtsdatum an";
+$ubbt_lang['JAN'] = "Januar";
+$ubbt_lang['FEB'] = "Februar";
+$ubbt_lang['MAR'] = "M&auml;rz";
+$ubbt_lang['APR'] = "April";
+$ubbt_lang['MAY'] = "Mai";
+$ubbt_lang['JUN'] = "Juni";
+$ubbt_lang['JUL'] = "July";
+$ubbt_lang['AUG'] = "August";
+$ubbt_lang['SEP'] = "September";
+$ubbt_lang['OCT'] = "Oktober";
+$ubbt_lang['NOV'] = "November";
+$ubbt_lang['DEC'] = "Dezember";
+$ubbt_lang['SUB_DATE'] = "Geburtsdatum absenden";
+$ubbt_lang['PRIV_INFO'] = "Schutz der Privatssp&auml;hre";
+$ubbt_lang['PRIV_INFO_DETAIL'] = "Die Verordnung der US Bundeskommission zum Schutz der Privatsph&auml;re von Kindern im Internet von 1998 will die Privatsph&auml;re von Kindern, die das Internet nutzen, schützen. Ab dem 21. April 2000 müssen viele Webseiten vor der Beschaffung, Nutzung oder Bekanntgabe von pers&ouml;nlichen Informationen von Kindern unter 13 das elterliche Einverst&auml;ndnis einholen.<p><a href=\"http://www.ftc.gov/opa/1999/9910/childfinal.htm\">COPPA Neuigkeiten</a> | <a href=\"http://www.ftc.gov/os/1999/9910/64fr59888.pdf\">Ganzer Text der Verordnung [PDF 270K]</a>";
+$ubbt_lang['PERM_FORM'] = "Einverst&auml;ndniserkl&auml;rung";
+$ubbt_lang['PERM_FORM_DETAIL'] = "Ein Erziehungsberechtigter muss eine unterschriebene Einverst&auml;ndinserkl&auml;rung per Fax oder Post an den Administrator dieses Forums schicken, bevor ein Kind unter 13 sich registrieren kann.<p><a href=\"{$config['phpurl']}/coppaform.php\">Einverst&auml;ndniserkl&auml;rung</a>";
+$ubbt_lang['CONT_INFO'] = "Kontaktinformationen";
+$ubbt_lang['CONT_INFO_DETAIL'] = "Fragen? E-Mail ";
+$ubbt_lang['AGE_VER'] = "Registration - Altersvalidierung";
+?>
