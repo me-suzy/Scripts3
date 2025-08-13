@@ -1,0 +1,39 @@
+<html>
+
+<head>
+<title></title>
+</head>
+
+<body bgcolor="#000000" text="#FFFFFF" link="#FFFF00" vlink="#FFFF00" alink="#00FF00">
+
+<h3 align="center"><font face="Arial" color="#80FFFF">Thank you for joining!</font></h3>
+
+<h3 align="center"><small><font face="Arial">Your username is: <font color="#FFFF00">#USERNAME#<br>
+</font>Your password is: <font color="#FFFF00">#USER12#</font></font></small></h3>
+
+<p align="center"><font face="Arial" color="#80FFFF">Please record your username and
+password.<big><br>
+</big>You will need them to check your stats and edit your account.</font></p>
+
+<hr width="525" noshade size="1">
+<div align="center"><center>
+
+<table border="0" width="600">
+  <tr>
+    <td width="100%"><p align="center"><font face="Arial">All you need to do is slap this code
+    on your webpage(s)... You can link as many times as you like. Just do not send exit
+    traffic! Exit traffic is low grade traffic when sent directly to another website and
+    doesn't help anyone out! Try sending it to an exit window with more links to other sites
+    instead...</font></p>
+    <p align="center"><big><font color="#FF8080"><strong>&lt;A
+    HREF=&quot;#TSIN.CGI#?#USERNAME#&quot; TARGET=&quot;_blank&quot;&gt;<br>
+    Click here for FREE XXX!&lt;/a&gt; </strong></font></big></p>
+    <p align="center"><font face="Arial" color="#FFFFFF">Here is the URL you will be sending
+    traffic to:</font><font face="Arial" color="#FFFF00"><strong><br>
+    #TSIN.CGI#?#USERNAME#</strong></font></p>
+    <p align="center"><font face="Arial" color="#FFFFFF">Here is the URL to check your stats::</font><font
+    face="Arial" color="#FFFF00"><strong><br>
+    <a href="#TSWEBMASTER.CGI#">#TSWEBMASTER.CGI#</a></strong></font></td>
+  </tr>
+</table>
+</center></div>
