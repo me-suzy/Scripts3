@@ -1,0 +1,30 @@
+<?
+$ubbt_lang['FILE_TOO_BIG']="Files can be no larger than {$config['filesize']}";
+$ubbt_lang['SPELL_CHECK']  = 	"Check spelling";
+$ubbt_lang['SPELL_BODY']  = 	"Your spell checked post is below.";
+$ubbt_lang['NAME_TAKEN']  = 	"The username you are trying to post under has already registered and is being used by someone else.";
+$ubbt_lang['BAD_UNAME']  = 	"You cannot use html characters in your username or have spaces before or after it.";
+$ubbt_lang['POST_ICON']  =     "Ïèêòîãðàììà";
+$ubbt_lang['READ_PERM']  = 	"You have read only privileges for this forum";
+$ubbt_lang['LONG_NAME']  = 	"Íåêîððåêòíàÿ äëèíà èìåíè ïîëüçîâàòåëÿ.";
+$ubbt_lang['LOCKED']  = 	"Ýòà Âåòâü çàêðûòà è Âû íå èìååòå äîñòàòî÷íûõ ïðàâ äëÿ äîáàâëåíèÿ â íå¸ ñîîáùåíèé.";
+$ubbt_lang['TWO_POLLS']  = 	"You may only have 1 poll in a post.";
+$ubbt_lang['PREV_POST']  = 	"Ïðåäâàðèòåëüíûé ïðîñìîòð ñîîáùåíèÿ";
+$ubbt_lang['SUB_VOTE']  = 	"Submit vote";
+$ubbt_lang['POST_BODY']  = 	"Âû âèäèòå ïðåäâàðèòåëüíûé ïðîñìîòð Âàøåãî ñîîáùåíèÿ. Åñëè âñ¸ âûãëÿäèò ÎÊ, ïðîñòî íàæìèòå êíîïêó &quot;Äàëåå&quot; è Âàøå ñîîáùåíèå áóäåò îòïðàâëåíà. Åñëè Âàì êàæåòñÿ, ÷òî íåîáõîäèìû íåêîòîðûå èçìåíåíèÿ, íàæìèòå êíîïêó &quot;Íàçàä&quot; Âàøåãî áðàóçåðà è âíåñèòå íåîáõîäèìûå èçìåíåíèÿ.";
+$ubbt_lang['YES_FILE2']  = 	"Åñëè æåëàåòå, Âû ìîæåòå ïðèêðåïèòü ê Âàøåìó ñîîáùåíèþ ôàéë. Îáú¸ì ôàéëà îãðàíè÷åí  {$config['filesize']} áàéòàìè";
+$ubbt_lang['NO_FILE2']  = 	"Õîòÿ ïðèêðåïëåíèå ôàéëîâ ê ñîîáùåíèþ è ðàçðåøåíî, äëÿ ýòîãî íåîáõîäèìî èñïîëüçîâàòü Íåòñêåéï 4+ ñîâìåñòèìûé áðàóçåð.";
+$ubbt_lang['EDIT_MORE']  = 	"Edit some more";
+$ubbt_lang['POST_TEXT']  = 	"Ñîîáùåíèå";
+$ubbt_lang['DO_EMAIL']  = 	"Îòïðàâëÿòü ìíå ïî ýëåêòðîííîé ïî÷òå îòâåòû";
+$ubbt_lang['DO_PREVIEW']  = 	"I want to preview my post";
+$ubbt_lang['CAN_ATTACH']  = 	"and/or attach a file";
+$ubbt_lang['NO_DUPS']  = 	"Ýòî ñîîáùåíèå óæå íàõîäèòñÿ â áàçå äàííûõ.";
+$ubbt_lang['UNREGED_USER']  = 	"Unregistered";
+$ubbt_lang['REPLY_SUB']  = 	"Îòâåò íà Âàøå ñîîáùåíèå";
+$ubbt_lang['REPLY_BOD']  = 	"replied to your post at the site: .";
+$ubbt_lang['POST_ENTERED']  = 	"Âàøå ñîîáùåíèå óñïåøíî îòïðàâëåíî.";
+$ubbt_lang['MOD_CONFIRM']  = 	"Âàøå ñîîáùåíèå ïðèíÿòî. Ýòà Äîñêà ìîäåðèðóåòñÿ è Âàøå ñîîáùåíèå íå ïîÿâèòñÿ ïîêà ïîêà Àäìèíèñòðàòîð èëè Ìîäåðàòîð íå îçíàêîìÿòñÿ ñ íèì. ×åðåç íåñêîëüêî ñåêóíä Âû áóäåòå âîçâðàùåíû íà ôîðóì.";
+$ubbt_lang['FORUM_RETURN']  = 	"Âåðíóòüñÿ íà ôîðóì";
+$ubbt_lang['VIEW_POST']  = 	"Ïðîñìîòðåòü Âàøå ñîîáùåíèå";
+?>
