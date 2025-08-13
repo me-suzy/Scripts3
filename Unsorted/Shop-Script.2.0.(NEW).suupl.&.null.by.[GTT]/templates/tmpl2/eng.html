@@ -1,0 +1,276 @@
+<html>
+
+
+<head>
+
+<link rel=STYLESHEET href="sb.css" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>{TITLE}</title>
+		<meta name="Title" content="{TITLE}">
+		<meta name="Description" content="{META}">
+		<meta name="KeyWords" content="{META}">
+</head>
+
+
+<script>
+	function open_window(link,w,h) {
+		var win = "width="+w+",height="+h+",menubar=no,location=no,resizable=yes,scrollbars=yes";
+		newWin = window.open(link,'newWin',win);
+		newWin.focus();
+	}
+	function confirmDelete() {
+		temp = window.confirm('Are you sure you want to unsubscribe?');
+		if (temp) {
+			window.location="index.php?killuser=yes";
+		};
+	}
+	function validate() {
+		if (document.form1.email.value.length<1) {
+			alert("Please input your e-mail");
+			return false;
+		};
+		if (document.form1.email.value == 'Email') {
+			alert("Please input your e-mail");
+			return false;
+		};
+		return true;
+	}
+	function validate_disc() {
+		if (document.formD.nick.value.length<1) {
+			alert("Please input your nickname");
+			return false;
+		};
+
+		if (document.formD.topic.value.length<1) {
+			alert("Please input post subject");
+			return false;
+		};
+
+		return true;
+	}
+	function validate_search() {
+
+		if (document.Sform.price1.value!="" && ((document.Sform.price1.value < 0) || isNaN(document.Sform.price1.value))) {
+			alert("Price should be a positive number");
+			return false;
+		};
+		if (document.Sform.price2.value!="" && ((document.Sform.price2.value < 0) || isNaN(document.Sform.price2.value))) {
+			alert("Price should be a positive number");
+			return false;
+		};
+
+		return true;
+	}
+
+</script>
+
+<body>
+<center>
+
+
+
+
+<table border=0 width=755 cellspacing=0 cellpadding=0>
+
+<tr>
+<td width=1% valign=bottom>&nbsp;<br><br><br><br></td>
+<td colspan=2 bgcolor=white width=70%>&nbsp;</td>
+</td>
+<td rowspan=2 bgcolor=white valign=bottom width=25%>
+
+
+{AUTHORIZATION}
+
+
+</td>
+</tr>
+
+
+<tr>
+<td width=1% valign=bottom bgcolor=#68C2EF><font class=big><nobr>&nbsp;Shop-Script</nobr></font></td>
+<td valign=bottom width=1%><img src="images/logo5.gif"></td>
+
+<td align=center>
+
+<table cellpadding=4>
+<tr>
+<td align=center><a href="index.php">Home</a></td><td>|</td>
+<td align=center>{REGISTER/HOME}</td><td>|</td><td align=center><a href="index.php?show_price=yes">Price list</a></td>
+</tr>
+</table>
+
+</td>
+
+</tr>
+<tr>
+<td width=1% bgcolor=#68C2EF valign=top>&nbsp;</td>
+
+<td bgcolor=#68C2EF colspan=3 align=right>
+
+{SEARCH}
+
+</td>
+</tr>
+
+
+
+
+
+
+
+<tr>
+<td width=1% valign=top bgcolor=#68C2EF><br>
+
+<br>
+<center>
+
+<table cellpadding=0 cellspacing=0 width=80% border=0>
+<tr><td width=1%><img src="images/_tr1.gif"></td>
+<td align=center background="images/b1.gif">
+<font color=white class=average><b>Categories</b></font>
+</td>
+<td width=1%><img src="images/_tr2.gif"></td>
+</tr>
+
+<tr>
+<td background="images/b2.gif"><img src="images/b2.gif"></td>
+<td bgcolor=white>
+
+<table><tr><td>
+{CATEGORIES}
+</td></tr></table>
+</td>
+<td background="images/b3.gif"><img src="images/b3.gif"></td>
+</tr>
+
+<tr>
+<td><img src="images/_tr3.gif"></td>
+<td background="images/b4.gif"><img src="images/b4.gif"></td>
+<td><img src="images/_tr4.gif"></td>
+</tr>
+
+</table>
+
+
+
+<br>
+<table cellpadding=0 cellspacing=0 width=80% border=0>
+<tr>
+<td width=1%><img src="images/_tr1.gif"></td>
+<td align=center background="images/b1.gif" width=100%>
+<font color=white class=average><b>Information</b></font>
+</td>
+<td width=1%><img src="images/_tr2.gif"></td>
+</tr>
+<tr>
+<td background="images/b2.gif"><img src="images/b2.gif"></td>
+<td bgcolor=white>
+<table border=0 cellspacing=4 width=100% bgcolor=white>
+<tr><td><a href="index.php?aux_page=aux1">About us</a></td></tr>
+<tr><td><a href="index.php?aux_page=aux2">Shipping</a></td></tr>
+</table>
+</td>
+<td background="images/b3.gif"><img src="images/b3.gif"></td>
+</tr>
+
+<tr>
+<td><img src="images/_tr3.gif"></td>
+<td background="images/b4.gif"><img src="images/b4.gif"></td>
+<td><img src="images/_tr4.gif"></td>
+</tr>
+
+</table>
+
+<p>
+
+<table cellpadding=0 cellspacing=0 width=80% border=0>
+<tr>
+<td width=1%><img src="images/_tr1.gif"></td>
+<td align=center background="images/b1.gif" width=100%>
+<font color=white class=average><b>Language</b></font>
+</td>
+<td width=1%><img src="images/_tr2.gif"></td>
+</tr>
+<tr>
+<td background="images/b2.gif"><img src="images/b2.gif"></td>
+<td bgcolor=white align=center><br>
+{LANGUAGE}
+</td>
+<td background="images/b3.gif"><img src="images/b3.gif"></td>
+</tr>
+
+<tr>
+<td><img src="images/_tr3.gif"></td>
+<td background="images/b4.gif"><img src="images/b4.gif"></td>
+<td><img src="images/_tr4.gif"></td>
+</tr>
+
+</table>
+
+
+<br><br>
+<font class=small>make sure <b>cookies</b> are turned on in your browser</font>
+
+<p>
+<a class=light href="http://www.shop-script.com"><img src="images/ss06.gif" border=0 alt="PHP shopping cart software Shop-Script"></a>
+
+</center>
+<br><br>
+</td>
+
+
+
+<td valign=top colspan=3>
+
+<TABLE CELLPADDING=0 CELLSPACING=0 WIDTH=100% BORDER=0>
+
+<TR>
+
+<TD ALIGN=CENTER>
+
+&nbsp;
+
+</TD>
+
+<TD ALIGN=RIGHT VALIGN=TOP>
+
+<table width=1% border=0 cellspacing=0 cellpadding=0>
+
+<tr bgcolor=#98DFFF>
+<td background="images/cb2.gif"><img src="images/cb2.gif"></td>
+<td><br></td>
+<td background="images/cb3.gif"><img src="images/cb3.gif"></td>
+</tr>
+
+<tr>
+<td background="images/cb2.gif"><img src="images/cb2.gif"></td>
+<td bgcolor=#98DFFF align=center><p><a href="javascript:open_window('cart.php',400,300);">Shopping cart</a>
+{SHOPPING_CART}
+</td>
+<td background="images/cb3.gif"><img src="images/cb3.gif"></td>
+</tr>
+
+<tr>
+<td width=1%><img src="images/c1.gif"></td>
+<td width=100% background="images/cb1.gif"><img src="images/cb1.gif"></td>
+<td width=1%><img src="images/c2.gif"></td>
+</tr>
+
+</table>
+
+<a href="index.php?currency=1">Change currency</a>
+
+</TD>
+</TR>
+
+<TR><TD COLSPAN=2>
+
+<table cellpadding=4 width=100%><tr><td>{MAIN_CONTENT}</td></tr></table>
+
+</TD></TR>
+</TABLE>
+
+</td>
+</tr>
+
+</table>
