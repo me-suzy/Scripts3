@@ -1,0 +1,31 @@
+<?
+$ubbt_lang['BOARD_RULES'] = "±¾Õ¾ÓÎÏ·¹æÔò";
+$ubbt_lang['I_AGREE'] = "ÎÒÍ¬Òâ";
+$ubbt_lang['DOB_EXIST'] = "ÄúÊäÈëµÄÉúÈÕÊÇ ";
+$ubbt_lang['NEW_USER2'] = "ÇëÊäÈëÒÔÏÂ×ÊÁÏ×¢²á£¬ÇëÔÙÈýÏêÏ¸¼ì²éËùÊäÈëµÄÄÚÈÝÊÇ·ñÕýÈ·¡£";
+$ubbt_lang['USER_IN'] =	"Ê¹ÓÃÕßÃû³Æ (3 µ½ 16 ¸ö×ÖÔª)";
+$ubbt_lang['OPT_PASS'] =	"½¨Á¢Ò»¸ö 4 µ½ 20 ¸ö×ÖÔªµÄÃÜÂë£¬(Èç¹ûÄú²»ÊäÈë£¬ÏµÍ³»á×ÔÐÐ²úÉúÒ»¸öÃÜÂë£¬²¢¼Äµ½ÄúµÄ email ÐÅÏäÄÚ)";
+$ubbt_lang['VER_PASS'] =	"ÇëÔÙÊäÈëÒ»´ÎÃÜÂë";
+$ubbt_lang['SIMP_EMAIL'] =	"Email ÐÅÏä";
+$ubbt_lang['DOB'] = "ÇëÊäÈëÄúµÄÉúÈÕ";
+$ubbt_lang['JAN'] = "Ò»ÔÂ";
+$ubbt_lang['FEB'] = "¶þÔÂ";
+$ubbt_lang['MAR'] = "ÈýÔÂ";
+$ubbt_lang['APR'] = "ËÄÔÂ";
+$ubbt_lang['MAY'] = "ÎåÔÂ";
+$ubbt_lang['JUN'] = "ÁùÔÂ";
+$ubbt_lang['JUL'] = "ÆßÔÂ";
+$ubbt_lang['AUG'] = "°ËÔÂ";
+$ubbt_lang['SEP'] = "¾ÅÔÂ";
+$ubbt_lang['OCT'] = "Ê®ÔÂ";
+$ubbt_lang['NOV'] = "Ê®Ò»ÔÂ";
+$ubbt_lang['DEC'] = "Ê®¶þÔÂ";
+$ubbt_lang['SUB_DATE'] = "ËÍ³öÉúÈÕ×ÊÁÏ";
+$ubbt_lang['PRIV_INFO'] = "Ë½ÈË×ÊÑ¶";
+$ubbt_lang['PRIV_INFO_DETAIL'] = "¶ùÍ¯±£»¤·¨°¸ COPPA Ïµ 1998 ÄêÓÉÃÀ¹úËùÍ¨¹ýÖ®·¨ÂÉ£¬Ä¿µÄÔÚ±£»¤¶ùÍ¯ÔÚÍøÂ·ÉÏµÄÒþË½£¬¼°ÖÁ 2000 Äê 4 ÔÂ 21 ÈÕ£¬Ðí¶àÍøÕ¾½ÔÒÑ×ñÑ­¸Ã·¨°¸¹æ¶¨£¬¶ÔÓÚÊ®ÈýËêÒÔÏÂ¶ùÍ¯µÄ¸öÈËÒþË½×ÊÁÏµÄÉL¼¯¡¢Ê¹ÓÃ¼°É¢²¼£¬¾ùÒÀÑ­¸Ã·¨°¸¹æ¶¨¡£<p><a href=\"http://www.ftc.gov/opa/1999/9910/childfinal.html\">COPPA ×îÐÂÏûÏ¢</a> | <a href=\"http://www.ftc.gov/os/1999/9910/64fr59888.pdf\">¶ùÍ¯ÒþË½±£»¤·¨°¸È«ÎÄ [PDF ¸ñÊ½£¬270K]</a>";
+$ubbt_lang['PERM_FORM'] = "ÊÚÈ¨º¯¼þ";
+$ubbt_lang['PERM_FORM_DETAIL'] = "·²Ê®ÈýËêÒÔÏÂÍøÓÑÓÚ±¾Õ¾ÉêÇë×¢²á£¬½ÔÐëÈ¡µÃ¼Ò³¤»ò¼à»¤ÈËÍ¸¹ýÒ»°ãÓÊ¼þ»ò´«Õæ£¬½«ÒÑÇ©ÊðµÄÍ¬Òâº¯£¬åÉ¼ÄÖÁ±¾Õ¾£¬·½¿É¼ÌÐøÍê³É×¢²á³ÌÐò¡£<p><a href=\"{$config['phpurl']}/coppaform.php\">Í¬Òâº¯</a>";
+$ubbt_lang['CONT_INFO'] = "ÁªÂç×ÊÑ¶";
+$ubbt_lang['CONT_INFO_DETAIL'] = "»¹ÓÐÈÎºÎÒÉÎÊÂð£¿¿ÉÒÔ Email µ½ ";
+$ubbt_lang['AGE_VER'] = "×¢²á³ÌÐò - ÄêÁäÈ·ÈÏ";
+?>
