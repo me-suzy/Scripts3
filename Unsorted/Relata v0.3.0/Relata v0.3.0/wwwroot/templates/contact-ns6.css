@@ -1,0 +1,16 @@
+/* Netscape6 bug fix */
+.maincontact
+{
+	left: 1%;
+	background: #D4D0C8;
+	border-width: 2px;
+	border-top-style: outset;
+	/*
+	border-left-style: outset;
+	border-right-style: outset;
+	border-bottom-style: outset;
+	*/
+    color: #000000;
+	width: 99%;
+	padding: 0px;
+}
