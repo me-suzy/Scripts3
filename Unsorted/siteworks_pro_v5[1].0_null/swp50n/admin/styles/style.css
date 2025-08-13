@@ -1,0 +1,77 @@
+.BodyText
+{
+    FONT-SIZE: 8pt;
+    COLOR: black;
+    FONT-FAMILY: Verdana
+}
+.BodyHeading
+{
+    FONT-SIZE: 12pt;
+    COLOR: black;
+    FONT-FAMILY: 'Arial Black'
+}
+BODY
+{
+}
+BODY A
+{
+    FONT-SIZE: 8pt;
+    COLOR: black;
+    FONT-FAMILY: Verdana
+}
+.TableHeading
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 7.5pt;
+    COLOR: white;
+    FONT-FAMILY: Verdana
+}
+.Error
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt;
+    COLOR: #bf0707;
+    FONT-FAMILY: Verdana
+}
+.ParaHeading
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 9pt;
+    COLOR: black;
+    FONT-FAMILY: Verdana
+}
+.PicText
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 7.5pt;
+    COLOR: black;
+    FONT-FAMILY: arial
+}
+.MenuHeading
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt;
+    COLOR: black;
+    FONT-FAMILY: Verdana
+}
+.SmallText
+{
+    FONT-SIZE: 8pt;
+    COLOR: gray;
+    FONT-FAMILY: Verdana
+}
+.SubHeading
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 12pt;
+    COLOR: black;
+    FONT-STYLE: italic;
+    FONT-FAMILY: Arial
+}
+.WhiteHeader
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt;
+    COLOR: white;
+    FONT-FAMILY: Verdana
+}
