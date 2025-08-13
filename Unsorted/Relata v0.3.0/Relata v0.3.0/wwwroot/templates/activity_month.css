@@ -1,0 +1,24 @@
+/* Sunday,Monday... that appear at the top of the calendar */
+.weekdayheadings
+{
+	font-size: 14px;
+	font-family: arial;
+	font-weight: bold;
+	color: white;
+}
+
+/* individual day box */
+.daybox-weekday
+{
+	background-color: white;
+}
+
+.daybox-sunday
+{
+	background-color: #ebebeb;
+}
+
+.daybox-saturday
+{
+	background-color: #ebebeb;
+}
