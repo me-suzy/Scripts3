@@ -1,0 +1,13 @@
+<?
+$adminuser="";
+$adminpass="";
+$maincolor="#F2F1CE";
+$headercolor="#E1AA73";
+$titlefontcolor="#0000FF";
+$jobtitle="";
+$dbasehost="database.safepages.com";
+$dbaseuser="comnac_comnac_co";
+$dbasepassword="quick";
+$dbase="comnac_comnac_com";
+$folder="http://www/comnac.com/jobs/";
+?>
