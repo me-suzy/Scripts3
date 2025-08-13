@@ -1,0 +1,237 @@
+<BODY bgcolor="#FFFFFF">
+<BR>
+<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0" BGCOLOR="#FFFFFF">
+	<TR>
+		<TD> <BR>
+			<TABLE WIDTH="750" BORDER="0" CELLSPACING="1" CELLPADDING="3" ALIGN="CENTER">
+				<TR> 
+					<TD CLASS=white COLSPAN="6" BGCOLOR="#EEEEEE"> 
+						<CENTER>
+							<?=$std_font;?>
+							<B>
+							<?=$MSG_619?>
+							</B> 
+						</CENTER>
+					</TD>
+				</TR>
+				<TR BGCOLOR="<?=$FONTCOLOR[$SETTINGS[bordercolor]]?>"> 
+					<TD CLASS=white WIDTH="41%"><B> 
+						<?=$nav_font;?>
+						<B> 
+						<?=$MSG_624?>
+						</B> </B></TD>
+					<TD CLASS=white WIDTH="14%"><B> 
+						<?=$nav_font;?>
+						<B> 
+						<?=$MSG_625?>
+						</B></B></TD>
+					<TD CLASS=white WIDTH="14%"><B> 
+						<?=$nav_font;?>
+						<B> 
+						<?=$MSG_626?>
+						</B></B></TD>
+					<TD CLASS=white WIDTH="12%" ALIGN=center><B> 
+						<?=$nav_font;?>
+						<B> 
+						<?=$MSG_627?>
+						</B></B></TD>
+					<TD WIDTH="13%" ALIGN=center> <B> 
+						<?=$nav_font;?>
+						<B> 
+						<?=$MSG_628?>
+						</B></B></TD>
+					<TD WIDTH="6%" ALIGN=center><B>
+						<?=$nav_font;?>
+						<B> 
+						<?=$MSG_298?>
+						</B></B></TD>
+				</TR>
+				<?
+			if(is_array($IDS))
+			{
+				while(list($k,$v) = each($IDS))
+				{
+		?>
+				<TR BGCOLOR="#EEEEEE"> 
+					<TD CLASS=white WIDTH="41%"> <FONT COLOR="#000000"><A HREF="item.php?id=<?=$IDS[$k]?>"> 
+						<?=$std_font;?>
+						<?=$TITLE[$k]?>
+						</A> </FONT></TD>
+					<TD CLASS=white WIDTH="14%"> <FONT COLOR="#000000"> 
+						<?=$std_font;?>
+						<?=$STARTS[$k]?>
+						</FONT></TD>
+					<TD CLASS=white WIDTH="14%"> <FONT COLOR="#000000"> 
+						<?=$std_font;?>
+						<?=$ENDS[$k]?>
+						</FONT></TD>
+					<TD CLASS=white WIDTH="12%"  ALIGN=CENTER> <FONT COLOR="#000000"> 
+						<?=$std_font;?>
+						<?=$BIDS[$k]?>
+						</FONT></TD>
+					<TD CLASS=white WIDTH="13%"  ALIGN=CENTER> <FONT COLOR="#000000"> 
+						<?=$std_font;?>
+						<?
+						if($BID[$k] == 0)
+						{
+							print "-";
+						}
+						else
+						{
+							print print_money($BID[$k]);
+						}
+					?>
+						</FONT></TD>
+					<TD CLASS=white WIDTH="6%"  ALIGN=CENTER>
+					<?
+						if($BID[$k] == 0)
+						{
+					?>
+						<A HREF="edit_active_auction.php?id=<?=$IDS[$k]?>"><IMG SRC="images/edititem.gif" WIDTH="13" HEIGHT="17" ALT="<?=$MSG_632?>" BORDER="0"></A>
+					<?
+						}
+						else
+						{
+							print "&nbsp;";
+						}
+					?>
+					</TD>
+						
+				</TR>
+				<?
+				}
+			}
+		?>
+			</TABLE>
+			<P>&nbsp;</P>
+			<FORM NAME="open" METHOD="post" ACTION="<?=basename($PHP_SELF)?>">
+				<TABLE WIDTH="750" BORDER="0" CELLSPACING="1" CELLPADDING="3" ALIGN="CENTER">
+					<TR> 
+						<TD CLASS=white COLSPAN="6" BGCOLOR="#eeeeee"> 
+							<CENTER>
+								<?=$std_font;?>
+								<B> 
+								<?=$MSG_623?>
+								</B> 
+							</CENTER>
+						</TD>
+					</TR>
+					<TR BGCOLOR="<?=$FONTCOLOR[$SETTINGS[bordercolor]]?>"> 
+						<TD CLASS=white WIDTH="34%"><B> 
+							<?=$nav_font;?>
+							<B> 
+							<?=$MSG_624?>
+							</B></B></TD>
+						<TD CLASS=white WIDTH="14%"><B> 
+							<?=$nav_font;?>
+							<B> 
+							<?=$MSG_625?>
+							</B></B></TD>
+						<TD CLASS=white WIDTH="13%"><B> 
+							<?=$nav_font;?>
+							<B> 
+							<?=$MSG_629?>
+							</B></B></TD>
+						<TD CLASS=white WIDTH="9%" ALIGN=center><B> 
+							<?=$nav_font;?>
+							<B> 
+							<?=$MSG_627?>
+							</B></B></TD>
+						<TD WIDTH="11%" ALIGN=center> <B> 
+							<?=$nav_font;?>
+							<B> 
+							<?=$MSG_628?>
+							</B></B></TD>
+						<TD WIDTH="19%" ALIGN=center><B> 
+							<?=$nav_font;?>
+							<B> 
+							<?=$MSG_630?>
+							</B></B></TD>
+					</TR>
+
+
+					<?
+			if(is_array($C_IDS))
+			{
+				while(list($f,$v) = each($C_IDS))
+				{				
+		?>
+					<TR BGCOLOR="#EEEEEE"> 
+						<TD CLASS=white WIDTH="34%"> <FONT COLOR="#000000"><A HREF="item.php?id=<?=$v?>"> 
+							<?=$std_font;?>
+							<?=$C_TITLE[$f]?>
+							</A> </FONT></TD>
+						<TD CLASS=white WIDTH="14%"> <FONT COLOR="#000000"> 
+							<?=$std_font;?>
+							<?=$C_STARTS[$f]?>
+							</FONT></TD>
+						<TD CLASS=white WIDTH="13%"> <FONT COLOR="#000000"> 
+							<?=$std_font;?>
+							<?=$C_ENDS[$f]?>
+							</FONT></TD>
+						<TD CLASS=white WIDTH="9%"  ALIGN=CENTER> <FONT COLOR="#000000"> 
+							<?=$std_font;?>
+							<?=$C_BIDS[$f]?>
+							</FONT></TD>
+						<TD CLASS=white WIDTH="11%"  ALIGN=CENTER> <FONT COLOR="#000000"> 
+							<?=$std_font;?>
+							<?
+						if($C_BID[$f] == 0)
+						{
+							print "-";
+						}
+						else
+						{
+							print print_money($C_BID[$f]);
+						}
+					?>
+							</FONT></TD>
+						<TD CLASS=white WIDTH="19%"  ALIGN=CENTER> 
+							<?
+						if($C_BID[$f] == 0)				
+						{
+					?>
+							<INPUT TYPE="checkbox" NAME="relist[<?=$C_IDS[$f]?>]" VALUE="<?=$C_IDS[$f]?>">
+							<SELECT NAME=duration[<?=$C_IDS[$f]?>]>
+								<?
+								reset($DURATIONS);
+								while(list($t,$y) = each($DURATIONS))
+								{
+									print "<OPTION VALUE=$t";
+									if($C_DURATION[$f] == $t) print " SELECTED";
+									print ">$y</OPTION>\n";
+								}
+							?>
+							</SELECT>
+							<A HREF="edit_auction.php?id=<?=$C_IDS[$f]?>"><IMG SRC="images/edititem.gif" WIDTH="13" HEIGHT="17" ALT="<?=$MSG_632?>" BORDER="0"></A> 
+							<?
+						}
+						else
+						{
+							print "&nbsp;";
+						}
+					?>
+						</TD>
+					</TR>
+					<TR>
+						<TD CLASS=white COLSPAN="6">&nbsp;</TD>
+					</TR>
+					<?
+				}
+			}
+		?>
+					<TR> 
+						<TD CLASS=white COLSPAN="6"> 
+							<CENTER>
+								<P>
+									<INPUT TYPE="hidden" NAME="action" VALUE="update">
+									<INPUT TYPE="submit" NAME="Submit" VALUE="<?=$MSG_631?>">
+								</P>
+							</CENTER>
+						</TD>
+					</TR>
+				</TABLE>
+			</FORM>
+	</TD>
+	</TR>
+</TABLE>
