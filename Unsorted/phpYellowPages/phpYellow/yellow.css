@@ -1,0 +1,528 @@
+.favcolor {
+	background : #FFFF99;
+}
+BODY  {
+
+	font-size : medium;
+
+	font-family : serif;
+
+	color : Black;
+
+	font : Verdana;
+
+	text-align : left;
+
+	margin-top : 0px;
+
+	margin-left : 65px;
+
+	margin-right : 75px;
+
+	scrollbar-face-color: #FFFF99;
+
+	scrollbar-highlight-color: gold;
+
+	scrollbar-3dlight-color: oldlace;
+
+	scrollbar-darkshadow-color: gray;
+
+	scrollbar-shadow-color: silver;
+
+	scrollbar-arrow-color: teal;
+
+	scrollbar-track-color: teal;
+
+}
+
+.system {
+
+	background-color : #DFDFDF;
+
+	color : Red;
+
+	border-color : Black Black Black Black;
+
+	font-size : x-small;
+
+	font-family : sans-serif;
+
+	padding : 3px;
+
+	width : auto;
+
+}
+
+.back {
+	background-color : Black;
+	color : #FFFFCC;
+}
+
+.ivory {
+
+	background-color : #FFFFF0;
+
+}
+
+
+
+P  {}
+
+
+
+
+
+
+
+H1  {
+
+	font-size : 30px;
+
+	font-weight : bold;
+
+	color : Teal;
+
+	text-transform : uppercase;
+
+}
+
+
+
+
+
+
+
+H2  {
+
+	font-size : medium;
+
+	font-weight : bold;
+
+	text-align : left;
+
+	text-transform : capitalize;
+
+	color : #FFFFCC;
+
+	background-color : Teal;
+
+}
+
+
+
+
+
+
+
+H3  {
+
+
+
+	font-size : small;
+
+
+
+	font-family : sans-serif;
+
+
+
+	font-weight : bold;
+
+
+
+	font-style : italic;
+
+
+
+	color : Gray;
+
+
+
+	text-transform : capitalize;
+
+
+
+}
+
+
+
+H4 {
+
+	background-color : Teal;
+
+	color : #FFFFF0;
+
+	font-weight : bold;
+
+}
+
+
+
+
+
+
+
+
+
+A  {
+
+	
+
+}
+
+
+
+
+
+A:LINK {
+
+	background-color : transparent;
+
+	color : Teal;
+
+}
+
+
+
+
+
+
+
+A:Visited  {
+
+	color : Gray;
+
+	font-weight : normal;
+
+	background-color : transparent;
+
+}
+
+
+
+
+
+
+
+A:Active  {
+
+	color : #FFFFF0;
+
+	background-color : Red;
+
+	font-weight : normal;
+
+}
+
+
+
+
+
+
+
+A:Hover  {
+
+	color : #FFFFCC;
+
+	background-color : Teal;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sitedesign  {
+
+
+
+	font-size : xx-small;
+
+
+
+	font-family : sans-serif;
+
+
+
+	color : Gray;
+
+
+
+	text-align : left;
+
+
+
+	text-indent : 0px;
+
+
+
+}
+
+
+
+
+
+
+
+.info  {
+
+
+
+	font-size : x-small;
+
+
+
+	font-family : sans-serif;
+
+
+
+	font-style : italic;
+
+
+
+	text-indent : 0px;
+
+
+
+}
+
+
+
+
+
+
+
+.x-small  {
+
+	font-size : x-small;
+
+}
+
+
+
+.small {
+
+	font-size : small;
+
+}
+
+
+
+
+
+
+
+
+
+th  {
+
+	font-size : small;
+
+	font-family : sans-serif;
+
+	font-weight : bold;
+
+	color : #FFFFF0;
+
+	background-color : Teal;
+
+	text-align : left;
+
+}
+
+
+
+
+
+
+
+
+
+.input {
+	background-color : #FFFF99;
+	color : Teal;
+	font-weight : bolder;
+}
+
+
+
+
+
+
+
+
+
+td  {
+
+
+
+	font-size : x-small;
+
+
+
+	padding : 3px;
+
+
+
+}
+
+
+
+
+
+
+
+table  {
+
+
+
+	text-align : left;
+
+
+
+}
+
+
+
+
+
+
+
+.form  {
+
+	border-style : double;
+
+	border-color : #8B4513;
+
+	padding-left : 8px;
+
+	padding-right : 8px;
+
+	padding-top : 8px;
+
+	padding-bottom : 8px;
+
+	padding : 2px;
+
+}
+
+
+
+
+
+
+
+.header  {}
+
+
+
+
+
+
+
+.navigation  {
+
+
+
+	font-size : x-small;
+
+
+
+	text-align : left;
+
+
+
+	text-indent : 0px;
+
+
+
+	background-color : #ffffcc;
+
+
+
+}
+
+
+
+
+
+
+
+.yellow  {
+
+	background : url(appimage/yellowfade.gif);
+
+}
+
+
+
+
+
+
+
+.phone_now  {
+
+
+
+	font-size : x-large;
+
+
+
+	color : Red;
+
+
+
+	font-weight : bold;
+
+
+
+	font-style : italic;
+
+
+
+}
+
+
+
+
+
+
+
+.accessdenied  {
+
+
+
+	font-size : 170px;
+
+
+
+	font-family : sans-serif;
+
+
+
+	font-weight : bold;
+
+
+
+	color : Red;
+
+
+
+}
+
+
+
+
+
+
+
