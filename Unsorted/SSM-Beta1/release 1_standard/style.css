@@ -1,0 +1,25 @@
+BODY {
+  SCROLLBAR-BASE-COLOR: #979797;
+  SCROLLBAR-ARROW-COLOR: #000000;
+  SCROLLBAR-TRACK-COLOR: DarkGray;
+  SCROLLBAR-SHADOW-COLOR: ;
+  SCROLLBAR-FACE-COLOR: ;
+  SCROLLBAR-HIGHLIGHT-COLOR:'';
+  SCROLLBAR-3DLIGHT-COLOR:'';
+  SCROLLBAR-DARKSHADOW-COLOR:''; 
+}
+A:link{color: #003399}
+A:visited{color: #003399}
+A:active{color: #cee1f2}
+A.headlink{color: #003399}
+tr.back{background-color: #ffffff}
+td{color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt}
+td.toprow{background-color: #bdbdbd; color: black; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold}
+td.headrow{background-color: #e1e1e1; color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt}
+td.indiv{background-color: #ffffff}
+.but{text-decoration: none;font-family: Arial;font-size: 13px;color: black;background-color: #eeeeee;}
+.SelectedButton {BORDER-LEFT: #003366 1px solid; BORDER-RIGHT: #ccdddd 1px solid; BORDER-BOTTOM: #ccdddd 1px solid; BORDER-TOP: #003366 1px solid; FONT-SIZE: 7pt; COLOR: #ffffff; FONT-FAMILY: verdana,arial,sans-serif,verdana; BACKGROUND-COLOR: #324C69}
+.UnselectedButton {BORDER-RIGHT: #324C69 1px solid; BORDER-TOP: #324C69 1px solid; FONT-SIZE: 7pt; BORDER-LEFT: #324C69 1px solid; COLOR: #ffffff; BORDER-BOTTOM: #324C69 1px solid; FONT-FAMILY: verdana, arial,sans-serif,verdana; BACKGROUND-COLOR: #324C69}
+input{background: #f8f8f8; color: #333333;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 11px;font-weight: normal;border-color: #333333;text-indent: 2px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; }
+.prefinput{color: #333333;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 11px;font-weight: normal;border-color: #333333;text-indent: 2px; border-top-width: 1px;border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px; background: #f8f8f8;}
+input.button {background-color: #F8F8F8;color: #333333;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 11px;font-weight : bold; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; }
