@@ -1,0 +1,38 @@
+
+<table border=0 cellspacing=0 cellpadding=0 width=100%>
+<tr><td width=250>&nbsp;</td>
+<td align=left><h1 style="color: #427b7b; margin-left: 0px; margin-bottom: 0px; margin-top: 0px;" class=wheader>Listing 
+        Wizard</h1></td>
+</tr></table>
+
+<form action=listwizard.php method=post style="margin-top: 0px; margin-bottom: 0px;">
+%hiddenfields%
+<input type="hidden" name="step" value="1">
+
+<table border=0 width=100%>
+<tr><td>
+<table border=0 width=80% cellspacing=0 cellpadding=0>
+<tr>
+<td rowspan=10 valign=top width=110>
+<table border=0 cellspacing=0 cellpadding=0>
+<tr><td width=98>
+<ul style="margin-left: 10px;margin-top: 0px;">
+                      <li>Step 1<br>
+                        Specifying listing name, type and keywords<br>
+                        <br>
+                      <li>Step 2<br>
+                        Specifying price for each keyword<br>
+                        <br>
+                      <li><b>Step 3<br>
+                        Listing data revision</b>
+                    </ul>
+</td>
+
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr></table>
+</td>
+<td colspan=2 valign="top">
+<br>The following listing was added to the current campaign<br>
+<br>
+<b>Name:&nbsp;&nbsp;</b>%listing_name%<br>
+<b>Average keyword price:&nbsp;</b>%average_price%
