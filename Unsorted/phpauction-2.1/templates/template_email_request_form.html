@@ -1,0 +1,209 @@
+<?
+
+/*
+
+
+
+   Copyright (c), 1999, 2000 - phpauction.org
+
+
+
+   This program is free software; you can redistribute it and/or modify
+
+   it under the terms of the GNU General Public License as published by
+
+   the Free Software Foundation (version 2 or later).
+
+
+
+   This program is distributed in the hope that it will be useful,
+
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+
+   GNU General Public License for more details.
+
+
+
+   You should have received a copy of the GNU General Public License
+
+   along with this program; if not, write to the Free Software
+
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+
+
+*/
+
+?>
+
+
+
+<SCRIPT Language=Javascript>
+
+
+
+function SubmitSellerForm(){
+
+	document.seller.submit();
+
+}
+
+
+
+
+
+function ResetSellerForm(){
+
+	document.seller.reset();
+
+}
+
+
+
+</SCRIPT>
+
+<TABLE WIDTH="100%" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING="0" CELLSPACING="0">
+
+<TR>
+
+<TD>
+
+<CENTER>
+
+<? print $std_font; ?>
+
+
+
+<A HREF="profile.php?user_id=<? print $user_id; ?>">
+
+<?
+
+	print $std_font.$MSG_206;
+
+?>
+
+
+
+</A> |
+
+<A HREF="item.php?id=<? print $auction_id; ?>">
+
+<?
+
+	print $std_font.$MSG_138;
+
+?>
+
+
+
+</A>
+
+</CENTER>
+
+<BR><BR>
+
+<? print $tlt_font; ?>
+
+<BR>
+
+<CENTER><B><? print $MSG_334."  <B>$username</B>"; ?></B></CENTER>
+
+
+
+<FORM NAME="seller" ACTION="email_request.php" METHOD="POST">
+
+
+
+	<TABLE WIDTH=760>
+
+	<TR>
+
+	        <TD WIDTH="7%"></TD>
+
+	        <TD WIDTH="72%"> <? print $std_font.$MSG_149; ?> <BR>
+
+
+
+	<? print $err_font; ?>
+
+	<? print $TPL_error_text; ?>
+
+	
+
+
+
+	<BR>
+
+	</TD>
+
+	        <TD  WIDTH="21%"> </TD>
+
+	</TR>
+
+	</TABLE>
+
+
+
+        <TABLE width="85%" align="center">
+          <TR> 
+            <TD align=right valign=top width="23%"> 
+              <DIV align="left"><SPAN class=grey><? print $std_font.$MSG_002; ?></SPAN> 
+              </DIV>
+            </TD>
+            <TD width="77%"> 
+              <INPUT type="TEXT" name="TPL_sender_name" size="25" value="<? print $TPL_sender_name; ?>">
+            </TD>
+          </TR>
+          <TR> 
+            <TD align=right valign=top width="23%"> 
+              <DIV align="left"><SPAN class=grey><? print $std_font.$MSG_006; ?></SPAN> 
+              </DIV>
+            </TD>
+            <TD width="77%"> 
+              <INPUT type="TEXT" name="TPL_sender_mail" size="25" value="<? print $TPL_sender_mail; ?>">
+            </TD>
+          </TR>
+          <TR> 
+            <TD align=right valign=top width="23%"> 
+              <DIV align="left"><SPAN class=grey><? print $std_font.$MSG_332; ?></SPAN> 
+              </DIV>
+            </TD>
+            <TD width="77%"> 
+              <INPUT type="TEXT" name="TPL_subject" size="25" value="<? print $TPL_subject; ?>">
+            </TD>
+          </TR>
+          <TR> 
+            <TD align=right valign=top width="23%"> 
+              <DIV align="left"><SPAN class=grey><? print $std_font.$MSG_333; ?></SPAN> 
+              </DIV>
+            </TD>
+            <TD valign=top width="77%"> 
+              <TEXTAREA name="TPL_text" cols="30" rows="8"><? print $TPL_text; ?></TEXTAREA>
+              <BR>
+              <BR>
+              <INPUT type="hidden" name="user_id" value="<? print $user_id; ?>">
+              <INPUT type="hidden" name="username" value="<? print $username; ?>">
+              <INPUT type="submit" name="Submit" value="Submit">
+              <INPUT type="reset" name="Submit2" value="Reset">
+            </TD>
+          </TR>
+        </TABLE>
+      </FORM>
+
+<CENTER>
+
+
+
+<BR>
+
+<BR>
+
+</CENTER></TD>
+
+</TR>
+
+</TABLE>
+
+
