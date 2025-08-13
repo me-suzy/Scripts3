@@ -1,0 +1,321 @@
+<!--
+
+Placeholders available on this page:
+
+$cgiurl$	- script filename (for use in form tags)
+$homepage_url$	- URL of homepage directory
+$listing_url$	- URL of listing directory
+$search_url$	- URL of search engine
+
+$list$		- list of results on this page (created using templatecells)
+$file$		- preview image filename (used in "*_image" templatecells)
+
+$lfieldX$	- listing field value of field X, X is a number from 1 to 50
+$lfieldX_ue$	- listing field value of field X url encoded for use in links
+$listing_file$	- listing filename
+
+$user_num$	- user number
+$user_name$	- user name
+$user_name_ue$	- user name (url encoded)
+$user_file$	- user homepage filename
+
+Templatecells on this page:
+
+row_image	- displayed for listings with preview image
+row_image_new	- displayed for NEW listings with preview image
+row_noimage	- displayed for listings without preview image
+row_noimage_new	- displayed for NEW listings without preview image
+
+-->
+<html><head>
+ <title>Search Listings</title>
+ <meta name="robots" content="noindex,nofollow">
+</head>
+<BODY bgcolor="#FFFFFF" TEXT="#000000" LINK="#000066" VLINK="#000066" alink="#000066">
+
+<form method=post action="$cgiurl$">
+<!-- template insert : $hidden_fields$ -->
+<center>
+
+<p>
+
+
+<table border=0 cellspacing=0 cellpadding=2 width=590>
+ <tr>
+  <td>
+   <font face="arial,ms sans serif" size=4><b>ABC Real Estate</b></font>
+   <hr size=1>
+   <div align=right>
+   <font face="ms sans serif" size=1>
+   <a href="$homepage_url$">Our Agents</a> -
+   <a href="$listing_url$">Our Listings</a> -
+   <a href="$search_url$">Search Listings</a>
+   </font><br>
+   </div>
+  </td>
+ </tr>
+</table>
+
+
+<table border=0 cellspacing=0 cellpadding=0 width=580>
+ <tr><td><font face="arial,ms sans serif" size=3><b>Search Listings</b></font></td></tr>
+</table>
+
+
+<!-- result pages -->
+ <font face="ms sans serif" size=2><b>Found $mcount$ of $rcount$ Listings,</b></font>
+ <font face="ms sans serif" size=2><b><a href="$cgiurl$?$query$&pagenum=$lpage$" title="Last Page">&lt;&lt;</a> &nbsp;Page $cpage$ of $pcount$&nbsp; <a href="$cgiurl$?$query$&pagenum=$npage$" title="Next Page">&gt;&gt;</a></b></font><br>
+<!-- /result pages -->
+
+<!-- template insert : $list$ -->
+<!-- templatecell : row_image -->
+<font face="arial" size=1><br></font>
+<table width=580 border=0 cellspacing=1 cellpadding=5>
+ <tr>
+  <td width=150 align=center valign=top bgcolor="#FFFFFF">
+   <font size=1 face="arial"><b>MLS # $lfield2$</b></font><br>
+
+<table border=1 cellspacing=0 cellpadding=0>
+ <tr>   
+  <td><a href="$listing_url$/$listing_file$"><img src="$listing_url$/images/$file$" border=1 width=150 alt=""></a></td>
+ </tr>
+</table>
+
+   <font size=3 face="arial"><b>$lfield5$</b></font><br>
+  </td>
+  <td width=390 valign=top bgcolor="#FFFFFF">
+
+<p><font size=3 face="arial"><b><a href="$listing_url$/$listing_file$">$lfield1$</a></b></font>
+<p><font face="arial" size=2>$lfield6$</font>
+<p><table border=0 cellspacing=0 cellpadding=0>
+   <tr>
+    <td align=right><font size=2 face="arial">Type :&nbsp;</font></td>
+    <td><font size=2 face="arial">$lfield8$</font></td>
+   </tr>
+   <tr>
+    <td align=right><font size=2 face="arial">Rooms :&nbsp;</font></td>
+    <td><font size=2 face="arial">$lfield9$</font></td>
+   </tr>
+   <tr>
+    <td align=right><font size=2 face="arial">Bathrooms :&nbsp;</font></td>
+    <td><font size=2 face="arial">$lfield10$</font></td>
+   </tr>
+   <tr>
+    <td align=right><font size=2 face="arial">Square Feet :&nbsp;</font></td>
+    <td><font size=2 face="arial">$lfield12$</font></td>
+   </tr>
+   <tr>
+    <td align=right><font size=2 face="arial">Realtor :&nbsp;</font></td>
+    <td><font size=2 face="arial"><a href="$homepage_url$/$user_file$">$user_name$</a></font></td>
+   </tr>
+  </table>
+
+  </td>
+ </tr>
+</table>
+<!-- /templatecell : row_image -->
+
+
+<!-- templatecell : row_image_new -->
+<font face="arial" size=1><br></font>
+<table width=580 border=0 cellspacing=1 cellpadding=5>
+ <tr>
+  <td width=150 align=center valign=top bgcolor="#FFFFFF">
+   <font size=1 face="arial"><b>MLS # $lfield2$</b></font><br>
+
+<table border=1 cellspacing=0 cellpadding=0>
+ <tr>   
+  <td><a href="$listing_url$/$listing_file$"><img src="$listing_url$/images/$file$" border=1 width=150 alt=""></a></td>
+ </tr>
+</table>
+
+   <font size=3 face="arial"><b>$lfield5$</b></font><br>
+  </td>
+  <td width=390 valign=top bgcolor="#FFFFFF">
+
+<p><font size=3 face="arial"><b><a href="$listing_url$/$listing_file$">$lfield1$</a> <font color="#FF0000">(NEW)</font></a></b></font>
+<p><font face="arial" size=2>$lfield6$</font>
+<p><table border=0 cellspacing=0 cellpadding=0>
+   <tr>
+    <td align=right><font size=2 face="arial">Type :&nbsp;</font></td>
+    <td><font size=2 face="arial">$lfield8$</font></td>
+   </tr>
+   <tr>
+    <td align=right><font size=2 face="arial">Rooms :&nbsp;</font></td>
+    <td><font size=2 face="arial">$lfield9$</font></td>
+   </tr>
+   <tr>
+    <td align=right><font size=2 face="arial">Bathrooms :&nbsp;</font></td>
+    <td><font size=2 face="arial">$lfield10$</font></td>
+   </tr>
+   <tr>
+    <td align=right><font size=2 face="arial">Square Feet :&nbsp;</font></td>
+    <td><font size=2 face="arial">$lfield12$</font></td>
+   </tr>
+   <tr>
+    <td align=right><font size=2 face="arial">Realtor :&nbsp;</font></td>
+    <td><font size=2 face="arial"><a href="$homepage_url$/$user_file$">$user_name$</a></font></td>
+   </tr>
+  </table>
+
+  </td>
+ </tr>
+</table>
+<!-- /templatecell : row_image_new -->
+
+
+<!-- templatecell : row_noimage -->
+<font face="arial" size=1><br></font>
+<table width=580 border=0 cellspacing=1 cellpadding=5>
+ <tr>
+  <td width=150 align=center valign=top bgcolor="#FFFFFF">
+   <font size=1 face="arial"><b>MLS # $lfield2$</b></font><br>
+
+<p>
+<table border=1 cellspacing=0 cellpadding=0 width=140 height=100>
+ <tr>
+  <td bgcolor="#EEEEEE" align=center><font face="tahoma,arial" size=4><b>Photo<br>Not<br>Available</b></font></td>
+ </tr>
+</table>
+
+   <font size=3 face="arial"><b>$lfield5$</b></font><br>
+  </td>
+  <td width=430 valign=top bgcolor="#FFFFFF">
+
+<p><font size=3 face="arial"><b><a href="$listing_url$/$listing_file$">$lfield1$</a></b></font>
+<p><font face="arial" size=2>$lfield6$</font>
+<p><table border=0 cellspacing=0 cellpadding=0>
+   <tr>
+    <td align=right><font size=2 face="arial">Type :&nbsp;</font></td>
+    <td><font size=2 face="arial">$lfield8$</font></td>
+   </tr>
+   <tr>
+    <td align=right><font size=2 face="arial">Rooms :&nbsp;</font></td>
+    <td><font size=2 face="arial">$lfield9$</font></td>
+   </tr>
+   <tr>
+    <td align=right><font size=2 face="arial">Bathrooms :&nbsp;</font></td>
+    <td><font size=2 face="arial">$lfield10$</font></td>
+   </tr>
+   <tr>
+    <td align=right><font size=2 face="arial">Square Feet :&nbsp;</font></td>
+    <td><font size=2 face="arial">$lfield12$</font></td>
+   </tr>
+   <tr>
+    <td align=right><font size=2 face="arial">Realtor :&nbsp;</font></td>
+    <td><font size=2 face="arial"><a href="$homepage_url$/$user_file$">$user_name$</a></font></td>
+   </tr>
+  </table>
+
+  </td>
+ </tr>
+</table>
+<!-- /templatecell : row_noimage -->
+
+
+
+<!-- templatecell : row_noimage_new -->
+<font face="arial" size=1><br></font>
+<table width=580 border=0 cellspacing=1 cellpadding=5>
+ <tr>
+  <td width=150 align=center valign=top bgcolor="#FFFFFF">
+   <font size=1 face="arial"><b>MLS # $lfield2$</b></font><br>
+
+<p>
+<table border=1 cellspacing=0 cellpadding=0 width=140 height=100>
+ <tr>
+  <td bgcolor="#EEEEEE" align=center><font face="tahoma,arial" size=4><b>Photo<br>Not<br>Available</b></font></td>
+ </tr>
+</table>
+
+   <font size=3 face="arial"><b>$lfield5$</b></font><br>
+  </td>
+  <td width=430 valign=top bgcolor="#FFFFFF">
+
+<p><font size=3 face="arial"><b><a href="$listing_url$/$listing_file$">$lfield1$</a> <font color="#FF0000">(NEW)</font></b></font>
+<p><font face="arial" size=2>$lfield6$</font>
+<p><table border=0 cellspacing=0 cellpadding=0>
+   <tr>
+    <td align=right><font size=2 face="arial">Type :&nbsp;</font></td>
+    <td><font size=2 face="arial">$lfield8$</font></td>
+   </tr>
+   <tr>
+    <td align=right><font size=2 face="arial">Rooms :&nbsp;</font></td>
+    <td><font size=2 face="arial">$lfield9$</font></td>
+   </tr>
+   <tr>
+    <td align=right><font size=2 face="arial">Bathrooms :&nbsp;</font></td>
+    <td><font size=2 face="arial">$lfield10$</font></td>
+   </tr>
+   <tr>
+    <td align=right><font size=2 face="arial">Square Feet :&nbsp;</font></td>
+    <td><font size=2 face="arial">$lfield12$</font></td>
+   </tr>
+   <tr>
+    <td align=right><font size=2 face="arial">Realtor :&nbsp;</font></td>
+    <td><font size=2 face="arial"><a href="$homepage_url$/$user_file$">$user_name$</a></font></td>
+   </tr>
+  </table>
+
+  </td>
+ </tr>
+</table>
+<!-- /templatecell : row_noimage_new -->
+
+<!-- templatecell : not_found -->
+<font face="arial" size=1><br></font>
+<table width=580 border=0 cellspacing=1 cellpadding=5>
+ <tr>
+  <td align=center valign=top bgcolor="#FFFFFF">
+  <font face="arial" size=3><b>Sorry, No listings were found that matched your search query.<br>Please try your search again.</b></font><br>
+  </td>
+ </tr>
+</table>
+<!-- /templatecell : not_found -->
+
+
+<!-- result pages -->
+ <font face="ms sans serif" size=2><b>Found $mcount$ of $rcount$ Listings,</b></font>
+ <font face="ms sans serif" size=2><b><a href="$cgiurl$?$query$&pagenum=$lpage$" title="Last Page">&lt;&lt;</a> &nbsp;Page $cpage$ of $pcount$&nbsp; <a href="$cgiurl$?$query$&pagenum=$npage$" title="Next Page">&gt;&gt;</a></b></font><br>
+<!-- /result pages -->
+
+
+
+<!-- about this page -->
+<p><table border=1 cellspacing=0 cellpadding=4 width=590>
+ <tr>
+  <td bgcolor="#EEEEEE">
+   <font face="ms sans serif" size=2>
+   <b><font color="#800000">About this area :</font></b><br>
+   This area can be customized for any advertising you may have, including
+   mortgage companies or insurance companies. This also generates income to
+   offset hosting services.<br>
+
+   </font>
+  </td>
+ </tr>
+</table>
+
+<!-- /about this page -->
+
+<p><hr size=1 width=590>
+<table border=0 cellspacing=0 cellpadding=2 width=590>
+ <tr>
+  <td valign=top>
+   <font face="ms sans serif" size=1>
+   ABC Real Estate Corporation<br>
+   123 Anystreet, Anytown, USA<br>
+   1-800-555-5555<br>
+   </font><br>
+  </td>
+  <td align=right valign=top>
+   <font face="ms sans serif" size=1>
+    Copyright &copy; 1999 ABC Real Estate Corp.<br>
+   </font><br>
+  </td>
+ </tr>
+</table>
+
+</body></html>
+
+<!-- Edis Realty Manager 2.0 -->
