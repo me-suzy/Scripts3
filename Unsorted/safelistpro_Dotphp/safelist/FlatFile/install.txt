@@ -1,0 +1,109 @@
+#########################################################
+#     SafeList - A full pay to join Opt in mail site    #
+#########################################################
+#                                                       #
+#                                                       #
+# This script was created by:                           #
+#                                                       #
+# PerlCoders Web Development Division.                  #
+# http://www.perlcoders.com/                            #
+#                                                       #
+# This script and all included modules, lists or        #
+# images, documentation are copyright 2001              #
+# PerlCoders (http://perlcoders.com) unless             #
+# otherwise stated in the module.                       #
+#                                                       #
+# Purchasers are granted rights to use this script      #
+# on any site they own. There is no individual site     #
+# license needed per site.                              #
+#                                                       #
+# Any copying, distribution, modification with          #
+# intent to distribute as new code will result          #
+# in immediate loss of your rights to use this          #
+# program as well as possible legal action.             #
+#                                                       #
+# This and many other fine scripts are available at     #
+# the above website or by emailing the authors at       #
+# staff@perlcoders.com or info@perlcoders.com           #
+#                                                       #
+#########################################################
+
+
+OVERVIEW
+---------------------------
+
+This script directly emulates those sites like prosafelists.com.
+It is a feature packed full site program with everything needed 
+to fully or partially automate this type of site and comes with 
+paypal billing module built into it. All aspects of this type 
+site are covered in the program including a lost password/username 
+retrieval tool. Admin can set it up to be fully automated or he can 
+opt to validate new users manually if he so chooses. The script has 
+many configurable options such as automated mails to user and admin.
+
+
+
+FEATURES
+---------------------------
+
++ Fully automatic OR manual new user validation.
++ Fully PayPal compatible and automated billing/Rebilling.
++ Lost password/username retrieval system.
++ Many Admin functions for total user control.
++ Optionally allow anyone to join opt-in list free
++ Fully HTML template driven to allow 100% customization
++ All Emails fully customizable
++ Automatically remove bounced emails from mail list
++ Remove feature
+
+
+INSTALLATION
+---------------------------
+
+Unzip archive to your hard drive.
+
+Edit Configs.pm with a text editor to suit your needs and server info.
+
+Edit all HTML templates in the templates/ and templates/mail folders 
+to match your site design.
+
+Upload all files to your server in ASCII mode only.
+
+Change permissions on all .cgi and .pl files to 755
+Change permissions on the dbase directory to 766
+Change permissions on the userdata directory to 766
+
+Thats it.
+
+
+USAGE
+---------------------------
+
+Make a front page for your site and simply make 2 links on it to the 
+following two URLs:
+
+signup area:
+http://yourdomain.com/cgi-bin/signup.cgi
+
+and 
+
+members login area:
+http://yourdomain.com/cgi-bin/user.cgi
+
+
+To use the Web Administration part, simply aim your browser at admin.cgi and login.
+
+To use the automatic bounced email removal functions:
+  Your server needs the following perl Modules installed before trying to use this.
+     Mail::Audit  --> available freely at http://www.perlcoders.com/packages.
+     File::Copy   --> should already be on your server if using perl 5 or above.
+     
+  To use this you need to configure the email address you specified in Configs.pm 
+  as: $adminmail to point to the checkbounce.pl script included in this archive.
+  If you are not sure how to pipe email thru a script, ask your system administrator 
+  or uplink. Once the $adminemail var is aimed at the script, the script will read all 
+  emails and if they are bounces, it will remove the email from your database and can 
+  optionally (if set in Configs.pm) disable the users account. Any emails that are 
+  not bounces will be sent to the email set for that purpose in checkbounce.pl automaticly.
+
+
