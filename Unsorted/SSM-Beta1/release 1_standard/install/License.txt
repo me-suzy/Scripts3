@@ -1,0 +1,64 @@
+Support Services Manager ("SSM") Software version 1.0 BETA
+End-User License Agreement
+This license is copyright 2001, by Shedd Technologies International
+SSM is a product of Shedd Technologies International
+copyright 2001-2002 by Shedd Technologies, All Rights Reserved
+
+Your use of this product ("SSM") is governed by this End-User 
+License that you agreed to upon downloading this product.  Any 
+usage or modification of this product in anyway that is not 
+specified or allowed under the following terms of this agreement 
+may void your license agreement and result in action by law against 
+you.
+
+
+END-USER LICENSE AGREEMENT
+
+
+Redistributions of source code must retain the above copyright 
+notice, this list of conditions and the following disclaimer. 
+
+Redistributions in any form other than the original source form must 
+reproduce the above copyright notice, this list of conditions and the 
+following disclaimer in the documentation and/or other materials 
+provided with the distribution.
+ 
+Shedd Technologies International may publish revised and/or new versions 
+of this license, each with a distinguishing version number. Once covered 
+code has been published under a particular version of the license, you 
+may always continue to use it under the terms of that version. You may 
+also choose to use such covered code under the terms of any subsequent 
+version of the license published by Shedd Technologies International. No 
+one other than Shedd Technologies International has the right to modify 
+the terms applicable to covered product created under this License.
+
+Redistributions of any form whatsoever must retain following acknowledgment 
+that exists at the bottom of all generated pages.  Removing this text will 
+void the license agreement and could result in legal action.
+
+Shedd Technologies International reserves all rights in regard to this product, 
+including the right to distribution.  Shedd Technologies also reserves the 
+right to terminate this license agreement with the End User ("You") at any time 
+for violating this agreement.  You will be notified in writing by Shedd Technologies 
+International before a termination takes effect.
+
+Redistribution and use in source and binary forms, with or without modification, 
+are restricted by Shedd Technologies International.  Please contact Shedd Technologies 
+International for information of redistributing this product.
+
+
+
+DISCLAIMER
+
+THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED
+WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED.  IN NO EVENT SHALL THE SHEDD TECHNOLOGIES INTERNATIONAL 
+DEVELOPMENT TEAM OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; 
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT 
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY 
+WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGE.
