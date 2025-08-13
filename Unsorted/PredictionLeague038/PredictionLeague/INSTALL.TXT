@@ -1,0 +1,103 @@
+Installation instructions for the Prediction League.
+
+Requirements
+============
+Web server with support for PHP4.0 or greater.
+MySQL database.
+
+Instructions
+============
+Modify the file SystemVars.php to match your configuration.
+Open the file SystemVars.php in your favourite editor.
+N.B. The "" and ; in the file are important, please be careful
+when you edit the file.
+
+ 1. Set the Title for your prediction league. e.g. 
+    $PredictionLeagueTitle = "My Prediction League";
+
+ 2. Set the Header Row. This can be used for displaying a banner
+    or text. The header row can contain HTML.
+    e.g.
+     $HeaderRow = "<table width=\"800\"><tr><td align=\"center\" class=\"TBLHEAD\"><font 
+    class=\"TBLHEAD\"><img src=\"banner.jpg\"></font></td></tr></table>";
+
+ 3. Set the hostname for the database. If your database and webserver are on the
+    same machine, you can probably leave this set as localhost. If they are
+    on different machines contact your ISP for hostname details.
+
+ 4. Set the base directory name.
+    This can be left as the default value if you copy this folder directly to
+    your website. If you rename the folder, you need to update the base
+    directory name accordingly.
+
+ 5. Set the database username. This is the value provided by your ISP.
+
+ 6. Set the database password. This is the value provided by your ISP.
+
+ 7. Set the database name. This is the value you will use when creating the database.
+    If you have been given a database name by you ISP, you will need to enter this
+    here.
+
+ 8. Set the email address of the administrator. This is the address used by your
+    users to contact you.
+
+ 9. Set the signature for the administrative emails. When a new user is created
+    an email is automatically sent. This signature will appear at the bottom of
+    the email.
+
+ 10.Set the default icon. This is an optional step. If you want to use a different
+    icon for your users, you can set the value here. The icon must be available in
+    the default icon directory to be automatically available to the users.
+
+ 11.Set the chat room URL. If you use a chat room, you can use this to provide a 
+    link from the menu to the chatroom. A blank value will ensure that the menu
+    item does not appear.
+
+ 12.Set the URL and title for your homepage.
+
+ 13.If you want to log warnings and errors on your system give the logfile a name. 
+    Leaving it as "" will disable this functionality. If you do enable the use
+    of the logfile, the process running the web server must have write permission 
+    for the logfile.
+    e.g. if your server is running as 'nobody' on a unix system, then the user
+    'nobody' must be able to write to the file.
+
+ 14.If you want to allow multiple users to be created for each email address, then 
+    set this value to TRUE.
+
+ 15.If you want to encrypt passwords then set leave this value as TRUE.
+
+ 16.If you have a prize to display. Update the file prize.html. The current contents
+    can be uncommented and changed. It is assumed you know some HTML to be able
+    to make the changes.
+
+Install the files on your server. 
+ 1. Copy the directory PredictionLeague to your webserver. This step is required
+    prior to creating the database.
+
+Create the database and tables:
+
+ 1. Open http://<yourhostname>/PredictionLeague/AdminMenu.html in your favourite 
+    browser.
+    From here you can follow the sequential tests to determine your if you meet
+    the requirements for running the PredictionLeague and creating the database
+    tables.
+    i.  Test you have PHP working. Hit test PHP. if you get a PHP working response
+        continue to the next step.
+    ii. Create the database tables. Follow this link, and enter the values that match
+        the values you configured in SystemVars.php.
+        If the database already exists and you only want to create the tables, make sure
+        the checkbox is unchecked.
+        Hit the Create button. If you succeeded, the display will show the new
+        table structures, else an error message will be displayed.
+    iii.Create the admin user. Follow the link and instructions to configure
+        an admin user.
+
+Start using the prediction league.
+  You are now configured. Log in as the admin user and create your fixtures/schedule.
+
+
+Support
+=======
+Please contact john@predictionfootball.com if you encounter any problems.
+    
