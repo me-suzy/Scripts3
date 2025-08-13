@@ -1,0 +1,48 @@
+Thank you for joining #CONFIG0#!
+
+
+
+Your username is: #USERNAME#
+
+Your password is: #USER12#
+
+
+
+All you need to do is slap this code on your
+
+webpage(s)... You can link as many times as you
+
+like. Just do not send exit traffic! Exit traffic
+
+is low grade traffic when sent directly to another
+
+website and doesn't help anyone out! Try sending
+
+it to an exit window with more links to other
+
+sites instead...
+
+
+
+<A HREF="#TSIN.CGI#?#USERNAME#" TARGET="_blank">
+
+Click here for FREE XXX!</a> 
+
+
+
+Here is the URL you will be sending traffic to:
+
+#TSIN.CGI#?#USERNAME#
+
+
+
+Here is the URL to check your stats:
+
+#TSWEBMASTER.CGI#
+
+
+
+If you have any questions or need help,
+
+please don't hesitate to contact me.
+
