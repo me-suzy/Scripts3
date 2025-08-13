@@ -1,0 +1,220 @@
+UltraBoard 2000 2.2X
+
+November 18, 2000 EST
+Bug: missing one topic in search result.
+     edited: Sources/UltraBoard/Search.pm.pl
+
+Bug: the pop-up windows don't have scroll bars in netscape.
+     edited: HTML/Default.js
+
+Bug: incorrect path in category, after created category.
+     edited: Sources/ControlPanel/CreateCategory.pm.pl
+
+Bug: missed login function in forward.
+     edited: Sources/UltraBoard/Forward.pm.pl
+
+November 20, 2000 EST
+Bug: missed login function in read private message.
+     edited: Sources/PM/Read.pm.pl
+
+Bug: the email showed in printable page, when the hide email value is on.
+     edited: Sources/UltraBoard/Reply.pm.pl
+             Sources/ControlPanel/UpdateDatabase.pm.pl
+
+Bug: converted ubb database after update the database, it may replace to guest.
+     edited: Sources/Libraries/UpdateDatabase.pm.pl, Convert.pm.pl
+
+November 20, 2000 EST
+Bug: administrator can't use "more" option in search form.
+     edited: Sources/Libraries/UpdateDatabase.pm.pl, Convert.pm.pl
+
+November 26, 2000 EST
+Bug: missed login functions.
+     edited: Sources/UltraBoard/CreateAnnouncement.pm.pl, ModifyAnnouncement.pm.pl, RemoveTopic.pm.pl, TopicCommands.pm.pl
+               UpdateTopic.pm.pl, ModifyTopic.pm.pl, MoveTopic.pm.pl, RemoveAnnouncements.pm.pl, ChangeTopicStatus.pm.pl, Commands.pm.pl
+
+Bug: change the way of display private message description (changed the language)
+     edited: Skins/Default/SSI/PM.pm.pl
+
+Bug: the category path is not correct.
+     edited: Sources/ControlPanel/CreateCategory.pm.pl
+
+Chg: change the directory permission into 777, after created a new skin.
+     edited: Sources/ControlPanel/CreateSkin.pm.pl
+
+Chg: added personal photo in topic page...
+     edited: Skins/Default/Topic.pm.pl
+             Sources/Libraries/Post.pm.pl
+
+November 28, 2000 EST
+Bug: missed ; after &#39
+     edited: Sources/Libraries/Convert.pm.pl, Post.pm.pl, Standard.pm.pl
+
+Bug: GetRate SSI internal error
+     edited: Sources/Action.pm.pl
+
+November 29, 2000 EST
+Bug: bugs in ultraboard update.
+     edited: Sources/ControlPanel/Update.pm.pl, ListUpdates.pm.pl
+             Skins/Default/ControlPanel/Update.pm.pl, ListUpdates.pm.pl
+
+November 30, 2000 EST
+Bug: when you turned on the personal photo in topic and read a topic. it will show a error. "Can't use string (""
+     edited: Skins/Default/Topic.pm.pl
+
+Chg: chagned "Display Personal Photo Topic" to "Display Personal Photo in Topic" in general option.
+     edited: Skins/Default/ControlPanel/General.pm.pl
+
+December 3, 2000 EST
+Bug: boards doesn't show up in move topic box, when moderators have the permission.
+     edited: Sources/UltraBoard/TopicCommands.pm.pl
+
+Bug: announcement message is not show up after posted announcement in control panel.
+     edited: Skins/Default/ControlPanel/CreateAnnouncement.pm.pl
+
+Bug: auto-check ultraboard is it in ssl mode...
+     edited: Sources/ControlPanel/CfgSystem.pm.pl
+
+December 5, 2000 EST
+Bug: next is not functional in update threads.
+     edited: Sources/ControlPanel/UpdateThreads.pm.pl
+
+December 7, 2000 EST
+Chg: made remember username/password option to be checked as default
+     edited: Skins/Default/UltraBoard/Login.pm.pl
+
+December 10, 2000 EST
+Chg: not going to use CGI module to produce the header line...
+     edited: Sources/Libraries/Standard.pm.pl
+
+December 12, 2000 EST
+Bug: spelled wrong on "Statistics"
+     edited: Skins/Default/ControlPanel/Index.pm.pl
+
+December 13, 2000 EST
+Bug: no scroll bars in pop up windows with netscape browser.
+     edited: HTML/Default.js
+             Skins/Default/Topic.pm.pl
+             Skins/Default/ControlPanel/CreatePost.pm.pl
+             Skins/Default/UltraBoard/Headlines.pm.pl, ModifyPost.pm.pl, Reply.pm.pl, Category.pm.pl, Help.pm.pl, Index.pm.pl,
+               MembersList.pm.pl, ModifyTopic.pm.pl, Post.pm.pl, Profile.pm.pl
+             Skins/Default/PM/List.pm.pl, Send.pm.pl, Read.pm.pl
+
+Chg: change "Display all posts that have to be moderated." to "Enable message moderation.".
+     edited: Skins/Default/ControlPanel/CreateBoard.pm.pl
+
+December 17, 2000 EST (2.21)
+Bug: width size of "reply w/quote image" is wrong.
+     edited: Skins/Default/Topic.pm.pl
+
+Chg: updated the spellchecker script.
+     edited: SpellChecker.cgi
+             Skins/Default/ControlPanel/CreatePost.pm.pl, CreateAnnouncement.pm.pl
+             Skins/Default/UltraBoard/Forward.pm.pl, ModifyPost.pm.pl, Reply.pm.pl, CreateAnnouncement.pm.pl, Email.pm.pl, ICQ.pm.pl
+               ModifyAnnouncement.pm.pl, ModifyTopic.pm.pl, Post.pm.pl
+             Skins/Default/PM/Send.pm.pl
+     added : Public/HTML/dospell.tmpl, check.tmpl, init.tmpl, opts.tmpl, result.tmpl, show.tmpl, unload.tmpl, spch.js
+             Sources/SpellChecker.pm.pl
+
+Chg: changed the message of email format from html to plain text
+     edited: Skins/Default/UltraBoard/Mail/Reply.pm.pl, Post.pm.pl
+
+Chg: added recover database function.
+     if you failed the restoration process, you can use this function to re-setup the database.
+       1. create file named recover.pl in Private directory.
+       2. type add a <password> in recover.pl at the first line (no space)
+       3. type this url in your browser. UltraBoard.cgi?RECOVER=<password>
+
+     edited: Sources/Action.pm.pl
+     added : Sources/Recover.pm.pl
+             Backups/Group.cfg, Accounts.cfg, Profiles.cfg, Categories.cfg, Boards.cfg, PM.cfg, Announcement.cfg, Sessions.cfg,
+               CreateDatabase.mysql, CreateDatabase.mssql, DropDatabase.mysql, DropDatabase.mssql
+
+December 19, 2000 EST (2.21.a)
+Bug: redirect location caused blank page in some browsers.
+     edited: Sources/Libraries/Standard.pm.pl
+
+Chg: changed some images.
+     edited: Images/Default/old_topic.gif, new_topic.gif, hot_topic.gif, pop_topic.gif
+
+Bug: notitication still in html format.
+     edited: Sources/UltraBoard/Post.pm.pl, Reply.pm.pl, RetrievePassword.pm.pl, Register.pm.pl
+             Sources/ControlPanel/ModerateAccounts.pm.pl, ModeratePosts.pm
+
+Bug: pm.gif alignment is wrong in topic page.
+     edited: Skins/Default/Topic.pm.pl
+
+Bug: searched results are not in order.
+     edited: Sources/UltraBoard/Search.pm.pl, Result.pm.pl
+
+February 15, 2001 EST (2.22)
+Bug: "document contained no data" dialog during redirection.
+     edited: Sources/Libraries/Standard.pm.pl
+
+Chg: change "Display all posts that have to be moderated." to "Enable message moderation"
+     edited: Skins/Default/ControlPanel/ModifyBoard.pm.pl
+
+Bug: in general option it show as system option in title.
+     edited: Skins/Default/ControlPanel/CfgGeneral.pm.pl
+
+Bug: missed "//" in javascript code.
+     edited: Skins/Default/ControlPanel/CfgGeneral.pm.pl, CfgSystem.pm.pl, CfgStyle.pm.pl, ModifyProfile.pm.pl,
+             Skins/Default/ControlPanel.pm.pl
+
+Bug: wrong form name in spell checker button.
+     edited: Skins/Default/UltraBoard/ICQ.pm.pl
+
+Bug: wrong file name which caused flood check not working on reply.
+     edited: Sources/UltraBoard/Reply.pm.pl
+
+Bug: result page list found topics in wrong order
+     edited: Sources/UltraBoard/Result.pm.pl, Search.pm.pl
+
+Bug: recover function won't work on mssql system.
+     edited: Sources/Recover.pm.pl
+
+February 26, 2001 EST (2.22a)
+Bug: some servers may show "Maybe you didn't strip carriage returns after a
+     network transfer?" error after installed ultraboard.
+     fix: upload all files in 220T222a.zip manually in ascii mode.
+
+June 4, 2001 EST (2.23)
+Bug: PM security issue fixed
+     edited: Sources/PM/Read.pm.pl, Remove.pm.pl
+
+Bug: a topic could be removed by accident
+     edited: Sources/UltraBoard/RemoveTopic.pm.pl
+
+Bug: signature was lost in while modifying a topic
+     edited: Sources/ModifyTopic.pm.pl
+
+Bug: bad word filtering was not working in some cases
+     edited: Sources/PM/Send.pm.pl
+             Sources/UltraBoard/ModifyTopic.pm.pl, Post.pm.pl, Reply.pm.pl
+
+Bug: login loop
+     edited: Sources/UltraBoard/Login.pm.pl, 
+             Skins/Default/UltraBoard/Login.pm.pl
+
+Bug: incorrect duplicate nickname check
+     edited: Sources/Libraries/Backup.pm.pl
+
+Bug: boards were not completely removed in MySQL & MsSQL
+     edited: Sources/Libraries/Database.mysql.pm.pl, Database.mssql.pm.pl
+
+Bug: maximum sessions number was 65535 in MySQL and Microsoft SQL
+     edited: Sources/Libraries/Database.mysql.pm.pl, Database.mssql.pm.pl
+
+Bug: attachment was lost during topic transfer
+     edited: Sources/Libraries/Post.pm.pl
+
+Bug: incorrect cookie path on some installations
+     edited: Sources/ControlPanel/CfgSystem.pm.pl
+
+Bug: incorrect count of invalid logins to the control panel
+     edited: Sources/Action.pm.pl
+
+Add: "Enable photo in profile" option is added to the general options
+     edited: Soures/ControlPanel/CfgGeneral.pm.pl
+             Skins/Default/ControlPanel/CfgGeneral.pm.pl
+             Skins/Default/UltraBoard/ModifyProfile.pm.pl
