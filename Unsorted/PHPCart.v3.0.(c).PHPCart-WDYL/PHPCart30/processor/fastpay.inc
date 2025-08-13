@@ -1,0 +1,2 @@
+<script>window.setTimeout('changeurl();',2000); function changeurl(){window.location='https://www.natwestfastpay.com/service/index.jsp?sendto=<?php echo $fastpay_email?>&amount=<?php echo $total?>&message=Shopping%20Basket%20Content&return=<?php echo $fastpay_return?>&payment_code=<?php echo $order_id?>'}</script>
+<CENTER><FONT FACE="Verdana" SIZE=2 COLOR="<?php echo $TextColor?>">Loading Payment Gateway...</FONT></CENTER>
