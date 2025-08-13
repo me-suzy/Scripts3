@@ -1,0 +1,39 @@
+OSI Codes Inc. Coding Standard (brief description)
+This standard is used within all OSI Codes.
+-------------------------------------------------------->
+
+All SQL queries are called by function APIs and NEVER
+within the code.  This keeps the code clean and organized
+so you know exactly what function does what.  And if the
+database is changed, you simply change the function, not
+the code.
+
+Once you look into the API directory, you will see how we
+organize our codes that calls the database.  Since data
+is most important, our APIs are highly organized functions,
+all within their respective files:
+
+get.php - all sql queries that "gets" the data from db
+put.php, - sql queries that "puts" into the db
+remove.php - sql queries that deletes from the db
+update.php. - you get the point...
+
+In 99% of cases (rare case being in the setup scripts),
+there is NEVER a function within the actual page that gets
+called by the web.  Rather, all functions resides within
+the Util.php directory inside their respective API directory.
+But on all our codes, there is a "// functions" area, should
+we need it.
+
+---
+
+As for the pages that gets called by the web, these pages
+merely calls the API functions.
+
+
+----
+REPEAT: NO SQL QUERIES INSIDE THE ACTUAL PAGES!  This is a
+major standard at OSI Codes.  It's a standard that has kept
+our application run at top notch, and MOST IMPORTANTLY, easy
+to fix, debug and modify.
+----
