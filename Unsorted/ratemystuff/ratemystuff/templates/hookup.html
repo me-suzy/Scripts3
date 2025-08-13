@@ -1,0 +1,89 @@
+<title>Rate My Hedgehog (Demo of RateMyStuff from PHPLabs.com)</title>
+<body bgcolor="#FFFFCC">
+%header% 
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr> 
+<td width="20%" valign="top"> 
+<table width="90%" border="0" cellspacing="0" cellpadding="1" bgcolor="#000066" align="center">
+<tr> 
+<td> 
+<table width="100%" border="0" cellspacing="0" cellpadding="1" bgcolor="#000066">
+<tr> 
+<td> 
+<center>
+<font color="#FFFFCC" size="1"><b><font face="Verdana, Arial">RATEMYHEDGEHOG</font></b></font> 
+</center>
+</td>
+</tr>
+<tr> 
+<td bgcolor="#FFFFCC"> 
+<p align="center"><b><font face="Verdana, Arial" size="1">RANDOM HEDGEHOG:</font></b></p>
+<p align="center">%random%</p>
+<p align="center"><font size="1"><b><font face="Verdana, Arial">OUR FAVORITE LINKS:</font></b></font></p>
+<p align="center"><b><font face="Verdana, Arial" size="1"><a href="http://phplabs.com/scripts.php?script=RateMyStuff">RateMyStuff</a><br>
+<a href="http://www.phplabs.com/">PHP Labs</a><br>
+<a href="http://www.fallendomains.com/">Fallen Domains</a><br>
+<a href="http://www.openproxies.com/">Open Proxy List</a><br>
+<a href="http://www.iconbazaar.com/">Icon Bazaar</a><br>
+<a href="http://www.php.net/">PHP Homepage</a><br>
+<a href="http://www.google.com/">Google Search</a></font></b></p>
+<p align="center"><b><font face="Verdana, Arial" size="1">RANDOM HEDGEHOG:</font></b></p>
+<p align="center">%random%</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td valign="top"> 
+<p align="center"><font face="Verdana, Arial" size="1"><b>Want to HOOKUP with 
+        the owner of this pic?</b></font></p>
+<p align="center"><font face="Verdana, Arial" size="1"><b><a href="http://www.phplabs.com/"><img src="http://phplabs.com/images/phpban2.gif" width="468" height="60" border="0" alt="PHP Labs"></a></b></font></p>
+      <p align="center"><font face="Verdana, Arial" size="1">HookUp with this user to 
+        communicate safely and anonymously! (<a href="javascript:;" onClick="window.open('templates/hookup_about.html','Report','width=300,height=400,,location=no,toolbar=no,menubar=no,scrollbars=auto,resizable=no')">What 
+        is HookUp?</a>)</font></p>
+      <table width="75%" border="0" cellspacing="0" cellpadding="3" align="center">
+        <tr> 
+          <td align="center"> <p><font face="Verdana, Arial" size="1"><b>User 
+              Bio:</b></font></p></td>
+        </tr>
+        <tr> 
+          <td align="center" bgcolor="#FFFFFF"><div align="left"><font size="1" face="Verdana, Arial">%bio%</font></div></td>
+        </tr>
+      </table>
+      <p align="center"><img src="getimage.php?tag=%tag%" alt="Rate This Hedgehog!"></p>
+<table width="75%" border="0" cellspacing="0" cellpadding="3" align="center">
+<tr> 
+          <td align="center"> <p><font face="Verdana, Arial" size="1"><b>YOU MUST 
+              <font color="#FF0000">LOGIN</font> TO GET THE HOOKUP WITH THIS PIC'S 
+              OWNER</b></font></p>
+            <p><font size="1" face="Verdana, Arial">If you don't have an account 
+              yet, create one <a href="user.php?func=newuser" target="_blank">here</a> 
+              <br>
+              (link opens in new window, then come back and enter your user/pass)</font></p>
+            <form name="form1" method="post" action="hookup.php">
+              <p align="center"><font face="Verdana, Arial" size="1"><br>
+                User: 
+                <input type="text" name="username" size="10">
+                <br>
+                Pass: 
+                <input type="password" name="password" size="10">
+                <br>
+                <input name="recipient" type="hidden" id="recipient" value="%tag%">
+                <input type="hidden" name="action" value="GETHOOKUP">
+                <input type="submit" name="Submit" value="Login and HookUp">
+                </font></p>
+            </form>
+</td>
+</tr>
+<tr>
+          <td align="center" bgcolor="#FFFFCC">&nbsp;</td>
+</tr>
+</table>
+<hr noshade size="1">
+<p>%top5%</p>
+</td>
+</tr>
+</table>
+%footer%
