@@ -1,0 +1,408 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+
+		<LINK rel=stylesheet type="text/css" href="documentation.css">
+
+<TITLE>phpYellow Pages - Easily create your very own Yellow Page directories on the web! - Dreamriver.com - php software mysql database software download apps</TITLE>
+
+	<META NAME="keywords" CONTENT="yellow, pages, phpYellow, php, software, Yellow, ads, listings">
+	<META NAME="description" CONTENT="Easily create your very own Yellow Page directories on the web!">
+	<META NAME="Author" CONTENT="Richard Creech, DreamRiver.com. Web: http://www.dreamriver.com Email: phpYellow@dreamriver.com">
+
+	</HEAD>
+
+
+<body class="yellow">
+
+
+
+<h1>phpYellow Pages Developer's Guide</h1>
+
+
+
+<!-- start of the dec30 navigation bar for the documentation -->
+<div align="center">
+<a href="DOCSindex.html">Docs Home</a> | 
+<a href="DOCSreadme.html">Read Me</a> | 
+<a href="DOCSfaq.html">FAQ</a> | 
+<a href="DOCSlicense.html">License</a> | 
+<a href="DOCSsecurity.html">Security</a> | 
+<a href="DOCSinstallNotes.html">Install</a> | 
+<a href="DOCSchangeLog.html">ChangeLog</a> | 
+<a href="DOCScustomize.html">Customize</a> | 
+<a href="DOCSpaidListings.html">Paid Listings</a>  
+</div>
+<!-- end of the dec30 navigation bar for the documentation -->
+
+
+
+
+
+<span style="color:Coral;font-size:48px;">PAID LISTINGS</span>
+
+
+
+
+
+<p>Make a backup copy before working on any file. Here are major payment topics:</p>
+
+<ul>
+
+<li><a href="../gateways/index.html">Go to a specific gateway integration page</a> - Example: Paypal instructions
+<li><a href="#steps">How the Paid Listing Option Works</a>
+<li><a href="#toggle">Turn Paid Listings &quot;on&quot; or &quot;off&quot;</a></li>
+<li><a href="#methods">Choose Your Own Payment Methods</a></li>
+<li><a href="#duration">Choose the Listing Duration in Months</a></li>
+<li><a href="#setyourprice">Set Your Own Price</a></li>
+<li><a href="#tax">Using the Tax Module</a></li>
+<li><a href="#testpayment">Test the Payment System</a></li>
+<li><a href="#runlivetest">Run a Live Payment Test on Dreamriver.com</a></li>
+<li><a href="DOCSfaq.html#gatewayprocessor">Request help integrating with your Payment Gateway Processor</a></li>
+</ul>
+
+
+<h2><a name="steps">How the Paid Listing Option Works</a></h2>
+
+
+<p>This section describes the steps made when a customer 
+chooses to upgrade their phpYellow Page listing from a free basic to a paid 
+listing. Each step is briefly explained below. If you are considering 
+using phpYellow Pages for paid listings then it is a good idea to read ALL of this section.</p>
+
+
+<table>
+<tr>
+	<td>
+	<img src="../appimage/listingPaymentProcess.png" width="230" height="265" border="0" alt="Listing Payment Process">
+	</td>
+	<td>
+In general the listing payment process is made up of five (5) steps: 
+	<ol>
+	<li>Checkout</li>
+	<li>Buy</li>
+	<li>Payment Validation</li>
+	<li>Listing Update</li>	
+	<li>Thank You</li>	
+	</ol>
+	</td>
+</tr>
+</table>
+
+<h3>Checkout</h3>
+<p>When the user decides to buy an enhanced listing ( by clicking on &quot;Go 
+Premium&quot; ) they immediately go to the checkout page. On the checkout page 
+the customer selects service type, duration and payment method. Following 
+is a description of these checkout steps:</p>
+
+<table>
+<tr>
+	<td><img src="../appimage/servicepaymentpassword.png" width="174" height="83" border="0" alt="The customer selects Service, duration, method and enters their password">
+</td>
+	<td>
+	<ul>
+		<li>Service - the customer selects either a First page or Preferred listing
+		<li>Payment - (you decide what payment types to offer)
+			<ol>
+				<li>Duration - Customer chooses length in months [1-12] for their listing
+				<li>Method - customer chooses payment method used to purchase service
+			</ol>
+		<li>customer enters Password
+		<li>customer [optionally] modifies their contact data
+	</ul>
+</td>
+</tr>
+</table>
+
+
+
+
+
+
+<p>Clicking on a submit button takes the customer to the next page - the buy page.</p>
+
+<h3>Buy</h3>
+<p>On the buy page the customer:</p>
+<ul>
+<li>reviews billing details including listing price, tax [optional] and total amount payable
+<li>is informed how to make payment
+<li>the process moves to the next step below - payment validation.
+</ul>
+ 
+<h3>Payment Validation</h3>
+<p>For each payment method (except online payment by credit card) the customer is 
+prompted to send in payment. You validate this payment according to your own 
+business rules. You ensure the customer has actually made payment. For example, 
+if payment by check is made, then you verify funds are transferred. </p>
+
+<p>For online credit card validation (which you may turn on or off) the customer 
+payment is verified by your credit card processor. Separate documents detail 
+how this is done. Each processor will have different ways of achieving the same 
+goal - of making sure the credit card payment is valid. </p>
+
+<blockquote>
+<h4>Processors have many different approaches</h4>
+<p>Processors have many different approaches for the payment 
+process in general. For example, one processor may require that the buy page be 
+physically located on their server, using a pre-made template of their own design. 
+Other processors may let you host your own buy page using your custom design. 
+Similarly, the ways that the processors allow or handle other aspects of the 
+payment process can and do differ. It is because of these differences that 
+different methods and code are needed for each payment processor.</p>
+
+<p>You will need to purchase the code for your gateway payment processor, or write your own. DreamRiver 
+has a flat rate for connecting phpYellow Pages with your processor. The rate is $99 USD, payable 
+on completion of the work. <a href="DOCSfaq.html#gatewayprocessor">Click here to request help with your Payment 
+Gateway Processor.</a> 
+</p>
+
+</blockquote>
+
+
+<p>After payment approval the next step 
+arises - listing update.</p> 
+
+
+<h3>Listing Update</h3>
+<p>The customer's listing is updated after their payment is approved. Online 
+credit card payments can be automatically handled by the phpYellow Pages system. 
+For 
+any other payment a manual update by the administrator is needed. A point and 
+click tool is provided to make this easy - all you need to know is the unique 
+database key - the ckey - of the customer's listing. This is embedded in the 
+invoice number and found easily with other methods.</p>
+
+<p>The listing update process sets service, duration, status, expiry and listing 
+position information to the correct values as held in the online database. The 
+result is to set new parameters for the customer listing, committing the changes 
+needed to the database in order to make the listing a paid, rather than free, listing.</p>
+
+
+<h3>Thank You</h3>
+<p>The purchase starts with the sale. Thanking your customer is your first step in 
+keeping them satisfied with your service - and coming back next year for more, or 
+selling them additional products or services. The Thank You step sees the 
+system generate a thank you web page after 
+online credit card payment is received. A link also is made to let the 
+customer view their highlighted listing - only their listing appears in this 
+process. The customer can also search for their upgraded listing and it is 
+available for viewing. Most payment processors also can optionally send an 
+email receipt to the customer and this can be set in the respective processor 
+administration areas.</p>
+
+
+<p>For cases where payment is NOT via online credit card you may want to manually 
+send a receipt and perhaps a thank you note - another reason for upgrading to online credit card 
+acceptance and enjoying online processing.</p>
+
+<h3>Summary</h3>
+
+<p>There are five (5) major steps used in the listing payment process. Checkout, 
+Buy, Payment Validation, Listing Update and Thank You are the steps involved. 
+Each of these steps may be examined in greater detail. Listings may be paid for 
+using traditional or online payment methods. For online payment methods 
+we find that the payment processors have different approaches. The way 
+that one processor works may be different from others. phpYellow Pages 
+handles these variations by using different code and approach for each 
+processor. You can purchase code from Dreamriver to integrate with your 
+processor. When your customer's payment is confirmed the listing is updated. 
+Finally, the customer is sent a receipt and a thank you note. </p>
+
+
+
+
+<h3><a name="toggle">Turn Paid Listings &quot;on&quot; or &quot;off&quot;</a></h3>
+<p>Toggle paid listings on or off - "yes" will enable script processing, 
+anything else will disable processing. Processing is linked to various 
+payment methods. </p>
+
+
+<h3><a name="methods">Choose Your Own Payment Methods</a></h3>
+<p>Open the file paymentMethodsList.php. Remove any method you do not 
+wish to have. Save the file and upload to your server.</p>
+
+<p>To remove a payment method type delete the line it is on.
+Example: to remove 'Credit Card by Internet' delete all of line 9 
+and next save this file as paymentMethodsList.php. This file is 
+automatically included in the online form called checkout.php</p>
+
+
+
+<h3><a name="duration">Choose the Listing Duration in Months</a></h3>
+<p>Open checkout.php in an html editor. You will see input types for 
+the months duration of listings like this:</p>
+
+<code>
+&lt;input type=&quot;radio&quot; name=&quot;monthsGoodFor&quot; value=&quot;9&quot;&gt;9 Months&lt;br&gt;
+</code>
+
+<p>By deleting this line you effectively remove the nine month option. 
+By deleting any other &quot;monthsGoodFor&quot; line you will 
+prevent the customer from seeing it. If the user cannot see the 
+option then chances are they will not use it.</p>
+
+
+
+
+
+<h3><a name="setyourprice">Set Your Own Price for the 24 Monthly Listing Periods</a></h3>
+Open util.php in an html editor. You will find 24 defined constants 
+like:
+
+<pre>
+define("FIRSTPAGE_12_MOS_PRICE", "99.95"); or like
+
+define("PREFERRED_12_MOS_PRICE", "50.00");
+</pre>
+
+<p>You may set your own price by changing the dollar value between 
+the quotation marks. Set any price you like. Do NOT use a dollar sign. 
+Note that priceChart.php uses those values to dynamically render a 
+price chart on a number of pages, including <a href="../upgrade.php#pricechart">upgrade.php.</a> The price 
+chart is intended to help the user choose a price.</p>
+
+
+
+
+
+
+
+<h2><a name="tax">Using the Tax Module</a></h2>
+<p>There are over 3500 taxation systems in North America alone. 
+phpYellow Pages supports BASIC taxation as follows:</p>
+
+<p>Open util.php in any html editor. To begin to use tax in the 
+calculation of premium listing price you set the  
+constant called USETAX to the value &quot;yes&quot;. The default is &quot;no&quot;.</p>
+
+<p>If USETAX is toggled to yes then the constant value for 
+TAXHEADING is the text to show the customer. For example, the 
+default TAXHEADING is &quot;Check applicable taxes.&quot;. Change 
+this text label to whatever instructions are appropriate.</p>
+
+<p>TAXONENAME is the name of the tax shown to the user, for example 
+&quot;State Tax&quot;. It is just a label. TAXONEPERCENTAGEAMOUNT 
+is the percentage amount of the tax, for example &quot;.02&quot;.
+This number is multiplied by the charge total (which is  
+your price for the premium listing, only) to arrive at an 
+$x_amount total price. The tax is included in $x_amount. $x_amount 
+is the amount billed to the credit card, if a credit card is used.</p>
+
+<p>If a second tax is wanted a similar process applies with similar 
+constants, also found in util.php.</p>
+
+<p>If you need to write your own taxation algorithm then you may do 
+so in the file buy.php at the top of the page.</p>
+
+
+
+
+<h2><a name="testpayment">Test the Payment System</a></h2>
+<p>You may test the payment system by making a listing then clicking 
+on &quot;Go Premium&quot;. Enter your phpYellow password and 
+click on &quot;Next Step&quot;. Payment instructions are given to 
+you.</p>
+
+<h3>Make a Payment by Credit Card</h3>
+<p>Use the process above. Select Credit Card by Internet.</p>
+
+
+<h3>Bypass the Credit Card Processor during Testing</h3>
+<p>To bypass your credit card processor during testing open util.php 
+in a html editor. Change the constant BYPASSCARDPROCESSOR to a 
+value of &quot;yes&quot;. A value of &quot;no
+&quot; enables normal functionality.</p>
+
+
+<h3>Bypass the Credit Card Processor during Credit Card Submission</h3>
+<p>An additional feature allows you to process a credit card payment WITHOUT 
+involving a payment gateway processor. The customer listing is automatically 
+updated after submitting card data. Notification can be emailed to you 
+automatically. You process the transaction normally, offline, using your 
+existing merchant account. Please inquire for details.</p>
+
+
+<h3>Make a Live Test for the Payment Gateway, but Limit Price to $1 Dollar</h3>
+<p>You may want to make a live test for a small amount of money. When 
+using the premiumCheckout.php page select the one month option. It has a default 
+value of $10 for First Page and $5.00 for Preferred listings for the 
+one month listing only. Change the value for FIRSTPAGE_1_MO_PRICE to 1.00. 
+This change is made in util.php.
+You will want to later reset FIRSTPAGE_1_MO_PRICE to your 
+regular payment amount, after testing is complete.</p>
+
+
+<h3>Change to Live Mode for Transactions!</h3>
+<ul>
+<li>open util.php and reset your one month Preferred Pricing values and any others you changed
+<li>open util.php and reset BYPASSCARDPROCESSOR to a value of &quot;no&quot;
+</ul>
+<p>Check the hidden variables in your buy page, make sure your gateway 
+processor settings are ok, for example add 
+http://www.yourDomain.com/phpYellow/premiumProcessPayment.php and also 
+http://www.yourDomain.com/phpYellow/premiumBuy.php as valid URL's.</p>
+
+
+
+
+<a name="runlivetest"><h2>Run a Live Payment Test on Dreamriver.com</h2></a>
+<p>The DreamRiver sample site of phpYellow Pages is ready to accept your live test. You do 
+NOT need to enter valid credit card data - in fact - DO NOT!. 
+The payment system functions normally and updates your listing, even if you enter 
+false data. This is to allow you to test.<a href="http://www.dreamriver.com/phpYellow/"> Try it out! 
+</a> by adding a new listing. Then click on &quot;Go Premium!&quot;</p>
+
+<ol>
+<li><a href="http://www.dreamriver.com/phpYellow/login.php" target="_blank">go to http://www.dreamriver.com/phpYellow/login.php</a>
+<li>select &quot;Add New Listing&quot;
+<li>enter a <b>VALID listing</b> for your business
+<li>Upgrade to Premium by searching for your listing, then click on &quot;Go Premium!&quot;
+<li>enter your email and phpYellow password and then click on &quot;Next Step&quot;
+<li>do NOT enter valid payment data - just enter false data and click on &quot;Next Step&quot;
+<li>look at your new Premium listing!
+</ol>
+
+
+
+
+
+<p>END OF DOCUMENT</p>
+
+
+
+<!-- start of the dec30 navigation bar for the documentation -->
+<div align="center">
+<a href="DOCSindex.html">Docs Home</a> | 
+<a href="DOCSreadme.html">Read Me</a> | 
+<a href="DOCSfaq.html">FAQ</a> | 
+<a href="DOCSlicense.html">License</a> | 
+<a href="DOCSsecurity.html">Security</a> | 
+<a href="DOCSinstallNotes.html">Install</a> | 
+<a href="DOCSchangeLog.html">ChangeLog</a> | 
+<a href="DOCScustomize.html">Customize</a> | 
+<a href="DOCSpaidListings.html">Paid Listings</a>  
+</div>
+<!-- end of the dec30 navigation bar for the documentation -->
+
+
+
+
+
+<p class="sitedesign">All Pages Copyright&copy;2000,2001,2002 <a href="http://www.dreamriver.com">Dreamriver.com</a>. All rights reserved.</p>
+
+
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+
+</body>
+</html>
+
+
