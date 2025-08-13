@@ -1,0 +1,67 @@
+    
+<A HREF="http://kuoi.asui.uidaho.edu/~collinf/scripts.html"><IMG SRC="images/bullet.gif"
+ WIDTH="20" HEIGHT="20" ALT="[*]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="http://kuoi.asui.uidaho.edu/~collinf/scripts.html"><B>Introduction &amp; Welcome</B></A><BR>
+
+<A HREF="index.html"><IMG SRC="images/collapse-arrow.gif"
+ WIDTH="20" HEIGHT="20" ALT="[-]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="index.html"><B>Random Redirection</B></A><BR>
+
+<IMG SRC="images/shim.gif" WIDTH="20" HEIGHT="20" 
+ ALT="" ALIGN="top"><A HREF="index.html"><IMG 
+ SRC="images/collapse-arrow.gif" WIDTH="20" HEIGHT="20"
+ ALT="&nbsp;[-]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="index.html">About Random Redirection</A><BR>
+
+<IMG SRC="images/shim.gif" WIDTH="40" HEIGHT="20"
+ ALT="" ALIGN="top"><A HREF="installation.html"><IMG 
+ SRC="images/bullet.gif" WIDTH="20" HEIGHT="20"
+ ALT="&nbsp;&nbsp;[*]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="installation.html">Installation</A><BR>
+
+<IMG SRC="images/shim.gif" WIDTH="40" HEIGHT="20"
+ ALT="" ALIGN="top"><A HREF="usage.html"><IMG 
+ SRC="images/bullet.gif" WIDTH="20" HEIGHT="20"
+ ALT="&nbsp;&nbsp;[*]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="usage.html">Usage</A><BR>
+
+<IMG SRC="images/shim.gif" WIDTH="20" HEIGHT="20" 
+ ALT="" ALIGN="top"><A HREF="http://kuoi.asui.uidaho.edu/~collinf/scripts.html/random/examples"><IMG 
+ SRC="images/collapse-arrow.gif" WIDTH="20" HEIGHT="20"
+ ALT="&nbsp;[-]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="http://kuoi.asui.uidaho.edu/~collinf/scripts.html/random/examples">Working Examples</A><BR>
+
+<IMG SRC="images/shim.gif" WIDTH="40" HEIGHT="20"
+ ALT="" ALIGN="top"><A HREF="http://kuoi.asui.uidaho.edu/~collinf/examples.html/random/image"><IMG 
+ SRC="images/bullet.gif" WIDTH="20" HEIGHT="20"
+ ALT="&nbsp;&nbsp;[*]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="http://kuoi.asui.uidaho.edu/~collinf/examples.html/random/image">A Random Image</A><BR>
+
+<IMG SRC="images/shim.gif" WIDTH="40" HEIGHT="20"
+ ALT="" ALIGN="top"><A HREF="http://kuoi.asui.uidaho.edu/~collinf/scripts.html/random/link"><IMG 
+ SRC="images/bullet.gif" WIDTH="20" HEIGHT="20"
+ ALT="&nbsp;&nbsp;[*]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="http://kuoi.asui.uidaho.edu/~collinf/scripts.html/random/link">A Random Link</A><BR>
+
+<IMG SRC="images/shim.gif" WIDTH="20" HEIGHT="20" 
+ ALT="" ALIGN="top"><A HREF="http://kuoi.asui.uidaho.edu/~collinf/scripts.html/random/downloads"><IMG 
+ SRC="images/collapse-arrow.gif" WIDTH="20" HEIGHT="20"
+ ALT="&nbsp;[-]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="http://kuoi.asui.uidaho.edu/~collinf/scripts.html/random/downloads">Download</A><BR>
+
+<IMG SRC="images/shim.gif" WIDTH="40" HEIGHT="20"
+ ALT="" ALIGN="top"><A HREF="http://kuoi.asui.uidaho.edu/~collinf/download.html/random.zip"><IMG 
+ SRC="images/bullet.gif" WIDTH="20" HEIGHT="20"
+ ALT="&nbsp;&nbsp;[*]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="http://kuoi.asui.uidaho.edu/~collinf/download.html/random.zip">random12.zip</A><BR>
+
+<IMG SRC="images/shim.gif" WIDTH="40" HEIGHT="20"
+ ALT="" ALIGN="top"><A HREF="http://kuoi.asui.uidaho.edu/~collinf/download.html/random.tar.gz"><IMG 
+ SRC="images/bullet.gif" WIDTH="20" HEIGHT="20"
+ ALT="&nbsp;&nbsp;[*]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="http://kuoi.asui.uidaho.edu/~collinf/download.html/random.tar.gz">random-1.2.tar.gz</A><BR>
+
+<A HREF="http://kuoi.asui.uidaho.edu/~collinf/about.html/collinf"><IMG SRC="images/expand-arrow.gif" 
+ WIDTH="20" HEIGHT="20" ALT="[+]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="http://kuoi.asui.uidaho.edu/~collinf/about.html/collinf"><B>About Collin Forbes</B></A><BR>
+
