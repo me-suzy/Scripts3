@@ -1,0 +1,45 @@
+Import How-To
+Copyright 2001-2002 Turnkey Solutions.
+
+In order to import products from a csv file or "comma delimited" file your file must meet the 
+following guidlines.
+
+One: Your data cannot contain any commas other then the ones seperating the values or the data 
+will be inputed incorectly. Instead of commas in your descriptions use the code "&comma;" 
+without the quotes of course. Upon import the &comma; will be converted into a comma. 
+
+Two: Some versions of MySQL do not like the use of quotation marks or single quotes. If you get
+any errors generated, this may be the cause of the problem. 
+
+Three: The general format for the files is as follows:
+(If you wish to leave a field empty you may skip it but you must leave the empty space where it 
+belongs.)
+
+    Field               Description                                                      Format
+-------------------------------------------------------------------------------------------------------------------
+ 1. Item ID             Leave this blank as it will assign automatically                 Numbers Only
+ 2. Category ID         You can get this value after adding the category                 Numbers Only
+ 3. Subcategory ID      You can get this value after adding the subcategory              Numbers Only
+ 4. Title               Product title                                                    Letters and Numbers
+ 5. Image Name          Image name, located in your products image directory             Filename
+ 6. Thumbnail Name      Thumbnail image name, located in your products image directory   Filename
+ 7. Product Overview    Overview of the product                                          Letters and Numbers
+ 8. Product Details     Details of the product                                           Letters and Numbers
+ 9. Quantity In Stock   Quantity of the products in stock                                Numbers Only
+10. Number Sold         Quantity of product sold                                         Numbers Only
+11. Price               Product price (Leave out dollar sign)                            Numbers and Decimal Point
+12. Weight              Product weight (Important for shipping cost)                     Numbers and Decimal Point
+13. Viewable?           Would you like the product viewable to customers?                "Yes" or "No"
+14. Item SKU#           Use this field to assign your own item number instead of above   Letters and Numbers
+-------------------------------------------------------------------------------------------------------------------
+
+Basically your files will look something like this. Each product on its own line.
+
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14
+
+**IMPORTANT**
+All items being imported must have a UNIQUE Item ID or the import will just return errors. For best results
+just leave it blank and it will be assigned automatically.
+
+**Suggestion**
+Excel files can be converted to csv files and visa versa.
