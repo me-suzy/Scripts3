@@ -1,0 +1,59 @@
+What is the UBB.classic Accelerator?
+
+The UBB.classic Accelerator is an optional component that can greatly enhance the speed at which your UBB.classic operates. The UBB.classic Accelerator is written in the PHP scripting language. It can optionally use a method known as zlib compression to compress its output, which can help reduce bandwidth use.
+
+In order to use the UBB.classic Accelerator, you must have version 4 or higher of the PHP scripting language installed. Versions prior to 4 will not operate properly.
+
+
+How does the UBB.classic Accelerator Work?
+
+The UBB.classic scripts can be very intense on your web server. In order to reduce the potential load, the scripts create cached copies of many commonly requested pages, such as topics, forums, and the forum summary. The UBB.classic Accelerator uses a shortcut to get to these cached copies faster than the UBB.classic scripts.
+
+For additional speed, the UBB.classic Accelerator may use zlib compression. The majority of web browsers can accept zlib compressed pages. Normally, zlib compressed pages are between 50% and 75% smaller than uncompressed versions. This can save your board quite a bit of bandwidth.
+
+The UBB.classic Accelerator can normally serve between 30% and 60% of all requests for UBB.classic pages.
+
+How do I enable the Accelerator?
+
+After completing the UBB.classic installation process, open your control panel and click Configuration Settings (under the Primary Settings dropdown menu). Scroll down to Enable UBB.classic Accelerator, and click the 'execute the test script' link.  This will automatically check to ensure that PHP is installed and operational.  If you get a negative result or warning, read the troubleshooting section below.  If you get a positive result, click  'Yes, the test script passed...'.  Click the update button.  Your Accelerator is now functional!
+
+Troubleshooting
+
+Safe Mode Warning - applies only to web hosting providers running in Safe Mode.
+See the ubbaccel_test.php script for a Safe Mode test.
+
+Note: This area applies mainly to users on Unix servers. Users on Windows NT or Windows 2000 based servers generally do not need to worry about Safe Mode, but should still read this warning completely.
+
+Your web hosting provider appears to be running in PHP's Safe Mode. You should be able to use the UBB.classic Accelerator under Safe Mode. Safe Mode is a series of checks performed by PHP to make sure scripts do not attempt to misbehave. Running under Safe Mode is a good practice.
+
+Unfortunately, web hosting providers using an improperly configured Safe Mode may cause the UBB.classic Accelerator to return an error message similar to:
+quote:Warning: SAFE MODE Restriction in effect. The script whose uid is 1234 is not allowed to access /path/to/a/file owned by uid 99 in /path/to/ultimatebb.php on line 246
+
+The 'uid' numbers, colored in red above, should be different in the real error message, as will the path to the files (/path/to/...) and the line number reported by the error.
+
+If you do not encounter this error while the UBB.classic Accelerator is running, your web hosting provider is properly configured for Safe Mode use.
+
+If you do encounter this error, or an error very similar to it, your web hosting provider is using a non-standard and potentially troublesome configuration. You will be unable to use the UBB.classic Accelerator until the configuration is changed.
+
+You may wish to read the Technical Details section below for the exact cause of this error, and what your web hosting provider must do in order to resolve the problem. You should ask your web hosting provider to read the Technical Details section as well.
+
+
+Technical Details
+
+You may wish to read PHP's Safe Mode Documentation.
+
+Safe Mode prevents PHP scripts from opening files that are not owned by the user that owns the PHP script. If this script is owned by the user named 'anna', and it tries to open a file owned by the user named 'nobody' while Safe Mode is enabled, PHP will kill the script with the error message presented above.
+
+UBB.classic runs as a CGI script. Under many web hosting providers, the web server program runs as the user named 'nobody'. Because the web server program itself runs as 'nobody', CGI scripts normally also run as 'nobody'. Because 'nobody' owns the CGI script, 'nobody' will also own all the files created by that script.
+
+CGI does not natively have a feature similar to PHP's Safe Mode. Instead, the web server program itself has to be altered to run CGI scripts properly. Two common "wrappers" that perform this function using the popular Apache web server are suexec and cgiwrap.
+
+If your web hosting provider is running CGI scripts without a wrapper (meaning they execute as the web server program's user), but they have PHP running in Safe Mode, the UBB.classic Accelerator will be unable to open the cache files written by UBB.classic. This problem may also occur if the situation is reversed, meaning that your host is using a CGI wrapper, but isn't using Safe Mode.
+
+Most web hosting providers are either running PHP in Safe Mode in addition to using a CGI wrapper, or are using neither Safe Mode nor a wrapper. Very few use one without using the other, as they complement each other very well.
+
+If the UBB.classic Accelerator is returning Safe Mode errors, please speak to your web hosting provider. They are the only ones capable of changing the server configuration.
+
+
+
+The UBB.classic Accelerator was originally written by Philipp Esselbach, and is included with UBB.classic with his permission. Thank you, Philipp!
