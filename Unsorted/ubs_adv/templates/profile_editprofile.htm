@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>$master_board_name - Edit Profile</title>
+$headinclude
+</head>
+
+<body bgcolor="{pagebgcolor}" text="{fontcolorfirst}"{hgpicture}{bgproperties} id="bg">
+       $header
+                <tr bgcolor="{tableb}" id="tableb">
+			<td><table cellpadding=0 cellspacing=0 border=0 width="100%">
+				<tr>
+					<td><font face="{font}" size=1><b><a href="main.php?styleid=$styleid$session">$master_board_name</a> » <a href="profile.php?boardid=$boardid&styleid=$styleid$session">Control Panel of $user_name</a> » Edit Profile</b></font></td>
+					<td align="right"><font face="{font}" size=1><b>$navibar_hello</b></font></td>
+				</tr>
+			</table></td>
+		</tr>
+		</table><br>$error
+		<table border=0 cellpadding=4 cellspacing=1 width="100%" bgcolor="{tablebordercolor}">
+                        <tr bgcolor="{tablea}" id="title">
+                                <TD COLSPAN=2><FORM ACTION="profile.php" METHOD="POST"><FONT face="{font}" size=2  color="{fontcolorsecond}"><B>Edit Profile - $user_info[username]</B></font></td>
+                        </tr>
+                        <tr bgcolor="{tablea}" id="title">
+                                <td colspan=2><FONT face="{font}" size=2  color="{fontcolorsecond}"><b>Required Information </b><FONT size=1>All fields are required.</font></font></td>
+                        </tr>
+                        <tr bgcolor="{tablec}" id="tablec">
+                                <td><FONT face="{font}" size=2><B>Email Address:</B></font></td>
+                                <td><INPUT class="input" TYPE="TEXT" NAME="email" VALUE="$user_info[useremail]" SIZE=30 MAXLENGTH=150></td>
+                        </tr>
+                        <tr bgcolor="{tablec}" id="tablec">
+                                <td><FONT face="{font}" size=2><B>Repeat Email Address:</B></font></td>
+                                <td><INPUT class="input" TYPE="TEXT" NAME="emailconfirm" VALUE="$user_info[useremail]" SIZE=30 MAXLENGTH=150></td>
+                        </tr>
+                        <tr bgcolor="{tablea}" id="title">
+                                <td colspan=2><FONT face="{font}" size=2  color="{fontcolorsecond}"><b>Optional Information </b><FONT size=1>All information will be viewable by other members.</font></font></td>
+                        </tr>
+                        <tr bgcolor="{tablec}" id="tablec">
+                                <td><B><FONT face="{font}" size=2>Homepage:</font></B></td>
+                                <td><INPUT class="input" TYPE="TEXT" NAME="homepage" VALUE="$user_info[userhp]" SIZE=30 MAXLENGTH=200></td>
+                        </tr>
+                        <tr bgcolor="{tableb}" id="tableb">
+                                <td><B><FONT face="{font}" size=2>ICQ Number:</font></B></td>
+                                <td><INPUT class="input" TYPE="TEXT" NAME="icq" VALUE="$usericq" SIZE=30 MAXLENGTH=30></td>
+                        </tr>
+                        <tr bgcolor="{tablec}" id="tablec">
+                                <td><B><FONT face="{font}" size=2>AIM Screenname:</font></B></td>
+                                <td><INPUT class="input" TYPE="TEXT" NAME="aim" VALUE="$aim" SIZE=30 MAXLENGTH=30></td>
+                        </tr>
+                        <tr bgcolor="{tableb}" id="tableb">
+                                <td><B><FONT face="{font}" size=2>YIM Screenname:</font></B></td>
+                                <td><INPUT class="input" TYPE="TEXT" NAME="yim" VALUE="$yim" SIZE=30 MAXLENGTH=30></td>
+                        </tr>
+                        <tr bgcolor="{tablec}" id="tablec">
+                                <td valign="top"><FONT face="{font}" size=2><B>Usertext:</B><br><FONT size=1>This short, informative text is displayed in the profile.</font></font></td>
+                                <td><TEXTAREA class="input" NAME="usertext" ROWS=4 COLS=40 wrap="soft">$usertext</TEXTAREA></td>
+                        </tr>
+                        <tr bgcolor="{tableb}" id="tableb">
+                                <td><FONT face="{font}" size=2><B>Sex:</B></font></td>
+                                <td><SELECT NAME="gender">
+                                	<option value="0">No declaration</option>
+                                	<OPTION value="1"$gender_sel[1]>Male</option>
+                                	<OPTION value="2"$gender_sel[2]>Female</option>
+                                 </SELECT></td>
+                        </tr>                        
+                        <TR bgcolor="{tablec}" id="tablec">
+                                <td valign="top"><FONT face="{font}" size=2><b>Birthday:</b><br><FONT size=1>Select here your Birthday. Everybody can see this in your Profile!</font></font></TD>
+                                <TD valign=top>
+                                <table border=0 cellspacing=0 cellpadding=2>
+                                        <tr>
+                                                <td align="center"><FONT face="{font}" size=2>Month</font></td>
+                                                <td align="center"><FONT face="{font}" size=2>Day</font></td>
+                                                <td align="center"><FONT face="{font}" size=2>Year</font></td>
+                                        </tr>
+                                        <tr>
+                                                <td>
+                                                        <SELECT NAME="month">
+                                                        <option value=""$month_sel[0]></option>
+                                                        <OPTION value="Januar"$month_sel[1]>January</option>
+                                                        <OPTION value="Februar"$month_sel[2]>February</option>
+                                                        <OPTION value="M&auml;rz"$month_sel[3]>March</option>
+                                                        <OPTION value="April"$month_sel[4]>April</option>
+                                                        <OPTION value="Mai"$month_sel[5]>May</option>
+                                                        <OPTION value="Juni"$month_sel[6]>June</option>
+                                                        <OPTION value="Juli"$month_sel[7]>July</option>
+                                                        <OPTION value="August"$month_sel[8]>August</option>
+                                                        <OPTION value="September"$month_sel[9]>September</option>
+                                                        <OPTION value="Oktober"$month_sel[10]>October</option>
+                                                        <OPTION value="November"$month_sel[11]>November</option>
+                                                        <OPTION value="Dezember"$month_sel[12]>December</option>
+                                                        </SELECT>
+                                                </td>
+                                                <td>
+                                                        <SELECT NAME="day">
+                                                        $day_select
+                                                        </SELECT>
+                                                </td>
+                                                <td><INPUT class="input" TYPE="text" name="year" value="$age_y" size=4 maxlength=4></td>
+                                        </tr>
+                                </table>
+                                </td>
+                        </tr>
+                        <tr bgcolor="{tableb}" id="tableb">
+                                <td><B><FONT face="{font}" size=2>Location:</font></B></td>
+                                <td><input class="input" type="text" NAME="location" value="$location" SIZE=25 MAXLENGTH=250></td>
+                        </tr>
+                        <tr bgcolor="{tablec}" id="tablec">
+                                <td><FONT face="{font}" size=2><B>Interests:</B><br><FONT size=1>Your Hobbies, etc.</font></font></td>
+                                <td><input class="input" type="text" NAME="interests" value="$interests" SIZE=25 MAXLENGTH=250></td>
+                        </tr>
+                        <tr bgcolor="{tableb}" id="tableb">
+                                <td><B><FONT face="{font}" size=2>Occupation:</font></B></td>
+                                <td><input class="input" type="text" NAME="work" value="$work" SIZE=25 MAXLENGTH=250></td>
+                        </tr>
+                </table>
+        </div><br>
+        <div align="center">
+                <input type="hidden" name="mode" value="$mode">
+                <input type="hidden" name="send" value="send">
+                <INPUT TYPE="HIDDEN" NAME="boardid" VALUE="$boardid">
+                $session_post
+                <INPUT class="input" TYPE="SUBMIT" VALUE="Save">
+                <INPUT class="input" TYPE="RESET" VALUE="Delete">
+        </div>
+        </form>
+        $footer
+</body>
+</html>
