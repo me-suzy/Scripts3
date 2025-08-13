@@ -1,0 +1,31 @@
+<?
+$ubbt_lang['BOARD_RULES'] = "Reglas del Foro";
+$ubbt_lang['I_AGREE'] = "Acepto";
+$ubbt_lang['DOB_EXIST'] = "Dijiste que tu edad es ";
+$ubbt_lang['NEW_USER2']  = 	"Introduce la siguiente informaci&oacute;n para registrar tu nombre de miembro.  La contrase&ntilde;a (contrase&ntilde;a) inicial es generada al azar (a no ser que se especifique otra cosa), por lo que es muy importante que pongas bien la direcci&oacute;n de correo para que puedas recibir tu contrase&ntilde;a";
+$ubbt_lang['USER_IN']  = 	"Nombre de Miembro (Entre 3 y 16 car&aacute;cteres)";
+$ubbt_lang['OPT_PASS']  = 	"Opcional:  Inv&eacute;ntate una contrase&ntilde;a entre 4 y 20 letras que no contengan simbolos.";
+$ubbt_lang['VER_PASS']  = 	"Verificar la contrase&ntilde;a";
+$ubbt_lang['SIMP_EMAIL']  = 	"Direcci&oacute;n de Email";
+$ubbt_lang['DOB'] = "Rogamos nos digas tu fecha de nacimiento";
+$ubbt_lang['JAN'] = "Enero";
+$ubbt_lang['FEB'] = "Febrero";
+$ubbt_lang['MAR'] = "Marzo";
+$ubbt_lang['APR'] = "Abril";
+$ubbt_lang['MAY'] = "Mayo";
+$ubbt_lang['JUN'] = "Junio";
+$ubbt_lang['JUL'] = "Julio";
+$ubbt_lang['AUG'] = "Augosto";
+$ubbt_lang['SEP'] = "Septiembre";
+$ubbt_lang['OCT'] = "Octubre";
+$ubbt_lang['NOV'] = "Novivembre";
+$ubbt_lang['DEC'] = "Dicicembre";
+$ubbt_lang['SUB_DATE'] = "Enviar Fecha de Nacimiento";
+$ubbt_lang['PRIV_INFO'] = "Informaci&oacute;n Privada";
+$ubbt_lang['PRIV_INFO_DETAIL'] = "La Comisión Federal de Comercio de EE.UU., en su Ley de 1998,  Protección de Privacidad Online para el Niño (COPPA), tiene la intención de proteger la privacidad de los niños en Internet.  Desde el 21 de Abril del 2000, muchas páginas web se ven obligadas a conseguir un permiso de los padres antes de coleccionar, usar, o ofrecer información de los niños  menores de 13 años.<p><a href=\"http://www.ftc.gov/opa/1999/9910/childfinal.htm\">Ley COPPA</a> | <a href=\"http://www.ftc.gov/os/1999/9910/64fr59888.pdf\">Texto Integro de la nota Federal de Registro [PDF 270K]</a>";
+$ubbt_lang['PERM_FORM'] = "Formulario de Permiso";
+$ubbt_lang['PERM_FORM_DETAIL'] = "Un padre o tutor debe enviar por correo o fax un permiso firmado autorizando el acceso para que un menor de 13 años pueda completar su registro.<p><a href=\"{$config['phpurl']}/coppaform.php\">Formulario de Autorización</a>";
+$ubbt_lang['CONT_INFO'] = "Información de Contacto";
+$ubbt_lang['CONT_INFO_DETAIL'] = "¿Preguntas? Email ";
+$ubbt_lang['AGE_VER'] = "Registro - Edad";
+?>
