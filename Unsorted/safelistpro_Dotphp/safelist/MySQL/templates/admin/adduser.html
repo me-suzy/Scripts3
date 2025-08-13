@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>SafeList Script</title>
+</head>
+<body bgcolor=white>
+<br><br>
+<h2>Add Users Manually</h2>
+<br><br>
+<form action="%scripturl%" method=POST>
+<input type=hidden name="action" value="add_process">
+<input type=hidden name="p" value="%pass%">
+<table cellpadding=2 cellspacing=2>
+<tr>
+ <td>Real Name</td>
+ <td><input type=text name="iname"></td>
+</tr>
+<tr>
+ <td>Email Address</td>
+ <td><input type=text name="iemail"></td>
+</tr>
+<tr>
+ <td>Username</td>
+ <td><input type=text name="ilogin"></td>
+</tr>
+<tr>
+ <td>Password</td>
+ <td><input type=text name="ipass"></td>
+</tr>
+<tr>
+ <td>Status</td>
+ <td><select name=status><option value="1">Active</option><option value="0">Inactive</option></select></td>
+</tr>
+</table>
+<br><br>
+<input type=submit value="Add User">
+</form>
+<br><br>
+</body>
+</html>
