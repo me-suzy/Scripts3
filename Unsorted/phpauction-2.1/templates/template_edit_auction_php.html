@@ -1,0 +1,333 @@
+<?
+/*
+
+   Copyright (c), 1999, 2000 - phpauction.org
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation (version 2 or later).
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+*/
+?>
+
+<SCRIPT Language=Javascript>
+
+
+
+function SubmitSellForm(){
+
+        document.sell.submit();
+
+}
+
+
+
+
+
+function ResetSellForm(){
+
+        document.sell.reset();
+
+}
+
+
+
+function SubmitPrevForm(){
+
+        document.preview.submit();
+
+}
+
+
+
+
+
+function ResetPrevForm(){
+
+        document.preview.reset();
+
+}
+
+
+
+</SCRIPT>
+
+
+<TABLE WIDTH="765" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<TD>
+<CENTER>
+<P>
+<?=$std_font?>
+<A HREF="yourauctions.php"><?=$MSG_637?></A>
+					</P>
+				<P><B> 
+					<?
+   		print $tlt_font.$MSG_632;
+   ?>
+					</B> <BR>
+				</P>
+				<FORM NAME=sell ACTION="<?=basename($PHP_SELF)?>" METHOD="post" ENCTYPE="multipart/form-data">
+					<TABLE WIDTH="100%" BORDER="0" CELLPADDING="5">
+						<TR> 
+							<TD> </TD>
+							<TD WIDTH="486"> 
+								<? print $err_font; ?>
+								<B> 
+								<? print $TPL_error_value; ?>
+								</B></TD>
+						</TR>
+						<!--------------- item title --------------------->
+						<TR> 
+							<TD WIDTH="260" VALIGN="top" ALIGN="right"> <B> 
+								<?
+        	print $std_font.$MSG_017;
+        ?>
+								</B> </TD>
+							<TD WIDTH="486"> 
+								<INPUT TYPE=text NAME=title SIZE=40 VALUE="<?= stripslashes(htmlentities($AUCTION[title])) ?>">
+							</TD>
+						</TR>
+						<!------------------ item description ---------------->
+						<TR> 
+							<TD WIDTH="204" VALIGN="top" ALIGN="right"> 
+								<? print $std_font; ?>
+								<B> 
+								<?
+   		print $std_font.$MSG_018;
+   ?>
+								</B> </TD>
+							<TD WIDTH="486"> 
+								<TEXTAREA ROWS=10 COLS=38 NAME=description><?= stripslashes($AUCTION[description]) ?></TEXTAREA>
+							</TD>
+						</TR>
+						<?
+							if(!empty($AUCTION[pict_url]))
+							{
+						?>
+						<TR>
+							<TD WIDTH="204" VALIGN="top" ALIGN="right">&nbsp;</TD>
+							<TD WIDTH="486"> 
+								<? print $std_font; ?>
+								<? print $std_font.$MSG_636;?>
+							</TD>
+						</TR>
+						<TR> 
+							<TD WIDTH="204" VALIGN="top" ALIGN="right">&nbsp;</TD>
+							<TD WIDTH="486"> <IMG SRC="uploaded/<?=$AUCTION[pict_url]?>"> 
+							</TD>
+						</TR>
+						<TR> 
+							<TD WIDTH="204" VALIGN="top" ALIGN="right">&nbsp;</TD>
+							<TD WIDTH="486"> 
+								<? print $std_font; ?>
+								<?
+   		print $std_font.$MSG_635;
+   ?>
+							</TD>
+						</TR>
+						<?
+							}
+						?>
+						<!------------------------- URL of photo ------------------>
+						<TR> 
+							<TD WIDTH="204" VALIGN="top" ALIGN="right"> 
+								<? print $std_font; ?>
+								<B> 
+								<?
+   		print $std_font.$MSG_019;
+   ?>
+								</B> </TD>
+							<TD WIDTH="486"> 
+								<INPUT TYPE=RADIO NAME="imgtype" VALUE="0" <? print $TPL_imgtype1_SELECTED; ?>>
+								<INPUT TYPE=text SIZE=40 NAME=pict_url VALUE="<? print $pict_urlH; ?>">
+							</TD>
+						</TR>
+						<!------------------------- upload photo ------------------------->
+						<TR> 
+							<TD WIDTH="204" VALIGN="top" ALIGN="right"> 
+								<? print $std_font; ?>
+								<B> 
+								<?
+   		print $std_font.$MSG_256;
+   ?>
+								</B> </TD>
+							<TD WIDTH="486"> 
+								<INPUT TYPE=RADIO NAME="imgtype" VALUE="1" <? print $TPL_imgtype2_SELECTED; ?>>
+								<INPUT TYPE=file SIZE=20 NAME=userfile>
+								<INPUT TYPE=HIDDEN NAME="MAX_FILE_SIZE" VALUE="<? print $MAX_UPLOAD_SIZE; ?>">
+							</TD>
+						</TR>
+						<!------------------------- auction type -------------------------->
+						<TR> 
+							<TD WIDTH="204" VALIGN="middle" ALIGN="right"> <B> 
+								<?
+   		print $std_font.$MSG_257;
+   ?>
+								</B> </TD>
+							<TD WIDTH="486"> 
+								<? print $TPL_auction_type; ?>
+							</TD>
+						</TR>
+						<!------------------------- quantity of items ------------------------>
+						<TR> 
+							<TD WIDTH="204" VALIGN="middle" ALIGN="right"> <B> 
+								<?
+
+   		print $std_font.$MSG_258;
+   ?>
+								</B> </TD>
+							<TD WIDTH="486"> 
+								<INPUT TYPE=TEXT NAME="iquantity" SIZE="5" VALUE="<? print $AUCTION[quantity]; ?>">
+							</TD>
+						</TR>
+						<!------------------------------ starting bid ------------------------->
+						<TR> 
+							<TD WIDTH="204" VALIGN="top" ALIGN="right"> <B> 
+								<?
+
+   		print $std_font.$MSG_020;
+   ?>
+								</B> </TD>
+							<TD WIDTH="486"> 
+								<INPUT TYPE=text SIZE = 10 NAME=minimum_bid VALUE="<? print print_money_nosymbol($AUCTION[minimum_bid]); ?>">
+								<? print $std_font.$SETTINGS[currency]; ?>
+							</TD>
+						</TR>
+						<!--------------------------------- reserved price ------------------------->
+						<TR> 
+							<TD WIDTH="204"  VALIGN="top" ALIGN="right"> <B> 
+								<?
+   		print $std_font.$MSG_021;
+   ?>
+								</B> </TD>
+							<TD WIDTH="486"> 
+								<INPUT TYPE=radio NAME="with_reserve" VALUE="no" <? print $TPL_without_reserve_selected; ?>>
+								<? print $std_font.$MSG_029; ?>
+								<INPUT TYPE=radio NAME="with_reserve" VALUE="yes"
+   <? print $TPL_with_reserve_selected; ?>>
+								<? print $std_font.$MSG_030; ?>
+								<INPUT TYPE=text NAME="reserve_price" SIZE=10 VALUE="<? print $reserve_price; ?>">
+								<? print $std_font.$SETTINGS[currency]; ?>
+							</TD>
+						</TR>
+						<TR> 
+							<TD WIDTH="204"  VALIGN="top" ALIGN="right"> <B> 
+								<?
+   		print $std_font.$MSG_613;
+   ?>
+								</B> </TD>
+							<TD WIDTH="486"> 
+								<INPUT TYPE=radio NAME="increments" VALUE="1" <? print $TPL_without_reserve_selected; ?>>
+								<? print $std_font.$MSG_614; ?>
+								<BR>
+								<INPUT TYPE=radio NAME="increments" VALUE="2"
+   <? print $TPL_with_reserve_selected; ?>>
+								<? print $std_font.$MSG_615; ?>
+								<INPUT TYPE=text NAME="customincrement" SIZE=10 VALUE="<? print $customincrement; ?>">
+								<? print $std_font.$SETTINGS[currency]; ?>
+							</TD>
+						</TR>
+						<!------------------------------------- duration ---------------------------->
+						<TR> 
+							<TD WIDTH="204"  VALIGN="top" ALIGN="right"> <B> 
+								<?
+   		print $std_font.$MSG_022;
+   ?>
+								</B> </TD>
+							<TD WIDTH="486"> 
+								<? print $TPL_durations_list ?>
+							</TD>
+						</TR>
+						<!------------------------------------ country -------------------------------->
+						<TR> 
+							<TD WIDTH="204"  VALIGN="top" ALIGN="right"> <B> 
+								<?
+   		print $std_font.$MSG_023;
+   ?>
+								</B> </TD>
+							<TD WIDTH="486"> 
+								<? print $TPL_countries_list; ?>
+							</TD>
+						</TR>
+						<!------------------------------------ zip code -------------------------------->
+						<TR> 
+							<TD WIDTH="204" VALIGN="top" ALIGN="right"> <B> 
+								<?
+   		print $std_font.$MSG_024;
+   ?>
+								</B> </TD>
+							<TD WIDTH="486"> 
+								<INPUT TYPE=text SIZE=8 NAME=location_zip VALUE="<? print $AUCTION[location_zip]; ?>">
+							</TD>
+						</TR>
+						<!--------------------------------- shipping --------------------------------------->
+						<TR> 
+							<TD WIDTH="204" VALIGN="top" ALIGN="right"> <B> 
+								<?
+   		print $std_font.$MSG_025;
+   ?>
+								</B> </TD>
+							<TD WIDTH="486"> 
+								<INPUT TYPE=radio NAME=shipping VALUE="1" <? print $TPL_shipping1_value; ?>>
+								<? print $std_font.$MSG_031; ?>
+								<BR>
+								<INPUT TYPE=radio NAME=shipping VALUE="2" <? print $TPL_shipping2_value; ?>>
+								<? print $std_font.$MSG_032; ?>
+								<BR>
+								<INPUT TYPE=checkbox NAME=international VALUE="1" <? print $TPL_international_value; ?>>
+								<? print $std_font.$MSG_033; ?>
+								<BR>
+							</TD>
+						</TR>
+						<!--------------------------------- payment methods ---------------------------------------->
+						<TR> 
+							<TD WIDTH="204" VALIGN="top" ALIGN="right"> <B> 
+								<?
+   		print $std_font.$MSG_026;
+   ?>
+								</B> </TD>
+							<TD WIDTH="486"> 
+								<? print $TPL_payments_list; ?>
+							</TD>
+						</TR>
+						<!------------------------------------ category ----------------------------------------------->
+						<TR> 
+							<TD WIDTH="204" VALIGN="top" ALIGN="right"> <B> 
+								<?
+   		print $std_font.$MSG_027;
+   ?>
+								</B> </TD>
+							<TD WIDTH="486"> 
+								<? print $TPL_categories_list ?>
+							</TD>
+						</TR>
+						<!------------------------------------ suggest a new category ---------------------------------------------->
+						<!--------------------------------------- submit/reset --------------------------------------->
+						<TR> 
+							<TD WIDTH="204"> 
+								<INPUT TYPE="hidden" NAME="action" VALUE="relist">
+								<INPUT TYPE="hidden" NAME="auctionstarts" VALUE="<?=$AUCTION[starts]?>">
+								<INPUT TYPE="hidden" NAME="id" VALUE="<?=$id?>">
+							</TD>
+							<TD WIDTH="486"> 
+								<INPUT TYPE=submit NAME="">
+								<INPUT TYPE=reset NAME="">
+							</TD>
+						</TR>
+					</TABLE>
+
+</FORM>
+</CENTER></TD>
+</TR>
+</TABLE>
+
