@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>$myboardname - Registration</title></head>
+<body background="images/bg.jpg" id="bg">
+$header
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="images/bg2.jpg">
+  <tr>
+    <td> 
+	<form action="register.php?action=register" method="POST">
+      <div align="center"><BR>$error 
+          <table cellpadding=1 cellspacing=2 border=0 width="90%" bgcolor="#000000">
+            <tr> 
+              <td colspan=2 background="images/cellpic.gif" height="38"> <font size=2><b><font color="#FFFFFF">Registration: 
+                Required Information</font></b><font size="1" color="#FFFFFF"> 
+                All fields are required.</font></font> </td>
+            </tr>
+            <tr> 
+              <td width="50%" background="images/cat1.jpg"><font face="{font}" size=2><b>Username:</b></font></td>
+              <td width="50%" background="images/cat1.jpg"> 
+                <input class="input" type="TEXT" name="name" value="$name" size=30 maxlength=30>
+              </td>
+            </tr>
+            <tr> 
+              <td background="images/cat1.jpg"><font size=2><b>Email Address:</b></font></td>
+              <td background="images/cat1.jpg"> 
+                <input class="input" type="TEXT" name="email" value="$email" size=30 maxlength=150>
+              </td>
+            </tr>
+            <tr> 
+              <td background="images/cat1.jpg"><font size=2><b>Repeat Email Address:</b></font></td>
+              <td background="images/cat1.jpg"> 
+                <input class="input" type="TEXT" name="emailconfirm" value="$emailconfirm" size=30 maxlength=150>
+              </td>
+            </tr>
+            <tr> 
+              <td background="images/cat1.jpg"><b><font size=2>Password:</font></b></td>
+              <td background="images/cat1.jpg"> 
+                <input class="input" type="PASSWORD" name="password" size=30 maxlength=25>
+              </td>
+            </tr>
+            <tr> 
+              <td background="images/cat1.jpg"><b><font size=2>Repeat Password:</font></b></td>
+              <td background="images/cat1.jpg"> 
+                <input class="input" type="PASSWORD" name="passwordconfirm" size=30 maxlength=25>
+              </td>
+            </tr>
+          </table>
+        <br>
+      </div>
+      <div align="center"> 
+        $session_post 
+        <input class="input" type="SUBMIT" name="Submit" value="Send">
+        <input class="input" type="RESET" name="Reset" value="Reset">
+        <input type="hidden" name="action" value="$action">
+        <input type="hidden" name="send" value="send">
+      </div>
+      $footer
+	  </form></td>
+  </tr>
+</table>
+</body>
+</html>	
