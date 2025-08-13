@@ -1,0 +1,29 @@
+Changes to TurboTrafficTrader Nitro v1.0
+ 
+1. new trades are highlighted in your TTTAdmin.
+2. ability to view unique hits in for each hour, last 23 hours and totals.  (just hover over top of the hits statistics).
+3. ability to limit the amount of clicks counted for each surfer.  once the surfer reaches the maximum clicks, the script will no longer allow their clicks to affect the trades productivity/return.  (just hover over top of the clicks and prod statistics to see the 'INTERNAL' statistics).
+4. Q is now calculated using the internal statistics.  
+7. nitro hits (force right now) - assign X number of hits to be delivered to a trade.  (hits will be sent as fast as possible until they run out).
+6. ability to mass edit trades.
+7. ability to mass reset trades.
+8. ability to mass delete trades.
+9. ability to mass nitro trades.
+10. ability to mass turbo/unturbo trades.
+11. fixed the last 23 hour display bug (no longer counts hour 21 twice).
+12. ability to set a time limit for turbo for each trade.  (turbo will automatically shut off for each trade depending on the amount of hours you wish it to run).
+13. ability to view past hours statistics.
+14. ability to view outgoing ip statistics. 
+15. add an events log (all automated events are logged - ie. auto delete, signup, etc.)
+16. ability to turn ip log on/off.
+17. ability to reset ip log every hour or every 24 hours.
+18. ability to redirect nocookie clicks to your defined URL or send them to galleries.
+19. add a TTT overview mode - you can now add all of your TTT sites to the overview page and view your hourly/daily statistics for each site).
+20. ability to display the amount of hits you send to a trade on your toplist.
+21. changed auto delete to not delete trades still marked as new.
+22. ability to set X amount of FIRST clicks to galleries.  (ie. /ttt-out.php?f=5&url=http://www.yoursponsor.com - would mean first 5 clicks go to http://www.yoursponsor.com).
+23. ability to set trade ratio, trade min_prod and trade max_prod when adding a trade.
+24. ability to create "groups" for internal skimming.  (ie. /ttt-out.php?g=tgp&url=http://www.yoursponsor.com - would mean that clicks go to http://www.yoursponsor.com X% of the time depending on what you set 'tgp' group skim to.)
+25. added in tgp builder.  (build a multi-page TGP with ease).
+26. added in sponsor tracker.  (track the amount of clickthroughs to sponsors).
+27. added in GS3 statistics.  (view your GS3 statistics directly from your TTTAdmin).
