@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>$master_board_name - Favorites</title>
+$headinclude
+
+<!-- 'Who Posted' Popup Window Hack -->
+<script language="Javascript">
+function who(threadid) {
+	window.open("whoposted.php?threadid="+threadid+"&boardid=$boardid&styleid=$styleid$session", "moo", "toolbar=no,scrollbars=yes,resizable=yes,width=250,height=300");
+}
+</script>
+<!-- 'Who Posted' Popup Window Hack -->
+
+</head>
+
+<body bgcolor="{pagebgcolor}" text="{fontcolorfirst}"{hgpicture}{bgproperties} id="bg">
+        $header
+                <tr bgcolor="{tableb}" id="tableb">
+			<td><table cellpadding=0 cellspacing=0 border=0 width="100%">
+				<tr>
+					<td><font face="{font}" size=1><b><a href="main.php$session2">$master_board_name</a> » <a href="profile.php?boardid=$boardid$session">Control Panel of $user_name</a> » Favorites</b></font></td>
+					<td align="right"><font face="{font}" size=1><b>$navibar_hello</b></font></td>
+				</tr>
+			</table></td>
+		</tr>
+		</table><br>
+                $subscripe_boards
+                <br>
+                $subscripe_threads
+        </div>
+	$footer
+</body>
+</html>	
+
+
