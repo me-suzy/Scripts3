@@ -1,0 +1,110 @@
+/***************************************************************************
+ *                               styles.css
+ *                            -------------------
+ *   begin                : Tuesday', Aug 15', 2002
+ *   copyright            : ('C) 2002 Bugada Andrea
+ *   email                : phpTM@free.fr
+ *
+ *   $Id: styles.css,v 1.00 2002/08/15 11:53:50 psotfx Exp $
+ *
+ *
+ ***************************************************************************/
+
+/***************************************************************************
+ *
+ *   This program is free software; you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation; either version 2 of the License', or
+ *   ('at your option) any later version.
+ *
+ ***************************************************************************/
+
+body
+{
+	background-color: #E5E5E5;
+	scrollbar-face-color: #DEE3E7;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-shadow-color: #DEE3E7;
+	scrollbar-3dlight-color: #D1D7DC;
+	scrollbar-arrow-color:  #006699;
+	scrollbar-track-color: #EFEFEF;
+	scrollbar-darkshadow-color: #98AAB1;
+}
+
+A:link
+{
+	color: #3636a3;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px; text-decoration: none;
+}
+
+A:visited
+{
+	color: #3636a3;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+A:hover
+{
+	color: #3636a3;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-decoration: underline;
+}
+
+input
+{
+	text-indent : 2px;
+}
+
+.vform
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	color: #333366;
+	background-color: #FFFFFF;
+	border-bottom: #6666CC 1px solid;
+	border-left: #6666CC 1px solid;
+	border-right: #6666CC 1px solid;
+	border-top: #6666CC 1px solid;
+}
+
+
+.row1
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;;
+	font-size: 12px;
+	font-style: normal;
+	color: #000000;
+	background-color: #F5F5F5;
+}
+
+.row2
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;;
+	font-size: 12px;
+	font-style: normal;
+	color: #000000;
+	background-color: #F5F5F5;
+}
+
+.gensmall
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;;
+	font-size: 10px;
+	font-style: normal;
+	color: #000000;
+	background-color: #F5F5F5;
+}
+
+.thHead
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;;
+	font-size: 12px;
+	font-style: bold;
+	color: #FFFFFF;
+	background-color: #4682B4;
+}
