@@ -1,0 +1,40 @@
+body {background: #C0C0C0;}
+
+#topdivision {position:absolute; top: 10; left: 10;}
+#leftdivision {position:absolute; top: 50; left: 10;}
+#maindivision {position:absolute; top: 50; left: 140;}
+
+.main {font-family:verdana,helvetica; font-size:11px;}
+.main_bold {font-family:verdana,helvetica; font-size:11px; font-weight: bold;}
+.summary_message {font-family:verdana,helvetica; color: #FF0000; font-size:11px; font-weight: bold;}
+.maincolor {background: #808080;}
+.formfield {background: #E6E6E6; font-family:verdana,helvetica; font-size:11px; font-weight: bold; border: 1 solid;}
+
+a.link:link {font-family:verdana,helvetica; font-size:11px; color: #808080; text-decoration: none;}
+a.link:active {font-family:verdana,helvetica; font-size:11px; color: #808080; text-decoration: none;}
+a.link:visited {font-family:verdana,helvetica; font-size:11px; color: #808080; text-decoration: none;}
+a.link:hover {font-family:verdana,helvetica; font-size:11px; color: #E6E6E6; text-decoration: none;}
+
+a.menulink:link {font-family:verdana,helvetica; font-size:11px; color: #E6E6E6; text-decoration: none;}
+a.menulink:active {font-family:verdana,helvetica; font-size:11px; color: #E6E6E6; text-decoration: none;}
+a.menulink:visited {font-family:verdana,helvetica; font-size:11px; color: #E6E6E6; text-decoration: none;}
+a.menulink:hover {font-family:verdana,helvetica; font-size:11px; color: #000000; text-decoration: none;}
+
+a.copyrightlink:link {font-family:verdana,helvetica; font-size:11px; color: #E6E6E6; text-decoration: none;}
+a.copyrightlink:active {font-family:verdana,helvetica; font-size:11px; color: #E6E6E6; text-decoration: none;}
+a.copyrightlink:visited {font-family:verdana,helvetica; font-size:11px; color: #E6E6E6; text-decoration: none;}
+a.copyrightlink:hover {font-family:verdana,helvetica; font-size:11px; color: #000000; text-decoration: none;}
+
+BODY {SCROLLBAR-FACE-COLOR: #808080; SCROLLBAR-HIGHLIGHT-COLOR: #808080; SCROLLBAR-SHADOW-COLOR: #808080;
+SCROLLBAR-3DLIGHT-COLOR: #808080; SCROLLBAR-ARROW-COLOR:  #C0C0C0; SCROLLBAR-TRACK-COLOR: #C0C0C0;
+SCROLLBAR-DARKSHADOW-COLOR: #808080;}
+
+
+
+
+
+
+
+
+
+
