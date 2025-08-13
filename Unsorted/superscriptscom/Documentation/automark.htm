@@ -1,0 +1,169 @@
+<html>
+
+<head>
+<title>Automark Automatic Bookmarking CGI Script</title>
+
+<meta name="Microsoft Border" content="t, default"></head>
+
+<body><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+
+<table border="0" width="33%" cellpadding="0">
+  <tr>
+    <td width="50%"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/" ONCLICK="parent.f=0"><img src="../pix/banners/miniprizm.gif" alt="cgi scripts" border="0" WIDTH="305" HEIGHT="59"></a></font></td>
+    <td width="50%" bgcolor="#FFFFFF"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/ads/rotate.cgi?url=&amp;user=" target="new" ONCLICK="parent.f=0"><img src="http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user=" border="0" width="468" height="60"></a></font></td>
+  </tr>
+</table>
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="16%"><p align="center"><a href="../dsstoday/index.html"><font color="#000000" face="Arial"><img src="../pix/main/news.jpg" alt="CGI NEWS" align="left" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="16%"><p align="center"><a href="../scripts/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/scripts.jpg" alt="CGI Scripts" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../mastergate/index.html"><font color="#000000" face="Arial"><img src="../pix/main/access.jpg" alt="Access The CGI Archive" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../contact.html"><font color="#000000" face="Arial"><img src="../pix/main/contact.jpg" alt="Contact Superscripts" WIDTH="104" HEIGHT="68"></font></a></td>
+    <td width="17%"><p align="center"><a href="../support.html"><font color="#000000" face="Arial"><img src="../pix/main/dox.jpg" alt="CGI Documentation" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../download/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/download.jpg" alt="Download CGI Scripts Here" align="right" WIDTH="105" HEIGHT="65"></font></a></td>
+  </tr>
+  <tr>
+    <td width="16%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/dsstoday/index.html" style="color: rgb(255,255,255)"><strong>News</strong></a></font></td>
+    <td width="16%" bgcolor="#000000"><p align="center"><a href="/scripts/" style="color: rgb(255,255,255)"><font face="Arial" color="#FFFFFF"><strong>CGI Scripts</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><a style="color: rgb(255,255,255)" href="../mastergate/index.html"><font face="Arial" color="#FFFFFF"><strong>Become A Member</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../contact.html"><strong>Contact
+    Us</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../support.html"><strong>Support</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/download/index.shtml" style="color: rgb(255,255,255)"><strong>Download
+    Area</strong></a></font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+
+<table border="0" width="75%" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <p><font face="Arial"><big><big><font color="#FF0000"><strong>Installation Documentation<br>
+      </strong></font><font color="#000000">Automark:&nbsp; V1.0</font></big></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Copyright 2001 Psybercore, Inc. - All Rights
+        Reserved. </small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Selling redistributing or modifying any or
+        all of the code for this program without prior written consent is expressly forbidden. You
+        must obtain written permission before redistributing this software over the Internet or in
+        any other medium. In all cases copyright and header information must remain intact.</small></font></p>
+      </blockquote>
+      <hr align="left">
+      <p><font face="Arial" color="#000000"><strong>System Requirements</strong></font> <ul>
+        <li><font face="Arial" color="#000000"><small>Perl 5</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Preliminaries</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Determine the path to PERL 5 on your web
+          server host.&nbsp; Note that some web hosting companies run both PERL 4 and PERL 5.&nbsp;
+          Make ABSOLUTELY sure you are not setting this up under PERL 4.&nbsp; Ask your
+          administrator if you are not sure. </small></font></li>
+      </ul>
+      <ul>
+        <li><a href="../../tutorial/index.html"><font face="Arial" color="#000000"><small>If you
+          need to review or learn the basics of CGI and Perl visit the tutorial</small></font></a></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small><a href="http://www.superscripts.com/download/">Download</a> the tarfile for this program and
+          save it to your desktop.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Unpack the tar archive on your desktop using a
+          program that unpacks UNIX TAR ARCHIVES. If you don't have such a program then download
+          WINZIP FREE from <a HREF="http://www.shareware.com/">SHAREWARE.COM</a>.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>After you have unpacked the TAR archive you
+          will have a collection of folders and files on your desktop.&nbsp; Now you have to do some
+          basic editing of each of these files (or at least some of them).&nbsp; Use a text editor
+          such as wordpad, notepad, BBEdit, simpletext, or teachtext to edit the files.&nbsp; These
+          are NOT WORD PROCESSOR DOCUMENTS they are just simple TEXT files so don't save them as
+          word processor documents or save them with extentions such as .txt or they will NOT WORK.
+          &nbsp; Note that there may be a some files inside of folders which are &quot;blank&quot;.
+          &nbsp; This is normal.</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Preparing the CGI scripts</small></font></h2>
+      <blockquote>
+        <h2><font face="Arial" color="#FF0000"><small><small>Define Path To PERL 5</small></small></font></h2>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>The first step is to open up each and every
+        file that has a .cgi extention and edit line number one of each script.&nbsp; Each of the
+        cgi scripts is written in perl 5. For your scripts to run they must know where perl 5 is
+        installed on your web server. The path to perl 5 is defined to a cgi script in the first
+        line of the file. In each of the cgi scripts the first line of code looks something like
+        this: </small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#FF0000"><small>#!/usr/bin/perl</small></font></p>
+        </blockquote>
+        <p><font face="Arial" color="#000000"><small>If the path to perl 5 on your web server is
+        different from /usr/bin/perl you must edit the first line of each cgi script to reflect
+        the correct path. If the path to perl 5 is the same no changes are necessary. If you do
+        not know the path to perl 5 ask the webmaster or system administrator at your server site.
+        &nbsp; </small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big><strong>Configure automark.cgi</strong></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>There is only one cgi file to configure and 2
+        variables (defined below).&nbsp; Open up automark.cgi with a text editor (NOT A WORD
+        PROCESSOR) and change the variables below</small></font><font SIZE="2"></p>
+        </font>
+      </blockquote>
+      <blockquote>
+        <ul>
+          <li><font face="Arial" color="#FF0000" SIZE="2">$bookmarkurl =
+            &quot;http://www.superscripts.com/scripts/index.html&quot;;&nbsp; </font><p><font face="Arial" size="2" color="#000000">$bookmarkurl is the url you want the users bookmark
+            to point to.&nbsp; This does NOT have to be the same url that the script is executing
+            from.</font></p>
+          </li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">$bookmarktitle = &quot;NEW SCRIPTS EVERY
+            MONTH!&quot;;</font></li>
+        </ul>
+        <blockquote>
+          <p><font face="Arial" size="2" color="#000000">$bookmarktitle is the name of the bookmark
+          as it will appear in the surfer's browser (eg:&nbsp; under &quot;Favorites&quot;)</font></p>
+        </blockquote>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big>Upload automark.cgi and set permissions</big></font></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Upload automark.cgi into your cgi-bin and set
+        the permission on the script to 755</small></font></p>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big>Create a special welcome page (index.html
+      frames page)</big></font></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Edit the index.html page so </small></font><font face="Arial" color="#FF0000" SIZE="2">&lt;frame name=&quot;main&quot;
+        src=&quot;http://www.superscripts.com/index.html&quot;&gt; </font><font color="#000000" face="Arial"><small>points to the url of the main page of your site.&nbsp; Next edit </small></font><font face="Arial" color="#FF0000" SIZE="2">&lt;frame name=&quot;footer&quot;
+        scrolling=&quot;no&quot; noresize target=&quot;main&quot;
+        src=&quot;http://www.yourdomain.com/cgi-bin/automark.cgi&quot;&gt; </font><font color="#000000" face="Arial"><small>so it points to automark.cgi on your site.&nbsp; Now
+        when a person first visits your website the page looks exactly the same.&nbsp; If they are
+        first time visitors the BOOKMARK POPUP WINDOW will appear.&nbsp; </small></font></p>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big>Other ideas for grabbing more bookmarks!</big></font></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small><strong>Java Close Window</strong>&nbsp; You
+        can also use other ways to execute the scripts such as the popular &quot;CLOSE
+        WINDOW&quot; type scripts that cause windows to popup when exiting the browser.&nbsp; Just
+        point the url of the new window directly to the frames page or automark.cgi.</small></font></p>
+        <p><font color="#000000" face="Arial"><small><strong>404 Redirection</strong>&nbsp;
+        Another good idea is to redirect all of your ERROR traffic (i.e. 404 page not found) so it
+        goes to the automark page.&nbsp; </small></font></p>
+        <p><font color="#000000" face="Arial"><small><strong>Promoting the automark page</strong>&nbsp;
+        Use the automark (index.html) url in your promotions to get the maximum
+        &quot;RETAINED&quot; traffic.&nbsp; If you ever use any professional traffic analysis
+        software you will generally find nearly 50% or MORE of the people hitting your home page
+        leave immediately.&nbsp; The average visitor to a website only views 3-4 pages and only
+        10% revisit your site.&nbsp; The automarker.cgi will definitely make a difference as many
+        people will simply bookmark your site because they don't know what they are doing!&nbsp; </small></font></p>
+      </blockquote>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
