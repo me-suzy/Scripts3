@@ -1,0 +1,12 @@
+
+A user has just rebilled for your safelist.
+
+Real Name: %name%
+Email Address: %email%
+Username: %username%
+Password: %password%
+
+
+
+Automated email from safelist scripts.
+
