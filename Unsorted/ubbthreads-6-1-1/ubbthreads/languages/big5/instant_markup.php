@@ -1,0 +1,29 @@
+<?
+$ubbt_lang['ENTERCOLOR'] = "½Ð¿é¤J±z·Q¨Ï¥ÎªºÃC¦â¡C¥i¥H¨Ï¥Î¼Ð·Çªº HTML ÃC¦âªí¥Üªk¨Óªí¥Ü¡A¨Ò¦p #ff1123 ©Î¬O blue (ÂÅ¦â)";
+$ubbt_lang['FONT_COLOR'] = "¦rÅéÃC¦â";
+$ubbt_lang['INST_GRAEMLIN'] = "¤pºëÆF";
+$ubbt_lang['INST_UBB'] = "UBB ¥N½X";
+$ubbt_lang['ENTERURL'] = "½Ð¿é¤J§¹¾ãªººô§}¡G";
+$ubbt_lang['ENTERURL2'] = "½Ð¿é¤J³o­Óºô­¶ªº¼ÐÃD¡BÂ²¤¶¡G";
+$ubbt_lang['ENTERURL3'] = "ºô­¶";
+$ubbt_lang['ENTEREMAIL'] = "½Ð¿é¤J§¹¾ãªº Email «H½c¡G";
+$ubbt_lang['BOLDIT'] = "½Ð¿é¤J±z·Q­n¼Ð¥Ü¬°²ÊÅéªº¦r¥y¡G";
+$ubbt_lang['ITALICIZE'] = "½Ð¿é¤J±z·Q­n¼Ð¥Ü¬°±×Åéªº¦r¥y¡G";
+$ubbt_lang['ENTERIMAGE'] = "½Ð¿é¤J±z·Q¬ï´¡¹Ï¤ùªº§¹¾ãºô§}¡G";
+$ubbt_lang['ENTERITEM'] = "½Ð¿é¤J±z·Q¦CÁ|ªº¶µ¥Ø¡C½Ðª`·N¡A¦CÁ|¶µ¥Ø¥²¶·­n³Q [list] ¥H¤Î [/list] ©Ò¥]³ò¡A§_«h±NµLªk¥¿½TÅã¥Ü¡C";
+$ubbt_lang['ENTERPOLL'] = "½Ð¿é¤J§ë²¼ªº¼ÐÃD¡G";
+$ubbt_lang['ENTEROPTION'] = "½Ð¿é¤J³o­Ó§ë²¼ªº¿ï¶µ¡C½Ðª`·N¡A§ë²¼¿ï¶µ¥²¶·­n³Q[pollstart] ¥H¤Î [pollstop] ©Ò¥]³ò¡C";
+$ubbt_lang['J_HYPER'] = "ºô§}";
+$ubbt_lang['J_EMAIL'] = "Email";
+$ubbt_lang['J_BOLD'] = "²ÊÅé";
+$ubbt_lang['J_ITALICS'] = "±×Åé";
+$ubbt_lang['J_QUOTE'] = "¤Þ¨¥";
+$ubbt_lang['J_CODE'] = "µ{¦¡½X";
+$ubbt_lang['J_LISTSTART'] = "¦CÁ|¶}ÀY";
+$ubbt_lang['J_LISTITEM'] = "¦CÁ|¶µ¥Ø";
+$ubbt_lang['J_LISTEND'] = "¦CÁ|µ²§À";
+$ubbt_lang['J_IMAGE'] = "¹Ï¤ù";
+$ubbt_lang['J_POLLSTART'] = "§ë²¼¶}ÀY";
+$ubbt_lang['J_POLLOPTION'] = "§ë²¼¿ï¶µ";
+$ubbt_lang['J_POLLSTOP'] = "§ë²¼µ²§À";
+?>
