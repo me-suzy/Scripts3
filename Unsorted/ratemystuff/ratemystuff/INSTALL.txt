@@ -1,0 +1,208 @@
+
+#########################################################
+#                      RateMyStuff                      #
+#########################################################
+#                                                       #
+# This script was created by:                           #
+#                                                       #
+# PHPLabs Web Development Division.                     #
+# http://www.phplabs.com/                               #
+#                                                       #
+# This script and all included modules, lists or        #
+# images, documentation are copyright 2002              #
+# PHPLabs (http://www.phplabs.com/) unless              #
+# otherwise stated in the script.                       #
+#                                                       #
+# Purchasers are granted rights to use this script      #
+# on any site they own. There is no individual site     #
+# license needed per site.                              #
+#                                                       #
+# Any copying, distribution, modification with          #
+# intent to distribute as new code will result          #
+# in immediate loss of your rights to use this          #
+# program as well as possible legal action.             #
+#                                                       #
+# This and many other fine scripts are available at     #
+# the above website or by emailing the authors at       #
+# staff@phplabs.com or info@phplabs.com                 #
+#                                                       #
+#########################################################
+
+
+[Overview]
+
+RateMyStuff allows you to create your own "Rate My..."
+site just like the popular sites AmIHotOrNot, RateMyKitten,
+RateMyPoo, etc. 
+
+#########################################################
+
+[Features]
+
++ Similar to "HotOrNot," "RateMyKitten," etc.
++ 100% templates, easy to fit your own design
++ Allows visitors to upload their own pictures
++ Visitors can vote on existing photos
++ Users can "HookUp" with each other (anonymous contact system)
++ Pre-built "Top 5", "Top 10," "Worst 10," and "Newest Pics" scripts and templates
++ Site visitors can report images they believe are offensive
++ Admin area allows you to view reported images, delete an image, and generate a list of your users' email addresses
++ Keeps your traffic captivated, entertained, and glued to your site
++ A great way to sell tons of banner impressions 
+
+#########################################################
+
+Installation instructions for RateMyStuff
+
+## UNZIPPING ##
+
+Inside the zip you should find the following files :
+
+	INSTALL.txt      - Installation instructions
+        _dbschema.doc    - database layout (most users won't need this)
+        admin.php        - administrative menu script
+        CHANGES.txt      - revision history
+	common.php	 - functions shared among other scripts 
+	config.php 	 - configuration variables
+        getimage.php     - image display script for static links
+        hookup.php       - anonymous contact system script
+        index.php        - index (main) page displaying script
+        installer.php    - sets up the database and tables
+        new.php          - displays newly uploaded images
+        report.php       - lets users report offensive photos
+        top.php          - displays top 10 best or worst pics
+        user.php         - handles user signup/upload/logins
+        vote.php         - handles ratings and votes
+        templates/       - (directory) holds HTML template files
+        images/          - (directory) holds image files
+
+Unzip all of the files. Open config.php and set all of the
+variables as indicated.
+
+## EDITING TEMPLATES ##
+
+Next, you'll want to edit the HTML template files contained
+within the templates directory. The first thing you'll likely
+notice when you open these templates is that they contain
+special tokens - in the format %variable% - which will be
+automatically replaced by the scripts with the corresponding
+content. For example, place the token %random% anywhere you
+want a randomly selected image, score, and vote link to appear.
+
+If you're not quite sure how this works, compare the default
+index.html template to the RateMyStuff demo available at
+http://phplabs.com/demo/ratemystuff. You can see how the tokens
+in the template file are replaced with content by the script:
+randomly selected images appear in place of %random%, the user
+login form appears in place of %loginform%, etc.
+
+The tokens you can use are:
+
+  %random% - displays a random image, score, and voting link
+  %loginform% - displays the login form for existing users
+  %lastrate% - shows info about the last pic the visitor rated
+  %top5% - displays a table containing the top 5 rated pics
+  %imageurl% - is replaced with the value of $imageurl in config.php
+  %header% - displays whatever is inside templates/header.html
+  %footer% - displays whatever is inside templates/footer.html
+  %hookup% - displays the HookUp link if the user allows HookUps
+
+Not all templates support all tokens. However, any tokens 
+that appear in each default template are supported by that
+template. header.html and footer.html can also contain the 
+tokens %random% %lastrate% %imageurl% and %loginform%, even
+though the default templates do not contain any tokens.
+
+IMPORTANT: When editing the template files, be sure to leave
+all forms as-is, with the same action and method attributes.
+Some templates, such as random.html, also contain other special
+tokens like %tag% and %voteurl% - you will need to leave those
+in place. Initially, we suggest simply changing the colors and
+replacing "RateMyHedgehog" with the name of your own site; then
+when you're sure your new templates work, you can go on to edit
+them more in depth. It's a good idea to make backups before 
+doing any major editing.
+
+Also note how links are built within the templates. For example,
+the signup/upload link calls user.php?func=newuser, the Top 10
+Best link calls top.php?sort=best, the Top 10 Worst link calls
+top.php?sort=worst, etc. You will need to formulate your links
+the same way.
+
+Inside the "templates" directory, you'll also find two text
+files, called hookup_mail_new.txt and hookup_mail_reply.txt.
+These two files are templates for the email messages users
+will receive through the HookUp system. MAKE SURE to leave
+the three existing tokens inside both of these templates.
+
+## UPLOADING ##
+
+Once you have edited your template files, upload the entire
+RateMyStuff package (all of the scripts, plus the images and
+templates directories) to your web server. Be sure that the
+scripts and templates are uploaded in ASCII mode and the 
+images are uploaded in BINARY mode. Then chmod the images
+directory to 777. This step is important, if you do not
+chmod 777 the images directory, no one will be able to 
+upload any pictures to the site.
+
+Next, RENAME THE ADMIN.PHP FILE TO SOMETHING ELSE. This file
+allows you to view reports that users have made about offensive
+images, and lets you delete any image by inputting its tag
+number. Obviously, if you do not rename admin.php, ANYONE WILL
+BE ABLE TO DELETE IMAGES from your site! PLEASE rename this
+file.
+
+## DATABASE CREATION ##
+
+Point your browser at installer.php wherever you uploaded the
+RateMyStuff scripts. The installer will create the database
+and the tables within it. (If your webhost does not allow you
+to create MySQL databases through PHP scripts, you will need
+to open the _dbschema.doc file and manually run the commands
+inside of that file.) As soon as this is done, you should
+visit the index page and upload a few pics of your own to seed
+the site. It's suggested that you upload 10-20 pics, especially
+if you have several %random% tokens on your pages, otherwise
+it will be pretty obvious to visitors that your site is new.
+
+Important notes about a fresh installation of RateMyStuff:
+
+  1. Until you upload some pictures, an "uknown image" 
+     placeholder will appear anywhere a picture should
+     be displayed. Until you have at least 10 pictures
+     uploaded, the Top 10, Worst 10, and Newest 10 pages
+     will also be "broken." This will fix itself once
+     you upload some images.
+
+  2. The first time you upload a picture, you may receive
+     errors on the user info page. This is normal (because
+     the script is trying to calculate stats about other 
+     pictures, which didn't exist). These errors should
+     only show up when the first user (you) is created.
+
+#########################################################
+
+[Usage]
+
+Once you have RateMyStuff installed, usage is straightforward.
+Just visit the site and encourage others to do the same!
+
+You should occasionally point your browser at your renamed
+copy of admin.php to check up on things. If visitors have
+reported any images as offensive, they will show up on the
+admin menu with quick links to delete (if offensive) or
+ignore the report (if the image is fine). From the admin 
+area, you can also delete any image by inputting its tag ID,
+ban email addresses from signing up, or ban IP addresses
+from signing up.
+
+#########################################################
+
+[Support]
+
+You can reach technical support at Support@PHPLabs.com.
+You can also visit us at http://www.phplabs.com/ for more
+information regarding this and other scripts.
+
+Thanks!
