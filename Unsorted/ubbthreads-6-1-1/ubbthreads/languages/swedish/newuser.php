@@ -1,0 +1,31 @@
+<?
+$ubbt_lang['BOARD_RULES'] = "Forumregler";
+$ubbt_lang['I_AGREE'] = "Jag godkänner reglerna";
+$ubbt_lang['DOB_EXIST'] = "Du angav ditt födelsedatum som ";
+$ubbt_lang['NEW_USER2']  = 	"Fyll i följande information för att registrera en ny användare.  Ett tillfälligt lösenord genereras slumpmässigt (om inget annat anges), så en giltig e-postadress är ett krav för att vi ska kunna skicka ut ditt lösenord. Genom att du registrerar dig nedan så godtar du de regler som gäller för dessa forum och binder dig att följa dem. <b>Kontrollera att du har skrivit rätt på din e-postadress!</b>";
+$ubbt_lang['USER_IN']  = 	"Användarnamn (Mellan 3 & 16 alfabetiska tecken)";
+$ubbt_lang['OPT_PASS']  = 	"Fyll i ett lösenord mellan 4 & 20 alfabetiska tecken.";
+$ubbt_lang['VER_PASS']  = 	"Verifiera lösenordet";
+$ubbt_lang['SIMP_EMAIL']  = 	"E-postadress";
+$ubbt_lang['DOB'] = "Var god ange ditt födelsedatum";
+$ubbt_lang['JAN'] = "Januari";
+$ubbt_lang['FEB'] = "Februari";
+$ubbt_lang['MAR'] = "Mars";
+$ubbt_lang['APR'] = "April";
+$ubbt_lang['MAY'] = "Maj";
+$ubbt_lang['JUN'] = "Juni";
+$ubbt_lang['JUL'] = "Juli";
+$ubbt_lang['AUG'] = "Augusti";
+$ubbt_lang['SEP'] = "September";
+$ubbt_lang['OCT'] = "Oktober";
+$ubbt_lang['NOV'] = "November";
+$ubbt_lang['DEC'] = "December";
+$ubbt_lang['SUB_DATE'] = "Skicka födelsedatum";
+$ubbt_lang['PRIV_INFO'] = "Privat information";
+$ubbt_lang['PRIV_INFO_DETAIL'] = "Det amerikanska Federal Trade Commission's Children's Online Privacy Protection Act of 1998 (COPPA) finns till för att skydda barnens integritet på internet. Sedan 21 april 2000 måste många webbplatser få målsmans godkännande innan de kan samla in, använda eller föra vidare personlig information om barn under 13 år.<p><a href=\"http://www.ftc.gov/opa/1999/9910/childfinal.htm\">COPPA information</a> (engelsk) | <a href=\"http://www.ftc.gov/os/1999/9910/64fr59888.pdf\">Hela texten från Federal Register Notice [PDF 270K]</a> (engelsk)";
+$ubbt_lang['PERM_FORM'] = "Formulär för målsmans godkännande";
+$ubbt_lang['PERM_FORM_DETAIL'] = "En målsman till barnet måste fylla i detta formulär, skriva under det och faxa eller skicka med vanlig post till administratörerna av detta forum innan en användare under 13 år kan fortsätta denna registrering.<p><a href=\"{$config['phpurl']}/coppaform.php\">Formuläret</a>";
+$ubbt_lang['CONT_INFO'] = "Kontaktinformation";
+$ubbt_lang['CONT_INFO_DETAIL'] = "Vid frågor, e-posta till ";
+$ubbt_lang['AGE_VER'] = "Registrering - Åldersbestämning";
+?>
