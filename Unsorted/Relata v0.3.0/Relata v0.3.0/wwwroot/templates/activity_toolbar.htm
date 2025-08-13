@@ -1,0 +1,72 @@
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="{WWW_DIR}toolbar.css">
+<link rel="stylesheet" type="text/css" href="{WWW_DIR}templates/page_tabs.css">
+
+<script type="text/javascript">
+	www_dir = "{WWW_DIR}";
+	winid	= "{WINID}";
+</script>
+<script type="text/javascript" src="{WWW_DIR}events.js"></script>
+
+</head>
+<body bgcolor="#D4D0C8">
+
+<!-- toolbar buttons -->
+<span style="left: 20px; top: 0px; position: absolute; float: left;" id="refreshprint"></span>
+<span style="right: 20px; top: 0px; position: absolute; float: right;" id="closeminimize"></span>
+
+<script type="text/javascript" src="{WWW_DIR}toolbar_buttons.js"></script>
+<script type="text/javascript">
+
+closeminimizediv = document.getElementById("closeminimize");
+
+// make the minimize icon
+minimizeicon = document.createElement("IMG");
+minimizeicon.src="{WWW_DIR}templates/images/minimize_norm.gif";
+minimizeicon.id = "minimize";
+closeminimizediv.appendChild(minimizeicon);
+addevent(minimizeicon,"mousedown",changeicon,false);
+addevent(minimizeicon,"mouseout",changeicon,false);
+addevent(minimizeicon,"mouseup",changeicon,false);
+addevent(minimizeicon,"click",minimize,false);
+
+// make the close icon
+closeicon = document.createElement("IMG");
+closeicon.src="{WWW_DIR}templates/images/close_norm.gif";
+closeicon.id = "close";
+closeminimizediv.appendChild(closeicon);
+addevent(closeicon,"mousedown",changeicon,false);
+addevent(closeicon,"mouseout",changeicon,false);
+addevent(closeicon,"mouseup",changeicon,false);
+addevent(closeicon,"click",closewin,false);
+
+/*
+refreshprintdiv = document.getElementById("refreshprint");
+
+// make the refresh button
+refreshbtn = document.createElement("IMG");
+refreshbtn.src = "{WWW_DIR}templates/images/refresh_norm.gif";
+refreshbtn.id = "refresh";
+refreshprintdiv.appendChild(refreshbtn);
+addtoolbarbtnevent(refreshbtn);
+
+// make the print button
+printbtn = document.createElement("IMG");
+printbtn.src = "{WWW_DIR}templates/images/print_norm.gif";
+printbtn.id = "print";
+refreshprintdiv.appendChild(printbtn);
+addtoolbarbtnevent(printbtn);
+
+
+
+*/
+
+
+
+</script>
+
+
+</body>
+</html>
