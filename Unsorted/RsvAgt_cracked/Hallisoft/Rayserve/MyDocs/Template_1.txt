@@ -1,0 +1,3 @@
+The following booking was taken by your online reservation system on 
+#DATE# at #TIME# local time. 
+The booking reference number is: #REFNO#
