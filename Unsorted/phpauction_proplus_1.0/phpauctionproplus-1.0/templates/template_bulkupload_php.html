@@ -1,0 +1,89 @@
+<?
+
+#///////////////////////////////////////////////////////
+#//  COPYRIGHT 2002 PHPAuction.org ALL RIGHTS RESERVED//
+#//  For Source code for the GPL version go to        //  
+#//  http://phpauction.org and download               //
+#//  Supplied by CyKuH [WTN]                          //
+#///////////////////////////////////////////////////////
+?>
+
+<SCRIPT Language=Javascript>
+function window_open(pagina,titulo,ancho,largo,x,y){
+
+  var Ventana= 'toolbar=0,location=0,directories=0,scrollbars=1,screenX='+x+',screenY='+y+',status=0,menubar=0,resizable=0,width='+ancho+',height='+largo;
+  open(pagina,titulo,Ventana);
+
+}
+</SCRIPT>
+
+<TABLE WIDTH="765" CELLPADDING=0 CELLSPACING=0 BGCOLOR="#FFFFFF" BORDER=0>
+
+<TR>
+
+<TD>
+
+<? print $tlt_font; ?>
+
+<BR>
+
+<CENTER>
+				<B> 
+				<?print $tlt_font.$MSG_703;?>
+				<BR>
+				</B> 
+				<TABLE WIDTH="500" CELLSPACING="0" CELLPADDING="1" BORDER="0" BGCOLOR="<?=$FONTCOLOR[$SETTINGS[bordercolor]]?>">
+					<TR> 
+						<TD>
+							<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="3">
+								<TR> 
+									<TD COLSPAN="2"> 
+                  <? print $nav_font; ?>
+										<? print $MSG_247."<B>$HTTP_SESSION_VARS[PHPAUCTION_LOGGED_IN_USERNAME]</B>"; ?>
+									</TD>
+								</TR>
+								<?
+								if(isset($ERR))
+								{
+								?>
+								<TR>
+									<TD COLSPAN="2" BGCOLOR="white"><CENTER>
+										<?=$err_font?><B><?=$ERR?></FONT></b></FONT>
+									</TD>
+								</TR>
+								<?
+									} 
+								
+								?>
+								<TR VALIGN="TOP">
+									<TD BGCOLOR="white" WIDTH="100%" COLSPAN="2">
+									<?=$std_font.$MSG_704;?>
+		<form enctype=multipart/form-data action=bulkupload.php? method=post>
+		<BR><center>
+		<INPUT TYPE=file SIZE=30 NAME=file>
+		<BR><BR>
+		<INPUT TYPE=SUBMIT VALUE="Upload">
+		<INPUT TYPE=HIDDEN NAME="action" VALUE="upload">
+		</form><b>
+	    <? if ($ERR == "") { print $MSG; } ?></b><br><br>
+
+									
+									</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+				</TABLE>
+				<BR>
+          <BR>
+
+
+</CENTER>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+
