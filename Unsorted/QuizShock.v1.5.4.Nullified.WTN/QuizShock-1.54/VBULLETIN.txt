@@ -1,0 +1,62 @@
+-----------------------------------------------------------------------
+QuizShock vBulletin Integration Instructions
+-----------------------------------------------------------------------
+
+The new user module system introduced in QuizShock 1.2.0 allows
+QuizShock to share user databases with other software. QuizShock
+now comes pre-packaged with a vBulletin user module.
+
+This module allows QuizShock to be directly integrated with your
+vBulletin user database. Currently it integrates in the following
+ways:
+
+ * Users are authenticated directly from your vBulletin database, 
+   giving all of your users access to QuizShock without having to 
+   register again.
+
+ * All links to registration on QuizShock go directly to your 
+   vBulletin registration script.
+
+ * All links to user profiles go directly to the vBulletin profile 
+   script for the user.
+
+ * QuizShock recognizes vBulletin's cookies so users can stay logged 
+   in.
+
+ * You can specify which vBulletin user group id has access to the 
+   QuizShock control panel.
+
+ * Optionally, QuizShock can update the "last activity" time for a 
+   vBulletin user if they are using QuizShock
+
+Setup is very simple using the QuizShock user module system. Perform 
+the normal QuizShock installation as specified in README.txt, with 
+the following in mind:
+
+ 1. Make sure to install QuizShock to the same MySQL database as your
+    vBulletin is installed on. Don't worry - the tables won't overlap 
+    because all of QuizShock's tables start with "ts_".
+
+ 2. When editing config.inc.php, find the option $C_OPTS['USER_MODULE']
+    Make sure it is set to "vbulletin" instead of "standard".
+
+ 3. Edit the file "inc/ts_user_vbulletin.inc.php". This is the 
+    QuizShock user module for vBulletin. Edit the first several 
+    options as appropriate for your vBulletin installation.
+
+ 4. After installing QuizShock and performing these steps, go to the
+    URL where you did the installation. Near the top, the "Registered 
+    Users" and "Newest User" fields should match those on your 
+    vBulletin installation.
+
+ 5. When logging into the control panel, use your vBulletin 
+    administrator username and password, or one for whatever group id 
+    you gave access to QuizShock (you can set which group gets 
+    access to the control panel by editing 
+    "inc/ts_user_vbulletin.inc.php". Don't worry about the admin 
+    password you set during QuizShock installation, it won't be used 
+    since you will be using your vBulletin user database.
+
+  
+-----------------------------------------------------------------------
+Copyright (c)2002 Pineapple Technologies. All Rights Reserved.
