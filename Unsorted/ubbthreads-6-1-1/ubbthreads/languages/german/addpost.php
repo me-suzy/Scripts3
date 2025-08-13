@@ -1,0 +1,30 @@
+<?
+$ubbt_lang['READ_PERM']  = 	"Sie haben nur Lese-Berechtigung für dieses Forum";
+$ubbt_lang['POST_ICON']  = 	"Schreiben Icon";
+$ubbt_lang['SPELL_CHECK']  = 	"Rechtschreibpr&uuml;fung";
+$ubbt_lang['SPELL_BODY']  = 	"Das Ergebnis der Rechtschreibpr&uuml;fung folgt. M&ouml;gliche Fehler sind <u>unterstrichen</u> mit Empfehlungen in eckigen Klammern direkt dahinter. Bitte benutzen Sie die Zur&uuml;ck-Schaltfl&auml;che Ihres Browsers um zur vorherigen Seite zu gelangen.";
+$ubbt_lang['NAME_TAKEN']  = 	"Der gew&uuml;nschte Benutzername ist schon registriert und wird von jemand anderem benutzt.";
+$ubbt_lang['BAD_UNAME']  = 	"Sie d&uuml;rfen keine HTML-Zeichen sowie Leerzeichen am Anfang oder Ende des Benutzernamens verwenden.";
+$ubbt_lang['LONG_NAME']  = 	"Der Benutzername hat nicht die richtige L&auml;nge.";
+$ubbt_lang['LOCKED']  = 	"Dieser Thread (Gruppe von Nachrichten) ist gesch&uuml;tzt und Sie haben nicht die Zugangs-Berechtigung hier &Auml;nderungen vorzunehmen.";
+$ubbt_lang['FILE_TOO_BIG']  = 	"Das File, das Sie anf&uuml;gen m&ouml;chten, ist leider gr&ouml;&szlig;er als die maximal erlaubteDatei-Gr&ouml;&szlig;e des Forums.";
+$ubbt_lang['TWO_POLLS']  = 	"Es ist nur eine Umfrage pro Nachricht möglich.";
+$ubbt_lang['PREV_POST']  = 	"Voransicht der Nachricht";
+$ubbt_lang['SUB_VOTE']  = 	"Abstimmen";
+$ubbt_lang['POST_BODY']  = 	"Hier ist eine Voransicht Ihrer Nachricht.  Falls alles zu Ihrer Zufriedenheit ist, klicken Sie bitte auf 'Weiter', um Ihre Nachricht entg&uuml;ltig abzuschicken.  Ansonsten k&ouml;nnen unten noch &Auml;nderungen vorgenommen werden.";
+$ubbt_lang['YES_FILE2']  = 	"Sie k&ouml;nnen eine Datei an Ihre Nachricht anh&auml;ngen.  Die Dateigr&ouml;&szlig;e ist beschr&auml;nkt auf  {$config['filesize']} Bytes";
+$ubbt_lang['NO_FILE2']  = 	"Obwohl Datei-Anh&auml;nge erlaubt sind, k&ouml;nnen Sie diese Option nur mit einem Mozilla 4+ kompatiblen Browser benutzen.";
+$ubbt_lang['EDIT_MORE']  = 	"Nachricht ver&auml;ndern";
+$ubbt_lang['POST_TEXT']  = 	"Nachricht:";
+$ubbt_lang['DO_EMAIL']  = 	"Alle Antworten als Email an meine echte Email-Adresse";
+$ubbt_lang['DO_PREVIEW']  = 	"Voransicht der Nachricht";
+$ubbt_lang['CAN_ATTACH']  = 	"und/oder eine Datei anh&auml;ngen";
+$ubbt_lang['NO_DUPS']  = 	"Diese Nachricht befindet sich bereits in der Datenbank.";
+$ubbt_lang['UNREGED_USER']  = 	"Nicht registriert";
+$ubbt_lang['REPLY_SUB']  = 	"Antwort auf Ihre Nachricht";
+$ubbt_lang['REPLY_BOD']  = 	"antwortete auf Deine Nachricht: .";
+$ubbt_lang['POST_ENTERED']  = 	"Ihre Nachricht wurde hinzugef&uuml;gt.";
+$ubbt_lang['MOD_CONFIRM']  = 	"Ihre Nachricht wurde hinzugef&uuml;gt.  Da dieses Forum moderiert wird, erscheint Ihre Nachricht erst nach Freigabe eines Administators oder Moderators.  Sie werden gleich zur&uuml;ck zum Forum geleitet.";
+$ubbt_lang['FORUM_RETURN']  = 	"Zur&uuml;ck zum Forum";
+$ubbt_lang['VIEW_POST']  = 	"Ansicht Ihrer Nachricht";
+?>
