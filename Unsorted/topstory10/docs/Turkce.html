@@ -1,0 +1,190 @@
+<html>
+<head>
+<title>Top Story - Basic  v 1.0 - Documentation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">################################################################################ 
+  <br>
+  # TOPSTORY BASIC Version 1.0 , Released: 02-08-2003 <br>
+  # Copyright (C) 2001 MERT YALDIZ - mertyaldiz@superonline.com <br>
+  #<br>
+  # This program is free software; you can redistribute it and/or <br>
+  # modify it under the terms of the GNU General Public License <br>
+  # as published by the Free Software Foundation; either version 2 <br>
+  # of the License, or (at your option) any later version. <br>
+  #<br>
+  # This program is distributed in the hope that it will be useful, <br>
+  # but WITHOUT ANY WARRANTY; without even the implied warranty of <br>
+  # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the <br>
+  # GNU General Public License for details. <br>
+  #<br>
+  # You should have received a copy of the GNU General Public License <br>
+  # along with this program; if not, write to the Free Software <br>
+  # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA. 
+  <br>
+  # <br>
+  ############################################################################## 
+  </font><font color="#666666"><br>
+  <br>
+  <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">TOPSTORY 
+  BASIC Version 1.0</font><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><br>
+  Top Story Basic , verileri depolamak için MySQL veritabaný kullanan tek kullanýcýlý 
+  bir haber yayýnlama scriptidir. Top Story Basic sayesinde, bilgisayarýnýzdan 
+  uzakta olsanýz dahi, þifre korumalý yönetim ara birimi yardýmýyla web sitenizden 
+  duyurularýnýzý yayýnlayabilirsiniz.</font></font></p>
+<p><font color="#FF0000" face="Verdana, Arial, Helvetica, sans-serif" size="2"><b>COPYRIGHT 
+  <br>
+  ------------</b></font><br>
+  <font color="#666666"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Top 
+  Story Basic ,</font></font><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#666666">GPL 
+  lisansý ile daðýtýlmaktadýr.Ayrýntýlý bilgi için lütfen <a href="gpl.html" target="_blank">GPL 
+  Licence</a> dosyasýný okuyun. myphpscripts.com sitesinin ücretsiz programlar 
+  daðýtmasýna destek olmak için lütfen isim ve siteye verilen linkler bölümünü 
+  programdan çýkartmayýnýz. </font></p>
+<p><br>
+  <font size="2"><b><font color="#FF0000" face="Verdana, Arial, Helvetica, sans-serif">KURULUM<br>
+  ------</font></b></font><br>
+  <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#666666">1) 
+  'topstory' adýnda bir dizin oluþturun,<br>
+  </font></p>
+<p><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#666666"> 
+  2) 'inc' klasöründe 'config.php' dosyasýnda aþaðýdaki satýrlarý ihtiyacýnýza 
+  göre deðiþtirin;</font></p>
+<p><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#666666"> 
+  /**<br>
+  * URL VE FÝZÝKSEL YOLLAR<br>
+  */<br>
+  <b>$url="www.web-siteniz.com";</b> // Buraya web sitenizin adresini girin.<br>
+  <b>$path="/websitenizin/fiziksel/yolunu girin";</b> // Bunu bilemiyorsanýz hosting 
+  firmanýzdan öðrenebilirsiniz.<br>
+  <b>$tst["folder"]="topstory";</b> // Topstory Basic dosyalarýný yüklediðiniz dizinin 
+  ismini girin.Ýlk adýmda oluþturduðunuz dizinle ayný ada sahip olmalý...<br>
+  <b>$tst["headerfile"]="header/dosyasý/fiziksel/yolu";</b> Buraya header(Baþlýk) dosyasýnýn 
+  fiziksel yolunu girin.<br>
+  <b>$tst["footerfile"]="footer/dosyasý fiziksel/yolu";</b>// Buraya footer(altlýk) dosyasýnýn 
+  fiziksel yolunu girin.<br>
+  /**<br>
+  * VERÝ TABANI DEÐÝÞKENLERÝ<br>
+  */<br>
+  <b>$tst["db"]["host"]="localhost";</b>// Veritabanýnýzýn host ismini girin, genelde 
+  &quot;localhost&quot; olur, ancak deðiþiklik gösterebilir.<br>
+  <b>$tst["db"]["name"]="";</b>// Veritabanýnýzýn ismini girin<br>
+  <b>$tst["db"]["user"]=""; </b>// Veritabanýnýzýn kullanýcý adýný girin<br>
+  <b>$tst["db"]["pass"]="";</b>// veritabanýnýzýn þifresini girin$tst["tbl"]["articles"]="articles"; 
+  // Buraya topstory Basic için kullanacaðýnýz veritabaný <b>tablosunun</b> adýný 
+  girin.<br>
+  * Ayný isimli bir tablonuz yok ise deðiþtirmenize gerek yok.<br>
+  /**<br>
+  * TOPSTORY BASIC KONTROL PANELÝ ÝÇÝN KULLANICI ADI VE ÞÝFRELERÝ<br>
+  */<br>
+  <b>$tst["admin"]["usrName"]="admin";</b>// Buraya kontrol paneliniz için bir kullanýcý 
+  adý girin<br>
+  <b>$tst["admin"]["usrPass"]="password";</b> // Buraya kontrol paneliniz için bir kullanýcý 
+  þifresi girin<br>
+  /**<br>
+  * DÝÐER KONFÝGURASYON DEÐÝÞKENLERÝ (iSTEÐE BAÐLI)<br>
+  */<br>
+  <b>$tst["conf"]["laps"]=604800; </b>// Buraya bir haberin ne kadar süre ile yeni olarak 
+  listeleneceðini <b>saniye</b> cinsinden girin. Burada 604800sn=1 Hafta<br>
+  <b>$tst["conf"]["topNewsList"]=5;</b>// <b>Son haberler</b> bölümünde son girilen haberden 
+  itibaren kaç adet haber listeleneceðini girin<br>
+  <b>$tst["conf"]["allowHtml"]=1;</b>// Haber yazarken HTML kodlarýnýn geçerli olmasý 
+  için <b>1</b>, geçerli olmamasý için <b>0</b> girin.<br>
+  <b>$tst["langf"]="turk";</b> // Lisan seçimi, Türkçe için &quot;turk&quot;, Ýngilizce 
+  için &quot;eng&quot; yazýn.</font></p>
+<p><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#666666">3) 
+  "inc" klasöründeki header.php ve footer.php dosyalarýný scriptinizin web sitenize 
+  tam uyum saðlamasý için isteðinize göre deðiþtirin. <br>
+  <br>
+  4) Ayrýca isteðe baðlý olarak &quot;lang&quot; klasöründe lisan paketlerinde 
+  ve &quot;lib&quot; klasöründe css dosyasýnda deðiþiklik yapabilirsiniz. </font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666"><b><font color="#FF0000">** 
+  &quot;LANG&quot; KLASÖRÜNDEKÝ DOSYALARIN ÝSÝMLERÝNÝ KESÝNLÝKLE DEÐÝÞTÝRMEYÝN. 
+  **</font></b> </font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">5) 
+  Oluþturduðunuz klasöre dosyalarýnýzý (resim dosyalarý hariç) ASCII modunda gönderiniz.</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">6) 
+  Kontrol Panelinize gidin (kontrol paneli adresiniz :http://www.web-siteniz.com/topstory/admin)</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">7) 
+  Kontrol Paneli kullanýcý adý ve þifrenizi girin.</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">8) 
+  Eðer bu programý ilk çalýþtýrmanýz ise, script otomatik olarak veritabanýnýzý 
+  gözden geçirecek ve gerekli tablonun veritabanýnýzda olup olmadýðýna bakacak.<br>
+  </font><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">Eðer 
+  bulmazsa tabloyu otomatik olarak yaratacaktýr..</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">9) 
+  Tablo yaratýldýktan sonra kontrol paneli ana sayfasýna yönlendirileceksiniz. 
+  Scriptiniz kullanýma hazýr durumdadýr.</font></p>
+<p><font size="2"><b><font color="#FF0000" face="Verdana, Arial, Helvetica, sans-serif">KULLANIM<br>
+  ----------<br>
+  Dosyalara nasýl baðlantý vereceksiniz ?:</font></b></font></p>
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#666666"> 
+<p>- <b>www.web-siteniz.com/topstory/index.php</b> tüm haberlerin özetlerini gösteren 
+  ana dosyanýzdýr.<br>
+  Tüm haberleriniz için bu dosyaya baðlantý verin.</p>
+<p>-<b>www.your-site.com/topstory/topStory.php</b> ve <b>www.your-site.com/topstory/topStory_js.php</b> 
+  dosyalarý son haberleri gösteren dosyalardýr.<br>
+  Kaç adet haber gösterileceði &quot;inc&quot; klasöründeki &quot;config.php&quot; 
+  dosyasýnda <b>$tst["conf"]["topNewsList"] </b>deðiþkeni ile belirlenmiþtir.<br>
+  Bu dosyalarý þu iki þekilde çaðýrabilirsiniz:</p>
+<p>1) <b>topStory.php</b> dosyasýný <b> <i>include(&quot;topstory/topStory.php&quot;);</i></b> 
+  þeklinde herhangi bir php dosyasýna ekleyebilirsiniz.<br>
+  2) <b>topsStory_js.php </b>herhangi bir HTML sayfasýndan<br>
+  <i> <b>&lt;script language=&quot;javascript&quot; src=&quot;http://www.your-site.com/topstory/topStory_js.php&gt;&lt;/script&gt;</b></i></p>
+</font> <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">yoluyla 
+çaðýrabilirsiniz.</font> 
+<p><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#666666">Ýki 
+  dosya da ayný iþlevi görecektir.<br>
+  -<b>fullStory.php</b> dosyasý seçilen haberi tüm ayrýntýlarýyla gösteren .. 
+  </font><br>
+  <br>
+  <font size="2"><b><font color="#FF0000" face="Verdana, Arial, Helvetica, sans-serif">Kontrol 
+  Paneli :</font></b></font> </p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">Kontrol 
+  paneliniz <b>http://www.web-siteniz.com/topstory/admin/</b>dosyadýr adresinde 
+  yer almaktadýr.<br>
+  Kullanýcý adýnýzý ve þifrenizi girdikten sonra ana sayfaya yönlendirileceksiniz.<br>
+  Ana sayfada veritabanýnýzdaki haberlerle ilgili özet istatistikler göreceksiniz.<br>
+  <b>1) Haber Ekleme:</b><br>
+  Sayfanýn üstündeki '<b>Haber Ekle</b>' linkine týklayýn.<br>
+  Haberi göndermek için formu eksiksiz doldurun. <br>
+  -Baþlýk kýsmýnza haberinizin kýsa bir özetini, baþlýðýný yazýn.<br>
+  -Mesaj kýsmýna haberinizin tümünü yazýn.<br>
+  -Haberinizin durumunu <b>pasif</b>, olarak seçerseniz, haber veritabanýnýza 
+  kayýt edilir ancak ziyaretçilerinize görüntülenmez.<br>
+  -Haberinizin durumunu <b>aktif</b>, olarak seçerseniz, haber veritabanýnýza 
+  kayýt edilir ve ziyaretçilerinize görüntülenir. <br>
+  <br>
+  ** Haberinizin statüsünü istediðiniz zaman <b> Haber Listele / Yönet</b> bölümünden 
+  deðiþtirebilirsiniz.</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666"><b>2)Haber 
+  Listele / Yönet :</b><br>
+  Burada veritabanýnýza kayýtlý tüm haberler listelenmektedir.<br>
+  Her haberin sað tarafýndaki <b>Düzenle linkine </b>týklayarak haberleriniz üzerinde 
+  deðiþiklik yapabilirsiniz.<br>
+  Her haberin sað tarafýndaki <b>Sil linkine </b>týklayarak haberlerinizi silebilirsiniz. 
+  <br>
+  Her haberin sol tarafýndaki kutucuklarý iþaretleyerek &quot;<b>SEÇÝLEN HABERLERÝ 
+  SÝL</b> &quot; butonu ile birden fazla haberi bir kerede silebilirsiniz.<br>
+  &quot;<b>TÜM HABERLERÝ SÝL</b>&quot; butonuna týklayarak veritabanýnýzdaki tüm 
+  haberleri silebilirsiniz.</font></p>
+<p><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">3) 
+  Haberinizin statusünü deðiþtirme</font></b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666"><br>
+  Haberleri listelerken, her haber baþlýðýnýn sol tarafýnda , haberin durumunu 
+  gösteren bir ýþýk(kýrmýzý / yeþil) vardýr.<br>
+  <br>
+  <b>Yeþil Iþýk</b> haberin statüsünün <b>aktif</b> olduðunu göstermektedir. Yeþil 
+  butona týkladýðýnýzda haberin statüsü pasife dönüþür ve butonun rengi kýrmýzý 
+  olur.<br>
+  <br>
+  <b>Kýrmýzýl Iþýk</b> haberin statüsünün <b>pasif</b> olduðunu göstermektedir. 
+  Kýrmýzý butona týkladýðýnýzda haberin statüsü aktiife dönüþür ve butonun rengi 
+  yeþil olur. </font><br>
+</p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666"> 
+  **Lütfen hertürlü yorum ve sorularýnýz için <a href="mailto:mert@myphpscripts.com">mert@myphpscripts.com</a> 
+  adresine yazýnýz.**</font></p>
+</body>
+</html>
