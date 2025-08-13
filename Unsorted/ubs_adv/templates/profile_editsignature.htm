@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>$master_board_name - Edit Signature</title>
+$headinclude
+
+<script language="javascript">
+<!--
+var postmaxchars = $siglength;
+function validate(theform) {
+	if (postmaxchars != 0) {
+		if (theform.message.value.length > $siglength) {
+			alert("Your signature is too long. Please reduce your signature to $siglength chars. Currently it has a length of "+theform.message.value.length+" chars.");
+			return false; }
+		else { return true; }
+	} else { return true; }
+}
+function checklength(theform) {
+	if (postmaxchars != 0) { message = "The maximum length is $siglength chars."; }
+	else { message = ""; }
+	alert("Your signature has a length of "+theform.message.value.length+" chars. "+message);
+}
+//-->
+</script>
+
+
+</head>
+
+<body bgcolor="{pagebgcolor}" text="{fontcolorfirst}"{hgpicture}{bgproperties} id="bg">
+       $header
+                <tr bgcolor="{tableb}" id="tableb">
+			<td><table cellpadding=0 cellspacing=0 border=0 width="100%">
+				<tr>
+					<td><font face="{font}" size=1><b><a href="main.php?styleid=$styleid$session" class="link">$master_board_name</a> » <a href="profile.php?boardid=$boardid&styleid=$styleid$session" class="link">Control Panel of $user_name</a> » Edit Signature</b></font></td>
+					<td align="right"><font face="{font}" size=1><b>$navibar_hello</b></font></td>
+				</tr>
+			</table></td>
+		</tr>
+		</table><br>
+                $old_signatur $preview $error
+                <table border=0 cellpadding=4 cellspacing=1 width="100%" bgcolor="{tablebordercolor}">
+                        <tr bgcolor="{tablea}" id="title">
+                                <TD COLSPAN=2><FORM enctype="multipart/form-data" action="profile.php" method="POST" name="bbform" onSubmit="return validate(this)"><FONT face="{font}" size=2  color="{fontcolorsecond}"><B>Personal Signature</B><font size=1> Shown under your Posts.</font></font></td>
+                        </tr>
+                        $bbcode_buttons
+			<tr bgcolor="{tablec}" id="tablec">
+				<td valign="top" nowrap><FONT face="{font}" size=2><B>Signature:</B></font>
+				<p><FONT face="{font}" size=1>$note</font></p></td>
+				<td>
+					<table cellpadding="0" cellspacing="0" border="0">
+						<tr valign="top">
+							<td><TEXTAREA NAME="message" ROWS=12 COLS=60 wrap="soft" onChange=getActiveText(this) onclick=getActiveText(this) onFocus=getActiveText(this)>$signature</TEXTAREA><br><font face="{font}" size=1><a class="link" href="javascript:checklength(document.bbform);">Check signature length</a></font></td>
+							$bbcode_smilies
+						</tr>
+					</table>
+				</td>
+			</tr>
+        	</table>
+        </div><br>
+        <div align="center">
+                <input type="hidden" name="mode" value="$mode">
+                <input type="hidden" name="send" value="send">
+                <INPUT TYPE="HIDDEN" NAME="boardid" VALUE="$boardid">
+                $session_post
+                <INPUT class="input" TYPE="SUBMIT" VALUE="Save">
+                <INPUT class="input" TYPE="SUBMIT" NAME="preview" VALUE="Preview">
+                <INPUT class="input" TYPE="RESET" VALUE="Reset">
+        </div>
+        </form>
+        $footer
+</body>
+</html>
