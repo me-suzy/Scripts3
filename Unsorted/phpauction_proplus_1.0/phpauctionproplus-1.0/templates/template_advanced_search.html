@@ -1,0 +1,75 @@
+<?
+
+#///////////////////////////////////////////////////////
+#//  COPYRIGHT 2002 PHPAuction.org ALL RIGHTS RESERVED//
+#//  For Source code for the GPL version go to        //  
+#//  http://phpauction.org and download               //
+#//  Supplied by CyKuH [WTN]                          //
+#///////////////////////////////////////////////////////
+
+?>
+
+
+<form>
+<table bgcolor="white" width="100%" border="1" bordercolor="black" rules="rows">
+<tr>
+<td><? print $MSG_1000 ?></td>
+<td><input type=text name=title></td>
+</tr>
+<tr>
+<td><INPUT NAME="desc" TYPE="checkbox" VALUE="y">
+<? print $MSG_1001 ?></td>
+<td></td>
+</tr>
+<tr>
+<td><? print $MSG_1002 ?></td>
+<td><? print $TPL_categories_list ?></td>
+</tr>
+<tr>
+<td><? print $MSG_1003 ?></td>
+<td><? print $MSG_1004 ?><INPUT MAXLENGTH="12" NAME="minprice" SIZE="5"><? print $MSG_1005 ?><INPUT MAXLENGTH="12" NAME="maxprice" SIZE="5"></td>
+</tr>
+<tr>
+<td><? print $MSG_1006 ?></td>
+<td><? print $TPL_payments_list ?></td>
+</tr>
+<tr>
+<td><? print $MSG_1007 ?></td>
+<td><INPUT type=text name="seller"></td>
+</tr>
+<tr>
+<td><? print $MSG_1008 ?></td>
+<td><? print $TPL_countries_list ?></td>
+</tr>
+<tr>
+<td><? print $MSG_1009 ?></td>
+<td><SELECT NAME="ending" SIZE="1"><option></option>
+<OPTION VALUE="1"><? print $MSG_1010 ?></OPTION>
+<OPTION VALUE="2"><? print $MSG_1011 ?></OPTION>
+<OPTION VALUE="4"><? print $MSG_1012 ?></OPTION>
+<OPTION VALUE="6"><? print $MSG_1013 ?></OPTION>
+</SELECT></td>
+</tr>
+<tr>
+<td><? print $MSG_1014 ?></td>
+<td><SELECT NAME="SortProperty" SIZE="1"><option></option>
+<OPTION VALUE="ends"><? print $MSG_1015 ?></OPTION>
+<OPTION VALUE="starts"><? print $MSG_1016 ?></OPTION>
+<OPTION VALUE="min_bid"><? print $MSG_1017 ?></OPTION>
+<OPTION VALUE="max_bid"><? print $MSG_1018 ?></OPTION>
+</SELECT></td>
+</tr>
+<tr>
+<td><? print $MSG_1019 ?></td>
+<td><SELECT NAME="type" SIZE="1"><option></option>
+<OPTION VALUE="2"><? print $MSG_1020 ?></OPTION>
+<OPTION VALUE="1"><? print $MSG_1021 ?></OPTION>
+</SELECT></td>
+</tr>
+<tr>
+<td><INPUT name=action type=hidden value=search>
+<INPUT type=submit value=" Search "></td>
+<td></td>
+</tr></table>
+</form>
+
