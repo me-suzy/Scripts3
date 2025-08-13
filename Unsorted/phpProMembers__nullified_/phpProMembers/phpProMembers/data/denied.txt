@@ -1,0 +1,8 @@
+Hello <<first_name>> <<last_name>>,
+
+We sorry to inform you that your account was unable to be approved at <<site_name>>.
+
+If you have any questions about the status of your account please contact us at <<company_email>>.
+
+Thank You For Considering Us,
+<<company_name>>
