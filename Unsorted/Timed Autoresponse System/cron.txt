@@ -1,0 +1,1 @@
+0 1 * * * /path/to/your/autocron.cgi
