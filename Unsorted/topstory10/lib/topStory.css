@@ -1,0 +1,108 @@
+.text
+{
+font-family: Tahoma;
+font-size:12px;
+font-style: normal;
+color: #000000
+}
+.heading
+{
+font-family: Arial;
+font-size:13px;
+font-style: normal;
+color: #FF0000;
+font-weight:bold
+}
+.smalltext
+{
+font-family: Tahoma;
+font-size:10px;
+font-style: normal;
+color: #666666
+}
+.FormButton
+{
+font-family: Tahoma;
+font-size: 12px;
+background :#CCCCCC;
+border-top-width: 1px;
+border-bottom-width: 1px;
+border-left-width: 1px;
+border-right-width: 1px;
+border-color:000000;
+font-style: normal;
+color: #000000
+}
+.FormField
+{
+font-family: verdana;
+font-size: 12px;
+background :e0e0e0;
+border-top-width: 0px;
+border-bottom-width: 0x;
+border-left-width: 0px;
+border-right-width: 0px;
+border-color:6666ff;
+font-style: normal;
+width:200px;
+color: #000000
+}
+.headlines
+{
+font-family:Verdana;
+font-size:11px;
+color:#FF0000;
+text-decoration: underline
+}
+.headlines:hover
+{
+font-family:Verdana;
+font-size:11px;
+color:#000000;
+text-decoration: none
+}
+.link1
+{
+font-family:Verdana;
+font-size:11px;
+color:#ff0000;
+font-weight:bold;
+text-decoration: underline
+}
+.link1:hover
+{
+font-family:Verdana;
+font-size:11px;
+color:#000000;
+text-decoration: none
+}
+.smallLink
+{
+font-family:Tahoma;
+font-size:11px;
+color:#ff0000;
+text-decoration: underline
+}
+.smallLink:hover
+{
+font-family:Tahoma;
+font-size:11px;
+color:#000000;
+text-decoration: none
+}
+.topMenuLink
+{
+font-family:Verdana;
+font-size:11px;
+color:#FFFFFF;
+font-weight: bold;
+text-decoration: underline
+}
+.topMenuLink:hover
+{
+font-family:Verdana;
+font-size:11px;
+color:#ffffff;
+font-weight: bold;
+text-decoration: none
+}
