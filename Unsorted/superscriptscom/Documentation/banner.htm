@@ -1,0 +1,215 @@
+<html>
+
+<head>
+<title>FAST BANNER ROTATOR DOCUMENTATION</title>
+
+<meta name="Microsoft Border" content="t, default"></head>
+
+<body><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+
+<table border="0" width="33%" cellpadding="0">
+  <tr>
+    <td width="50%"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/" ONCLICK="parent.f=0"><img src="../pix/banners/miniprizm.gif" alt="cgi scripts" border="0" WIDTH="305" HEIGHT="59"></a></font></td>
+    <td width="50%" bgcolor="#FFFFFF"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/ads/rotate.cgi?url=&amp;user=" target="new" ONCLICK="parent.f=0"><img src="http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user=" border="0" width="468" height="60"></a></font></td>
+  </tr>
+</table>
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="16%"><p align="center"><a href="../dsstoday/index.html"><font color="#000000" face="Arial"><img src="../pix/main/news.jpg" alt="CGI NEWS" align="left" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="16%"><p align="center"><a href="../scripts/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/scripts.jpg" alt="CGI Scripts" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../mastergate/index.html"><font color="#000000" face="Arial"><img src="../pix/main/access.jpg" alt="Access The CGI Archive" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../contact.html"><font color="#000000" face="Arial"><img src="../pix/main/contact.jpg" alt="Contact Superscripts" WIDTH="104" HEIGHT="68"></font></a></td>
+    <td width="17%"><p align="center"><a href="../support.html"><font color="#000000" face="Arial"><img src="../pix/main/dox.jpg" alt="CGI Documentation" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../download/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/download.jpg" alt="Download CGI Scripts Here" align="right" WIDTH="105" HEIGHT="65"></font></a></td>
+  </tr>
+  <tr>
+    <td width="16%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/dsstoday/index.html" style="color: rgb(255,255,255)"><strong>News</strong></a></font></td>
+    <td width="16%" bgcolor="#000000"><p align="center"><a href="/scripts/" style="color: rgb(255,255,255)"><font face="Arial" color="#FFFFFF"><strong>CGI Scripts</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><a style="color: rgb(255,255,255)" href="../mastergate/index.html"><font face="Arial" color="#FFFFFF"><strong>Become A Member</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../contact.html"><strong>Contact
+    Us</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../support.html"><strong>Support</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/download/index.shtml" style="color: rgb(255,255,255)"><strong>Download
+    Area</strong></a></font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+
+<table border="0" width="75%" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <p><big><big><strong><font face="Arial" color="#FF0000">Documentation<br>
+      </font></strong><font face="Arial" color="#000000">FAST BANNER ROTATOR:&nbsp; V2.0</font></big></big></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Copyright 2001 Psybercore, Inc. - All Rights
+        Reserved. </small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">Selling redistributing or modifying any or
+        all of the code for this program without prior written consent is expressly forbidden. You
+        must obtain written permission before redistributing this software over the Internet or in
+        any other medium. In all cases copyright and header information must remain intact.</font></small></p>
+      </blockquote>
+      <hr align="left">
+      <p><big><strong><font face="Arial" color="#000000">System Requirements</font></strong> </big><ul>
+        <li><small><font face="Arial" color="#000000">Perl 5</font></small></li>
+        <li><font face="Arial" color="#000000"><small><a href="http://www.mysql.com">Mysql</a>
+          Database Software</small></font></li>
+        <li><a href="../../download/Msql-Mysql-modules-1.2200.tar.gz"><font face="Arial" color="#000000"><small>Msql-Mysql Module</small></font></a></li>
+        <li><a href="../../download/DBI-1.09.tar"><font face="Arial" color="#000000"><small>DBI
+          Module</small></font></a></li>
+        <li><font face="Arial" color="#000000"><small>Password protection ability recommended</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Unix recommended</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Preliminaries</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Determine the path to PERL 5 on your web
+          server host.&nbsp; Note that some web hosting companies run both PERL 4 and PERL 5.&nbsp;
+          Make ABSOLUTELY sure you are not setting this up under PERL 4.&nbsp; Ask your
+          administrator if you are not sure. </small></font></li>
+      </ul>
+      <ul>
+        <li><a href="../../tutorial/index.html"><font face="Arial" color="#000000"><small>If you
+          need to review or learn the basics of CGI and Perl visit the tutorial</small></font></a></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small><a href="http://www.superscripts.com/download/">Download</a> the tarfile for this program and
+          save it to your desktop.</small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Unpack the tar archive on your desktop using a
+          program that unpacks UNIX TAR ARCHIVES. If you don't have such a program then download
+          WINZIP FREE from <a HREF="http://www.shareware.com/">SHAREWARE.COM</a>.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>After you have unpacked the TAR archive you
+          will have a collection of folders and files on your desktop.&nbsp; Now you have to do some
+          basic editing of each of these files (or at least some of them).&nbsp; Use a text editor
+          such as wordpad, notepad, BBEdit, simpletext, or teachtext to edit the files.&nbsp; These
+          are NOT WORD PROCESSOR DOCUMENTS they are just simple TEXT files so don't save them as
+          word processor documents or save them with extentions such as .txt or they will NOT WORK.
+          &nbsp; Note that there may be a some files inside of folders which are &quot;blank&quot;.
+          &nbsp; This is normal.</small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Create your MYSQL database and upload the .sql
+          file included in the tarball.&nbsp; <a href="../../tutorial/index.html">See the tutorial
+          for more information on MYSQL</a></small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Preparing the CGI scripts</small></font></h2>
+      <blockquote>
+        <h2><small><font face="Arial" color="#FF0000"><small>Define Path To PERL 5</small></font></small></h2>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>The first step is to open up each and every
+        file that has a .cgi extention and edit line number one of each script.&nbsp; Each of the
+        cgi scripts is written in perl 5. For your scripts to run they must know where perl 5 is
+        installed on your web server. The path to perl 5 is defined to a cgi script in the first
+        line of the file. In each of the cgi scripts the first line of code looks something like
+        this: </small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#FF0000"><small>#!/usr/bin/perl</small></font></p>
+        </blockquote>
+        <p><font face="Arial" color="#000000"><small>If the path to perl 5 on your web server is
+        different from /usr/bin/perl you must edit the first line of each cgi script to reflect
+        the correct path. If the path to perl 5 is the same no changes are necessary. If you do
+        not know the path to perl 5 ask the webmaster or system administrator at your server site.
+        &nbsp; </small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big><strong>Create database and upload the .sql
+      file</strong></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Upload the .sql file into your mysql database
+        (<a href="http://www.perlmasters.com/tutorial/">review mysql tutorial</a>) if you do not
+        know how, or better yet - bug your isp and get them to do it.</small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big><strong>Configure the .cgi files</strong></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><big>configure.cgi</big></font></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>This file pretty much runs the whole
+        show.&nbsp; If you screw this one up don't count on anything working properly. &nbsp; In
+        other words, make sure you take the time to do this step CORRECTLY.&nbsp; Ask your
+        administrator if you need to.&nbsp; Below are the variables used in ALL of the other cgi
+        scripts.&nbsp; All of the other cgi programs USE configure.cgi to figure out where certain
+        things are.&nbsp; You will use TWO COPIES of configure.cgi to run this system.&nbsp; They
+        are the EXACT SAME FILE - just TWO COPIES (/cgi-bin/banner/configure.cgi and
+        /cgi-bin/banner/admin/configure.cgi)</small></font><font SIZE="2"><ul>
+          <li><font face="Arial">mysqldatabasename = &quot;your mysql database name&quot;;</font></li>
+          <li><font face="Arial">$mysqlusername=&quot;your mysql username&quot;;</font></li>
+          <li><font face="Arial">$mysqlpassword=&quot;your mysql password&quot;;</font></li>
+          <li><font face="Arial">$cgidir = &quot;/cgi-bin/banner&quot;;</font></li>
+          <li><font face="Arial">$imagedir = &quot;/path/to/banner/ads/images&quot;;</font></li>
+          <li><font face="Arial">$imageURI = &quot;/ads/images&quot;;</font></li>
+        </ul>
+        <p><a href="../../tutorial/paths.html"><font face="Arial">For the frickin 1 millionth time
+        A URI (i.e. that is NOT a URL) is NOT a PATH.&nbsp; If you don't understand... hey... I
+        made a tutorial to read!&nbsp; Imagine that!</font></a></p>
+        </font>
+      </blockquote>
+      <h2><font face="Arial" color="#000000"><small>Upload Your Edited CGI and Database Files</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Upload all of the cgi files (.cgi) into a
+          directory you create called &quot;banner&quot; inside your cgi-bin</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Upload rotate.cgi, userstats.cgi, and
+          configure.cgi into /cgi-bin/banner/</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Make a directory inside of your
+          /cgi-bin/banner folder called admin and the files inside of the cgibin/admin directory
+          after you unpack the tarball and upload the rest of the cgi files into here.</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Make a directory inside of your normal
+          webspace (http://www.yourdomain.com/banner) called banner and upload index.html (the login
+          page) here.</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Make another directory inside of
+          http://www.yourdomain.com/banner/admin/ (called admin.. duh) and upload the admin
+          index.html page.&nbsp; </small></font></li>
+        <li><font face="Arial" color="#000000"><small>Make another directory inside your webspace
+          http://www.yourdomain.com/banner/images/ to store the banner gifs and jpegs</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Password protect both the
+          /cgi-bin/banner/admin/ and http://www.yourdomain.com/banner/admin/ directories with
+          .htaccess.&nbsp; <a href="../../tutorial/htaccess.html">Read the tutorial section</a> if
+          you don't already know how to do this.</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Chmod the files</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Chmod all the .cgi files to 755.&nbsp; </small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Upload Your Banner(s)</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>You have to upload the banner files by ftp (as
+          BINARY DATA) to the images directory when you are going to create an account.&nbsp; You
+          may ask why there is no automatic signup page for creating banner advertising accounts.
+          &nbsp; Well, if you have sold banner ads in the past you would already know why. &nbsp;
+          Most places that sell banner ads require prepayment by certified funds and will ALWAYS
+          want to manually APPROVE any banner ad before displaying it on their site. &nbsp; Thats
+          why.&nbsp; So when you get a new advertiser first upload their banner to the images
+          directory, then add their account information through the
+          http://www.yourdomain.com/banner/admin/index.html panel.&nbsp; You can then email your
+          client their username and password so they can check their stats.</small></font></li>
+      </ul>
+    </blockquote>
+    <blockquote>
+      <h2><font face="Arial" color="#000000"><small>Operating your Banner Program</small></font></h2>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>There really isn't much to it.&nbsp; Install
+        the system.&nbsp; Get a client.&nbsp; Upload their banner (that is if you approve it of
+        course).&nbsp; Set their account to expire either by duration (number of days) or by
+        impressions (number of impressions).&nbsp; Add their account.&nbsp; Email them their login
+        information to check their stats.&nbsp; Pretty simple (I hope).</small></font></p>
+        <p><font face="Arial" color="#000000"><small>Oh yea... one important thing... to display
+        your banners simply use the following linkcode on any and all pages you want the rotator
+        to display banners</small></font></p>
+        <p><small><font face="Arial" color="#FF0000">&lt;a
+        href=&quot;http://www.superscripts.com/ads/rotate.cgi?url=&amp;user&quot;&gt;<br>
+        &lt;img
+        src=&quot;http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user&quot;&gt;&lt;/a&gt;</font></small></p>
+      </blockquote>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
