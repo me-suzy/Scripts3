@@ -1,0 +1,31 @@
+<table class='articlebody'><tr><td>
+<A href='cat.php'>{LA_NEWS}</a> / <A href='cat.php?catid={ID}&catname={CATNAME}'>{CATNAME}</a><p>
+
+<b>{TITLE}</b><br>
+
+
+
+{LA_BY} <i><a href="mailto:{EMAIL}">{FNAME} {LNAME}</a>
+
+
+{TID1}, {LA_CHANGED} {TID2}</i><br>
+
+<p>
+
+<a href="javascript:openWin('feedback.php?artid={ARTID}&title={TITLE}')">
+<img src='images/feedback.gif' border=0 alt="{LA_RATE_THIS}"></a>
+
+<a 
+href="javascript:openWin('tellafriend.php?artid={ARTID}&title={TITLE}')">
+<img src='images/tip.gif' border=0 alt="{LA_TELLAFRIEND}"></a>
+
+<input type="image" src="images/print.gif" border=0 alt="{LA_PRINT}" name="submit" onclick="window.print()"><p>	
+
+
+{INTRO}
+<p>
+
+{BODY}
+<p>
+
+</td></tr></table>
