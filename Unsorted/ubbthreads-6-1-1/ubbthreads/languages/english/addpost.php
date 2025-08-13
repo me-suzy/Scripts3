@@ -1,0 +1,31 @@
+<?
+$ubbt_lang['FILE_TOO_BIG']="Files can be no larger than {$config['filesize']}";
+$ubbt_lang['FILESALLOWED']  =  "The files you may upload must have the following extension";
+$ubbt_lang['POST_ICON']  =     "Post Icon";
+$ubbt_lang['SPELL_CHECK']  = 	"Check spelling";
+$ubbt_lang['SPELL_BODY']  = 	"Your spell checked post is below.";
+$ubbt_lang['NAME_TAKEN']  = 	"The username you are trying to post under has already registered and is being used by someone else.";
+$ubbt_lang['BAD_UNAME']  = 	"You can only have alphanumeric characters in your username.  Special characters are not allowed because this allows users to spoof other usernames.  You may use the _ character to represent a space.";
+$ubbt_lang['LONG_NAME']  = 	"Username is not the proper length.";
+$ubbt_lang['READ_PERM']  = 	"You have read only privileges for this forum.";
+$ubbt_lang['LOCKED']  = 	"Thread locked.";
+$ubbt_lang['TWO_POLLS']  = 	"You may only have 1 poll in a post.";
+$ubbt_lang['PREV_POST']  = 	"Preview Post";
+$ubbt_lang['SUB_VOTE']  = 	"Submit vote";
+$ubbt_lang['POST_BODY']  = 	"The following is a preview of your post.  If everything looks ok then you can click 'Continue' and your post will be entered.  If not then use the bottom form below to edit some more.";
+$ubbt_lang['YES_FILE2']  = 	"You may attach a file if you like (no bigger than {$config['filesize']} bytes please).";
+$ubbt_lang['NO_FILE2']  = 	"Although file attachments are allowed, you must be using a Mozilla 4+ compatible browser for this feature.";
+$ubbt_lang['EDIT_MORE']  = 	"Edit some more";
+$ubbt_lang['POST_TEXT']  = 	"Post";
+$ubbt_lang['DO_EMAIL']  = 	"Email all replies to my real email address";
+$ubbt_lang['DO_PREVIEW']  = 	"I want to preview my post";
+$ubbt_lang['CAN_ATTACH']  = 	"and/or attach a file";
+$ubbt_lang['NO_DUPS']  = 	"Post already exists.";
+$ubbt_lang['UNREGED_USER']  = 	"Unregistered";
+$ubbt_lang['REPLY_SUB']  = 	"Reply to your post";
+$ubbt_lang['REPLY_BOD']  = 	"replied to your post at the site: .";
+$ubbt_lang['POST_ENTERED']  = 	"Your post has been entered.";
+$ubbt_lang['MOD_CONFIRM']  = 	"This forum is fully moderated so your post will not show up until an Adminstrator or Moderator looks it over.";
+$ubbt_lang['FORUM_RETURN']  = 	"Return to the forum";
+$ubbt_lang['VIEW_POST']  = 	"View your post";
+?>
