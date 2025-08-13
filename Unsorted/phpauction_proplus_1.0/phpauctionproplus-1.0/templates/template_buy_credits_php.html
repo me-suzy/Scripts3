@@ -1,0 +1,117 @@
+<?
+
+#///////////////////////////////////////////////////////
+#//  COPYRIGHT 2002 PHPAuction.org ALL RIGHTS RESERVED//
+#//  For Source code for the GPL version go to        //  
+#//  http://phpauction.org and download               //
+#//  Supplied by CyKuH [WTN]                          //
+#///////////////////////////////////////////////////////
+
+?>
+
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--
+
+function submitlogin ()
+
+{
+
+	document.user_login.submit ();
+
+}
+
+//-->
+
+</SCRIPT>
+
+<TABLE WIDTH="765" CELLPADDING=0 CELLSPACING=0 BGCOLOR="#FFFFFF" BORDER=0 ALIGN="CENTER">
+	<TR>
+
+<TD>
+
+<? print $tlt_font; ?>
+
+<BR>
+
+<CENTER>
+				<B> 
+				<?
+
+		print $tlt_font.$MSG_431;
+
+	?>
+				<BR>
+				</B> 
+				<FORM NAME="buycredits" METHOD="post" ACTION="<?=basename($PHP_SELF)?>">
+					<TABLE WIDTH="550" BORDER="0" CELLSPACING="0" CELLPADDING="3">
+						<TR BGCOLOR="#EEEEEE"> 
+							<TD> 
+								<? print $std_font; ?>
+								<? print $MSG_247."<B>$HTTP_SESSION_VARS[PHPAUCTION_LOGGED_IN_USERNAME]</B>"; ?>
+								| 
+								<? print $std_font; ?>
+								<A HREF=credits_account.php> 
+								<? print $MSG_430?>
+								</A> </TD>
+							<TD WIDTH="45%" ALIGN=RIGHT> 
+								<? print $std_font; ?>
+								<? print $MSG_437.print_money($BALANCE);?>
+							</TD>
+						</TR>
+					</TABLE>
+					<TABLE WIDTH="550" CELLSPACING="0" CELLPADDING="1" BORDER="0" BGCOLOR="<?=$FONTCOLOR[$SETTINGS[bordercolor]]?>">
+						<TR> 
+							<TD> 
+								<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="3">
+								<?
+									if(isset($ERR))
+									{
+								?>
+								<TR>
+										<TD BGCOLOR="#FFFFFF" COLSPAN="5">
+										<?=$err_font.$ERR?></TD>
+									</TR>
+								<?
+									}
+								?>
+									<TR> 
+										<TD BGCOLOR="#FFFFFF" COLSPAN="5"> 
+											<? print $std_font; ?>
+											<? print $MSG_438?>
+										</TD>
+									</TR>
+									<TR> 
+										<TD BGCOLOR="#FFFFFF" COLSPAN="4" ALIGN=RIGHT> 
+											<? print $std_font; ?>
+											<? print $MSG_440?>
+										</TD>
+										<TD BGCOLOR="#FFFFFF" WIDTH="73%"> 
+											<INPUT TYPE="text" NAME="amount" SIZE="10" VALUE="<?=$HTTP_POST_VARS[amount]?>">
+											<INPUT TYPE="submit" NAME="Submit" VALUE="<?=$MSG_441?>">
+											<INPUT TYPE="hidden" NAME="action" VALUE="buy">
+										</TD>
+									</TR>
+									<TR> 
+										<TD BGCOLOR="#FFFFFF" COLSPAN="5">&nbsp;</TD>
+									</TR>
+								</TABLE>
+							</TD>
+						</TR>
+					</TABLE>
+				</FORM>
+				<BR>
+          <BR>
+
+
+</CENTER>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+
