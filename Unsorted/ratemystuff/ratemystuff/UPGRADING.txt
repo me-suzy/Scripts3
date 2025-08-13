@@ -1,0 +1,11 @@
+If you already have a copy of RateMyStuff installed, you will need to take the following steps in order to upgrade:
+
+1) Upload the new copy of installer.php and run it in your browser. The new installer is 'smart' and can detect if RateMyStuff is already installed. It will create only the new tables, and make some changes to the 'users' table to support the HookUp feature. 
+
+2) Open the CHANGES.txt file to see which template files have been edited. You will want to make these changes to your existing templates. You'll also want to customize the new templates (error.html, generic.html, the HookUp templates, etc) to match the look of your site.
+
+3) Change the variables in config.php and be sure they're set the way you want them. This new version has some new variables, so the old config.php won't work.
+
+4) Backup all scripts on your existing site.
+
+5) Upload all scripts except for admin.php and new.php (these were not changed)
