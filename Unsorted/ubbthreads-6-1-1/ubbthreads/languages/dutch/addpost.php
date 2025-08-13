@@ -1,0 +1,32 @@
+<?
+$ubbt_lang['FILE_TOO_BIG']="Betanden morgen niet groter zijn dan {$config['filesize']}";
+$ubbt_lang['FILESALLOWED']  =  "De bestandsextenties van bestanden die je mag bijvoegen zijn";
+$ubbt_lang['FILESEXCLUDE']  = 	"De bestandsextenties van bestanden die je niet mag bijvoegen zijn";
+$ubbt_lang['POST_ICON']  =     "Bericht icoon";
+$ubbt_lang['SPELL_CHECK']  = 	"Spellingcontrole";
+$ubbt_lang['SPELL_BODY']  = 	"Onderaan vind je het op spelling gecontroleerde bericht.";
+$ubbt_lang['NAME_TAKEN']  = 	"De naam de je probeert te gebruiken is al geregistreerd en in gebruik door een ander lid.";
+$ubbt_lang['BAD_UNAME']  = 	"Je kunt alleen alfanumerieke karakters in jouw naam gebruiken.  Om misbruik van jouw naam te gebruiken hebben we speciale karakters geblokkeerd.  Je kunt het _ teken gebruiken in plaats van een spatie.";
+$ubbt_lang['LONG_NAME']  = 	"Jouw gebruikersnaam is te lang of te kort.";
+$ubbt_lang['READ_PERM']  = 	"Jouw rechten in dit forum zijn: Alleen lezen.";
+$ubbt_lang['LOCKED']  = 	"Onderwerpen geblokkeerd.";
+$ubbt_lang['TWO_POLLS']  = 	"Je kunt slechts één enquête in een bericht plaatsen";
+$ubbt_lang['PREV_POST']  = 	"Bericht voorbeeld";
+$ubbt_lang['SUB_VOTE']  = 	"Stem nu";
+$ubbt_lang['POST_BODY']  = 	"Dit is een voorbeeld van jouw bericht.  Als alles er goed uitziet kun je op 'Doorgaan' drukken om het bericht te plaatsen.  Als er nog fouten in het bericht staan, kun je die in het formulier helemaal onderaan de pagina verbeteren.";
+$ubbt_lang['YES_FILE2']  = 	"Je kunt ook een bestand bijvoegen. (niet groter dan {$config['filesize']} bytes a.u.b.).";
+$ubbt_lang['NO_FILE2']  = 	"Je kunt alleen een bestand bijvoegen als je gebruik maakt van een Mozilla 4+ compatible browser.";
+$ubbt_lang['EDIT_MORE']  = 	"Wijzigingen aanbrengen";
+$ubbt_lang['POST_TEXT']  = 	"Plaatsen";
+$ubbt_lang['DO_EMAIL']  = 	"Email alle antwoorden op dit bericht naar mijn email adres.";
+$ubbt_lang['DO_PREVIEW']  = 	"Ik wil mijn bericht eerst bekijken";
+$ubbt_lang['CAN_ATTACH']  = 	"en/of een bestand bijvoegen.";
+$ubbt_lang['NO_DUPS']  = 	"Dit bericht bestaat al.";
+$ubbt_lang['UNREGED_USER']  = 	"Niet geregistreerd";
+$ubbt_lang['REPLY_SUB']  = 	"Antwoord op jouw bericht";
+$ubbt_lang['REPLY_BOD']  = 	"beantwoorde jouw bericht op: ";
+$ubbt_lang['POST_ENTERED']  = 	"Jouw bericht is geplaatst.";
+$ubbt_lang['MOD_CONFIRM']  = 	"Dit forum wordt volledig gemodereerd. Dat wil zeggen dat jouw bericht eerst door één van onze medewerkers moet worden goedgekeurd.";
+$ubbt_lang['FORUM_RETURN']  = 	"Ga terug naar het forum";
+$ubbt_lang['VIEW_POST']  = 	"Bekijk jouw bericht";
+?>
