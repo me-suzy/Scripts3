@@ -1,0 +1,11 @@
+The following booking was received by our reservation server on 
+#DATE# at #TIME# local time. 
+
+If you have any queries regarding this booking please leave a message on our 
+web site quoting booking reference number: #REFNO#
+
+Thank you for choosing #COMPANY#.
+A J Person
+General Manager
+
+http://www.mydomain.com
