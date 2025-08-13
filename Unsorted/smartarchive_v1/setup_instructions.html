@@ -1,0 +1,271 @@
+<html>
+
+<head>
+<title>Smart Archive Setup Instructions</title>
+</head>
+
+<body>
+
+<p align="center"><big>Smart Archive Setup Instructions</big></p>
+<div align="center"><center>
+
+<table border="1" width="513" cellspacing="0" bordercolor="#C0C0C0" cellpadding="3">
+  <tr>
+    <td width="48"><p align="right"><strong>Folder:</strong></td>
+    <td width="121"><p align="left"><strong>File:</strong></td>
+    <td width="320"><strong>Description:</strong></td>
+  </tr>
+  <tr>
+    <td width="48" align="right">/</td>
+    <td width="121">add.cgi</td>
+    <td width="320">Add files and signup for new accounts.</td>
+  </tr>
+  <tr>
+    <td width="48" align="right">/</td>
+    <td width="121">admin.cgi</td>
+    <td width="320">Control the archive from here.</td>
+  </tr>
+  <tr>
+    <td width="48" align="right">/</td>
+    <td width="121">smartarchive.cgi</td>
+    <td width="320">Displays and searches the files.</td>
+  </tr>
+  <tr>
+    <td width="48" align="right">/</td>
+    <td width="121">download.cgi</td>
+    <td width="320">Download files and performs related tasks.</td>
+  </tr>
+  <tr>
+    <td width="48" align="right">/</td>
+    <td width="121">cron_reset.cgi</td>
+    <td width="320">Reset the file download stats.</td>
+  </tr>
+  <tr>
+    <td width="48" align="right">/</td>
+    <td width="121">cron_update.cgi</td>
+    <td width="320">Create/update the archive html pages.</td>
+  </tr>
+  <tr>
+    <td width="48" align="right">/</td>
+    <td width="121">java_info.cgi</td>
+    <td width="320">Display lots of info about archive using javascript tag.</td>
+  </tr>
+  <tr>
+    <td width="48" align="right">/</td>
+    <td width="121">vars.cgi</td>
+    <td width="320">Holds variables you need to customize.</td>
+  </tr>
+  <tr>
+    <td width="48" align="right">/html/</td>
+    <td width="121">add_header.html</td>
+    <td width="320">Header HTML for add.cgi pages (see above).</td>
+  </tr>
+  <tr>
+    <td width="48" align="right">/html/</td>
+    <td width="121">add_footer,html</td>
+    <td width="320">Footer HTML for add.cgi pages&nbsp; (see above).</td>
+  </tr>
+  <tr>
+    <td width="48" align="right">/html/</td>
+    <td width="121">archive_header.html</td>
+    <td width="320">Header HTML for all archive pages.</td>
+  </tr>
+  <tr>
+    <td width="48" align="right">/html/</td>
+    <td width="121">archive_footer.html</td>
+    <td width="320">Footer HTML for all archive pages.</td>
+  </tr>
+  <tr>
+    <td width="48" align="right">/html/</td>
+    <td width="121">download.html</td>
+    <td width="320">HTML for file download info page.</td>
+  </tr>
+  <tr>
+    <td width="48" align="right">/data/</td>
+    <td width="121">files.data</td>
+    <td width="320">Stores file info.</td>
+  </tr>
+  <tr>
+    <td width="48" align="right">/data/</td>
+    <td width="121">report.data</td>
+    <td width="320">Stores dead link reports on files.</td>
+  </tr>
+  <tr>
+    <td width="48" align="right">/data/</td>
+    <td width="121">submissions.data</td>
+    <td width="320">Stores files awaiting approval.</td>
+  </tr>
+  <tr>
+    <td width="48" align="right">/data/</td>
+    <td width="121">members.data</td>
+    <td width="320">Stores member account info.</td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<p><u><strong>How to Install:</strong></u> 
+
+<ol>
+  <li>Set the path to perl at the top of each CGI file (except vars.cgi). Default is <em>#!/usr/bin/perl</em></li>
+  <li>Open <strong>vars.cgi</strong> and follow the instructions inside to customize the
+    script.</li>
+  <li>Edit all the files in the &quot;html&quot; folder with the HTML you want for your
+    archive. Help with <strong>download.html</strong> further down this page (<a
+    href="#download">go there</a>).</li>
+  <li>Create a folder in your cgi-bin, something like &quot;smartarchive&quot;.</li>
+  <li>Create the sub-folders &quot;html&quot; (&quot;smartarchive/html&quot;) and
+    &quot;data&quot; (&quot;smartarchive/data&quot;). Depending on your server, you might need
+    to change the permissions of these directories to CHMOD 777.</li>
+  <li>Upload all files in ASCii mode. The CGI files go in the main folder
+    (&quot;smartarchive&quot;), the HTML files go in the &quot;html&quot; sub-directory
+    (&quot;smartarchive/html&quot;), and the data files go in the &quot;data&quot;
+    sub-directory (&quot;smartarchive/data&quot;).</li>
+  <li>Change the file permissions of all CGI files to CHMOD 755, and the permissions of the
+    data files (in &quot;smartarchive/data&quot;) to CHMOD 777.</li>
+  <li>You're done setting it up!</li>
+</ol>
+
+<p>&nbsp;</p>
+
+<p><u><strong>How to use:</strong></u> 
+
+<ul>
+  <li>Unless you make your own customized forms, send people to <strong>add.cgi</strong> to
+    add files to the archive, and <strong>smartarchive.cgi</strong> to search the archive.</li>
+  <li>If you can use Cron on your server (to run programs automatically at specific times),
+    you can have it run <strong>cron_reset.cgi</strong> whenever you want the download stats
+    reset. Run <strong>cron_update.cgi</strong> to update the archive HTML pages (You only
+    need to do this if you are displaying the &quot;number of downloads&quot; on the archive).</li>
+  <li>The CGI will automatically create HTML pages of your archive everytime a new file is
+    added, in the directory you specified in <strong>vars.cgi</strong>. The files will be: <em>archive.html</em>
+    for a listing of all files, <em>archive_a.html</em> to <em>archive_z.html</em> for each
+    letter, and <em>archive_other.html</em> for any remaining listings (numbers and special
+    characters).</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p><u><strong>What does &quot;java_info.cgi&quot; do?</strong></u></p>
+
+<p>This CGI is used to provide stats about your archive using Javascript tags, and you can
+put them anywhere on any page you want. Each function you can use is described: 
+
+<ul>
+  <li>Display the amount of credits a user has in his account (if your archive has a ratio
+    set).<br>
+    The output is just a number.<br>
+    HTML to use: <em>&lt;script src=&quot;http://yourdomain.com/java_info.cgi?<strong>credits=show</strong>&quot;&gt;&lt;/script&gt;</em><br>
+  <br></li>
+  <li>Display the total number of files currently in your archive.<br>
+    The output is a number.<br>
+    HTML to use: <em>&lt;script src=&quot;http://yourdomain.com/java_info.cgi?<strong>total=show</strong>&quot;&gt;&lt;/script&gt;</em><br>
+  <br></li>
+  <li>Display the most downloaded files from your archive (Replace X with any number you
+    want).<br>
+    Example output (first line): <em>1. <a href="link">The Offspring - Original Prankster</a>
+    (321)</em><br>
+    HTML to use: <em>&lt;script src=&quot;http://yourdomain.com/java_info.cgi?<strong>top=X</strong>&quot;&gt;&lt;/script&gt;</em><br>
+  <br></li>
+  <li>Display the most downloaded files from a specific category (Replace X with any number
+    you want; Replace CATEGORY with the exact name of the category).<br>
+    Example output (first line): <em>1. <a href="link">The Offspring - Original Prankster</a>
+    (321)</em><br>
+    HTML to use: <em>&lt;script src=&quot;http://yourdomain.com/java_info.cgi?<strong>top=X&amp;cat=CATEGORY</strong>&quot;&gt;&lt;/script&gt;</em><br>
+  <br></li>
+  <li>Display the newest files (Replace X with any number you want).<br>
+    Example output (first line): <em>1. <a href="link">The Offspring - Original Prankster</a>
+    (2/3/01 22:01)</em><br>
+    HTML to use: <em>&lt;script src=&quot;http://yourdomain.com/java_info.cgi?<strong>new=X</strong>&quot;&gt;&lt;/script&gt;</em><br>
+  <br></li>
+  <li>Display the newest files in a specific category only (Replace X with any number you
+    want; Replace CATEGORY with the exact name of the category).<br>
+    Example output (first line): <em>1. <a href="link">The Offspring - Original Prankster</a>
+    (2/3/01 22:01)</em><br>
+    HTML to use: <em>&lt;script src=&quot;http://yourdomain.com/java_info.cgi?<strong>new=X&amp;cat=CATEGORY</strong>&quot;&gt;&lt;/script&gt;</em><br>
+  <br></li>
+  <li>Display the user's download list (saved for later download).<br>
+    Example output (first line): <a href="link"><em>The Offspring - Original Prankster</em></a><br>
+    HTML to use: <em>&lt;script src=&quot;http://yourdomain.com/java_info.cgi?<strong>dlist=show</strong>&quot;&gt;&lt;/script&gt;</em><br>
+  <br></li>
+  <li>Display the top contributors (people who added files) to your archive (Replace X with
+    any number you want).<br>
+    Example output (first line): <em>1. <a href="http://www.smartcgis.com">Smart CGIs</a> (43)</em><br>
+    HTML to use: <em>&lt;script src=&quot;http://yourdomain.com/java_info.cgi?<strong>tophelp=X</strong>&quot;&gt;&lt;/script&gt;</em><br></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p><a name="download"></a><u><strong>Download Page Tags</strong></u></p>
+
+<p>Your download page has a lot of content that is unique to each file. There are tags you
+can place inside your <strong>download.html</strong> page that will later be replaced by a
+value. The tags are all square brackets with a keyword inside, the following table
+explains each:</p>
+<div align="center"><center>
+
+<table border="0" width="100%">
+  <tr>
+    <td width="21%"><strong>Tag to use:</strong></td>
+    <td width="79%"><strong>Description of tag:</strong></td>
+  </tr>
+  <tr>
+    <td width="21%">[thumbnail]</td>
+    <td width="79%">If you have thumbnails in your archive this tag will be replaced by the
+    thumbnail image associated with the file.</td>
+  </tr>
+  <tr>
+    <td width="21%">[filename]</td>
+    <td width="79%">The real name of the file (example: my-head.gif)</td>
+  </tr>
+  <tr>
+    <td width="21%">[category]</td>
+    <td width="79%">The category the file is in.</td>
+  </tr>
+  <tr>
+    <td width="21%">[size]</td>
+    <td width="79%">The size of the file (only works if the file is uploaded).</td>
+  </tr>
+  <tr>
+    <td width="21%">[date]</td>
+    <td width="79%">Date the file was add to the archive.</td>
+  </tr>
+  <tr>
+    <td width="21%">[provider]</td>
+    <td width="79%">Name of the person (or site) that added the file, with link to their web
+    site.</td>
+  </tr>
+  <tr>
+    <td width="21%">[download_link]</td>
+    <td width="79%">This is the link people follow to actually download the file.</td>
+  </tr>
+  <tr>
+    <td width="21%">[download_number]</td>
+    <td width="79%">The number of times the file was downloaded.</td>
+  </tr>
+  <tr>
+    <td width="21%">[report]</td>
+    <td width="79%">The URL for people to report that the file is not working (dead link).</td>
+  </tr>
+  <tr>
+    <td width="21%">[entryX_name]<br>
+    <small>(X is a value from 1 to 6)</small></td>
+    <td width="79%">The title of the field describing the file (you have up to 6 of these). <em>Example:
+    Artist</em></td>
+  </tr>
+  <tr>
+    <td width="21%">[entryX_value]<br>
+    <small>(X is a value from 1 to 6)</small></td>
+    <td width="79%">The value for one of these fields. <em>Example: The Beatles</em></td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>If you have any questions you can e-mail <a href="mailto:webmaster@smartcgis.com">webmaster@smartcgis.com</a></p>
+</body>
+</html>
