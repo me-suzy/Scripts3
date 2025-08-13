@@ -1,0 +1,17 @@
+Hello $email,
+Thank You for your interest in our products. The product you have 
+requested - $productname - is sent as an attachment to this email note. 
+
+To open the attachment double click on the attachment link.
+
+We invite you to return and try out our other products. You may 
+visit us here: 
+
+$companyurl
+
+Your Login Email: $email
+Your Password: $password
+
+
+Yours Sincerely,
+$webmaster
