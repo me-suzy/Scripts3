@@ -1,0 +1,30 @@
+<?
+$ubbt_lang['FILE_TOO_BIG']="Files can be no larger than {$config['filesize']}";
+$ubbt_lang['READ_PERM']  = 	"You have read only privileges for this forum";
+$ubbt_lang['POST_ICON']  =     "Posta Icona";
+$ubbt_lang['SPELL_CHECK']  = 	"Controllo ortografico";
+$ubbt_lang['SPELL_BODY']  = 	"Il tuo messaggio è stato sottoposto a controllo ortografico. I possibili errori sono stati <u>sottolineati</u>, con i nostri suggerimenti tra parentesi.";
+$ubbt_lang['NAME_TAKEN']  = 	"The username you are trying to post under has already registered and is being used by someone else.";
+$ubbt_lang['BAD_UNAME']  = 	"Non puoi utilizzare caratteri in html nel tuo nome utente oppure inserire spazi prima o dopo di questo.";
+$ubbt_lang['LONG_NAME']  = 	"Il nome utente non è della lunghezza appropriata.";
+$ubbt_lang['LOCKED']  = 	"Spiacente, questo argomento è riservato e non hai la possibilità di aggiungerti.";
+$ubbt_lang['TWO_POLLS']  = 	"You may only have 1 poll in a post.";
+$ubbt_lang['PREV_POST']  = 	"Anteprima Messaggio";
+$ubbt_lang['SUB_VOTE']  = 	"Submit vote";
+$ubbt_lang['POST_BODY']  = 	"La seguente è una anteprima del tuo messaggio.  Se ogni cosa ti sembra ok clicca 'Continua' e il tuo messaggio sarà inserito.  In caso contrario utilizza il tuo bottone back/indietro e modificare ancora.";
+$ubbt_lang['YES_FILE2']  = 	"Puoi attaccare un file al tuo messaggio se lo desideri.  La grandezza del file è limitata a  {$config['filesize']} bytes";
+$ubbt_lang['NO_FILE2']  = 	"Sebbene siano permessi i file in attach, devi utilizzare un browser compatibile con Mozilla 4+ per questa funzione.";
+$ubbt_lang['EDIT_MORE']  = 	"Edit some more";
+$ubbt_lang['POST_TEXT']  = 	"Posta";
+$ubbt_lang['DO_EMAIL']  = 	"Invia in email tutte le risposte al mio reale indirizzo email";
+$ubbt_lang['DO_PREVIEW']  = 	"I want to preview my post";
+$ubbt_lang['CAN_ATTACH']  = 	"and/or attach a file";
+$ubbt_lang['NO_DUPS']  = 	"Questo messaggio è già stato inserito nel database.";
+$ubbt_lang['UNREGED_USER']  = 	"Unregistered";
+$ubbt_lang['REPLY_SUB']  = 	"Risposta al tuo messaggio";
+$ubbt_lang['REPLY_BOD']  = 	"replied to your post at the site: .";
+$ubbt_lang['POST_ENTERED']  = 	"Il tuo messaggio è stato inserito.";
+$ubbt_lang['MOD_CONFIRM']  = 	"Il tuo messaggio è stato accettato.  Questa sezione del forum è completamente moderata e per questo motivo non sarà mostrato fino a quando l'Amministratore o il Moderatore non lo avrà letto.  Sarai in breve riportato al forum.";
+$ubbt_lang['FORUM_RETURN']  = 	"Ritorna al forum";
+$ubbt_lang['VIEW_POST']  = 	"Vedi il tuo messaggio";
+?>
