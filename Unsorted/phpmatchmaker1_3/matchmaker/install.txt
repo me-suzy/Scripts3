@@ -1,0 +1,15 @@
+INSTALL INSTRUCTIONS
+
+1. Unzip.
+2. Load the mm.sql into database throgh phpMyAdmin or mysql admin.
+3. Edit db_inc.php, and set correct database and passwords.
+4. Make sure that image_upload directory is writeable for all (chmod 777).
+5. Password protect the webmaster directory.
+6. You are done.
+
+
+CUSTOMIZE
+
+- You find the admin area at /webmaster.
+- In the dir /optionfiles, you can put a list of interests in textfiles.
+- In the /template dir, you can change the way of listing searchresults.
