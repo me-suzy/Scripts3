@@ -1,0 +1,672 @@
+<html>
+
+<head>
+<title>Documentation IBILL PROCESSOR</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="description" content="We have developed the LEADING backend CGI system for integrating your membership site into ANY IBILL account(s).&nbsp; Our streamlined code is capable of delivering FAST results on even the LARGEST databases WITHOUT the hassle of installing DBM modules.&nbsp; IBILL Processor delivers over $1,000,000 in transactions to IBILL Company EVERY MONTH!&nbsp; We have installed IBILL PROCESSOR on the largest sites online including DANNYS HARD DRIVE, PLEASUREONLINE, AOLSEX.COM, and more.&nbsp; Capable of handling an unlimited arrary of WEB900, RECURRING, NON-RECURRING billing schemes in a SINGLE INSTALLATION.&nbsp; Automatically manages your password database and pincode files so you can focus on MARKETING and DESIGNING your site!&nbsp; Conventient PROTECTED administrative interface allows you to OVERRIDE the automation and add/delete users manually.&nbsp; Complex fraud scrubbing allows you to sleep safely as it is impossible to hack through our system with unauthorized access">
+<meta name="keywords" content="IBILL Company, IBILL, CGI Scripts, Basic TP, Web 900, DMR, Cybercash, Password Site Automation and Administration, Security, Password Protection, Adult Webmaster, CGI Script">
+<meta name="robots" content="index">
+<meta name="revisit-after" Content="14 days">
+
+<meta name="Microsoft Border" content="t, default"></head>
+
+<body style="background-image: url('../demo/superclix/background.gif')"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+
+<table border="0" width="33%" cellpadding="0">
+  <tr>
+    <td width="50%"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/" ONCLICK="parent.f=0"><img src="../pix/banners/miniprizm.gif" alt="cgi scripts" border="0" WIDTH="305" HEIGHT="59"></a></font></td>
+    <td width="50%" bgcolor="#FFFFFF"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/ads/rotate.cgi?url=&amp;user=" target="new" ONCLICK="parent.f=0"><img src="http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user=" border="0" width="468" height="60"></a></font></td>
+  </tr>
+</table>
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="16%"><p align="center"><a href="../dsstoday/index.html"><font color="#000000" face="Arial"><img src="../pix/main/news.jpg" alt="CGI NEWS" align="left" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="16%"><p align="center"><a href="../scripts/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/scripts.jpg" alt="CGI Scripts" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../mastergate/index.html"><font color="#000000" face="Arial"><img src="../pix/main/access.jpg" alt="Access The CGI Archive" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../contact.html"><font color="#000000" face="Arial"><img src="../pix/main/contact.jpg" alt="Contact Superscripts" WIDTH="104" HEIGHT="68"></font></a></td>
+    <td width="17%"><p align="center"><a href="../support.html"><font color="#000000" face="Arial"><img src="../pix/main/dox.jpg" alt="CGI Documentation" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../download/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/download.jpg" alt="Download CGI Scripts Here" align="right" WIDTH="105" HEIGHT="65"></font></a></td>
+  </tr>
+  <tr>
+    <td width="16%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/dsstoday/index.html" style="color: rgb(255,255,255)"><strong>News</strong></a></font></td>
+    <td width="16%" bgcolor="#000000"><p align="center"><a href="/scripts/" style="color: rgb(255,255,255)"><font face="Arial" color="#FFFFFF"><strong>CGI Scripts</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><a style="color: rgb(255,255,255)" href="../mastergate/index.html"><font face="Arial" color="#FFFFFF"><strong>Become A Member</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../contact.html"><strong>Contact
+    Us</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../support.html"><strong>Support</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/download/index.shtml" style="color: rgb(255,255,255)"><strong>Download
+    Area</strong></a></font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+
+<table border="0" width="75%" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <p><big><big><strong><font face="Arial" color="#FF0000">Documentation<br>
+      </font></strong><font face="Arial" color="#000000">IBILL PROCESSOR:&nbsp; V6.0</font></big></big></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Copyright 2001 Psybercore, Inc. - All Rights
+        Reserved. </small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">Selling redistributing or modifying any or
+        all of the code for this program without prior written consent is expressly forbidden. You
+        must obtain written permission before redistributing this software over the Internet or in
+        any other medium. In all cases copyright and header information must remain intact.</font></small></p>
+      </blockquote>
+      <hr align="left">
+      <p><strong><big><font face="Arial" color="#000000">System Requirements</font></big></strong><ul>
+        <li><small><font face="Arial" color="#000000">Unix, Lynyx or NT Operating System </font></small></li>
+        <li><font face="Arial" color="#000000"><small>Perl 5</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Apache, IIS3.0, IIS4.0, or Enterprise web
+          server</small></font></li>
+      </ul>
+      <p><strong><big><font face="Arial" color="#000000">IIS Users</font></big></strong></p>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">If you are installing this on an NT Server
+        you MUST have a program called DAF installed.&nbsp; Your ISP should either already HAVE
+        this installed or be willing to install it since it is IMPOSSIBLE to run a password site
+        without it. &nbsp; The guy that created DAF is really cool and very helpful if you are
+        installing this yourself.&nbsp; <a href="http://www.dafweb.com/daf30">Visit his website</a>
+        or <a href="mailto:daf@dafweb.com">email</a> him for assistance with DAF. </font></small></p>
+      </blockquote>
+      <p><strong><big><font face="Arial" color="#000000">Upgrading?</font></big></strong></p>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">If you already are running IBILL processor
+        4.0 or earlier you CANNOT simply replace your installation with 5.0.&nbsp; I had to make
+        some changes to the database structure that I have been putting off for a LONG LONG
+        time.&nbsp; </font></small></p>
+        <p><font face="Arial" color="#000000"><small>5.0 to 6.0</small></font></p>
+        <p><small><font face="Arial" color="#000000">Simply download the new tarball, and replace
+        accountcreate.cgi, search.cgi and delete.cgi.&nbsp; Remove restore.cgi.</font></small></p>
+        <p><strong><font face="Arial" color="#000000">older versions NT</font></strong></p>
+        <blockquote>
+          <ul>
+            <li><small><font face="Arial" color="#000000">FIRST BACKUP THE FOLLOWING FILES from your OLD
+              installation and STORE THEM SOMEWHERE SAFE - backup,log,database,passwords</font></small></li>
+            <li><small><font face="Arial" color="#000000">Copy your old LOG and DATABASE files into your
+              new installation</font></small></li>
+            <li><small><font face="Arial" color="#000000">Upload rebuild.cgi (its in the new tar file)
+              into this same directory - chmod 755 rebuild.cgi</font></small></li>
+            <li><small><font face="Arial" color="#000000">Upload a BLANK text file called newlog into
+              this directory and chmod 777 this file</font></small></li>
+            <li><small><font face="Arial" color="#000000">From telnet or from your browser run
+              rebuild.cgi</font></small></li>
+            <li><small><font face="Arial" color="#000000">DOWNLOAD the file newlog and RE UPLOAD this
+              file as log (over the old file)</font></small></li>
+            <li><small><font face="Arial" color="#000000">Now from the new ADMIN page click on the
+              RESTORE LINK @ the bottom of the page to execute restore.cgi</font></small></li>
+            <li><small><font face="Arial" color="#000000">ALL DONE!</font></small></li>
+          </ul>
+        </blockquote>
+        <p><strong><font face="Arial" color="#000000">older versions unix</font></strong></p>
+        <blockquote>
+          <ul>
+            <li><small><font face="Arial" color="#000000">Download the new IBILL.tar file</font></small></li>
+            <li><small><font face="Arial" color="#000000">Read the instructions inside of
+              /upgrade.tools/compile.cgi</font></small></li>
+          </ul>
+        </blockquote>
+      </blockquote>
+      <p><strong><big><font face="Arial" color="#000000">Preliminaries</font></big></strong><ul>
+        <li><small><font face="Arial" color="#000000">Determine the path to PERL 5 on your web
+          server host.&nbsp; Note that some web hosting companies run both PERL 4 and PERL 5.&nbsp;
+          Make ABSOLUTELY sure you are not setting this up under PERL 4.&nbsp; Ask your
+          administrator if you are not sure. </font></small></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>If you need to review or learn the basics of
+          CGI and Perl check out the <a href="../tutorial/index.html">superscripts tutorial
+          archives.</a></small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small><a href="http://www.superscripts.com/download/">Download</a> the tarfile for this program and
+          save it to your desktop.</small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Unpack the tar archive on your desktop using a
+          program that unpacks UNIX TAR ARCHIVES. If you don't have such a program then download
+          WINZIP FREE from <a HREF="http://www.shareware.com/">SHAREWARE.COM</a>.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>After you have unpacked the TAR archive you
+          will have a collection of folders and files on your desktop.&nbsp; Now you have to do some
+          basic editing of each of these files (or at least some of them).&nbsp; Use a text editor
+          such as wordpad, notepad, BBEdit, simpletext, or teachtext to edit the files.&nbsp; These
+          are NOT WORD PROCESSOR DOCUMENTS they are just simple TEXT files so don't save them as
+          word processor documents or save them with extentions such as .txt or they will NOT WORK.
+          &nbsp; Note that there may be a some files inside of folders which are &quot;blank&quot;.
+          &nbsp; This is normal.</small></font></li>
+      </ul>
+      <p><strong><big><font face="Arial" color="#000000">Preparing the CGI scripts</font></big></strong></p>
+      <blockquote>
+        <p><small><small><font face="Arial" color="#FF0000">Define Path To PERL 5</font></small></small></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>The first step is to open up each and every
+        file that has a .cgi extention and edit line number one of each script.&nbsp; Each of the
+        cgi scripts is written in perl 5. For your scripts to run they must know where perl 5 is
+        installed on your web server. The path to perl 5 is defined to a cgi script in the first
+        line of the file. In each of the cgi scripts the first line of code looks something like
+        this: </small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#FF0000"><small>#!/usr/bin/perl</small></font></p>
+        </blockquote>
+        <p><font face="Arial" color="#000000"><small>If the path to perl 5 on your web server is
+        different from /usr/bin/perl you must edit the first line of each cgi script to reflect
+        the correct path. If the path to perl 5 is the same no changes are necessary. If you do
+        not know the path to perl 5 ask the webmaster or system administrator at your server site.
+        &nbsp; </small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big><strong>Configure the .cgi files</strong></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><big>configure.cgi</big></font><ul>
+          <li><font face="Arial" color="#FF0000"><small>$date_command = &quot;/usr/bin/date&quot;; </small></font></li>
+          <li><font face="Arial" color="#FF0000"><small>$localurl = &quot;yourdomain.com&quot;; </small></font></li>
+          <li><font face="Arial" color="#FF0000"><small>$remoteurl = <a href="http://yourdomain.com/members/">&quot;secure.logicom.com&quot;</a>; </small></font></li>
+          <li><font face="Arial" color="#FF0000"><small>$remoteurl = <a href="http://yourdomain.com/members/">&quot;verify.netleader.com&quot;</a>; </small></font></li>
+          <li><font face="Arial" color="#FF0000"><small>$securedurl =
+            &quot;http://yourdomain.com/members/&quot;; </small></font></li>
+          <li><font face="Arial" color="#FF0000"><small>$userdatabase =
+            &quot;/path/to/cgi-bin/mastergate/database&quot;; </small></font></li>
+          <li><font face="Arial" color="#FF0000"><small>$accessfile =
+            &quot;/path/to/cgi-bin/mastergate/passwords&quot;; </small></font></li>
+          <li><font face="Arial" color="#FF0000"><small>$logfile =
+            &quot;/path/to/cgi-bin/mastergate/log&quot;; </small></font></li>
+          <li><font face="Arial" color="#FF0000"><small>$deleteurl = <a href="http://www.yourdomain.com/cgi-bin/mastergate/delete.cgi">&quot;http://www.yourdomain.com/cgi-bin/mastergate/delete.cgi&quot;</a>;</small></font></li>
+          <li><font face="Arial" color="#FF0000"><small>$modifyurl = <a href="http://www.yourdomain.com/cgi-bin/mastergate/delete.cgi">&quot;http://www.yourdomain.com/cgi-bin/mastergate/modify.cgi&quot;</a></small></font></li>
+        </ul>
+        <blockquote>
+          <p><small><font face="Arial" color="#000000">Each line of code does the following: </font></small></p>
+        </blockquote>
+        <ol>
+          <li><font face="Arial" color="#000000"><small>Defines $date_command as the path to the date
+            program on your web server. </small></font></li>
+          <li><font face="Arial" color="#000000"><small>Defines $localurl as the DOMAIN NAME of your
+            website</small></font></li>
+          <li><font face="Arial" color="#000000"><small>Defines $remoteurl as the URL of internet
+            billing</small></font></li>
+          <li><font face="Arial" color="#000000"><small>Defines $userdatabase as the path to the
+            database file in your cgi-bin/mastergate directory.</small></font></li>
+          <li><font face="Arial" color="#000000"><small>Defines $accessfile as the path to the
+            passwords file in your cgi-bin/mastergate directory.</small></font></li>
+          <li><font face="Arial" color="#000000"><small>Defines $logfile as the path to the log file
+            in your cgi-bin/mastergate directory.&nbsp; </small></font></li>
+          <li><font face="Arial" color="#000000"><small>Defines $deleteurl as the URL of delete.cgi</small></font></li>
+          <li><font face="Arial" color="#000000"><small>Defines $modifyurl as the URL of modify.cgi<br>
+            Each line must be edited to reflect the appropriate path and URLs on your server.</small></font></li>
+        </ol>
+      </blockquote>
+      <p><strong><big><font face="Arial" color="#000000">File Locations</font></big></strong><ul>
+        <li><small><font face="Arial" color="#000000">Make a directory named mastergate inside your
+          ROOT HTML directory. </font></small></li>
+        <li><font face="Arial" color="#000000"><small>Make a directory named mastergate inside your
+          cgi-bin directory</small></font></li>
+      </ul>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>The following files will be uploaded into
+        http://yourdomain/cgi-bin/mastergate/</small></font></p>
+      </blockquote>
+      <blockquote>
+        <dl>
+          <dd><font face="Arial" color="#FF0000"><small>configure.cgi <br>
+            accountcreate.cgi <br>
+            add.cgi <br>
+            delete.cgi <br>
+            count.cgi</small></font></dd>
+          <dd><font face="Arial" color="#FF0000"><small>modify.cgi</small></font></dd>
+          <dd><font face="Arial" color="#FF0000"><small>search.cgi </small></font></dd>
+          <dd><font face="Arial" color="#FF0000"><small>passwords </small></font></dd>
+          <dd><font face="Arial" color="#FF0000"><small>database </small></font></dd>
+          <dd><font face="Arial" color="#FF0000"><small>log </small></font></dd>
+          <dd><font face="Arial" color="#FF0000"><small>admin </small></font></dd>
+          <dd><font face="Arial" color="#FF0000"><small>ALL PINCODE FILES (explained later)</small></font></dd>
+        </dl>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>The following files will be uploaded into
+        http://yourdomain/mastergate/</small></font></p>
+      </blockquote>
+      <blockquote>
+        <dl>
+          <dd><font face="Arial" color="#FF0000"><small>index.html </small></font></dd>
+          <dd><font face="Arial" color="#FF0000"><small>ALL 900.html files </small></font></dd>
+        </dl>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>The following files will be uploaded into
+        http://yourdomain/mastergate/admin/</small></font></p>
+      </blockquote>
+      <blockquote>
+        <dl>
+          <dd><font face="Arial" color="#FF0000"><small>admin/index.html</small></font></dd>
+          <dd><font face="Arial" color="#FF0000"><small>admin/htaccess (RENAMED .htaccess) </small></font></dd>
+        </dl>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><small>The following files will be uploaded into
+      http://yourdomain/members/</small></font></p>
+      <blockquote>
+        <dl>
+          <dd><font face="Arial" color="#FF0000"><small>htaccess (RENAMED .htaccess) </small></font></dd>
+        </dl>
+      </blockquote>
+      <p><strong><big><font face="Arial" color="#000000">File Access Permissions</font></big></strong></p>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">File access permissions must be set correctly
+        for this program to run. The table below lists the permissions of each file which are to
+        be set by the unix command ( chmod ) used to set the correct access permissions. You must
+        set the access permissions for each of these files.&nbsp; NT users will not have to set
+        permissions obviously.</font></small></p>
+      </blockquote>
+      <div align="center"><center><table WIDTH="448" HEIGHT="67" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+        <tr>
+          <td WIDTH="50%" HEIGHT="17" bgcolor="#000000"><p ALIGN="left"><strong><font face="Arial" color="#FFFFFF"><small>&nbsp;CHMOD 755</small></font></strong></td>
+          <td WIDTH="50%" bgcolor="#000000"><p ALIGN="left"><strong><font face="Arial" color="#FFFFFF"><small>&nbsp;CHMOD 777</small></font></strong></td>
+        </tr>
+        <tr>
+          <td WIDTH="50%" HEIGHT="41"><p align="left"><small><font face="Arial" color="#000000">configure.cgi
+          <br>
+          accountcreate.cgi <br>
+          add.cgi <br>
+          delete.cgi <br>
+          count.cgi <br>
+          modify.cgi</font></small></p>
+          <p align="left"><small><font face="Arial" color="#000000">search.cgi</font></small></td>
+          <td WIDTH="50%"><p align="left"><small><font face="Arial" color="#000000">passwords <br>
+          database </font></small></p>
+          <p align="left"><small><font face="Arial" color="#000000">log <br>
+          admin <br>
+          all pincode files </font></small></td>
+        </tr>
+      </table>
+      </center></div><p><strong><big><font face="Arial" color="#000000">Create Pincode Files </font></big></strong></p>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">IBILL has sent you lists of pincodes (1000
+        per list) each with a corresponding master account and sub account number. These pincodes
+        must be grouped by sub account and converted to text files. The files must be labeled by
+        account number and then transferred to your web server. </font></small></p>
+        <p><small><font face="Arial" color="#000000">Note: There must not be any blank spaces,
+        blank lines or line feed characters between the codes in these files. </font></small></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000">Example:</font></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>A pincode file contains the sub account
+        number 8050100 with a list of associated pincodes. </small></font></p>
+      </blockquote>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Create a text file with the pin codes line by
+          line as follows. <br>
+          </small></font><dl>
+            <dd><font face="Arial" color="#FF0000"><small>5066819 </small></font></dd>
+            <dd><font face="Arial" color="#FF0000"><small>0853835 </small></font></dd>
+            <dd><font face="Arial" color="#FF0000"><small>6417951 </small></font></dd>
+            <dd><font face="Arial" color="#FF0000"><small>1367069 </small></font></dd>
+            <dd><font face="Arial" color="#FF0000"><small>1688538 </small></font></dd>
+            <dd><font face="Arial" color="#FF0000"><small>6560906 </small></font></dd>
+            <dd><font face="Arial" color="#FF0000"><small>9965320 </small></font></dd>
+            <dd><font face="Arial" color="#FF0000"><small>2356833 </small></font></dd>
+            <dd><font face="Arial" color="#FF0000"><small>1437729 </small></font></dd>
+            <dd><font face="Arial" color="#FF0000"><small>9289087 </small></font></dd>
+            <dd><font face="Arial" color="#FF0000"><small>6211526 </small></font></dd>
+            <dd><font face="Arial" color="#FF0000"><small>4327962 </small></font></dd>
+            <dd><font face="Arial" color="#FF0000"><small>etc...</small></font></dd>
+            <dd>&nbsp;</dd>
+          </dl>
+        </li>
+        <li><font face="Arial" color="#000000"><small>Save the file using the name of your subaccont
+          and masteraccount (example 8050100 would be for master account 8050, sub account 100)<br>
+          </small></font></li>
+        <li><font face="Arial" color="#000000"><small>Do this for each sub account in each of the
+          pincode lists provided by IBILL. <br>
+          </small></font></li>
+        <li><font face="Arial" color="#000000"><small>Using ftp upload the files to the
+          ../cgi-bin/mastergate/ directory<br>
+          </small></font></li>
+        <li><font face="Arial" color="#000000"><small>Set the permissions on the pincode files to
+          world r,w,e (chmod 777)</small></font><p><font face="Arial" color="#FF0000"><small>chmod
+          777 filename </small></font></p>
+        </li>
+      </ul>
+      <p><big><strong><font face="Arial" color="#000000">Create .htaccess Files to password
+      protect directories</font></strong></big></p>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">Important: Create these files now but don't
+        upload them until the entire installation is finished.&nbsp;&nbsp; .htaccess files are
+        password control files used by APACHE ONLY.&nbsp; If you use Enterprise or IIS you will
+        need to consult the <a href="../support/index.html">HELP PAGE</a> for more information
+        regarding password protecting directories.</font></small></p>
+        <p><font face="Arial" color="#000000"><small>You must create .htaccess files for your
+        admin and member directories. The .htaccess files are used by your server, in combination
+        with password files, to control access to the directories where your your web pages
+        reside. The .htaccess file in the admin directory will determine who has access to your
+        administrative pages. The .htaccess file in the members directory will determine who has
+        access to your membership pages.</small></font></p>
+      </blockquote>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Create a .htaccess file In your
+          http://your-domain/mastergate/admin/ directory using the example file htaccess.example.
+          Note the first line of the file looks something like this: </small></font><p><font face="Arial" color="#FF0000"><small>AuthUserFile /path/to/cgi-bin/mastergate/admin </small></font></p>
+          <p><font face="Arial" color="#000000"><small>This line sets AuthUserFile as the path to
+          your admin password file. It must map to the path of your admin password file: ie: </small></font></p>
+          <p><font face="Arial" color="#FF0000"><small>AuthUserFile
+          /path-to/cgi-bin/mastergate/admin</small></font></p>
+        </li>
+        <li><font face="Arial" color="#000000"><small>Now create a .htaccess file in your
+          http://your-domain/members/ directory using the example file htaccess.example. <br>
+          </small></font></li>
+        <li><font face="Arial" color="#000000"><small>Assign AuthUserFile so it maps to the path of
+          your members password file. ie: </small></font><p><font face="Arial" color="#FF0000"><small>AuthUserFile
+          /path-to/cgi-bin/mastergate/passwords </small></font></p>
+        </li>
+      </ul>
+      <div align="center"><center><table WIDTH="623" HEIGHT="138" BORDER="0" CELLSPACING="2" CELLPADDING="0">
+        <tr>
+          <td HEIGHT="133" width="621"><p align="center"><font face="Arial" color="#000000"><small>Important
+          information for Netscape Enterprise Servers </small></font></p>
+          <dl>
+            <dd><font face="Arial" color="#000000"><small>You will need to manually edit your htaccess
+              file - actually Enterprise servers don't use htaccess they use something similar called
+              nsconfig. Here is the basic structure </small></font></dd>
+            <dd><font face="Arial" color="#000000"><small>&nbsp; </small></font></dd>
+            <dd><font face="Arial" color="#000000"><small>&lt;Files mastergate/secured/*&gt; </small></font></dd>
+            <dd><font face="Arial" color="#000000"><small>RequireAuth
+              userfile=/path/to/cgi-bin/mastergate/passwords </small></font></dd>
+            <dd><font face="Arial" color="#000000"><small>realm=&quot;yourdomain.com&quot; userlist=* </small></font></dd>
+            <dd><font face="Arial" color="#000000"><small>&lt;/Files&gt; </small></font></dd>
+            <dd>&nbsp;</dd>
+            <dd><font face="Arial" color="#000000"><small>Ask your system administrator if you need
+              further assistance with this. </small></font></dd>
+          </dl>
+          </td>
+        </tr>
+      </table>
+      </center></div><p><big><strong><font face="Arial" color="#000000">Editing
+      mastergate/index.html - THE MEMBER SIGN UP PAGE</font></strong></big></p>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">The index.html file in the top level
+        mastergate directory must be edited to supply correct information for each of your credit
+        card account, web 900 account or dedicated 900 account buttons.</font></small></p>
+      </blockquote>
+      <blockquote>
+        <p><strong><font face="Arial" color="#000000">Credit Card Buttons</font></strong></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">Review the following lines of code from the
+        credit card section and edit them according to the instructions given. <br>
+        <br>
+        </font><font face="Arial" color="#FF0000">&lt;input type=&quot;hidden&quot;
+        size=&quot;7&quot; maxlength=&quot;7&quot; minlength=&quot;7&quot; name=&quot;ref1&quot;
+        value=&quot;/path/to/cgi-bin/mastergate/8050100&quot;&gt; <br>
+        </font><font face="Arial" color="#000000"><br>
+        The field ref1 has it's value field set to 8050100. The value field is the account
+        masteraccount-sub account number of this button and must be changed to contain one of your
+        IBILL account numbers. In the example above I use masteraccount 8050 and subaccount 100
+        (8050100)<br>
+        <br>
+        </font><font face="Arial" color="#FF0000">&lt;input type=&quot;hidden&quot;
+        size=&quot;7&quot; maxlength=&quot;7&quot; minlength=&quot;7&quot; name=&quot;ref2&quot;
+        value=&quot;30&quot;&gt; <br>
+        </font><font face="Arial" color="#000000"><br>
+        The field ref2 is the number of days this account is good for. You must set the value
+        field of ref2 to the correct number of days that corresponds to the sub account referred
+        to by ref1 (for recurring set to 9999999). <br>
+        <br>
+        </font><font face="Arial" color="#FF0000">&lt;input type=&quot;hidden&quot;
+        name=&quot;account&quot; value=&quot;8050100&quot;&gt; <br>
+        </font><font face="Arial" color="#000000"><br>
+        The value field of this line refers to the same account referred to by ref1. Set this
+        value field to the same account number. <br>
+        <br>
+        </font><font face="Arial" color="#FF0000">&lt;input type=&quot;submit&quot;
+        value=&quot;$9.95 for 30 days by credit card&quot;&gt; <br>
+        </font><font face="Arial" color="#000000"><br>
+        This line contains the price and expire information as displayed to your client. Change
+        the value field to indicate whatever number of dollars per time this sub account
+        purchases.</font></small></p>
+        <p><font face="Arial" color="#000000"><small>As the comments in the index.html file
+        indicate you must copy and edit this section of code for each of your sub-accounts.</small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><strong><font face="Arial" color="#000000">Web 900 or Dedicated 900 Buttons</font></strong></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000"><small>Review the following lines of code
+        from the web 900 section and edit them according to the instructions given. <br>
+        </small><br>
+        </font><font face="Arial" color="#FF0000">&lt;input type=&quot;hidden&quot;
+        name=&quot;account&quot; value=&quot;8050500&quot;&gt; <br>
+        </font><font face="Arial" color="#000000"><br>
+        The field account has it's value field set to 8050500. This corresponds to the particular
+        web 900 account.<br>
+        <br>
+        </font><font face="Arial" color="#FF0000">&lt;input type=&quot;hidden&quot;
+        name=&quot;return&quot;
+        value=&quot;http://www.yourdomain.com/mastergate/8050500.html&quot;&gt;&gt; <br>
+        </font><font face="Arial" color="#000000"><br>
+        The value field should be changed to contain the path of the redeem page for your 900
+        pincodes. <br>
+        <br>
+        </font><font face="Arial" color="#FF0000">&lt;input type=&quot;submit&quot;
+        value=&quot;$9.95 for 30 days by credit card&quot;&gt; <br>
+        </font><font face="Arial" color="#000000"><br>
+        This line contains the price and expire information as displayed to your client. Change
+        the value field to indicate whatever number of dollars per time this sub-account
+        purchases.</font></small></p>
+      </blockquote>
+      <p><big><strong><font face="Arial" color="#000000">Editing mastergate/admin/index.html -
+      THE ADMINISTRATIVE INTERFACE</font></strong></big></p>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">The index.html file in the mastergate/admin
+        directory must be edited to supply the correct path to your cgi or cgi-bin directory and
+        to add the names of your pincode files to the selection list..</font></small></p>
+      </blockquote>
+      <blockquote>
+        <p><strong><font face="Arial" color="#000000">The Path to CGI</font></strong></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000"><small>A sample form action tag is displayed
+        below. These tags instruct the script to engage a specific cgi file. Edit each of the four
+        form action tags to map correctly to your cgi or cgi-bin directory. <br>
+        </small><br>
+        </font><font face="Arial" color="#FF0000">&lt;FORM
+        ACTION=&quot;/cgi-bin/mastergate/count.cgi&quot; METHOD=POST&gt;</font></small></p>
+      </blockquote>
+      <blockquote>
+        <p><strong><font face="Arial" color="#000000">Specifying Pincode Files </font></strong></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">The section of code displayed below produces
+        a select list where each selection is defined by an option tag. It must be modified so
+        that an option tag exists for each of your pincode files. This allows you to count the
+        number of pincodes in each file. </font></small></p>
+      </blockquote>
+      <blockquote>
+        <p><strong><font face="Arial" color="#000000"><small>Example</small></font></strong></p>
+      </blockquote>
+      <blockquote>
+        <dl>
+          <dd><font face="Arial" color="#FF0000"><small>&lt;select name=&quot;pinfile&quot;&gt; </small></font></dd>
+          <dd><font face="Arial" color="#FF0000"><small>&lt;option
+            selected&gt;/path/to/cgi-bin/mastergate/8050100 </small></font></dd>
+          <dd><font face="Arial" color="#FF0000"><small>&lt;option&gt;/path/to/cgi-bin/mastergate/8050500
+            </small></font></dd>
+          <dd><font face="Arial" color="#FF0000"><small>&lt;/select&gt; </small></font></dd>
+        </dl>
+      </blockquote>
+      <p><strong><big><font face="Arial" color="#000000">Editing webgood pages for credit cards
+      - upload to ftp.IBILL.com</font></big></strong></p>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">You must create webgood pages to transfer to
+        ftp.IBILL.com. Use the template provided for you (g8050100.hmf) and edit as described
+        below. You must create ONE WEBGOOD PAGE PER ACCOUNT.</font></small></p>
+      </blockquote>
+      <blockquote>
+        <p><strong><font face="Arial" color="#000000">Edit Form Action</font></strong></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><small>&lt;form
+        action=&quot;http://yourdomain.com/cgi-bin/mastergate/accountcreate.cgi&quot;&gt;</small></font></p>
+        <p><font face="Arial" color="#000000"><small>Edit to point to accountcreate.cgi on your
+        system</small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><strong><font face="Arial" color="#000000">Name the webgood page</font></strong></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">Rename each webgood page using the following
+        format</font></small></p>
+        <p><font face="Arial" color="#FF0000"><small>gxxxxyyy.hmf</small></font></p>
+        <p><font face="Arial" color="#000000"><small>where xxxx is your MASTER account number and
+        yyy is the sub account number for this particular billing method and rate. See
+        http://www.IBILL.com/setopcc.html for more information regarding this.</small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>It is important that you review your internet
+        billing administration section very thoroughly. The information can be found at</small></font></p>
+        <p><font face="Arial" color="#FF0000"><small>http://www.IBILL.com/admin.htm</small></font></p>
+        <p><font face="Arial" color="#000000"><small>Be sure to edit join.html according to the
+        example at http://www.IBILL.com/samples/join/howtopay.html.</small></font></p>
+      </blockquote>
+      <p><strong><font face="Arial" color="#000000">Editing webgood pages for web 900 - stored
+      on YOUR SERVER</font></strong></p>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">The webgood (or redeem) pages used for web
+        900 numbers are stored inside <a href="http://yourdomain.com/mastergate/">http://yourdomain.com/mastergate/</a>.
+        &nbsp; Each web 900 account will have a unique page for redeeming pincodes.&nbsp; For this
+        example we will use the FICTICIOUS account number 8050500.&nbsp; Use the template provided
+        for you (8050500.html) and edit as described below. You must create ONE WEBGOOD PAGE PER
+        ACCOUNT.</font></small></p>
+      </blockquote>
+      <blockquote>
+        <p><strong><font face="Arial" color="#000000">Edit Form Action</font></strong></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><small>&lt;form
+        action=&quot;http://yourdomain.com/cgi-bin/mastergate/accountcreate.cgi&quot;&gt;</small></font></p>
+        <p><font face="Arial" color="#000000"><small>Edit to point to accountcreate.cgi on your
+        system</small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><strong><font face="Arial" color="#000000">Edit ref1 and ref2 HIDDEN FORM FIELDS</font></strong></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><small>&lt;input type=&quot;hidden&quot;
+        name=&quot;ref1&quot; value=&quot;/path/to/cgi-bin/mastergate/8050500&quot;&gt;</small></font></p>
+        <p><font face="Arial" color="#000000"><small>Edit to point to the location of the PINCODE
+        file for this account</small></font></p>
+        <p><font face="Arial" color="#FF0000"><small>&lt;input type=&quot;hidden&quot;
+        name=&quot;ref2&quot; value=&quot;30&quot;&gt;</small></font></p>
+        <p><font face="Arial" color="#000000"><small>Edit to be the NUMBER OF DAYS this account is
+        for (example is 30 days)</small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><strong><big><font face="Arial" color="#000000">Name the webgood page</font></big></strong></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">Rename each webgood page for your web 900
+        accounts using the following format</font></small></p>
+        <p><font face="Arial" color="#FF0000"><small>xxxxyyy.html</small></font></p>
+        <p><font face="Arial" color="#000000"><small>where xxxx is your MASTER account number and
+        yyy is the sub account number for this particular billing method and rate. See
+        http://www.IBILL.com/setopcc.html for more information regarding this.</small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><big><strong><font face="Arial" color="#000000">Upload your members pay area to
+        http://yourdomain/members/ </font></strong></big></p>
+      </blockquote>
+      <blockquote>
+        <p><strong><font face="Arial" color="#000000">Add a members account for yourself</font></strong></p>
+      </blockquote>
+      <blockquote>
+        <dl>
+          <dd><small><font face="Arial" color="#000000">Go to the administrative interface
+            http://yourdomain/mastergate/admin/ and add an account for yourself by filling out the
+            fields at the bottom of the page.&nbsp; This will add your username and password to the
+            MEMBERS password file. </font></small></dd>
+        </dl>
+      </blockquote>
+      <blockquote>
+        <p><strong><font face="Arial" color="#000000">Add an administrative password for yourself</font></strong></p>
+      </blockquote>
+      <blockquote>
+        <dl>
+          <dd><small><font face="Arial" color="#000000">Now download the passwords file located inside
+            <br>
+            <br>
+            </font><font face="Arial" color="#FF0000">../cgi-bin/mastergate/passwords <br>
+            </font><font face="Arial" color="#000000"><br>
+            and COPY this file as <br>
+            <br>
+            </font><font face="Arial" color="#FF0000">../cgi-bin/mastergate/admin. <br>
+            </font><font face="Arial" color="#000000"><br>
+            Now your members password is the same as your administrative password. </font></small></dd>
+        </dl>
+      </blockquote>
+      <blockquote>
+        <p><strong><font face="Arial" color="#000000"><small>NOW upload the TWO .htaccess files
+        and you are FINISHED!</small></font></strong></p>
+      </blockquote>
+      <blockquote>
+        <dl>
+          <dd><small><font face="Arial" color="#000000">You should test the system by running your
+            credit card through and then redeeming the charge(s) in the IBILL administrative
+            interface. </font></small></dd>
+        </dl>
+      </blockquote>
+      <p><strong><font face="Arial" color="#000000"><small>YOUR NEW MEMBERS SIGN UP PAGE IS HERE</small></font></strong></p>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><small>http://yourdomain/mastergate/index.html</small></font></p>
+      </blockquote>
+      <p><strong><font face="Arial" color="#000000"><small>YOUR MANUAL ADMINISTRATION INTERFACE
+      IS HERE</small></font></strong></p>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><small>http://yourdomain/mastergate/index.html</small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>This will be used to manually overide the
+        AUTOMATIC password cgi scripts if needed.</small></font></p>
+      </blockquote>
+      <hr>
+      <p><font face="Arial" color="#000000"><big>NOTES ON RUNNING YOUR SITE</big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>All passwords are refreshed EVERYTIME a new
+        signup occurs.&nbsp; Once in a while a user will have problems because they are either
+        confused, their computer crashes, or whatever. &nbsp; If that happens you can easily
+        create a username and password for them through the administrative interface.</small></font></p>
+        <p><font face="Arial" color="#000000"><small>You will likely NEVER need to click on the
+        bottom link (regenerate password databases) &nbsp; The ONLY time you might need to do this
+        is in the even that your server crashes. &nbsp; Out of the 500++ installations I have done
+        we have only had to do this TWICE. &nbsp; So basically you should leave this alone - it is
+        only for emergencies.</small></font></p>
+        <p><font face="Arial" color="#000000"><small>DATES - all dates are in a format called a
+        JULIAN DATE.&nbsp; Julian dates are NUMERICAL.&nbsp; 1 being Jan 1, 1991.&nbsp; Since
+        passwords are generally sold for a a given NUMBER OF DAYS the only thing that really
+        matters is the NUMBER OF DAYS a users password is valid - it doesnt matter what DAY it
+        expires.&nbsp; It only matters that if they bought a 30 day password - it should last at
+        least 30 days.</small></font></p>
+        <p><font face="Arial" color="#000000"><small>ADDING USERS MANUALLY - When and if you add
+        an account through the admin interface there are only THREE required fields.&nbsp;
+        Username/Passwords/Expire.&nbsp; Username and passwords are hopefully obvious.&nbsp;&nbsp;
+        Expire is the NUMBER OF DAYS for the account. &nbsp; Thus if you need to add someone for
+        834 days you would enter the number 834 in this field.&nbsp; The other three fields are
+        transaction/subscription/pincode - you will probably not feel like dealing with those
+        fields because you would have to look them up through IBILL </small></font></p>
+        <p><font face="Arial" color="#000000"><small>BACKUP YOUR DATABASES MANUALLY!&nbsp; I dont
+        know why this should be a surprise to anyone.&nbsp; Remember, even the space shuttle
+        exploded.&nbsp; The best laid plans given enough time are bound to fail.&nbsp; Your server
+        will crash someday, or you might accidentally delete your database.&nbsp; Regardless, you
+        should ALWAYS make a point of downloading the database files periodically in case of total
+        disaster.&nbsp; The files you should save are passwords, database, and log. </small></font></p>
+      </blockquote>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
