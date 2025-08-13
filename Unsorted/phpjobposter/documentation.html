@@ -1,0 +1,93 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Documentation of PHP Job Poster</title>
+</head>
+
+<body>
+
+<p><b><font face="Arial">Documentation of PHP Job Poster</font></b></p>
+<p><font face="Arial" size="2">PHP job poster is completely free of charge.&nbsp; I'm sorry that the 
+documentation is not that detailed, but I don't really think it is necessary.&nbsp; 
+This progrma is intended for people who do not have much php or mysql knowledge.&nbsp; 
+So I didn't really comment my files for editing.</font></p>
+<p><b><font face="Arial" size="2">Here are the requirements:</font></b></p>
+<p><font face="Arial" size="2">A internet connection<br>
+Some place to host these files<br>
+A internet mysql database&nbsp; (you must get this from your isp provider)</font></p>
+<p><b><font face="Arial" size="2">13 files included with this package are:</font></b></p>
+<p><font face="Arial" size="2">add.php<br>
+update.php<br>
+delete.php<br>
+config.php<br>
+admin.php<br>
+editdatabase.php<br>
+setpass.php<br>
+job.php<br>
+install.php<br>
+createtable.sql<br>
+password.html<br>
+jobstuff.jpg<br>
+documentation.html (this file)</font></p>
+<p><b><font face="Arial" size="2">So lets begin setting up you new job poster program.</font></b></p>
+<p><font face="Arial" size="2">Step 1.&nbsp; Unzip the jobposter.zip file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<font color="#FF0000">If you 
+are reading this you've probably already done that :)</font></font></p>
+<p><font face="Arial" size="2">Step 2.&nbsp; Edit the config.php file in notepad or another text editor.&nbsp; 
+Edit as follows</font></p>
+<p><font face="Arial" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+$adminuser=&quot;&quot;;&nbsp; <font color="#FF0000">##This is the username of the person you wish to be able to 
+edit your admin file</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $adminpass=&quot;&quot;;&nbsp;<font color="#FF0000"> 
+##This is the password for the name above</font></font></p>
+<p><font face="Arial" size="2"><br>
+<font color="#FF0000">####You do not have to edit this section if you do not want to################</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $maincolor=&quot;#F2F1CE&quot;;&nbsp; 
+<font color="#FF0000">##This sets up you color scheme</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $headercolor=&quot;#E1AA73&quot;;&nbsp; 
+<font color="#FF0000">##This sets up your color for your headers</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $titlefontcolor=&quot;#0000FF&quot;;&nbsp; 
+<font color="#FF0000">##This sets up your color for your fonts</font><br>
+<font color="#FF0000">#########end section########################</font></font></p>
+<p><font face="Arial" size="2"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $jobtitle=&quot;&quot;;&nbsp; 
+<font color="#FF0000">#This is the title of the jobs page</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $dbasehost=&quot;&quot;; 
+<font color="#FF0000">#This is the name of your database host</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $dbaseuser=&quot;&quot;;&nbsp;<font color="#FF0000"> 
+#The username you use to get into your database</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $dbasepassword=&quot;&quot;;&nbsp; 
+<font color="#FF0000">#The password for the username above</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+$dbase=&quot;&quot;;&nbsp; <font color="#FF0000">#The name of the database</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+$folder=&quot;&quot;;&nbsp; <font color="#FF0000"># The location of these jobposter files&nbsp; (ie.&nbsp; 
+http://www.yourserver.com/job/)</font></font></p>
+<p><font face="Arial" size="2">Step 2.&nbsp; Upload all 11 files to a directory on the web.</font></p>
+<p><font face="Arial" size="2">Step 3.&nbsp; Run the install.php file by typing in the browser address 
+window&nbsp; <a href="http://www.yourserver.com/job/install.php">
+www.yourserver.com/job/install.php</a>&nbsp; (This file sets up your database.)</font></p>
+<p><font face="Arial" size="2">Now your database should be set up.</font></p>
+<p><font face="Arial" size="2">In order to ad jobs to your database you must run the admin.php file.&nbsp; 
+If you put a name in the $adminuser and $adminpassword variables it will ask you 
+for the username and password.&nbsp; Once in the admin file you should be able 
+to load, add, update, and delete jobs from the database.&nbsp; The image below 
+should help.</font></p>
+<p><font face="Arial" size="2"><img border="0" src="jobstuff.jpg" width="836" height="626"></font></p>
+<p>&nbsp;</p>
+<p><font face="Arial" size="2">Okay.&nbsp; Once you have added your jobs all your users have to do is go to 
+the job page.&nbsp; If you require a password for the users to get into the 
+joblistings I have included a sample password.html file.<br>
+<br>
+&nbsp;</font></p>
+<p><font face="Arial" size="2"><br>
+&nbsp;</font></p>
+
+</body>
+
+</html>
