@@ -1,0 +1,296 @@
+<html>
+
+<head>
+<title>Documentation Supercart</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="description" content="Powerful shopping cart script allows you to customize your mall ANY WAY YOU WANT! Customize your catalog pages and add new products without having to conform to complex syntax. Only uses one script that you can install and have running in under ONE MINUTE!">
+<meta NAME="keywords" CONTENT="Simple Shopping Cart, Secure Server, CGI Script, Selena Sol, Perl Shopping Cart, Easy Shopping Cart">
+<meta name="robots" content="index">
+<meta name="revisit-after" Content="14 days">
+
+<meta name="Microsoft Border" content="t, default"></head>
+
+<body><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+
+<table border="0" width="33%" cellpadding="0">
+  <tr>
+    <td width="50%"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/" ONCLICK="parent.f=0"><img src="../pix/banners/miniprizm.gif" alt="cgi scripts" border="0" WIDTH="305" HEIGHT="59"></a></font></td>
+    <td width="50%" bgcolor="#FFFFFF"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/ads/rotate.cgi?url=&amp;user=" target="new" ONCLICK="parent.f=0"><img src="http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user=" border="0" width="468" height="60"></a></font></td>
+  </tr>
+</table>
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="16%"><p align="center"><a href="../dsstoday/index.html"><font color="#000000" face="Arial"><img src="../pix/main/news.jpg" alt="CGI NEWS" align="left" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="16%"><p align="center"><a href="../scripts/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/scripts.jpg" alt="CGI Scripts" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../mastergate/index.html"><font color="#000000" face="Arial"><img src="../pix/main/access.jpg" alt="Access The CGI Archive" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../contact.html"><font color="#000000" face="Arial"><img src="../pix/main/contact.jpg" alt="Contact Superscripts" WIDTH="104" HEIGHT="68"></font></a></td>
+    <td width="17%"><p align="center"><a href="../support.html"><font color="#000000" face="Arial"><img src="../pix/main/dox.jpg" alt="CGI Documentation" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../download/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/download.jpg" alt="Download CGI Scripts Here" align="right" WIDTH="105" HEIGHT="65"></font></a></td>
+  </tr>
+  <tr>
+    <td width="16%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/dsstoday/index.html" style="color: rgb(255,255,255)"><strong>News</strong></a></font></td>
+    <td width="16%" bgcolor="#000000"><p align="center"><a href="/scripts/" style="color: rgb(255,255,255)"><font face="Arial" color="#FFFFFF"><strong>CGI Scripts</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><a style="color: rgb(255,255,255)" href="../mastergate/index.html"><font face="Arial" color="#FFFFFF"><strong>Become A Member</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../contact.html"><strong>Contact
+    Us</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../support.html"><strong>Support</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/download/index.shtml" style="color: rgb(255,255,255)"><strong>Download
+    Area</strong></a></font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+
+<table border="0" width="75%" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <p><font face="Arial"><big><big><font color="#FF0000"><strong>Documentation<br>
+      </strong></font><font color="#000000">SUPERCART:&nbsp; V3.0</font></big></big></font></p>
+      <p><img src="../pix/logos/authnet.gif" alt="authnet.gif (6418 bytes)" WIDTH="396" HEIGHT="86"></p>
+      <p><font color="#FF0000" face="Arial"><a href="../mastergate/faq.html"><small>REALTIME
+      PROCESSING INSTALLATION AVAILABLE FOR $250.00</small></a></font></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Copyright 2001 Psybercore, Inc. - All Rights
+        Reserved. </small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Selling redistributing or modifying any or
+        all of the code for this program without prior written consent is expressly forbidden. You
+        must obtain written permission before redistributing this software over the Internet or in
+        any other medium. In all cases copyright and header information must remain intact.</small></font></p>
+      </blockquote>
+      <hr align="left">
+      <h1><font color="#000000" face="Arial"><small><small>System Requirements</small></small></font></h1>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>Unix, Lynyx or NT Operating System </small></font></li>
+        <li><font color="#000000" face="Arial"><small>Secure Webspace with CGI Capability
+          Recommended</small></font></li>
+        <li><font color="#000000" face="Arial"><small>Online merchant bank that accepts POST
+          transmissions required for realtime validation</small></font></li>
+        <li><font color="#000000" face="Arial"><small>Sendmail or Qmail</small></font></li>
+        <li><font color="#000000" face="Arial"><small>For realtime validation you will need a
+          programmer</small></font></li>
+        <li><font color="#000000" face="Arial"><small>For interfacing into AGENTS OF FORTUNE
+          affiliate software you should have prior experience installing CGI</small></font></li>
+      </ul>
+      <h2><font color="#000000" face="Arial"><small>Preliminaries</small></font></h2>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>Determine the path to PERL 5 on your web
+          server host.&nbsp; Note that some web hosting companies run both PERL 4 and PERL 5.&nbsp;
+          Make ABSOLUTELY sure you are not setting this up under PERL 4.&nbsp; Ask your
+          administrator if you are not sure. </small></font></li>
+      </ul>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>If you need to review or learn the basics of
+          CGI and Perl check out the <a href="../tutorial/index.html">superscripts tutorial
+          archives.</a></small></font></li>
+      </ul>
+      <ul>
+        <li><font color="#000000" face="Arial"><small><a href="http://www.superscripts.com/download/">Download</a> the tarfile for this program and
+          save it to your desktop.</small></font></li>
+      </ul>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>Unpack the tar archive on your desktop using a
+          program that unpacks UNIX TAR ARCHIVES. If you don't have such a program then download
+          WINZIP FREE from <a HREF="http://www.shareware.com/">SHAREWARE.COM</a>.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>After you have unpacked the TAR archive you
+          will have a collection of folders and files on your desktop.&nbsp; Now you have to do some
+          basic editing of each of these files (or at least some of them).&nbsp; Use a text editor
+          such as wordpad, notepad, BBEdit, simpletext, or teachtext to edit the files.&nbsp; These
+          are NOT WORD PROCESSOR DOCUMENTS they are just simple TEXT files so don't save them as
+          word processor documents or save them with extentions such as .txt or they will NOT WORK.
+          &nbsp; Note that there may be a some files inside of folders which are &quot;blank&quot;.
+          &nbsp; This is normal.</small></font></li>
+      </ul>
+      <h2><font color="#000000" face="Arial"><small>Preparing the CGI scripts</small></font></h2>
+      <blockquote>
+        <h2><font color="#FF0000" face="Arial"><small><small>Define Path To PERL 5</small></small></font></h2>
+      </blockquote>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>The first step is to open up each and every
+        file that has a .cgi extention and edit line number one of each script.&nbsp; Each of the
+        cgi scripts is written in perl 5. For your scripts to run they must know where perl 5 is
+        installed on your web server. The path to perl 5 is defined to a cgi script in the first
+        line of the file. In each of the cgi scripts the first line of code looks something like
+        this: </small></font></p>
+        <blockquote>
+          <p><font color="#FF0000" face="Arial"><small>#!/usr/bin/perl</small></font></p>
+        </blockquote>
+        <p><font color="#000000" face="Arial"><small>If the path to perl 5 on your web server is
+        different from /usr/bin/perl you must edit the first line of each cgi script to reflect
+        the correct path. If the path to perl 5 is the same no changes are necessary. If you do
+        not know the path to perl 5 ask the webmaster or system administrator at your server site.
+        &nbsp; </small></font></p>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big><strong>Configure the .cgi files</strong></big></font></p>
+      <blockquote>
+        <p><font color="#FF0000" face="Arial"><big>configure.cgi</big></font></p>
+      </blockquote>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>This is the entire cgi.&nbsp; There are
+        several variables to edit, all of which should be pretty straightforward.</small></font><font SIZE="2"><ul>
+          <li><font face="Arial">$sendmail = path to sendmail</font></li>
+          <li></font><font SIZE="2"><font face="Arial">$billing=Your email address (include backslash)</font></li>
+          <li></font><font SIZE="2"><font face="Arial">$subject = S<font SIZE="2">ubject line for
+            email invoices</font></font></li>
+          <li></font><font SIZE="2"><font face="Arial">$bottomhtml = <font SIZE="2">path to the
+            bottom.html (customizable footer) file</font></font></li>
+          <li></font><font SIZE="2"><font face="Arial">$tophtml = path to the top.html (customizable
+            header) file</font></li>
+          <li></font><font SIZE="2"><font face="Arial">$thankyouhtml = path to the thankyou.html
+            (customizable thank you page) file</font></li>
+        </ul>
+        </font>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big>Upload Your Edited CGI and Data Files</big></font><ul>
+        <li><font color="#000000" face="Arial"><small>Upload all of the cgi files (.cgi) into your
+          cgi-bin</small></font></li>
+        <li><font color="#000000" face="Arial"><small>Upload top.html, bottom.html, and
+          thankyou.html into your cgi-bin</small></font></li>
+      </ul>
+      <p><font color="#000000" face="Arial"><big>File Access Permissions</big></font></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>File access permissions must be set correctly
+        for this program to run.&nbsp; You must set the access permissions for each of these
+        files.&nbsp; Set all the .cgi files to 755. &nbsp; Set top.html, bottom.html and
+        thankyou.html to 777.</small></font></p>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big>Creating the html forms for your mall products</big></font></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>First check out the sample mall page for an
+        example of how to create the html for your mall. The following GENERIC example shows the
+        form fields that are ABSOLUTELY REQUIRED. No specific ordering of fields is necessary but
+        The name fields must match EXACTLY. The order of the first four fields MUST MATCH EXACTLY.
+        Any other fields such as color, size, etc may be placed after ITEMNAME and before SUBMIT.
+        See the DEMO for more examples.</small></font></p>
+        <p><font color="#000000" face="Arial"><strong><small>REQUIRED FIELDS (order is not
+        important)</small></strong></font><ul>
+          <li><font color="#000000" face="Arial"><small>action = the url of the supermall.cgi script </small></font></li>
+          <li><font color="#000000" face="Arial"><small>item = the name of the product</small></font></li>
+          <li><font face="Arial">url<font color="#000000"><small> = the url of the webpage this
+            product is ordered FROM </small></font></font></li>
+          <li><font color="#000000" face="Arial"><small>cost = cost for each unit item </small></font></li>
+          <li><font color="#000000" face="Arial"><small>qty = QUANTITY of item </small></font></li>
+        </ul>
+        <dl>
+          <dd><font color="#000000" face="Arial"><strong><small>GENERIC HTML for ADD TO CART shopping
+            cart button </small></strong></font></dd>
+          <dt>&nbsp;</dt>
+          <dd><font color="#FF0000" face="Arial"><small>&lt;form method=POST
+            action=&quot;supermall.cgi&quot;&gt; </small></font></dd>
+          <dt><font color="#FF0000" face="Arial"><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &lt;input type=&quot;HIDDEN&quot; name=&quot;item&quot; value=&quot;name of item&quot;&gt;
+            </small></font></dt>
+          <dd><font color="#FF0000" face="Arial"><small>&lt;input type=&quot;HIDDEN&quot;
+            name=&quot;url&quot; value=&quot;url of this items webpage&quot;&gt; </small></font></dd>
+          <dd><font color="#FF0000" face="Arial"><small>&lt;input type=&quot;HIDDEN&quot;
+            name=&quot;cost&quot; value=&quot;unit cost of item&quot;&gt; </small></font></dd>
+          <dd><font color="#000000" face="Arial"><small>&nbsp; </small></font></dd>
+          <dd><font color="#000000" face="Arial"><small>INSERT OTHER FORM FIELD DATA HERE (style,
+            color, other options)</small></font></dd>
+          <dd><font color="#000000" face="Arial"><small>&nbsp; </small></font></dd>
+          <dd><font color="#FF0000" face="Arial"><small>Quantity &lt;INPUT TYPE=&quot;TEXT&quot;
+            size=&quot;2&quot; NAME=&quot;qty&quot; value=&quot;1&quot; ALIGN=left&gt;</small></font></dd>
+          <dd><font color="#FF0000" face="Arial"><small>&nbsp; </small></font></dd>
+          <dd><font color="#FF0000" face="Arial"><small>&lt;INPUT TYPE=&quot;SUBMIT&quot;
+            VALUE=&quot;Add to Cart&quot; ALIGN=middle&gt;</small></font></dd>
+          <dd><font color="#FF0000" face="Arial"><small>&lt;/form&gt; </small></font></dd>
+        </dl>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big>Notes on Interfacing to Agents of Fortune</big></font></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Edit the following lines inside of
+        mailorder.cgi</small></font></p>
+        <p><font color="#FF0000" face="Arial"><small>#require
+        &quot;/full/path/to/payout.cgi&quot;;<br>
+        #&amp;payout;</small></font></p>
+        <p><font color="#000000" face="Arial"><small>Uncomment both lines and edit the full path
+        to the payout.cgi file (which you should put in the agents cgi files directory btw) &nbsp;
+        There is a sample file (payout.cgi) in the tar archive that shows how Agent's payout.cgi
+        file is configured to work with Supercart.&nbsp; In this example I set primary affiliates
+        to 10% of sales and secondary to 5%.&nbsp; I also used their email address to keep track
+        of the sales data inside of agents.</small></font></p>
+        <p><font color="#000000" face="Arial"><small>Make sure you call agents.cgi, payout.cgi,
+        and mailorder.cgi from the SAME DOMAIN AND PORT!!!&nbsp; These pass cookies and as you
+        should already know you can't READ cookies from a different IP or port than you SET them.</small></font></p>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big>Notes on Interfacing to Online Merchant Banks</big></font></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>You will need to splice both socket posting
+        and data parsing routines/flags inside of mailorder.cgi.&nbsp; Since there is very little
+        continuity between one merchant bank to the next there is no code actually included in the
+        file.&nbsp; You will require an advanced programmer to interface your cart into a bank.
+        &nbsp; The routines for posting and parsing are already located inside of mastergate's
+        (basictp.cgi) and you can use these to piece the routines together.</small></font></p>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big>Interfacing with Authorize.net </big></font></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Once you have <a href="../online.html">setup
+        an account with authorize.net</a> you will need to replace some of the files in supercart
+        with the special versions created and stored inside the supercart tarball inside the
+        authorize.net folder.&nbsp; They are mailorder.cgi, checkout.cgi, configure.cgi, and
+        nothankyou.html.&nbsp; Set permissions on the .cgi files to 755 and all others to 777.
+        &nbsp; Many of the configure variables are the same but there are some new ones dealing
+        with your authorize.net account.&nbsp; </small></font></p>
+      </blockquote>
+      <ul>
+        <li><font color="#FF0000" face="Arial" size="2">$LOGIN=&quot;supplied by
+          authorize.net&quot;;</font></li>
+        <li><font color="#FF0000" face="Arial" size="2">$PASSWORD=&quot;supplied by
+          authorize.net&quot;;</font></li>
+        <li><font color="#FF0000" face="Arial" size="2">$TYPE = &quot;PA&quot;;</font></li>
+        <li><font color="#FF0000" face="Arial" size="2">$EMAILCUSTOMER = &quot;TRUE&quot;;</font></li>
+        <li><font color="#FF0000" face="Arial" size="2">$REJECTAVSMISMATCH = &quot;TRUE&quot;;</font></li>
+        <li><font color="#FF0000" face="Arial" size="2">$TESTREQUEST = &quot;FALSE&quot;;</font></li>
+        <li><font color="#FF0000" face="Arial" size="2">$DELIMCHARACTER = &quot;|&quot;;</font></li>
+        <li><font color="#FF0000" face="Arial" size="2">$ENCAPSULATE = &quot;FALSE&quot;;</font></li>
+        <p><small><font face="Arial"><br>
+        LOGIN <br>
+        Required for transactions other than test transactions.&nbsp; This is the assigned
+        Authorize.Net login id. </font></small></p>
+        <p><small><font face="Arial">PASSWORD <br>
+        Required for Credit or Post Authorization transactions. For details on the use of
+        transaction types, see the Authorize.Net User's Guide. </font></small></p>
+        <p><small><font face="Arial">TYPE <br>
+        May be one of: NA (means Normal Authorization) <br>
+        &nbsp;AO (means Authorization Only) <br>
+        &nbsp;CR (means Credit) <br>
+        &nbsp;PA (means Post Authorization) </font></small></p>
+        <p><small><font face="Arial">EMAILCUSTOMER<br>
+        Set this value to &quot;TRUE&quot; if you want an email sent to the Buyer's E-mail(the
+        value specified in the EMAIL field) notifying him of the transaction details.(The fields
+        INVOICE AMOUNT METHOD DESCRIPTION CUSTID NAME ADDRESS CITY STATE ZIP COUNTRY PHONE FAX
+        EMAIL and their values will be included in the email)</font></small></p>
+        <p><small><font face="Arial">ECHODATA <br>
+        If this field is not provided with a value of &quot;TRUE&quot;, only the first 5 RESPONSE
+        fields (see below) will be returned, otherwise all allowed fields provided in the request
+        will be returned in the response. </font></small></p>
+        <p><small><font face="Arial">REJECTAVSMISMATCH <br>
+        If this field is not provided with a value of &quot;TRUE&quot;, the transaction will be
+        accepted if it is authorized by FDC, even if the AVS response is a mismatch. &nbsp;
+        Otherwise, the transaction must pass the &quot;AVS test&quot; with either a matching zip
+        code, address, or both. </font></small></p>
+        <p><small><font face="Arial">TESTREQUEST <br>
+        If this field is provided with a value of &quot;TRUE&quot; the script will perform all
+        validation functions except actually authorizing the transaction and storing it in the
+        merchant's batch, regardless of whether the merchant's configuration is set to LIVE or
+        TEST mode. In other words, the response would be equivalent to the merchant being in TEST
+        mode </font></small></p>
+        <p><small><font face="Arial">DELIMCHARACTER <br>
+        If you want the RESPONSE FIELDS delimited by something other than the default (comma),
+        provide the DELIMCHARACTER here. </font></small></p>
+        <p><small><font face="Arial">ENCAPSULATE <br>
+        If you want the response fields encapsulated in double quotes (ex. &quot;response
+        data&quot;), provide this request field set to &quot;TRUE&quot;; otherwise, the response
+        fields will not be encapsulated. </font></small></p>
+      </ul>
+    </blockquote>
+    <p><font face="Arial">&nbsp;</font> </td>
+  </tr>
+</table>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
