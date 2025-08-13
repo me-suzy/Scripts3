@@ -1,0 +1,81 @@
+<?
+
+#///////////////////////////////////////////////////////
+#//  COPYRIGHT 2002 PHPAuction.org ALL RIGHTS RESERVED//
+#//  For Source code for the GPL version go to        //  
+#//  http://phpauction.org and download               //
+#//  Supplied by CyKuH [WTN]                          //
+#///////////////////////////////////////////////////////
+
+?>
+
+
+
+<? if(strpos($PHP_SELF,"search")): ?>
+
+	<TABLE WIDTH="765" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING="0" CELLSPACING="0">
+
+	<TR>
+
+	<TD>
+
+<? endif; ?>
+
+
+
+<!-- TABLE WITH CATEGORIES -->
+
+      <TABLE width="100%" border="0" cellspacing="0" cellpadding="8" bgcolor="#FFFFFF">
+        <TR> 
+          <TD COLSPAN=3 align="left"> 
+            <? print $TPL_main_value; ?>
+          </TD>
+
+</TR>
+
+<TR>
+
+          
+
+</TR>
+        <TR BGCOLOR="<?=$FONTCOLOR[$SETTINGS[tableheadercolor]]?>"> 
+          <TD WIDTH="5%" align="center" height="5"> 
+            <? print $nav_font.$MSG_167; ?></FONT>
+            </TD>
+          <TD WIDTH="49%" height="5" align="center"> 
+            <? print $nav_font.$MSG_168; ?></FONT>
+            </TD>
+
+	      <TD WIDTH="14%" height="5" align="center" nowrap> 
+            <? print $nav_font.$MSG_169; ?></FONT>
+            </TD>
+
+	      <TD WIDTH="14%" height="5" align="center" nowrap> 
+            <? print $nav_font.$MSG_170; ?></FONT>
+            </TD>
+
+	      <TD WIDTH="14%" align="center" height="5" nowrap> 
+            <? print $nav_font.$MSG_171; ?></FONT>
+            </TD>
+
+</TR>
+
+<TR>
+
+	      <TD width="9%"> 
+            <? print $TPL_auctions_list_value; ?>
+          </TD>
+
+</TR>
+
+</TABLE>
+
+<BR>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+
