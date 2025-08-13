@@ -1,0 +1,254 @@
+BODY {
+	font-size : 8pt;
+	font-family : verdana, arial, helvetica, sans-serif;
+	font-weight : bold;
+	font-style : normal;
+	text-align : justify;
+	margin-left : 5px;
+	margin-right : 5px;
+	margin-top : 3px;
+	margin-bottom : 3px;
+	color : #607080;
+	text-decoration : none;
+	background-color : #FFFFFF;
+}
+
+TH {
+	font-size : 8pt;
+	font-family : verdana, arial, helvetica, sans-serif;
+	font-weight : bold;
+	font-style : normal;
+	color : #C71585;
+	text-decoration : underline;
+	background-color : #FFFFFF;
+}
+
+TH.hlt {
+	color : #C14226;
+	background-color : #FFFFFF;
+}
+
+TH.blk {
+	text-decoration : none;
+}
+
+TH.popup {
+	color : #FFFFFF;
+	text-decoration : none;
+	background-color : #4682B4;
+}
+
+TH.header {
+	color : #FFFFFF;
+	text-decoration : none;
+	background-color : #D2691E;
+}
+
+TD {
+	font-size : 8pt;
+	font-family : verdana, arial, helvetica, sans-serif;
+	font-weight : bold;
+	font-style : normal;
+	color : #607080;
+	text-decoration : none;
+	background-color : #FFFFFF;
+}
+
+TD.inf {
+	color : #4682B4;
+	background-color : #FFFFFF;
+}
+
+TD.input {
+	font-family : "Courier New", Courier, monospace;
+	font-size: 9pt;
+	font-weight: normal;
+}
+
+TD.dialog {
+	font-family : "MS Sans serif", sans-serif;
+	font-size: 8pt;
+	font-weight: normal;
+}
+
+TD.results {
+	font-family : "Courier New", Courier, monospace;
+	font-size: 9pt;
+	font-weight: normal;
+}
+
+TD.heading {
+	color: #FFFFFF; 
+	background-color: #4682B4;
+}
+
+TD.heading1 {
+	font-family : "Courier New", Courier, monospace;
+	font-size: 9pt;
+	font-weight: normal;
+	color: #FFFFFF; 
+	background-color: #4682B4;
+}
+
+TD.detail {
+	background-color: #FFFFF0;
+}
+
+TD.detail1 {
+	font-family : "Courier New", Courier, monospace;
+	font-size: 9pt;
+	font-weight: normal;
+	color: #000000;
+	background-color: #FFFFF0;
+}
+
+TD.detail2 {
+	font-weight: bold; 
+	color: #B22222; 
+	background-color: #FFFFF0;
+}
+
+TD.detail3 {
+	font-family : "Courier New", Courier, monospace;
+	font-size: 9pt;
+	font-weight: normal;
+	color: #000000;
+	background-color: #888888;
+}
+
+TD.detail4 {background-color: #FFEFD5;}
+
+TD.detail5 {
+	color: #FF0000;
+	background-color: #FFEFD5;}
+
+TD.head {
+	font-family : "Courier New", Courier, monospace;
+	font-size: 9pt;
+	font-weight: normal;
+	color: #FFFFFF;
+	background-color: #4682B4;
+}
+
+TD.shop {
+	font-family : "Courier New", Courier, monospace;
+	font-size: 9pt;
+	font-weight: normal;
+	color: #000000;
+	background-color: #ADD8E6;
+}
+
+H1 {
+    font-family: Arial, Helvetica, sans-serif;
+	font-size : 12pt;
+	color : #C71585;
+	text-decoration : none;
+	background-color : #FFFFFF;
+}
+
+H2 {
+	font-size : 10pt;
+	color : #C71585;
+	text-decoration : none;
+	background-color : #FFFFFF;
+}
+ 
+H3 {
+	font-size : 9pt;
+	color : #C71585;
+	text-decoration : none;
+	background-color : #FFFFFF;
+}
+
+.bgrd01 {
+	background-color : #FF0000;
+}
+
+.infonotd {
+	color : #008000;
+	background-color : #FFFFFF;
+}
+
+.warning {
+	color : #FF0000;
+	background-color : #FFFFFF;
+}
+
+.highlite {
+	font-size : 10pt;
+	color : #FF0000;
+	background-color : #FFFFFF;
+}
+
+.hlite {
+	color: #8B0000;
+	background-color : #FFFFFF;
+}
+
+.nsbugfix {
+	font-size : 8pt;
+	font-family : verdana, arial, helvetica, sans-serif;
+	font-weight : bold;
+	font-style : normal;
+	color : #607080;
+	text-decoration : none;
+	background-color : #FFFFFF;
+	}
+	
+.sechead {
+	font-size : 10pt;
+	font-weight : bold;
+	color : #840484;
+	background-color : #FFFFFF;
+}
+
+.targ1 {
+	font-family : "Courier New", Courier, monospace;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #FF0000;
+	background-color: #4682B4;
+}
+
+.input2 {
+	font-family : "Courier New", Courier, monospace;
+	font-size: 9pt;
+	font-weight: normal;
+}
+
+.targ2 {
+	font-family : "Courier New", Courier, monospace;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #FF0000;
+	background-color: #ADD8E6;
+}
+
+.blink {
+	font-size : 9pt; font-weight : bold; color : #C71585;
+	background-color : #FFFFFF; text-decoration : blink;
+}
+
+A:Link {
+	color : #0000FF;
+	background-color : transparent;
+	text-decoration : underline;
+}
+
+A:Visited {
+	color : #800080;
+	background-color : transparent;
+	text-decoration : underline;
+}
+
+A:Hover {
+	color : #FF0000;
+	background-color : transparent;
+	text-decoration : underline;
+}
+
+A:Active {
+	color : #FF8C00;
+	background-color : transparent;
+	text-decoration : underline;
+}
