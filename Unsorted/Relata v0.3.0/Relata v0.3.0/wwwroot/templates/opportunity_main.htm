@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title></title>
+
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="{WWW_DIR}templates/global.css" />
+
+<script type="text/javascript" src="{WWW_DIR}lib/formcheck.js"></script>
+<script type="text/javascript" src="{WWW_DIR}events.js"></script>
+<script type="text/javascript" src="{WWW_DIR}lib/popupcalendar.js"></script>
+<script type="text/javascript">
+// reference the form element that associates contacts w/ an opportunity
+// its different in IE & Mozilla
+if(document.all) selectid = 4;
+else selectid = 3;
+
+{RELOAD}
+
+</script>
+
+</head>
+<body class="colored">
+
+<div class="main" style="z-index: 0;">
+
+<div class="mode">{TEMPLATE_MODE}</div>
+
+
+<div id="PopUpCalendar" 
+onMouseOver="if(ppcTI) clearTimeout(ppcTI); ppcTI=false;" 
+onMouseOut="ppcTI=setTimeout('hideCalendar()',500)"
+style="display: none; z-index: 5;">
+<div id="monthSelector">
+	<table border="1" cellspacing="1" cellpadding="2" width="200" bordercolorlight="#000000" bordercolordark="#000000" vspace="0" hspace="0">
+	<form name="ppcMonthList">
+	 <tr>
+	 	<td align="center" bgcolor="#CCCCCC">
+			<a href="javascript:moveMonth('Back')" onMouseOver="window.status=' ';return true;">
+			<font face="Arial, Helvetica, sans-serif" size="2" color="#000000">
+			<b>< </b></font>
+			</a>
+			<font face="MS Sans Serif, sans-serif" size="1"> 
+			
+			<select name="sItem" onMouseOut="if(ppcIE) window.event.cancelBubble = true;" 
+			onChange="switchMonth(this.options[this.selectedIndex].value)">
+				<option value="0" selected>2000 - January</option>
+				<option value="1">2000 - February</option>
+				<option value="2">2000 - March</option>
+				<option value="3">2000 - April</option>
+				<option value="4">2000 - May</option>
+				<option value="5">2000 - June</option>
+				<option value="6">2000 - July</option>
+				<option value="7">2000 - August</option>
+				<option value="8">2000 - September</option>
+				<option value="9">2000 - October</option>
+				<option value="10">2000 - November</option>
+				<option value="11">2000 - December</option>
+				<option value="0">2001 - January</option>
+			</select>
+			
+			</font>
+			<a href="javascript:moveMonth('Forward')" onMouseOver="window.status=' ';return true;">
+			<font face="Arial, Helvetica, sans-serif" size="2" color="#000000">
+				<b> ></b>
+			</font>
+			</a>
+		</td>
+	 </tr>
+	</form>
+	</table>
+	</div>
+	<div id="monthDays"></div>
+</div>
+
+<form action="{FORM_URL}" {TARGET} method="post" name="opportunity_form" onsubmit="selectall(); return check_opportunity();">
+<input type="hidden" name="opp_id" />
+<table cellpadding="5" cellspacing="0" align="center">
+	 <tr>
+		<td class="form">
+		
+		<table cellspacing="0" cellpadding="0" border="0">
+		 <tr>
+	   		<td valign="top" class="form" align="right" valign="top">
+				<span class="field-titles">Available contacts:</span>
+			</td>
+	    	<td>
+				&nbsp;
+			</td>
+	    	<td>
+				<select multiple size="5" name="avail_contacts" class="form">
+				</select>
+			</td>
+		 </tr>
+		</table>
+		
+		</td>	
+		<td class="form">
+			<input type="button" value="   >>   " onclick="move(this.form.avail_contacts,this.form.elements[selectid])" name="B1" class="form" style="background: #D4D0C8;" />
+			<br>
+			<input type="button" value="   <<   " onclick="move(this.form.elements[selectid],this.form.avail_contacts)" name="B2" class="form" style="background: #D4D0C8;" />
+		</td>
+		
+		<td align="center" class="form">
+		
+		<table cellspacing="0" cellpadding="0" border="0">
+		 <tr>
+	    	<td valign="top" class="form" align="right" valign="top">
+				<span class="field-titles">Opportunity Contacts:</span>
+			</td>
+	    	<td>
+				&nbsp;
+			</td>
+	    	<td>
+				<select multiple size="5" name="opp_contacts[]" class="form"></select>
+			</td>
+		 </tr>
+		</table>	
+		</td>
+	 </tr>
+	</table>
+	<hr>
+	<script type="text/javascript">
+	document.opportunity_form.avail_contacts.options[document.opportunity_form.avail_contacts.length] = new Option("","");
+	</script>
+<table class="form" cellspacing="5" width="375" border="0">
+<tr>
+ 	<td class="form" align="right" valign="top">
+<span class="field-titles">Title:</span>
+	</td>
+	<td width="5">&nbsp;</td>
+	<td valign="top" class="form">
+		<input type="text" size="29" name="opp_title" class="form" />
+    </td>
+</tr> 
+<tr>
+ 	<td class="form" align="right" valign="top">
+<span class="field-titles">Close date:</span>
+	</td>
+	<td width="5">&nbsp;</td>
+	<td valign="top" class="form">
+		<input type="text" name="close_date" size="12" /><input type="button" id="choosedate-btn" value="Choose Date" />
+    </td>
+</tr> 
+<tr>
+ 	<td class="form" align="right" valign="top">
+<span class="field-titles">Sales stage:</span>
+	</td>
+	<td width="5">&nbsp;</td>
+	<td valign="top" class="form"><select name="ss_id" class="form">
+			{SALES_STAGES}
+		</select>
+    </td>
+</tr> 
+<tr>
+ 	<td class="form" align="right" valign="top">
+<span class="field-titles">Potential Revenue:</span>
+	</td>
+	<td width="5">&nbsp;</td>
+	<td valign="top" class="form">$<input type="text" name="potential_revenue" size="15" value="{POTENTIAL_REVENUE}" class="form" />
+    </td>
+</tr> 
+<tr>
+ 	<td class="form" align="right" valign="top">
+<span class="field-titles">Probability:</span>
+	</td>
+	<td width="5">&nbsp;</td>
+	<td valign="top" class="form">
+		<select name="probability" class="form">
+			<option value="0" >10%</option>
+			<option value="1" >20%</option>
+			<option value="2" >30%</option>		
+			<option value="3" >40%</option>		
+			<option value="4" >50%</option>
+			<option value="5" >60%</option>
+			<option value="6" >70%</option>
+			<option value="7" >80%</option>
+			<option value="8" >90%</option>
+			<option value="9" >100%</option>		
+		</select>
+    </td>
+</tr>  
+<tr>
+ 	<td class="form" align="right" valign="top">
+<span class="field-titles">Description:</span>
+	</td>
+	<td width="5">&nbsp;</td>
+	<td valign="top" class="form"><textarea rows="3" cols="25" name="opp_desc" class="form" style="background: #ffffff;"></textarea>	
+    </td>
+</tr>
+<tr>
+    <td class="form" align="right" valign="top">&nbsp;
+	<td width="5">&nbsp;</td>
+    <td class="form"><br>
+	<input type="submit" name="action" value="   OK   " class="form" style="background: #D4D0C8;" />
+	<input type="{ACTION2}" name="action" value=" {ACTION2_LABEL} " class="form" style="background: #D4D0C8;" />
+	</td>
+</tr>
+</table>
+<br><br><br><br>
+</div>
+
+</form>
+
+<script type="text/javascript">
+// input field target
+ppcSV = document.opportunity_form.close_date;	
+addevent(document.getElementById('choosedate-btn'),"click",makecalendar,true);
+</script>
+<script type="text/javascript" src="{WWW_DIR}opportunity/opp.js"></script>
+<!-- hidden loader frame -->
+{LOADER}
+
+</body>
+</html>
