@@ -1,0 +1,241 @@
+<html>
+
+<head>
+<title>NEWSBOT - SPAMBOT AUTOMATIC USENET POSTING</title>
+<meta name="description" content="Newsbot interfaces to any password protected USENET account and allows you to FULLY SUBMIT MESSAGES IN BULK FROM YOUR TELNET ACCOUNT.&nbsp; The MOST POWERFUL FULLY AUTOMATIC USENET MESSAGE SYSTEM AVAILABLE ANYWHERE!&nbsp; Warning - this tool is NOT to be used for SPAMMING and may get your dialup and news account revoked if abused.&nbsp; ">
+<meta NAME="keywords" CONTENT="NNTP CGI Script, Automatic Usenet Posting, Spam, Automatic Newsgroup Posting Software, Spambot, Newsbot, Adult Webmaster, Web Promotion, Usenet">
+<meta name="robots" content="index">
+<meta name="revisit-after" Content="14 days">
+
+<meta name="Microsoft Border" content="t, default"></head>
+
+<body bgcolor="#ffffff" marginheight="0" marginwidth="0" leftMargin="0" topMargin="0" alink="#6699CC" vlink="#000000" link="#000000"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+
+<table border="0" width="33%" cellpadding="0">
+  <tr>
+    <td width="50%"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/" ONCLICK="parent.f=0"><img src="../pix/banners/miniprizm.gif" alt="cgi scripts" border="0" WIDTH="305" HEIGHT="59"></a></font></td>
+    <td width="50%" bgcolor="#FFFFFF"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/ads/rotate.cgi?url=&amp;user=" target="new" ONCLICK="parent.f=0"><img src="http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user=" border="0" width="468" height="60"></a></font></td>
+  </tr>
+</table>
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="16%"><p align="center"><a href="../dsstoday/index.html"><font color="#000000" face="Arial"><img src="../pix/main/news.jpg" alt="CGI NEWS" align="left" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="16%"><p align="center"><a href="../scripts/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/scripts.jpg" alt="CGI Scripts" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../mastergate/index.html"><font color="#000000" face="Arial"><img src="../pix/main/access.jpg" alt="Access The CGI Archive" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../contact.html"><font color="#000000" face="Arial"><img src="../pix/main/contact.jpg" alt="Contact Superscripts" WIDTH="104" HEIGHT="68"></font></a></td>
+    <td width="17%"><p align="center"><a href="../support.html"><font color="#000000" face="Arial"><img src="../pix/main/dox.jpg" alt="CGI Documentation" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../download/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/download.jpg" alt="Download CGI Scripts Here" align="right" WIDTH="105" HEIGHT="65"></font></a></td>
+  </tr>
+  <tr>
+    <td width="16%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/dsstoday/index.html" style="color: rgb(255,255,255)"><strong>News</strong></a></font></td>
+    <td width="16%" bgcolor="#000000"><p align="center"><a href="/scripts/" style="color: rgb(255,255,255)"><font face="Arial" color="#FFFFFF"><strong>CGI Scripts</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><a style="color: rgb(255,255,255)" href="../mastergate/index.html"><font face="Arial" color="#FFFFFF"><strong>Become A Member</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../contact.html"><strong>Contact
+    Us</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../support.html"><strong>Support</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/download/index.shtml" style="color: rgb(255,255,255)"><strong>Download
+    Area</strong></a></font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+
+<table border="0" width="75%" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <p><big><big><strong><font face="Arial" color="#FF0000">Documentation<br>
+      </font></strong><font color="#000000" face="Arial">NEWSBOT:&nbsp; V2.0</font></big></big></p>
+      <p><font color="#000000" face="Arial"><small>Copyright 2001 Psybercore, Inc. - All Rights
+      Reserved. </small></font></p>
+      <p><small><font color="#000000" face="Arial">Selling redistributing or modifying any or
+      all of the code for this program without prior written consent is expressly forbidden. You
+      must obtain written permission before redistributing this software over the Internet or in
+      any other medium. In all cases copyright and header information must remain intact.</font></small></p>
+      <hr align="left">
+      <h1><small><font color="#000000" face="Arial"><small>System Requirements</small></font></small></h1>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>Unix or Lynyx operating system </small></font></li>
+        <li><font color="#000000" face="Arial"><small>Perl 5 with sockets library installed</small></font></li>
+        <li><font color="#000000" face="Arial"><small>Telnet Access</small></font></li>
+        <li><font color="#000000" face="Arial"><small>Password Protected Usenet Account</small></font></li>
+      </ul>
+      <h2><font color="#000000" face="Arial"><small>Preliminaries</small></font></h2>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>Determine the path to PERL 5 on your web
+          server host.&nbsp; Note that some web hosting companies run both PERL 4 and PERL 5.&nbsp;
+          Make ABSOLUTELY sure you are not setting this up under PERL 4.&nbsp; Ask your
+          administrator if you are not sure. </small></font></li>
+      </ul>
+      <ul>
+        <li><a href="http://www.superscripts.com/tutorial/"><font color="#000000" face="Arial"><small>If
+          you need to review or learn the basics of CGI and Perl visit Drew Star's CGI Tutorials</small></font></a></li>
+      </ul>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>Unpack the zip archive on your desktop using a
+          program like WINZIP. If you don't have such a program then download WINZIP FREE from <a HREF="http://www.shareware.com/">SHAREWARE.COM</a>.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>After you have unpacked the archive you will
+          have a collection of folders and files on your desktop.&nbsp; Now you have to do some
+          basic editing of each of these files (or at least some of them).&nbsp; Use a text editor
+          such as wordpad, notepad, BBEdit, simpletext, or teachtext to edit the files.&nbsp; These
+          are NOT WORD PROCESSOR DOCUMENTS they are just simple TEXT files so don't save them as
+          word processor documents or save them with extentions such as .txt or they will NOT WORK.
+          &nbsp; Note that there may be a some files inside of folders which are &quot;blank&quot;.
+          &nbsp; This is normal.</small></font></li>
+      </ul>
+      <h2><font color="#000000" face="Arial"><small>Preparing the CGI scripts</small></font></h2>
+      <blockquote>
+        <h2><small><font face="Arial" color="#FF0000"><small>Define Path To PERL 5</small></font></small></h2>
+      </blockquote>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>The first step is to open up each and every
+        file that has a .cgi extention and edit line number one of each script.&nbsp; Each of the
+        cgi scripts is written in perl 5. For your scripts to run they must know where perl 5 is
+        installed on your web server. The path to perl 5 is defined to a cgi script in the first
+        line of the file. In each of the cgi scripts the first line of code looks something like
+        this: </small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#FF0000"><small>#!/usr/bin/perl</small></font></p>
+        </blockquote>
+        <p><font color="#000000" face="Arial"><small>If the path to perl 5 on your web server is
+        different from /usr/bin/perl you must edit the first line of each cgi script to reflect
+        the correct path. If the path to perl 5 is the same no changes are necessary. If you do
+        not know the path to perl 5 ask the webmaster or system administrator at your server site.
+        &nbsp; </small></font></p>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big><strong>Configure the .cgi files</strong></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><big>newsbot.cgi</big></font></p>
+        <p><font color="#000000" face="Arial"><small>After your list of newsgroups has been
+        created simply run xtractor.cgi from telnet and the script will crawl through the entire
+        list of newsgroups and extract every available email address. This list is stored inside
+        of the file called emails.</small></font></p>
+        <p><font color="#000000" face="Arial"><small>$from = &quot;you\@yourdomain.com&quot;;
+        &nbsp; THIS IS SIMPLY YOUR EMAIL ADDRESS</small></font></p>
+        <p><font color="#000000" face="Arial"><small>$organization = &quot;WHATEVER&quot;; &nbsp;
+        THIS IS THE NAME OF YOUR COMPANY</small></font><dl>
+          <dt><font color="#000000" face="Arial"><small>$hostname = &quot;yourdomain.com&quot;; &nbsp;
+            THIS IS YOUR DOMAIN NAME</small></font></dt>
+        </dl>
+        <p><font color="#000000" face="Arial"><small>$times = &quot;55&quot;;&nbsp; THIS IS THE
+        NUMBER OF POSTING CYCLES YOU WANT NEWSBOT TO EXECUTE.&nbsp; 55 means 55 RANDOM ARTICLES
+        will be posted to 55 RANDOM newsgroups</small></font></p>
+      </blockquote>
+      <h2><font color="#000000" face="Arial"><small>File Locations</small></font></h2>
+      <p><small><font color="#000000" face="Arial">The following files will be uploaded into
+      your normal HTML webspace</font></small></p>
+      <blockquote>
+        <dl>
+          <dd><font face="Arial" color="#FF0000"><small>add.cgi</small></font></dd>
+          <dd><font face="Arial" color="#FF0000"><small>database</small></font></dd>
+          <dd><font face="Arial" color="#FF0000"><small>database.html</small></font></dd>
+          <dd><font face="Arial" color="#FF0000"><small>getgroups.cgi</small></font></dd>
+          <dd><font face="Arial" color="#FF0000"><small>newsbot.cgi</small></font></dd>
+          <dd><font face="Arial" color="#FF0000"><small>newsgroups</small></font></dd>
+          <dd><font face="Arial" color="#FF0000"><small>newsgroups.sorted</small></font></dd>
+          <dd><font face="Arial" color="#FF0000"><small>sortgroups.cgi</small></font></dd>
+        </dl>
+      </blockquote>
+      <h2><font color="#000000" face="Arial"><small>File Access Permissions</small></font></h2>
+      <blockquote>
+        <p><small><font color="#000000" face="Arial">File access permissions must be set correctly
+        for this program to run. The table below lists the permissions of each file which are to
+        be set by the unix command ( chmod ) used to set the correct access permissions. You must
+        set the access permissions for each of these files.</font></small></p>
+        <div align="center"><center><table border="0" width="80%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="50%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><strong>CHMOD
+            755</strong></font></td>
+            <td width="50%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><strong>CHMOD
+            777</strong></font></td>
+          </tr>
+          <tr>
+            <td width="50%"><dl>
+              <dd><p align="center"><font color="#000000" face="Arial"><small>add.cgi</small></font></p>
+              </dd>
+              <dd><p align="center"><font color="#000000" face="Arial"><small>getgroups.cgi</small></font></p>
+              </dd>
+              <dd><p align="center"><font color="#000000" face="Arial"><small>newsbot.cgi</small></font></p>
+              </dd>
+              <div align="center"><center>
+              <dt><font color="#000000" face="Arial"><small>sortgroups.cgi</small></font></dt>
+              </center></div>
+              <dd>&nbsp;</dd>
+            </dl>
+            </td>
+            <td width="50%"><dl>
+              <dd><p align="center"><font color="#000000" face="Arial"><small>database</small></font></p>
+              </dd>
+              <dd><p align="center"><font color="#000000" face="Arial"><small>newsgroups</small></font></p>
+              </dd>
+              <dd><p align="center"><font color="#000000" face="Arial"><small>newsgroups.sorted</small></font></p>
+              </dd>
+            </dl>
+            </td>
+          </tr>
+        </table>
+        </center></div>
+      </blockquote>
+      <h2><font color="#000000" face="Arial"><small>Set your Username/Password</small></font></h2>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>This script REQUIRES you to have a usenet
+        NEWS ACCOUNT with www.supernews.com. When you signup with supernews you will have a unique
+        logid (username) and password. You need to set the variables $username and $password to
+        your username and password in both getgroups.cgi and newsbot.cgi</small></font></p>
+        <blockquote>
+          <dl>
+            <dt><font face="Arial" color="#FF0000"><small>$username = &quot;put your username
+              here&quot;; </small></font></dt>
+            <dt><font face="Arial" color="#FF0000"><small>$password = &quot;put your password
+              here&quot;;</small></font></dt>
+          </dl>
+        </blockquote>
+      </blockquote>
+      <h2><font color="#000000" face="Arial"><small>GET LIST OF NEWSGROUPS</small></font></h2>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Before extracting email addresses you must
+        create a list of newsgroups. To do this you may simply edit the file
+        &quot;newsgroups&quot; by hand or run the getgroups.cgi script from telnet. getgroups.cgi
+        will retrieve the ENTIRE LIST of available newsgroups.&nbsp; If you want to filter your
+        newsgroup list then run sortgroups.cgi.&nbsp; Before running sortgroups.cgi you have to
+        set the variable $keyword inside of sortgroups.cgi</small></font></p>
+        <blockquote>
+          <dl>
+            <dt><font face="Arial" color="#FF0000"><small>perl getgroups.cgi</small></font></dt>
+            <dt><font face="Arial" color="#FF0000"><small>perl sortgroups.cgi&nbsp;</small></font></dt>
+          </dl>
+        </blockquote>
+      </blockquote>
+      <h2><font color="#000000" face="Arial"><small>SPOOL YOUR USENET ARTICLES FOR POSTING</small></font></h2>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Using the database.html file with your
+        browser simply add your post SUBJECT AND MESSAGE in the form.&nbsp; Note that due to the
+        nature of the database structure your posts may NOT contain carraige returns.&nbsp; Future
+        versions may overcome this limitation however HTML will work fine.</small></font></p>
+      </blockquote>
+      <h2><font color="#000000" face="Arial"><small>RUN NEWSBOT</small></font></h2>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>After your list of newsgroups has been
+        extracted and you have submitted a few articles for posting simply run newsbot.cgi from
+        telnet and the script will execute the number of cycles set by the variable $times.&nbsp;
+        Each cycle will take a RANDOM article from your database and post it to a RANDOM newsgroup
+        which was extracted with getgroups.cgi.&nbsp; </small></font></p>
+      </blockquote>
+      <blockquote>
+        <dl>
+          <dt><font face="Arial" color="#FF0000"><small>perl newsbot.cgi</small></font></dt>
+        </dl>
+      </blockquote>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+
+<blockquote>
+  <p>&nbsp;</p>
+</blockquote>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
