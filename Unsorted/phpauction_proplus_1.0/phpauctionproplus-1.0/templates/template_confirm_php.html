@@ -1,0 +1,76 @@
+<?
+
+#///////////////////////////////////////////////////////
+#//  COPYRIGHT 2002 PHPAuction.org ALL RIGHTS RESERVED//
+#//  For Source code for the GPL version go to        //  
+#//  http://phpauction.org and download               //
+#//  Supplied by CyKuH [WTN]                          //
+#///////////////////////////////////////////////////////
+
+?>
+
+
+<TABLE WIDTH="765" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING=0 CELLSPACING=0>
+
+<TR>
+
+<TD>
+
+
+
+<CENTER>
+
+<BR>
+
+<B>
+
+	<? print $tlt_font.$MSG_248; ?>
+
+
+
+</B>
+
+<BR>
+
+
+
+<FORM NAME=registration ACTION="<? print basename($PHP_SELF); ?>" METHOD="POST">
+
+          <TABLE WIDTH="600" BORDER="0" CELLPADDING="5">
+            <TR> 
+              <TD colspan="2" VALIGN="top" ALIGN="right"> 
+                <DIV align="left"><? print $std_font.$MSG_267; ?></DIV>
+              </TD>
+            </TR>
+            <TR> 
+              <TD WIDTH="130">&nbsp;</TD>
+              <TD WIDTH="544"> <?
+
+	//	print $std_font.$MSG_097;
+
+	?> <BR>
+                <BR>
+                <INPUT TYPE=submit NAME="action" value="<? print $MSG_249; ?>">
+                <INPUT TYPE=submit NAME="action" value="<? print $MSG_250; ?>">
+              </TD>
+            </TR>
+            <TR> 
+              <TD WIDTH="130">&nbsp;</TD>
+              <TD WIDTH="544"> <FONT FACE="Verdana,Helvetica,Arial" SIZE="2"> 
+                </FONT> <BR>
+                <INPUT type="hidden" name="id" value="<? echo $id; ?>">
+              </TD>
+            </TR>
+          </TABLE>
+
+</FORM>
+
+</CENTER>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+
