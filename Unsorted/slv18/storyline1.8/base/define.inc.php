@@ -1,0 +1,9 @@
+<?
+define("SL_ROOT_PATH","");
+define("SL_ROOT_URL","");
+define("SL_TITLE","");
+define("THE_HOST","");
+define("USER_NAME","");
+define("PASS_WORD","");
+define("DB_NAME","");
+?>
