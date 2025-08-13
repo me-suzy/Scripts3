@@ -1,0 +1,117 @@
+
+<table border=0 cellspacing=0 cellpadding=0 width=100%>
+<tr><td width=250>&nbsp;</td>
+<td align=left><h1 style="color: #427b7b; margin-left: 0px; margin-bottom: 0px; margin-top: 0px;" class=wheader>Action Wizard</h1></td>
+</tr></table>
+
+<form action=wizard.php method=post style="margin-top: 0px; margin-bottom: 0px;">
+%hiddenfields%
+
+<table border=0 width=100%>
+<tr><td>
+<table border=0 width=80% cellspacing=0 cellpadding=0>
+<tr>
+<td rowspan=10 valign=top width=110>
+<table border=0 cellspacing=0 cellpadding=0>
+<tr><td width=98>
+<ul style="margin-left: 10px;margin-top: 0px;">
+<li><b>Step 1<br>
+Specifying action name, type and confirmation page</b><br><br>
+<li>Step 2<br>
+Specifying action income<br><br>
+<li>Step 3<br>
+Adding the tracking code to the confirmation page<br><br>
+<li>Step 4<br>
+Action data revision. 
+</ul>
+</td>
+
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr></table>
+</td>
+
+
+<td colspan=2>
+
+
+
+<font class=hd>Please enter the name of  new action in the field below.</font><br>
+<br>
+<b>Tip:</b> Dont give too long names to your actions, this will help to make your reports looks better structured.
+<br>
+<br>
+</td>
+</tr>
+
+<tr>
+<td colspan=2>
+
+<table border=0 cellspacing=0 cellpadding=1>
+<tr>
+<td><b>Name:</b></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td><input type=text name=action_name value="%action_name%" class=txt></td>
+</tr>
+</table>
+
+</td>
+</tr>
+<tr><td colspan=2><br></td></tr>
+
+<tr>
+<td colspan=2><font class=hd>
+Please enter the URL of the page which confirms that the current action was performed by visitor.(Ex.: The URL of Thank you page shown after form submission). <br>
+This link will be used to generate the code to count your leads or clients (visitors which performed the current action).
+</font><br>
+<font size=1>(For example http://www.some-host.com/thanks.html)</font><br><br>
+</td>
+</tr>
+
+<tr>
+<td colspan=2>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr>
+<td><b>Link:</b></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td><input type=text name=action_link value="%action_link%" class=txt></td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td colspan=2><br>
+</td></tr>
+
+<tr>
+<td colspan=2><font class=hd>
+
+There are two possible action types:<br>
+<b>End point  action</b>  the action that brings you money, such as ordering a product for example.<br>
+<b>Intermediate action</b>  the action that doesnt bring any money but brings you some information from the visitor, such as filling questionnaire or request form. According to this criteria, please choose below the  type for the current action.
+</font>
+</td>
+</tr>
+
+<tr>
+<td colspan=2><b>Action type:</b></td>
+</tr>
+<tr>
+<td align=right><input type=radio name=act value="1"></td>
+<td><img src="images/bullet.gif" width=16 height=10 border=0 align=absmiddle><b>End point</b></td>
+</tr>
+
+<tr>
+<td align=right><input type=radio name=act value="2"></td>
+<td><img src="images/bullet.gif" width=16 height=10 border=0 align=absmiddle><b>Intermediate</b></td>
+</tr>
+
+<tr>
+<td colspan=3 align=right>%prev_but%&nbsp;&nbsp;<input type=image src="images/button-next.gif" name=next value=next 
+</td>
+</tr>
+
+</table>
+</td></tr></table>
+
+</form>
