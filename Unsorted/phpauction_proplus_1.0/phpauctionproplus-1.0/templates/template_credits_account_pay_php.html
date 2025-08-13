@@ -1,0 +1,116 @@
+<?
+
+#///////////////////////////////////////////////////////
+#//  COPYRIGHT 2002 PHPAuction.org ALL RIGHTS RESERVED//
+#//  For Source code for the GPL version go to        //  
+#//  http://phpauction.org and download               //
+#//  Supplied by CyKuH [WTN]                          //
+#///////////////////////////////////////////////////////
+
+?>
+
+
+<TABLE WIDTH="765" CELLPADDING=0 CELLSPACING=0 BGCOLOR="#FFFFFF" BORDER=0 ALIGN="CENTER">
+	<TR>
+
+<TD>
+
+<? print $tlt_font; ?>
+
+<BR>
+
+<CENTER>
+				<B> 
+				<?
+
+		print $tlt_font.$MSG_483;
+
+	?>
+				<BR>
+				</B> 
+				<TABLE WIDTH="85%" BORDER="0" CELLSPACING="0" CELLPADDING="3">
+					<TR BGCOLOR="#EEEEEE"> 
+						<TD> 
+							<? print $std_font; ?>
+							<? print $MSG_247."<B>$HTTP_SESSION_VARS[PHPAUCTION_LOGGED_IN_USERNAME]</B>"; ?>
+							 </TD>
+						
+				            <TD WIDTH="39%" ALIGN=RIGHT> 
+    				        &nbsp;
+            				</TD>
+					</TR>
+				</TABLE>
+				<TABLE WIDTH="85%" CELLSPACING="0" CELLPADDING="1" BORDER="0" BGCOLOR="<?=$FONTCOLOR[$SETTINGS[bordercolor]]?>">
+					<TR> 
+						<TD> 
+							<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="3">
+								<TR> 
+									<TD WIDTH="12%"> <B> 
+										<? print $nav_font; ?>
+										<? print $MSG_432?>
+										</B></TD>
+									<TD WIDTH="37%"> <B> 
+										<? print $nav_font; ?>
+										<? print $MSG_087?>
+										</B></TD>
+									<TD WIDTH="18%"> <B> 
+										<? print $nav_font; ?>
+										<? print $MSG_487?>
+										</B></TD>
+								</TR>
+								<?
+									$BGCOLOR="#FFFFFF";
+									if(is_array($OPERATION_DATE))
+									{
+										while(list($k,$v) = each($OPERATION_DATE))
+										{
+											if($BGCOLOR == "#FFFFFF")
+												$BGCOLOR = "#EEEEEE";
+											else
+												$BGCOLOR = "#FFFFFF";
+											
+								?>
+								<TR BGCOLOR=<?=$BGCOLOR?>>
+									<TD WIDTH="12%"><?=$std_font.FormatDate($v)?></TD>
+									<TD WIDTH="37%">
+									<?
+										if(!empty($OPERATION_AUCTION[$k]))
+										{
+											print "<A HREF=\"item.php?id=$OPERATION_AUCTION[$k]\">$std_font$OPERATION_DESCR[$k]</A>";
+										}
+										else
+										{
+											print $std_font.$OPERATION_DESCR[$k];
+										}
+									?>
+									</TD>
+									<TD WIDTH="18%">
+									<?
+										if($OPERATION_TYPE[$k] == 1)
+										{
+											print $std_font.print_money($OPERATION_AMOUNT[$k]);
+										}
+									?>
+									</TD>
+								</TR>
+								<?
+										}
+									}
+								?>
+							</TABLE>
+						</TD>
+					</TR>
+				</TABLE>
+				<BR>
+          <BR>
+
+
+</CENTER>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+
