@@ -1,0 +1,22 @@
+<!--
+Availble fields in this template:
+
+{CATEGORYNAME} 	{TOTAL_ADS} 	{CATEGORY_URL}   {/CATEGORY_URL} 	{AD_URL} 	{/AD_URL}
+{ADTITLE} 	{CUSTOM_FIELD1} 	{CUSTOM_FIELD2} 	{CUSTOM_FIELD3} 	{CUSTOM_FIELD4}
+{CUSTOM_FIELD5} 	{CUSTOM_FIELD6} 	{CUSTOM_FIELD7} 	{CUSTOM_FIELD8}   {DATE_URL}
+{/DATE_URL}   {DATEADDED}   {YESNOPICTURE}
+
+Example:
+Add this on its own line between the <tr> and </tr>
+<td valign="top" bgColor="#cccccc"><font face="Arial" size="2"><b>{CUSTOM_FIELD1}</b></font></td>
+
+NOTE: You must also change links.html, and add a similart line !
+-->
+
+<table cellspacing="0" cellpadding="2" border="0" width="100%">
+<tr>
+<td width="35%" valign="top" bgcolor="#C8D3E5"><b>{CATEGORY_URL}{CATEGORYNAME}{/CATEGORY_URL}</b></td>
+<td width="35%" valign="top" bgcolor="#C8D3E5"><b>{AD_URL}{ADTITLE}{/AD_URL}</b></td>
+<td width="20%" valign="top" bgcolor="#C8D3E5"><b>{DATE_URL}{DATEADDED}{/DATE_URL}</b></td>
+<td width="10%" valign="top" bgcolor="#C8D3E5"><b>{YESNOPICTURE}</b></td>
+</tr>
