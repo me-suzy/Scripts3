@@ -1,0 +1,86 @@
+>  
+
+>
+> ========= The Four File Changes Start Here =================
+>
+> *** ypp_src/index.php Mon Jan 28 16:36:11 2002
+> --- pureharvest/bridge/ypp/index.php Wed Feb 6 14:05:11 2002
+> --- --- ADD LINES 1,15 ----
+> > /*
+> This section incorporate CMS Bridge middleware.
+> See
+> http://portal.dbserve.net/codeshare/cms_bridge.htm
+> or http://www.dreamriver.com/????
+> for instructions and information.
+> */
+> if (isset($cms_bridge)) {
+> setcookie("cms_bridge_cc","$cms_bridge");
+> include "cms_bridge/$cms_bridge/sync_user.php";
+> }
+> ?>
+>
+> ==================================================
+> ==================================================
+> ==================================================
+>
+> *** ypp_src/login.php Mon Jan 28 16:36:23 2002
+> --- pureharvest/bridge/ypp/login.php Wed Feb 6 14:05:11 2002
+> --- ADD LINES 1,15 ----
+> > /*
+> This section incorporate CMS Bridge middleware.
+> See
+> http://portal.dbserve.net/codeshare/cms_bridge.htm
+> or http://www.dreamriver.com/????
+> for instructions and information.
+> */
+> if (isset($cms_bridge_cc)) {
+> include "cms_bridge/$cms_bridge_cc/sync_user.php";
+> }
+> ?>
+>
+>
+> ==================================================
+> ==================================================
+>
+> *** ypp_src/password.php Mon Jan 28 16:36:29 2002
+> --- pureharvest/bridge/ypp/password.php Wed Feb 6 14:05:11 2002
+> --- --- ADD LINES 1,15 ----
+> > /*
+> This section incorporate CMS Bridge middleware.
+> See
+> http://portal.dbserve.net/codeshare/cms_bridge.htm
+> or http://www.dreamriver.com/????
+> for instructions and information.
+> */
+> if (isset($cms_bridge_cc)) {
+> include "cms_bridge/$cms_bridge_cc/sync_user.php";
+> }
+> ?>
+>
+> ==================================================
+> ==================================================
+>
+> *** ypp_src/tellAFriend.php Mon Jan 28 16:36:39 2002
+> --- pureharvest/bridge/ypp/tellAFriend.php Wed Feb 6 14:05:12 2002
+> --- --- ADD LINES 1,15 ----
+> > /*
+> This section incorporate CMS Bridge middleware.
+> See
+> http://portal.dbserve.net/codeshare/cms_bridge.htm
+> or http://www.dreamriver.com/????
+> for instructions and information.
+> */
+> if (isset($cms_bridge_cc)) {
+> include "cms_bridge/$cms_bridge_cc/sync_user.php";
+> }
+> ?>
+> --
+> Bob Treumann, 651-603-1245
+> Elmwood Solutions Inc. (St. Paul, Minnesota)
+> bobt@elmwood.com
+> http://www.elmwood.com
+> ORACLE Business Alliance Program Member
+>
+>
+>
+ 
