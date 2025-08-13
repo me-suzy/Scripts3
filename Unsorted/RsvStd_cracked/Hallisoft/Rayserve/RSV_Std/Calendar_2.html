@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<TITLE>Rayserve Room Reservation Software - Availability Calender</TITLE>
+	<LINK REL="stylesheet" HREF="Style/RSV_2.css" TYPE="text/css">
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	<META NAME="Description" CONTENT="Rayserve Hotel Reservation Software">
+	<META NAME="Keywords" CONTENT="hotel, reservation, holiday, travel, book room, tariffs, internet, software, program, downlaod, demo">
+	<SCRIPT LANGUAGE="Javascript" TYPE="text/Javascript">if(!parent.frames['MainFrame']){parent.location.href='Demo_2.html';}</SCRIPT>
+	<SCRIPT LANGUAGE="Javascript" TYPE="text/javascript">
+	var img1=new Image();
+	img1.src="Images/Blank.gif";
+	function hideImage(){
+		document.images["Info_Image"].src=img1.src; }
+	</SCRIPT>
+</HEAD>
+<BODY onLoad="hideImage();">
+<H1 ALIGN="center">City Hotel - Room Availability Calender</H1>
+<DIV ALIGN="center">
+<TABLE BORDER="0" CELLSPACING="2" CELLPADDING="1">
+<TR>
+<TD COLSPAN="3">The calendar below shows the days of the year for which the number of rooms of the chosen type are available.</TD>
+</TR><TR>
+<TD>&quot;Yes&quot; </TD><TD>Your room(s) are available</TD>
+<TD ROWSPAN="2" ALIGN="right"><IMG SRC="Images/Loading.gif" HEIGHT="20" WIDTH="190" ALT="Working please wait..." NAME="Info_Image"></TD>
+</TR><TR>
+<TD>&quot;No&quot; </TD><TD>Sorry we have no room(s) available</TD></TR>
+</TABLE>
+</DIV>
+
+<!-- FORM TO SPECIFY MONTH AND DAY NAMES BEGINS -->
+<FORM NAME="Headings" ID="Headings">
+<INPUT TYPE="hidden" NAME="Months" VALUE="January,February,March,April,May,June,July,August,September,October,November,December">
+<INPUT TYPE="hidden" NAME="Days" VALUE="Sun,Mon,Tue,Wed,Thu,Fri,Sat">
+</FORM>
+<!-- FORM TO SPECIFY MONTH AND DAY NAMES ENDS -->
+
+<!-- START OF GENERATED HTML -->
+<SCRIPT LANGUAGE="Javascript" TYPE="text/javascript">parent.showBookings('TEXT','Yes','No','25');</SCRIPT>
+<!-- END OF GENERSTED HTML -->
+
+<P></P>
+<DIV ALIGN="center">
+<HR WIDTH="70%">
+<A HREF="Tariff_2.html" TARGET="MainFrame">Tariffs</A><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="Availability_2.html" TARGET="MainFrame">Availability</A><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="BookingForm_2.html" TARGET="MainFrame">Booking Form</A><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="BookingList_2.html" TARGET="MainFrame">Booking List</A><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="Checkout_2.html" TARGET="MainFrame">Confirm Bookings</A><BR>
+<A HREF="Email_2.html" TARGET="MainFrame">Email Us</A><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="javascript:parent.newWin('Currency_2.html','Currency_Display',370,270,1)">Change Currency</A><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="javascript:parent.newWin('Convert_2.html','Currency_Convertion',370,340,1)">Currency Conversion</A><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<HR WIDTH="70%">
+</DIV>
+<DIV CLASS="authinfo" ALIGN="center">Powered by Rayserve</DIV>
+</BODY>
+</HTML>
