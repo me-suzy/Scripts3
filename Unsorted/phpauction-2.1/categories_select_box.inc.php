@@ -1,0 +1,8 @@
+<SELECT NAME="id">
+	<OPTION VALUE="0"></OPTION>
+	<OPTION VALUE="1">Art & Antiques</OPTION>
+	<OPTION VALUE="2">Books</OPTION>
+	<OPTION VALUE="5">Clothing & Accessories</OPTION>
+	<OPTION VALUE=""></OPTION>
+	<OPTION VALUE="0">All categories</OPTION>
+</SELECT>
