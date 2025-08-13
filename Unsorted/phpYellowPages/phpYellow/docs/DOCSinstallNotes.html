@@ -1,0 +1,460 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+
+		<LINK rel=stylesheet type="text/css" href="documentation.css">
+
+<TITLE>phpYellow Pages - Easily create your very own Yellow Page directories on the web! - Dreamriver.com - php software mysql database software download apps</TITLE>
+
+	<META NAME="keywords" CONTENT="yellow, pages, phpYellow, php, software, Yellow, ads, listings">
+	<META NAME="description" CONTENT="Easily create your very own Yellow Page directories on the web!">
+	<META NAME="Author" CONTENT="Richard Creech, DreamRiver.com. Web: http://www.dreamriver.com Email: phpYellow@dreamriver.com">
+
+	</HEAD>
+
+
+<body class="yellow">
+
+
+<h1>phpYellow Pages Developer's Guide</h1>
+
+
+
+<!-- start of the dec30 navigation bar for the documentation -->
+<div align="center">
+<a href="DOCSindex.html">Docs Home</a> | 
+<a href="DOCSreadme.html">Read Me</a> | 
+<a href="DOCSfaq.html">FAQ</a> | 
+<a href="DOCSlicense.html">License</a> | 
+<a href="DOCSsecurity.html">Security</a> | 
+<a href="DOCSinstallNotes.html">Install</a> | 
+<a href="DOCSchangeLog.html">ChangeLog</a> | 
+<a href="DOCScustomize.html">Customize</a> | 
+<a href="DOCSpaidListings.html">Paid Listings</a>  
+</div>
+<!-- end of the dec30 navigation bar for the documentation -->
+
+
+
+
+<span style="color:Coral;font-size:48px;">INSTALLATION</span>
+
+
+<p style="font-size:small;">
+If you are reading this from the packaged distribution file, 
+you may want to <a href="http://www.dreamriver.com/phpYellow/docs/DOCSindex.html">visit Dreamriver's most recent online documentation.</a>
+
+</p>
+
+
+<h3>TABLE OF CONTENTS</h3>
+
+
+<div style="background-color:black;color:yellow;">
+
+NEW!!!  There is only one file you need to run: install.html
+
+
+</div>
+
+
+
+<UL>
+<li><a href="#general">GENERAL</a>
+<li><a href="#quickstart">QUICKSTART</a>
+<li><a href="#upgrade2x">Upgrade</a>
+<li><a href="#regular">REGULAR INSTALL</a>
+<ul>
+<li><a href="#config">Configuration</a>
+<li><a href="#premiumconfig">Premium Configuration</a>
+<li><a href="#connect">Database and php Connection</a>
+<li><a href="#bridge">CMS Bridge</a>
+
+
+<li><a href="#createTable">Create Table Definitions</a>
+</ul>
+
+<li><a href="#files">FILES</a>
+<li><a href="DOCScustomize.html">CUSTOMIZATION</a>
+<li><a href="#cash">POTENTIAL REVENUE</a>
+<li><a href="#other">OTHER SOFTWARE PRODUCTS</a>
+<li><a href="#support">??? SUPPORT ???</a>
+</ul>
+
+
+
+<h2><a name="general">GENERAL</a></h2>
+
+<p>Use the Quickstart first. <a href="#regular">Follow the Regular instructions if needed. </p> 
+
+
+<h2><a name="quickstart">QUICKSTART</a></h2>
+
+
+<h3>New Install on a Remote Web Server</h3>
+<ol>
+<li>download the phpYellow Pages distribution files from Dreamriver.com
+<li>extract all files to your local machine
+<li>open install.html
+<li>follow the directions
+</ol>
+
+
+<h3><a name="upgrade2x">Upgrade - for Upgrading From any Version 2 to the latest Version 2.x</a></h3>
+<ol>
+<li>save a copy of files you have customized, for example:
+	<ul>
+		<li>save a copy of util.php as <b>utilMINE.php</b> 
+		<li>save a copy of categories.php as <b>categoriesMINE.php</b>		
+		<li>save a copy of yellow.css as <b>yellowMINE.css</b> 
+		<li>save a copy of your customized header.php as <b>headerMINE.php</b> 
+		<li>save a copy of footer.php as <b>footerMINE.php</b> 
+		<li>save a copy of changeLog.txt as <b>changeLogMINE.txt</b> 
+		<li>place these somewhere safe - <b>not</b> in the phpYellow directory!
+	</ul>
+<li>open the new util-dist.php file (or util-dist-Premium.php for paid Premium versions) and configure database and connectivity values as in utilORIGINAL-dist.php. Rename to <b>util.php</b>
+<li>delete ALL of the phpYellow Pages php files on your web server. This does NOT affect your database records
+<li>you should now have an empty folder on your web server called <b>phpYellow</b>
+<li>from the newly extracted files upload underConstruction.php to /phpYellow and rename it index.php
+<li>open the file <b>install.html</b> in your browser
+<li>follow the directions
+</ol>
+
+
+<h2><a name="createTable">CREATE TABLE DEFINITION - MySQL Database Only</a></h2>
+
+
+<p>This definition is for your archive. You don't need to do anything with it - it's FYI.
+</p>
+
+<pre>
+create table contact ( 
+yps mediumint(9) unsigned not null auto_increment PRIMARY KEY,
+ypassword varchar(15) not null default 'password',
+yemail varchar(80),
+ycompany varchar(45),
+yfirstname varchar(35),
+ylastname varchar(45),
+yaddress varchar(70),
+ycity varchar(25),
+ystateprov varchar(25) not null,
+ycountry varchar(40) not null default 'United States',
+ypostalcode varchar(10),
+yareacode varchar(7),
+yphone varchar(20),
+yfax varchar(20),
+ycell varchar(20),
+yurl varchar(140),
+ylogo varchar(120),
+lastupdate timestamp(14), 
+index stateprovidx (ystateprov(15)),
+index countryidx (ycountry(20))
+)
+
+contact table FIELD names only - for use in creating your own forms - optional
+yps
+ypassword
+yemail
+ycompany
+yfirstname
+ylastname
+yaddress
+ycity
+ystateprov
+ycountry  
+ypostalcode
+yareacode
+yphone
+yfax
+ycell
+yurl
+ylogo
+lastupdate
+
+// yps ypassword yemail ycompany yfirstname ylastname yaddress ycity ystateprov ycountry ypostalcode yareacode yphone yfax ycell yurl ylogo lastupdate 
+
+
+CREATE TABLE category (
+ckey int(9) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ypsid mediumint(9) UNSIGNED NOT NULL,
+category varchar(80) NOT NULL DEFAULT 'other',
+description varchar(255) NOT NULL DEFAULT 'No description',
+rank tinyint(1) unsigned not null default '0',
+paymentrequired enum('yes', 'no') default 'no',
+status enum('pending', 'approved', 
+'expired') default 'approved',
+expires date,
+lastupdate timestamp(14),
+index catidx (category(15)),
+index descidx (description(15)))
+
+
+
+
+category table FIELD names only - for use in creating your own forms - optional
+ypsid
+category
+description
+rank
+paymentrequired
+status
+expires
+lastupdate
+
+
+// ypsid category description rank paymentrequired status expires lastupdate
+
+</pre>
+
+
+<h2><a name="regular">NEW REGULAR INSTALL ON A REMOTE WEB SERVER</a></h2>
+
+<p>If the Quickstart failed to provide adequate directions then the 
+following instructions are for you:</p>
+
+<ol>
+<li>Read the instructions (this file)
+<li>Go to your server and make a new directory called "phpYellow" without the quotes.
+<li>upload all files to the directory
+<li>Configuration
+</ol>
+
+
+
+<h2><a name="config">CONFIGURATION</a></h2>
+
+<p>Open util-dist.php in a text editor (such as Notepad) and save it as util.php. Within util.php change all the // CONSTANT declarations starting near the top of the page. More configuration suggestions and examples are contained within the comment lines for each item. Do NOT change the name of the constants, but rather change the value of the data the constant will hold. For example, change the constant called WEBMASTER to be your email address:</p>
+
+<p><code>
+example: define("WEBMASTER", "webmaster@yourdomain.com" ); 
+// change lower case letters only.
+</code></p>
+
+
+<p>Continue and change each constant to the value it should be in your circumstance. Upload this changed <b>util.php</b> file to your web server along with <b>testdb.php</b> and <b>install.php</b> and <b>yellow.css</b>. 
+
+<i>In no case should any data be deleted; data will only need changing to another value. If unsure what values to change then ask your local internet service provider, or post your query to the support bulletin board at <a href="http://www.dreamriver.com/forums/">http://www.dreamriver.com/forums/</a></i>
+</p>
+
+
+<h2><a name="premiumconfig">Configuring Standard &amp; Premium Version CONSTANTS</a></h2>
+
+<p>Following are descriptions of how to use some of the CONSTANTS defined 
+in util.php</p>
+
+
+<h3>FEATURELISTING</h3>
+
+<p>Guaranteed top quality placement <b>on EVERY search page</b>. 
+Your best possible listing position. Prospective customers are given 
+your email address to make inquiries.</a></p>
+
+<p>To change or set a Feature Listing you set a unique number. You 
+may change it as often or as little as you like. You also set the price 
+for this prime listing position. The listing really does appear with 
+every search result! It can be worth a lot - and you decide how much 
+to charge your customers for this.
+</p> 
+ 
+<p>
+The CKEY field number is the unique number to change. It is shown 
+with each search result, in gray at the bottom of each record. All 
+you have to do is enter the ckey number in util.php next to the 
+constant called FEATURELISTING, and upload util.php to your server.
+The generation of the actual listing is all database driven - you just 
+set the number, phpYellow Pages does the rest.
+</p>
+
+
+
+
+<h3>RECORDSPERPAGE</h3>
+
+<p>The number of results per page in any search - modify if wanted. Generally 
+you will want to set this number lower, for example at 10 records per page.
+If you are using paid listings then the more records per page you allow the 
+more first page listings you can have, and get paid for.</p>
+
+
+
+<h3>QUEUELISTINGS</h3>
+This constant tells phpYellow pages whether or not to send listings to a 
+queue for administration approval. The default is &quot;no&quot;. A value 
+of &quot;no&quot; will publish new or updated listinngs immediately. A value 
+of &quot;yes&quot; will queue ALL new and updated records for administration 
+preview and approval prior to publication. 
+
+<p>To approve any listing, just go to admin.php and use the 
+Preview Listings by Status tool. It automatically checks the database 
+and reports status of listings. You can then point and click to set 
+the status of any listing to pending, approved or expired. The 
+main search seen by website visitors will only use approved listings in any search results.
+</p>
+
+
+The recommended value for QUEUELISTINGS is &quot;no&quot;. There are a 
+number of reasons for such a preference:
+
+<ul>
+<li>a value of &quot;yes&quot; prevents listers from buying until you approve the listing</li>
+<li>queued listings are more work, since you have to approve each and every queued item - 
+including valid basic position listings which could be published right away</li>
+<li>you can receive automatic notification of new listings</li>
+<li>you can view the latest additions easily by viewing the &quot;New!&quot; page</li>
+<li>you can easily remove any listing with the Manage-Listing tool</li>
+</ul> 
+
+
+
+<h3>PAIDLISTINGS</h3>
+
+<p>In general you should be referring to the page about Paid Listings for 
+comprehensive information about paid listings and phpYellow Pages.</p>
+
+<p><a href="DOCSpaidListings.html">Refer to the Paid Listings docs.</a></p>
+
+
+<p>Toggle paid listings on or off - "yes" will enable script processing, 
+anything else will disable processing. Processing is linked to various 
+payment methods. </p>
+
+
+
+
+<h3>BYPASSCARDPROCESSOR</h3>
+<p>This is used to test what happens to a paid listing 
+without involving the gateway processor. This rechannels the processing
+from an internal form to an internal script - it bypasses the card 
+processor entirely. Normally you will want to go to the card processor - 
+this feature is just for testing. Try it, but remember to change it back
+to live mode. Set the value to &quot;no&quot; to include the card 
+processor.</p>
+
+
+
+<h2><a name="connect">DATABASE AND PHP CONNECTION</a></h2>
+
+<p>Load install.html in your web browser and follow the directions.</p>
+
+
+<hr>
+
+
+<h2><a name="files">FILES - some of the more significant files</a></h2>
+
+<pre>
+FILE				PURPOSE
+install.html	    // helps you install the entire application
+admin.php           // login to your administration pages
+easysql.php 		// no, you can't load it directly - it has to be secure from hacking
+	     			// you can load easysql.php in a link within the admin.php page 			
+index.php			// the start and search page the users see
+login.php			// user add-edit-delete module
+password.php		// the user attempts to find their password
+admin.php			// administration only - internally phpYellow password protected
+categories.php		// holds all the categories, individual items may be added, edited or removed
+countries.php		// contains all the countries, individual items may be added, edited or removed 
+upgrade.php         // Yellow Pages Premium - make $money, see POTENTIAL REVENUE.
+</pre>
+
+
+
+
+
+<h2><a name="bridge">CMS Bridge</a></h2>
+<p>
+Parts of Version 2.24 and higher versions incorporate CMS Bridge middleware. This is useful if 
+you are using a Nuke software product and want to integrate your Nuke copy 
+with the phpYellow Pages application. See <a href="http://portal.dbserve.net/codeshare/cms_bridge.htm">
+http://portal.dbserve.net/codeshare/cms_bridge.htm</a>
+for instructions and information. 
+</p>
+
+
+
+
+<h2>CUSTOMIZATION</h2>
+<a href="DOCScustomize.html">Visit the customization page</a> and find out how to optimize your implementation.
+
+
+<h2><a name="cash">POTENTIAL REVENUE</a></h2>
+
+<p>Cash is good. Upgrade to a paid version and earn some by charging for the 
+position of listings on YOUR pages. YOU set the rate you charge your customers. Premium phpYellow Pages  
+lets you easily set the page position of any listing with a few mouse clicks, and comes with a wide 
+range of new, feature rich benefits.
+</p>
+
+<p>Many more features are also available with the paid version. More features are constantly added - but 
+mostly to the paid version only.
+</p>
+
+
+<h3>More Info?</h3>
+For the website owner: 
+<ul>
+<li><a href="http://www.dreamriver.com/fatpipe/index.php">Our Software Archive Index</a>
+<li>For the advertiser: <a href="../goPremium.php">See goPremium.php.</a><br>
+<li>For the webmaster: <a href="http://www.dreamriver.com/phpYellow/docs/DOCSindex.html">phpYellow Pages Developer's Guide</a>
+</ul>
+
+
+
+<h2><a name="other">OTHER SOFTWARE PRODUCTS</a></h2>
+
+<p>Check out our software page for more Dreamriver.com software products. 
+There are new products "in the pipeline" and coming soon!</p>
+
+<a href="http://www.dreamriver.com">http://www.dreamriver.com</a>
+
+
+
+
+<h2><a name="support">??? SUPPORT ???</a></h2>
+
+<p>Get FREE support for a <b>Standard OR Premium</b> version by sending email to <a href="mailto:phpYellow@dreamriver.com">phpYellow@dreamriver.com</a></p>
+
+
+<p><i>Thank you for your interest in DreamRiver products.</i></p>
+
+
+
+<p>END OF DOCUMENT</p>
+
+
+
+<!-- start of the dec30 navigation bar for the documentation -->
+<div align="center">
+<a href="DOCSindex.html">Docs Home</a> | 
+<a href="DOCSreadme.html">Read Me</a> | 
+<a href="DOCSfaq.html">FAQ</a> | 
+<a href="DOCSlicense.html">License</a> | 
+<a href="DOCSsecurity.html">Security</a> | 
+<a href="DOCSinstallNotes.html">Install</a> | 
+<a href="DOCSchangeLog.html">ChangeLog</a> | 
+<a href="DOCScustomize.html">Customize</a> | 
+<a href="DOCSpaidListings.html">Paid Listings</a>  
+</div>
+<!-- end of the dec30 navigation bar for the documentation -->
+
+
+
+
+<p class="sitedesign">All Pages Copyright&copy;2000,2001,2002 <a href="http://www.dreamriver.com">Dreamriver.com</a>. All rights reserved.</p>
+
+
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+
+</body>
+</html>
+
+
