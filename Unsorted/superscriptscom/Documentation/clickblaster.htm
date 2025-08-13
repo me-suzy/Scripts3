@@ -1,0 +1,241 @@
+<html>
+
+<head>
+<title>Clickblaster Documentation</title>
+
+<meta name="Microsoft Border" content="t, default"></head>
+
+<body><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+
+<table border="0" width="33%" cellpadding="0">
+  <tr>
+    <td width="50%"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/" ONCLICK="parent.f=0"><img src="../pix/banners/miniprizm.gif" alt="cgi scripts" border="0" WIDTH="305" HEIGHT="59"></a></font></td>
+    <td width="50%" bgcolor="#FFFFFF"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/ads/rotate.cgi?url=&amp;user=" target="new" ONCLICK="parent.f=0"><img src="http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user=" border="0" width="468" height="60"></a></font></td>
+  </tr>
+</table>
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="16%"><p align="center"><a href="../dsstoday/index.html"><font color="#000000" face="Arial"><img src="../pix/main/news.jpg" alt="CGI NEWS" align="left" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="16%"><p align="center"><a href="../scripts/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/scripts.jpg" alt="CGI Scripts" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../mastergate/index.html"><font color="#000000" face="Arial"><img src="../pix/main/access.jpg" alt="Access The CGI Archive" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../contact.html"><font color="#000000" face="Arial"><img src="../pix/main/contact.jpg" alt="Contact Superscripts" WIDTH="104" HEIGHT="68"></font></a></td>
+    <td width="17%"><p align="center"><a href="../support.html"><font color="#000000" face="Arial"><img src="../pix/main/dox.jpg" alt="CGI Documentation" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../download/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/download.jpg" alt="Download CGI Scripts Here" align="right" WIDTH="105" HEIGHT="65"></font></a></td>
+  </tr>
+  <tr>
+    <td width="16%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/dsstoday/index.html" style="color: rgb(255,255,255)"><strong>News</strong></a></font></td>
+    <td width="16%" bgcolor="#000000"><p align="center"><a href="/scripts/" style="color: rgb(255,255,255)"><font face="Arial" color="#FFFFFF"><strong>CGI Scripts</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><a style="color: rgb(255,255,255)" href="../mastergate/index.html"><font face="Arial" color="#FFFFFF"><strong>Become A Member</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../contact.html"><strong>Contact
+    Us</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../support.html"><strong>Support</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/download/index.shtml" style="color: rgb(255,255,255)"><strong>Download
+    Area</strong></a></font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+
+<table border="0" width="75%" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <p><big><big><strong><font face="Arial" color="#FF0000">Documentation<br>
+      </font></strong><font face="Arial" color="#000000">CLICKBLASTER:&nbsp; V3.0</font></big></big></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Copyright 2001 Psybercore, Inc. - All Rights
+        Reserved. </small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">Selling redistributing or modifying any or
+        all of the code for this program without prior written consent is expressly forbidden. You
+        must obtain written permission before redistributing this software over the Internet or in
+        any other medium. In all cases copyright and header information must remain intact.</font></small></p>
+      </blockquote>
+      <hr align="left">
+      <p><big><strong><font face="Arial" color="#000000">System Requirements</font></strong> </big><ul>
+        <li><small><font face="Arial" color="#000000">Perl 5</font></small></li>
+        <li><font face="Arial" color="#000000"><small><a href="http://www.mysql.com">Mysql</a>
+          Database Software</small></font></li>
+        <li><a href="../../download/Msql-Mysql-modules-1.2200.tar.gz"><font face="Arial" color="#000000"><small>Msql-Mysql Module</small></font></a></li>
+        <li><a href="../../download/DBI-1.09.tar"><font face="Arial" color="#000000"><small>DBI
+          Module</small></font></a></li>
+        <li><font face="Arial" color="#000000"><small>Password protection ability recommended</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Unix recommended</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Sendmail</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Preliminaries</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Determine the path to PERL 5 on your web
+          server host.&nbsp; Note that some web hosting companies run both PERL 4 and PERL 5.&nbsp;
+          Make ABSOLUTELY sure you are not setting this up under PERL 4.&nbsp; Ask your
+          administrator if you are not sure. </small></font></li>
+      </ul>
+      <ul>
+        <li><a href="../../tutorial/index.html"><font face="Arial" color="#000000"><small>If you
+          need to review or learn the basics of CGI and Perl visit the tutorial</small></font></a></li>
+      </ul>
+      <ul>
+        <li><a href="../download/index.shtml"><font face="Arial" color="#000000"><small>Download the
+          tarfile for this program and save it to your desktop.</small></font></a></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Unpack the tar archive on your desktop using a
+          program that unpacks UNIX TAR ARCHIVES. If you don't have such a program then download
+          WINZIP FREE from <a HREF="http://www.shareware.com/">SHAREWARE.COM</a>.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>After you have unpacked the TAR archive you
+          will have a collection of folders and files on your desktop.&nbsp; Now you have to do some
+          basic editing of each of these files (or at least some of them).&nbsp; Use a text editor
+          such as wordpad, notepad, BBEdit, simpletext, or teachtext to edit the files.&nbsp; These
+          are NOT WORD PROCESSOR DOCUMENTS they are just simple TEXT files so don't save them as
+          word processor documents or save them with extentions such as .txt or they will NOT WORK.
+          &nbsp; Note that there may be a some files inside of folders which are &quot;blank&quot;.
+          &nbsp; This is normal.</small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Create your MYSQL database and upload the .sql
+          file included in the tarball.&nbsp; <a href="../tutorial/mysql.html">See the tutorial for
+          more information on MYSQL</a></small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Preparing the CGI scripts</small></font></h2>
+      <blockquote>
+        <h2><small><font face="Arial" color="#FF0000"><small>Define Path To PERL 5</small></font></small></h2>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>The first step is to open up each and every
+        file that has a .cgi extention and edit line number one of each script.&nbsp; Each of the
+        cgi scripts is written in perl 5. For your scripts to run they must know where perl 5 is
+        installed on your web server. The path to perl 5 is defined to a cgi script in the first
+        line of the file. In each of the cgi scripts the first line of code looks something like
+        this: </small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#FF0000"><small>#!/usr/bin/perl</small></font></p>
+        </blockquote>
+        <p><font face="Arial" color="#000000"><small>If the path to perl 5 on your web server is
+        different from /usr/bin/perl you must edit the first line of each cgi script to reflect
+        the correct path. If the path to perl 5 is the same no changes are necessary. If you do
+        not know the path to perl 5 ask the webmaster or system administrator at your server site.
+        &nbsp; </small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big><strong>Create database and upload the .sql
+      file</strong></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Upload the .sql file into your mysql database
+        <a href="../tutorial/mysql.html">(review mysql tutorial)</a> if you do not know how, or
+        better yet - bug your isp and get them to do it.</small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big><strong>Configure the .cgi files</strong></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><big>configure.cgi</big></font></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">This file pretty much runs the whole
+        show.&nbsp; If you screw this one up don't count on anything working properly. &nbsp; In
+        other words, make sure you take the time to do this step CORRECTLY.&nbsp; Ask your
+        administrator if you need to.&nbsp; Below are the variables used in ALL of the other cgi
+        scripts.&nbsp; All of the other cgi programs USE configure.cgi to figure out where certain
+        things are.&nbsp; You will use TWO COPIES of configure.cgi to run this system.&nbsp; They
+        are the EXACT SAME FILE - just TWO COPIES (/cgi-bin/clickblaster/configure.cgi and
+        /cgi-bin/clickblaster/admin/configure.cgi)</font></small><font SIZE="2"><ul>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$admin =
+            &quot;you\@yourdomain.com&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$mailprogram =
+            &quot;/usr/lib/sendmail&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$mysqldatabasename = &quot;mysql
+            database name&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$mysqlusername=&quot;mysql
+            username&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$mysqlpassword=&quot;mysql
+            password&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$aclick=1;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$bclick=10;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$cclick=50;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$sale=2500;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$threshold = 2500;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$deadaccounttolerance = 10;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$destination =
+            &quot;http://www.yourdomain.com/clickthroughurl.html&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$emails=&quot;/path/to/cgi-bin/clickblaster/emails.txt&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$cgidir =
+            &quot;/cgi-bin/clickblaster&quot;;</font><font SIZE="2"></li>
+        </ul>
+        <p></font><font face="Arial" color="#000000"><small>$aclick is the number of
+        &quot;credits&quot; you award for a primary clickthrough from the generated bannercode.
+        &nbsp; I would advise keeping this low so you don't pay out for lame
+        &quot;hit-and-run&quot; traffic.</small></font><font SIZE="2"></p>
+        </font><p><font face="Arial" color="#000000"><small>$bclick is the number of credits
+        awarded when the same surfer reaches a special page of your site (using server sides
+        includes to execute bclick.cgi).&nbsp; When bclick.cgi executes it awards the affiliate a
+        bonus credit value determined by $bclick (in this example its set to 10).&nbsp; So when
+        they hit the second hidden page (even if its 5 years later) the affiliate gets 10 extra
+        CREDITS</small></font></p>
+        <p><font face="Arial" color="#000000"><small>$click is similar to $bclick - same concept.
+        &nbsp; You might want for example to place the server sides includes tag to execute
+        cclick.cgi inside of your order page.&nbsp; That way when a surfer is sent to you that is
+        actually considering ordering your product you want to reward the affiliate heavily (here
+        set to 50)</small></font></p>
+        <p><font face="Arial" color="#000000"><small>$sale is an optional reward that you can
+        include on your &quot;thank you page&quot; or execute from your billing system.&nbsp; This
+        would (in this example reward the affiliate with a HUGE 2500 credit payout) for sending a
+        referred sale.</small></font></p>
+        <p><font face="Arial" color="#000000"><small>$deadaccounttolerance is to sweepup accounts
+        that are opened and then the affiliate leaves.&nbsp; You can set cleanup.cgi to run by
+        crontab (optional) and it will use this value as the number of days an account will remain
+        active without sending traffic.&nbsp; For example - here any account that sends no hits
+        after 10 days is deactivated.&nbsp; This will only occur if you are crontabbing
+        /cgi-bin/clickblaster/admin/cleanup.cgi.&nbsp; Note that you will need to put the FULL
+        path to configure.cgi inside of cleanup.cgi since this is a cronjob.</small></font></p>
+        <p><font face="Arial" color="#000000"><small>$destination - duh.... thats the clickthrough
+        url</small></font></p>
+        <p><font face="Arial" color="#000000"><small>$emails - this is the location of a text file
+        you want to setup and chmod 777 so when you want to email all of your affiliates all their
+        emails are exported to this handy file</small></font></p>
+        <p><font face="Arial" color="#000000"><small>$cgidir is just the relative URL (URI) to the
+        clickblaster installation</small></font></p>
+      </blockquote>
+      <h2><font face="Arial" color="#000000"><small>Upload Your Edited CGI and Database Files</small></font></h2>
+      <ul>
+        <li><small><font face="Arial" color="#000000">Upload all of the cgi files (.cgi) into a
+          directory you create called &quot;clickblasters&quot; inside cgi-bin/clickblasters/</font></small></li>
+        <li><small><font face="Arial" color="#000000">Make a directory inside of your
+          /cgi-bin/clickblasters folder called admin and the files inside of the cgibin/admin
+          directory after you unpack the tarball and upload the rest of the cgi files into here.</font></small></li>
+        <li><font face="Arial" color="#000000"><small>Make a directory inside of your normal
+          webspace (http://www.yourdomain.com/clickblasters) called clickblasters and upload
+          index.html and the login page here.</small></font></li>
+        <li><small><font face="Arial" color="#000000">Make another directory inside of
+          http://www.yourdomain.com/clickblasters/admin/ (called admin.. duh) and upload the admin
+          index.html page.&nbsp; </font></small></li>
+        <li><font face="Arial" color="#000000"><small>Password protect the
+          cgi-bin/clickblasters/admin directory and the /clickblasters/admin directory&nbsp; <a href="../tutorial/htaccess.html">Read the tutorial section if you don't already know how
+          to do this.</a></small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Chmod the files</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Chmod all the .cgi files to 755.&nbsp; Chmod
+          everything else to 666 or 777 (email.txt)</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Edit the signup.cgi html areas</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Setup the default installation first. &nbsp;
+          Then customize the html the way you want it.&nbsp; Then just cut and paste it into the
+          signup.cgi script.&nbsp; Backup your work first - take your time.... its not that hard...</small></font></li>
+      </ul>
+    </blockquote>
+    <blockquote>
+      <h2><font face="Arial" color="#000000"><small>Starting the system</small></font></h2>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Before you can do anything you need to login
+        to the admin panel http://www.yourdomain/clickblaster/admin/ and hit the START button.
+        &nbsp; Otherwise nothing will work.&nbsp; If you ever want to reset your system statistics
+        just hit the start button again.</small></font></p>
+      </blockquote>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
