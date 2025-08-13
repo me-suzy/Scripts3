@@ -1,0 +1,70 @@
+PHP Live! Support INSTALLATION
+-------------------------------------
+
+*********** FTP INSTALLATION ***********
+
+If you are going to FTP the files to your server, this area is for you.
+Otherwise, continue on to Step 1 and disregard this area.
+
+After you unzip the files on your local machine, ftp the "phplive" folder
+somewhere on the server that you can access it with an "http:" address.
+
+BE SURE the "web/" directory is READ/WRITE/EXECUTE able.  To do this,
+after you have finished FTPing, right click on the "web/" directory ,
+select 'permissions' or "CHMOD" option, check ALL the checkboxes, and
+apply changes.
+
+Now skip down to step 3 and proceed with installation.
+
+****************************************
+
+
+1. gunzip, untar or unzip the application somewhere on the server that
+you can access it with an "http:" address.
+
+
+2. (UNIX Only) Change the permissions of the "web/" directory to be
+write able by the browser.  The "web/" directory is located in the root
+unpacked directory of PHP Live!.
+
+% chmod o+rwx web
+
+For windows NT/XP, if you get permission errors, make sure the "web/"
+folder is read/write able by right clicking on the folder and setting
+the properties.  You may also need to go to your control panel and allow
+the web user (user that is running the web server) full read/write
+access to the "web/" folder.
+
+
+3. Create an empty MySQL database to be used by PHP Live!.  Remember to
+restart your MySQL server if you added a new user.  (Don't create any
+tables, just create an empty database.)
+
+
+4. Visit http://www.yourservername.com/phplive/
+
+
+5. The setup will walk you through an automated, painless Q&A session.
+Finish the questions till you get to the "Success" screen.
+
+
+INSTALLATION COMPLETE!
+
+
+Having trouble with the generated code not displaying anything?
+Make sure you cut & paste the HTML code AS-IS without line-wrapping enabled.
+
+
+****************************************
+
+Need installation help?  Having troubles?  Visit your client member
+discussion board.  With hundreds of posts and topics, it is the quickest
+way to find the answers!
+
+https://www.osicodes.com/web/Members/bbs/
+
+****************************************
+
+
+... but if you have trouble, please email tech@osicodes.com
+
