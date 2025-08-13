@@ -1,0 +1,133 @@
+<?
+
+#///////////////////////////////////////////////////////
+#//  COPYRIGHT 2002 PHPAuction.org ALL RIGHTS RESERVED//
+#//  For Source code for the GPL version go to        //  
+#//  http://phpauction.org and download               //
+#//  Supplied by CyKuH [WTN]                          //
+#///////////////////////////////////////////////////////
+
+?>
+
+
+
+<TABLE WIDTH="765" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING="0" CELLSPACING="0">
+
+<TR>
+
+<TD>
+
+<!-- TABLE WITH CATEGORIES -->
+
+<TABLE WIDTH="100%" BORDER=0 CELLPADDING=3 CELLSPACING=0 bgcolor="#FFFFFF">
+<TR><TD>&nbsp;</TD></TR>
+<TR>
+	<TD ALIGN=CENTER>
+		<?=$tlt_font?>
+		<?=$MSG_279?>
+		</font>
+	</td>
+</tr>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<TABLE WIDTH="100%" BORDER=0 CELLPADDING=3 CELLSPACING=0 bgcolor="#FFFFFF">
+<TR ALIGN=CENTER BGCOLOR="<?=$FONTCOLOR[$SETTINGS[tableheadercolor]]?>">
+
+	<TD WIDTH="10%">
+
+	<FONT FACE="Verdana,Helvetica,Arial" SIZE="2" COLOR="#FFFFFF">
+
+	<?
+
+		print $MSG_167;
+
+	?>
+
+	</FONT></TD>
+
+	<TD WIDTH="45%">
+
+	<FONT FACE="Verdana,Helvetica,Arial" SIZE="2" COLOR="#FFFFFF">
+
+	<?
+
+		print $MSG_168;
+
+	?>
+
+	</FONT></TD>
+
+	<TD WIDTH="15%">
+
+	<FONT FACE="Verdana,Helvetica,Arial" SIZE="2" COLOR="#FFFFFF">
+
+	<?
+
+		print $MSG_169;
+
+	?>	</FONT></TD>
+
+	<TD WIDTH="15%">
+
+	<FONT FACE="Verdana,Helvetica,Arial" SIZE="2" COLOR="#FFFFFF">
+
+	<?
+
+		print $MSG_170;
+
+	?>	</FONT></TD>
+
+	<TD WIDTH="15%">
+
+	<FONT FACE="Verdana,Helvetica,Arial" SIZE="2" COLOR="#FFFFFF">
+
+	<?
+
+		print $MSG_171;
+
+	?>	</FONT></TD>
+
+</TR>
+
+<? print $TPL_auctions_list_value; ?>
+
+</TABLE>
+
+
+
+</CENTER>
+
+<?
+	//-- Build navigation line
+
+		print "<b><SPAN CLASS=\"navigation\">";
+		$num_pages = ceil($num_auctions / $limit);
+		$i = 0;
+		while($i < $num_pages ){
+
+			$of = ($i * $limit);
+
+			if($of != $offset){
+				print "<A HREF=\"view_more_ending.php?offset=$of\" CLASS=\"navigation\">".($i + 1)."</A>";
+				if($i != $num_pages) print " | ";
+			}
+			else{
+				print  $i + 1;
+				if($i != $num_pages) print " | ";
+			}
+		
+	
+
+			$i++;
+		}
+		print "</SPAN></b>";
+?>&nbsp;&nbsp;
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+
