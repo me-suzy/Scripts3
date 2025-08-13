@@ -1,0 +1,215 @@
+v1.9.7.2 (minor patch) August 28th, 2002
+* new feature - added request order to department admins.  it now selects operators by order you set.
+* bug fix - fixed setup error if company name has a single quote (')
+* bug fix - variable was not declared in language file.  generated warning, now fixed
+
+
+v1.9.7.1-m (minor patch) August 25th, 2002
+* enhancement - color changes to admin/setup/super area
+* bug fix - on few PHP 4.2+ builds, it generates warning during saving trascript manually - fixed
+
+
+v1.9.7.1 (patch) August 14th, 2002
+* bug fix - v1.9.7's modification disabled Netscape users because of JavaScript error.  now it is fixed.
+* bug fix - shifted JavaScript functions around to avoid declaration errors when loading chat window
+* bug fix - better "party is typing" checking procedure
+* bug fix - displays correct initiate data in the stats page
+
+
+v1.9.7 (patch) August 5th, 2002
+-------------------------------------------
+* enhancement - before initiate, it tells if visitor has been already initiated
+* enhancement - when transferring a call, it shows the operator name AND the department
+* enhancement - admin request monitor upgrade to integrate with new WinApp 1.1
+* bug fix - JavaScript error fix at "party is typing" notify (crashes some IE browsers - now fixed)
+* bug fix - encoded the current page URL on initiate chat (variable conflict error fix)
+* bug fix - initiate chat is reported as "initiate" instead of "not taken" on support stat
+* bug fix - fixed variable declaration on couple files.  now it does not generate warning errors in error log files
+* bug fix - when you transfer a call, it shows the current operator in the "party is typing" message
+
+
+v1.9.6 (upgrade) August 1st, 2002
+-------------------------------------------
+* new feature - know when other party is typing a message
+* new feature - track visitor's refer URL
+* new feature - visitors can send a copy of transcript to their email address
+* enhancement - traffic monitor now shows refer URL
+* enhancement - traffic monitor now shows hostname of visitor
+* enhancement - better interface look and icons in setup and admin area
+* enhancement - bettet upgrade/patching method
+* bug fix - operator's own canned messages are not shared anymore
+* bug fix - encoded the URLs on JavaScript prior to passing as GET variable.  the problem of grabbing partial URLs are fixed.
+* bug fix - various minor bug fixes
+
+
+v1.9.5 (upgrade) June 25, 2002
+-------------------------------------------
+* new feature - department can have their own support icon image
+* new feature - department wide canned responses and commands
+* new feature - department support hours (displayed when offline on leave a message screen) 
+* enhancement - full code review for PHP 4.2.x compliance
+* enhancement - no tracking of ip shifted to variables instead of put in text file
+* enhancement - department specific greeting instead of operator specific
+* enhancement - admin request monitor upgrade to integrate with new WinApp 1.0
+* bug fix - took out "save transcript" button on the visitor chat window
+* bug fix - support request taken, rejected, not taken stats fixed
+* bug fix - fixed minor footprint traffic monitor stat bug (better cleaning system)
+
+
+v1.9 (upgrade) Feb 18, 2002
+-------------------------------------------
+* new feature - initiate chat with visitor (Proactive -tm)
+* new feature - real-time visitor monitor
+* enhancement - radio box instead of dept select option
+* enhancement - when rejecting request, it polls to next operator instead taking directly to leave message
+* enhancement - operator can set the time their own time of request console auto close when offline
+* enhancement - hostname resolving of IPs
+* enhancement - status code per department
+* enhancement - remember operator login information for quick access
+* enhancement - smarter checking of admin console open status if same session opens the console window
+* enhancement - department specific html codes generate their own department online/offline status
+* bug fix - saving transcripts overriding eachother (on rare occassions to few, .01%, clients)
+* bug fix - wrong logo display bug on printer friendly page
+
+
+v1.8 (upgrade) Jan 28, 2002
+-------------------------------------------
+* new feature - auto save chat transcripts
+* new feature - admin kill chat sessions
+* new feature - remote kill of admin consols
+* new feature - request polling from operator to operator
+* new feature - department specific requests
+* new feature - edit canned commands and responses
+* new feature - chat timer
+* new feature - chat respond sound
+* new feature - ASP (application service provider) integration (requires separate ASP module purchase)
+* enhancement - restructed database for ASP model
+* enhancement - take visitor question during support request window
+* enhancement - new corporate interface
+* enhancement - pconnect/connect in MySQL db setting
+* enhancement - chat close button
+* enhancement - took out email address in leave a message form
+* enhancement - request box uses HTTP_USER (if set) variable
+* bug fix - windows path fix with chars \n,\r,\t and other control chars
+* bug fix - admin window closes in 10 min when set to offline
+* bug fix - load balance bug fixed, distributing based on request AND sessions
+* bug fix - session timing out during chat
+* bug fix - on admin chat transfer window, shows correct number of sessions instead of zero
+* bug fix - deletion of department minor bug fix (diplaying fix)
+
+
+v1.7 (upgrade) Jan 11, 2002
+-------------------------------------------
+* new feature - call transfer to another operator
+* new feature - add Live! support to your emails
+* bug fix - session time out fix click to view printer friendly
+* enhancement - took out login name prompt if no operator is online on the request page
+* enhancement - load balance checks for ACTIVE sessions, NOT requests
+* enhancement - chat window for visitor opens in different windows per different pages
+
+
+v1.6.3 (patch) Jan 9, 2002
+-------------------------------------------
+* the IE and Netscape reload "hour glass" was eliminated
+* Javascript error with "session_start" pages bug fix
+* the chat engine bugs were cleaned up from the previous version
+
+
+v1.6.2 (patch) Jan 8, 2002
+-------------------------------------------
+* upgraded the chat engine system to use another method to limit notice of refreshing
+* fixed a bug on saving transactips.  it did not save when there was a single quote (')
+* put the department on the admin chat request consol
+* fixed the image icon javascript - created error with pages with session_start()
+
+
+v1.6 (upgrade) Jan 1st, 2002
+-------------------------------------------
+* new feature - assign a user to multiple department
+* new feature - online/offline icon changes depending on available operators
+* new feature - track visitor page views
+* new feature - capture the page visitor clicked from to request Live! support
+* new feature - detailed status of page views and unique visits
+* new feature - exclude IPs from page view/footprint tracker
+* upgraded the chat engine so it scrolls from top-down
+* upgraded the chat engine so it scrolls more smooth (JavaScript enhancement)
+* restructured the language pack so there is language pack for only what visitor sees
+* when rejecting a support request, it now sends the visitor directly to leave a message page
+* touched up the navigation on support admin area
+* many bug fixes on various areas.
+* enhancement - admin consol shuts down after 10 minutes if status if offlineleave the consol open at another location
+* enhancement - during chat, it uses admin's NAME instead of login
+* changes - lang packs are available ONLY for the text the visitor sees
+
+
+v. 1.5.3 (patch) Dec 19, 2001
+-------------------------------------------
+* passwords are now stored in MD5 hash key
+* request window now focuses if behind other windows
+* users must now verify their own password before changing
+* canned responses have a %%user%% flag to insert visitor's name
+* admin's Online status turning to Offline has been fixed.
+* manage users area can now EDIT user info
+
+
+v. 1.5.2 (patch) Dec 18, 2001
+-------------------------------------------
+* fixed JavaScript error message when adding user
+* you may now delete canned responses and commands
+* UPGRADE: users can now change their own feedback
+* $dbh passing by reference error
+* when viewing Printer Friendly view, your customized logo now shows
+* on statistics area, the requests take, rejected and not taken column is fixed
+* ALL text is now located in the language pack
+* added more language pack variables
+
+
+v. 1.5 (upgrade) Dec 17, 2001
+-------------------------------------------
+* new feature - multiple admins per department
+* new feature - load balancing to distribute requests to online department support admins
+* new feature - language packs.  you edit 99% of text using the language packs.
+* new feature - 100% customizable/rebranding capabilities with no sign of PHP Live! mark.
+* new feature - web interface for uploading logo, support image
+* new feature - web interface to customize colors
+* new feature - save/view/search support transcripts
+* new feature - statistics of daily/monthly support requests per user/department
+* new feature - monitor admin's support activity: total requests taken, not taken and rejected
+* new feature - https URL is added to admin commands (url, push, image)
+* modification - when you push a page, word docs, or other files, it knows to not to time out
+* modification - setup process is smarter
+* bug fix - rejecting request is fixed
+
+
+v. 1.3 (upgrade) Dec 12, 2001
+-------------------------------------------
+* new feature - canned responses
+* new feature - canned commands
+* edit welcome greeting
+* gather some user information (browser, os, resolution, ip)
+
+
+v. 1.1 (patch) Dec 11, 2001
+-------------------------------------------
+* Added Sound alert instead of just window focus on admin consol.
+* Added Online/Offline status to the user request box.
+* Minor bug fixes on session handling.
+* View Printer Friendly output of support session.
+
+
+v. 1.0 Dec 9, 2001
+-------------------------------------------
+* Restructured session handling method.
+* Major fixing of session handling and managing multiple session.
+* Fixed session bug when you try to test using same browser for both admin and request.
+* Fixed counter bug when tracking if party has left chat.
+* Cleaned up the setup area.
+* Window focuses on admin consol when request is made.
+
+
+v. 0.1 (beta)
+December 8, 2001
+-------------------------------------------
+Initial public beta release of PHP Live! Support
+
+
