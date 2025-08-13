@@ -1,0 +1,26 @@
+All use of this program is under strict licence. If you do not agree, do not use this program.  
+
+I (Are Haugsdal email: are@a4.no), or my company (Haugsdal Webtjenester), 
+or any other person related in/to this program accepts NO liability or 
+claims whatsoever. Some few examples of these liabilities/claims: 
+Damages in any way to people, property, machines, working hours, repair work or any other costs 
+releated to this program in any matter. 
+
+ALL USE OF THIS PROGRAM IS ON YOUR OWN RISK AND COSTS. 
+
+This program is not programmed to be 100% secure, and therefore can not be used in life critical environments, 
+or heavy critical e-commerce (mission-critical) envirionments that will loose from hundreds of dollar 
+to millions of dollar of small coding errors. (Anyway, Haugsdal Webtjenester/Are Haugsdal accept no liabilities).
+
+In order to use this program at your website, you will neeed to pay yhe license. 
+
+
+Any claim, or disputes shall be governed by the laws and courts in Norway. 
+
+
+This is a licence for 1 (one) website, distribution/re-use of code is forbidden.
+
+You may not reproduce and/or (re)sell the hole program, 
+or any part of our code without the written aknowledge from the author of this program, 
+Are Haugsdal. All code is copyright 2001/2002 Haugsdal Webtjenester.
+
