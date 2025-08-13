@@ -1,0 +1,27 @@
+<html>
+<body>
+Option --> Donate <font color="#000099">$error</font> <font color="#000099">$transfer</font><BR>
+<form action="bank.php?action=donate" method="POST"><BR><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%">Who do you want to give this to?</td>
+      <td width="50%"><font color="white">
+        <input class="text" name="recipient" maxlength=30>
+        </font></td>
+  </tr>
+  <tr>
+      <td width="50%">How much?</td>
+      <td width="50%"><font color="white">
+        <input class="text" name="money" maxlength=30>
+        </font></td>
+  </tr>
+</table>
+<BR>
+  <font color="white">
+  <center>
+    <input type="HIDDEN" name="send" value="send">
+    <input class="input" name="submit" type="SUBMIT" value="Send">
+  </center>
+  </font><BR>
+</form>
+</body>
+</html>
