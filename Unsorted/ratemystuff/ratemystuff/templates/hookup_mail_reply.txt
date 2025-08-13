@@ -1,0 +1,21 @@
+Hello,
+
+This is an automatic notification from RateMyHedgehog to let you know that another user of our site has replied to your HookUp message! To check out this user's picture, visit the following URL:
+
+<%sender%>
+
+The user has included the following message to you:
+
+===================
+%message%
+===================
+
+To send a response to this user, DO NOT REPLY TO THIS EMAIL. Instead, visit the following URL:
+
+<%reply%>
+
+Please remember that our anonymous HookUp system is in place to prevent other users from finding out your name, email address, Instant Message nicknames, or other personal information. Feel free to reply back and forth through our HookUp system as long as you want, and don't give your personal information out to anyone unless you feel comfortable doing so.
+
+Thanks!
+
+RateMyHedgehog
