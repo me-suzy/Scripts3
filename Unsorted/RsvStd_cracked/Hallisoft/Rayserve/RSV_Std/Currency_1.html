@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<TITLE>Rayserve Room Reservation Software - Currency Selector</TITLE>
+	<LINK REL="stylesheet" HREF="Style/RSV_1.css" TYPE="text/css">
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	<META NAME="Description" CONTENT="Rayserve Hotel Reservation Software">
+	<META NAME="Keywords" CONTENT="hotel, reservation, holiday, travel, book room, tariffs, internet, software, program, downlaod, demo">
+</HEAD>
+<BODY>
+<H3 ALIGN="center">Change Currency Display</H3>
+<DIV ALIGN="center">
+<FORM>
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="3">
+<TR><TD CLASS="popup">By default the currency used in the &quot;Total Cost&quot; box at the top of the main browser window is the same as that used to quote our roo rates. You can change this to display the equivalent amount in any of the currencies below.</TD></TR>
+<TR><TD CLASS="popup" ALIGN="center">&nbsp;<P>Select a currency then press the &quot;Apply&quot; button.</P></TD></TR>
+
+<!-- Option values are in the form: Currenct Symbol*Symbol Position*Currency Format*Exchange Rate -->
+<!-- Change exchange rate to suit you own currency -->
+<!-- If you add new options keep the same format. Delete options if you wish -->
+
+<TR><TD CLASS="popup" ALIGN="center">
+<SELECT NAME="Currency">
+	<OPTION VALUE="$*B*A*1.00">US Dollars</OPTION>
+	<OPTION VALUE="&pound;*B*A*0.685">UK Pounds</OPTION>
+	<OPTION VALUE="&euro;*B*B*1.096">Euros</OPTION>
+	<OPTION VALUE="DM*A*B*2.12">German Marks</OPTION>
+	<OPTION VALUE="Fr*B*B*7.12">French Francs</OPTION>
+	<OPTION VALUE="G*B*B*2.45">Dutch Guilders</OPTION>
+	<OPTION VALUE="Lire *B*E*1713">Italian Lire</OPTION>
+	<OPTION VALUE="C$*B*A*1.63">Canadian Dollars</OPTION>
+	<OPTION VALUE="A$*B*A*1.71">Australian Dollars</OPTION>
+	<OPTION VALUE="&yen;*B*B*166.00">Japanese Yen</OPTION>
+</SELECT>
+&nbsp;&nbsp;
+<INPUT TYPE="button" NAME="ApplyBtn" VALUE="Apply" onClick="window.opener.setDisplayCurrency(document.forms[0].Currency.options[document.forms[0].Currency.options.selectedIndex].value);">&nbsp;&nbsp;
+<INPUT TYPE="button" NAME="CloseBtn" VALUE="Close" onClick="self.close();">
+</TD>
+</TR><TR>
+<TD ALIGN="center"><SPAN CLASS="popwarn">Please note that the currency used for billing<BR>is the currency in which our prices are quoted.</SPAN></TD></TR>
+</TABLE>
+</FORM>
+</DIV>
+<P></P>
+<DIV CLASS="authinfo" ALIGN="center"><HR WIDTH="50%">Powered by Rayserve</DIV>
+</BODY>
+</HTML>
+
