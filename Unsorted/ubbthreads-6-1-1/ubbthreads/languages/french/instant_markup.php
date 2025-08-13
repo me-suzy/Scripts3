@@ -1,0 +1,29 @@
+<?
+$ubbt_lang['ENTERCOLOR'] = "Entrez la couleur que vous souhaitez utiliser pour le texte.  Cela peut être sous la forme #ff1123 ou blue";
+$ubbt_lang['FONT_COLOR'] = "Couleur du texte";
+$ubbt_lang['INST_GRAEMLIN'] = "Graemlins Instantanné";
+$ubbt_lang['INST_UBB'] = "Code UBB Instantanné";
+$ubbt_lang['ENTERURL'] = "Entrez L'URL complète du lien que vous souhaitez ajouter.";
+$ubbt_lang['ENTERURL2'] = "A présent entrez le titre de la page à laquelle vous souhaitez faire référence.  Par exemple, si vous mettez un lien vers le site d'Infopop, vous pourriez utiliser comme titre Site Internet d'Infopop.";
+$ubbt_lang['ENTERURL3'] = "Site Internet";
+$ubbt_lang['ENTEREMAIL'] = "Entrez l'adresse complète que vous souhaitez ajouter.";
+$ubbt_lang['BOLDIT'] = "Entrez le texte que vous souhaitez faire apparaitre en GRAS.";
+$ubbt_lang['ITALICIZE'] = "Entrez le texte que vous souhaitez faire apparaitre en ITALIQUE.";
+$ubbt_lang['ENTERIMAGE'] = "Entrez l'URL complète de l'image que vous souhaitez insérer.";
+$ubbt_lang['ENTERITEM'] = "Entrez le nouvel élément de la liste.  Veuillez noter que chaque liste dois débuter par un Début Liste et se terminer par un Fin Liste (afin de s'afficher correctement).";
+$ubbt_lang['ENTERPOLL'] = "Entrez une option pour ce sondage";
+$ubbt_lang['ENTEROPTION'] = "Entrez une option pour ce sondage.  Veuillez noter qu'un sondage doit débuter par un Début Sondage et se terminer par un Fin Sondage.";
+$ubbt_lang['J_HYPER'] = "URL";
+$ubbt_lang['J_EMAIL'] = "Email";
+$ubbt_lang['J_BOLD'] = "Gras";
+$ubbt_lang['J_ITALICS'] = "Italique";
+$ubbt_lang['J_QUOTE'] = "Citation";
+$ubbt_lang['J_CODE'] = "Code";
+$ubbt_lang['J_LISTSTART'] = "Début Liste";
+$ubbt_lang['J_LISTITEM'] = "Elément Liste";
+$ubbt_lang['J_LISTEND'] = "Fin Liste";
+$ubbt_lang['J_IMAGE'] = "Image";
+$ubbt_lang['J_POLLSTART'] = "Début Sondage";
+$ubbt_lang['J_POLLOPTION'] = "Elément sondage";
+$ubbt_lang['J_POLLSTOP'] = "Fin sondage";
+?>
