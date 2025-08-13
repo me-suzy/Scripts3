@@ -1,0 +1,274 @@
+<html>
+
+<head>
+<title>Whois Parser</title>
+
+<meta name="Microsoft Border" content="t, default"></head>
+
+<body><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+
+<table border="0" width="33%" cellpadding="0">
+  <tr>
+    <td width="50%"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/" ONCLICK="parent.f=0"><img src="../pix/banners/miniprizm.gif" alt="cgi scripts" border="0" WIDTH="305" HEIGHT="59"></a></font></td>
+    <td width="50%" bgcolor="#FFFFFF"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/ads/rotate.cgi?url=&amp;user=" target="new" ONCLICK="parent.f=0"><img src="http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user=" border="0" width="468" height="60"></a></font></td>
+  </tr>
+</table>
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="16%"><p align="center"><a href="../dsstoday/index.html"><font color="#000000" face="Arial"><img src="../pix/main/news.jpg" alt="CGI NEWS" align="left" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="16%"><p align="center"><a href="../scripts/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/scripts.jpg" alt="CGI Scripts" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../mastergate/index.html"><font color="#000000" face="Arial"><img src="../pix/main/access.jpg" alt="Access The CGI Archive" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../contact.html"><font color="#000000" face="Arial"><img src="../pix/main/contact.jpg" alt="Contact Superscripts" WIDTH="104" HEIGHT="68"></font></a></td>
+    <td width="17%"><p align="center"><a href="../support.html"><font color="#000000" face="Arial"><img src="../pix/main/dox.jpg" alt="CGI Documentation" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../download/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/download.jpg" alt="Download CGI Scripts Here" align="right" WIDTH="105" HEIGHT="65"></font></a></td>
+  </tr>
+  <tr>
+    <td width="16%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/dsstoday/index.html" style="color: rgb(255,255,255)"><strong>News</strong></a></font></td>
+    <td width="16%" bgcolor="#000000"><p align="center"><a href="/scripts/" style="color: rgb(255,255,255)"><font face="Arial" color="#FFFFFF"><strong>CGI Scripts</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><a style="color: rgb(255,255,255)" href="../mastergate/index.html"><font face="Arial" color="#FFFFFF"><strong>Become A Member</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../contact.html"><strong>Contact
+    Us</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../support.html"><strong>Support</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/download/index.shtml" style="color: rgb(255,255,255)"><strong>Download
+    Area</strong></a></font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <p><big><big><strong><font face="Arial" color="#FF0000">Documentation<br>
+      </font></strong><font face="Arial" color="#000000">WHOIS PARSER:&nbsp; V2.0</font></big></big></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Copyright 2001 Psybercore, Inc. - All Rights
+        Reserved. </small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">Selling redistributing or modifying any or
+        all of the code for this program without prior written consent is expressly forbidden. You
+        must obtain written permission before redistributing this software over the Internet or in
+        any other medium. In all cases copyright and header information must remain intact.</font></small></p>
+      </blockquote>
+      <hr align="left">
+      <p><big><strong><font face="Arial" color="#000000">System Requirements</font></strong> </big><ul>
+        <li><small><font face="Arial" color="#000000">Perl 5</font></small></li>
+        <li><font face="Arial" color="#000000"><small>Unix recommended</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Telnet</small></font></li>
+        <li><font face="Arial" SIZE="2">Net-ParseWhois (easily installed)</font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Preliminaries</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Determine the path to PERL 5 on your web
+          server host.&nbsp; Note that some web hosting companies run both PERL 4 and PERL 5.&nbsp;
+          Make ABSOLUTELY sure you are not setting this up under PERL 4.&nbsp; Ask your
+          administrator if you are not sure. </small></font></li>
+      </ul>
+      <ul>
+        <li><a href="../../tutorial/index.html"><font face="Arial" color="#000000"><small>If you
+          need to review or learn the basics of CGI and Perl visit the tutorial</small></font></a></li>
+      </ul>
+      <ul>
+        <li><a href="../download/index.shtml"><font face="Arial" color="#000000"><small>Download the
+          tarfile for this program and save it to your desktop.</small></font></a></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Unpack the tar archive on your desktop using a
+          program that unpacks UNIX TAR ARCHIVES. If you don't have such a program then download
+          WINZIP FREE from <a HREF="http://www.shareware.com/">SHAREWARE.COM</a>.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>After you have unpacked the TAR archive you
+          will have a collection of folders and files on your desktop.&nbsp; Now you have to do some
+          basic editing of each of these files (or at least some of them).&nbsp; Use a text editor
+          such as wordpad, notepad, BBEdit, simpletext, or teachtext to edit the files.&nbsp; These
+          are NOT WORD PROCESSOR DOCUMENTS they are just simple TEXT files so don't save them as
+          word processor documents or save them with extentions such as .txt or they will NOT WORK.
+          &nbsp; Note that there may be a some files inside of folders which are &quot;blank&quot;.
+          &nbsp; This is normal.</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Installing </small></font><font face="Arial" size="4">Net-ParseWhois</font></h2>
+      <blockquote>
+        <h2><font face="Arial" color="#FF0000"><small><small>Upload and Install Perl Module</small></small></font></h2>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>This script requires a perl module (included)
+        called Net-ParseWhois.&nbsp; Like any module the following instructions apply which are</small></font><ul>
+          <li><font face="Arial" color="#000000"><small>Upload the .tar module</small></font></li>
+          <li><font face="Arial" color="#000000"><small>Telnet to your server and untar the module
+            using the command </small></font><ul>
+              <li><font color="#FF0000"><font face="Arial"><small>tar xvf </small></font><font SIZE="2" face="Arial">Net-ParseWhois-0.62.tar</font></font></li>
+            </ul>
+          </li>
+          <li><font size="2" face="Arial" color="#000000">Next type the commands through telnet</font><ul>
+              <li><font size="2" face="Arial" color="#FF0000">perl Makefile.PL</font></li>
+              <li><font size="2" face="Arial" color="#FF0000">make</font></li>
+              <li><font size="2" face="Arial" color="#FF0000">make install</font></li>
+            </ul>
+          </li>
+        </ul>
+        <p><font face="Arial" color="#000000"><small>This completes the installation of the
+        required perl module.&nbsp; The installation can take place anywhere on your server.
+        &nbsp; I recommend making a special directory on your server called &quot;modules&quot;
+        and putting this and all future modules inside of here so everything remains organized.
+        &nbsp; So now that you have the module&nbsp; installed we can proceed with the script
+        installation.</small></font></p>
+      </blockquote>
+      <h2><font face="Arial" color="#000000"><small>Preparing the CGI scripts</small></font></h2>
+      <blockquote>
+        <h2><small><font face="Arial" color="#FF0000"><small>Define Path To PERL 5</small></font></small></h2>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>The first step is to open up each and every
+        file that has a .cgi extention and edit line number one of each script.&nbsp; Each of the
+        cgi scripts is written in perl 5. For your scripts to run they must know where perl 5 is
+        installed on your web server. The path to perl 5 is defined to a cgi script in the first
+        line of the file. In each of the cgi scripts the first line of code looks something like
+        this: </small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#FF0000"><small>#!/usr/bin/perl</small></font></p>
+        </blockquote>
+        <p><font face="Arial" color="#000000"><small>If the path to perl 5 on your web server is
+        different from /usr/bin/perl you must edit the first line of each cgi script to reflect
+        the correct path. If the path to perl 5 is the same no changes are necessary. If you do
+        not know the path to perl 5 ask the webmaster or system administrator at your server site.
+        &nbsp; </small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big><strong>Configure the .cgi files</strong></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>There is really nothing to configure in this
+        script.&nbsp; Simply make a directory on your webserver called &quot;parser&quot; and
+        upload all the files into this directory.&nbsp; The only files you will be using are the
+        files named &quot;piped&quot; and &quot;domains&quot;.&nbsp; </small></font><font SIZE="2"><ul>
+          <li></font><font size="2" face="Arial" color="#FF0000">piped </font><font SIZE="2" face="Arial" color="#000000">contains the delimited parsed flatfile or output from running
+            the parser</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" size="2">domains </font><font SIZE="2" face="Arial" color="#000000">contains the domain names that you wish to parse</font><font SIZE="2"></li>
+        </ul>
+        </font>
+      </blockquote>
+      <h2><font face="Arial" color="#000000"><small>Chmod the files</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Chmod all the .cgi files to 755.&nbsp; Chmod
+          everything else to 666 or 777 (list.txt and the lists directory)</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Using The Program</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>To start using the system simply telnet to
+          your server and execute parse.cgi.&nbsp; The resulting output will be pipe delimited
+          &quot;|&quot; which is easily imported into any common datase program such as XL or
+          Access.</small></font></li>
+      </ul>
+      <hr>
+      <font SIZE="2"><p></font><font size="4"><a href="http://dajoba.com/projects/netparsewhois/"><strong><font face="Arial">Net::ParseWhois
+      Information</font></strong></a></p>
+      <p></font><font SIZE="2"><font face="Arial">(For the most up-to-date docs, see the POD
+      included with the latest Net::ParseWhois package.) </font></p>
+      <p><strong><font face="Arial">NAME</font></strong></p>
+      <p><font face="Arial">Net::ParseWhois - An extendable alternative to Net::Whois for
+      parsing whois information.</font></p>
+      <p><strong><font face="Arial">DESCRIPTION</font></strong></p>
+      <p><font face="Arial">Disclaimer: this is my first CPAN module. Feedback, bugfixes,
+      general comments, etc will be greatly appreciated.</font></p>
+      <p><font face="Arial">Net::ParseWhois currently only supports domains from major TLDs and
+      Registrars (.com, .net &amp; .org -- see REGISTRARS for an exact list of who's supported)
+      and tries to maintain backward interface compatability with Net::Whois.</font></p>
+      <p><font face="Arial">Net::ParseWhois is my attempt at updating Net::Whois to support
+      whois referrals. The author of Net::Whois (Dana Hudes) and I disgreed on how to solve the
+      problem of parsing a distrubuted and non-standardized whois system, so I created this
+      divergent module. (It's my understanding that Mr. Hudes wants to create an IETF draft and
+      assumes registrars/registries will then follow it. I've simply taken the current
+      not-so-defined situation and coded around it.) </font></p>
+      <p><font face="Arial">Net::ParseWhois contains a generalized parsing system that can be
+      configured for each Registrar, or completely overridden as needed. The class
+      `Net::ParseWhois::Domain::Registrar' contains a list of known servers that could be
+      returned in a whois referral, and specifies the specific class to use for each. When
+      `Net::ParseWhois' receives a referral from the 'root' whois server, it creates the
+      specified object and calls follow_referral on that object. If a domain is found and a
+      referral given, but no Registrar class has been defined to handle that referral, the
+      method *ok* will return true but method 'unknown_registrar' will also return true.
+      Net::ParseWhois will still follow the referral, and the raw output from the registrar will
+      be available via the method 'raw_whois_text'.</font></p>
+      <p><strong><font face="Arial">REGISTRARS</font></strong></p>
+      <p><strong><font face="Arial">Currently supported:&nbsp; supported registrars would cover
+      upwards of 90% of the registrations that are out there.</font></strong><ul>
+        <li><font face="Arial">whois.dotster.com - Dotster, Inc.</font></li>
+        <li><font face="Arial">whois.register.com - Register.com, Inc.</font></li>
+        <li><font face="Arial">whois.networksolutions.com - Network Solutions, Inc.</font></li>
+        <li><font face="Arial">whois.opensrs.net - Tucows.com, Inc.</font></li>
+        <li><font face="Arial">whois.domaindiscover.com - Tierranet, Inc.</font></li>
+        <li><font face="Arial">whois.bulkregister.com - Bulkregister.com, Inc.</font></li>
+        <li><font face="Arial">rs.domainbank.net - Domain Bank, Inc.</font></li>
+      </ul>
+      <p><strong><font face="Arial">Not supported (with notes..):</font></strong><ul>
+        <li><font face="Arial">whois.registrars.com - should be SIMPLE.</font></li>
+        <li><font face="Arial">whois.nordnet.net - should be easy.</font></li>
+        <li><font face="Arial">whois.namesecure.com - easy</font></li>
+        <li><font face="Arial">whois.compuserve.com - easy</font></li>
+        <li><font face="Arial">whois.itsyourdomain.com - easy</font></li>
+        <li><font face="Arial">whois.namesdirect.com - easy</font></li>
+        <li><font face="Arial">whois.enom.com - easy, but no nameserver or expire/updated data</font></li>
+        <li><font face="Arial">whois.domaininfo.com - not too hard. follows same structure, but uses
+          different template/style</font></li>
+        <li><font face="Arial">whois.nameit.net - different style, not too hard</font></li>
+        <li><font face="Arial">whois.yesnic.com - Korean based registrar, field's are labeled. would
+          require work.</font></li>
+        <li><font face="Arial">whois.gandi.net - French, RIPE style whois.</font></li>
+        <li><font face="Arial">whois.dotearth.com - might be ugly. no newlines between different
+          sections</font></li>
+        <li><font face="Arial">whois.InternetNamesWW.com - yuck.</font></li>
+        <li><font face="Arial">whois.corenic.net - lots of wierd fields, little conformity</font></li>
+        <li><font face="Arial">whois.names4ever.com - no data?? down?</font></li>
+      </ul>
+      <p><strong><font face="Arial">Known registrars that I haven't looked at --</font></strong><ul>
+        <li><font face="Arial">whois.schlund.de</font></li>
+        <li><font face="Arial">whois.registrars.com</font></li>
+        <li><font face="Arial">whois.gandi.net</font></li>
+        <li><font face="Arial">whois.doregi.com</font></li>
+        <li><font face="Arial">whois.easyspace.com</font></li>
+        <li><font face="Arial">whois.dotregistrar.com</font></li>
+        <li><font face="Arial">whois.ibi.net</font></li>
+        <li><font face="Arial">whois.OnlineNIC.com</font></li>
+        <li><font face="Arial">whois.paycenter.com.cn</font></li>
+        <li><font face="Arial">whois.domainpeople.com</font></li>
+        <li><font face="Arial">whois.awregistry.net</font></li>
+        <li><font face="Arial">whois.discount-domain.com</font></li>
+        <li><font face="Arial">whois.dotearth.com</font></li>
+        <li><font face="Arial">whois.psi-domains.com</font></li>
+        <li><font face="Arial">whois.gkg.net</font></li>
+        <li><font face="Arial">whois.enetregistry.com</font></li>
+        <li><font face="Arial">whois.speednic.net</font></li>
+        <li><font face="Arial">whois.domaininfo.com</font></li>
+        <li><font face="Arial">whois.catalog.com</font></li>
+        <li><font face="Arial">whois.oleane.net</font></li>
+        <li><font face="Arial">whois.totalnic.net</font></li>
+        <li><font face="Arial">whois.alldomains.com</font></li>
+        <li><font face="Arial">whois.signaturedomains.com</font></li>
+        <li><font face="Arial">whois.1stdomain.net</font></li>
+        <li><font face="Arial">whois.enterprice.net</font></li>
+        <li><font face="Arial">whois.stargateinc.com</font></li>
+        <li><font face="Arial">whois.e-names.org</font></li>
+        <li><font face="Arial">nswhois.domainregistry.com</font></li>
+        <li><font face="Arial">whois.worldnet.net</font></li>
+        <li><font face="Arial">whois.naame.com</font></li>
+        <li><font face="Arial">whois.eastcom.com</font></li>
+        <li><font face="Arial">whois.domainzoo.com</font></li>
+      </ul>
+      <p><strong><font face="Arial">AUTHORS / ACKNOWLEDGMENTS</font></strong></p>
+      <p><font face="Arial">Net::ParseWhois is maintained by Abraham A. Ingersoll -
+      abe@dajoba.com.This module is a based on Net::Whois, which is maintained by Dana Hudes
+      (dhudes@hudes.org). Net::Whois was originally written by Chip Salzenberg (chip@pobox.com).</font></p>
+      <p><font face="Arial">Thanks to:&nbsp; Joseph Ingersoll for testing under ActivePerl.
+      Curtis Poe for comments and bug testing.</font></p>
+      <p><font face="Arial">Copyright 2000 Abraham A Ingersoll Some portions may be copyright
+      1998 Dana Hudes &amp; Chip Salzenberg.&nbsp; This module is free software; you can
+      redistribute it and/or modify it under the same terms as Perl itself.</font></p>
+      </font>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
