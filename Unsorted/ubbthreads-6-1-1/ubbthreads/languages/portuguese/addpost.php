@@ -1,0 +1,30 @@
+<?
+$ubbt_lang['FILE_TOO_BIG']="Files can be no larger than {$config['filesize']}";
+$ubbt_lang['READ_PERM']  = 	"You have read only privileges for this forum";
+$ubbt_lang['POST_ICON']  =     "Colocar ícone";
+$ubbt_lang['SPELL_CHECK']  = 	"Verificar ortografia";
+$ubbt_lang['SPELL_BODY']  = 	"Sua mensagem verificada.";
+$ubbt_lang['NAME_TAKEN']  = 	"The username you are trying to post under has already registered and is being used by someone else.";
+$ubbt_lang['BAD_UNAME']  = 	"Não é permitido o uso de caracteres HTML nem espaços antes ou depois do nome.";
+$ubbt_lang['LONG_NAME']  = 	"Comprimento errado do nome.";
+$ubbt_lang['LOCKED']  = 	"Thread travado.";
+$ubbt_lang['TWO_POLLS']  = 	"You may only have 1 poll in a post.";
+$ubbt_lang['PREV_POST']  = 	"Prever mensagem";
+$ubbt_lang['SUB_VOTE']  = 	"Submit vote";
+$ubbt_lang['POST_BODY']  = 	"The following is a preview of your post.  If everything looks ok then you can click 'Continue' and your post will be entered.  If not then use the bottom form below to edit some more.";
+$ubbt_lang['YES_FILE2']  = 	"Se desejar pode anexar um arquivo a sua mensagem.  O tamanho é limitado a  {$config['filesize']} bytes";
+$ubbt_lang['NO_FILE2']  = 	"É permitido anexar arquivos, mas você deve usar um navegador compatível com Mozilla 4+.";
+$ubbt_lang['EDIT_MORE']  = 	"Edit some more";
+$ubbt_lang['POST_TEXT']  = 	"Colocar";
+$ubbt_lang['DO_EMAIL']  = 	"Enviar todas as respostas ao meu mail";
+$ubbt_lang['DO_PREVIEW']  = 	"I want to preview my post";
+$ubbt_lang['CAN_ATTACH']  = 	"and/or attach a file";
+$ubbt_lang['NO_DUPS']  = 	"Mensagem já existe.";
+$ubbt_lang['UNREGED_USER']  = 	"Unregistered";
+$ubbt_lang['REPLY_SUB']  = 	"Em resposta a sua mensagem";
+$ubbt_lang['REPLY_BOD']  = 	"replied to your post at the site: .";
+$ubbt_lang['POST_ENTERED']  = 	"Sua mensagem foi registrada.";
+$ubbt_lang['MOD_CONFIRM']  = 	"Sua mensagem não vai ser publicada até ser aprovada por um moderador ou administrador.";
+$ubbt_lang['FORUM_RETURN']  = 	"Retornar ao fórum";
+$ubbt_lang['VIEW_POST']  = 	"Rever sua mensagem";
+?>
