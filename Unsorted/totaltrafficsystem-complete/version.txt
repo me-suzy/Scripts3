@@ -1,0 +1,2 @@
+# Please leave this file on your webserver for future upgrade purposes.
+Version: Nitro 1.0
