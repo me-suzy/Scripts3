@@ -1,0 +1,334 @@
+<?
+/*
+   Copyright (c), 1999, 2000 - phpauction.org
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation (version 2 or later).
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+*/
+?>
+
+<table width="764" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF" ALIGN=CENTER>
+
+  <tr  valign=top>
+
+        <td width="20%" bgcolor="<?=$FONTCOLOR[$SETTINGS[headercolor]]?>">
+
+<!--		<TD WIDTH="30%"> -->
+
+
+
+     <!-- ** Tabla Categorias ** -->
+
+          <table width="100%" border="0" cellspacing="0" cellpadding="3">
+
+             <tr>
+
+                 <td bgcolor="<?=$FONTCOLOR[$SETTINGS[tableheadercolor]]?>">
+
+                    <center>
+					<? print $nav_font.$MSG_276; ?>
+                    </center>
+                  </td>
+              </tr>
+              <tr valign="top" BGCOLOR="<?=$FONTCOLOR[$SETTINGS[headercolor]]?>">
+                  <td>
+                      <? print $TPL_categories_value; ?>
+                   </td>
+               </tr>
+          </table>
+      <!-- ** ** -->
+
+
+
+
+
+        </td>
+
+        <td width="60%" VALIGN="top">
+
+
+
+		  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="400">
+
+
+		<!-- ** LAST AUCTIONS INSERTED ** -->
+
+		  	<TR VALIGN="top">
+
+		  		<TD WIDTH="8%">
+
+		  			<IMG SRC="./images/transparent.gif" WIDTH="30" BORDER="0">
+
+		  		</TD>
+
+		  		<TD WIDTH="92%">
+
+
+
+                    <TABLE BORDER="0" CELLPADDING="5" CELLSPACING="0" WIDTH="100%">
+
+                      <TR>
+
+                        <TD COLSPAN=2>
+
+                            <? print $std_font; ?>
+
+                            <B><? print $MSG_278; ?></B>
+
+
+
+		  		            <table><? print $TPL_last_auctions_value; ?></table>
+                        </TD>
+
+         				</TR>
+
+					</TABLE>
+
+				</TD>
+
+			</TR>
+
+
+		<!-- ** HIGHER BIDS ** -->
+
+		  	<TR VALIGN="top">
+
+		  		<TD WIDTH="8%">
+
+
+
+		  			<IMG SRC="./images/transparent.gif" WIDTH="30">
+
+		  		</TD>
+
+		  		<TD WIDTH="92%">
+
+		  			<BR>
+
+            <TABLE border="0" cellpadding="5" cellspacing="0" width=\"100%\">
+
+              <TR>
+
+                <TD colspan=2> <IMG src="./images/linea.gif" width="370" height="8"><BR>
+
+                <? print $std_font; ?>
+
+                <B><? print $MSG_279; ?></B><BR>
+
+                <TABLE><? print $TPL_maximum_bids; ?></TABLE>
+
+                </TD>
+
+              </TR>
+
+            </TABLE>
+
+          </TD>
+
+			</TR>
+
+
+
+		<!-- ** ENDING SOON ** -->
+
+
+
+		  	<TR VALIGN="top">
+
+
+
+          <TD WIDTH="8%"> <IMG SRC="./images/transparent.gif" WIDTH="30">
+
+          </TD>
+
+
+
+          <TD WIDTH="92%"> <BR>
+
+            <TABLE border="0" cellpadding="5" cellspacing="0" width="90%">
+
+              <TR>
+
+                <TD colspan=2> <IMG src="./images/linea.gif" width="370" height="8"><BR>
+
+                <? print $std_font; ?>
+
+                <B><? print $MSG_280; ?></B>
+
+                  <BR>
+
+                  <table><? print $TPL_ending_soon_value; ?></table>
+                </TD>
+
+                  </TR>
+
+                </TABLE>
+
+              </TD>
+
+			</TR>
+
+   		<!-- end table started with ** LAST AUCTIONS INSERTED ** -->
+
+    	    </TABLE>
+
+      <BR>
+
+    </td>
+
+    <td width="20%" valign="top" bgcolor="<?=$FONTCOLOR[$SETTINGS[headercolor]]?>">
+<?
+	if($SETTINGS[loginbox] == 1)
+	{
+		if(!$HTTP_SESSION_VARS["PHPAUCTION_LOGGED_IN"])
+		{
+?>
+<FORM NAME=login ACTION=login.php METHOD=post>
+        <TABLE width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#FFFFFF">
+          <TR> 
+            <TD bgcolor="<?=$FONTCOLOR[$SETTINGS[tableheadercolor]]?>" colspan="2"> 
+              <CENTER>
+                <? print $nav_font; ?><? print $MSG_221; ?> 
+              </CENTER>
+            </TD>
+          </TR>
+          <TR valign="top" bgcolor="<?=$FONTCOLOR[$SETTINGS[headercolor]]?>"> 
+            <TD height="16" colspan="2"><FONT color="#FFFFFF"><B><? print $HTTP_COOKIE_VARS[$LOGGED_IN_COOKIE]; ?></B></FONT></TD>
+          </TR>
+          <TR valign="top" bgcolor="<?=$FONTCOLOR[$SETTINGS[headercolor]]?>"> 
+            <TD height="16" width="16%"> <? print $std_font; ?> <? print $MSG_003; ?> 
+            </TD>
+            <TD height="16" width="84%"> 
+              <INPUT type="text" name="username" size="8">
+            </TD>
+          </TR>
+          <TR valign="top" bgcolor="<?=$FONTCOLOR[$SETTINGS[headercolor]]?>"> 
+            <TD height="16" width="16%"> <? print $std_font; ?> <? print $MSG_004; ?> 
+            </TD>
+            <TD height="16" width="84%"> 
+              <INPUT type="password" name="password" size="8">
+            </TD>
+          </TR>
+          <TR valign="top" bgcolor="<?=$FONTCOLOR[$SETTINGS[headercolor]]?>"> 
+            <TD height="16" colspan="2"><? print $sml_font; ?> <A href="forgotpasswd.php"><? print $MSG_215; ?></A> 
+            </TD>
+          </TR>
+          <TR valign="top" bgcolor="<?=$FONTCOLOR[$SETTINGS[headercolor]]?>"> 
+            <TD height="16" width="16%">&nbsp;</TD>
+            <TD height="16" width="84%"> 
+              <INPUT type="submit" name="action" value="<? print $MSG_275; ?>">
+            </TD>
+          </TR>
+        </TABLE>
+</FORM>
+      <?
+	}
+	else
+	{
+?>
+      		<TABLE width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#FFFFFF">
+				<TR> 
+					<TD bgcolor="<?=$FONTCOLOR[$SETTINGS[tableheadercolor]]?>" colspan="2"> 
+						<CENTER>
+							<? print $nav_font; ?>
+							<? print $MSG_246; ?>
+						</CENTER>
+					</TD>
+				</TR>
+				<TR valign="top" bgcolor="<?=$FONTCOLOR[$SETTINGS[headercolor]]?>"> 
+					<TD height="16" colspan="2">
+						<? print $std_font; ?>
+						<? print $MSG_247."<B>".$HTTP_SESSION_VARS[PHPAUCTION_LOGGED_IN_USERNAME]."</B>"; ?>
+					</TD>
+				</TR>
+				<TR valign="top" bgcolor="<?=$FONTCOLOR[$SETTINGS[headercolor]]?>"> 
+					<TD height="16" colspan="2">
+						<? print $std_font; ?>
+						<A HREF="./edit_data.php?">
+						<? print $MSG_244; ?>
+						</a></TD>
+				</TR>
+				<TR valign="top" bgcolor="<?=$FONTCOLOR[$SETTINGS[headercolor]]?>">
+					<TD height="16" colspan="2">
+						<? print $std_font; ?>
+						<A HREF="user_menu.php"> 
+						<? print $MSG_622; ?>
+						</A></TD>
+				</TR>
+				<TR valign="top" bgcolor="<?=$FONTCOLOR[$SETTINGS[headercolor]]?>"> 
+					<TD height="16" colspan="2">
+						<? print $std_font; ?>
+						<A HREF="logout.php">
+						<? print $MSG_245; ?>
+						</A></TD>
+				</TR>
+			</TABLE>
+<?
+	}
+}
+?>
+      <TABLE width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#FFFFFF">
+        <TR>
+          <TD bgcolor="<?=$FONTCOLOR[$SETTINGS[tableheadercolor]]?>">
+            <CENTER>
+              <? print $nav_font; ?><? print $MSG_281; ?>
+            </CENTER>
+          </TD>
+        </TR>
+        <TR valign="top" bgcolor="<?=$FONTCOLOR[$SETTINGS[headercolor]]?>">
+          <TD height="39"> <? print $std_font; ?> <? print $TPL_helptopics; ?>
+          </TD>
+        </TR>
+      </TABLE>
+      <?
+      	if($SETTINGS[newsbox] == 1)
+      	{
+      ?>
+      <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="<?=$FONTCOLOR[$SETTINGS[tableheadercolor]]?>">
+
+                  <tr>
+
+                    <td>
+
+                      <center>
+
+                      <? print $nav_font.$MSG_282; ?>
+
+                      </center>
+
+                    </td>
+
+                  </tr>
+
+                  <tr valign="top" BGCOLOR="<?=$FONTCOLOR[$SETTINGS[headercolor]]?>">
+
+                    
+          <td height="200"><? print $TPL_news_list; ?></td>
+
+                  </tr>
+
+                </table>
+				<?
+					}
+				?>
+
+
+        </td>
+
+      </tr>
+
+
+</TABLE>
+
+
