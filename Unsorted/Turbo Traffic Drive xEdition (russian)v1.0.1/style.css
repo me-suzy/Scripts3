@@ -1,0 +1,75 @@
+.toprows {
+	font-weight: bold;
+	color: #000000;
+	background-color: #D63939;
+	font-size: 10px;
+	text-align: center;
+
+}
+.toprows2 {
+	font-weight: bold;
+	color: #000000;
+	font-size: 10px;
+	text-align: center;
+
+}
+body {
+	font-family: verdana;
+	font-size: 10px;
+}
+.grayrows {
+	font-size: 10px;
+	text-align: center;
+	background-color: #CCCCCC;
+}
+.normalrow {
+	font-size: 10px;
+	text-align: center;
+	background-color: #EFEFEF;
+
+}
+.menu {
+	font-size: 10px;
+	font-weight: bold;
+	text-align: center;
+	color: #FF0000;
+
+}
+.buttons {
+	font-family: Verdana;
+	font-size: 10px;
+	font-weight: bold;
+
+	BACKGROUND-COLOR: #FF9600;
+}
+
+body {
+	font-family: verdana;
+}
+A:link {text-decoration: underline; color: #000000;}
+A:visited {text-decoration: underline; color: #000000;}
+A:active {text-decoration: underline; color: #000000;}
+A:hover {text-decoration: underline; color: #000000;}
+.traderow {
+
+	font-size: 10px;
+	text-align: center;
+}
+.traderow2 {
+
+	font-size: 10px;
+}
+.toprowssmall {
+
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #CE0000;
+	font-size: 10px;
+	text-align: center;
+}
+.normalrowsmall {
+
+	font-size: 10px;
+	text-align: center;
+	background-color: #EFEFEF;
+}
