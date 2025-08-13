@@ -1,0 +1,29 @@
+<?
+$ubbt_lang['ENTERCOLOR'] = "Pon el color de fuente que deseas usar.  Puede ser un código de color como #ff1123 o uno en ingl&eacute;s como blue (azul)";
+$ubbt_lang['FONT_COLOR'] = "Color de Fuente";
+$ubbt_lang['INST_GRAEMLIN'] = "Caritas Automáticas";
+$ubbt_lang['INST_UBB'] = "Código de Caritas UBB";
+$ubbt_lang['ENTERURL'] = "Pon la dirección completa del enlace que deseas añadir.";
+$ubbt_lang['ENTERURL2'] = "Ahora pon el Título de la Página, por ejemplo, InfoPop.";
+$ubbt_lang['ENTERURL3'] = "Página Web";
+$ubbt_lang['ENTEREMAIL'] = "Escribe aquí la dirección completa del email.";
+$ubbt_lang['BOLDIT'] = "Escribe aquí el texto que va en negrita.";
+$ubbt_lang['ITALICIZE'] = "Escribe aquí el texto que va en cursiva.";
+$ubbt_lang['ENTERIMAGE'] = "Escribe aquí la dirección URL de la foto a mostrar.";
+$ubbt_lang['ENTERITEM'] = "Escribe aquí el texto del nuevo punto de la lista.  Nota: Cada lista debe ir precedida de un Empieze y un Fin de lista para poder verse bien.";
+$ubbt_lang['ENTERPOLL'] = "Escribe aquí el Titulo de la Encuesta.";
+$ubbt_lang['ENTEROPTION'] = "Escribe aquí una opción para la encuesta.  Nota, las opciones deben ir enmarcadas por el código de empieze y acabado de encuesta.";
+$ubbt_lang['J_HYPER'] = "URL";
+$ubbt_lang['J_EMAIL'] = "Email";
+$ubbt_lang['J_BOLD'] = "Negrita";
+$ubbt_lang['J_ITALICS'] = "Cursiva";
+$ubbt_lang['J_QUOTE'] = "Citar";
+$ubbt_lang['J_CODE'] = "Código";
+$ubbt_lang['J_LISTSTART'] = "Empieze de Lista";
+$ubbt_lang['J_LISTITEM'] = "Opción de Lista";
+$ubbt_lang['J_LISTEND'] = "Fin de Lista";
+$ubbt_lang['J_IMAGE'] = "Foto";
+$ubbt_lang['J_POLLSTART'] = "Empieze de Encuesta";
+$ubbt_lang['J_POLLOPTION'] = "Opción de Encuesta";
+$ubbt_lang['J_POLLSTOP'] = "Fin de Encuesta";
+?>
