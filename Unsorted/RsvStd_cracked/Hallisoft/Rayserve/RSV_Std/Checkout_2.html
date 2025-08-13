@@ -1,0 +1,319 @@
+<HTML>
+<HEAD>
+	<TITLE>Rayserve Room Reservation Software - Checkout</TITLE>
+	<LINK REL="stylesheet" HREF="Style/RSV_2.css" TYPE="text/css">
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	<META NAME="Description" CONTENT="Rayserve Hotel Reservation Software">
+	<META NAME="Keywords" CONTENT="hotel, reservation, holiday, travel, book room, tariffs, internet, software, program, downlaod, demo">
+	<SCRIPT LANGUAGE="Javascript" TYPE="text/Javascript">if(!parent.frames['MainFrame']){parent.location.href='Demo_2.html';}</SCRIPT>
+	<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">parent.haveBooking('BookingForm_2.html');</SCRIPT>
+</HEAD>
+<BODY onLoad="parent.pushAddress()">
+
+<H1 ALIGN="center">City Hotel - Booking Confirmation</H1>
+Please enter your name and address details into the form below then press the &quot;Submit&quot; button to send the booking form to our reservation server. (The booking form is displayed at the bottom of this page). You will then be transferred to our secure server where you will be asked to enter your credit card details.
+<P></P>
+
+<DIV ALIGN="center">
+<FORM NAME="AddressForm" ID="AddressForm">
+<INPUT TYPE="hidden" NAME="FieldNames" VALUE="First Name(s),Last Name,Address,City,County/State,Post/Zip Code,Email Address">
+<TABLE BORDER="0" CELLSPACING="2" CELLPADDING="2">
+<TR><TH COLSPAN="4" CLASS="header" ALIGN="center">Address Details</TH></TR>
+<TR>
+<TD CLASS="detail" ALIGN="Right">&nbsp;First Name:&nbsp;</TD><TD CLASS="input"><INPUT TYPE="text" SIZE="16" MAXLENGTH="25" NAME="FirstName" onChange="parent.isEmpty(this.name,this.value,'AddressForm','Your first name');"></TD>
+<TD CLASS="detail" ALIGN="Right">&nbsp;&nbsp;Last Name:&nbsp;</TD><TD CLASS="input"><INPUT TYPE="text" SIZE="26" MAXLENGTH="35" NAME="LastName" onChange="parent.isEmpty(this.name,this.value,'AddressForm','Your last name');"></TD>
+</TR><TR>
+<TD CLASS="detail" ALIGN="Right">&nbsp;Address:&nbsp;</TD><TD CLASS="input" COLSPAN="3"><INPUT TYPE="text" SIZE="56" MAXLENGTH="60" NAME="Address" onChange="parent.isEmpty(this.name,this.value,'AddressForm','Your address');"></TD>
+</TR><TR>
+<TD CLASS="detail" ALIGN="Right">&nbsp;City:&nbsp;</TD><TD CLASS="input"><INPUT TYPE="text" SIZE="16" MAXLENGTH="25" NAME="City" onChange="parent.isEmpty(this.name,this.value,'AddressForm','A city')"></TD>
+<TD CLASS="detail" ALIGN="Right">&nbsp;County:&nbsp;</TD><TD CLASS="input"><INPUT TYPE="text" SIZE="26" MAXLENGTH="30" NAME="State" onChange="if(parent.statereq){parent.isEmpty(this.name,this.value,'AddressForm','A county or state');}"></TD>
+</TR><TR>
+<TD CLASS="detail" ALIGN="Right">&nbsp;Post Code:&nbsp;</TD><TD CLASS="input"><INPUT TYPE="text" SIZE="16" MAXLENGTH="16" NAME="PostCode" onChange="if(parent.zipreq){parent.isEmpty(this.name,this.value,'AddressForm','Your post or zip code');}"></TD>
+<TD CLASS="detail" ALIGN="Right">&nbsp;Country:&nbsp;</TD><TD CLASS="detail"><SELECT NAME="Country">
+	<OPTION VALUE="Afghanistan">Afghanistan</OPTION>
+	<OPTION VALUE="Albania">Albania</OPTION>
+	<OPTION VALUE="Algeria">Algeria</OPTION>
+	<OPTION VALUE="Andorra">Andorra</OPTION>
+	<OPTION VALUE="Angola">Angola</OPTION>
+	<OPTION VALUE="Anguilla">Anguilla</OPTION>
+	<OPTION VALUE="Antigua &amp; Barbuda">Antigua &amp; Barbuda</OPTION>
+	<OPTION VALUE="Argentina">Argentina</OPTION>
+	<OPTION VALUE="Armenia">Armenia</OPTION>
+	<OPTION VALUE="Aruba">Aruba</OPTION>
+	<OPTION VALUE="Ascension Island">Ascension Island</OPTION>
+	<OPTION VALUE="Australia">Australia</OPTION>
+	<OPTION VALUE="Austria">Austria</OPTION>
+	<OPTION VALUE="Azerbaijan">Azerbaijan</OPTION>
+	<OPTION VALUE="Azores">Azores</OPTION>
+	<OPTION VALUE="Bahamas">Bahamas</OPTION>
+	<OPTION VALUE="Bahrain">Bahrain</OPTION>
+	<OPTION VALUE="Balearic Isles">Balearic Isles</OPTION>
+	<OPTION VALUE="Bangladesh">Bangladesh</OPTION>
+	<OPTION VALUE="Barbados">Barbados</OPTION>
+	<OPTION VALUE="Belarus">Belarus</OPTION>
+	<OPTION VALUE="Belgium">Belgium</OPTION>
+	<OPTION VALUE="Belize">Belize</OPTION>
+	<OPTION VALUE="Benin">Benin</OPTION>
+	<OPTION VALUE="Bermuda">Bermuda</OPTION>
+	<OPTION VALUE="Bhutan">Bhutan</OPTION>
+	<OPTION VALUE="Bolivia">Bolivia</OPTION>
+	<OPTION VALUE="Bosnia-Herzegovina">Bosnia-Herzegovina</OPTION>
+	<OPTION VALUE="Botswana">Botswana</OPTION>
+	<OPTION VALUE="Brazil">Brazil</OPTION>
+	<OPTION VALUE="British Virgin Islands">British Virgin Islands</OPTION>
+	<OPTION VALUE="Brunei Darussalam">Brunei Darussalam</OPTION>
+	<OPTION VALUE="Bulgaria (Rep.)">Bulgaria (Rep.)</OPTION>
+	<OPTION VALUE="Burkina Faso">Burkina Faso</OPTION>
+	<OPTION VALUE="Burundi">Burundi</OPTION>
+	<OPTION VALUE="Cambodia">Cambodia</OPTION>
+	<OPTION VALUE="Cameroon">Cameroon</OPTION>
+	<OPTION VALUE="Canada">Canada</OPTION>
+	<OPTION VALUE="Canary Islands">Canary Islands</OPTION>
+	<OPTION VALUE="Cape Verde">Cape Verde</OPTION>
+	<OPTION VALUE="Cayman Islands">Cayman Islands</OPTION>
+	<OPTION VALUE="Central African Republic">Central African Republic</OPTION>
+	<OPTION VALUE="Chad">Chad</OPTION>
+	<OPTION VALUE="Channel Islands">Channel Islands</OPTION>
+	<OPTION VALUE="Chile">Chile</OPTION>
+	<OPTION VALUE="China (Peoples Rep)">China (Peoples Rep)</OPTION>
+	<OPTION VALUE="Christmas Island">Christmas Island</OPTION>
+	<OPTION VALUE="Cocos (Keeling) Island">Cocos (Keeling) Island</OPTION>
+	<OPTION VALUE="Colombia">Colombia</OPTION>
+	<OPTION VALUE="Comoros">Comoros</OPTION>
+	<OPTION VALUE="Congo (Rep.)">Congo (Rep.)</OPTION>
+	<OPTION VALUE="Corsica">Corsica</OPTION>
+	<OPTION VALUE="Costa Rica">Costa Rica</OPTION>
+	<OPTION VALUE="Croatia">Croatia</OPTION>
+	<OPTION VALUE="Cuba">Cuba</OPTION>
+	<OPTION VALUE="Cuba - Guatanamo Bay">Cuba - Guatanamo Bay</OPTION>
+	<OPTION VALUE="Cyprus">Cyprus</OPTION>
+	<OPTION VALUE="Czech Republic">Czech Republic</OPTION>
+	<OPTION VALUE="Denmark">Denmark</OPTION>
+	<OPTION VALUE="Djibouti">Djibouti</OPTION>
+	<OPTION VALUE="Dominica">Dominica</OPTION>
+	<OPTION VALUE="East Timor">East Timor</OPTION>
+	<OPTION VALUE="Ecuador">Ecuador</OPTION>
+	<OPTION VALUE="Egypt">Egypt</OPTION>
+	<OPTION VALUE="El Salvador">El Salvador</OPTION>
+	<OPTION VALUE="Equatorial Guinea">Equatorial Guinea</OPTION>
+	<OPTION VALUE="Eritrea">Eritrea</OPTION>
+	<OPTION VALUE="Estonia">Estonia</OPTION>
+	<OPTION VALUE="Ethiopia">Ethiopia</OPTION>
+	<OPTION VALUE="Falkland Islands">Falkland Islands</OPTION>
+	<OPTION VALUE="Faroe Islands">Faroe Islands</OPTION>
+	<OPTION VALUE="Fiji">Fiji</OPTION>
+	<OPTION VALUE="Finland">Finland</OPTION>
+	<OPTION VALUE="France">France</OPTION>
+	<OPTION VALUE="French Guiana">French Guiana</OPTION>
+	<OPTION VALUE="French Polynesia">French Polynesia</OPTION>
+	<OPTION VALUE="Gabon">Gabon</OPTION>
+	<OPTION VALUE="Gaza &amp; Khan Yunis">Gaza &amp; Khan Yunis</OPTION>
+	<OPTION VALUE="Georgia">Georgia</OPTION>
+	<OPTION VALUE="Germany">Germany</OPTION>
+	<OPTION VALUE="Ghana">Ghana</OPTION>
+	<OPTION VALUE="Gibraltar">Gibraltar</OPTION>
+	<OPTION VALUE="Greece">Greece</OPTION>
+	<OPTION VALUE="Greenland">Greenland</OPTION>
+	<OPTION VALUE="Grenada">Grenada</OPTION>
+	<OPTION VALUE="Guadeloupe">Guadeloupe</OPTION>
+	<OPTION VALUE="Guam">Guam</OPTION>
+	<OPTION VALUE="Guatamala">Guatamala</OPTION>
+	<OPTION VALUE="Guinea">Guinea</OPTION>
+	<OPTION VALUE="Guinea-Bissau">Guinea-Bissau</OPTION>
+	<OPTION VALUE="Guyana">Guyana</OPTION>
+	<OPTION VALUE="Haiti">Haiti</OPTION>
+	<OPTION VALUE="Honduras">Honduras</OPTION>
+	<OPTION VALUE="Hong Kong">Hong Kong</OPTION>
+	<OPTION VALUE="Hungary">Hungary</OPTION>
+	<OPTION VALUE="Iceland">Iceland</OPTION>
+	<OPTION VALUE="India">India</OPTION>
+	<OPTION VALUE="Indonesia">Indonesia</OPTION>
+	<OPTION VALUE="Iran (Islamic Rep.)">Iran (Islamic Rep.)</OPTION>
+	<OPTION VALUE="Iraq">Iraq</OPTION>
+	<OPTION VALUE="Ireland">Ireland</OPTION>
+	<OPTION VALUE="Israel">Israel</OPTION>
+	<OPTION VALUE="Italy">Italy</OPTION>
+	<OPTION VALUE="Ivory Coast">Ivory Coast</OPTION>
+	<OPTION VALUE="Jamaica">Jamaica</OPTION>
+	<OPTION VALUE="Japan">Japan</OPTION>
+	<OPTION VALUE="Jordan">Jordan</OPTION>
+	<OPTION VALUE="Kazakhstan">Kazakhstan</OPTION>
+	<OPTION VALUE="Kenya">Kenya</OPTION>
+	<OPTION VALUE="Kirghizstan">Kirghizstan</OPTION>
+	<OPTION VALUE="Kiribati">Kiribati</OPTION>
+	<OPTION VALUE="Korea (South)">Korea (South)</OPTION>
+	<OPTION VALUE="Kuwait">Kuwait</OPTION>
+	<OPTION VALUE="Laos">Laos</OPTION>
+	<OPTION VALUE="Latvia">Latvia</OPTION>
+	<OPTION VALUE="Lebanon">Lebanon</OPTION>
+	<OPTION VALUE="Lesotho">Lesotho</OPTION>
+	<OPTION VALUE="Liberia">Liberia</OPTION>
+	<OPTION VALUE="Libya">Libya</OPTION>
+	<OPTION VALUE="Liechtenstein">Liechtenstein</OPTION>
+	<OPTION VALUE="Lithuania">Lithuania</OPTION>
+	<OPTION VALUE="Luxembourg">Luxembourg</OPTION>
+	<OPTION VALUE="Macao">Macao</OPTION>
+	<OPTION VALUE="Macedonia">Macedonia</OPTION>
+	<OPTION VALUE="Madagascar">Madagascar</OPTION>
+	<OPTION VALUE="Madeira">Madeira</OPTION>
+	<OPTION VALUE="Malawi">Malawi</OPTION>
+	<OPTION VALUE="Malaysia">Malaysia</OPTION>
+	<OPTION VALUE="Maldives">Maldives</OPTION>
+	<OPTION VALUE="Mali">Mali</OPTION>
+	<OPTION VALUE="Malta">Malta</OPTION>
+	<OPTION VALUE="Marshall Islands">Marshall Islands</OPTION>
+	<OPTION VALUE="Martinique">Martinique</OPTION>
+	<OPTION VALUE="Mauritania">Mauritania</OPTION>
+	<OPTION VALUE="Mauritius">Mauritius</OPTION>
+	<OPTION VALUE="Mexico">Mexico</OPTION>
+	<OPTION VALUE="Micronesia (Fed State)">Micronesia (Fed State)</OPTION>
+	<OPTION VALUE="Moldova">Moldova</OPTION>
+	<OPTION VALUE="Monaco">Monaco</OPTION>
+	<OPTION VALUE="Mongolia">Mongolia</OPTION>
+	<OPTION VALUE="Monserrat">Monserrat</OPTION>
+	<OPTION VALUE="Montenegro">Montenegro</OPTION>
+	<OPTION VALUE="Morocco">Morocco</OPTION>
+	<OPTION VALUE="Myanmar (Burma)">Myanmar (Burma)</OPTION>
+	<OPTION VALUE="Namibia">Namibia</OPTION>
+	<OPTION VALUE="Nauru">Nauru</OPTION>
+	<OPTION VALUE="Nepal">Nepal</OPTION>
+	<OPTION VALUE="Netherlands">Netherlands</OPTION>
+	<OPTION VALUE="Netherlands Antilles">Netherlands Antilles</OPTION>
+	<OPTION VALUE="New Caledonia">New Caledonia</OPTION>
+	<OPTION VALUE="New Zealand">New Zealand</OPTION>
+	<OPTION VALUE="New Zealand Island Terr.">New Zealand Island Terr.</OPTION>
+	<OPTION VALUE="Nicaragua">Nicaragua</OPTION>
+	<OPTION VALUE="Niger">Niger</OPTION>
+	<OPTION VALUE="Nigeria">Nigeria</OPTION>
+	<OPTION VALUE="Norfolk Island">Norfolk Island</OPTION>
+	<OPTION VALUE="Northern Mariana Islands">Northern Mariana Islands</OPTION>
+	<OPTION VALUE="Norway">Norway</OPTION>
+	<OPTION VALUE="Oman">Oman</OPTION>
+	<OPTION VALUE="Pakistan">Pakistan</OPTION>
+	<OPTION VALUE="Panama">Panama</OPTION>
+	<OPTION VALUE="Papua New Guinea">Papua New Guinea</OPTION>
+	<OPTION VALUE="Paraguay">Paraguay</OPTION>
+	<OPTION VALUE="Peru">Peru</OPTION>
+	<OPTION VALUE="Philippines">Philippines</OPTION>
+	<OPTION VALUE="Pitcairn Islands">Pitcairn Islands</OPTION>
+	<OPTION VALUE="Poland">Poland</OPTION>
+	<OPTION VALUE="Portugal">Portugal</OPTION>
+	<OPTION VALUE="Puerto Rico">Puerto Rico</OPTION>
+	<OPTION VALUE="Qatar">Qatar</OPTION>
+	<OPTION VALUE="Reunion">Reunion</OPTION>
+	<OPTION VALUE="Romania">Romania</OPTION>
+	<OPTION VALUE="Russia">Russia</OPTION>
+	<OPTION VALUE="Rwanda">Rwanda</OPTION>
+	<OPTION VALUE="Samoa (US Terr.)">Samoa (US Terr.)</OPTION>
+	<OPTION VALUE="San Marino">San Marino</OPTION>
+	<OPTION VALUE="SaoTome &amp; Principe">SaoTome &amp; Principe</OPTION>
+	<OPTION VALUE="Sardinia">Sardinia</OPTION>
+	<OPTION VALUE="Saudia Arabia">Saudia Arabia</OPTION>
+	<OPTION VALUE="Senegal">Senegal</OPTION>
+	<OPTION VALUE="Serbia">Serbia</OPTION>
+	<OPTION VALUE="Seychelles">Seychelles</OPTION>
+	<OPTION VALUE="Sicily">Sicily</OPTION>
+	<OPTION VALUE="Sierra Leone">Sierra Leone</OPTION>
+	<OPTION VALUE="Singapore">Singapore</OPTION>
+	<OPTION VALUE="Slovakia">Slovakia</OPTION>
+	<OPTION VALUE="Slovenia">Slovenia</OPTION>
+	<OPTION VALUE="Solomon Islands">Solomon Islands</OPTION>
+	<OPTION VALUE="Somalia">Somalia</OPTION>
+	<OPTION VALUE="South Africa">South Africa</OPTION>
+	<OPTION VALUE="Spain">Spain</OPTION>
+	<OPTION VALUE="Spanish Terr. of North Africa">Spanish Terr. of North Africa</OPTION>
+	<OPTION VALUE="Spitzbergen">Spitzbergen</OPTION>
+	<OPTION VALUE="Sri Lanka">Sri Lanka</OPTION>
+	<OPTION VALUE="St Christopher &amp; Nevis">St Christopher &amp; Nevis</OPTION>
+	<OPTION VALUE="St Helena">St Helena</OPTION>
+	<OPTION VALUE="St Lucia">St Lucia</OPTION>
+	<OPTION VALUE="St Pierre &amp; Miquelon">St Pierre &amp; Miquelon</OPTION>
+	<OPTION VALUE="St Vincent &amp; Grenadines">St Vincent &amp; Grenadines</OPTION>
+	<OPTION VALUE="Sudan">Sudan</OPTION>
+	<OPTION VALUE="Suriname">Suriname</OPTION>
+	<OPTION VALUE="Swaziland">Swaziland</OPTION>
+	<OPTION VALUE="Sweden">Sweden</OPTION>
+	<OPTION VALUE="Switzerland">Switzerland</OPTION>
+	<OPTION VALUE="Syria">Syria</OPTION>
+	<OPTION VALUE="Taiwan">Taiwan</OPTION>
+	<OPTION VALUE="Tajikstan">Tajikstan</OPTION>
+	<OPTION VALUE="Tanzania">Tanzania</OPTION>
+	<OPTION VALUE="Thailand">Thailand</OPTION>
+	<OPTION VALUE="The Gambia">The Gambia</OPTION>
+	<OPTION VALUE="Togo">Togo</OPTION>
+	<OPTION VALUE="Tonga">Tonga</OPTION>
+	<OPTION VALUE="Trinidad &amp; Tobago">Trinidad &amp; Tobago</OPTION>
+	<OPTION VALUE="Tristan da Cunha">Tristan da Cunha</OPTION>
+	<OPTION VALUE="Tunisia">Tunisia</OPTION>
+	<OPTION VALUE="Turkey">Turkey</OPTION>
+	<OPTION VALUE="Turkmenistan">Turkmenistan</OPTION>
+	<OPTION VALUE="Turks &amp; Caicos Islands">Turks &amp; Caicos Islands</OPTION>
+	<OPTION VALUE="Tuvalu">Tuvalu</OPTION>
+	<OPTION VALUE="Uganda">Uganda</OPTION>
+	<OPTION VALUE="Ukraine">Ukraine</OPTION>
+	<OPTION VALUE="United Arab Emirates">United Arab Emirates</OPTION>
+	<OPTION VALUE="United Kingdom" SELECTED>United Kingdom</OPTION>
+	<OPTION VALUE="United States of America">United States of America</OPTION>
+	<OPTION VALUE="Uruguay">Uruguay</OPTION>
+	<OPTION VALUE="Uzbekistan">Uzbekistan</OPTION>
+	<OPTION VALUE="Vanuatu">Vanuatu</OPTION>
+	<OPTION VALUE="Vatican City State">Vatican City State</OPTION>
+	<OPTION VALUE="Venezuela">Venezuela</OPTION>
+	<OPTION VALUE="Vietnam">Vietnam</OPTION>
+	<OPTION VALUE="Virgin Islands (USA)">Virgin Islands (USA)</OPTION>
+	<OPTION VALUE="Wake Island">Wake Island</OPTION>
+	<OPTION VALUE="Wallis &amp; Futuna Islands">Wallis &amp; Futuna Islands</OPTION>
+	<OPTION VALUE="Western Samoa">Western Samoa</OPTION>
+	<OPTION VALUE="Yemen">Yemen</OPTION>
+	<OPTION VALUE="Yugoslavia">Yugoslavia</OPTION>
+	<OPTION VALUE="Zaire">Zaire</OPTION>
+	<OPTION VALUE="Zambia">Zambia</OPTION>
+	<OPTION VALUE="Zimbabwe">Zimbabwe</OPTION>
+</SELECT></TD>
+</TR><TR>
+<TD CLASS="detail" ALIGN="Right">&nbsp;Telephone:&nbsp;</TD><TD CLASS="input"><INPUT TYPE="text" SIZE="16" MAXLENGTH="30" NAME="Phone"></TD>
+<TD CLASS="detail" ALIGN="Right">&nbsp;Email:&nbsp;</TD><TD CLASS="input"><INPUT TYPE="text" SIZE="26" MAXLENGTH="40" NAME="Email" onChange="parent.isEmail(this.name,this.value,'AddressForm');"></TD>
+</TR><TR>
+<TD CLASS="detail" ALIGN="Right">&nbsp;Newspaper:&nbsp;</TD>
+<TD COLSPAN="3" CLASS="detail">
+	<INPUT TYPE="radio" NAME="NewsPaper" VALUE="Times" CHECKED>Times&nbsp;&nbsp;
+	<INPUT TYPE="radio" NAME="NewsPaper" VALUE="Independant">Independant&nbsp;&nbsp;
+	<INPUT TYPE="radio" NAME="NewsPaper" VALUE="Guardian">Guardian&nbsp;&nbsp;
+	<INPUT TYPE="radio" NAME="NewsPaper" VALUE="DailyMail">Daily Mail&nbsp;&nbsp;
+	<INPUT TYPE="radio" NAME="NewsPaper" VALUE="Sun">Sun
+</TD></TR>
+</TABLE>
+</FORM>
+</DIV>
+
+<BR>
+
+<DIV CLASS="nsbugfix" ALIGN="center">
+<FORM>
+<INPUT TYPE="button" NAME="ConfBtn" VALUE="Submit Bookings" onClick="parent.sendBooking(document.forms['AddressForm'],'BookingData_2.html');">&nbsp;&nbsp;
+<INPUT TYPE="button" NAME="CancBtn" VALUE="Cancel Bookings" onClick="parent.stopAction('BookingList_2.html');">&nbsp;&nbsp;
+<INPUT TYPE="button" NAME="HelpBtn" VALUE="Help!" onClick="parent.helpMe('CheckoutHelp');">
+</FORM>
+</DIV>
+
+<!-- START OF GENERATED HTML -->
+<P></P>
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">parent.showBookingList('TEXT','Change','Delete','ChangeForm_2.html');</SCRIPT>
+<P></P>
+<!-- END OF GENERATED HTML -->
+
+<DIV ALIGN="center">
+<HR WIDTH="70%">
+<A HREF="Tariff_2.html" TARGET="MainFrame">Tariffs</A><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="Availability_2.html" TARGET="MainFrame">Availability</A><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="BookingForm_2.html" TARGET="MainFrame">Booking Form</A><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="BookingList_2.html" TARGET="MainFrame">Booking List</A><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<SPAN CLASS="hlite">Confirm Bookings</SPAN><BR>
+<A HREF="Email_2.html" TARGET="MainFrame">Email Us</A><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="javascript:parent.newWin('Currency_2.html','Currency_Display',370,270,1)">Change Currency</A><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="javascript:parent.newWin('Convert_2.html','Currency_Convertion',370,340,1)">Currency Conversion</A><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<HR WIDTH="70%">
+</DIV>
+<DIV CLASS="authinfo" ALIGN="center">Powered by Rayserve</DIV>
+</BODY>
+</HTML>
