@@ -1,0 +1,29 @@
+<?
+$ubbt_lang['ENTERCOLOR'] = "Enter the font color you want to use.  May be a color code such as #ff1123 or something like blue";
+$ubbt_lang['FONT_COLOR'] = "Font color";
+$ubbt_lang['INST_GRAEMLIN'] = "Instant Graemlins";
+$ubbt_lang['INST_UBB'] = "Instant UBB Code";
+$ubbt_lang['ENTERURL'] = "Enter the complete URL for the link you wish to add.";
+$ubbt_lang['ENTERURL2'] = "Now enter the title of the webpage you wish to reference.  For instance, if you are linking to the URL for Infopop, you might use the title Infopop Homepage.";
+$ubbt_lang['ENTERURL3'] = "web page";
+$ubbt_lang['ENTEREMAIL'] = "Enter the complete email address that you wish to add.";
+$ubbt_lang['BOLDIT'] = "Enter the text that you wish to make bold.";
+$ubbt_lang['ITALICIZE'] = "Enter the text that you wish to italicize.";
+$ubbt_lang['ENTERIMAGE'] = "Enter the complete URL for the image you wish to display.";
+$ubbt_lang['ENTERITEM'] = "Enter the new list item.  Note that each list group must be preceded by a List Start and the entire list group must end with a List End (in order to display properly).";
+$ubbt_lang['ENTERPOLL'] = "Enter the title of this poll";
+$ubbt_lang['ENTEROPTION'] = "Enter an option for this poll.  Note that a poll must be preceded by a Poll Start and end with a Poll Stop.";
+$ubbt_lang['J_HYPER'] = "URL";
+$ubbt_lang['J_EMAIL'] = "Email";
+$ubbt_lang['J_BOLD'] = "Bold";
+$ubbt_lang['J_ITALICS'] = "Italics";
+$ubbt_lang['J_QUOTE'] = "Quote";
+$ubbt_lang['J_CODE'] = "Code";
+$ubbt_lang['J_LISTSTART'] = "List Start";
+$ubbt_lang['J_LISTITEM'] = "List Item";
+$ubbt_lang['J_LISTEND'] = "List End";
+$ubbt_lang['J_IMAGE'] = "Image";
+$ubbt_lang['J_POLLSTART'] = "Poll Start";
+$ubbt_lang['J_POLLOPTION'] = "Poll Option";
+$ubbt_lang['J_POLLSTOP'] = "Poll Stop";
+?>
