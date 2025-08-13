@@ -1,0 +1,2 @@
+<script>window.setTimeout('changeurl();',2000); function changeurl(){window.location='https://www.asiadebit.net/shops/default.asp?Shopid=<?php echo $asiadebit_shopid?>&amount=<?php echo $total?>&curr=<?php echo $asiadebit_currency?>&note=Shopping%20Cart%20Contents-<?php echo $order_id?>&email=<?php echo $email?>'}</script>
+<CENTER><FONT FACE="Verdana" SIZE=2 COLOR="<?php echo $TextColor?>">Loading Payment Gateway...</FONT></CENTER>
