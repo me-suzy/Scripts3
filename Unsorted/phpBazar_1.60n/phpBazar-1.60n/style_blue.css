@@ -1,0 +1,150 @@
+/*###############################################################################################
+#
+#  project           	: phpBazar
+#  filename          	: style_blue.css
+#  last modified by  	: Erich Fuchs
+#  supplied by          : Reseting
+#  nullified by		: CyKuH [WTN]
+#  purpose           	: Styles Configuraion File
+#
+###############################################################################################*/
+
+
+
+body 			{ background: #9999FF; font-family:Verdana,Arial,sans-serif; font-size: 12pt; margin-top:0px; margin-bottom:0px; }
+
+
+
+a:link 			{ font-family:Verdana,Arial,sans-serif; color: #0000FF; font-weight: inherit; text-decoration: underline; }
+
+a:visited 		{ font-family:Verdana,Arial,sans-serif; color: #0000FF; font-weight: inherit; text-decoration: underline; }
+
+a:active 		{ font-family:Verdana,Arial,sans-serif; color:#660099; font-weight: inherit; text-decoration: underline; }
+
+a:hover 		{ font-family:Verdana,Arial,sans-serif; color:#660099; font-weight: inherit; text-decoration: none; }
+
+
+
+p,ul,ol,li,div,td,th,address,blockquote,nobr,b,i
+
+			{ font-family:Verdana,Arial,sans-serif; color: Black; }
+
+
+
+p,ul,ol,li,div,td,th,address,nobr,b,i
+
+			{ font-family:Verdana,Arial,sans-serif;font-size:8pt; }
+
+
+
+form,input,option,select
+
+			{ font-family:Verdana,Arial,sans-serif; font-size:8pt; font-family: Helv;}
+
+
+
+#red 			{ font-family:Verdana,Arial,sans-serif; font-style: inherit; color: #660099; }
+
+span.censored 		{ font-family:Verdana,Arial,sans-serif; color:#660099; }
+
+
+
+div.mainheader 		{ font-family:Verdana,Arial,sans-serif; font-size: 12pt; color:#660099; text-align:right;  font-style : italic;  font-weight : bold;   }
+
+div.maintext 		{ font-family:Verdana,Arial,sans-serif; font-size: 10pt; text-align:justify; }
+
+div.mainleft 		{ font-family:Verdana,Arial,sans-serif; font-size: 10pt; text-align:left; }
+
+div.mainmenu 		{ font-family:Verdana,Arial,sans-serif; font-size: 8pt; text-align:left; }
+
+div.mainpages 		{ font-family:Verdana,Arial,sans-serif; font-size: 8pt; text-align:right; margin-right:0px; }
+
+div.maincatnav 		{ font-family:Verdana,Arial,sans-serif; font-size: 10pt; text-align:left; margin-left:0px;  font-style : italic;  }
+
+div.maininputleft 	{ font-family:Verdana,Arial,sans-serif; font-size: 10pt; text-align:right;  }
+
+
+
+div.sideheader 		{ font-family:Verdana,Arial,sans-serif; font-size: 10pt; color:#660099; text-align:right; }
+
+div.sidetext 		{ font-family:Verdana,Arial,sans-serif; font-size: 8pt; text-align: right; }
+
+div.sideleft 		{ font-family:Verdana,Arial,sans-serif; font-size: 8pt; text-align:left; }
+
+
+
+div.smsubmit		{ font-family:Verdana,Arial,sans-serif; font-size: 10pt; text-align:center; }
+
+
+
+div.smallleft 		{ font-family:Verdana,Arial,sans-serif; font-size: 8pt; text-align:left; }
+
+div.smallcenter 	{ font-family:Verdana,Arial,sans-serif; font-size: 8pt; text-align:center;}
+
+div.smallright 		{ font-family:Verdana,Arial,sans-serif; font-size: 8pt; text-align:right; }
+
+div.spaceleft 		{ font-family:Verdana,Arial,sans-serif; font-size: 6pt; text-align:left; }
+
+div.whiteleft 		{ font-family:Verdana,Arial,sans-serif; font-size: 10pt; text-align:left; color: #660033;}
+
+
+
+div.footer 		{ font-family:Verdana,Arial,sans-serif; font-size: 8pt; text-align:center;}
+
+
+
+td.class1 		{ background: #6666FF; border:0px; }
+
+td.class2 		{ background: #9999FF; border:0px; text-align:justify; vertical-align:top; }
+
+
+
+td.class3 		{ background: #6666FF; border:0px; }
+
+td.class4 		{ background: #9999FF; border:0px; text-align: justify; vertical-align:top;  font-style : italic;  }
+
+
+
+td.votebarout 		{ background: #3333FF; border:0px; }
+
+td.votebarin 		{ background: #EEEEEE; border:0px; }
+
+td.votetext 		{ font-family:Verdana,Arial,sans-serif; font-size:8pt; }
+
+div.votespace   	{ font-family:Verdana,Arial,sans-serif; font-size:4pt; }
+
+
+
+td.ratebarout           { background: #DDDDDD; border:0px; }
+
+td.ratebarin            { background: #4444FF; border:0px; }
+
+div.ratespace           { font-family:Verdana,Arial,sans-serif; font-size:4pt; }
+
+
+
+td.gbheader 		{ background: #8888FF; border:0px; border-color:#000000; font-weight:bold; text-align:center ;}
+
+td.gbtable1 		{ background: #6666FF; border:0px; vertical-align:top; width:30%; }
+
+td.gbtable2 		{ background: #7777FF; border:0px; vertical-align:top; }
+
+
+
+td.classcat1 		{ background: #6666FF; border:0px; vertical-align:middle; text-align:center; width:10%; height:50px;}
+
+td.classcat2 		{ background: #7777FF; border:0px; vertical-align:top; width:40%; }
+
+td.classcat3 		{ background: #6666FF; border:0px; vertical-align:middle; text-align:center; width:10%; height:50px;}
+
+td.classcat4 		{ background: #7777FF; border:0px; vertical-align:top; width:90%; }
+
+td.classcat5 		{ background: #6666FF; border:0px; vertical-align:top; text-align:center; width:20%; }
+
+td.classcat6 		{ background: #7777FF; border:0px; vertical-align:top; width:80%; }
+
+
+
+td.classadd1 		{ border:0; vertical-align:top; text-align:right; width:35%; }
+
+td.classadd2 		{ border:0; vertical-align:top; text-align:left;width:95%; }
