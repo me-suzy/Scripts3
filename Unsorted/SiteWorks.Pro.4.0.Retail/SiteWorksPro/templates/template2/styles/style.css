@@ -1,0 +1,152 @@
+A
+{
+    FONT-SIZE: 8pt;
+    COLOR: black;
+    FONT-FAMILY: Verdana;
+    TEXT-DECORATION: underline
+}
+BODY
+{
+    MARGIN: 0pt;
+    BACKGROUND-COLOR: #e5e5e5
+}
+HR
+{
+    COLOR: #c0c0c0;
+    HEIGHT: 1pt
+}
+.BodyHeader
+{
+    BACKGROUND-COLOR: #ffffff
+}
+.BodyHeader1
+{
+    BACKGROUND-COLOR: #ff7500
+}
+.BodyHeader2
+{
+    HEIGHT: 21px;
+    BACKGROUND-COLOR: #ffffff
+}
+.BodyHeading
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 16pt;
+    COLOR: black;
+    FONT-FAMILY: Verdana
+}
+.BodyHeading1
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 9pt;
+    COLOR: #155c93;
+    FONT-FAMILY: Verdana;
+    TEXT-DECORATION: underline
+}
+.BodyHeading2
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8.5pt;
+    COLOR: #808080;
+    FONT-FAMILY: Verdana
+}
+.BodyHeading3
+{
+    FONT-SIZE: 8.5pt;
+    COLOR: #808080;
+    FONT-FAMILY: Verdana
+}
+.BodyHeading4
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 9pt;
+    COLOR: #155c93;
+    FONT-FAMILY: Verdana
+}
+.Link1
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt;
+    COLOR: black;
+    FONT-FAMILY: Verdana;
+    TEXT-DECORATION: underline
+}
+.Link2
+{
+    FONT-SIZE: 8pt;
+    COLOR: black;
+    FONT-FAMILY: Verdana;
+    TEXT-DECORATION: underline
+}
+.Link3
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt;
+    COLOR: white;
+    FONT-FAMILY: Verdana;
+    TEXT-DECORATION: underline
+}
+.PrintBody
+{
+    MARGIN: 20pt;
+    BACKGROUND-COLOR: #ffffff
+}
+.SideHeading
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt;
+    COLOR: white;
+    FONT-FAMILY: Verdana
+}
+.SideHeader
+{
+    HEIGHT: 21px;
+    BACKGROUND-COLOR: black
+}
+.SideHeader1
+{
+    HEIGHT: 25px;
+    BACKGROUND-COLOR: black
+}
+.Text1
+{
+    FONT-SIZE: 8pt;
+    COLOR: black;
+    FONT-FAMILY: Verdana
+}
+.Text2
+{
+    FONT-SIZE: 8pt;
+    COLOR: white;
+    FONT-FAMILY: Verdana
+}
+.Text3
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt;
+    COLOR: black;
+    FONT-FAMILY: Verdana
+}
+.TopHeader
+{
+    BACKGROUND-COLOR: #4296d6
+}
+.SideBody
+{
+    BACKGROUND-COLOR: #c0c0c0
+}
+.SideBody1
+{
+    BACKGROUND-COLOR: #828282
+}
+.Link5
+{
+    FONT-SIZE: 8pt;
+    COLOR: white;
+    FONT-FAMILY: Verdana;
+    TEXT-DECORATION: underline
+}
+.SideHeader2
+{
+    BACKGROUND-COLOR: #000000
+}
