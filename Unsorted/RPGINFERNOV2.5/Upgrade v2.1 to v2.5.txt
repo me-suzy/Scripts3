@@ -1,0 +1,309 @@
+Upgrading to 2.5 from v2.1
+
+Note, you must have v2.1 insatalled!
+
+If you have Genetics addon please uninstall it, this version comes with it and is fixed up to work on this
+new version, uninstall it before continuing (if you added it)
+
+Step 1:
+
+Unzip v2.5 files, and upload all php files overwriting your old existing ones
+
+Upload the 1st to your sources folder overwriting the old ones, and the next 2 into your skin folder,
+overwriting the old ones again
+and the last into sources/Admin folder
+
+Step 2:
+There are a couple of edits, just 3, so please follow them correctly
+
+Open sources/Usercp.php
+Find:
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		case 'do_rpg':
+			$this->do_rpg();
+			break;
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Add Underneath:
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+            case 'RpgStats':
+			$this->rpg_statistics();
+			break;
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Find:
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// we need a rpg profile page? coming up!
+function rpg_profile(){
+global $ibforums, $DB, $std, $print;
+// Lets get your stats
+
+
+%%%%%%%%%%%% SAVED FOR SPACE %%%%%%%%%%%%
+
+
+$print->redirect_screen( "Your RPG profile has been updated", 'act=UserCP&CODE=RPGProf' );
+
+
+}
+// Thats all folks!
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Replace With:
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+function rpg_statistics(){
+global $ibforums, $DB, $std, $print;
+
+$DB->query("SELECT * FROM ibf_members WHERE id='".$ibforums->member['id']."'");
+$member = $DB->fetch_row();
+
+
+// buy items, meh whats the point, oooh wait, you can equip them to increase stats, lets go baby!
+$DB->query("select * from ibf_members where id='{$ibforums->member['id']}'");
+$member=$DB->fetch_row();
+
+//-- summon end
+// HP Bar
+$hp = $member['hp'];
+$hpm= $member['hpm'];
+$hpa= $hp/$hpm;
+$hpa= $hpa*100;
+$member['hpd']=$hpa;
+// MP Bar
+$mp = $member['mp'];
+$mpm= $member['mpm'];
+$mpa= $mp/$mpm;
+$mpa= $mpa*100;
+$member['mpd']=$mpa;
+// DEF Bar
+$def= $member['def'];
+$defm=$hpm;
+$defa=$def/$defm;
+$defa=$defa*100;
+$member['defd']=$defa;
+// STR Bar
+$str= $member['str'];
+$strm=$hpm;
+$stra=$str/$strm;
+$stra=$stra*100;
+$member['strd']=$stra;
+
+if($member['strd'] > 100){
+$member['strd']=100;
+}
+
+if($member['defd'] > 100){
+$member['defd']=100;
+}
+
+if($member['inclan'] != ""){
+$member['clanner'] = "<a href='{$ibforums->base_url}act=RPG&CODE=ViewClan&clan={$member['inclan']}'>{$member['inclan']}</a>";
+}
+else
+	{
+$member['clanner'] = "Not in a clan";
+	}
+//@@ avatar max
+$DB->query("SELECT * FROM ibf_rpgoptions where id='1'");
+$rpgoptions=$DB->fetch_row();
+//@@ avatar max end
+
+// ok, lets paste the data
+$this->output .= $this->html->rpgstats($member);
+$this->page_title = $ibforums->lang['t_welcome'];
+$this->nav        = array( "<a href='".$this->base_url."&act=UserCP&CODE=00'>".$ibforums->lang['t_title']."</a>",
+"RPG Profile",
+ );
+}
+
+// we need a rpg profile page? coming up!
+function rpg_profile(){
+global $ibforums, $DB, $std, $print;
+// Lets get your stats
+$DB->query("SELECT * FROM ibf_members WHERE id='".$ibforums->member['id']."'");
+$member = $DB->fetch_row();
+$DB->query("SELECT * FROM ibf_races ORDER BY id");
+$races="";
+while($graces = $DB->fetch_row()){
+$races.="<option value='{$graces['race']}'>{$graces['race']}</option>";
+}
+$DB->query("SELECT * FROM ibf_rpgelements ORDER BY id");
+$elements="";
+while($gelm = $DB->fetch_row()){
+$elements.="<option value='{$gelm['element']}'>{$gelm['element']}</option>";
+}
+
+//-- we would like to summon - because im a lazy ass and cbf attacking
+$summonx="";
+$summonx.="<option value='' mp=''>None</option>";
+$DB->query("SELECT * FROM ibf_infernosummon");
+while($summon = $DB->fetch_row()){
+if($summon['lvl'] <= $member['level']){
+$summonx.="<option value='{$summon['id']}' mp='{$summon['mp']}'>{$summon['name']}</option>";
+}}
+//-- summon end
+
+//@@ avatar max
+$DB->query("SELECT * FROM ibf_rpgoptions where id='1'");
+$rpgoptions=$DB->fetch_row();
+//@@ avatar max end
+
+// ok, lets paste the data
+$this->output .= $this->html->RPGProfile($member,$races,$elements,$summonx,$rpgoptions);
+$this->page_title = $ibforums->lang['t_welcome'];
+$this->nav        = array( "<a href='".$this->base_url."&act=UserCP&CODE=00'>".$ibforums->lang['t_title']."</a>",
+"RPG Profile",
+ );
+}
+// save our data :D
+function do_rpg(){
+global $ibforums, $DB, $std, $print;
+$DB->query("SELECT * FROM ibf_members WHERE id='".$this->member['id']."'");
+$member = $DB->fetch_row();
+
+//@@ avatar max
+$DB->query("SELECT * FROM ibf_rpgoptions where id='1'");
+$rpgoptions=$DB->fetch_row();
+//@@ avatar max end
+if($ibforums->input['rpah'] > $rpgoptions['rpah']){
+$std->Error( array( 'LEVEL' => 1, 'MSG' => 'rpav_over' ) );
+}
+if($ibforums->input['rpaw'] > $rpgoptions['rpaw']){
+$std->Error( array( 'LEVEL' => 1, 'MSG' => 'rpav_over' ) );
+}
+
+$db_string = $DB->compile_db_update_string( array( 'rpgname'	=> $ibforums->input['rpgname'],
+'rpgrace'	=> $ibforums->input['rpgrace'],
+'rpgav'	=> $ibforums->input['rpgav'],
+'rpgrace' => $ibforums->input['rpgrace'],
+'smove' => $ibforums->input['smove'],
+'align'	=> $ibforums->input['align'],
+'rpgelement'	=> $ibforums->input['rpgelement'],
+'rpgsex'	=> $ibforums->input['rpgsex'],
+'summon'	=> $ibforums->input['summon'],
+'rpah'	=> $ibforums->input['rpah'],
+'rpaw'	=> $ibforums->input['rpaw'],
+)      );
+
+// wee save data
+$DB->query("UPDATE ibf_members SET $db_string WHERE id='".$this->member['id']."'");
+$print->redirect_screen( "Your RPG profile has been updated", 'act=UserCP&CODE=RPGProf' );
+
+
+}
+// Thats all folks!
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Find:
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		case 'do_rpg':
+			$this->do_rpg();
+			break;
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Underneath Place:
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+            case 'RpgStats':
+			$this->rpg_statistics();
+			break;
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+:: Upload Usercp.php ::
+Open skin/s*/skin_ucp.php (*=skin directory)
+Find:
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+function rpgprofile($member,$races,$elements,$summon,$options){
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Above Add:
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+function rpgstats($member){
+global $ibforums;
+return <<<EOF
+<div class="pformstrip" width="100%" align="center">Your Stats for {$member['rpgname']} [{$member['name']}]</div>
+<table cellspacing='1' cellpadding='4' width='100%'>
+<tr>
+	
+<tr>
+	<td class='pformleft'><b>HP</b></td>
+	<td class='pformright'><div style='width: 200; border: 1px solid black'><img src='html/Inferno/bars/bar_red.gif' width='{$member['hpd']}%' alt='{$member['hpd']}% Hit Points' height='13' style='border-right: 1px solid black'></div>{$member['hp']} / {$member['hpm']} [{$member['hpd']}% HP]</td>
+</tr>
+<tr>
+	<td class='pformleft'><b>MP</b></td>
+	<td class='pformright'><div style='width: 200; border: 1px solid black'><img src='html/Inferno/bars/bar_blue.gif' width='{$member['mpd']}%' alt='{$member['mpd']}% Magic Power'  height='13' style='border-right: 1px solid black'></div>{$member['mp']} / {$member['mpm']} [{$member['mpd']}% MP]</td>
+</tr>
+<tr>
+	<td class='pformleft'><b>Strength</b></td>
+	<td class='pformright'><div style='width: 200; border: 1px solid black'><img src='html/Inferno/bars/bar_purple.gif' width='{$member['strd']}%'  height='13' style='border-right: 1px solid black' alt='{$member['str']} Attack'></div>{$member['str']} Attack Power</td>
+</tr>
+<tr>
+	<td class='pformleft'><b>Defense</b></td>
+	<td class='pformright'><div style='width: 200; border: 1px solid black'><img src='html/Inferno/bars/bar_green.gif' width='{$member['defd']}%'  height='13' style='border-right: 1px solid black' alt='{$member['def']} Defense'></div>{$member['def']} Defensive Power</td>
+</tr>
+<tr>
+	<td class='pformleft'><b>Experience</b></td>
+	<td class='pformright'><div style='width: 200; border: 1px solid black'><img src='html/Inferno/bars/bar_yellow.gif' width='{$member['exp']}%'  height='13' style='border-right: 1px solid black' alt='{$member['exp']} Experience'></div>{$member['exp']}% Experience</td>
+</tr>
+<tr>
+	<td class='pformleft'><b>Level</b></td>
+	<td class='pformright'>{$member['level']}</td>
+</tr>
+<tr>
+	<td class='pformleft'><b>Battles Won</b></td>
+	<td class='pformright'>{$member['vics']}</td>
+</tr>
+<tr>
+	<td class='pformleft'><b>Battles Lost</b></td>
+	<td class='pformright'>{$member['loss']}</td>
+</tr>
+<tr>
+	<td class='pformleft'><b>Race</b></td>
+	<td class='pformright'>{$member['rpgrace']}</td>
+</tr>
+<tr>
+	<td class='pformleft'><b>Job</b></td>
+	<td class='pformright'>{$member['job']}</td>
+</tr>
+<tr>
+	<td class='pformleft'><b>Clan</b></td>
+	<td class='pformright'>{$member['clanner']}</td>
+</tr>
+<tr>
+	<td class='pformleft'><b>Money</b></td>
+	<td class='pformright'>{$member['money']}</td>
+</tr>
+<tr>
+	<td class='pformleft'><b>Alignment</b></td>
+	<td class='pformright'>{$member['align']}</td>
+</tr>
+<tr>
+	<td class='pformleft'><b>Element</b></td>
+	<td class='pformright'>{$member['rpgelement']}</td>
+</tr>
+<tr>
+	<td class='pformleft'><b>Gender</b></td>
+	<td class='pformright'>{$member['rpgsex']}</td>
+</tr>
+<tr>
+	<td class='pformleft'><b>Special Move</b></td>
+	<td class='pformright'>{$member['smove']}</td>
+</tr>
+</table>
+EOF;
+}
+Find:
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+       &middot; <a href='{$base_url}act=UserCP&amp;CODE=RPGProf'>Edit Your RPG Profile</a>
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Change To:
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+       &middot; <a href='{$base_url}act=UserCP&amp;CODE=RPGProf'>Edit Your RPG Profile</a><br />
+       &middot; <a href='{$base_url}act=UserCP&amp;CODE=RpgStats'>Your RPG User stats</a>
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Upload skin_ucp.php
+
+Step 3:
+
+Run this query: [ the text not dots ;) ]
+
+::::::::::::::::::::::::::::::::::
+:: delete from ibf_infernoequip ::
+::::::::::::::::::::::::::::::::::
+
+
+Thats it, enjoy! No bugs, and some minor features added :)
