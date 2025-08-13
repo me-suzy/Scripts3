@@ -1,0 +1,15 @@
+
+Hello %name%,
+
+Thanks for taking the time to see the opportunity 
+our service provides for smart people. Your login 
+and password are below for future referance.
+
+Username: %username%
+Password: %password%
+
+Thanks,
+
+Staff at YourSite.com
+
+
