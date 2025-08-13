@@ -1,0 +1,98 @@
+<?
+/*
+
+   Copyright (c), 1999, 2000 - phpauction.org
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation (version 2 or later).
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+*/
+?>
+
+<TABLE WIDTH="100%" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING="0" CELLSPACING="0">
+<TR>
+<TD>
+<!--   -- users profile  ---    -->
+
+<BR><CENTER><B><? print $tlt_font ?>MY Auctions</B><BR><BR></CENTER>
+<CENTER>
+        <table width="83%">
+          <tr> 
+            <td width="36%"> 
+              <?
+
+			$nick = $HTTP_COOKIE_VARS[$LOGGED_IN_NICK];			
+
+			$user = "select id from users where nick=\"$nick\"";
+			$result_user = mysql_query($user);
+			$TPL_user_id = mysql_result($result_user,0,"id");
+
+			             ?>
+              <? print $std_font; ?>
+            </td>
+            <td width="64%">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td width="36%"> 
+              <div align="right"><img src="images/quad.gif" border=0 hspace=6></div>
+            </td>
+            <td width="64%"><a href="active_bids.php?SESSION-ID=<? print urlencode($sessionIDU); ?>&user_id=<? print $TPL_user_id?>">Active 
+              Bids You Have Placed</a> </td>
+          </tr>
+          <tr> 
+            <td width="36%"> 
+              <div align="right"><img src="images/quad.gif" border=0 hspace=6></div>
+            </td>
+            <td width="64%"><a href="user_login.php?SESSION_ID=<? print urlencode($sessionID); ?>"> 
+              <? print $MSG_244 ?>
+              </a></td>
+          </tr>
+          <tr>
+            <td width="36%">
+              <div align="right"><img src="images/quad.gif" border=0 hspace=6></div>
+            </td>
+            <td width="64%"><a href="active_auctions.php?SESSION_ID=<? print urlencode($sessionIDU); ?>&user_id=<? print $TPL_user_id?>">
+              <? print $MSG_213 ?>
+              </a></td>
+          </tr>
+          <tr> 
+            <td width="36%">
+              <div align="right"><img src="images/quad.gif" border=0 hspace=6></div>
+            </td>
+            <td width="64%"> <A HREF="active_auctions.php?SESSION_ID=<? print urlencode($sessionIDU); ?>&user_id=<? print $TPL_user_id?>"> 
+              </A> <A HREF="closed_auctions.php?SESSION-ID=<? print urlencode($sessionIDU); ?>&user_id=<? print $TPL_user_id?>"> 
+              <? print $MSG_214 ?>
+              </A></td>
+          </tr>
+          <tr> 
+            <td width="36%"> 
+              <div align="right"><img src="images/quad.gif" border=0 hspace=6></div>
+            </td>
+            <td width="64%"><a href="./feedback.php?SESSION_ID=<? print urlencode($sessionIDU); ?>&id=<? print $TPL_user_id ?>&faction=show"> 
+              <? print $MSG_208 ?>
+              </a> </td>
+          </tr>
+        </table>
+        <br>
+        <br>
+        <A href="user_login.php?SESSION_ID=<? print urlencode($sessionID); ?>"> 
+        </A><br>
+        <A HREF="./feedback.php?SESSION_ID=<? print urlencode($sessionIDU); ?>&id=<? print $TPL_user_id ?>&faction=show"> 
+        </A> <BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</CENTER></TD>
+</TR>
+</TABLE>
