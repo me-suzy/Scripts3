@@ -1,0 +1,72 @@
+<html>
+<head>
+	<title>Banner Rotator MySQL</title>
+</head>
+
+<body bgcolor="white">
+<font face="arial">
+<a href="http://www.cgi-factory.com/customerservice/"><img src="cgi_logo_smaller.gif" width="310" height="180" alt="" border="0"></a><br><br>
+<h2>Installation for Banner Rotator MySQL</h2> 
+<br><br>
+<hr>
+<b>Requirements: </b><br>
+<br>
+Access to a MySQL database.<br>
+DBI module installed.<br>
+DBI:mysql module installed.<br><br>
+You should check the requirements with your server admin to make sure the scripts will work on your server.
+
+<br><br><br><br>
+<hr>
+<b>Important note for windows servers users: </b><br>
+<br>
+You need to open <br>
+ad.pl, ad-admin.pl, configur.pl, redirect.pl, setup.pl, and stats.pl, 
+then modify $fullpath to your full system path. In addition, make sure you are using "/" instead of "\" in your system path. Do not end the path with a slash. For example, your path should look somewhat like c:/inetpub/cgi-bin/sqlad. <br><br>
+Please visit our <a href="http://www.cgi-factory.com/support/faq.shtml">FAQ section</a> if you want more information about the system path.<br>
+<br><br><br><br>
+<hr>
+<b>For legal and copyright information, please refer to the header notice inside each script.</b>
+<hr>
+<b>1)</b> If the path to perl on your server is different from<br>
+#!/usr/local/bin/perl <br>
+then you will need to change it at the first line in ad.pl, ad-admin.pl, configur.pl, redirect.pl, setup.pl, and stats.pl.
+
+<br><br><br><br>
+
+<b>2)</b> Upload all files to your cgi-bin in ASCII (plain text) mode. To make your life easier, you should create a sub directory under your cgi-bin and then upload scripts into the sub directory. For example, /cgi-bin/sqlad/.<br><br>
+<br><br>
+Please visit our <a href="http://www.cgi-factory.com/support/faq.shtml">FAQ section</a> if you want to know how to upload a file in ASCII mode.
+<br><br><br><br>
+
+<b>3)</b> Chmod all files to permission "755." <br>
+<br>
+
+*However, if you get a permission denied message when you save the configurations or password, you will need to
+chmod banner_cfg.pl, errorlog.txt, and superuser.db to permission "777." <br>
+<br>
+Please visit our  <a href="http://www.cgi-factory.com/support/faq.shtml">FAQ section</a> if you want to know how to chmod a file.
+<br><br><br><br>
+
+<b>4)</b> Execute setup.pl with your browser (point the browser to http://www.your_site.com/cgi-bin/messageboard/setup.pl)
+<br><br>
+setup.pl should create the table for you. If the script fails to do so, you can create the table under your mysql command line or monitor by loading table.sql included in this zipped file. 
+<br><br><br><br>
+
+
+<b>5)</b> Set the superuser admin name and password, then reload the browser to configure.
+<br><br><br><br>
+
+
+<b>6)</b> Log in ad-admin.pl to add banners. 
+<br><br><br><br>
+
+<b>7)</b> Place a SSI tag on your pages to call ad.pl. ad.pl will display the banners in your database. Information on using SSI tags can be obtained from your server admin or our FAQ/Troubleshooting sections. The SSI tag may look somewhat like &lt;!--#exec cgi="/cgi-bin/sqlad/ad.pl"--&gt;. 
+<br><br><br><br>
+
+<hr>
+<center><font size="-1">&copy;1999-2001 CGI-Factory.com of SiliconSoup.com LLC</font></center>
+
+</font>
+</body>
+</html>
