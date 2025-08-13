@@ -1,0 +1,107 @@
+//=================================================================\\
+// Aardvark Topsites PHP 4.1.0                                     \\
+//-----------------------------------------------------------------\\
+// Copyright (C) 2003 Jeremy Scheff - http://www.aardvarkind.com/  \\
+//-----------------------------------------------------------------\\
+// This program is free software; you can redistribute it and/or   \\
+// modify it under the terms of the GNU General Public License     \\
+// as published by the Free Software Foundation; either version 2  \\
+// of the License, or (at your option) any later version.          \\
+//                                                                 \\
+// This program is distributed in the hope that it will be useful, \\
+// but WITHOUT ANY WARRANTY; without even the implied warranty of  \\
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the   \\
+// GNU General Public License for more details.                    \\
+//=================================================================\\
+
+WHAT'S NEW
+
+4.1.0 - 2003-07-29
+NOTES
+- License changed to the GPL.  See license.txt for more info.
+BUG FIXES
+- Gateway page is more reliable
+- Fixed "No Database Selected" error in the gateway page
+- _top.html templates are only used on the first page
+- After you select a new language, the change is immediate instead of taking an extra page
+FEATURES
+- Database abstraction
+  - Currently only supports MySQL
+- Up/down/neutral arrows
+- Old members are automatically deleted after a set number of days (default is 14)
+- Alternating colors in the rankings
+- Prettier (IMHO) default templates
+- Categories
+- New admin features:
+  - Reset stats to 0
+  - Reviews can be deleted
+
+
+
+4.0.2 - 2003-07-08
+BUG FIXES
+- Fixed typo in the admin (2003-07-09)
+- Now it's not required to use the _top templates for at least one site
+- The script won't accept invalid banner urls
+FEATURES
+- Option to rank by unique or total hits out
+- "Featured Member" can be added to template.html with <#featured>
+
+
+
+4.0.1 - 2003-06-30
+BUG FIXES
+- Ad Breaks setting in the admin now works correctly
+- Lost Password now works
+
+
+
+4.0 - 2003-06-27
+BUG FIXES
+- Images have been slightly optimized with pngcrush
+- The installer now won't accept a blank password
+
+
+
+4.0 RC 1 - 2003-06-24
+BUG FIXES
+- Cleaned up the templates some
+FEATURES
+- Option to use gzip to lower bandwidth
+- Alternative dark style sheet: if your browser supports it, you can switch
+  between two styles
+- Web-based installer
+- Upgrade script from version 3.2.3
+- All passwords are encrypted with MD5
+- Link on the main page of the admin if there are sites waiting to be approved
+- Manual
+- ssi.php can list the newest members
+
+
+
+4.0 Beta 2 - 2003-06-14
+BUG FIXES
+- Several small bug fixes
+FEATURES
+- Option to email admin when a new site joins
+- Max width and max height of member's banners
+- Default active/inactive setting
+- Fully functional admin area
+- ssi.php to include the top x sites in a page
+
+
+
+4.0 Beta 1.1 - 2003-06-07
+BUG FIXES
+- Many, many bug fixes
+- Don't allow refreshes after join
+FEATURES
+- Ad breaks
+- Active/inactive boolean
+- Option to refresh monthly instead of daily
+- New ratings images
+
+
+
+4.0 Beta 1 - 2003-06-02
+- Completely new everything
