@@ -1,0 +1,100 @@
+/* bg color */
+.colored
+{
+	background : #496088
+}
+
+.form
+{
+	font-family: verdana;
+	font-size: 12px;
+}
+
+select.form
+{
+	background: #ffffff;
+}
+
+textarea.form
+{
+	font-family: verdana;
+	font-size: 10px;
+	background: #FFFFFF;
+}
+
+input.form
+{
+	background: #ffffff;
+}
+
+.main
+{
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	right: 8px;
+	background-color: #D4D0C8;
+	border-width: 1px;
+	border-style: outset;
+	border-top-color: #ffffff;
+	border-left-color: #ffffff;
+    color: #000000;
+	width: 98%;
+	padding: 0px;
+
+}
+
+.field-titles
+{
+   font-size: 10pt;
+   font-family: verdana,arial;
+   font-weight: bold;
+   color: #121465;
+}
+
+.regular-text
+{
+   font-size: 8pt;
+   font-family: verdana,arial;
+   color: #000000;
+}
+.subtitle-text-groups
+{
+   font-size: 8pt;
+   font-family: verdana,arial;
+   color: #000000;
+   font-weight: bold;
+}
+.notation
+{
+   font-size: 7pt;
+   color: #000000;
+   
+}
+
+/* view, add text that shows up on contact manager, opportunity & settings managers */
+.mode
+{
+	position: relative;
+	top: 5px;
+	left: 5px;
+	font-weight: 800;
+	font-family: verdana,arial;
+	font-size: 20pt;
+	color: gray;
+}
+
+/* stratabase copyright text */
+.copyright
+{
+	z-index: -1;
+	position: absolute;
+	bottom: 0px;
+	right: 30px;	
+	font-size: 6pt;
+	color: #ffffff;
+	font-weight: bold;
+	font-family: verdana,arial;
+	vertical-align: bottom;
+  
+}
