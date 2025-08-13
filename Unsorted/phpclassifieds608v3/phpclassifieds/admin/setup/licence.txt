@@ -1,0 +1,22 @@
+PHP Classifieds is a commercial program made by Haugsdal Webtjenester (Hereby referenced as DeltaScripts, our websitename). 
+
+In order to use this program commercially, you will need to buy a licence that grants you the right to use the program at 1 (one) website under one domain. 
+
+DeltaScripts do allow use of this program at NON-profit websites by NOT-commercial companies, at the condition that the link at the buttom
+of all the programs pages remain intact, and that all licence rules are followed.
+
+If you recieve any income from the use of this program (either directly/indirectly) that goes to NON-cherity, or to cover your own expences,
+you will need to pay the commercial licence from DeltaScripts.
+
+I (Are Haugsdal support@deltascripts.com), or my company (Haugsdal Webtjenester/DeltaScripts), or any other person related 
+in/to this program accepts NO liability or claims whatsoever. Some few examples of these liabilities/claims: Damages in any way to people, 
+property, machines, reputition, working hours, repair work or any other costs releated to this program in any matter.
+
+ALL USE OF THIS PROGRAM IS ON YOUR OWN RISK AND COSTS. This program is not programmed to be 100% secure, and therefore can not be used in life critical environments, or heavy critical e-commerce (mission-critical) 
+environments. Anyway, Haugsdal Webtjenester/Are Haugsdal accept no liabilities.
+
+Any claim(s), or disputes shall be governed by the laws and courts in Norway, at the claim(ers) expences.
+
+You may not reproduce and/or (re)sell the hole program, or any part of our code without the written aknowledge from the author of this program, 
+Are Haugsdal. All code is copyright(c) 2001 Haugsdal Webtjenester/DeltaScripts. </textarea><br>
+To pay by Visa, Mastercard or Check, visit <a href="http://www.deltascripts.com/phpclassifieds/"> our website</a> to pay the licence</a>
