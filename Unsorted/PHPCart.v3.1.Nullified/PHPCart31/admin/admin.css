@@ -1,0 +1,80 @@
+<style type="text/css">
+<!--
+body
+{
+	background: #E1E1E2;
+	color: #000000;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	margin: 5px 5px 10px 5px;
+}
+body a:link
+{
+	color: #CCCCCC;
+}
+body a:visited
+{
+	color: #CCCCCC;
+}
+body a:hover, body a:active
+{
+	color: #C0C0C0;
+}
+.page
+{
+	background: #FFFFFF;
+	color: #000000;
+}
+td, th, p, li
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tborder
+{
+	background: #D1D1E1;
+	color: #000000;
+	border: 1px solid #0B198C;
+}
+
+
+.tfoot
+{
+	background: #3E5C92;
+	color: #E0E0F6;
+}
+.tfoot a:link
+{
+	color: #CCCCCC;
+}
+.tfoot a:visited
+{
+	color: #CCCCCC;
+}
+.tfoot a:hover, .tfoot a:active
+{
+	color: #C0C0C0;
+}
+
+textarea, .bginput
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.button
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+select
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.smallfont
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.date
+{
+	color: #FFFFFF;
+}
+
+
+-->
+</style>
