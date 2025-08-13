@@ -1,0 +1,4 @@
+1. Upload files.
+2. Chmod 777 the admin dir in order to create the database/settings file. chmod 777 admin (in linux)
+3. Go to admin/install.php, follow instruction on scren.
+4. chmod 777 the config_inc.php file before trying to save settings.
