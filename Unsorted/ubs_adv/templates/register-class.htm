@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>$myboardname - User Class Registration</title></head>
+<body background="images/bg.jpg" id="bg">
+$header
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="images/bg2.jpg">
+  <tr>
+    <td> 
+	<form action="register-class.php" method="POST">
+        <div align="center"><BR>$ifgotaclass 
+          <table cellpadding=1 cellspacing=2 border=0 width="90%" bgcolor="#000000">
+            <tr> 
+              <td colspan=2 background="images/cellpic.gif" height="38"> <font size=2><b><font color="#FFFFFF">Choose 
+                your character class: current class--&gt; $userclass</font></b></font></td>
+            </tr>
+            <tr> 
+              <td width="50%" background="images/cat1.jpg"><font face="{font}" size=2><b>Character 
+                class:</b></font></td>
+              <td width="50%" background="images/cat1.jpg"> <font color="white"> 
+                <select name="userclass2">
+                  <option value="" $userclass2[1]>Reset all stats</option>
+                  <option value="fighter" $userclass2[2]>Fighter</option>
+                  <option value="paladin" $userclass2[3]>Paladin</option>
+                  <option value="mage" $userclass2[4]>Mage</option>
+                  <option value="archer" $userclass2[5]>Archer</option>
+                  <option value="amazon" $userclass2[6]>Amazon</option>
+                  <option value="necromancer" $userclass2[7]>Necromancer</option>
+                  <option value="druid" $userclass2[8]>Druid</option>
+                </select>
+                </font></td>
+            </tr>
+          </table>
+        <br>
+      </div>
+      <div align="center"> 
+        $session_post 
+        <input class="input" type="SUBMIT" name="Submit" value="Send">
+        <input class="input" type="RESET" name="Reset" value="Reset">
+        <input type="hidden" name="send" value="send">
+      </div>
+      $footer
+	  </form></td>
+  </tr>
+</table>
+</body>
+</html>	
