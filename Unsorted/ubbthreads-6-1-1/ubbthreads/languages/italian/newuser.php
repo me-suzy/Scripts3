@@ -1,0 +1,31 @@
+<?
+$ubbt_lang['BOARD_RULES'] = "Board Rules";
+$ubbt_lang['I_AGREE'] = "I Agree";
+$ubbt_lang['DOB_EXIST'] = "You entered your birth date as ";
+$ubbt_lang['NEW_USER2']  = 	"Inserisci le seguenti informazioni per registrare un Nome Utente.  Le password iniziali sono generate a caso, così inserisci un valido indirizzo email che è richiesto in modo che ti sia inviata via email.";
+$ubbt_lang['USER_IN']  = 	"Nome Utente (tra 3 e 16 caratteri)";
+$ubbt_lang['OPT_PASS']  = 	"Optional:  Create a password between 4 and 20 characters with alphanumeric characters only.";
+$ubbt_lang['VER_PASS']  = 	"Verifica Password";
+$ubbt_lang['SIMP_EMAIL']  = 	"Indirizzo Email";
+$ubbt_lang['DOB'] = "Please provide your date of birth";
+$ubbt_lang['JAN'] = "January";
+$ubbt_lang['FEB'] = "February";
+$ubbt_lang['MAR'] = "March";
+$ubbt_lang['APR'] = "April";
+$ubbt_lang['MAY'] = "May";
+$ubbt_lang['JUN'] = "June";
+$ubbt_lang['JUL'] = "July";
+$ubbt_lang['AUG'] = "August";
+$ubbt_lang['SEP'] = "September";
+$ubbt_lang['OCT'] = "October";
+$ubbt_lang['NOV'] = "November";
+$ubbt_lang['DEC'] = "December";
+$ubbt_lang['SUB_DATE'] = "Submit Birth Date";
+$ubbt_lang['PRIV_INFO'] = "Private Information";
+$ubbt_lang['PRIV_INFO_DETAIL'] = "The U.S. Federal Trade Commission's Children's Online Privacy Protection Act of 1998 (COPPA) is intended to protect the privacy of children using the Internet. As of April 21, 2000, many Web sites are required to obtain parental consent before collecting, using, or disclosing personal information from children under 13.<p><a href=\"http://www.ftc.gov/opa/1999/9910/childfinal.htm\">COPPA News Release</a> | <a href=\"http://www.ftc.gov/os/1999/9910/64fr59888.pdf\">Full Text of Federal Register Notice [PDF 270K]</a>";
+$ubbt_lang['PERM_FORM'] = "Permission Form";
+$ubbt_lang['PERM_FORM_DETAIL'] = "A parent or guardian must mail or fax a signed permission form to the administrators of this forum before a user under age 13 can complete the registration.<p><a href=\"{$config['phpurl']}/coppaform.php\">Permission Form</a>";
+$ubbt_lang['CONT_INFO'] = "Contact Information";
+$ubbt_lang['CONT_INFO_DETAIL'] = "Questions? Email ";
+$ubbt_lang['AGE_VER'] = "Registration - Age Verification";
+?>
