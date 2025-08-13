@@ -1,0 +1,30 @@
+<?
+$ubbt_lang['FILE_TOO_BIG']="Files can be no larger than {$config['filesize']}";
+$ubbt_lang['READ_PERM']  = 	"You have read only privileges for this forum";
+$ubbt_lang['POST_ICON']  =     "Ikon til indlægget";
+$ubbt_lang['SPELL_CHECK']  = 	"Stavekontrol";
+$ubbt_lang['SPELL_BODY']  = 	"Nedenfor står den stavekontrollerede tekst. Mulige fejl er <u>understreget</u>, og ordene i klammer er forslag til, hvad der måske burde stå. Brug browserens tilbage-knap, hvis du ønsker at rette i teksten.";
+$ubbt_lang['NAME_TAKEN']  = 	"The username you are trying to post under has already registered and is being used by someone else.";
+$ubbt_lang['BAD_UNAME']  = 	"Det er ikke tilladt at bruge HTML-tegn i brugernavnet eller at indsætte mellemrum før eller efter brugernavnet.";
+$ubbt_lang['LONG_NAME']  = 	"Brugernavnet er ikke langt nok.";
+$ubbt_lang['LOCKED']  = 	"Denne tråd er låst, og du har desværre ikke tilladelse til at sende indlæg til den.";
+$ubbt_lang['TWO_POLLS']  = 	"You may only have 1 poll in a post.";
+$ubbt_lang['PREV_POST']  = 	"Gennemse indlægget";
+$ubbt_lang['SUB_VOTE']  = 	"Submit vote";
+$ubbt_lang['POST_BODY']  = 	"Her kan du gennemse indlægget. Hvis alt er som ønsket, så klik på 'Fortsæt', så bliver indlægget sendt. Ønsker du at ændre noget, så kan du bruge browserens 'Tilbage'-knap og gå tilbage og skrive det om.";
+$ubbt_lang['YES_FILE2']  = 	"Der er mulighed for at vedhæfte en fil. Filstørrelsen er begrænset til  {$config['filesize']} bytes";
+$ubbt_lang['NO_FILE2']  = 	"For at vedhæfte en fil er det nødvendigt at have en Mozilla 4+-kompatibel browser.";
+$ubbt_lang['EDIT_MORE']  = 	"Edit some more";
+$ubbt_lang['POST_TEXT']  = 	"Indlæg";
+$ubbt_lang['DO_EMAIL']  = 	"Send alle svar til min e-postadresse";
+$ubbt_lang['DO_PREVIEW']  = 	"I want to preview my post";
+$ubbt_lang['CAN_ATTACH']  = 	"and/or attach a file";
+$ubbt_lang['NO_DUPS']  = 	"Dette indlæg er allerede blevet indført i databasen een gang.";
+$ubbt_lang['UNREGED_USER']  = 	"Unregistered";
+$ubbt_lang['REPLY_SUB']  = 	"Der er kommet svar på dit indlæg";
+$ubbt_lang['REPLY_BOD']  = 	"replied to your post at the site: .";
+$ubbt_lang['POST_ENTERED']  = 	"Indlægget er sendt.";
+$ubbt_lang['MOD_CONFIRM']  = 	"Indlægget er sendt. Dette forum er fuldt modereret, så indlægget vil ikke kunne ses før en administrator eller en moderator godkender det. Siden skifter tilbage til forumet om et øjeblik.";
+$ubbt_lang['FORUM_RETURN']  = 	"Tilbage til forumet";
+$ubbt_lang['VIEW_POST']  = 	"Gennemse indlægget";
+?>
