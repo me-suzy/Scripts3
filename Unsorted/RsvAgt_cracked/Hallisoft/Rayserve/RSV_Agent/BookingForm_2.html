@@ -1,0 +1,279 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<TITLE>Rayserve Room Reservation Software - Booking Form</TITLE>
+	<LINK REL="stylesheet" HREF="Style/RSV_2.css" TYPE="text/css">
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	<META NAME="Description" CONTENT="Rayserve Hotel Reservation Software">
+	<META NAME="Keywords" CONTENT="hotel, reservation, holiday, travel, book room, tariffs, internet, software, program, downlaod, demo">
+	<SCRIPT LANGUAGE="Javascript" TYPE="text/Javascript">if(!parent.frames['MainFrame']){parent.location.href='Demo_1.html';}</SCRIPT>
+	<SCRIPT LANGUAGE="Javascript" TYPE="text/Javascript" SRC="Data/RSVData_2.js"></SCRIPT>
+</HEAD>
+<BODY onLoad="parent.populate('Book');">
+<H1 ALIGN="center">City Hotel - Booking Form</H1>
+Enter your requirements into the form below. Press the &quot;Calculate&quot; button to show the total cost for your stay. Press &quot;Book this Room&quot; to submit this booking, &quot;Add to List&quot; to add the booking to your booking list, or &quot;Confirm All&quot; to submit your booking list to our reservation server.
+<P></P>
+<UL TYPE="square">
+<LI>The total cost of your stay will include any meals and extras that you specify on the booking form. </LI>
+<LI>All prices include value Added Tax (VAT).</LI>
+<LI>Meal prices are charged per person per day.</LI>
+</UL>
+
+<FORM NAME="BookingForm" ID="BookingForm">
+<DIV ALIGN="center">
+<TABLE BORDER="0" CELLSPACING="2" CELLPADDING="2">
+<TR>
+<TH CLASS="header" COLSPAN="2">Booking Form</TH>
+</TR><TR>
+<TD CLASS="detail" ALIGN="right">Room Type:&nbsp;</TD>
+<TD CLASS="detail">
+<SELECT NAME="RoomType">
+	<OPTION VALUE="SINGLE">Single</OPTION>
+	<OPTION VALUE="TWIN">Twin</OPTION>
+	<OPTION VALUE="DOUBLE">Double</OPTION>
+</SELECT>
+</TD>
+</TR><TR>
+<TD CLASS="detail" ALIGN="right">Meals Included:&nbsp;</TD>
+<TD CLASS="detail">
+<SELECT NAME="Meals">
+	<OPTION VALUE="0.00,0.00,P">None</OPTION>
+	<OPTION VALUE="5.50,4.00,P">Breakfast</OPTION>
+	<OPTION VALUE="25.00,20.00,P">Breakfast, Dinner</OPTION>
+	<OPTION VALUE="37.50,30.00,P">Breakfast, Lunch, Dinner</OPTION>
+</SELECT>
+</TD>
+</TR><TR>
+<TD CLASS="detail" ALIGN="right">No. Rooms:&nbsp;</TD>
+<TD CLASS="detail">
+<SELECT NAME="Rooms">
+	<OPTION VALUE="0">0</OPTION>
+	<OPTION VALUE="1">1</OPTION>
+	<OPTION VALUE="2">2</OPTION>
+	<OPTION VALUE="3">3</OPTION>
+	<OPTION VALUE="4">4</OPTION>
+	<OPTION VALUE="5">5</OPTION>
+	<OPTION VALUE="6">6</OPTION>
+	<OPTION VALUE="7">7</OPTION>
+	<OPTION VALUE="8">8</OPTION>
+	<OPTION VALUE="9">9</OPTION>
+	<OPTION VALUE="10">10</OPTION>
+	<OPTION VALUE="11">11</OPTION>
+	<OPTION VALUE="12">12</OPTION>
+	<OPTION VALUE="13">13</OPTION>
+	<OPTION VALUE="14">14</OPTION>
+	<OPTION VALUE="15">15</OPTION>
+</SELECT>
+</TD>
+</TR><TR>
+<TD CLASS="detail" ALIGN="right">No. Adults:&nbsp;</TD>
+<TD CLASS="detail">
+<SELECT NAME="Adult">
+	<OPTION VALUE="0">0</OPTION>
+	<OPTION VALUE="1">1</OPTION>
+	<OPTION VALUE="2">2</OPTION>
+	<OPTION VALUE="3">3</OPTION>
+	<OPTION VALUE="4">4</OPTION>
+	<OPTION VALUE="5">5</OPTION>
+	<OPTION VALUE="6">6</OPTION>
+	<OPTION VALUE="7">7</OPTION>
+	<OPTION VALUE="8">8</OPTION>
+	<OPTION VALUE="9">9</OPTION>
+	<OPTION VALUE="10">10</OPTION>
+	<OPTION VALUE="11">11</OPTION>
+	<OPTION VALUE="12">12</OPTION>
+	<OPTION VALUE="13">13</OPTION>
+	<OPTION VALUE="14">14</OPTION>
+	<OPTION VALUE="15">15</OPTION>
+	<OPTION VALUE="16">16</OPTION>
+	<OPTION VALUE="17">17</OPTION>
+	<OPTION VALUE="18">18</OPTION>
+	<OPTION VALUE="19">19</OPTION>
+	<OPTION VALUE="20">20</OPTION>
+</SELECT>
+</TD>
+</TR><TR>
+<TD CLASS="detail" ALIGN="right">No. Children Under 12:&nbsp;</TD>
+<TD CLASS="detail">
+<SELECT NAME="Child">
+	<OPTION VALUE="0">0</OPTION>
+	<OPTION VALUE="1">1</OPTION>
+	<OPTION VALUE="2">2</OPTION>
+	<OPTION VALUE="3">3</OPTION>
+	<OPTION VALUE="4">4</OPTION>
+	<OPTION VALUE="5">5</OPTION>
+	<OPTION VALUE="6">6</OPTION>
+	<OPTION VALUE="7">7</OPTION>
+	<OPTION VALUE="8">8</OPTION>
+	<OPTION VALUE="9">9</OPTION>
+	<OPTION VALUE="10">10</OPTION>
+	<OPTION VALUE="11">11</OPTION>
+	<OPTION VALUE="12">12</OPTION>
+	<OPTION VALUE="13">13</OPTION>
+	<OPTION VALUE="14">14</OPTION>
+	<OPTION VALUE="15">15</OPTION>
+	<OPTION VALUE="16">16</OPTION>
+	<OPTION VALUE="17">17</OPTION>
+	<OPTION VALUE="18">18</OPTION>
+	<OPTION VALUE="19">19</OPTION>
+	<OPTION VALUE="20">20</OPTION>
+</SELECT>
+</TD>
+</TR><TR>
+<TD CLASS="detail" ALIGN="right">Arrival Date:&nbsp;</TD>
+<TD CLASS="detail">
+<SELECT NAME="ArrDay">
+	<OPTION VALUE="1">1</OPTION>
+	<OPTION VALUE="2">2</OPTION>
+	<OPTION VALUE="3">3</OPTION>
+	<OPTION VALUE="4">4</OPTION>
+	<OPTION VALUE="5">5</OPTION>
+	<OPTION VALUE="6">6</OPTION>
+	<OPTION VALUE="7">7</OPTION>
+	<OPTION VALUE="8">8</OPTION>
+	<OPTION VALUE="9">9</OPTION>
+	<OPTION VALUE="10">10</OPTION>
+	<OPTION VALUE="11">11</OPTION>
+	<OPTION VALUE="12">12</OPTION>
+	<OPTION VALUE="13">13</OPTION>
+	<OPTION VALUE="14">14</OPTION>
+	<OPTION VALUE="15">15</OPTION>
+	<OPTION VALUE="16">16</OPTION>
+	<OPTION VALUE="17">17</OPTION>
+	<OPTION VALUE="18">18</OPTION>
+	<OPTION VALUE="19">19</OPTION>
+	<OPTION VALUE="20">20</OPTION>
+	<OPTION VALUE="21">21</OPTION>
+	<OPTION VALUE="22">22</OPTION>
+	<OPTION VALUE="23">23</OPTION>
+	<OPTION VALUE="24">24</OPTION>
+	<OPTION VALUE="25">25</OPTION>
+	<OPTION VALUE="26">26</OPTION>
+	<OPTION VALUE="27">27</OPTION>
+	<OPTION VALUE="28">28</OPTION>
+	<OPTION VALUE="29">29</OPTION>
+	<OPTION VALUE="30">30</OPTION>
+	<OPTION VALUE="31">31</OPTION>
+</SELECT>
+&nbsp;
+<SELECT NAME="ArrMonth">
+	<OPTION VALUE="1">January</OPTION>
+	<OPTION VALUE="2">February</OPTION>
+	<OPTION VALUE="3">March</OPTION>
+	<OPTION VALUE="4">April</OPTION>
+	<OPTION VALUE="5">May</OPTION>
+	<OPTION VALUE="6">June</OPTION>
+	<OPTION VALUE="7">July</OPTION>
+	<OPTION VALUE="8">August</OPTION>
+	<OPTION VALUE="9">September</OPTION>
+	<OPTION VALUE="10">October</OPTION>
+	<OPTION VALUE="11">November</OPTION>
+	<OPTION VALUE="12">December</OPTION>
+</SELECT>
+&nbsp;
+<SELECT NAME="ArrYear">
+	<OPTION VALUE="2001">2001</OPTION>
+	<OPTION VALUE="2002">2002</OPTION>
+</SELECT>
+</TD>
+</TR><TR>
+<TD CLASS="detail" ALIGN="right">Departure Date:&nbsp;</TD>
+<TD CLASS="detail">
+<SELECT NAME="DepDay">
+	<OPTION VALUE="1">1</OPTION>
+	<OPTION VALUE="2">2</OPTION>
+	<OPTION VALUE="3">3</OPTION>
+	<OPTION VALUE="4">4</OPTION>
+	<OPTION VALUE="5">5</OPTION>
+	<OPTION VALUE="6">6</OPTION>
+	<OPTION VALUE="7">7</OPTION>
+	<OPTION VALUE="8">8</OPTION>
+	<OPTION VALUE="9">9</OPTION>
+	<OPTION VALUE="10">10</OPTION>
+	<OPTION VALUE="11">11</OPTION>
+	<OPTION VALUE="12">12</OPTION>
+	<OPTION VALUE="13">13</OPTION>
+	<OPTION VALUE="14">14</OPTION>
+	<OPTION VALUE="15">15</OPTION>
+	<OPTION VALUE="16">16</OPTION>
+	<OPTION VALUE="17">17</OPTION>
+	<OPTION VALUE="18">18</OPTION>
+	<OPTION VALUE="19">19</OPTION>
+	<OPTION VALUE="20">20</OPTION>
+	<OPTION VALUE="21">21</OPTION>
+	<OPTION VALUE="22">22</OPTION>
+	<OPTION VALUE="23">23</OPTION>
+	<OPTION VALUE="24">24</OPTION>
+	<OPTION VALUE="25">25</OPTION>
+	<OPTION VALUE="26">26</OPTION>
+	<OPTION VALUE="27">27</OPTION>
+	<OPTION VALUE="28">28</OPTION>
+	<OPTION VALUE="29">29</OPTION>
+	<OPTION VALUE="30">30</OPTION>
+	<OPTION VALUE="31">31</OPTION>
+</SELECT>
+&nbsp;
+<SELECT NAME="DepMonth">
+	<OPTION VALUE="1">January</OPTION>
+	<OPTION VALUE="2">February</OPTION>
+	<OPTION VALUE="3">March</OPTION>
+	<OPTION VALUE="4">April</OPTION>
+	<OPTION VALUE="5">May</OPTION>
+	<OPTION VALUE="6">June</OPTION>
+	<OPTION VALUE="7">July</OPTION>
+	<OPTION VALUE="8">August</OPTION>
+	<OPTION VALUE="9">September</OPTION>
+	<OPTION VALUE="10">October</OPTION>
+	<OPTION VALUE="11">November</OPTION>
+	<OPTION VALUE="12">December</OPTION>
+</SELECT>
+&nbsp;
+<SELECT NAME="DepYear">
+	<OPTION VALUE="2001">2001</OPTION>
+	<OPTION VALUE="2002">2002</OPTION>
+</SELECT>
+</TD>
+</TR><TR>
+<TD CLASS="detail" ALIGN="right">Long Stay Discount:&nbsp;</TD>
+<TD CLASS="detail"><INPUT TYPE="text" NAME="LSDiscount" VALUE="$0.00" SIZE="12"></TD>
+</TR><TR>
+<TD CLASS="detail" ALIGN="right">Total Cost of Your Stay:&nbsp;</TD>
+<TD CLASS="detail"><INPUT TYPE="text" NAME="TotalCost" VALUE="$0.00" SIZE="12"></TD>
+</TR>
+</TABLE>
+<BR>
+</DIV><DIV CLASS="nsbugfix" ALIGN="center">
+<INPUT TYPE="button" NAME="CalcBtn" VALUE="Calculate" onClick="parent.calcRate(this.form);">&nbsp;&nbsp;
+<INPUT TYPE="button" NAME="BookBtn" VALUE="Book this Room!" onClick="parent.bookNow(this.form,'NoRooms_2.html','Checkout.html','ChangeForm_2.html','RSVData_2.js');">&nbsp;&nbsp;
+<INPUT TYPE="button" NAME="AddBtn" VALUE="Add to List" onClick="parent.addBooking(this.form,'NoRooms_2.html','ChangeForm_2.html','RSVData_2.js');">&nbsp;&nbsp;
+<INPUT TYPE="button" NAME="DoneBtn" VALUE="Confirm All" onClick="parent.confBooking('Checkout.html');">&nbsp;&nbsp;
+<INPUT TYPE="button" NAME="HelpBtn" VALUE="Help!" onClick="parent.helpMe('BookForm');">
+</DIV>
+</FORM>
+
+<P></P>
+<DIV class="popwarn">Terms &amp; Conditions:</DIV>
+<DIV class="popup">
+<UL TYPE="square">
+<LI>Reservations cannot be accepted unless supported by a valid credit card. You will be transferred to our secure server before being asked to enter your card number.</LI>
+<LI>Reservations cancelled more than 2 working days (i.e. not including Saturday / Sunday) prior to the arrival date. A $10 administration fee per room charged.</LI>
+<LI>Reservations cancelled within 2 days of arrival (excluding Saturday / Sunday). One night's accommodation plus $10 administration fee per room charged.</LI>
+</UL>
+</DIV>
+
+<P></P>
+<DIV ALIGN="center">
+<HR WIDTH="70%">
+<A HREF="Tariff_2.html" TARGET="MainFrame">Tariffs</A><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="Availability_2.html" TARGET="MainFrame">Availability</A><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<SPAN CLASS="hlite">Booking Form</SPAN><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="BookingList.html" TARGET="MainFrame">Booking List</A><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="Checkout.html" TARGET="MainFrame">Confirm Bookings</A><BR>
+<A HREF="Email.html" TARGET="MainFrame">Email Us</A><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="javascript:parent.newWin('Currency.html','Currency_Display',370,270,1)">Change Currency</A><IMG SRC="Images/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="javascript:parent.newWin('Convert.html','Currency_Convertion',370,340,1)">Currency Conversion</A>
+<HR WIDTH="70%">
+</DIV>
+<DIV CLASS="authinfo" ALIGN="center">Powered by Rayserve</DIV>
+</BODY>
+</HTML>
