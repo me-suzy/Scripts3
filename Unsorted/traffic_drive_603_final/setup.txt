@@ -1,0 +1,25 @@
+System requirements:
+
+Apache HTTP Server 1.3 and later
+PHP 4.1.0 and later with installed Zend Optimizer (free).
+
+Setup order:
+
+1. Upload files setup.php, index.php, o.php, w.php, p.php, top.txt, 1.html
+   in BINARY mode to server in directory where your pages will be stored
+   (for example http://mysite.com/).
+2. Change permissions of top.txt and p.php to 777.
+3. Create a directory where data of the script and administrator's interface will be stored
+   (for example http://mysile.com/td/).
+4. Change permission of directory of the script to 777.
+5. Run setup.php (for example http://mysile.com/setup.php).
+   Specify directory of the script and personal settings.
+6. Delete setup.php from server!
+7. Copy files from install directory "td" to directory of the script on server
+   in BINARY mode.
+8. Run the administrator's interface a.php, stored in directory of the script 
+   (for example http://mysile.com/td/a.php).
+   Click "Password"  link and specify username and password for access to the
+   administrator's interface.
+
+Done!
