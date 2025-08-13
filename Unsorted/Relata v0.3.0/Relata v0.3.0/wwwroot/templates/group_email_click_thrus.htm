@@ -1,0 +1,53 @@
+ <!--DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+ "http://www.w3.org/TR/html4/strict.dtd"-->
+<html>
+<head>
+<title>
+</title>
+
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="{WWW_DIR}templates/global.css">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="{WWW_DIR}templates/group-email.css">
+
+</head>
+<body class="colored">
+
+<div class="groupemail">
+<form method="post" action="{FORM_URL}">
+
+<table align="center">
+ <tr>   
+	 <td colspan="3"><br>
+   		<div align="center">
+   		
+		<table cellspacing="2" cellpadding="0" border="0">
+    	 <tr bgcolor="#496088">
+     		<th>
+				<font color="white" face="Verdana, Arial" size="-1">&nbsp;Message No.&nbsp;</font>
+			</th>
+     		<th>
+				<font color="white" face="Verdana, Arial" size="-1">&nbsp;Description&nbsp;</font>
+			</th>
+     		<th>
+				<font color="white" face="Verdana, Arial" size="-1">&nbsp;Date Sent&nbsp;</font>
+			</th>		 
+     		<th>
+				<font color="white" face="Verdana, Arial" size="-1">&nbsp;Number of Click Throughs&nbsp;</font>
+			</th>		 
+     	 </tr>
+		{CLICK_THRU_ROWS}
+		</table>
+   
+   <center>
+   <br>
+   <input type="submit" value="refresh" class="form" style="background: #D4D0C8;">	   	   
+	</center>					   	   		
+   </div>	
+     
+ 	</td>	 	 
+ </tr>	  
+</table>
+</form>
+</div>
+
+</body>
+</html>
