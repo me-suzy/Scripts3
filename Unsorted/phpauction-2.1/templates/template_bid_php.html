@@ -1,0 +1,235 @@
+<?
+/*
+   Copyright (c), 1999, 2000 - phpauction.org
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation (version 2 or later).
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+*/
+
+?>
+
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--
+
+function SubmitBidForm()
+
+{
+
+	document.bid.submit();
+
+};
+
+//-->
+
+</SCRIPT>
+
+<TABLE WIDTH="100%" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING="0" CELLSPACING="0">
+
+<TR>
+
+<TD>
+
+<CENTER>
+
+<? print $std_font; ?>
+
+<A HREF="item.php?"><? print $MSG_138; ?></A> |
+
+<A HREF="bidhistory.php?"><? echo $MSG_105; ?></A> |
+
+<A HREF="email_request.php?"><? print $MSG_107; ?></A>
+
+
+
+</CENTER>
+
+<BR><BR>
+
+<BR><CENTER><B><? print "$tlt_font $MSG_152"; ?></B></CENTER>
+
+<BR>
+
+<center><? echo $err_font.$TPL_errmsg;?></center>
+
+<BR>
+
+<FORM name="bid" action="bid.php" method="POST">
+
+<TABLE cellspacing="0" cellpadding="0" border="0">
+
+<TR>
+
+	<TD WIDTH="15%"></TD>
+
+	<TD WIDTH="70%">
+
+	    		<? print $std_font.$MSG_273; ?>
+
+				<BR><BR>
+
+				<IMG SRC="images/linea.gif" WIDTH="100%" HEIGHT="6"><BR>
+
+				<B><? print $MSG_154; ?> </B>
+
+				<IMG SRC="images/linea.gif" WIDTH="100%" HEIGHT="6"><BR>
+
+				<B><? print $MSG_155; ?></B><BR><? echo stripslashes($TPL_title); ?><BR><BR>
+
+				<B><? print $MSG_156; ?></B><BR>
+
+
+
+
+
+			<TABLE WIDTH="100%" BORDER=0>
+
+			<TR ALIGN=LEFT><TD>
+
+				<!-- <? echo "$currency".number_format($bid,0,",","."); ?> -->
+
+					<TABLE WIDTH="0%" ALIGN=LEFT BORDER=0>
+
+						<TR VALIGN=MIDDLE>
+
+							<TD ALIGN=RIGHT><? print $std_font; ?><? echo $currency; ?></TD>
+
+							<TD ALIGN=LEFT>
+
+								<INPUT TYPE=TEXT SIZE=5 NAME="bid" VALUE="<? print $bidH; ?>">
+
+								<? print $std_font; ?>(<? print $MSG_283; ?>: 	<? print $TPL_next_bid; ?>)
+
+							</TD>
+
+						</TR>
+
+						<SCRIPT LANGUAGE="PHP"> if ($atype==2): </SCRIPT>
+
+							<TR>
+
+								<TD ALIGN=RIGHT><? print $std_font.$MSG_284; ?>:</TD>
+
+								<TD ALIGN=LEFT><INPUT TYPE=TEXT SIZE=3 NAME="qty" VALUE="<? print $qtyH; ?>"></TD>
+
+							</TR>
+
+						<SCRIPT LANGUAGE="PHP"> endif; </SCRIPT>
+
+					</TABLE>
+
+			</TD></TR>
+
+
+
+			<TR ALIGN=LEFT><TD>
+
+				<TABLE WIDTH="100%" BORDER="0" CELLPADDING="2" CELLSPACING="0">
+
+					<TR>
+
+						<TD WIDTH="30%" ALIGN="right" VALIGN="bottom">
+
+						<? print $std_font.$MSG_047; ?>
+
+						</TD>
+
+						<TD WIDTH="70%">
+							<? print $std_font; ?>
+					<?
+						if(!$HTTP_SESSION_VARS["PHPAUCTION_LOGGED_IN"])
+						{
+					?>
+
+							<A TARGET="_blank" HREF="register.php?"><? print $MSG_163; ?></A>
+
+
+
+							<BR><BR>
+							<INPUT TYPE="text" NAME="nick" SIZE="20" VALUE="<? echo $nickH; ?>">
+							</TD>
+							</TR>
+					<?
+						}
+						else
+						{
+					?>
+							<? print '&nbsp;<b>' . $HTTP_SESSION_VARS["PHPAUCTION_LOGGED_IN_USERNAME"] . '</b>' ; ?>
+						
+							<INPUT TYPE="hidden" NAME="nick" SIZE="20" VALUE="<? echo $HTTP_SESSION_VARS["PHPAUCTION_LOGGED_IN_USERNAME"]; ?>">
+					<?
+						}
+					?>
+
+					<BR>
+
+
+				<TR>
+
+					<TD WIDTH="30%" ALIGN="right">
+
+	    			<? print $std_font.$MSG_004; ?>
+
+					</TD>
+
+					<TD WIDTH="70%">
+
+					<INPUT TYPE="password" NAME="password" SIZE="20"  VALUE=""><BR>
+
+					</TD>
+
+				</TR>
+
+				<TR>
+
+					<TD WIDTH="30%" ALIGN="right">
+
+					</TD>
+
+					<TD WIDTH="70%">
+
+					<INPUT TYPE="hidden" NAME="id" VALUE="<? echo $id; ?>"><BR>
+
+					<INPUT TYPE="hidden" NAME="action" VALUE="bid">
+
+   <INPUT TYPE=submit NAME="">
+
+   <INPUT TYPE=reset NAME="">					</TD>
+
+				</TR>
+
+				</TABLE>
+
+			</TD></TR>
+
+			</TABLE>
+
+	</TD>
+
+	<TD WIDTH="15%">
+
+	</TD>
+
+</TR>
+
+</TABLE>
+
+</FORM>
+
+</TD>
+
+</TR>
+
+</TABLE>
