@@ -1,0 +1,180 @@
+<html><head>
+<title>Traffic-Drive CJ/TGP v6.03 free :: Admin Interface :: Help</title>
+<style type="text/css">
+<!--
+BODY{font-size:10px;font-family:verdana;}
+A:LINK {font-family:verdana; font-size:10px;color:#000082;text-decoration:none;font-weight:bold}
+A:ACTIVE {font-family:verdana; font-size:10px;color:#000082;text-decoration:none;font-weight:bold}
+A:VISITED {font-family:verdana; font-size:10px;color:#000082;text-decoration:none;font-weight:bold}
+A:HOVER {font-family:verdana; font-size:10px;color:#000082;text-decoration:underline;font-weight:bold}
+TABLE {font-size:10px;font-family:verdana;background:#E9E9E9;}
+INPUT {background:#FFECF5;border : 1px solid #ffffff;font-size:10px;font-family:verdana;color:#B30059;}
+.fnfm {background:#FFECF5;border : 1px solid #ffffff;font-size:10px;font-family:verdana;color:#B30059;}
+.fn1 {font-size:10px;font-weight:bold;font-family:verdana;}
+.fnh {font-size:18px;font-weight:bold;font-family:verdana;}
+.button {background:#FFFFE6;font-size:14px;font-family:verdana;color:#000082;}
+.select {background:#FFECF5;border:1px solid #ffffff;font-size:10px;font-family:verdana;color:#B30059;}
+-->
+</style>
+</head>
+<body bgcolor=#FFFFFF text=#000000 link=#000082 vlink=#000082 alink=#000082>
+<table align=center width=760><tr><td width=100% align=center>
+<font class=fnh>Traffic-Drive CJ/TGP v6.03 free</font><br>Admin Interface :: Help
+</td></tr></table><br>
+<table align=center width=760><tr><td width=100% align=center>
+<a href="help.html">Manual</a>&nbsp;&nbsp;&nbsp;
+<a href="help2.html">Main Table</a>&nbsp;&nbsp;&nbsp;
+<a href="help3.html">Settings</a>
+</td></tr></table><br>
+<table align=center width=760><tr><td>
+<table align=center width=606 cellpadding=5><tr>
+<td width=190 align=left bgcolor=#B9FFE9><font class=fn1>Main Table</font></td>
+<td></td>
+</tr></table>
+<table align=center><tr><td width=600 align=left bgcolor=#D7D7D7>
+<li><font class=fnfm>domain</font> - the domain of the trader.<br>
+Each domain is unique and corresponds to one trade. When moving mouse over the domain of trade, url of trade is shown in statusbar.
+ <font class=fnfm>nourl</font> - service domain.<br><br>
+<li><font class=fnfm>tp</font> - type of trade.<br>
+Defines the algorithm of calculation of the debt to trader (<font class=fnfm>owed</font>).<br>
+There are 5 types of trade:<br>
+- <font class=fnfm>a</font> - calculating of the debt to trader (<font class=fnfm>owed</font>) average value of raw ins (<font class=fnfm>rin</font>) and clicks (<font class=fnfm>cl</font>) for last 24 hours is count up to trader. <br> 
+- <font class=fnfm>c</font> - calculating of the debt to trader (<font class=fnfm>owed</font>) the quantity of clicks (<font class=fnfm>cl</font>) for last 24 hours is count up to trader.<br>
+- <font class=fnfm>u</font> - calculating of the debt to trader (<font class=fnfm>owed</font>) the quantity of unique ins (<font class=fnfm>uin</font>) for last 24 hours is count up to trader.<br>
+- <font class=fnfm>r</font> - calculating of the debt to trader (<font class=fnfm>owed</font>)  the quantity of raw ins (<font class=fnfm>rin</font>) for last 24 hours is count up to trader.<br>
+- <font class=fnfm>f</font> - only forces. In this case the duty is not taken into account. In the priority order only the quantity of forces (<font class=fnfm>frn</font>) set for him are sent to trader.<br>
+Algorithms of calculation of the debt to trader (<font class=fnfm>owed</font>) at different types of trade:<br>
+<font class=fnfm>
+a: dowed = (rin23 + cl23)/2*rat/100 - out23<br>
+c: dowed = cl23*rat/100 - out23<br>
+u: dowed = uin23*rat/100 - out23<br>
+r: dowed = rin23*rat/100 - out23<br><br>
+a: owed = dowed + (rin + cl)/2*rat/100 - out + fr<br>
+c: owed = dowed + cl*rat/100 - out + fr<br>
+u: owed = dowed + uin*rat/100 - out + fr<br>
+r: owed = dowed + rin*rat/100 - out + fr
+</font><br><br>
+<li><font class=fnfm>tr</font> - type of site of the trader.<br>
+Allows to direct proceeding traffic considering presence of pictures/movies on site of trader. This value is shared with options of exit.
+ Division of traders by type of sites allows to raise productivity on trader's site in case of presence of mixed
+ (pictures/movies) traffic on the own site.<br>
+There are 3 types of site of trader:<br>
+- <font class=fnfm>a</font> - the site of trader contains both pictures and movies or links to them<br>
+- <font class=fnfm>p</font> - the site of trader contains only pictures or links to them<br>
+- <font class=fnfm>m</font> - the site of trader contains only movies or links to them<br><br>
+<li><font class=fnfm>rat</font> - ratio.<br>
+A multiplier used at calculation of the debt to trader (<font class=fnfm>owed</font>). The higher ratio, the prioritier given trade is.<br><br>
+<li><font class=fnfm>owed</font> - the debt to trader.<br>
+Main value which is used at distribution of proceeding traffic.
+Calculated by default once per minute (the interval of calculation can be changed in settings).
+Those, who have this value higher, receive exits to the trade first.
+Can be both positive and negative value.
+Negative value testifies that according to the conditions set for trade
+ (type of trade (<font class=fnfm>tp</font>), ratio (<font class=fnfm>rat</font>)) the trader is in arrears.
+ Positive value testifies that according to the conditions set for trade
+ (type of trade (<font class=fnfm>tp</font>), ratio (<font class=fnfm>rat</font>)) you are in arrears for trader.
+It is not necessary to pay attention to insignificant deviations <font class=fnfm>owed</font> from zero (as in positive,
+ and in negative sides) is a normal condition of functioning of script.
+ In case of identical conditions of trade big differences of the debt to traders (<font class=fnfm>owed</font>) testify the general unsteady
+ condition of the site (there is growth, falling or significant redistribution of traffic). In the set mode
+ values of the debt to traders (<font class=fnfm>owed</font>) to the majority of traders are usually differ a little.<br>
+Algorithms of calculation of the debt to trader (<font class=fnfm>owed</font>) at different types of trade:<br>
+<font class=fnfm>
+a: dowed = (rin23 + cl23)/2*rat/100 - out23<br>
+c: dowed = cl23*rat/100 - out23<br>
+u: dowed = uin23*rat/100 - out23<br>
+r: dowed = rin23*rat/100 - out23<br><br>
+a: owed = dowed + (rin + cl)/2*rat/100 - out + fr<br>
+c: owed = dowed + cl*rat/100 - out + fr<br>
+u: owed = dowed + uin*rat/100 - out + fr<br>
+r: owed = dowed + rin*rat/100 - out + fr
+</font><br><br>
+<li><font class=fnfm>frn</font> - force right now.<br>
+Forced quantity of proceeding traffic in the current hour.
+The prioritiest value which is used at distribution of proceeding traffic.
+In the beginning of each hour the quantity of traffic set <font class=fnfm>frn</font> is always distributed.
+After delivery of certain, by <font class=fnfm>frn</font> values, quantities of proceeding traffic,
+ the further distribution is processed according to duties to traders (<font class=fnfm>owed</font>).
+In the beginning of each hour <font class=fnfm>frn</font> value is undertaken from the hourly schedule (<font class=fnfm>fr</font>), set for the given trader.
+You can set or change <font class=fnfm>frn</font> value in any moment in mode of editing of trade.<br><br>
+<li><font class=fnfm>a</font> - current group/condition of trade.<br>
+Allows to direct proceeding traffic according to the division accepted by you (for example division on niches).  
+ This value is shared with options of exit.  
+ If <font class=fnfm>a</font> is equal <font class=fnfm>0</font> - given trade is held.
+ In such condition the given trade does not receive proceeding traffic in any case, irrespective of <font class=fnfm>owed</font> and <font class=fnfm>frn</font>
+ (exception - option of an exit <font class=fnfm>o.php?site=trader.com</font>, at which the site is specified obviously).
+ In the beginning of each hour value <font class=fnfm>a</font> is undertaken from the hourly schedule (<font class=fnfm>st</font>), set for the given trader.
+ At each recalculation current conformity of trade to conditions of the triggers set for it is checked.
+ If conditions are not processed - the given trade stops (<font class=fnfm>a</font> is reset to <font class=fnfm>0</font>).
+ If conditions are processed - value <font class=fnfm>a</font> is undertaken from the hourly schedule (<font class=fnfm>st</font>), set for the given trader.
+You can set or change <font class=fnfm>a</font> in any moment in mode of editing of trade.
+In mode of editing of trade it is also possible to cancel check of triggers in the current hour.<br><br>
+<li><font class=fnfm>st</font> - group of trade for the current hour from the schedule.<br><br>
+<li><font class=fnfm>fr</font> - quantity of forced exits for the current hour from the schedule.<br><br>
+<li>Main values of trade:<br>
+Hourly:<br>
+<font class=fnfm>rin</font> - quantity of raw ins from trader in current hour<br>
+<font class=fnfm>uin</font> - quantity of unique ins from trader in current hour<br>
+<font class=fnfm>cl</font> - quantity of clicks to other trades from the trader in current hour<br>
+<font class=fnfm>gcl</font> - quantity of clicks on real content (galleries) from the trader in current hour<br>
+<font class=fnfm>pr</font> - valid productivity. Ratio of quantity of clicks to other trades to quantity of raw ins from trader in current hour<br>
+<font class=fnfm>out</font> - quantity of proceeding traffic to the trader in current hour<br>
+Last 23 hours:<br>
+<font class=fnfm>rin</font> - quantity of raw ins from trader in last 23 hours<br>
+<font class=fnfm>uin</font> - quantity of unique ins from trader in last 23 hours<br>
+<font class=fnfm>cl</font> - quantity of clicks to other trades from the trader in last 23 hours<br>
+<font class=fnfm>gcl</font> - quantity of clicks on real content (galleries) from the trader in last 23 hours<br>
+<font class=fnfm>pr</font> - valid productivity. Ratio of quantity of clicks to other trades to quantity of raw ins from trader in last 23 hours<br>
+<font class=fnfm>out</font> - quantity of proceeding traffic to the trader in last 23 hours<br><br>
+<li><font class=fnfm>dowed</font> - duty to the trader at the beginning of hour.<br>
+It is used at calculating <font class=fnfm>owed</font>.<br>
+Algorithms of calculation of the debt to trader in the beginning of hour (<font class=fnfm>dowed</font>) at different types of trade:<br>
+<font class=fnfm>
+a: dowed = (rin23 + cl23)/2*rat/100 - out23<br>
+c: dowed = cl23*rat/100 - out23<br>
+u: dowed = uin23*rat/100 - out23<br>
+r: dowed = rin23*rat/100 - out23
+</font><br><br>
+<li><font class=fnfm>ditr</font> - daily in trigger.<br>
+It is checked only if nonzero value of trigger is set.<br>
+If the quantity of raw ins from trader in last 24 hours including current is less <font class=fnfm>ditr</font>
+ - trade stops (<font class=fnfm>a</font> is reset to <font class=fnfm>0</font>).<br>
+Trade stops if <font class=fnfm>[rin24] < [ditr]</font><br>
+<font class=fnfm>rin24</font> - quantity of raw ins from trade in last 24 hours including current<br><br>
+<li><font class=fnfm>hitr</font> - in trigger for previous hour.<br>
+It is checked only if nonzero value of trigger is set.<br>
+If the quantity of raw ins from trader in previous hour is less <font class=fnfm>hitr</font>
+ - trade stops (<font class=fnfm>a</font> is reset to <font class=fnfm>0</font>).<br>
+Trade stops if <font class=fnfm>[rin_previous_hour] < [hitr]</font><br>
+<font class=fnfm>rin_previous_hour</font> - the quantity of raw ins from trader in previous hour<br><br>
+<li><font class=fnfm>dotr</font> - daily out trigger.<br>
+Restriction of exit. It is checked only if nonzero value of trigger is set.<br>
+If a difference of quantity of the exits to the trade in last 24 hours including current and raw ins from the trade
+ in last 24 hours including current is more <font class=fnfm>dotr</font> - trade stops (<font class=fnfm>a</font> reset to <font class=fnfm>0</font>).<br> 
+Trade stops if <font class=fnfm>[out24 - rin24] > [dotr]</font><br>
+<font class=fnfm>out24</font> - quantity of exits to the trade in last 24 hours including current<br>
+<font class=fnfm>rin24</font> - quantity of raw ins from the trade in last 24 hours including current<br><br>
+<li><font class=fnfm>hotr</font> - out trigger for previous hour.<br>
+Restriction of exit. It is checked only if nonzero value of trigger is set.<br>
+If a difference of quantity of the exits to the trade in previous hour current and raw ins from the trade
+ in in previous hour is more <font class=fnfm>hotr</font> - trade stops (<font class=fnfm>a</font> reset to <font class=fnfm>0</font>).<br> 
+Trade stops if <font class=fnfm>[out_previous_hour - rin_previous_hour] > [hotr]</font><br>
+<font class=fnfm>out_previous_hour</font> - quantity of exits to the trade in previous hour<br>
+<font class=fnfm>rin_previous_hour</font> - quantity of raw ins from the trade in previous hour<br><br>
+<li><font class=fnfm>nourl</font> - service domain.<br>
+Shows statistics from  bookmarks traffic, for traffic from sites which are not traders,
+ and also overflows (repeated clicks from same IP, for example if program of download is used).
+ Overflows are getting to <font class=fnfm>extra url</font>, set in administrator's interface.
+<font class=fnfm>nourl</font> has <font class=fnfm>0</font> group in the schedule.
+ Do not set nonzero groups in the schedule for <font class=fnfm>nourl</font>, otherwise <font class=fnfm>nourl</font> will behave as usual trade.<br><br>
+<li>Additional designations:<br>
+Trades suspended in present moment are highlighted with dark-grey color in table.<br>
+Colors of display of groups in table are changeable in settings. Color is set in <font class=fnfm>#ffffff</font> format.<br><br>	 
+</td></tr></table>
+</td></tr></table>
+<br>
+<table align=center width=760><tr><td width=100% align=center>
+<a href="a.php">back to admin interface</a><br>
+</td></tr></table>
+</body>
+</html>
