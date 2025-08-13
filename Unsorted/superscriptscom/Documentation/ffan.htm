@@ -1,0 +1,313 @@
+<html>
+
+<head>
+<title>Documentation FFAN</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="description" content="Here is a simple way to watch your traffic soar.&nbsp; Truly an internet marketing machine.&nbsp; I took the free4all link concept to the next level and designed a multilevel free4all link NETWORK.&nbsp; The network allows your site visitors to put their link on your FFA page AND download the FFAN script from your site so they can join your FFA NETWORK.&nbsp; When a new site installs the FFAN script you are notified by email after the first link goes up.&nbsp; With a simple click their FFAN is added to your submission list.&nbsp; The new site may also allow visitors to download the script and so on creating a pyramid of FFAN sites. &nbsp; Everytime a new site appears you are notified thus building your submission list. &nbsp; Through the admin interface you can cleanup the list if there are any dead links and with one simple form you can now broadcast your urls of choice into every FFAN site that joined under you!&nbsp; ">
+<meta NAME="keywords" CONTENT="Linkomatic, Free for All Link Submission, Free for All Link Page, Automatic Search Engine Submission Software, CGI Script">
+<meta name="robots" content="index">
+<meta name="revisit-after" Content="14 days">
+
+<meta name="Microsoft Border" content="t, default"></head>
+
+<body style="background-image: url('../demo/superclix/background.gif')"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+
+<table border="0" width="33%" cellpadding="0">
+  <tr>
+    <td width="50%"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/" ONCLICK="parent.f=0"><img src="../pix/banners/miniprizm.gif" alt="cgi scripts" border="0" WIDTH="305" HEIGHT="59"></a></font></td>
+    <td width="50%" bgcolor="#FFFFFF"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/ads/rotate.cgi?url=&amp;user=" target="new" ONCLICK="parent.f=0"><img src="http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user=" border="0" width="468" height="60"></a></font></td>
+  </tr>
+</table>
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="16%"><p align="center"><a href="../dsstoday/index.html"><font color="#000000" face="Arial"><img src="../pix/main/news.jpg" alt="CGI NEWS" align="left" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="16%"><p align="center"><a href="../scripts/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/scripts.jpg" alt="CGI Scripts" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../mastergate/index.html"><font color="#000000" face="Arial"><img src="../pix/main/access.jpg" alt="Access The CGI Archive" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../contact.html"><font color="#000000" face="Arial"><img src="../pix/main/contact.jpg" alt="Contact Superscripts" WIDTH="104" HEIGHT="68"></font></a></td>
+    <td width="17%"><p align="center"><a href="../support.html"><font color="#000000" face="Arial"><img src="../pix/main/dox.jpg" alt="CGI Documentation" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../download/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/download.jpg" alt="Download CGI Scripts Here" align="right" WIDTH="105" HEIGHT="65"></font></a></td>
+  </tr>
+  <tr>
+    <td width="16%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/dsstoday/index.html" style="color: rgb(255,255,255)"><strong>News</strong></a></font></td>
+    <td width="16%" bgcolor="#000000"><p align="center"><a href="/scripts/" style="color: rgb(255,255,255)"><font face="Arial" color="#FFFFFF"><strong>CGI Scripts</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><a style="color: rgb(255,255,255)" href="../mastergate/index.html"><font face="Arial" color="#FFFFFF"><strong>Become A Member</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../contact.html"><strong>Contact
+    Us</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../support.html"><strong>Support</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/download/index.shtml" style="color: rgb(255,255,255)"><strong>Download
+    Area</strong></a></font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+
+<table border="0" width="75%" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <p><big><big><strong><font face="Arial" color="#FF0000">Documentation<br>
+      </font></strong><font face="Arial" color="#000000">FREE 4 ALL LINK NETWORK:&nbsp; V3.0</font></big></big></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Copyright 2001 Psybercore, Inc. - All Rights
+        Reserved. </small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">Selling redistributing or modifying any or
+        all of the code for this program without prior written consent is expressly forbidden. You
+        must obtain written permission before redistributing this software over the Internet or in
+        any other medium. In all cases copyright and header information must remain intact.</font></small></p>
+      </blockquote>
+      <hr align="left">
+      <h1><small><font face="Arial" color="#000000"><small>System Requirements</small></font></small></h1>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Unix, Lynyx or NT Operating System </small></font></li>
+        <li><font face="Arial" color="#000000"><small>Perl 5 with sockets library installed</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Sendmail</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Ability to run cgi scripts and write to files
+          OUTSIDE of your cgi-bin</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Preliminaries</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Determine the path to PERL 5 on your web
+          server host.&nbsp; Note that some web hosting companies run both PERL 4 and PERL 5.&nbsp;
+          Make ABSOLUTELY sure you are not setting this up under PERL 4.&nbsp; Ask your
+          administrator if you are not sure. </small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>If you need to review or learn the basics of
+          CGI and Perl check out the <a href="../tutorial/index.html">superscripts tutorial
+          archives.</a></small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small><a href="http://www.superscripts.com/download/">Download</a> the tarfile for this program and
+          save it to your desktop.</small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Unpack the tar archive on your desktop using a
+          program that unpacks UNIX TAR ARCHIVES. If you don't have such a program then download
+          WINZIP FREE from <a HREF="http://www.shareware.com/">SHAREWARE.COM</a>.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>After you have unpacked the TAR archive you
+          will have a collection of folders and files on your desktop.&nbsp; Now you have to do some
+          basic editing of each of these files (or at least some of them).&nbsp; Use a text editor
+          such as wordpad, notepad, BBEdit, simpletext, or teachtext to edit the files.&nbsp; These
+          are NOT WORD PROCESSOR DOCUMENTS they are just simple TEXT files so don't save them as
+          word processor documents or save them with extentions such as .txt or they will NOT WORK.
+          &nbsp; Note that there may be a some files inside of folders which are &quot;blank&quot;.
+          &nbsp; This is normal.</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Preparing the CGI scripts</small></font></h2>
+      <blockquote>
+        <h2><small><font face="Arial" color="#FF0000"><small>Define Path To PERL 5</small></font></small></h2>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>The first step is to open up each and every
+        file that has a .cgi extention and edit line number one of each script.&nbsp; Each of the
+        cgi scripts is written in perl 5. For your scripts to run they must know where perl 5 is
+        installed on your web server. The path to perl 5 is defined to a cgi script in the first
+        line of the file. In each of the cgi scripts the first line of code looks something like
+        this: </small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#FF0000"><small>#!/usr/bin/perl</small></font></p>
+        </blockquote>
+        <p><font face="Arial" color="#000000"><small>If the path to perl 5 on your web server is
+        different from /usr/bin/perl you must edit the first line of each cgi script to reflect
+        the correct path. If the path to perl 5 is the same no changes are necessary. If you do
+        not know the path to perl 5 ask the webmaster or system administrator at your server site.
+        &nbsp; </small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big><strong>Configure the .cgi files</strong></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><big>configure.cgi</big></font></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>This file pretty much runs the whole
+        show.&nbsp; If you screw this one up don't count on anything working properly. &nbsp; In
+        other words, make sure you take the time to do this step CORRECTLY.&nbsp; Ask your
+        administrator if you need to.&nbsp; Below are the variables used for mastergate in ALL of
+        the other cgi scripts.&nbsp; All of the other cgi programs USE configure.cgi to figure out
+        where certain things are.</small></font></p>
+        <font size="2"><p></font><font face="Arial" color="#FF0000" size="2">$SENDMAIL=
+        &quot;/path/to/sendmail&quot;;</font><font size="2"></p>
+        <blockquote>
+          <p><font face="Arial" color="#000000">This is the path to sendmail on your webserver</font></p>
+        </blockquote>
+        <p></font><font face="Arial" color="#FF0000" size="2">$admin =
+        &quot;you\@yourdomain.com&quot;;</font><font size="2"></p>
+        <blockquote>
+          <dl>
+            <dt><font face="Arial" color="#000000">your email address - MUST KEEP BACKSLASH&quot;</font></font><font size="1"></dt>
+            <p></font><font size="2"><font face="Arial" color="#000000">Confused?&nbsp; My email
+            address is webmaster@superscripts.com.&nbsp; So here I would use
+            webmaster\@superscripts.com.&nbsp; Don't worry about trying to understand - its a perl5
+            thing.&nbsp; You have to use the backslash.</font></p>
+          </dl>
+        </blockquote>
+        <p></font><font face="Arial" color="#FF0000" size="2">$site =
+        &quot;http://www.yourdomain.com/path/to/html/ffan/index.html&quot;;</font><font size="2"></p>
+        <blockquote>
+          <p><font face="Arial" color="#000000">Full URL to the link page of your FFAN
+          installation.&nbsp; </font></p>
+        </blockquote>
+        <p></font><font face="Arial" color="#FF0000" size="2">$linkpage =
+        &quot;/path/to/index.html&quot;;</font><font size="2"></p>
+        <blockquote>
+          <p><font face="Arial" color="#000000">Full PATH to the link page. </font></p>
+        </blockquote>
+        <p></font><font face="Arial" color="#FF0000" size="2">$cgibinurl =
+        &quot;/path/to/submissions.txt&quot;;</font><font size="2"></p>
+        <blockquote>
+          <p><font face="Arial" color="#000000">Full URL to the ffan directory inside your cgi-bin
+          that contains all of the CGI and .txt files.</font></p>
+        </blockquote>
+        <p></font><font face="Arial" color="#FF0000" size="2">$cgibinpath =
+        &quot;/path/to/message.txt&quot;;</font><font size="2"></p>
+        <blockquote>
+          <p><font face="Arial" color="#000000">Full PATH to the ffan directory inside your cgi-bin
+          that contains all of the CGI and .txt files.</font></p>
+        </blockquote>
+        <p></font><font face="Arial" color="#FF0000" size="2">$localurl =
+        &quot;yourdomain.com&quot;;</font><font size="2"></p>
+        <blockquote>
+          <p><font face="Arial" color="#000000">YOUR SIMPLIFIED DOMAIN NAME.&nbsp; For example I
+          would put superscripts.com NOT www.suprscripts.com or http://www.superscripts.com/</font></p>
+        </blockquote>
+        </font>
+      </blockquote>
+      <p><strong><big><font face="Arial" color="#000000">Edit message.txt</font></big></strong></p>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">This is the email message that is sent to
+        anyone linking to your FFAN site.&nbsp; Simply cut and paste your customized email message
+        into this file.</font></small></p>
+      </blockquote>
+      <p><strong><big><font face="Arial" color="#000000">Edit the formaction tag of index.html
+      and your admin page</font></big></strong></p>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">This must point to the corresponding .cgi
+        files on your webserver</font></small></p>
+      </blockquote>
+      <p><strong><big><font face="Arial" color="#000000">RECOMPILE A NEW FFAN.ZIP FILE</font></big></strong></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>This is the file you will allow visitors to
+        download from your FFAN site.&nbsp; You have to edit ONE variable inside this script so
+        you will be notified when a new FFAN site joins under you</small></font></p>
+        <p><strong><big><font face="Arial" color="#000000">Edit ffan.cgi </font></big></strong></p>
+        <p><font face="Arial" color="#000000">Open up the file called ffan.cgi</font><ul>
+          <li><font face="Arial" color="#000000"><small>Find the subroutine called sub pyramid (do a
+            search with your text editor - its towards the latter 2/3 of the ffan.cgi file)</small></font></li>
+        </ul>
+        <blockquote>
+          <blockquote>
+            <font size="2"><p></font><font face="Arial" color="#FF0000" size="2">sub pyramid {</font><font size="2"></p>
+            <p></font><font face="Arial" color="#FF0000" size="2">$root =
+            &quot;webmaster\@superscripts.com&quot;;</font><font size="2"></p>
+            <p></font><font face="Arial" color="#FF0000" size="2">}</font></p>
+          </blockquote>
+        </blockquote>
+        <ul>
+          <li><font face="Arial" color="#000000"><small>Edit $root = &quot;you\@yourdomain.com&quot;;
+            to your email address making sure to LEAVE THAT BACKSLASH IN BEFORE THE&nbsp; @ symbol!</small></font></li>
+          <li><font face="Arial" color="#000000"><small>You DONT want people that download the
+            ffan.cgi and configure.cgi from your site to join your FFAN to edit this variable.&nbsp;
+            If they do then they will not be part of your FFAN - they will have started their
+            own.&nbsp; So dont tell them about it.&nbsp; The reason I clumped all the code together
+            without comment lines was to make it very difficult for people to figure this out on their
+            own.</small></font></li>
+        </ul>
+      </blockquote>
+      <h2><font face="Arial" color="#000000"><small>Upload your Edited TEXT files to your server</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Put all the .txt and .cgi files inside of
+          http://www.yourdomain.com/cgi-bin/ffan</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Create a directory
+          http://www.yourdomain.com/ffan/ and put the index page there</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Create a directory
+          http://www.yourdomain.com/ffan/admin/ and put the ADMIN index page there.&nbsp; You should
+          protect this directory.</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Set Your Script Permissions</small></font></h2>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>File access permissions must be set correctly
+        for this program to run. The table below lists the permissions of each file which are to
+        be set by the unix command (chmod) used to set the correct access permissions. You must
+        set the access permissions for each of these files.&nbsp; If you are using WS_FTP then
+        right click on the files located on your webserver.&nbsp; Then you will see a hidden menu
+        pop up.&nbsp; Click on CHMOD(UNIX).&nbsp; Then a box pops up with 9 checkboxes.&nbsp; </small></font></p>
+      </blockquote>
+      <div align="center"><center><table WIDTH="307" HEIGHT="67" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+        <tr>
+          <td WIDTH="177" HEIGHT="17" bgcolor="#000000"><p ALIGN="left"><strong><font face="Arial" color="#FFFFFF">&nbsp;CHMOD 755</font></strong></td>
+          <td WIDTH="196" bgcolor="#000000"><p ALIGN="left"><strong><font face="Arial" color="#FFFFFF">&nbsp;CHMOD 777</font></strong></td>
+        </tr>
+        <tr>
+          <td WIDTH="177" HEIGHT="41"><font size="3"><p align="left"><font face="Arial" color="#000000">add.cgi</font></p>
+          <p align="left"><font face="Arial" color="#000000">autoadd.cgi</font></p>
+          <p align="left"><font face="Arial" color="#000000">clean.cgi</font></p>
+          <p align="left"><font face="Arial" color="#000000">configure.cgi</font></p>
+          <p align="left"><font face="Arial" color="#000000">delete.cgi</font></p>
+          <p align="left"><font face="Arial" color="#000000">ffan.cgi</font></p>
+          <p align="left"><font face="Arial" color="#000000">readd.cgi</font></p>
+          <p align="left"><font face="Arial" color="#000000">retry.cgi</font></p>
+          <p align="left"><font face="Arial" color="#000000">review.cgi</font></p>
+          <p align="left"><font face="Arial" color="#000000">submit.cgi</font></font></td>
+          <td WIDTH="196"><font size="3"><p align="left"><font face="Arial" color="#000000">badlinks.txt</font></p>
+          <p align="left"><font face="Arial" color="#000000">deadsites.txt</font></p>
+          <p align="left"><font face="Arial" color="#000000">links.txt</font></p>
+          <p align="left"><font face="Arial" color="#000000">message.txt</font></p>
+          <p align="left"><font face="Arial" color="#000000">newsites.txt</font></p>
+          <p align="left"><font face="Arial" color="#000000">submissions.txt</font></font></p>
+          <p align="left"><font face="Arial" color="#000000">index.html</font></td>
+        </tr>
+      </table>
+      </center></div>
+    </blockquote>
+    <blockquote>
+      <p><strong><big><font face="Arial" color="#000000">Notes</font></big></strong></p>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <ul>
+          <li><font face="Arial" color="#000000"><small>Always CLEAN your submission lists PRIOR to
+            submitting urls through the FFAN.&nbsp; This checks your submission list for bad links.
+            &nbsp; If the CLEANING FINISHES you will see a message that says</small></font></li>
+        </ul>
+        <p align="center"><font face="Arial" color="#000000"><small>LIST CHECK FINISHED</small></font></p>
+        <blockquote>
+          <p align="left"><font face="Arial" color="#000000"><small>If you DO NOT see this message
+          then the LAST LINK it checked should be DELETED because the domain name is NO LONGER
+          online or there is a majorly slow connection to this site.</small></font></p>
+        </blockquote>
+        <ul>
+          <li><font face="Arial" color="#000000"><small>Make a copy of ffan.cgi and configure.cgi and
+            provide a copy so your visitors can download it and install it on their site - thus
+            joining the FFAN under you.&nbsp; You can copy the instructions from here provided you
+            provide a link to superscripts.com.&nbsp; You may NOT alter or delete the header copyright
+            information from the cgi scripts.</small></font></li>
+        </ul>
+        <ul>
+          <li><font face="Arial" color="#000000"><small>If you want to email everyone on the FFAN
+            import the file submissions.txt into your mailing list software.</small></font></li>
+        </ul>
+        <ul>
+          <li><font face="Arial" color="#000000"><small>If you have problems running the CGI SCRIPTS
+            because you keep seeing a message PERMISSION DENIED you need to COMMENT OUT a line in EACH
+            CGI script called </small></font></li>
+        </ul>
+        <blockquote>
+          <p><font face="Arial" color="#FF0000"><small>&amp;refergate.cgi;</small></font></p>
+          <p><font face="Arial" color="#000000"><small>change this line to this with a text editor
+          like wordpad</small></font></p>
+          <p><font face="Arial" color="#FF0000"><small>#&amp;refergate.cgi</small></font></p>
+          <p><font face="Arial" color="#000000"><small>This will turn off the URL checking but opens
+          up a possible security hole.&nbsp; You can resecure the cgi by placing ALL of the .cgi and
+          .txt files EXCEPT for ffan.cgi and autoadd.cgi into a PASSWORD protected DIRECTORY.</small></font></p>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
