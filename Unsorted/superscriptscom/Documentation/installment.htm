@@ -1,0 +1,250 @@
+<html>
+
+<head>
+<title>Installment Payment System IBILL Documentation </title>
+
+<meta name="Microsoft Border" content="t, default"></head>
+
+<body><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+
+<table border="0" width="33%" cellpadding="0">
+  <tr>
+    <td width="50%"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/" ONCLICK="parent.f=0"><img src="../pix/banners/miniprizm.gif" alt="cgi scripts" border="0" WIDTH="305" HEIGHT="59"></a></font></td>
+    <td width="50%" bgcolor="#FFFFFF"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/ads/rotate.cgi?url=&amp;user=" target="new" ONCLICK="parent.f=0"><img src="http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user=" border="0" width="468" height="60"></a></font></td>
+  </tr>
+</table>
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="16%"><p align="center"><a href="../dsstoday/index.html"><font color="#000000" face="Arial"><img src="../pix/main/news.jpg" alt="CGI NEWS" align="left" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="16%"><p align="center"><a href="../scripts/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/scripts.jpg" alt="CGI Scripts" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../mastergate/index.html"><font color="#000000" face="Arial"><img src="../pix/main/access.jpg" alt="Access The CGI Archive" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../contact.html"><font color="#000000" face="Arial"><img src="../pix/main/contact.jpg" alt="Contact Superscripts" WIDTH="104" HEIGHT="68"></font></a></td>
+    <td width="17%"><p align="center"><a href="../support.html"><font color="#000000" face="Arial"><img src="../pix/main/dox.jpg" alt="CGI Documentation" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../download/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/download.jpg" alt="Download CGI Scripts Here" align="right" WIDTH="105" HEIGHT="65"></font></a></td>
+  </tr>
+  <tr>
+    <td width="16%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/dsstoday/index.html" style="color: rgb(255,255,255)"><strong>News</strong></a></font></td>
+    <td width="16%" bgcolor="#000000"><p align="center"><a href="/scripts/" style="color: rgb(255,255,255)"><font face="Arial" color="#FFFFFF"><strong>CGI Scripts</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><a style="color: rgb(255,255,255)" href="../mastergate/index.html"><font face="Arial" color="#FFFFFF"><strong>Become A Member</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../contact.html"><strong>Contact
+    Us</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../support.html"><strong>Support</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/download/index.shtml" style="color: rgb(255,255,255)"><strong>Download
+    Area</strong></a></font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <p><big><big><strong><font face="Arial" color="#FF0000">Documentation<br>
+      </font></strong><font face="Arial" color="#000000">INSTALLMENT IBILL PAYMENT SYSTEM:&nbsp;
+      V1.0</font></big></big></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Copyright 2001 Psybercore, Inc. - All Rights
+        Reserved. </small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">Selling redistributing or modifying any or
+        all of the code for this program without prior written consent is expressly forbidden. You
+        must obtain written permission before redistributing this software over the Internet or in
+        any other medium. In all cases copyright and header information must remain intact.</font></small></p>
+      </blockquote>
+      <hr align="left">
+      <p><big><strong><font face="Arial" color="#000000">System Requirements</font></strong> </big><ul>
+        <li><font face="Arial" color="#000000"><small>Perl 5</small></font></li>
+        <li><font face="Arial" color="#000000"><small>IBILL Account</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Mysql</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Preliminaries</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Determine the path to PERL 5 on your web
+          server host.&nbsp; Note that some web hosting companies run both PERL 4 and PERL 5.&nbsp;
+          Make ABSOLUTELY sure you are not setting this up under PERL 4.&nbsp; Ask your
+          administrator if you are not sure. </small></font></li>
+      </ul>
+      <ul>
+        <li><a href="../../tutorial/index.html"><font face="Arial" color="#000000"><small>If you
+          need to review or learn the basics of CGI and Perl visit the tutorial</small></font></a></li>
+      </ul>
+      <ul>
+        <li><a href="../download/index.shtml"><font face="Arial" color="#000000"><small>Download the
+          tarfile for this program and save it to your desktop.</small></font></a></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Unpack the tar archive on your desktop using a
+          program that unpacks UNIX TAR ARCHIVES. If you don't have such a program then download
+          WINZIP FREE from <a HREF="http://www.shareware.com/">SHAREWARE.COM</a>.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>After you have unpacked the TAR archive you
+          will have a collection of folders and files on your desktop.&nbsp; Now you have to do some
+          basic editing of each of these files (or at least some of them).&nbsp; Use a text editor
+          such as wordpad, notepad, BBEdit, simpletext, or teachtext to edit the files.&nbsp; These
+          are NOT WORD PROCESSOR DOCUMENTS they are just simple TEXT files so don't save them as
+          word processor documents or save them with extentions such as .txt or they will NOT WORK.
+          &nbsp; Note that there may be a some files inside of folders which are &quot;blank&quot;.
+          &nbsp; This is normal.</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Preparing the CGI scripts</small></font></h2>
+      <blockquote>
+        <h2><small><font face="Arial" color="#FF0000"><small>Define Path To PERL 5</small></font></small></h2>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>The first step is to open up each and every
+        file that has a .cgi extention and edit line number one of each script.&nbsp; Each of the
+        cgi scripts is written in perl 5. For your scripts to run they must know where perl 5 is
+        installed on your web server. The path to perl 5 is defined to a cgi script in the first
+        line of the file. In each of the cgi scripts the first line of code looks something like
+        this: </small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#FF0000"><small>#!/usr/bin/perl</small></font></p>
+        </blockquote>
+        <p><font face="Arial" color="#000000"><small>If the path to perl 5 on your web server is
+        different from /usr/bin/perl you must edit the first line of each cgi script to reflect
+        the correct path. If the path to perl 5 is the same no changes are necessary. If you do
+        not know the path to perl 5 ask the webmaster or system administrator at your server site.
+        &nbsp; </small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big><strong>Configure the .cgi files</strong></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><big>configure.cgi</big></font></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">This file pretty much runs the whole
+        show.&nbsp; If you screw this one up don't count on anything working properly. &nbsp; In
+        other words, make sure you take the time to do this step CORRECTLY.&nbsp; Ask your
+        administrator if you need to.&nbsp; Below are the variables used in ALL of the other cgi
+        scripts.&nbsp; All of the other cgi programs USE configure.cgi to figure out where certain
+        things are.&nbsp;</font></small><font SIZE="2"></p>
+        </font><p>&nbsp;<font SIZE="2"><ul>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$date_command =
+            &quot;/usr/bin/date&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$mysqldatabase = &quot;mysql database
+            name&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$mysqlusername=&quot;mysql
+            username&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$mysqlpassword=&quot;mysql
+            password&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$webmasterurl =
+            &quot;http://www.yourdomain.com/index.html&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$mailprog = '/usr/sbin/sendmail';</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$adminemail =
+            &quot;you\@yourdomain.com&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$idatadirectory =
+            &quot;/full/path/to/cgi-bin/installment/idata&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$sourcedirectory =
+            &quot;/full/path/to/cgi-bin/installment/tarballs&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$installment = &quot;24.95&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$adminmodifycgi =
+            &quot;/installment/admin/modify.cgi&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$admindeletecgi =
+            &quot;/installment/admin/delete.cgi&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$supporturl =
+            &quot;http://www.yourdomain.com/installment/support.html&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$installperiod = &quot;30&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$fullypaid = &quot;300&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$numberofinstallments =
+            &quot;10&quot;;</font><font SIZE="2"></li>
+        </ul>
+        </font><ul>
+          <font SIZE="2">
+          <li></font><font face="Arial" SIZE="2" color="#000000">$date_command = </font><font SIZE="2"><font color="#000000"><font face="Arial">path to date</font></font></li>
+          <li></font><font face="Arial" SIZE="2" color="#000000">$mysqldatabase = &quot;mysql database
+            name&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" SIZE="2" color="#000000">$mysqlusername=&quot;mysql
+            username&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" SIZE="2" color="#000000">$mysqlpassword=&quot;mysql
+            password&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" SIZE="2" color="#000000">$webmasterurl = </font><font SIZE="2"><font color="#000000"><font face="Arial">FULL URL to /installment/index.html</font></font></li>
+          <li></font><font face="Arial" SIZE="2" color="#000000">$mailprog = </font><font SIZE="2"><font color="#000000"><font face="Arial">path to sendmail</font></font></li>
+          <li></font><font face="Arial" SIZE="2" color="#000000">$adminemail = </font><font SIZE="2"><font color="#000000"><font face="Arial">your email address</font></font></li>
+          <li></font><font face="Arial" SIZE="2" color="#000000">$idatadirectory = </font><font SIZE="2"><font color="#000000"><font face="Arial">full path to /cgi-bin/installment/data/
+            directory</font></font></li>
+          <li></font><font SIZE="2" face="Arial" color="#000000">$sourcedirectory = full path to
+            /cgi-bin/installment/files/ directory</font><font SIZE="2"><font color="#000000"><font face="Arial"> (if selling content)</font></font></li>
+          <li></font><font face="Arial" SIZE="2" color="#000000">$installment = </font><font SIZE="2"><font color="#000000"><font face="Arial">price per installment</font></font></li>
+          <li></font><font face="Arial" SIZE="2" color="#000000">$adminmodifycgi = RELATIVE URL to
+            /installment/admin/modify.cgi&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" SIZE="2" color="#000000">$admindeletecgi = RELATIVE URL to
+            /installment/admin//delete.cgi&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" SIZE="2" color="#000000">$supporturl = FULL URL TO
+            /installment/support.html&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" SIZE="2" color="#000000">$installperiod = </font><font SIZE="2"><font color="#000000"><font face="Arial">Number of days between installments</font></font></li>
+          <li></font><font face="Arial" SIZE="2" color="#000000">$fullypaid = </font><font SIZE="2"><font color="#000000"><font face="Arial">Number of days till account is fully paid</font></font></li>
+          <li></font><font face="Arial" SIZE="2" color="#000000">$numberofinstallments = </font><font SIZE="2"><font color="#000000"><font face="Arial">Number of installments until fully paid</font></font></li>
+          </font>
+        </ul>
+      </blockquote>
+      <h2><font face="Arial" color="#000000"><small>Upload Your Edited CGI and Database Files</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Create directory inside cgi-bin called
+          /cgi-bin/installment/ and upload the following files chmod them all to 755</small></font><ul>
+            <li><font face="Arial" color="#000000"><small>configure.cgi</small></font></li>
+            <li><font face="Arial" color="#000000"><small>download.cgi</small></font></li>
+            <li><font face="Arial" color="#000000"><small>signup.cgi</small></font></li>
+            <li><font face="Arial" color="#000000"><small>status.cgi</small></font></li>
+          </ul>
+        </li>
+        <li><font face="Arial" color="#000000"><small>Create directory inside cgi-bin called
+          /cgi-bin/installment/admin/ and upload the following files chmod them all to 755</small></font><ul>
+            <li><font face="Arial" color="#000000"><small>configure.cgi</small></font></li>
+            <li><font face="Arial" color="#000000"><small>delete.cgi</small></font></li>
+            <li><font face="Arial" color="#000000"><small>login.cgi</small></font></li>
+            <li><font face="Arial" color="#000000"><small>modify.cgi</small></font></li>
+            <li><font face="Arial" color="#000000"><small>system.cgi</small></font></li>
+            <li><font face="Arial" color="#000000"><small>counter.cgi</small></font></li>
+          </ul>
+        </li>
+        <li><font face="Arial" color="#000000"><small>Make a directory inside your HTML called
+          /installment and upload the following files</small></font><ul>
+            <li><font face="Arial" color="#000000"><small>index.html (signup page)</small></font></li>
+          </ul>
+        </li>
+        <li><font face="Arial" color="#000000"><small>Make a directory inside your HTML called
+          /installment/admin/ (password protect it) and upload the following files</small></font><ul>
+            <li><font face="Arial" color="#000000"><small>index.html (admin panel)</small></font></li>
+          </ul>
+        </li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Upload MYSQL tables</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Upload the MYSQL tables supplied
+          (installment.sql)</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Mods you might want to make</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>signup.cgi - you may want to customize the
+          emails that go out</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Notes on running the system</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>The concept of this system is primarily for
+          sites with large amounts of downloadable content to allow people to make payments and
+          download single files until their account is paid in full.</small></font></li>
+        <li><font face="Arial" color="#000000"><small>It can also be used to run sites with dynamic
+          content as a payment system that allows them to download content on a periodical basis as
+          long as they pay</small></font></li>
+        <li><font face="Arial" color="#000000"><small>This is not intended to run a password
+          protected content site.&nbsp; When I speak of content I mean DOWNLOADABLE FILES.&nbsp; Use
+          another program such as mastergate, ibill processor, etc for those types of sites</small></font></li>
+        <li><font face="Arial" color="#000000"><small>The important key with this system lay in the
+          fact that the users MUST FTP the files to THEIR machines rather than DOWNLOAD files from
+          your machine.&nbsp; This creates an unBEARABLE security wall for hackers that do not want
+          to give away their identities.&nbsp; Thus your fraud will drop to practically zero.</small></font></li>
+        <li><font face="Arial" color="#000000"><small>It is also noted that once they pay a set fee
+          to get the main downloadables (use this site as an example).&nbsp; They end up paying
+          EXTRA (kind of like installment plans at SEARS, etc).&nbsp; Not only that but they
+          continue making monthly payments to keep their accounts active and get the new content.
+          &nbsp; This is optional but advised as you will make a LOT more money this way.</small></font></li>
+      </ul>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
