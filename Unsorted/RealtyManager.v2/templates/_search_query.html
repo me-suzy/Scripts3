@@ -1,0 +1,339 @@
+<!--
+
+Placeholders available on this page:
+
+homepage_url	- URL of homepage directory
+listing_url	- URL of listing directory
+search_url	- URL of search engine
+
+userlist	- list of all user names for use in pulldown menu, eg:
+
+		  <select name="user_match">
+		  <option value="">Any Agent
+		  userlist
+		  </select>
+
+		  (don't forget the dollar signs around "userlist")
+
+Templatecells on this page:
+
+none
+
+Search Engine Instructions : 
+
+RANGE SEARCHING
+To search between a range of values create a pulldown for the mininum
+and maximum values.  ie:  bedrooms [min] [max].  The name of the pulldown
+should be set to the name of the field it is to be applied to with _min or
+_max applied to the end.  ie: lfield3_min lfield3_max.
+
+KEYWORD SEARCHING
+To search for a keyword in a specific field number simply create a form field
+and append "_keyword" to the end.  ie:  to search for a keyword in lfield6 setup
+a text field named "lfield6_keyword".
+
+EXACT MATCH SEARCHING
+As keyword searching returns any records that contain that keyword, exact match
+only returns record that match the query exactly.  This is best used to specify
+exact criteria to match.  ie:  bedrooms: 3, MLS# 1235453, etc.  To search
+for exact matches create a form field and append _match, ie: lfield6_match
+
+SEARCH FOR SPECIFIC USER
+You can create a pulldown with all the user names by using the placeholder
+"userlist". You can search for a user or a user keyword with "user_keyword"
+and "user_match" to match the user name or "user_num" to match the user
+number.
+
+SORT ORDER
+You can specify a sort order for results to be returned in with
+the following fields:
+<input type="hidden" name="sort_order" value="14,abc,forward">
+<input type="hidden" name="sort_order" value="14,123,reverse">
+The first part of the value ("14") is the field number to sort by,
+the second part is the type of sorting to do (abc for alphabetical,
+123 for numerical) and the third part is the direction to sort in.
+
+RESULTS PER PAGE
+You can specify the results to be shown per page with the "perpage"
+field like so:  <input type="hidden" name="perpage" value="10">
+
+MARK NEW LISTINGS AS "NEW"
+You can have new listings that have been created or updated in 
+the last few days displayed in a "NEW" templatecell on the 
+search results page by using "marknew" field:
+<input type="hidden" name="marknew" value="2">
+In this example, any listings created or updated in the last
+2 days will be shown as new.
+
+ONLY DISPLAY NEW LISTINGS
+You can have the search engine only display recent listings
+with the "shownew" field allowing users to check what new
+listings have been added without going through the entire
+database:  <input type="hidden" name="shownew" value="7">
+In the above example only listings created or updated in the
+last 7 days will be displayed.
+
+Search form fields that have no value are ignored.  So when you create 
+new fields for your search page the default value should be blank.  
+ie:  value="".
+
+-->
+
+<html><head>
+ <title>Search Listings</title>
+ <meta name="robots" content="noindex,nofollow">
+</head>
+<BODY bgcolor="#FFFFFF" TEXT="#000000" LINK="#000066" VLINK="#000066" alink="#000066">
+
+<form method=get action="$cgiurl$">
+<input type="hidden" name="search" value="1">
+<input type="hidden" name="perpage" value="10">
+<input type="hidden" name="sort_order" value="1,abc,forward">
+<input type="hidden" name="marknew"  value="1">
+<center>
+
+
+<p>
+
+<table border=0 cellspacing=0 cellpadding=2 width=590>
+ <tr>
+  <td>
+   <font face="arial,ms sans serif" size=4><b>ABC Real Estate</b></font>
+   <hr size=1>
+   <div align=right>
+   <font face="ms sans serif" size=1>
+   <a href="$homepage_url$">Our Agents</a> -
+   <a href="$listing_url$">Our Listings</a> -
+   <a href="$search_url$">Search Listings</a>
+   </font><br>
+   </div>
+  </td>
+ </tr>
+</table>
+
+<table border=0 cellspacing=0 cellpadding=0 width=580>
+ <tr><td><font face="arial,ms sans serif" size=3><b>Search Listings</b></font></td></tr>
+</table>
+
+<p>
+
+
+<table border=0 cellspacing=1 cellpadding=5>
+  <tr>
+   <td bgcolor="#FFFFFF">
+
+    <table border=0 cellspacing=0 cellpadding=0>
+    <tr>
+     <td><font face="arial" size=2>&nbsp;Price </font></td>
+     <td>
+      <select name="lfield5_min">
+      <option value="">Minimum
+      <option value="">Any
+      <option value="">$0
+      <option>$50,000
+      <option>$75,000
+      <option>$100,000
+      <option>$125,000
+      <option>$150,000
+      <option>$175,000
+      <option>$200,000
+      <option>$250,000
+      <option>$500,000
+      </select>
+      &nbsp;
+      <select name="lfield5_max">
+      <option value="">Maximum
+      <option value="">Unlimited
+      <option>$50,000
+      <option>$75,000
+      <option>$100,000
+      <option>$125,000
+      <option>$150,000
+      <option>$175,000
+      <option>$200,000
+      <option>$250,000
+      <option>$500,000
+      <option>$1,000,000
+      </select>
+     </td>
+    </tr>
+    <tr>
+     <td><font face="arial" size=2>&nbsp;Bedrooms&nbsp;</font></td>
+     <td>
+      <select name="lfield9_min">
+      <option value="">Minimum
+      <option value="">Any
+      <option>1
+      <option>2
+      <option>3
+      <option>4
+      <option>5
+      <option>6
+      </select>
+      &nbsp;
+      <select name="lfield9_max">
+      <option value="">Maximum
+      <option value="">unlimited
+      <option>0
+      <option>1
+      <option>2
+      <option>3
+      <option>4
+      <option>5
+      </select>
+     </td>
+    </tr>
+    <tr>
+     <td><font face="arial" size=2>&nbsp;Bathrooms&nbsp;&nbsp;</font></td>
+     <td>
+      <select name="lfield10_min">
+      <option value="">Minimum
+      <option value="">Any
+      <option>0
+      <option>1
+      <option>2
+      <option>3
+      <option>4
+      <option>5
+      </select>
+      &nbsp;
+      <select name="lfield10_max">
+      <option value="">Maximum
+      <option value="">unlimited
+      <option>0
+      <option>1
+      <option>2
+      <option>3
+      <option>4
+      <option>5
+      </select>
+     </td>
+    </tr>
+      <tr>
+      <td><font size=2 face="arial">&nbsp;Type </font></td>
+      <td>
+       <select name="lfield8_keyword">
+       <option value="">Any
+<option>Home
+<option>Condo
+<option>Townhouse
+<option>Apartment
+<option>Mobile Home
+<option>Lot
+<option>Acreage
+<option>Duplex
+<option>Triplex
+<option>Farm or Ranch
+<option>Other
+       </select>
+      </td>
+     </tr>
+     <tr>
+      <td><font size=2 face="arial">&nbsp;Listed By </font></td>
+      <td>
+       <select name="user_num">
+       <option value="">Any Agent
+       $userlist$
+       </select>
+      </td>
+     </tr>
+     <tr>
+      <td><font size=2 face="arial">&nbsp;Show listings&nbsp;</font></td>
+      <td>
+       <select name="shownew">
+       <option value="">All Listings
+       <option value="1">1 day old
+       <option value="2">2 days old
+       <option value="3">3 days old
+       <option value="7">1 week old
+       <option value="30">1 month old
+       </select>
+      </td>
+     </tr>
+  </table>
+
+<p>
+<div align=center>
+<input type=submit name="search" value="  Search Listings  ">
+</div>
+
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>
+
+<table border=0 cellspacing=0 cellpadding=0>
+ <tr>
+  <td><font size=2 face="arial">&nbsp;Near School&nbsp;</font></td>
+  <td><input type=checkbox name="lfield16_keyword" value="Yes" ></td>
+ </tr>
+ <tr>
+  <td><font size=2 face="arial">&nbsp;Near Transit&nbsp;</font></td>
+  <td><input type=checkbox name="lfield17_keyword" value="Yes" ></td>
+ </tr>
+ <tr>
+  <td><font size=2 face="arial">&nbsp;Ocean View&nbsp;</font></td>
+  <td><input type=checkbox name="lfield18_keyword" value="Yes" ></td>
+ </tr>
+ <tr>
+  <td><font size=2 face="arial">&nbsp;Lake View&nbsp;</font></td>
+  <td><input type=checkbox name="lfield19_keyword" value="Yes" ></td>
+ </tr>
+ <tr>
+  <td><font size=2 face="arial">&nbsp;Mountain View&nbsp;</font></td>
+  <td><input type=checkbox name="lfield20_keyword" value="Yes" ></td>
+ </tr>
+ <tr>
+  <td><font size=2 face="arial">&nbsp;Ocean Waterfront&nbsp;</font></td>
+  <td><input type=checkbox name="lfield21_keyword" value="Yes" ></td>
+ </tr>
+ <tr>
+  <td><font size=2 face="arial">&nbsp;Lake Waterfront&nbsp;</font></td>
+  <td><input type=checkbox name="lfield22_keyword" value="Yes" ></td>
+ </tr>
+ <tr>
+  <td><font size=2 face="arial">&nbsp;River Waterfront&nbsp;</font></td>
+  <td><input type=checkbox name="lfield23_keyword" value="Yes" ></td>
+ </tr>
+</table>
+
+   </td>
+  </tr>
+</table>
+
+
+<!-- about this page -->
+<p><table border=1 cellspacing=0 cellpadding=4 width=590>
+ <tr>
+  <td bgcolor="#EEEEEE">
+   <font face="ms sans serif" size=2>
+   <b><font color="#800000">About this area :</font></b><br>
+   This area can be customized for any advertising you may have, including
+   mortgage companies or insurance companies. This also generates income to
+   offset hosting services.<br>
+
+   </font>
+  </td>
+ </tr>
+</table>
+
+<!-- /about this page -->
+
+<p><hr size=1 width=590>
+<table border=0 cellspacing=0 cellpadding=2 width=590>
+ <tr>
+  <td valign=top>
+   <font face="ms sans serif" size=1>
+   ABC Real Estate Corporation<br>
+   123 Anystreet, Anytown, USA<br>
+   1-800-555-5555<br>
+   </font><br>
+  </td>
+  <td align=right valign=top>
+   <font face="ms sans serif" size=1>
+    Copyright &copy; 1999 ABC Real Estate Corp.<br>
+   </font><br>
+  </td>
+ </tr>
+</table>
+
+</body></html>
+
+</form>
