@@ -1,0 +1,20 @@
+<%-- 
+    File        : search_link.html 
+    Description : This file displays a single link. It is used on category listings,
+                  search results, what's new, what's cool, pretty much anywhere you
+                  see a link.
+    Tags        : You have all the following options on this page:
+                    URL          => The URL to the site...not jump.cgi!
+                    Description  => The site description...
+                    Title        => The sites title
+                    Bid          => Bid, in cents for that listing...
+                    NO OTHER OPTIONS ARE AVAILABLE!
+--%>
+
+<ul><li><a class="link" href="<%URL%>"><%Title%></a>
+
+<%if Description%>
+  <span class="descript">- <%Description%> - Bid: <%Bid%></span>
+<%endif%>
+
+</ul>
