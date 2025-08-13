@@ -1,0 +1,117 @@
+<html>
+<head><title>$myname VS $challenger!</title>
+</head>
+<bgsound src="battle_music/$mybattlemusic" loop="-1">
+<body background="images/bg.jpg">
+<font color="white"> 
+<center>
+<table width="99%" border="0" cellspacing="0" cellpadding="0" bordercolor="black" text="white" alink="white" vlink="white" link="white">
+  <tr>
+    <td background="images/bg2.jpg"><BR><center>
+      <table width="95%" bgcolor="black">
+        <tr>
+              <td background="images/cellpic2.jpg" height="30"> $myname&nbsp;&nbsp;VS.&nbsp;&nbsp;$challenger! 
+              </td>
+        </tr>
+        <tr>
+              <td background="images/cat1.jpg"> 
+                <div align="center"><font color="white">The battle has begun! You are listening to: $mybattlemusic</font>
+		<table width="90%" border="0" cellspacing="1" cellpadding="2" bgcolor="#000000" bordercolor="#000000">
+                    <tr>
+			<td width="20%" background="images/cat2.jpg">
+			<font color="white">$myname<BR>
+			<BR>
+			$userhitpoint / $player1[hpmax]</font><BR>
+                        <BR>
+
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tr>
+			<td><font color="white">Attack:</font></td><td><font color="white">$player1[userattack]</font></td>
+			</tr>
+			<tr>
+			<td><font color="white">Speed:</font></td><td><font color="white">$player1[userspeed]</font></td>
+			</tr>
+			<tr>
+			<td><font color="white">Magic:</font></td><td><font color="white">$player1[usermagic]</font></td>
+			</tr>
+			<tr>
+			<td><font color="white">Defense:</font></td><td><font color="white">$player1[userdefense]</font></td>
+			</tr>
+			<tr>
+			<TD><font color="$player1color">Health at-<BR>$barlength%</font></td><td>&nbsp;</td>
+			</tr>
+			</table>
+
+			</td>
+			<td width="60%" background="images/cat2.jpg">
+			<div align="center">
+			$deathalert
+			<table width="390" height="260"  border="1" cellspacing="1" cellpadding="2" bgcolor="#000000" bordercolor="#000000" background="images/bg1.gif">
+			<tr>
+			<td>
+
+			<table height="250" width="380" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td height="70"><font color="$player1color">$myname</font><BR>
+					<img src="$player1[mypic]" width="50" height="50"></td>
+					<td height="70"> </td>
+				</tr>
+				<tr>
+					<td height="110"> </td>
+					<td height="110"></td>
+				</tr>
+				<tr>
+					<td height="70"> </td>
+					<td height="70"><div align="right"><font color="$player2color">$challenger</font><BR>
+					<img src="$player2[mypic]" width="50" height="50"></div></td>
+				</tr>
+			</table>
+
+			</td>
+			</tr>
+			</table><BR>$battlemusic2[messages]<BR>
+			</div>
+			</td>
+			<td width="20%" background="images/cat2.jpg">
+			<font color="white">$challenger<BR>
+			<BR>
+			$userhitpoint2 / $player2[hpmax]</font><BR>
+                        <BR>
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tr>
+			<td><font color="white">Attack:</font></td><td><font color="white">$player2[userattack]</font></td>
+			</tr>
+			<tr>
+			<td><font color="white">Speed:</font></td><td><font color="white">$player2[userspeed]</font></td>
+			</tr>
+			<tr>
+			<td><font color="white">Magic:</font></td><td><font color="white">$player2[usermagic]</font></td>
+			</tr>
+			<tr>
+			<td><font color="white">Defense:</font></td><td><font color="white">$player2[userdefense]</font></td>
+			</tr>
+			<tr>
+			<TD><font color="$player2color">Health at-<BR>$barlength2%</font></td><td>&nbsp;</td>
+			</tr>
+			</table></td>
+                    </tr>
+                  </table>
+                </div>
+                <table width="100%" border="0" cellspacing="2" cellpadding="1" bordercolor="#000000" bgcolor="#000000">
+                  <tr> 
+                    <td background="images/cellpic2.jpg" height="30">The battle 
+                      field- <a href="winner.php?action=escape&whoran=$user_name"><font color="#000000">ESCAPE!</font></a></td>
+                  </tr>
+$battlefield
+                </table><BR>
+				<center><iframe frameborder=0 src="chat.php" width="90%" height="150"> </iframe></center><BR>
+              </td>
+        </tr>
+      </table></center><BR>
+    </td>
+  </tr>
+</table>
+</center>
+</font>
+</body>
+</html>
