@@ -1,0 +1,89 @@
+<STYLE TYPE="text/css">
+<!--
+A { text-decoration:none }
+form
+{
+	margin-bottom:0px;
+	margin-top:0px;
+}
+.smalltxt
+{
+	font-family: "arial";
+	font-size: 11px;
+}
+.minitxt
+{
+	font-family: "arial";
+	font-size: 10px;
+}
+.basetxt
+{
+	font-family: "arial";
+	font-size: 12px;
+}
+.input
+{
+	background-color: #ffffff;
+	border-bottom: black 1px solid;
+	border-left: black 1px solid;
+	border-right: black 1px solid;
+	border-top: black 1px solid;
+	color: black;
+	font-family: "arial";
+	font-size: 12px;
+}
+.select
+{
+	background-color: #ffffff;
+	border-bottom: black 1px solid;
+	border-left: black 1px solid;
+	border-right: black 1px solid;
+	border-top: black 1px solid;
+	color: black;
+	font-family: "arial";
+	font-size: 12px;
+}
+.checkbox
+{
+	border-bottom: black 0px solid;
+	border-left: black 0px solid;
+	border-right: black 0px solid;
+	border-top: black 0px solid;
+	color: black;
+	font-family: "arial";
+	font-size: 12px;
+}
+.radio
+{
+	border-bottom: black 0px solid;
+	border-left: black 0px solid;
+	border-right: black 0px solid;
+	border-top: black 0px solid;
+	color: black;
+	font-family: "arial";
+	font-size: 10px;
+}
+.button
+{
+	background-color: #ffffff;
+	border-bottom: black 1px solid;
+	border-left: black 1px solid;
+	border-right: black 1px solid;
+	border-top: black 1px solid;
+	color: black;
+	font-family: "arial";
+	font-size: 12px;
+}
+.textarea
+{
+	background-color: #ffffff;
+	border-bottom: black 1px solid;
+	border-left: black 1px solid;
+	border-right: black 1px solid;
+	border-top: black 1px solid;
+	color: black;
+	font-family: "arial";
+	font-size: 12px;
+}
+-->
+</STYLE>
