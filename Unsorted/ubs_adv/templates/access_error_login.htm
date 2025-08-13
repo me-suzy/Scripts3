@@ -1,0 +1,10 @@
+					<FORM ACTION="action.php" METHOD="POST"><INPUT TYPE="HIDDEN" NAME="action" VALUE="login"><INPUT TYPE="HIDDEN" NAME="boardid" VALUE="$boardid">$session_post<INPUT TYPE="HIDDEN" NAME="link" VALUE="$url_jump"><table border=0 bgcolor="{tablebordercolor}" cellpadding=4 cellspacing=1 widht="300" align="center">
+					<tr bgcolor="{tableb}" id="tableb">
+						<td><FONT face="{font}" size=2>Username:</font></td>
+						<td><input type="text" class="input" name="username" SIZE=20 MAXLENGTH=85><FONT face="{font}" size=1> <a href="register.php?action=disclaimer&boardid=$boardid$session" class="link">Register</a></font></td>	
+					</tr>
+					<tr bgcolor="{tablec}" id="tablec">
+						<td><FONT face="{font}" size=2>Password:</font></td>
+						<td><input type="password" class="input" name="userpass" SIZE=20 MAXLENGTH=85><FONT face="{font}" size=1> <a href="misc2.php?action=forgotpw$session">Forgot password?</a></font></td>	
+					</tr>
+				</table><div align="center"><INPUT class="input" TYPE="SUBMIT" NAME="submit" VALUE="Login"><INPUT class="input" TYPE="reset" VALUE="Delete"></div></td>
