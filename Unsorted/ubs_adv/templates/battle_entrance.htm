@@ -1,0 +1,121 @@
+<body background="images/bg.jpg">$header
+<bgsound src="$mybattleentrancemusic" loop="-1">
+<font color="white">
+<BR>
+<center>
+<table width="99%" border="0" cellspacing="0" cellpadding="0" bordercolor="black" alink="white" vlink="white" link="white">
+  <tr>
+    <td background="images/bg2.jpg"><BR><center>
+      <table width="95%" bgcolor="black">
+        <tr>
+              <td background="images/cellpic2.jpg" height="20"> Ready For Battle? 
+                -Battlefield <font color="white">$entererror</font></td>
+        </tr>
+        <tr>
+          <td background="images/cat1.jpg">
+<FORM ACTION="battle.php" METHOD="POST">
+<INPUT TYPE="HIDDEN" NAME="action" VALUE="enter">
+<INPUT TYPE="HIDDEN" NAME="validation" VALUE="true">
+                  <table width="100%">
+                    <tr> 
+                      <td width="50%">Username:</td>
+                      <td width="50%"> $user_name</td>
+                    </tr>
+                    <tr> 
+                      <td width="50%">Challenger:</TD>
+                      <td width="50%"> 
+                        <input type="text" class="input" name="challenger" SIZE=20 MAXLENGTH=85 value="$challenger">
+                      </td>
+                    </tr>
+                    <tr> 
+                      <td width="50%">Desired room:</TD>
+                      <td width="50%"> 
+                        <select name="userroom">
+                          <option value="db_arena1" $userroom[0]>No room</option>
+                          <option value="db_arena1" $userroom[1]>Room 1</option>
+                          <option value="db_arena2" $userroom[2]>Room 2</option>
+                          <option value="db_arena3" $userroom[3]>Room 3</option>
+                          <option value="db_arena4" $userroom[4]>Room 4</option>
+                          <option value="db_arena5" $userroom[5]>Room 5</option>
+						  <option value="db_arena6" $userroom[6]>Room 6</option>
+						  <option value="db_arena7" $userroom[7]>Room 7</option>
+						  <option value="db_arena8" $userroom[8]>Room 8</option>
+						  <option value="db_arena9" $userroom[9]>Room 9</option>
+						  <option value="db_arena10" $userroom[10]>Room 10</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="50%">Prefered battle music:</TD>
+                      <td width="50%">
+                        <input type="text" class="input" name="mybattlemusic" size=20 maxlength=85 value="$mybattlemusic">
+                      </td>
+                    </tr>
+                  </table>
+<br><BR>
+                  &nbsp;Rooms open or closed:<BR>
+                  <table width="100%">
+                    <tr> 
+                      <td width="50%">Room 1-</td>
+                      <td width="50%">$room1status</td>
+                      <td>$ifisadmin1</td>
+                    </tr>
+                    <tr> 
+                      <td width="50%">Room 2-</td>
+                      <td width="50%">$room2status</td>
+                      <td>$ifisadmin2</td>
+                    </tr>
+                    <tr> 
+                      <td width="50%">Room 3-</td>
+                      <td width="50%">$room3status</td>
+                      <td>$ifisadmin3</td>
+                    </tr>
+                    <tr> 
+                      <td width="50%">Room 4-</td>
+                      <td width="50%">$room4status</td>
+                      <td>$ifisadmin4</td>
+                    </tr>
+                    <tr> 
+                      <td width="50%">Room 5-</td>
+                      <td width="50%">$room5status</td>
+                      <td>$ifisadmin5</td>
+                    </tr>
+                    <tr> 
+                      <td width="50%">Room 6-</td>
+                      <td width="50%">$room6status</td>
+                      <td>$ifisadmin6</td>
+                    </tr>
+                    <tr> 
+                      <td width="50%">Room 7-</td>
+                      <td width="50%">$room7status</td>
+                      <td>$ifisadmin7</td>
+                    </tr>
+                    <tr> 
+                      <td width="50%">Room 8-</td>
+                      <td width="50%">$room8status</td>
+                      <td>$ifisadmin8</td>
+                    </tr>
+                    <tr> 
+                      <td width="50%">Room 9-</td>
+                      <td width="50%">$room9status</td>
+                      <td>$ifisadmin9</td>
+                    </tr>
+                    <tr> 
+                      <td width="50%">Room 10-</td>
+                      <td width="50%">$room10status</td>
+                      <td>$ifisadmin10</td>
+                    </tr>
+                  </table>
+                  <BR>
+                  <input class="input" type="SUBMIT" name="submit" value=" Go! ">
+                </FORM>
+          </td>
+        </tr>
+      </table><BR>
+    </center></td>
+  </tr>
+</table>
+</center>
+$footer
+</font>
+</body>
