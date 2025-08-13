@@ -1,0 +1,189 @@
+
+
+
+<table border=0 cellspacing=0 cellpadding=0 width=100%>
+<tr><td width=250>&nbsp;</td>
+<td align=left><h1 style="color: #427b7b; margin-left: 0px; margin-bottom: 0px; margin-top: 0px;" class=wheader>Campaign Wizard</h1></td>
+</tr></table>
+
+<form action=wizard.php method=post style="margin-top: 0px; margin-bottom: 0px;">
+%hiddenfields%
+
+<script language=JavaScript><!--
+function setVisible (c,form){
+if(c == 1){
+    form.bmonth.disabled = true;
+    form.bday.disabled = true;
+    form.byear.disabled = true;
+    form.emonth.disabled = true;
+    form.eday.disabled = true;
+    form.eyear.disabled = true;
+
+    form.pertype.disabled = true;
+    form.price.disabled = false;
+	pricelab.disabled = false;
+}else if(c == 2){
+
+    form.pertype.disabled = false;
+
+    form.bmonth.disabled = true;
+    form.bday.disabled = true;
+    form.byear.disabled = true;
+    form.emonth.disabled = true;
+    form.eday.disabled = true;
+    form.eyear.disabled = true;
+    form.price.disabled = false;
+	pricelab.disabled = false;
+} else {
+
+ if (c==3)
+  {
+    form.bmonth.disabled = false;
+    form.bday.disabled = false;
+    form.byear.disabled = false;
+    form.emonth.disabled = false;
+    form.eday.disabled = false;
+    form.eyear.disabled = false;
+    form.pertype.disabled = true;
+    form.price.disabled = false;
+	pricelab.disabled = false;
+  }
+ else
+  {
+    form.bmonth.disabled = false;
+    form.bday.disabled = false;
+    form.byear.disabled = false;
+    form.emonth.disabled = false;
+    form.eday.disabled = false;
+    form.eyear.disabled = false;
+    form.pertype.disabled = true;
+    form.price.value = '';
+    form.price.disabled = true;
+    pricelab.disabled = true;
+  }
+}
+}
+//--></script>
+
+<table border=0 width=100%>
+<tr><td>
+<table border=0 cellspacing=0 cellpadding=0 width=80%>
+<tr>
+<td rowspan=20 valign=top width=110>
+<table border=0 cellspacing=0 cellpadding=0>
+<tr><td width=98>
+
+<ul style="margin-left: 18px;margin-top: 2px;">
+<li>Step 1<br>
+Specifying campaign name and URL
+<br><br>
+<li><b>Step 2<br>
+Specifying campaign price</b><br><br>
+<li>Step 3<br>
+Adding the tracking link to your advert.<br><br>
+<li>Step 4<br>
+Campaign data revision. Moving to Action wizard. <br>
+</ul>
+</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr></table>
+</td>
+<tr>
+<td colspan=2 class=hd>
+
+There are three most popular ways available on the Web now to pay for 
+advertisement - PPC (pay per click), PPC based on keywords and prepayment for a certain time period.
+Certain time period prepayment could be periodical ( ex. when you pay a certain fee
+ every month) or simply manually defined time range.
+ Please choose the price type below according to the payment policy that is
+ used for your advertisement.
+This price will be used to count your return on investment for this campaign. 
+
+</td>
+</tr>
+
+
+<tr>
+<td>
+
+
+<input type=radio onClick="setVisible(1,this.form);" name=price_type value=1><img src="images/bullet.gif" width=16 height=10 border=0 align=absmiddle><span class=title>Per click</span>
+</td>
+</tr>
+
+<tr>
+<td>
+
+
+<input type=radio onClick="setVisible(4,this.form);" name=price_type value=4><img src="images/bullet.gif" width=16 height=10 border=0 align=absmiddle><span class=title>Per keyword</span>
+</td>
+</tr>
+
+<tr>
+            <td colspan=2> 
+              <input type=radio onClick="setVisible(2,this.form);" name=price_type value=3><img src="images/bullet.gif" width=16 height=10 border=0 align=abdmiddle><span class=title>Per period</span>
+</td>
+</tr>
+
+
+
+<tr><td colspan=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name=pertype style="width: 130px;">
+<option value=1>Day</option>
+<option value=2>Week</option>
+<option value=3>Month</option>
+<option value=4>Quarter</option>
+<option value=5>Year</option>
+</select>
+</td></tr>
+
+<tr>
+<td colspan=2>
+<input type=radio onClick="setVisible(3,this.form);" name=price_type value=2><img src="images/bullet.gif" width=16 height=10 border=0 align=absmiddle><span class=title>Per time range</span>
+</td>
+</tr>
+
+<tr>
+<td colspan=2>
+<table border=0>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>Begin:</td><td>%dateform1%</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>End:</td>
+<td>%dateform2%</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+            <td colspan=2><!--DWLayoutEmptyCell-->&nbsp;</td>
+</tr>
+
+
+<tr>
+            <td colspan=2 class=hd> Please enter the price for your campaign in 
+              the field below. If you choose PPC price type above then enter the 
+              price for click, if you choose the payment per time period or manually 
+              defined time range then enter the total sum of payment. Leave this 
+              field blank if your campaign is keyword based you will be able for 
+              keywords price later. <br>
+              <br>
+            </td>
+</tr>
+
+
+<tr>
+<td colspan=2><b><span id="pricelab">Price $:</span></b>
+&nbsp;&nbsp;&nbsp;<input type=text name=price class=txt value="%price%"></td>
+</tr>
+<tr>
+<td colspan=3 align=right>
+<input type=image src="images/button-previous.gif" name=prev value=prev title=Previous>
+<input type=image src="images/button-next.gif" name=next value=next title=Next>
+</td>
+</table>
+</td></tr></table>
+</form>
