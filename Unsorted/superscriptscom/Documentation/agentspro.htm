@@ -1,0 +1,574 @@
+<html>
+
+<head>
+<title>Documentation: Agents of Fortune Professional MYSQL Affiliate System </title>
+
+<meta name="Microsoft Border" content="t, default"></head>
+
+<body bgcolor="#ffffff" marginheight="0" marginwidth="0" leftMargin="0" topMargin="0" alink="#003399" vlink="#003399" link="#003399"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+
+<table border="0" width="33%" cellpadding="0">
+  <tr>
+    <td width="50%"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/" ONCLICK="parent.f=0"><img src="../pix/banners/miniprizm.gif" alt="cgi scripts" border="0" WIDTH="305" HEIGHT="59"></a></font></td>
+    <td width="50%" bgcolor="#FFFFFF"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/ads/rotate.cgi?url=&amp;user=" target="new" ONCLICK="parent.f=0"><img src="http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user=" border="0" width="468" height="60"></a></font></td>
+  </tr>
+</table>
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="16%"><p align="center"><a href="../dsstoday/index.html"><font color="#000000" face="Arial"><img src="../pix/main/news.jpg" alt="CGI NEWS" align="left" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="16%"><p align="center"><a href="../scripts/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/scripts.jpg" alt="CGI Scripts" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../mastergate/index.html"><font color="#000000" face="Arial"><img src="../pix/main/access.jpg" alt="Access The CGI Archive" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../contact.html"><font color="#000000" face="Arial"><img src="../pix/main/contact.jpg" alt="Contact Superscripts" WIDTH="104" HEIGHT="68"></font></a></td>
+    <td width="17%"><p align="center"><a href="../support.html"><font color="#000000" face="Arial"><img src="../pix/main/dox.jpg" alt="CGI Documentation" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../download/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/download.jpg" alt="Download CGI Scripts Here" align="right" WIDTH="105" HEIGHT="65"></font></a></td>
+  </tr>
+  <tr>
+    <td width="16%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/dsstoday/index.html" style="color: rgb(255,255,255)"><strong>News</strong></a></font></td>
+    <td width="16%" bgcolor="#000000"><p align="center"><a href="/scripts/" style="color: rgb(255,255,255)"><font face="Arial" color="#FFFFFF"><strong>CGI Scripts</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><a style="color: rgb(255,255,255)" href="../mastergate/index.html"><font face="Arial" color="#FFFFFF"><strong>Become A Member</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../contact.html"><strong>Contact
+    Us</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../support.html"><strong>Support</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/download/index.shtml" style="color: rgb(255,255,255)"><strong>Download
+    Area</strong></a></font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+
+<table border="0" width="75%" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <p><font face="Arial"><big><big><font color="#FF0000"><strong>Documentation<br>
+      </strong></font><font color="#000000">AGENTS OF FORTUNE PROFESSIONAL:&nbsp; V9.0</font></big></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Copyright 2001 Psybercore, Inc. - All Rights
+        Reserved. </small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Selling redistributing or modifying any or
+        all of the code for this program without prior written consent is expressly forbidden. You
+        must obtain written permission before redistributing this software over the Internet or in
+        any other medium. In all cases copyright and header information must remain intact.</small></font></p>
+      </blockquote>
+      <hr align="left">
+      <p><font face="Arial" color="#FF0000"><strong>WARNING - THIS IS FARILY ADVANCED CGI CODE</strong></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Our support policy confines us to answering
+        SPECIFIC questions about the installation.&nbsp; We do not teach perl, systems
+        configurations or unix as part of the <a href="http://www.superscripts.com/mastergate/">membership</a>.
+        &nbsp; If you require this level of support you will have to <a href="http://www.superscripts.com/mastergate/install.html">pay for installation</a>.
+        &nbsp; Feel free to give it a shot - if you have the time and like to learn you are on the
+        right page.&nbsp; For more information regarding support policies <a href="http://www.superscripts.com/mastergate/faq.html">read the FAQ.</a>&nbsp; If you
+        prefer to have the system installed for you simply <a href="http://www.psybercore.com/contact.html">contact PSYBERCORE</a> to have this
+        arranged.</small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><strong>Preleminary Material for review</strong></font><ul>
+        <li><a href="http://www.mysql.com"><font face="Arial" color="#000000"><small>Mysql Tutorial</small></font></a></li>
+        <li><a href="http://www.authorizenet.com/pages/DirectResponse.html"><font face="Arial" color="#000000"><small>Interfacing to Authorize.net</small></font></a></li>
+        <li><a href="../../tutorial/index.html"><font face="Arial" color="#000000"><small>Perl and
+          Telnet Tutorials</small></font></a></li>
+      </ul>
+      <p><font face="Arial" color="#000000"><strong>System Requirements</strong></font><ul>
+        <li><font face="Arial" color="#000000"><small>Perl 5</small></font></li>
+        <li><font face="Arial" color="#000000"><small><a href="http://www.mysql.com">Mysql</a>
+          Database Software</small></font></li>
+        <li><font face="Arial" color="#000000"><a href="../../download/Msql-Mysql-modules-1.2200.tar.gz"><small>Msql-Mysql Module</small></a></font></li>
+        <li><font face="Arial" color="#000000"><a href="../../download/DBI-1.09.tar"><small>DBI
+          Module</small></a></font></li>
+        <li><font face="Arial" color="#000000"><small>Sendmail</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Crontab Recommended for Backups</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Ability to communicate with billing software</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Password protection ability recommended</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Unix recommended</small></font></li>
+      </ul>
+      <h1><font face="Arial" color="#000000"><small><small>Upgrading?</small></small></font></h1>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>It is NOT possible to upgrade from AGENTS OF
+        FORTUNE to the PROFESSIONAL VERSION</small></font></p>
+      </blockquote>
+      <h2><font face="Arial" color="#000000"><small>Preliminaries</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Determine the path to PERL 5 on your web
+          server host.&nbsp; Note that some web hosting companies run both PERL 4 and PERL 5.&nbsp;
+          Make ABSOLUTELY sure you are not setting this up under PERL 4.&nbsp; Ask your
+          administrator if you are not sure. </small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>You need to have MYSQL, the MYSQL-MSQL MODULE,
+          and the DBI PERL MODULE installed for this software to work.&nbsp; These are all included
+          in the tarball.</small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>If you need to review or learn the basics of
+          CGI and Perl visit <a href="../../tutorial/index.html">THE TUTORIAL</a></small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small><a href="http://www.superscripts.com/download/">Download</a> the tarfile for this program and
+          save it to your desktop.</small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Unpack the tar archive on your desktop using a
+          program that unpacks UNIX TAR ARCHIVES. If you don't have such a program then download
+          WINZIP FREE from <a HREF="http://www.shareware.com/">SHAREWARE.COM</a>.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>After you have unpacked the TAR archive you
+          will have a collection of folders and files on your desktop.&nbsp; Now you have to do some
+          basic editing of each of these files (or at least some of them).&nbsp; Use a text editor
+          such as wordpad, notepad, BBEdit, simpletext, or teachtext to edit the files.&nbsp; These
+          are NOT WORD PROCESSOR DOCUMENTS they are just simple TEXT files so don't save them as
+          word processor documents or save them with extentions such as .txt or they will NOT WORK.
+          &nbsp; Note that there may be a some files inside of folders which are &quot;blank&quot;.
+          &nbsp; This is normal.</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Preparing the CGI scripts</small></font></h2>
+      <blockquote>
+        <h2><font face="Arial" color="#FF0000"><small><small>Define Path To PERL 5</small></small></font></h2>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>The first step is to open up each and every
+        file that has a .cgi extention and edit line number one of each script.&nbsp; Each of the
+        cgi scripts is written in perl 5. For your scripts to run they must know where perl 5 is
+        installed on your web server. The path to perl 5 is defined to a cgi script in the first
+        line of the file. In each of the cgi scripts the first line of code looks something like
+        this: </small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#FF0000"><small>#!/usr/bin/perl</small></font></p>
+        </blockquote>
+        <p><font face="Arial" color="#000000"><small>If the path to perl 5 on your web server is
+        different from /usr/bin/perl you must edit the first line of each cgi script to reflect
+        the correct path. If the path to perl 5 is the same no changes are necessary. If you do
+        not know the path to perl 5 ask the webmaster or system administrator at your server site.
+        &nbsp; </small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big><strong>Configure the .cgi files</strong></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><big>configure.cgi</big></font></p>
+        <p><font face="Arial" color="#000000"><small>This file pretty much runs the whole
+        show.&nbsp; If you screw this one up don't count on anything working properly. &nbsp; In
+        other words, make sure you take the time to do this step CORRECTLY.&nbsp; Ask your
+        administrator for help if you need to.&nbsp; Below are the variables used in ALL of the
+        other cgi scripts.&nbsp; All of the other cgi programs use configure.cgi to figure out
+        where certain things are.</small></font></p>
+        <font size="3"><blockquote>
+          <p></font><font size="2" color="#FF0000" face="Arial">$localurl =
+          &quot;yourdomain.com&quot;;</font><font size="2"></p>
+          <blockquote>
+            <p></font><font size="2" color="#000000" face="Arial">Your domain name</font><font size="2"></p>
+          </blockquote>
+          <p></font><font size="2" color="#FF0000" face="Arial">$agentcode = &quot;pickaname&quot;;</font><font size="2"></p>
+          <blockquote>
+            <p></font><font color="#000000" face="Arial"><small>Use a UNIQUE name for your site (for
+            example - &quot;myaffiliate&quot;, or &quot;salesagent&quot;) DO NOT USE SPACES</small></font><font size="2"></p>
+          </blockquote>
+          <p></font><font size="2" color="#FF0000" face="Arial">$mysqldatabase=
+          &quot;agentsdatabase&quot;;</font><font size="2"></p>
+          <blockquote>
+            <p></font><small><font size="2" color="#000000" face="Arial">N</font><font size="2"><font face="Arial"><font color="#000000"><font size="2">ame of your mysql database</font>.
+            &nbsp; </font></small>If you are using a seperate mysql server Set $mysqldatabase to
+            databasenameServername</font></p>
+          </blockquote>
+          <p></font><font size="2" color="#FF0000" face="Arial">$mysqlusername= &quot;your mysql
+          username&quot;;</font><font size="2"></p>
+          <blockquote>
+            <p></font><font size="2" color="#000000" face="Arial"><small>Username used to login to
+            MYSQL</small></font><font size="2"></p>
+          </blockquote>
+          <p><font size="2" color="#FF0000" face="Arial">$mysqlpassword= &quot;your mysql
+          password&quot;;</font></p>
+          <blockquote>
+            <p></font><font size="2" color="#000000" face="Arial"><small>Password used to login to
+            MYSQL</small></font><font size="2"></p>
+          </blockquote>
+          <p></font><font size="2" color="#FF0000" face="Arial">$mailprogram='/path/to/sendmail';</font><font size="2"></p>
+          <blockquote>
+            <p></font><font color="#000000" face="Arial"><small>Full path to SENDMAIL on your
+            webserver</small></font><font size="2"></p>
+          </blockquote>
+          <p></font><font size="2" color="#FF0000" face="Arial">$adminemail =
+          &quot;you\@yourdomain.com&quot;;</font><font size="2"></p>
+          <blockquote>
+            <p></font><font color="#000000" face="Arial"><small>Your email address (YOU HAVE TO USE
+            THE BACKSLASH HERE!)</small></font><font size="2"></p>
+          </blockquote>
+          <p></font><font size="2" color="#FF0000" face="Arial">$webmasterurl =
+          &quot;http://www.yourdomain.com/path/to/agents/webmasters&quot;;</font><font size="2"></p>
+          <blockquote>
+            <p></font><font size="1" color="#000000" face="Arial">Full URL to the webmasters&nbsp;
+            directory containing the login form</font><font size="2"></p>
+          </blockquote>
+          <p></font><font size="2" color="#FF0000" face="Arial">$clickthroughurl =
+          &quot;http://www.yourdomain.com/&quot;;</font><font size="2"></p>
+          <blockquote>
+            <p></font><font size="2" color="#000000" face="Arial">This is the FULL URL where people
+            will be sent after clicking on your banner.</font><font size="2"></p>
+          </blockquote>
+          <p></font><font size="2" color="#FF0000" face="Arial">$cgidirectory =
+          &quot;/path/to/cgi-bin/agents&quot;;</font><font size="2"></p>
+          <blockquote>
+            <p></font><font face="Arial"><font size="2" color="#000000">This is the FULL PATH to the </font><font color="#000000"><small>agents directory containing the .cgi files</small></font></font><font size="2"></p>
+          </blockquote>
+          <p></font><font size="2" color="#FF0000" face="Arial">$cgiurl =
+          &quot;http://www.yourdomain.com/cgi-bin/agents&quot;;</font><font size="3"></p>
+          <blockquote>
+            <p></font><font color="#000000" face="Arial"><small>Full URL to the agents directory
+            containing the .cgi files</small></font><font size="2"></p>
+          </blockquote>
+          <p></font><font face="Arial"><font size="2" color="#FF0000">$datadirectory</font><font color="#FF0000"><font size="3"> = &quot;/</font><font size="2">path/to/agents/data&quot;;</font></font></font><font size="3"></p>
+          <blockquote>
+            <p></font><font face="Arial" size="3" color="#000000">This is the FULL PATH to the </font><font face="Arial"><small><font size="3"><font color="#000000">agents data directory</font></font><font color="#000000" size="3">. </font><font size="2" color="#000000">By default is</font><font color="#000000" size="3"> </font></small><font size="2" color="#000000">/path/to/cgi-bin/agents/data</font></font><font size="3"></p>
+          </blockquote>
+        </blockquote>
+        </font>
+      </blockquote>
+      <h2><font color="#000000" face="Arial"><small>Upload Your Edited CGI and Database Files</small></font></h2>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>Upload all of the cgi files (.cgi) into a
+          directory you create called &quot;agents&quot; inside your cgi-bin
+          (http://yourdomain/cgi-bin/agents)</small></font></li>
+        <li><font color="#000000" face="Arial"><small>Make a new directory inside of your
+          /cgi-bin/agents folder data</small></font><ul>
+            <li><font color="#000000" face="Arial"><small>http://yourdomain/cgi-bin/agents/data/</small></font></li>
+          </ul>
+          <p><font face="Arial"><small>Note there are 3 files inside the data folder (schedule.db,
+          passwords, and memberdatabase) all of these 3 files except schedule.db are just blank text
+          files. &nbsp; schedule.db is a database for organizing your pay periods.</small></font></p>
+        </li>
+      </ul>
+      <h2><font color="#000000" face="Arial"><small>Upload The Edited HTML Files</small></font></h2>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>Make a directory inside of your webspace
+          called agents (http://yourdomain/agents/) and 2 directories inside of this called
+          webmasters and admin (http://yourdomain/agents/webmasters, http://yourdomain/agents/admin)</small></font></li>
+        <li><font color="#000000" face="Arial"><small>Modify the form action tags of the admin
+          (index.html) page and the webmasters (index.html) page and upload these into their
+          respective directories.</small></font></li>
+        <li><font face="Arial"><small><font color="#000000">If you are not allowing textlinks then
+          you will want to customize the banners.cgi html output so it doesnt give instructions for
+          text links.&nbsp; Simply edit the html in between the </font><font color="#FF0000"><strong>ENDHEADER</strong></font><font color="#000000"> markers inside of banners.cgi</font></small></font></li>
+      </ul>
+      <p align="left"><font color="#000000" face="Arial"><big>Password Protect the admin
+      Directory</big></font></p>
+      <blockquote>
+        <p align="left"><font color="#000000" face="Arial"><a href="../../tutorial/index.html"><small>SEE
+        THE TUTORIAL FOR INSTRUCTIONS FOR PASSWORD PROTECTING DIRECTORIES</small></a></font></p>
+      </blockquote>
+      <h2><font color="#000000" face="Arial"><small>Upload Your Banner image(s)</small></font></h2>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>Upload your banner(s) into the
+          http://yourdomain/agents/webmaster directory.&nbsp; </small></font></li>
+      </ul>
+      <p align="left"><font color="#000000" face="Arial"><small>WHEN YOU ARE FINISHED...</small></font></p>
+      <blockquote>
+        <p><font color="#FF0000" face="Arial"><small>http://www.yourdomain.com/agents/index.html</small></font></p>
+        <p><font color="#000000" face="Arial"><small>&nbsp;&nbsp;&nbsp; SIGNUP PAGE FOR NEW
+        AFFILIATES</small></font></p>
+        <p><font color="#FF0000" face="Arial"><small>http://www.yourdomain.com/agents/webmasters/index.html</small></font></p>
+        <blockquote>
+          <p><font color="#000000" face="Arial"><small>Where users will login to get bannercode,
+          check stats, modify info</small></font></p>
+        </blockquote>
+        <p><font color="#FF0000" face="Arial"><small>http://www.yourdomain.com/agents/admin/index.html</small></font></p>
+        <blockquote>
+          <p><font color="#000000" face="Arial"><small>Password protected admin area</small></font></p>
+        </blockquote>
+        <p><font color="#FF0000" face="Arial"><small>ALL CGI will be
+        http://www.yourdomain.com/cgi-bin/agents/</small></font></p>
+      </blockquote>
+      <h2><font color="#000000" face="Arial"><small>File Access Permissions</small></font></h2>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>File access permissions must be set correctly
+        for this program to run. The table below lists the permissions of each file which are to
+        be set by the unix command ( chmod ) used to set the correct access permissions. You must
+        set the access permissions for each of these files.&nbsp; As usual you will set all .cgi
+        files to 755 (rwx-r-x-r-x)and all other files and directories to 777.</small></font></p>
+      </blockquote>
+      <div align="center"><center><table WIDTH="448" HEIGHT="67" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+        <tr>
+          <td WIDTH="50%" HEIGHT="17" bgcolor="#000000"><blockquote>
+            <p ALIGN="left"><font color="#FFFFFF" face="Arial"><strong>&nbsp;CHMOD 755</strong></font></p>
+          </blockquote>
+          </td>
+          <td WIDTH="50%" bgcolor="#000000"><blockquote>
+            <p ALIGN="left"><font color="#FFFFFF" face="Arial"><strong>&nbsp;CHMOD 777</strong></font></p>
+          </blockquote>
+          </td>
+        </tr>
+        <tr>
+          <td WIDTH="50%" HEIGHT="41"><ul>
+            <li><font size="2" color="#000000" face="Arial">add.cgi</font></li>
+            <li><font size="2" color="#000000" face="Arial">login.cgi</font></li>
+            <li><font size="2" color="#000000" face="Arial">banners.cgi</font></li>
+            <li><font size="2" color="#000000" face="Arial">bydate.cgi</font></li>
+            <li><font size="2" color="#000000" face="Arial">byuser.cgi</font></li>
+            <li><font size="2" color="#000000" face="Arial">agents.cgi</font></li>
+            <li><font size="2" color="#000000" face="Arial">stats.cgi</font></li>
+            <li><font size="2" color="#000000" face="Arial">revoke.cgi</font></li>
+            <li><font size="2" color="#000000" face="Arial">premodify.cgi</font></li>
+            <li><font size="2" color="#000000" face="Arial">overview.cgi</font></li>
+            <li><font size="2" color="#000000" face="Arial">configure.cgi</font></li>
+            <li><font size="2" color="#000000" face="Arial">delete.user.cgi</font></li>
+            <li><font size="2" color="#000000" face="Arial">export.cgi</font></li>
+            <li><font size="2" color="#000000" face="Arial">getinfo.cgi</font></li>
+            <li><font size="2" color="#000000" face="Arial">getpayout.cgi</font></li>
+            <li><font size="2" color="#000000" face="Arial">modify.cgi</font></li>
+            <li><font size="2" color="#000000" face="Arial">payout.cgi</font></li>
+            <li><font size="2" color="#000000" face="Arial">newday.cgi</font></li>
+            <li><font size="2" color="#000000" face="Arial">start.cgi</font></li>
+            <li><font size="2" color="#000000" face="Arial">bysale.cgi</font></li>
+          </ul>
+          </td>
+          <td WIDTH="50%"><ul>
+            <li><font size="2" color="#000000" face="Arial">data directory and everything inside
+              (schedule.db, passwords, memberdatabase)</font></li>
+          </ul>
+          <p><font color="#000000" face="Arial"><small><br>
+          </small></font></td>
+        </tr>
+      </table>
+      </center></div><hr>
+      <h2><font color="#000000" face="Arial"><small>Interfacing Your Billing System</small></font></h2>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>See the <a href="agents.html">AGENTS OF
+        FORTUNE files for the other version</a> for examples on interfacing into DMR and IBILL</small></font></p>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big>Edit payout.cgi</big></font></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>The goal is simple - you have to pass THREE
+        variables into payout.cgi and you have to execute payout.cgi after someone purchases from
+        you.&nbsp; There are numerous ways to do this.&nbsp; If your billing software is written
+        in perl you can place the following code inside your billing routine (be it formmail,
+        mastergate, etc)</small></font></p>
+        <blockquote>
+          <font size="3"><p></font><font size="2" color="#FF0000" face="Arial">require
+          &quot;/path/to/cgi-bin/agents/payout.cgi&quot;;</font><font size="2"></p>
+          <p></font><font size="2" color="#FF0000" face="Arial">&amp;payout;</font></p>
+        </blockquote>
+        <p><font color="#000000" face="Arial"><small>$commission may be calculated from the total
+        dollar value of your sales or set to flat rate values. &nbsp; Note that any variables you
+        have defined in your billing software (eg: &nbsp; formmail.pl or whatever) will be passed
+        into payout.cgi.&nbsp; Calling an external script from your billing software using the
+        &amp; statement is basically just like splicing the payout.cgi code straight into your
+        billing software.&nbsp; There is no difference between cutting and pasting payout.cgi into
+        your billing software and calling payout.cgi using the &amp;payout; statement.</small></font></p>
+        <p><font color="#000000" face="Arial"><small>If you were paying a flat rate structure
+        instead then you would do this:</small></font></p>
+        <font size="3"><blockquote>
+          <p></font><font size="2" color="#FF0000" face="Arial">$commission = 25;</font><font size="2"></p>
+          </font><font size="3">
+        </blockquote>
+        </font><p><font color="#000000" face="Arial"><small>This sets the commission to $25.00</small></font></p>
+        <p><font color="#000000" face="Arial"><small>If you were paying a percentage of the total
+        sale and say for example you processed your order with FORM MAIL...&nbsp; If you had
+        assigned the variable name $total inside of the form mail program to be the total dollar
+        value of this sale and then from inside form mail you called payout.cgi </small></font></p>
+        <p><font color="#000000" face="Arial"><small>snippet from your form mail program</small></font></p>
+        <blockquote>
+          <p><font color="#FF0000" face="Arial"><small>&quot;$total = sum of total purchase&quot;</small></font></p>
+          <font size="3"><p></font><font size="2" color="#FF0000" face="Arial">require
+          &quot;/path/to/cgi-bin/agents/payout.cgi&quot;;</font><font size="2"></p>
+          <p></font><font size="2" color="#FF0000" face="Arial">&amp;payout;</font></p>
+        </blockquote>
+        <p><font color="#000000" face="Arial"><small>from payout.cgi</small></font></p>
+        <font size="3"><blockquote>
+          <p></font><font size="2" color="#FF0000" face="Arial">$commission = 0.25 * $total;</font><font size="2"></p>
+          </font><font size="3">
+        </blockquote>
+        </font><p><font color="#000000" face="Arial"><small>This would pay your affiliates 25% of
+        your TOTAL sales.&nbsp; The $total variable was actually calculated inside of your form
+        mail but when payout.cgi was called the variable was passed into this routine.&nbsp; Note
+        that you have to DEFINE $total you cant just tell payout.cgi to use a variable ($total)
+        without EXPLICITLY defining this variable elsewhere. &nbsp; This isnt magically going to
+        know what you mean by $total otherwise.&nbsp; </small></font></p>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big>Identify and Mark Your Sale</big></font></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Also you have to assign something to the
+        $identify variable inside of payout.cgi so you can match the commission to a specific sale
+        in case you need to revoke it later.&nbsp; Use an email address, IP number, username or
+        something which will uniquely identify each sale.&nbsp; Note that you have to actually
+        DEFINE this variable either inside of payout.cgi or inside of the billing routine you are
+        calling payout.cgi from.&nbsp; This means you have to take an actual variable name from
+        your billing software and set identify to equal this variable.&nbsp; You could also create
+        the variable inside of payout.cgi if you wanted to.&nbsp; Note also that the variable
+        $identify is used to track the name of the PURCHASER (not the agent) so you should set it
+        to something like the customers name, email address, or anything that would allow you to
+        mark the sale in case you have to look it up later.</small></font></p>
+        <p><font color="#000000" face="Arial"><small>examples:&nbsp; $identity eq $custname;</small></font></p>
+        <blockquote>
+          <p><font color="#000000" face="Arial"><small>this would be good if you are using supercart
+          since $custname is defined inside of mailorder.cgi</small></font></p>
+        </blockquote>
+        <p><font color="#000000" face="Arial"><small>or $identity eq $username</small></font></p>
+        <blockquote>
+          <p><font color="#000000" face="Arial"><small>good for internet billing proccessor since
+          $username is defined inside of accountcreate.cgi</small></font></p>
+        </blockquote>
+        <p><font color="#FF0000" face="Arial"><small>If you are totally lost at this point I
+        suggest you find a cgi programmer to install this for you.</small></font></p>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big>Example executing from SSI</big></font></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>You can also execute payout.cgi from a server
+        sides includes tag.&nbsp; The routine will have to be modified slightly to retrieve the
+        proper information (the cookie from ENV(REMOTE_USER).&nbsp; This executes the payout
+        routine the first time the new user logs in.&nbsp; You may have to rename your page to
+        .shtml instead of .html on some machines - ASK your system administrator the requirements
+        on your server to execute SSI.</small></font></p>
+        <blockquote>
+          <font size="3"><p></font><font color="#000000" size="2" face="Arial">&lt;!--#EXEC
+          CGI=&quot;/cgi-bin/agents/payout.pl&quot; --&gt;</font></p>
+        </blockquote>
+        <p><font color="#000000" face="Arial"><small>Note that your members directory MUST be
+        password protected with .htaccess in order for this to work</small></font></p>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big>Cookies, IP's and Ports</big></font></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>If you haven't guessed by now, Agents of
+        Fortune uses COOKIES to keep track of commissions.&nbsp; When an surfer clicks on one of
+        your affiliates banners a cookie is set inside their browser and remains there until
+        something like the year 2003.&nbsp; Anytime that visitor returns to your site and buys
+        something payout.cgi sucks the cookie out of the browser and writes to a database the
+        commission information.&nbsp; Likewise if this surfer also signed up for your affiliate
+        system the cookie would write to a database and Agents would know that this new affiliate
+        was referred to you by someone else.&nbsp; The secondary commission information is all
+        tracked in the member databases.&nbsp; </small></font></p>
+        <p><font color="#000000" face="Arial"><small>The thing about cookies (and its a good
+        thing) is that you can only retrieve cookies that you sent.&nbsp; This means it is totally
+        IMPOSSIBLE for you to read all the cookies in my browser that have been set by 100's of
+        other websites tracking my behaviour.&nbsp; Cookies can only be read from the exact same
+        IP address and PORT that they were set by.</small></font></p>
+        <p><font color="#000000" face="Arial"><small>The reason this is very important is that if
+        you have your billing system on a secure server (using port 443) then payout.cgi would be
+        executed on port 443.&nbsp; If this is the case agents.cgi (which sets the cookie) but
+        also be executed on port 443.&nbsp; Thus you cant have the URL to agents.cgi be something
+        like&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; http://www.superscripts.com/agents.cgi and the
+        URL to payout.cgi be something like&nbsp; https://www.superscripts.com/payout.cgi &nbsp;
+        They have to be executed on the exact same DOMAIN and PORT.&nbsp; This may also apply
+        depending on how your isp sets up their webserver on the www domain alias. &nbsp; Some
+        ISPs setup yourdomain.com on different IP's than the www.yourdomain.com alias.</small></font></p>
+      </blockquote>
+      <h2><font color="#000000" face="Arial"><small><small>Setup your MYSQL database</small></small></font></h2>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Inside the folder mysql.stuff you will see
+        the perl modules you need to have installed plus a small readme file with the BASIC
+        commands you need to run this software and a file called agents.sql which sets up the
+        database in MYSQL to store all the required data for AGENTS.&nbsp; To setup the database
+        simply create a folder inside of /path/to/mysql/agents and upload the agents.sql file as
+        ASCII data.&nbsp; Then from the command line type</small></font></p>
+        <font SIZE="2"><p></font><font face="Arial" color="#FF0000" SIZE="2">../bin/mysqladmin -u
+        root -p create agentsdatabase</font></p>
+        <blockquote>
+          <p><font color="#000000" face="Arial"><small>This creates the actual database called
+          &quot;agentsdatabase&quot;</small></font></p>
+        </blockquote>
+        <font SIZE="2"><p></font><font face="Arial" color="#FF0000" SIZE="2">../bin/mysql -u root
+        -pMYSQLPASSWORD agentsdatabase &lt; agents.sql</font></p>
+        <blockquote>
+          <p><font color="#000000" face="Arial"><small>This loads the database tables into mysql</small></font></p>
+        </blockquote>
+        <p><small><font color="#000000" face="Arial">You should then login to MYSQL to &quot;show
+        tables&quot; and make sure everything got setup correctly</font></small></p>
+        <font SIZE="2"><blockquote>
+          <p></font><font face="Arial" color="#FF0000" SIZE="2">../bin/mysql -u root -p
+          agentsdatabase</font><font SIZE="2"></p>
+        </blockquote>
+        <p></font><font color="#000000" size="2" face="Arial"><a href="http://www.mysql.com">If
+        you need help with MYSQL you need to go to the source for information:&nbsp; MYSQL.COM</a></font><font SIZE="2"></p>
+        </font>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big>Crontab newday.cgi</big></font></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>The newday.cgi file must be set to execute
+        every day at midnight.&nbsp; If you dont do this, your stats will become corrupted.&nbsp; </small></font></p>
+      </blockquote>
+      <h2><font color="#000000" face="Arial"><small><small>Operating your Affiliates Program</small></small></font></h2>
+      <blockquote>
+        <p align="left"><font color="#000000" face="Arial">START THE SYSTEM</font></p>
+        <blockquote>
+          <p align="left"><font color="#000000" face="Arial"><small>From telnet cd to the
+          cgi-bin/agents directory and run start.cgi</small></font></p>
+          <p align="left"><font face="Arial" color="#FF0000"><small>perl start.cgi</small></font></p>
+        </blockquote>
+        <p align="left"><font color="#000000" face="Arial">ADMINISTRATION</font></p>
+      </blockquote>
+      <blockquote>
+        <blockquote>
+          <p><font color="#000000" face="Arial"><small>The administrative interface is basically a
+          navigational and editing interface.&nbsp; If you take a little time to push buttons you
+          will see how it works.&nbsp; You can zoom into the statistics from any point starting at
+          the yearly overview and zooming into the individual users statistics. &nbsp; From the
+          payout menu you can revoke sales or delete affiliates. </small></font></p>
+        </blockquote>
+        <p align="left"><font color="#000000" face="Arial">EXPORTING PAY TABLES</font></p>
+        <blockquote>
+          <p><font color="#000000" face="Arial"><small>The payout menu allows you to export the
+          current pay period sales data into a flat file ASCII delimited database which is stored
+          inside the /cgi-bin/agents/logs directory.&nbsp; The file will be called #.payout.txt
+          where # is the numerical value of the current pay period.&nbsp; This database structure is
+          set by default to be seperated by the pipe character |</small></font></p>
+        </blockquote>
+        <p align="left"><font color="#000000" face="Arial">CHANGING PAYOUT SCHEDULES</font></p>
+        <blockquote>
+          <p><font color="#000000" face="Arial"><small>The file inside of /cgi-bin/data/schedules.db
+          is a table of the pay periods broken up into one pay period per line.&nbsp; The default
+          pay schedule consists of 24 periods (24 lines).&nbsp; There are no restrictions to how you
+          can restructure this table.&nbsp; Make sure you do NOT have any extra blank lines in this
+          file however or it will totally throw off your statistics.</small></font></p>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <p align="left"><font color="#000000" face="Arial">BACKUP PROCEEDURES</font></p>
+        <blockquote>
+          <p><font color="#000000" face="Arial"><small>It is HIGHLY recommended that you regularly
+          backup your database.&nbsp; In the event major computer malfunction, power outage, server
+          crash, etc you will be glad you did.&nbsp; To the MYSQL guru this is easily done by
+          executing the following command by crontab</small></font></p>
+          <font SIZE="2"><p></font><font face="Arial" color="#FF0000" SIZE="2">../bin/mysqldump -u
+          root -pMYSQLPASSWORD agentsdatabase &gt; agentsdatabase.sql</font></p>
+        </blockquote>
+        <p align="left"><font color="#000000" face="Arial">RESTORE DATABASE</font></p>
+        <blockquote>
+          <p><font color="#000000" face="Arial"><small>To restore your database from a backup you
+          have to DROP your database, recreate the database, then reload the tables with the
+          commands:</small></font></p>
+          <font SIZE="2"><p><font face="Arial" color="#FF0000" SIZE="2">DESTROY DATABASE</font></p>
+          <blockquote>
+            <p><font face="Arial" color="#FF0000" SIZE="2">../bin/mysqladmin -u root -pMYSQLPASSWORD
+            drop agentsdatabase </font></p>
+          </blockquote>
+          <p><font face="Arial" color="#FF0000" SIZE="2">CREATE DATABASE</font></p>
+          <blockquote>
+            <p><font face="Arial" color="#FF0000" SIZE="2">../bin/mysqladmin -u root -p create
+            agentsdatabase</font></p>
+          </blockquote>
+          <p></font><font face="Arial" color="#FF0000" SIZE="2">CREATE TABLES</font><font SIZE="2"></p>
+          <blockquote>
+            <p></font><font face="Arial" color="#FF0000" SIZE="2">../bin/mysql -u root -pMYSQLPASSWORD
+            agentsdatabase &lt; agentsdatabase.sql</font><font SIZE="2"></p>
+          </blockquote>
+          </font>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <font SIZE="2"><p>&nbsp;</p>
+        </font>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
