@@ -1,0 +1,14 @@
+phpManager
+
+install txt added
+
+call home disabled
+
+hardcoded username and password that allowed unauthorized entry to your script by phpmanager.com removed
+
+
+original files are included 	/admin/index
+						/clients/index
+
+
+dRiver 2002
