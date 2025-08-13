@@ -1,0 +1,91 @@
+ %% PLEASE DO NOT MODIFY OR DELETE THIS FILE! %% 
+ %% This file contains information about the installation of an application. %% 
+ %% It will be used to automatically remove all application components from your computer if you choose to do so. %% 
+
+
+NOTE: Beginning of the bootstrapper section
+
+CONFIG: Title: "Mighty Zip"
+
+ACTION: RegKey: "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion", "SharedDLLs"
+
+ACTION: SystemFile: "C:\WINNT\system32\VB6STKIT.DLL"
+(File was not found or was an older version -- new file copied)
+
+ACTION: SystemFile: "C:\WINNT\SYSTEM32\COMCAT.DLL"
+(File currently on disk was already up to date)
+
+ACTION: SystemFile: "C:\WINNT\SYSTEM32\STDOLE2.TLB"
+(File currently on disk was already up to date)
+
+ACTION: SystemFile: "C:\WINNT\SYSTEM32\ASYCFILT.DLL"
+(File currently on disk was already up to date)
+
+ACTION: SystemFile: "C:\WINNT\SYSTEM32\OLEPRO32.DLL"
+(File currently on disk was already up to date)
+
+ACTION: SystemFile: "C:\WINNT\SYSTEM32\OLEAUT32.DLL"
+(File currently on disk was already up to date)
+
+ACTION: SystemFile: "C:\WINNT\system32\msvbvm60.dll"
+(File was not found or was an older version -- new file copied)
+
+ACTION: DllSelfRegister: "C:\WINNT\SYSTEM32\COMCAT.DLL"
+
+ACTION: TLBRegister: "C:\WINNT\SYSTEM32\STDOLE2.TLB"
+
+ACTION: DllSelfRegister: "C:\WINNT\SYSTEM32\OLEPRO32.DLL"
+
+ACTION: DllSelfRegister: "C:\WINNT\SYSTEM32\OLEAUT32.DLL"
+
+ACTION: DllSelfRegister: "C:\WINNT\SYSTEM32\msvbvm60.dll"
+
+NOTE: End of the bootstrapper section
+
+NOTE: Now spawning the main Setup program 'Setup1.exe'....
+
+ACTION: CreateDir: "C:\Program Files\MightyZip"
+
+ACTION: SharedFile: "C:\WINNT\system32\hh.exe"
+(File was not found or was an older version -- new file copied)
+
+ACTION: SharedFile: "C:\WINNT\system32\itircl.dll"
+(File currently on disk was already up to date)
+
+ACTION: SharedFile: "C:\WINNT\system32\itss.dll"
+(File currently on disk was already up to date)
+
+ACTION: SharedFile: "C:\WINNT\system32\hhctrl.ocx"
+(File currently on disk was already up to date)
+
+ACTION: PrivateFile: "C:\Program Files\MightyZip\MightyZip.chm"
+(File was not found or was an older version -- new file copied)
+
+ACTION: PrivateFile: "C:\Program Files\MightyZip\ZipCodes.dat"
+(File was not found or was an older version -- new file copied)
+
+ACTION: SharedFile: "C:\WINNT\system32\MSWINSCK.OCX"
+(File was not found or was an older version -- new file copied)
+
+ACTION: SharedFile: "C:\WINNT\system32\MNDLL.dll"
+(File was not found or was an older version -- new file copied)
+
+ACTION: PrivateFile: "C:\Program Files\MightyZip\MightyZip.dll"
+(File was not found or was an older version -- new file copied)
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\itircl.dll"
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\itss.dll"
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\hhctrl.ocx"
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\MSWINSCK.OCX"
+
+ACTION: DllSelfRegister: "C:\Program Files\MightyZip\MightyZip.dll"
+
+ACTION: ShellLink: "$(Programs)", "Mighty Zip Help"
+
+ACTION: RegKey: "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion", "App Paths\MightyZip.dll"
+
+ACTION: RegValue: "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\MightyZip.dll", ""
+
