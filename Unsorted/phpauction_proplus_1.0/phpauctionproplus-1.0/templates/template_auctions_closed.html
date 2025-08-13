@@ -1,0 +1,20 @@
+<?
+#///////////////////////////////////////////////////////
+#//  COPYRIGHT 2002 PHPAuction.org ALL RIGHTS RESERVED//
+#//  For Source code for the GPL version go to        //  
+#//  http://phpauction.org and download               // 
+#//  Supplied by CyKuH [WTN]                          //
+#///////////////////////////////////////////////////////
+?>
+
+<!-- TABLE WITH AUCTIONS -->
+<TABLE WIDTH="100%" BORDER=0 CELLPADDING=3 CELLSPACING=0 bgcolor="#FFFFFF">
+<TR ALIGN=CENTER BGCOLOR="<?=$FONTCOLOR[$SETTINGS[tableheadercolor]]?>">
+	<TD WIDTH="5%"><? print $nav_font.$MSG_167; ?></FONT></TD>
+	<TD WIDTH="50%"><? print $nav_font.$MSG_168; ?></FONT></TD>
+	<TD WIDTH="15%"><? print $nav_font.$MSG_169; ?></FONT></TD>
+	<TD WIDTH="15%"><? print $nav_font.$MSG_170; ?></FONT></TD>
+	<TD WIDTH="15%"><? print $nav_font.$MSG_171; ?></FONT></TD>
+</TR>
+<? print stripslashes($TPL_auctions_list_value); ?>
+</TABLE>
