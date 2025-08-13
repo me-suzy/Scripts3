@@ -1,0 +1,8 @@
+Non-religous
+Christian
+Jewish
+Hindu
+Muslim
+Atheist
+Buddhist
+Other
