@@ -1,0 +1,320 @@
+<html>
+<head>
+<title>File Uploader</title>
+</head>
+<BODY TOPMARGIN="0" LEFTMARGIN="0" MARGINWIDTH="0" MARGINHEIGHT="0" bgcolor="#ffffff" text="#000000" link="#0000ff">
+<table border=0 cellspacing=0 cellpadding=6 width="100%">
+<tr align=left>
+<td bgcolor="#666699" valign=top width="10%">
+<font face="arial" size=-1>
+<div align=center>
+<!-- Start Network Commerce Inc. Reseller Center -->
+<script>
+document.write('<iframe id="nwkc" width="125" height="125" marginwidth="0" marginheight="0" frameborder="0" bordercolor="#000000" scrolling="no" src="http://rews.nwkc.com/iframe?pid=100000000&rid=100001366&fid=10023"><ilayer width="130" height="130" src="http://rews.nwkc.com/ilayer?pid=100000000&rid=100001366&fid=10023"></ilayer></iframe>');
+</script>
+<noscript>
+	<a href="http://rews.nwkc.com/director?&fid=10023&pid=100000000&rid=100001366"><img src="http://rews.nwkc.com/noiframeimage?pid=100000000&rid=100001366&fid=10023" border="0"></a>
+</noscript>
+<!-- End Network Commerce Inc. Reseller Center -->
+</div>
+<p>
+<hr>
+<p>
+<div align=center>
+<a href="http://cognigen.net/bizop/?cnctek" target="_blank"><img src="http://www.cnctek.com/cognigen.gif" border=1 width=130 height=100 alt="The Free Global Internet Marketing Program for the New Millennium That works!"></a>
+</div>
+<p>
+<hr>
+<p>
+<div align=center>
+<table border=0 cellpadding=3 width="100%"><tr><td bgcolor="#ffeeee" align=center><font size=-1>
+<font color="#0000ff"><b>Is <u><i>Your</i></u> Internet Advertising a deadly <u><i>Howitzer</i></u> or a Harmless Pop-Gun? Do You <u><i>Know</i></u> for Sure or Do You Just "Feel Lucky"? </b></font>
+<p>
+To learn the answer to this question and to get a free trial tool that will automatically track all of your advertising for you, please <a href="http://www.roibot.com/r.cgi?IM6671_ROIbot" target="_blank">click me right now</a>.
+</font></td></tr></table>
+</div>
+<p>
+<hr>
+<p>
+</font>
+</td>
+<td width="88%">
+<font face="arial" size=-1>
+
+<center>
+<a href="http://www.cnctek.com/bizdb-html/" target="_top"><img src="http://www.cnctek.com/cncban03.gif" alt="Please take a look at our affordable, flexible and easy-to-install Web database CGI scripts and add ons" border=0 width=468 height=60 hspace=6 vspace=6></a>
+<p>
+<font size=+2 face="arial,helvetica" color="#000090"><b>About File Uploader</b></font>
+
+<p>
+<hr>
+<p>
+
+<div align=left>
+<blockquote>
+<b><font size=+1>Conditions of Use:</font></b><p>
+<ul>
+<li type=square>This is a freeware provided on a "As Is" basis. No technical support service will be given in any circumstances.</li>
+<li type=square>Please use this software at your own risk. CNC Technology will not be liable ( nor responsible ) whatsoever for any direct or indirect damages caused by the use of this Software.</li>
+<li type=square>If you agree the above terms and conditions, you can <a href="http://www.cnctek.com/bizdb-addons/free-utilities/uploader.zip">download it here</a> using userid=guest and password=guest .</li>
+</ul>
+<p>
+<b><font size=+1>Installation Instructions:</font></b><p>
+<ul>
+<li type=square>You have to install 3 files which are "uploader.cgi", "cgi-lib2.pl" and "uploader.html".</li>
+<li type=square>Modify line 1 of both "uploader.cgi" and "cgi-lib2.pl" to reflect the correct location of Perl in your server.</li>
+<li type=square>Adjust the value of the parameters defined in the header of the "uploader.cgi" script.</li>
+<li type=square>Copy "uploader.cgi" to your cgi-bin directory.</li>
+<li type=square>Copy "cgi-lib2.pl" to the same cgi directory as your "uploader.cgi" program.</li>
+<li type=square>Use Unix command "chmod" to set the modes of these 2 files to 0755 (executable). Example: "chmod 0755 uploader.cgi".</li>
+<li type=square>Modify the &lt;FORM ...&gt; statements in "uploader.html" to reflect the correct location of "uploader.cgi" program in your server.</li>
+<li type=square>Adjust the value of the &lt;input name="maxfilesize" ...&gt; statement to meet your own needs. This defines the maximum file size you can upload. You must not change or remove any other FORM statements.</li>
+<li type=square>Copy "uploader.html" to your Html directory.</li>
+</ul>
+</blockquote>
+</div>
+
+<p>
+<hr>
+<p>
+
+<font size=+2 face="arial,helvetica" color="#000090"><b>File Uploader</b></font>
+<p>
+<form ENCTYPE="multipart/form-data" method=post action="http://www.cnctek.com/cgi-bin/uploader.cgi">
+<input type=hidden name="maxfilesize" value="20480">
+<input type=hidden name="action" value="uploadfile">
+
+<table border=0 cellspacing=3 cellpadding=6 width="90%">
+<tr valign=top>
+<td width=30% align=right><b><font face="arial" size=-1>&nbsp;</font></b></td>
+<td width=70%><font face="arial" size=-0>
+This program will upload any specified ASCII or binary file into an upload directory on your <b>Unix or Linux based Web server</b>. If the file directory is not already cataloged, this software will create it for you.
+</td>
+</tr>
+
+<tr valign=top>
+<td width=30% align=right><b><font face="arial" size=-1>Upload Directory Name:</font></b></td>
+<td width=70%><font face="arial" size=-1>
+<input name="filedirname" size=30>
+<br>Enter the name of your upload directory. Alphanumeric characters only. <font color="#dd0000">See note 1 below.</font>
+</font></td>
+</tr>
+
+<tr valign=top>
+<td width=30% align=right><b><font face="arial" size=-1>Source File:</font></b></td>
+<td width=70%><font face="arial" size=-1>
+Press the "Browse" button to select the file to be uploaded.<br>
+<input type=file name="sourcefile">
+</font></td>
+</tr>
+
+<tr valign=top>
+<td width=30% align=right><b><font face="arial" size=-1>Destination Filename:</font></b></td>
+<td width=70%><font face="arial" size=-1>
+<input name="destn_filename" size=30>
+<br>Must enter full filename including the file extension, such as "harbourBridge.jpg". This will be the filename of the upload file on your Web server. Make sure the file extension is not changed. <font color="#dd0000">Also see note 2 below.</font>
+</font></td>
+</tr>
+
+<tr valign=top>
+<td width=30% align=right><b><font face="arial" size=-1>Assign access modes for this file:</font></b></td>
+<td width=70%><font face="arial" size=-1>
+<input name="chmod" size="4" maxlength="4">
+<br>Enter 0755 if your file is a CGI script
+<br>Enter 0744 if your file is a Html template, an image or any read-only file
+<br>Enter 0777 if your file is a program updatable file, eg. a database file.
+<br>The leading zero "0" is significant.
+<br>If nothing is entered, the access mode of the file will be unchanged.
+</font></td>
+</tr>
+
+<tr valign=top>
+<td width=30% align=right><b><font face="arial" size=-1>File Type:</font></b></td>
+<td width=70%><font face="arial" size=-1>
+<select name="filetype">
+<option value="text">ASCII Text</option>
+<option value="text">CGI Script</option>
+<option value="text">Perl Script</option>
+<option value="text">Html Template</option>
+<option value="text">Html Page</option>
+<option value="binary">Image</option>
+<option value="binary">Movie</option>
+<option value="binary">Binary</option>
+</select>
+</font></td>
+</tr>
+
+<tr valign=top>
+<td width=30% align=right><b><font face="arial" size=-1>Supervisor Password:</font></b></td>
+<td width=70%><font face="arial" size=-1>
+<input type="password" name="pwd" size=20 maxlength=20>
+<br><font color="#dd0000">See note 3 below.</font>
+</font></td>
+</tr>
+
+<tr valign=top>
+<td width=30% align=right><b><font face="arial" size=-1>&nbsp;</font></b></td>
+<td width=70%><font face="arial" size=-0>
+<input type="submit" value="Upload File">
+</font></td>
+</tr>
+</table>
+</form>
+
+<p>
+<hr>
+<p>
+
+<font size=+2 face="arial,helvetica" color="#000090"><b>List All Files</b></font>
+<p>
+<form method=post action="http://www.cnctek.com/cgi-bin/uploader.cgi">
+<input type=hidden name="action" value="listfilenames">
+
+<table border=0 cellspacing=3 cellpadding=6 width="90%">
+<tr valign=top>
+<td width=30% align=right><b><font face="arial" size=-1>&nbsp;</font></b></td>
+<td width=70%><font face="arial" size=-0>
+This program will list the filename and contents of all files currently stored in the upload directory.
+</td>
+</tr>
+
+<tr valign=top>
+<td width=30% align=right><b><font face="arial" size=-1>Directory Name:</font></b></td>
+<td width=70%><font face="arial" size=-1>
+<input name="filedirname" size=30>
+<br>Enter the name of the directory to be listed. <font color="#dd0000">See note 1 below.</font>
+</font></td>
+</tr>
+
+<tr valign=top>
+<td width=30% align=right><b><font face="arial" size=-1>Supervisor Password:</font></b></td>
+<td width=70%><font face="arial" size=-1>
+<input type="password" name="pwd" size=20 maxlength=20>
+<br><font color="#dd0000">See note 3 below.</font>
+</font></td>
+</tr>
+
+<tr valign=top>
+<td width=30% align=right><b><font face="arial" size=-1>&nbsp;</font></b></td>
+<td width=70%><font face="arial" size=-0>
+<input type="submit" value="List Files">
+</font></td>
+</tr>
+</table>
+</form>
+
+<p>
+<hr>
+<p>
+
+<font size=+2 face="arial,helvetica" color="#000090"><b>Delete A File</b></font>
+<p>
+<form method=post action="http://www.cnctek.com/cgi-bin/uploader.cgi">
+<input type=hidden name="action" value="deletefile">
+
+<table border=0 cellspacing=3 cellpadding=6 width="90%">
+<tr valign=top>
+<td width=30% align=right><b><font face="arial" size=-1>&nbsp;</font></b></td>
+<td width=70%><font face="arial" size=-0>
+This program will delete a file from the specified directory.
+</td>
+</tr>
+
+<tr valign=top>
+<td width=30% align=right><b><font face="arial" size=-1>Directory Name:</font></b></td>
+<td width=70%><font face="arial" size=-1>
+<input name="filedirname" size=30>
+<br>Enter the name of the directory in which your file is to be deleted. <font color="#dd0000">See note 1 below.</font>
+</font></td>
+</tr>
+
+<tr valign=top>
+<td width=30% align=right><b><font face="arial" size=-1>Delete File's Filename:</font></b></td>
+<td width=70%><font face="arial" size=-1>
+<input name="delete_filename" size=30>
+<br>Must enter full filename including the file extension, such as "harbourBridge.jpg". This will be the filename of the file to be deleted from your Web server.</font>
+</font></td>
+</tr>
+
+<tr valign=top>
+<td width=30% align=right><b><font face="arial" size=-1>Supervisor Password:</font></b></td>
+<td width=70%><font face="arial" size=-1>
+<input type="password" name="pwd" size=20 maxlength=20>
+<br><font color="#dd0000">See note 3 below.</font>
+</font></td>
+</tr>
+
+<tr valign=top>
+<td width=30% align=right><b><font face="arial" size=-1>&nbsp;</font></b></td>
+<td width=70%><font face="arial" size=-0>
+<input type="submit" value="Delete File">
+</font></td>
+</tr>
+</table>
+</form>
+<p>
+<hr noshade size=1>
+<p>
+<div align=left>
+<blockquote>
+<b><font color="#dd0000" size=+1>Note 1:</font></b>
+<ul>
+<li type=square>This name will be concatenated with the value defined by "$parent_dir" in the "uploader.cgi" script to generate the full directory pathname in your server.</li>
+<li type=square>If "filedirname" = "abc" and "$parent_dir" = "/home/html/uploader/", then the full directory pathname is "/home/html/uploader/abc/".</li>
+<li type=square>You can replace this "filedirname" statement by <b>&lt;input type="hidden" name="filedirname" value="anyDirName"&gt;</b> if you don't want to let users specifying the directory name.</li>
+</ul>
+<p>
+<b><font color="#dd0000" size=+1>Note 2:</font></b>
+<ul>
+<li type=square>If the <b>&lt;input name="destn_filename"&gt;</b> form statement is removed or the input box of this field is left blank, the source filename will be used as the destination filename.</li>
+</ul>
+<p>
+<b><font color="#dd0000" size=+1>Note 3:</font></b>
+<ul>
+<li type=square><b>Supervisor password</b> is defined in the "uploader.cgi" script. Please set it up with alphanumeric characters.</li>
+</ul>
+</blockquote>
+</div>
+<p>
+<hr noshade size=1>
+<p>
+<div align=left>
+<blockquote>
+<b><font size=+1>Related Software:</font></b><p>
+<ul>
+<li type=square>Affordable <a href="http://www.cnctek.com/bizdb-html/" target="_top">BizDB Advance Version</a>. Support available.</li>
+<li type=square>Affordable <a href="http://www.cnctek.com/bizdb-html/housekeeping.html">BizDB Housekeeping Add On</a>. Support available.</li>
+<li type=square>Free <a href="http://www.cnctek.com/bizdb-free-search-engine/index.html">Simple Search Engine</a></li>
+</ul>
+</blockquote>
+</div>
+<p>
+<hr noshade size=1>
+<font face="arial" size=-2>
+<div align=center>
+Don't forget to take a look at our affordable, flexible and easy-to-install<br>Web database CGI scripts and add ons.<br>
+<a href="http://www.cnctek.com/bizdb-html" target="_top">BizDB</a> |
+<a href="http://www.cnctek.com/weblinks/about_weblinks.html" target="_top">WebLinks</a> |
+<a href="http://www.cnctek.com/imagedb" target="_top">ImageDB</a> |
+<a href="http://www.cnctek.com/imagedb-members" target="_top">ImageDB for Members</a> | 
+<a href="http://www.cnctek.com/JSCart" target="_top">JSCart</a> | 
+<a href="http://www.cnctek.com/webman" target="_top">Website Generator</a> | 
+<a href="http://www.cnctek.com/index.html" target="_top">Home</a>
+</div>
+</font>
+<p>
+&copy;2001 - All rights reserved. <a href="http://www.cnctek.com/" target="_top">CNC Technology</a>.
+
+<p>&nbsp;
+</center>
+
+</font>
+</td>
+<td bgcolor="#9999cc" valign=top width="2%">&nbsp;</td>
+</tr>
+</table>
+</body>
+</html>
+
+
+
