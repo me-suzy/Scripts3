@@ -1,0 +1,213 @@
+<HTML>
+<HEAD>
+<TITLE> PHPCart Documentation </TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<FONT FACE="verdana,arial,helvetica" SIZE=2>
+<H2>PHPCart Documentation</H2>
+<P>Current version is 3.1<BR></P>
+
+<P>
+<UL>
+<LI><A HREF="#introduction">Introduction</A>
+<LI><A HREF="#installation">Installation</A>
+<LI><A HREF="#configuration">Configuration</A>
+<LI><A HREF="#start">Preparing your shop</A>
+<LI><A HREF="#localization">Localization</A>
+<LI><A HREF="#postage">Variable Postage</A>
+<LI><A HREF="#nt2000">Making PHPCart work on Windows NT/2000</A>
+<LI><A HREF="#faq">Frequently Asked Questions</A>
+<LI><A HREF="#copyright">Copyright notice</A>
+<LI><A HREF="#license">License Information</A>
+</UL>
+
+<A NAME="introduction"></A>
+<P><B>Introduction</B><BR>
+PHPCart is the ideal shopping cart solution for small merchants who wish to bring their
+business online. PHPCart is very easy to install and operate. Furthermore,
+PHPCart does not
+require databases, reducing the fuss and complexity normally associated with other
+shopping cart solutions. PHPCart supports many languages, and you can customize the look-and-feel
+of every page.</P>
+
+<A NAME="installation"></A>
+<P><B>Installation</B><BR>
+Create a directory in your web-area where you wish to keep PHPCart. Upload (in BINARY mode) the distribution
+package and unpack it with the following commands (via telnet):</P>
+
+<P><CODE>gunzip </CODE></font><font face="verdana,arial,helvetica" size="2">PHPCart<CODE>.tar.gz<BR>
+tar -xvf </CODE>PHPCart<CODE>.tar</CODE></P>
+
+<P>If you do not have telnet access to your server (e.g. if you are using Windows NT/2000), you must
+unpack the distribution with WinZip or similar program, and then upload each file by FTP (in ASCII mode).</P>
+
+<P>If you are using PHPCart on Linux, make sure the script has read and write access to the <CODE>sessions</CODE> directory.
+You can do this by typing <CODE>chmod 777 sessions</CODE> via telnet.
+Alternatively, use your FTP program to change the permissions.<br>
+You must also set write access to the following files in the <i> admin</i> folder:<br>
+<i>
+admin_1.php<br>
+configuration_1.php<br>
+payment_1.php<br>
+header.inc<br>
+footer.inc<br>
+</i>You must also change access permissions on folder <i>orders</i> <i>777</i>
+if you wish to keep a copy of each order in a text file online.
+<i>
+<br>
+</i><B><br>
+Configuration</B><BR>
+Send your browser to yourdomain.com/phpcart-location/admin/ to setup the admin
+username and password and then move on to edit the settings required to run
+PHPCart.
+The Configuration settings contain configurable variables you must change before using
+PHPCart.
+All variables are self-explanatory. They contain information such as company name, your email address, what
+colors to use and other information used by PHPCart.
+You must also setup at least one payment method in the Payment Configuration section before running the cart.
+</P>
+
+<A NAME="start"></A>
+<P><B>Preparing your shop</B><BR>
+This is the real easy part. As PHPCart does not use a database of any kind to store information
+about the products in your shop, all information about each product (description, price etc.)
+must be included in the link to PHPCart.</P>
+
+<P>Create your web-pages as usual, or use your existing. For each product on your web-pages, create a link
+that surrounds the image or title of the project, alternatively an Order! button. Whatever you
+have will work. In the link, include the web-path to phpcart.php. In addition, include the following variables:</P>
+
+
+<UL>
+	<LI>action   - always 'add'
+	<LI>id       - product ID
+	<LI>descr    - product description (short sentence; see below)
+	<LI>price    - product price (must be numerical)
+	<LI>quantity - quantity of product to put in basket
+	<LI>option1 - This allows you to pass an option such as product size or
+      color.
+	<LI>option2 - Same as above.
+	<LI>postage - Amount of postage to add to this item 
+</UL>
+
+<P>As an example, consider the following link:</P>
+
+<P><CODE>phpcart.php?<font color="#FF0000">action=</font>add&id=1001<font color="#FF0000">&amp;descr=</font>Nike&amp;20T-Shirt<font color="#FF0000">&amp;option1=</font>Green<font color="#FF0000">&amp;option2=</font>Small<font color="#FF0000">&amp;price=</font>19<font color="#FF0000">&amp;quantity=</font>1&amp;<font color="#F26522">postage=</font>1.59</CODE></P>
+
+<P>In this case, the variables above have been assigned the following values:</P>
+
+<UL>
+	<LI><font color="#FF0000">action</font>   - add
+	<LI><font color="#FF0000">id</font>       - 1001
+	<LI><font color="#FF0000">descr</font>    - Nike T-Shirt
+	<LI><font color="#FF0000">option1</font> - Green
+	<LI><font color="#FF0000">option2</font> - Small
+	<LI><font color="#FF0000">price</font>    - 19
+	<LI><font color="#FF0000">quantity</font> - 1
+	<LI><font color="#FF0000">postage</font> - 1.59
+</UL>
+
+<P>Notice how each variable is separated by the ampersand (&).
+Include links you create in &lt;A HREF&gt;. When your customers click on the link,
+the product will be added to their shopping cart automatically by PHPCart.
+Try not to use other characters in the description than letters and numbers.
+Some browsers may not pass them on correctly to PHPCart.
+In particular, never use spaces! Netscape will not capture spaces in URLs and
+will drop all information from the link following the first space it encounters.
+You can emulate spaces with the string <CODE>%20</CODE>, as in the example above.
+This will work with Netscape, as well as Microsoft Explorer. Always test your links
+on different machines with different browsers to make sure they all work correctly.<br>
+<br>
+We now have an automatic product code generator which you may use free of
+charge. </P>
+
+<A NAME="localization"></A>
+<P><B>Localization</B><BR>
+PHPCart is by default in English. In addition, we now support Italian, French
+and Spanish with thanks to our members.</P>
+
+<P>You can also translate the included language file to your own language if there
+is no translation. To do so, copy the file english.php in the /localization directory.
+Give the copied a file the name of your language. Edit the file and replace every string
+within double-quotes to the equivalents in your language. Save the file in the
+/localization directory. To active your language, edit the <CODE>$language</CODE>
+variable in the configuration file (see <A NAME="#configure">CONFIGURE</A> above) to
+match the name of the new language file (without the <CODE>.php</CODE> suffix). For example,
+if your language is Danish you may want it to look something like this:</P>
+
+<P><CODE>
+// Language (english, norsk)
+$language = &quot;danish&quot;;</CODE></P>
+
+
+<A NAME="postage"></A>
+<P><B>Variable Postage</B><BR>
+It is now possible to add variable postage fee's when adding an item to your shopping basket. Simple follow the insructions below to add this extra variable when creating your 'Add to Basket' links.<br>
+<br>
+As well as the variables mentioned above, when adding your items to your site
+you can opt to enter a postage amount along with the other details. You can
+enter any number, simple add the following variable to your 'Add to Cart' links:
+<font color="#FF0000">postage</font>=2.99</P>
+
+<P>Alternatively you can still add postage <i>per order</i> if you wish, simple add the amount you would like to charge as postage inside the Admin Panel and it will be added at the checkout. You can also opt to add a set postage fee per order as well as a per item fee by adding both.</P>
+
+
+<A NAME="nt2000"></A>
+<P><B>Making PHPCart work on Windows NT/2000</B><BR>
+PHPCart uses the native PHP mail() function for sending out emails when a
+customer submits his order. You need to do some minor tweaking to make PHP
+send emails on NT/2000 platforms.</P>
+
+<OL>
+<LI>Install Microsoft Exchange Server on your server. Create an Internet
+Connection in the Exchange server 
+giving the name or IP address, on which your ISP is running an SMTP
+server. Say we give a name to the exchange server MYEXCH. You can contact
+your ISP and ask him to give you the gateway or the IP address on which
+your ISP is running the SMTP server. 
+<LI>Modify your php.ini file section of the [mail] to include SMTP =
+MYEXCH. Put a valid e-mail id. 
+Then the mail() function should be able to send mails to the internet. 
+</OL>
+
+<P>If you do not have Exchange Server software you can use Smart Server and
+Internet Anywhere Mail Server to connect to the gateway of your ISPs SMTP
+server to send mails.</P>
+
+
+<A NAME="faq"></A>
+<P><B>Frequently Asked Questions</B><BR>
+<UL>
+<LI><I>"How can I force the cart content to expire if the customer leaves my web-site?"</I><BR>
+  PHPCart is set to erase the cart content after two hours (7200 seconds). You can alter this value manually in the source code. Please do a backup of the
+  phpcart.php file before doing so. The value 7200 can be found on line 26 in the current version. Change the value to the time you want to save the cart in case the customer leaves your page. For example, setting it to 3600 will erase the contents after one hour of inactivity.
+<LI><I>"Why do I get the error message 'Permission denied'"?</I><BR>
+You probably forgot to set write permission on the sessions directory. See the installation section above for more information.
+<LI><I>"Can I alter quantities without checking out?"</I><BR>
+No, you can not. You can delete products in the cart by clicking on the corresponding trashcan icon, but to execute changed quantities you must click on the check-out icon.
+<LI><I>"How can the customer delete all contents in his/her cart?"</I><BR>
+Add the following link in your header or footer file (modify to suit your language):
+<PRE>
+&lt;A HREF=&quot;phpcart.php?action=clear&quot;&gt;Clear Shopping Cart&lt;/A&gt;
+</PRE>
+</UL>
+
+
+
+<A NAME="copyright"></A>
+<P><B>Copyright notice</B><BR>
+Please note that all files in this distribution are copyright the Author.
+You may not re-distribute any portion of the distribution without the expressed permission of the author.<br>
+<br>
+<A NAME="license"></A>
+<B>License<br>
+</B>You have purchased a copy of PHPCart. Depending of the version you
+purchased, you may not be able to use this
+cart on as many subfolder, and domain names as you like.<br>
+</P>
+
+</font>
+
+</BODY>
+</HTML>
