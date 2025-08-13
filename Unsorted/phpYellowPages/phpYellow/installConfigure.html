@@ -1,0 +1,87 @@
+
+<html>
+<head>
+<title>Install phpYellow Pages - Dreamriver.com - Fine Internet Applications Since 1995</title>
+</head>
+
+<body bgcolor="navy" text="white">
+
+
+<blockquote>
+
+
+<table border=10 width=600 align="center" bgcolor="gray" cellpadding=0 cellspacing=0><tr>
+<td bgcolor="yellow" align="center"><font color="blue">25%</font></td>
+<td bgcolor="black" width=450>&nbsp;</td>
+</tr></table>
+
+
+
+<h1>Install - Configure</h1>
+
+
+<p>
+Configure your database connection information.
+</p>
+
+
+<table bgcolor="ivory" cellpadding=5 width="80%" border=1 bordercolor="midnightblue">
+<tr>
+<td>
+<font color="black">
+<ol>
+<li>open util-dist.php (or util-dist-Premium.php) into an html or plain text editor
+<li>save as util.php
+<li>find the section called &quot; <font color="green">/* Database and connectivity */</font> &quot;
+<li>enter your specific values for these <font color="orange"><b>orange colored constant values only:</b></font>
+
+<ul>
+<li>define("DBNAME", "<font color="orange"><b>yourdatabasename</b></font>" ); <font color="green">/* replace yourdatabasename with the real name */</font>
+<li>define("DBUSERNAME", "<font color="orange"><b>root</b></font>" ); <font color="green">/* replace root with your mySQL username   */</font>
+<li>define("DBPASSWORD", "<font color="orange"><b>yourmysqlpassword</b></font>" ); <font color="green">/* enter yourmysqlpassword only if required */</font>
+<li>define("DBSERVERHOST", "<font color="orange"><b>localhost</b></font>" ); <font color="green">/* replace localhost with the name of your database host server */</font>
+<li>define("DBTABLE", "contact" ); <font color="red"><b>/* DO NOT CHANGE */</b></font>
+<li>define("DBTABLE2", "category" ); <font color="red"><b>/* DO NOT CHANGE */</b></font>
+<li>define("INSTALLPATH", "<font color="orange"><b>http://www.yourDomain.com/phpYellow/</b></font>"); <font color="green">/* Your phpYellow URL */</font>
+</ul>
+
+
+<li>save as util.php
+<li>upload the util.php file to your web server into the /phpYellow folder.
+<li style="font-weight:bold;color:red;">browse this installConfigure.html file on your web server /phpYellow folder - not on your local machine.
+</ol>
+<font size=-1><i>
+Hint: If you are having trouble connecting to your database then copy the data above and email it to your internet service provider. Ask them what the correct values should be for DBNAME, DBPASSWORD, DBUSERNAME and DBSERVERHOST. You may also send them this URL: 
+<a href="http://www.dreamriver.com/phpYellow/installConfigure.html">http://www.dreamriver.com/phpYellow/installConfigure.html</a>
+</i></font>
+</font>
+</td>
+</tr>
+</table>
+
+
+
+		
+<div style="color:yellow;font-weight:bold;">
+<ul>
+<li>to proceed click &quot;Next Step&quot;</li>
+<li>to stop click &quot;Cancel&quot;</li>
+</ul>
+</div>
+
+
+
+<form name="installForm">
+<input type="button" name="nextStepButton" value="Next Step" onClick='location.href="installTestphp.html"'>
+<input type="button" name="cancel" value="Cancel" onClick='location.href="installCancel.html"'>
+</form>
+
+
+</blockquote>
+
+
+</body>
+</html>
+
+
+	
