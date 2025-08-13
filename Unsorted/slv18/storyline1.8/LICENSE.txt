@@ -1,0 +1,9 @@
+##########
+LICENCE
+##########
+
+1] Storyline V1.8, from hereon refered to as SLV1.8 is property of IO Designs. It may not be redistributed, nor sold on.
+2] SLV1.8 is free for commercial and non-commercial purposes, so long as the copyright information remains intact. Removal of Copyright information negates all agreements, and may result in legal action. 
+3] Modifications to the code may be made, however, this does not mean the copyright may be removed.
+4] IO Designs is not responsible for any damage incurred as a result of using SLV1.8.
+5] IO Designs is not responsible for the use to which SLV1.8 is put.
