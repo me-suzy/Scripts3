@@ -1,0 +1,734 @@
+<html><head><title>Smart Search Setup</title></head>
+
+<body>
+
+<p align="center"><u><strong>Smart Search (v4.19) Setup Instructions</strong></u></p>
+
+<p><strong><u><font color="red">Setup</font></u></strong>
+
+If you're installing new or upgrading from a version of Smart Search earlier than 4.0, follow the
+standard installation directions.  If upgrading from version 4.0 or later, follow <a href="#upgrade2">these instructions</a>.
+
+</p><p><u><b>Installation Directions</b></u></p>
+
+<p><strong>With Remote Shell (Telnet) Access:</strong></p>
+
+<ol>
+  <li>Upload setup.pl and setup.dat to your server (ASCII mode) in the
+   directory where you want Smart Search to store its files
+  </li><li>Open a Telnet (or other remote shell) connection to your server
+  </li><li>Change to the directory which contains setup.pl and setup.dat
+  </li><li>Type "which perl" and hit enter - this will tell you where Perl is located on your
+   server.  You will need to give setup.pl this information.
+  </li><li>Run "perl setup.pl"
+  </li><li>Type in the server path to Perl and hit enter.
+  </li><li>Confirm that you've entered the proper path
+  </li><li>setup.pl will create all necessary directories and files with the
+   appropriate file permissions, and will automatically write the path to Perl
+   that you've entered in CGI files that need it
+  </li><li>You can now close Telnet
+  </li><li><a href="#upgrade">Finish upgrading</a> or <a href="#complete"> complete the installation</a>
+</li></ol>
+
+<p><strong>Without Remote Shell Access:</strong></p>
+
+<ol>
+  <li>On all .cgi files in the main directory, put the path to Perl
+on your    server at the top of the file, using your favorite text editor.
+ On most    servers the path is either    /usr/bin/perl (this is the default
+- all necessary files in the .zip already have this) or /usr/local/bin/perl
+- the line at the top needs to have    a #! before the server path, so if
+your directory is /usr/bin/perl, the    line you need to put at the top of
+the main .cgi files is "#!/usr/bin/perl" (without the quotes).    You do
+not need to do this to any .cgi files in the include directory.   </li><li>Open include/functions.cgi in your editor.  The first three lines will look like:
+  <p>
+    $accounts_dir = 'accounts';<br>
+    $data_dir = 'data';<br>
+    $adminkey = 'qxxopz';<br>
+  </p>
+  <p>Let me explain.  Those who are familiar with the Smart Search directory
+   structure could open your data directory in their browsers and open the
+   file containing your admin password and attempt to crack it. To avoid this,
+   you can (and should) create random directories for "accounts" and "data" and
+   at the same time you should set a new value for $adminkey (this is used for
+   some encryption on your site).  To do this, change the variable values to
+   a random value of the form 'accounts-asdfls' for accounts and 'data-eriuas'
+   for data (use whatever random string you want), and change adminkey to any
+   random string (should be between 6-8 characters, containing only letters
+   and numbers). Make sure you remember the values you gave to $accounts_dir and
+   $data_dir, as you will later have to create directories with these names.</p>
+  <p>Do not change anything else in functions.cgi</p>
+  </li><li>Upload all files except setup.pl and setup.dat to your server in the appropriate directory. When
+   uploading files, recreate the directory structure on your server. Many FTP
+   programs can do this easily - simply select all Smart Search files and
+   directories and select upload (ASCII mode).
+  </li><li>Rename the accounts and data directories to whatever you placed in functions.cgi
+   earlier.
+  </li><li>Now it's time to change some file permissions. For the following instructions,
+   if your program uses checkboxes, use the following:
+   <p>
+   <table>
+   <tbody><tr><td>
+     <table>
+       <tbody><tr><td colspan="4" align="center">Permission setting: <b>755</b></td></tr>
+       <tr><td></td><td align="center">Owner</td><td align="center">Group</td><td align="center">Other</td></tr>
+       <tr><td>Read</td><td align="center">X</td><td align="center">X</td><td align="center">X</td></tr>
+       <tr><td>Write</td><td align="center">X</td><td align="center"></td><td align="center"></td></tr>
+       <tr><td>Execute</td><td align="center">X</td><td align="center">X</td><td align="center">X</td></tr>
+     </tbody></table>
+   </td>
+   <td>          </td>
+   <td>
+   <table>
+       <tbody><tr><td colspan="4" align="center">Permission setting: <b>777</b></td></tr>
+       <tr><td></td><td align="center">Owner</td><td align="center">Group</td><td align="center">Other</td></tr>
+       <tr><td>Read</td><td align="center">X</td><td align="center">X</td><td align="center">X</td></tr>
+       <tr><td>Write</td><td align="center">X</td><td align="center">X</td><td align="center">X</td></tr>
+       <tr><td>Execute</td><td align="center">X</td><td align="center">X</td><td align="center">X</td></tr>
+     </tbody></table>
+   </td></tr>
+   </tbody></table>
+   </p>
+  </li><li>CHMOD the main Smart Search directory to 755, so your scripts can run
+  </li><li>CHMOD directories "accounts", "data" (both of these have random names now),
+   "cached", "keywords", "templates", and "translations" to 777.
+  </li><li>CHMOD subdirectories "a"-"z" and "misc" in directory "keywords" to 777 (if the program you use for .zip
+   files doesn't extract empty directories, you may also need to create this directories before changing the permission)
+  </li><li>CHMOD directory "include" and all .cgi files inside it to 755
+  </li><li>CHMOD all .cgi files in the main directory to 755
+  </li><li>CHMOD rebuild.pl and update.pl (in the main directory) to 755
+  </li><li>CHMOD the following data files to 777:
+  <p>
+   </p><ul>
+   <li>cached/reset.txt
+   </li><li>DATADIR(whatever you named the data directory)/admin.data
+   </li><li>DATADIR/directories.txt
+   </li><li>DATADIR/ccpay.data
+   </li><li>DATADIR/confirm.data
+   </li><li>DATADIR/paypal.data
+   </li><li>DATADIR/settings.data
+   </li><li>DATADIR/submissions.data
+   </li><li>keywords/catchall_data.txt
+   </li><li>keywords/free.db
+   </li><li>All files in the "templates" directory except for index.html
+   </li></ul>
+  <p></p>
+  </li><li>Finish upgrading (directly below) or <a href="#complete"> complete the installation</a>
+</li></ol>
+
+<a name="upgrade"></a>
+<p><strong>Upgrade from a version earlier than 4.0</strong></p>
+
+Smart Search v4.xx stores some data files in a slightly different format, so it
+will be necessary for you to perform the following steps to upgrade from
+previous versions of Smart Search:
+
+<ul>
+  <li>Clean up your old installation, i.e. delete old files, approve or
+    deny any pending submissions, etc.
+  </li><li>Once you've set Smart Search up to this point, open update.cgi in your
+    browser. Update.cgi will prompt you for the directory containing the old
+    version.  Type that directory name in and submit the form. Update.cgi will
+    then copy the old data files into the new directory in the new format.
+  </li><li>When update.cgi is finished, go to admin.cgi in your new installation
+    and click on the link that says "Rebuild Keyword Database" in the
+    Miscellaneous section.
+  </li><li>Once you've tested and confirmed that the new installation has
+    successfully copied over your old settings and other data, feel free to
+    delete your old installation and rename the new directory to take its place.
+  </li><li>Remove update.cgi from the new installation's directory
+  </li><li>Update.cgi will copy most, but not all, of your old settings and other
+    data files. (<a href="#perlupdate">See Below</a>)
+</li></ul>
+
+<a name="complete"></a>
+<p><strong>Complete the Installation</strong></p>
+<ul>
+  <li>Open <strong>admin.cgi</strong> in your browser and use any name and password to log-in.
+  </li><li>Be sure to create an administrator account, and set up other aspects of
+   Smart Search from admin.cgi.  Most important are setting an encryption
+   word and inputting the directory and URL of the Smart Search scripts.
+  </li><li>If you used setup.pl to set up Smart Search, you can now remove setup.pl and setup.dat from your server. You should
+   also remove install.log, but you may want to download it before deleting so
+   that you have a copy on your server. Install.log is useful for
+   verifying that the setup was successful, but it should not be left on your
+   server
+  </li><li>If you need to accept payments from Smart Search, set up the R3N3 Payment
+   Gateway script and register Smart Search with the gateway via the Financial
+   Settings of admin.cgi, but remember to set the URL and directory of the
+   Payment Gateway scripts first.
+  </li><li>You are done! Test it out now...</li>
+</ul>
+
+<p>
+</p><center>
+<table width="500">
+<tbody><tr><td>
+<b><a href="http://www.searchfeed.com/rd/SmartCGIs.jsp" target="_blank">Searchfeed</a> and Smart CGIs promotion!</b> Did you know that we worked out a deal with <a href="http://www.searchfeed.com/rd/SmartCGIs.jsp" target="_blank">Searchfeed</a> to pay YOU an extra 20% commission over their regular payout rate? If you don't know what <a href="http://www.searchfeed.com/rd/SmartCGIs.jsp" target="_blank">Searchfeed</a>
+is: it's a search engine which pays YOU every time you refer a visitor who
+clicks on the search results. Smart Search can display their listings on
+YOUR search results pages, making it easier to generate clicks. Just signup
+by <a href="http://www.searchfeed.com/rd/SmartCGIs.jsp" target="_blank">clicking here</a> and you will make 133% more money than their other affiliates!
+</td></tr>
+</tbody></table>
+</center>
+
+<a name="perlupdate"></a>
+<p><strong>What setup.pl Does:</strong></p>
+<ul>
+  <li>Sets up the Smart Search directory structure and copies files to their
+   appropriate locations with the correct file permissions
+  </li><li>Assigns the accounts directory and data directory a partially random name.
+   This is to prevent people who are familiar with how Smart Search stores data
+   from accessing your information directly from a browser.
+  </li><li>Stores the values of the random directories so that the script knows
+   where to store data
+  </li><li>Puts the path to Perl at the top of every CGI file that needs it
+</li></ul>
+
+<p><strong>Special Notes on Editting Templates:</strong></p>
+
+<p>The ability to control every aspect of Smart Search's output is a very
+powerful feature, but you need to be made aware of a few things:
+</p><ul>
+  <li>To insert dynamic information into a template, special tags such as &lt;&lt;NAME&gt;&gt;
+   are used. When editting templates from admin.cgi, the script will show a list
+   of valid insertion tags for that template.  When the template is saved, the script checks to make
+   sure that all tags present in the template are valid and that required tags
+   aren't left out. So, after saving a template, make sure to check if there's
+   a message below the line that says "Changes Saved."
+  </li>
+  <li>On e-mail templates, the script checks the e-mail headers for validity and
+   warns if it discovers an unrecognized header.  The script also checks to make sure
+   that there is a "To:" header present, and that there is a blank line between
+   the e-mail headers and the body of the message.
+  </li>
+  <li>On many templates, there is a &lt;&lt;RESULTS&gt;&gt; or similar tag, where.
+   a list of items is inserted into the template. Another template is used to
+   determine how this list appears, and that template is used once for each item
+   in the list. This second template (in some cases a third template as well) will
+   be displayed below the main template on the editting screen.
+   <p>If you're having
+   a tough time visualizing this, go to the Templates section of admin.cgi and
+   edit the Search Results template under Smartsearch.cgi Templates. The first
+   file defines the main page, which contains a &lt;&lt;RESULTS&gt;&gt; tag. Where
+   this tag is found, the script will insert a list of matching search results,
+   according to the second or third template, depending on whether or not the bid is
+   a free listing (or comes from an external search engine other than Searchfeed) or
+   a paid listing.</p>
+   <p>In the default templates, you can see that each listing has its own
+   paragraph inside of a list, but the tags to start and end the list
+   (&lt;ol&gt; and &lt;/ol&gt;) appear in the main Search Results template.
+
+</p></li></ul>
+<p>Take some time to customize the look and feel of your site.  The default templates
+are very bare and minimal, but they should give a good idea of how to use
+the template system.</p>
+
+
+<p><b><a name="upgrade2">Upgrading an Existing Installation</a></b></p>
+<ul>
+  <li>
+    <b>For versions 4.0-4.17:</b> Open "include/functions.cgi" in your favorite text editor and change the lines at the top that
+    read:
+    <p>
+      $data_dir = 'data';<br>
+      $accounts_dir = 'accounts';<br>
+      $adminkey = 'qxxopz';
+    </p>
+    <p>
+      to match the data and accounts directory names on your server.  The value
+      of adminkey is used for certain encryption purposes.  Make sure that when changing
+      adminkey, you use only letters or numbers, and it only needs to be about 4-8 characters long.
+    </p>
+  </li>
+  <li>
+    Follow the specific directions for the version you're upgrading from:
+	<p>
+	<a href="#from4">from v4.0 or v4.10</a><br>
+	<a href="#from411">from v4.11, v4.12, or v4.13</a><br>
+	<a href="#from414">from v4.14</a><br>
+	<a href="#from415">from v4.15 or v4.16</a><br>
+	<a href="#from417">from v4.17</a><br>
+	<a href="#from418">from v4.18</a><br>
+	Instructions for v4.19 appear below:
+	</p>
+  </li>
+</ul>
+
+<p><b><a name="from419">Upgrading from Smart Search v4.19<a></b></p>
+<ul>
+  <li>
+    Unless the path to Perl on your server is "/usr/bin/perl", before uploading you will need to
+    change the top line of admin.cgi to be your server's path to Perl:
+  </li>
+  <li>Upload the following .cgi files to the appropriate directory on your server in ASCII mode and CHMOD them to 755.
+    Overwrite the existing version of these files on your server:
+    <p><ul>
+    <li>admin.cgi</li>
+
+    <li>include/admin_misc.cgi</li>
+    <li>include/admin_summary.cgi</li>
+    <li>include/listings.cgi</li>
+    </ul></p>
+  </li>
+</ul>
+
+
+<p><b><a name="from418">Upgrading from Smart Search v4.18<a></b></p>
+<ul>
+  <li>
+    Unless the path to Perl on your server is "/usr/bin/perl", before uploading you will need to
+    change the top line of admin.cgi and go.cgi to be your server's path to Perl:
+  </li>
+  <li>Upload the following .cgi files to the appropriate directory on your server in ASCII mode and CHMOD them to 755.
+    Overwrite the existing version of these files on your server:
+    <p><ul>
+    <li>admin.cgi</li>
+	<li>go.cgi</li>
+
+    <li>include/admin_misc.cgi</li>
+    <li>include/admin_summary.cgi</li>
+	<li>include/crawl.cgi</li>
+    <li>include/listings.cgi</li>
+    </ul></p>
+  </li>
+</ul>
+</p>
+
+<p><b><a name="from417">Upgrading from Smart Search v4.17</a></b></p>
+<ul>
+  <li>
+    Unless the path to Perl on your server is "/usr/bin/perl", before uploading you will need to
+    change the top line of the following .cgi files to be your server's path to Perl:
+    <p><ul>
+      <li>admin.cgi</li>
+	  <li>go.cgi</li>
+	  <li>smartsearch.cgi</li>
+    </ul></p>
+  </li>
+  <li>Upload the following .cgi files to the appropriate directory on your server in ASCII mode and CHMOD them to 755.
+    Overwrite the existing version of these files on your server:
+    <p><ul>
+    <li>admin.cgi</li>
+	<li>go.cgi</li>
+	<li>smartsearch.cgi</li>
+	
+    <li>include/admin_misc.cgi</li>
+    <li>include/admin_summary.cgi</li>
+	<li>include/bids.cgi</li>
+	<li>include/crawl.cgi</li>
+    <li>include/functions.cgi</li>
+    <li>include/listings.cgi</li>
+    <li>include/payment.cgi</li>
+    </ul></p>
+  </li>
+</ul>
+
+<p><b><a name="from415">Upgrading from Smart Search v4.15 or v4.16</a></b></p>
+<ul>
+  <li>
+    Unless the path to Perl on your server is "/usr/bin/perl", before uploading you will need to
+    change the top line of the following .cgi files to be your server's path to Perl:
+    <p><ul>
+      <li>admin.cgi</li>
+      <li>go.cgi</li>
+      <li>include.cgi</li>
+	  <li>smartsearch.cgi</li>
+    </ul></p>
+  </li>
+  <li>Upload the following .cgi files to the appropriate directory on your server in ASCII mode and CHMOD them to 755.
+    Overwrite the existing version of these files on your server:
+    <p><ul>
+    <li>admin.cgi</li>
+    <li>go.cgi</li>
+    <li>include.cgi</li>
+	<li>smartsearch.cgi</li>
+	<li>rebuild.pl</li>
+	<li>update.pl</li>
+
+    <li>include/accounts_manage.cgi</li>
+    <li>include/admin_finance.cgi</li>
+    <li>include/admin_members.cgi</li>
+	<li>include/accounts_stats.cgi</li>
+    <li>include/admin_misc.cgi</li>
+    <li>include/admin_summary.cgi</li>
+    <li>include/affiliate.cgi</li>
+	<li>include/bids.cgi</li>
+	<li>include/crawl.cgi</li>
+    <li>include/functions.cgi</li>
+    <li>include/listings.cgi</li>
+    <li>include/payment.cgi</li>
+    <li>include/search.cgi</li>
+    </ul></p>
+  </li>
+</ul>
+
+<p><b><a name="from414">Upgrading from Smart Search v4.14</a></b></p>
+<ul>
+  <li>
+    Unless the path to Perl on your server is "/usr/bin/perl", before uploading you will need to
+    change the top line of the following .cgi files to be your server's path to Perl:
+    <p><ul>
+      <li>admin.cgi</li>
+      <li>go.cgi</li>
+      <li>include.cgi</li>
+	  <li>smartsearch.cgi</li>
+    </ul></p>
+  </li>
+  <li>Upload the following .cgi files to the appropriate directory on your server in ASCII mode and CHMOD them to 755.
+    Overwrite the existing version of these files on your server:
+    <p><ul>
+    <li>admin.cgi</li>
+    <li>go.cgi</li>
+    <li>include.cgi</li>
+	<li>smartsearch.cgi</li>
+	<li>rebuild.pl</li>
+	<li>update.pl</li>
+
+	<li>include/accounts_manage.cgi</li>
+	<li>include/accounts_stats.cgi</li>
+    <li>include/admin_finance.cgi</li>
+    <li>include/admin_functions.cgi</li>
+    <li>include/admin_members.cgi</li>
+    <li>include/admin_misc.cgi</li>
+    <li>include/admin_summary.cgi</li>
+    <li>include/affiliate.cgi</li>
+	<li>include/bids.cgi</li>
+	<li>include/crawl.cgi</li>	
+    <li>include/functions.cgi</li>
+    <li>include/listings.cgi</li>
+    <li>include/payment.cgi</li>
+    <li>include/search.cgi</li>
+    </ul></p>
+  </li>
+</ul>
+
+<p><b><a name="from411">Upgrading from Smart Search v4.11, v4.12, or v4.13</a></b></p>
+
+<ul>
+  <li>
+    Unless the path to Perl on your server is "/usr/bin/perl", before uploading you will need to
+    change the top line of the following .cgi files to be your server's path to Perl:
+    <p><ul>
+      <li>admin.cgi</li>
+      <li>go.cgi</li>
+      <li>include.cgi</li>
+	  <li>smartsearch.cgi</li>
+	  <li>update.cgi</li>
+    </ul></p>
+  </li>
+  <li>Upload the following .cgi files to the appropriate directory on your server in ASCII mode and CHMOD them to 755.
+    Overwrite the existing version of these files on your server:
+    <p><ul>
+    <li>admin.cgi</li>
+    <li>go.cgi</li>
+    <li>include.cgi</li>
+    <li>rebuild.pl</li>
+	<li>smartsearch.cgi</li>
+	<li>update.cgi</li>
+	<li>update.pl</li>
+
+    <li>include/accounts_manage.cgi</li>
+    <li>include/accounts_stats.cgi</li>
+    <li>include/admin_finance.cgi</li>
+    <li>include/admin_functions.cgi</li>
+    <li>include/admin_members.cgi</li>
+    <li>include/admin_misc.cgi</li>
+    <li>include/admin_summary.cgi</li>
+	<li>include/affiliate.cgi</li>
+	<li>include/bids.cgi</li>
+    <li>include/crawl.cgi</li>
+    <li>include/functions.cgi</li>
+    <li>include/listings.cgi</li>
+    <li>include/payment.cgi</li>
+    <li>include/search.cgi</li>
+  </ul></p>
+  <li>
+    Create a directory named "misc" in your "keywords" directory and set its permission to 777.  Adding this directory
+    will prevent problems with non-alphabetical keywords
+  </li>
+  <li>
+    Update the R3N3 Payment Gateway Script to v1.05
+  </li>
+</ul>
+
+
+<p><b><a name="from4">Upgrading from Smart Search v4.0 or v4.10</a></b></p>
+
+<ul>
+  <li>
+    Unless the path to Perl on your server is "/usr/bin/perl", you will need to change the top line
+    of every .cgi file in the main directory to correspond to where Perl is located on your server.
+  </li>
+  <li>
+    Copy all .cgi files in the main and "include" directories to your server in ASCII mode,
+    overwriting the old files.
+  </li>
+  <li>
+    Upload rebuild.pl and update.pl to your server in ASCII mode.  These two files are used to rebuild
+    the keyword database and
+    update your installation from the shell, respectively.  These are needed for installations
+    with a large amount of members and keywords, as doing things through a browser may cause
+    time-out errors.
+  </li>
+  <li>
+  	CHMOD the files you just uploaded to 755 (all .cgi files, rebuild.pl and update.pl)
+  </li>
+  <li>
+    In your "translations" directory, delete any existing files and replace them with  included in
+    this version's "translations" directory - admin-templates.txt and admin-settings.txt (upload in ASCII).
+  </li>
+  <li>
+    If you haven't already customized your templates, then upload all templates (in the "templates"
+    directory) in ASCII mode.  If you have customized your templates, then the differences in v4.13 are as follows:
+
+    <ol><p><b>From v4.0:</b></p>
+      <li>
+        In the Accounts.cgi Affiliate Page (found under Accounts.cgi (Other) in admin.cgi Templates),
+        change any instances of [username] to &lt;&lt;USERNAME&gt;&gt;
+      </li>
+      <li>
+		In the included Accounts.cgi Header template (templates/accounts_header.tpl), copy the JavaScript to
+		your header to prevent a JavaScript error.
+      </li>
+      <li>
+        Examine the Accounts.cgi listings display page (templates/accounts_manage_display.tpl)
+        to update the listings page to support a checkbox that can select/de-select all listings on the page.
+      </li>
+
+    </ol>
+    <ol><p><b>From v4.10:</b></p>
+      <li>
+        References to "functions.js" have been erased from all signup templates and the accounts.cgi payment template.
+      </li>
+      <li>
+		All search templates have access to the username of the referring affiliate as &lt;&lt;AFFILIATE&gt;&gt;.
+      </li>
+      <li>
+		The multiple listing upload template (templates/accounts_manage_multadd.tpl) has been changed to delete two unneeded hidden form elements for Excel uploads.
+      </li>
+      <li>
+		There are 5 new templates, 4 of which are used as header/footer templates in smartsearch.cgi and signup.cgi, and the
+		other is an e-mail you will receive to notify you when a user makes a deposit.
+      </li>
+      <li>
+        In the
+      </li>
+    </ol>
+  </li>
+  <li>
+    Make sure that you CHMOD 777 any templates you upload, so that you can edit them from admin.cgi later.
+  </li>
+  <li>
+    Create a directory named "misc" in your "keywords" directory and set its permission to 777.  Adding this directory
+    will prevent problems with non-alphabetical keywords
+  </li>
+  <li>
+    Update the R3N3 Payment Gateway Script to v1.05
+  </li>
+</ul>
+
+<p><strong>General Instructions:</strong>
+
+</p><ul>
+  <li>Send people to signup.cgi to create an account,
+    to accounts.cgi to add listings (and more), and smartsearch.cgi to perform searches.
+    All output templates for these scripts can be changed via admin.cgi</li>
+  <li>Run admin.cgi to approve submissions, add money to user accounts, and more.</li>
+</ul>
+
+<ul>
+  <li>If you want to include bidded listings on your site somewhere, use the following SSI
+    tag:</li>
+</ul>
+
+<blockquote>
+  <p>&lt;!--#include virtual="/path/to/cgi/include.cgi?keywords=<font color="#ff0000">your_keyword</font>&amp;show=<font color="#ff0000">show_number</font>" --&gt;</p>
+  <p>Replace <font color="#ff0000">your_keyword</font> with the keyword you want to show
+  listings for. Replace <font color="#ff0000">show_number</font><font color="#000000"> with
+  the number of listings you want to display (default is 5).</font></p>
+  <p>This will display the listings according to the templates for include.cgi.
+  See admin.cgi to change these templates.</p>
+  <p>If you want to use a Javascript tag instead of SSI, just add "&amp;java=1" to
+  the end and put it in a tag like the following:</p>
+  <p>&lt;script src="http://www.mysite.com/include.cgi?keywords<font color="#000000">=your_keyword</font><font color="#ff0000">&amp;java=1</font>"&gt;&lt;/script&gt;</p>
+</blockquote>
+
+<ul>
+  <li>If you want to display the top keywords searched for this month, put the following tag.
+    Replace <font color="#ff0000">pop_number</font> with the number of keywords you want to
+    display.</li>
+</ul>
+
+
+<blockquote>
+  <p>SSI: &lt;!--#include virtual="/path/to/cgi/include.cgi?pop=<font color="#ff0000">pop_number</font>"
+  --&gt;</p>
+  <p>JavaScript: &lt;script src="http://www.mysite.com/include.cgi?pop=<font color="#ff0000">pop_number</font><font color="#000000">&amp;java=1</font>"&gt;&lt;/script&gt;</p>
+</blockquote>
+
+<ul>
+  <li>All information displayed with the <b>include.cgi</b> file can be used by your affiliates too (and they will get credit). For example:</li>
+</ul>
+
+<blockquote>
+  <p>SSI: &lt;!--#include virtual="/path/to/cgi/include.cgi?keywords=your_keyword&amp;username=<font color="#ff0000">my_username</font>"
+  --&gt;</p>
+  <p>Java: &lt;script src="http://www.mysite.com/include.cgi?keywords=your_keyword&amp;username=<font color="#ff0000">my_username</font><font color="#000000">&amp;java=1</font>"&gt;&lt;/script&gt;</p>
+</blockquote>
+
+<ul>
+  <li>You can provide affiliates with a database style print out of
+your search results if you want. This can be used by programmers who want
+to include your search results in their search engine script. The search
+listings will be printed out one per line, in tab delimited format (data
+is seperated by tab spaces). Just tell them to use the following URL:<p>
+  http://www.yourdomain.com/cgi-bin/include.cgi?keywords=<i>your_keywords</i>&amp;username=<i>your_username</i>&amp;db=1
+
+</p></li></ul>
+
+<ul>
+  <li>You can also display the results in XML. Simply use the following URL:<p>
+  http://www.yourdomain.com/cgi-bin/include.cgi?keywords=<i>your_keywords</i>&amp;username=<i>your_username</i>&amp;xml=1
+
+</p></li></ul>
+
+<p><ul>
+  <li>
+    If you also want to include external results (e.g. Searchfeed, Dmoz, etc.) via include.cgi, use a tag like the following:
+    <p>http://www.yourdomain.com/cgi-bin/include.cgi?keywords=<i>your_keywords</i>&amp;username=<i>your_username</i>&amp;external=1</p>
+  </li>
+</ul></p>
+
+<ul>
+  <li>
+    Have your affiliates refer new advertisers with a link of the form:
+    <p>http://www.yourdomain.com/cgi-bin/signup.cgi?referrer=username</p>
+  </li>
+</ul>
+
+<ul>
+  <li>If you want your keywords to be in organized in categories, put something like the
+    following inside the <strong>directories.txt</strong> file:</li>
+</ul>
+
+<blockquote>
+  <p><small><font color="#008000">tech/hardware/computers/computer accessories/monitors<br>
+  tech/hardware/computers/computer accessories/printers<br>
+  tech/hardware/computers/computer accessories/scanners<br>
+  tech/hardware/computers/ibm<br>
+  tech/hardware/computers/compaq<br>
+  tech/hardware/computers/mac<br>
+  tech/hardware/laptops<br>
+  tech/hardware/keyboards<br>
+  tech/software</font><font color="#808080"><br>
+  </font></small></p>
+</blockquote>
+
+<blockquote>
+  <p>Now I'll explain... You can put as many directories as you want.
+  You don't have to list the main directories,
+  just the deepest sub-directory. In the example above I don't need to put:</p>
+  <p><font color="#ff0000"><small>tech<br>
+  tech/hardware<br>
+  tech/hardware/computers<br>
+  tech/hardware/computers/computer accessories<br>
+  tech/hardware/computers/computer accessories/monitors</small></font></p>
+  <p>I only need to put:</p>
+  <p><font color="#008000"><small>tech/hardware/computers/computer accessories/monitors</small></font></p>
+  <p>The CGI can figure out by itself the directories above that one. Also, DO NOT repeat
+  any directories in another group, the CGI will just match the keyword to the first one it
+  finds. For example, if you have:</p>
+  <p><font color="#ff0000"><small>software/downloads<br>
+  music/news<br>
+  music/mp3/downloads</small></font></p>
+  <p>The "downloads" is repeated, that's not good. What you should put is
+  something like this:</p>
+  <p><font color="#008000"><small>software/software downloads<br>
+  music/news<br>
+  music/mp3/mp3 downloads</small></font></p>
+  <p>You wouldn't get an error message if you didn't do this, but the CGI would simply take
+  the first directory it finds. In the above example (the red one), if someone searched for
+  "downloads", the CGI would tell them they are in the
+  "software/downloads" category.</p>
+  <p>If this was too confusing, you will figure it out as you test the directories out :)</p>
+</blockquote>
+
+<ul>
+  <li>If you want to let your visitors pick which external search site's results should be
+    used, you can give them a form like this:</li>
+</ul>
+
+<blockquote>
+  <form method="post" action="smartsearch.cgi">
+    <div align="left"><p><input type="text" name="keywords" size="10"><select name="crawlsite" size="1"><option selected="" value="1">Dmoz.org</option><option value="2">MSN.com</option><option value="3">SearchFeed.com</option><option value="4">AltaVista.com</option><option value="5">RevenuePilot.com</option><option value="0">None</option></select><input type="submit" value="Search" name="submit"></p>
+    </div>
+  </form>
+</blockquote>
+
+<blockquote>
+  <p>The HTML for this is:</p>
+  <p><font color="#808080"><small><small>&lt;form method="POST"
+  action="smartsearch.cgi"&gt;<br>
+  &lt;div align="left"&gt;&lt;p&gt;&lt;input type="text"
+  name="keywords" size="10"&gt;&lt;select name="crawlsite"<br>
+  size="1"&gt;<br>
+  &lt;option selected value="1"&gt;Dmoz.org&lt;/option&gt;<br>
+  &lt;option value="2"&gt;MSN.com&lt;/option&gt;<br>
+  &lt;option value="3"&gt;SearchFeed.com&lt;/option&gt;<br>
+  &lt;option value="4"&gt;AltaVista.com&lt;/option&gt;<br>
+  &lt;option value="5"&gt;RevenuePilot.com&lt;/option&gt;<br>
+  &lt;option value="0"&gt;None&lt;/option&gt;<br>
+  &lt;/select&gt;&lt;input type="submit" value="Search"
+  name="submit"&gt;&lt;/p&gt;<br>
+  &lt;/div&gt;<br>
+  &lt;/form&gt;</small></small></font></p>
+  <p>This is done by passing on the variable "crawlsite" with the appropriate
+  number. 1 is Dmoz.org, 2 is MSN, etc. and 0 (zero) is none (no external search
+  results). If you don't use this type of form, the default one will be used (as set via
+  admin.cgi).</p>
+</blockquote>
+
+<ul>
+  <li>If you want to allow people to upload Microsoft Excel Spreadsheets to submit search listings, you will need to install the <b>Spreadsheet::ParseExcel</b> perl module on your server. Ask your web host to install it if you don't know how. Important note: this module requires the <b>OLE::Storage_Lite</b> module to work. And THAT module requires the following modules: <b>IO::Handle</b> (included in IO), <b>IO::File</b> (included in IO), and <b>IO::Scalar</b>.
+I know that's a lot of modules, and I hesitated adding the Excel feature
+to Smart Search because of all the modules required, but I figured you might
+still want this great feature. So it's up to you if you can and want to install
+the required modules. You can find perl modules <a href="http://search.cpan.org/" target="_blank">here</a>, and module installation instructions <a href="http://www.rcbowen.com/imho/perl/modules.html" target="_blank">here</a>. Good luck!</li>
+</ul>
+
+<p> </p>
+
+<p><small>Note: Generally this CGI and its data files should not use up too much space on
+your server, except for the click logs which might add up if you have a heavily used site.
+For most people 5 MB would be more than enough for this CGI.</small></p>
+
+<p> </p>
+
+<p>If you experience any problems with the results pulled from any of the other search
+engines (LWP module feature), e-mail <a href="mailto:webmaster@smarterscripts.com">webmaster@smarterscripts.com</a></p>
+
+<p> </p>
+
+<p><u><strong>Special Notice to Resellers:</strong></u></p>
+<p>
+
+	You can use this script on any site of yours, but if you sell one
+	of these sites, you are required to FIRST purchase a new copy for
+	the new owner. If you don't, it's considered copyright infringement
+	and we will prosecute any offenders. WE MONITOR EBAY.COM AUCTIONS,
+	SO BEWARE. Reseller prices are very low, for more information, go to: <a href="http://www.smarterscripts.com/resellers.shtml">http://www.smarterscripts.com/resellers.shtml</a>
+</p>
+
+<p> </p>
+
+<p><u><strong>Support:</strong></u></p>
+
+<p>Go to <a href="http://www.smarterscripts.com/contact.shtml">http://www.smarterscripts.com/contact.shtml</a> for support issues.<br>
+<br>
+<br>
+Check out <a href="http://www.smarterscripts.com/">http://www.smarterscripts.com</a> for updates to
+the CGI.<br>
+Send suggestions for future versions to <a href="mailto:webmaster@smarterscripts.com">webmaster@smarterscripts.com</a></p>
+</body></html>
