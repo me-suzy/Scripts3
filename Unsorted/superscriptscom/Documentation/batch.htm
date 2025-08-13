@@ -1,0 +1,242 @@
+<html>
+
+<head>
+<title>Batch Credit Card Processing Engine Documentation</title>
+
+<meta name="Microsoft Border" content="t, default"></head>
+
+<body><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+
+<table border="0" width="33%" cellpadding="0">
+  <tr>
+    <td width="50%"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/" ONCLICK="parent.f=0"><img src="../pix/banners/miniprizm.gif" alt="cgi scripts" border="0" WIDTH="305" HEIGHT="59"></a></font></td>
+    <td width="50%" bgcolor="#FFFFFF"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/ads/rotate.cgi?url=&amp;user=" target="new" ONCLICK="parent.f=0"><img src="http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user=" border="0" width="468" height="60"></a></font></td>
+  </tr>
+</table>
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="16%"><p align="center"><a href="../dsstoday/index.html"><font color="#000000" face="Arial"><img src="../pix/main/news.jpg" alt="CGI NEWS" align="left" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="16%"><p align="center"><a href="../scripts/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/scripts.jpg" alt="CGI Scripts" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../mastergate/index.html"><font color="#000000" face="Arial"><img src="../pix/main/access.jpg" alt="Access The CGI Archive" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../contact.html"><font color="#000000" face="Arial"><img src="../pix/main/contact.jpg" alt="Contact Superscripts" WIDTH="104" HEIGHT="68"></font></a></td>
+    <td width="17%"><p align="center"><a href="../support.html"><font color="#000000" face="Arial"><img src="../pix/main/dox.jpg" alt="CGI Documentation" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../download/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/download.jpg" alt="Download CGI Scripts Here" align="right" WIDTH="105" HEIGHT="65"></font></a></td>
+  </tr>
+  <tr>
+    <td width="16%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/dsstoday/index.html" style="color: rgb(255,255,255)"><strong>News</strong></a></font></td>
+    <td width="16%" bgcolor="#000000"><p align="center"><a href="/scripts/" style="color: rgb(255,255,255)"><font face="Arial" color="#FFFFFF"><strong>CGI Scripts</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><a style="color: rgb(255,255,255)" href="../mastergate/index.html"><font face="Arial" color="#FFFFFF"><strong>Become A Member</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../contact.html"><strong>Contact
+    Us</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../support.html"><strong>Support</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/download/index.shtml" style="color: rgb(255,255,255)"><strong>Download
+    Area</strong></a></font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+
+<table border="0" width="75%" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <p><font face="Arial"><big><big><font color="#FF0000"><strong>Documentation<br>
+      </strong></font><font color="#000000">BATCH CREDIT CARD PROCESSING ENGINE:&nbsp; V2.1</font></big></big></font></p>
+      <p><img src="../pix/logos/authnet.gif" alt="authnet.gif (6418 bytes)" WIDTH="396" HEIGHT="86"></p>
+      <p><a href="../../mastergate/faq.html"><font color="#FF0000" face="Arial"><small>REALTIME
+      PROCESSING INSTALLATION AVAILABLE</small></font></a></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Copyright 2001 Psybercore, Inc. - All Rights
+        Reserved. </small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Selling redistributing or modifying any or
+        all of the code for this program without prior written consent is expressly forbidden. You
+        must obtain written permission before redistributing this software over the Internet or in
+        any other medium. In all cases copyright and header information must remain intact.</small></font></p>
+      </blockquote>
+      <hr align="left">
+      <h1><font face="Arial" color="#000000"><small><small>System Requirements</small></small></font></h1>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Supports Authorize.net Version 3.0</small></font></li>
+        <li><small><font face="Arial"><a href="../../scripts/Net_SSLeay.pm-1.05.tar.gz">SSLEAY/Open
+          SSL</a> required for using port 443</font></small></li>
+        <li><font face="Arial" color="#000000"><small>Unix, Lynyx Operating System</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Perl 5</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Telnet Access</small></font></li>
+        <li><small><font face="Arial" color="#000000"><a href="../../online.html">Merchant Account
+          with Online Validation</a> and ability to communicate through cgi interface REQUIRED for
+          realtime validation</font></small></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Misc notes regarding authorize.net</small></font></h2>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>If you process cards from NON US countries
+        you will want to set $REJECTAVSMISMATCH = &quot;FALSE&quot;.&nbsp; If you dont then it
+        will reject ALL cards from foreign countries.</small></font></p>
+        <p><font face="Arial" color="#000000"><small>Do not bother setting the $TESTREQUEST to
+        &quot;TRUE&quot;&nbsp; the testmode is pretty much useless and you can VOID transactions
+        easily enough through the virtual terminal login @ authorize.net.&nbsp; If you set it to
+        TRUE the cgi may not function correctly.</small></font></p>
+      </blockquote>
+      <h2><font face="Arial" color="#000000"><small>Preliminaries</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Determine the path to PERL 5 on your web
+          server host.&nbsp; Note that some web hosting companies run both PERL 4 and PERL 5.&nbsp;
+          Make ABSOLUTELY sure you are not setting this up under PERL 4.&nbsp; Ask your
+          administrator if you are not sure. </small></font></li>
+      </ul>
+      <ul>
+        <li><a href="../../tutorial/index.html"><font face="Arial" color="#000000"><small>If you
+          need to review or learn the basics of CGI and Perl visit the tutorial</small></font></a></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small><a href="http://www.superscripts.com/download/">Download</a> the tarfile for this program and
+          save it to your desktop.&nbsp; Make sure you use the version for Authorize.net 3.0 since
+          2.5 is being phased out.&nbsp; You can still download the Authorize.net V2.5 compatible
+          version if you need it.</small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Unpack the tar archive on your desktop using a
+          program that unpacks UNIX TAR ARCHIVES. If you don't have such a program then download
+          WINZIP FREE from <a HREF="http://www.shareware.com/">SHAREWARE.COM</a>.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>After you have unpacked the TAR archive you
+          will have a collection of folders and files on your desktop.&nbsp; Now you have to do some
+          basic editing of each of these files (or at least some of them).&nbsp; Use a text editor
+          such as wordpad, notepad, BBEdit, simpletext, or teachtext to edit the files.&nbsp; These
+          are NOT WORD PROCESSOR DOCUMENTS they are just simple TEXT files so don't save them as
+          word processor documents or save them with extentions such as .txt or they will NOT WORK.
+          &nbsp; Note that there may be a some files inside of folders which are &quot;blank&quot;.
+          &nbsp; This is normal.</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Preparing the CGI scripts</small></font></h2>
+      <blockquote>
+        <h2><font color="#FF0000" face="Arial"><small><small>Define Path To PERL 5</small></small></font></h2>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>The first step is to open up each and every
+        file that has a .cgi extention and edit line number one of each script.&nbsp; Each of the
+        cgi scripts is written in perl 5. For your scripts to run they must know where perl 5 is
+        installed on your web server. The path to perl 5 is defined to a cgi script in the first
+        line of the file. In each of the cgi scripts the first line of code looks something like
+        this: </small></font></p>
+        <blockquote>
+          <p><font color="#FF0000" face="Arial"><small>#!/usr/bin/perl</small></font></p>
+        </blockquote>
+        <p><font face="Arial" color="#000000"><small>If the path to perl 5 on your web server is
+        different from /usr/bin/perl you must edit the first line of each cgi script to reflect
+        the correct path. If the path to perl 5 is the same no changes are necessary. If you do
+        not know the path to perl 5 ask the webmaster or system administrator at your server site.
+        &nbsp; </small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big><strong>Configure the .cgi files</strong></big></font></p>
+      <blockquote>
+        <p><font color="#FF0000" face="Arial"><big>configure.cgi</big></font></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>This is the entire cgi.&nbsp; There are
+        several variables to edit, all of which should be pretty straightforward.&nbsp; </small></font><font SIZE="2"></p>
+        </font>
+      </blockquote>
+      <blockquote>
+        <ul>
+          <li><font color="#FF0000" face="Arial" size="2">$LOGIN=&quot;supplied by
+            authorize.net&quot;;</font></li>
+          <li><font color="#FF0000" face="Arial" size="2">$PASSWORD=&quot;supplied by
+            authorize.net&quot;;</font></li>
+          <li><font color="#FF0000" face="Arial" size="2">$TYPE = &quot;NA&quot;;</font></li>
+          <li><font color="#FF0000" face="Arial" size="2">$EMAILCUSTOMER = &quot;TRUE&quot;;</font></li>
+          <li><font color="#FF0000" face="Arial" size="2">$REJECTAVSMISMATCH = &quot;FALSE&quot;;
+            &nbsp; </font></li>
+          <li><font color="#FF0000" face="Arial" size="2">$TESTREQUEST = &quot;FALSE&quot;;</font></li>
+          <li><font color="#FF0000" face="Arial" size="2">$DELIMCHARACTER = &quot;|&quot;;</font></li>
+          <li><font color="#FF0000" face="Arial" size="2">$ENCAPSULATE = &quot;FALSE&quot;;</font></li>
+          <p><small><font face="Arial"><br>
+          LOGIN <br>
+          Required for transactions other than test transactions.&nbsp; This is the assigned
+          Authorize.Net login id. </font></small></p>
+          <p><small><font face="Arial">PASSWORD <br>
+          Required for Credit or Post Authorization transactions. For details on the use of
+          transaction types, see the Authorize.Net User's Guide. </font></small></p>
+          <p><small><font face="Arial">TYPE <br>
+          May be one of: NA (means Normal Authorization) <br>
+          &nbsp;AO (means Authorization Only) <br>
+          &nbsp;CR (means Credit) <br>
+          &nbsp;PA (means Post Authorization) </font></small></p>
+          <p><small><font face="Arial">EMAILCUSTOMER<br>
+          Set this value to &quot;TRUE&quot; if you want an email sent to the Buyer's E-mail(the
+          value specified in the EMAIL field) notifying him of the transaction details.(The fields
+          INVOICE AMOUNT METHOD DESCRIPTION CUSTID NAME ADDRESS CITY STATE ZIP COUNTRY PHONE FAX
+          EMAIL and their values will be included in the email)</font></small></p>
+          <p><small><font face="Arial">ECHODATA <br>
+          If this field is not provided with a value of &quot;TRUE&quot;, only the first 5 RESPONSE
+          fields (see below) will be returned, otherwise all allowed fields provided in the request
+          will be returned in the response. </font></small></p>
+          <p><small><font face="Arial">REJECTAVSMISMATCH <br>
+          If this field is not provided with a value of &quot;TRUE&quot;, the transaction will be
+          accepted if it is authorized by FDC, even if the AVS response is a mismatch. &nbsp;
+          Otherwise, the transaction must pass the &quot;AVS test&quot; with either a matching zip
+          code, address, or both. </font></small></p>
+          <p><small><font face="Arial">TESTREQUEST <br>
+          If this field is provided with a value of &quot;TRUE&quot; the script will perform all
+          validation functions except actually authorizing the transaction and storing it in the
+          merchant's batch, regardless of whether the merchant's configuration is set to LIVE or
+          TEST mode. In other words, the response would be equivalent to the merchant being in TEST
+          mode </font></small></p>
+          <p><small><font face="Arial">DELIMCHARACTER <br>
+          If you want the RESPONSE FIELDS delimited by something other than the default (comma),
+          provide the DELIMCHARACTER here. </font></small></p>
+          <p><small><font face="Arial">ENCAPSULATE <br>
+          If you want the response fields encapsulated in double quotes (ex. &quot;response
+          data&quot;), provide this request field set to &quot;TRUE&quot;; otherwise, the response
+          fields will not be encapsulated. </font></small></p>
+        </ul>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big>Upload Your Edited CGI and Data Files</big></font><ul>
+        <li><font face="Arial" color="#000000"><small>Upload all the files into a directory you can
+          execute from</small></font></li>
+      </ul>
+      <p><font face="Arial" color="#000000"><big>File Access Permissions</big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>File access permissions must be set correctly
+        for this program to run.&nbsp; You must set the access permissions for each of these
+        files.&nbsp; Set all the .cgi files to 755. &nbsp; Set the rest to 777.</small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big>Notes on Use</big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>To execute the script simply login to telnet
+        and run from the command line</small></font></p>
+        <p><font face="Arial" color="#FF0000"><small>perl batch.cgi</small></font></p>
+        <p><font color="#000000" face="Arial"><small>This is not really meant to be a super secure
+        billing solution.&nbsp; This is just a quick way to process bulk transactions.&nbsp; You
+        should NEVER leave billing databases on a web server or on any computer connected to the
+        internet.&nbsp; However, if you upload, execute, grab the output and delete the databases
+        from your server in a short time the chances for anyone to intercept them are minimal.
+        &nbsp; You can also run this from your desktop if you have perl installed.&nbsp; </small></font></p>
+        <p><font color="#000000" face="Arial"><small>The input.txt file is the database (comma
+        delimited) containing the billing information you want to process.&nbsp; The fields go in
+        the following order</small></font></p>
+        <font SIZE="2"><p></font><font color="#FF0000" face="Arial" size="2">$NAME,$ADDRESS,$CITY,$STATE,$ZIP,$COUNTRY,$EMAIL,$PHONE,$METHOD,$CARDNUM,$EXPDATE,$AMOUNT</font></p>
+        <p><font color="#000000" face="Arial"><small>The output.txt file is the RESULTS from
+        processing your database - it contains time/date stamps and STATUS messages (in case the
+        card fails).</small></font></p>
+        <p><font color="#000000" face="Arial"><small>The fields used by authorize.net are
+        described at the TOP of each database.&nbsp; <a href="../tutorial/index.html">Please see
+        authorize.net documentation</a> for any confusion regarding the structure/syntax of the
+        form fields and their required values.</small></font></p>
+      </blockquote>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+
+<blockquote>
+  <blockquote>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </blockquote>
+</blockquote>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
