@@ -1,0 +1,35 @@
+------------------------------------
+
+stardevelop.com Live Help CHANGE LOG
+
+Current Version:  2.0 Preview 0.75
+Author: stardevelop.com
+Created Document: 20th September 2003
+Last Updated: 30th September 2003
+
+------------------------------------
+
+
+CURRENT KNOWN ISSUES (IN DEVELOPMENT)
+
+* ISSUE: the initate chat function in Admin -> Visitors Section does not function.
+
+
+NEW FEATURES
+
+* FEATURE: added chat refresh rate time setting in Admin -> Settings -> Time.
+* FEATURE: added guest client window is bought into focus when messages are sent/received if necesscary.
+* FEATURE: added option to turn on/off user list panel, added bold options for current selection.
+* FEATURE: added current page title and link to open the current URL.
+* FEATURE: added Macromedia Flash sounds control to improve sound support.
+* FEATURE: added the newest status indicator/ online tracker code in Admin -> Settings -> Code.
+	- JavaScript tracker can now be displayed without displaying the status indicator.
+	- JavaScript status indicator can now be added with the tracker disabled.
+
+BUG FIXES
+
+* BUG FIX: resolved sending JavaScript code is disabled on the guest side.
+* BUG FIX: resolved JavaScript Unterminated Line text area paste bug.
+* BUG FIX: resolved itermitent CPU load issue regarding message refresh rate.
+* BUG FIX: resolved one of the smilies not displaying correctly.
+* BUG FIX: resolved several of the Admin -> Settings not updating.
