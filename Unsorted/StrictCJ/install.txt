@@ -1,0 +1,116 @@
+******************************************************************************
+*                                                                            *
+*                    STRICT-CJ INSTALLATION INSTRUCTIONS                     *
+*                       @ 1999-2001 www.strict-cj.com                        *
+*                                                                            *  
+******************************************************************************
+
+Requirements :
+	- your own domain hosted with :
+		- PHP4
+		- MySQL
+		- perl with DBI module
+		- a database ready in MySQL with the following infos:
+			- database name
+			- user
+			- pass
+			- hostname
+
+
+Installation Steps :
+
+1. unzip this file with all sub-directories structure
+
+2. go in the directory you extracted this
+	- edit index.php variables on top (unless you plan to use SSI)
+
+3. go in scj sub-directory
+	- edit add.php variables on top
+	
+4. go in scj/admin sub-directory
+	- edit variables.inc.php variables on top
+	- edit dbconnect.inc.php variables on top
+
+5. go in cgi-bin and edit variables on top of:
+	- event.cgi
+	- dbsub.cgi
+
+6. upload all directory structure (except index.php if using SSI) following those rules:
+	- upload .php files in ASCII MODE
+	- upload the rest in binary MODE
+
+7. chmod to 777 : 
+	- scj/data 
+	- scj/data/linktracking
+
+   chmod to 755
+	- event.cgi
+	- dbsub.cgi
+	- the directory holding those two files
+
+8. add the following cronjob in your crontab list make sure you edit the path.
+(Need help? ask your host to add the following line to crontab list)
+01,03,05,07,09,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59 * * * * /path/to/yourdomain.com/cgi-bin/scj/event.cgi
+
+HERE'S AN E-MAIL YOU CAN SEND TO YOUR WEB HOST :
+
+REPLACE /path/to/yourdomain.com/cgi-bin/scj/event.cgi BY the REAL path to event.cgi on YOUR server
+
+/************* START COPY HERE ***********************/
+
+Hi,
+
+  I have a traffic trading script to install and it requires an entry in the crontab list.
+
+here's the line that needs to be added:
+
+01,03,05,07,09,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59 * * * * /path/to/yourdomain.com/cgi-bin/scj/event.cgi
+
+
+Thanks
+
+/***************** END COPY HERE *********************/
+
+
+9. protect /scj/admin with .htaccess theres an example of this file in our zipfile
+(ask your host how you can add passwords in .htpasswd if you don't know how)
+
+10. run http://yoururl.com/scj/admin/createtable.php
+	- you can delete this file once "done succesfully..."
+
+
+------------- ADDITIONAL INFORMATION -------------------
+
+note that you need at least 10 trade in your database for the script to start working properly...
+
+Here's some useful links to use script:
+	- Admin Area: http://yourdomain.com/scj
+	- Out script: http://yourdomain.com/out.php
+	- Gallery skimming: http://yourdomain.com/out.php?p=60&url=http://gallery.com
+		- that would set 60% of clicks to gallery.com
+	- Perm link: http://yourdomain.com/out.php?friend=username
+	- webmasters signup page: http://www.yourdomain.com/scj/webmaster.html
+	- toplist: edit /scj/data/toplist.tpl.html with the design you want using our 
+		   template variables in there. you'll then be able to include it with SSI like this:
+			<!--#include file="toplist.html"-->
+		
+
+
+REQUEST ALL TRAFFIC TO BE SENT TO HTTP://WWW.YOURDOMAIN.COM/
+OR HTTP://WWW.YOURDOMAIN.COM/PAGE.SHTML IF YOU WANT TO USE SSI INCLUDES
+
+else nothing will be counted.
+
+
+If you have any question, you can contact me:
+ICQ: 3602093
+nick: Jimbo
+e-mail: jmrd27@videotron.ca
+
+
+Enjoy the script and please do not modify it!
+
+Thanks,
+Jean-Michel
+
+
