@@ -1,0 +1,712 @@
+<?
+
+/*
+
+
+
+   Copyright (c), 1999, 2000 - phpauction.org
+
+
+
+   This program is free software; you can redistribute it and/or modify
+
+   it under the terms of the GNU General Public License as published by
+
+   the Free Software Foundation (version 2 or later).
+
+
+
+   This program is distributed in the hope that it will be useful,
+
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+
+   GNU General Public License for more details.
+
+
+
+   You should have received a copy of the GNU General Public License
+
+   along with this program; if not, write to the Free Software
+
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+
+
+*/
+
+?>
+
+
+
+<SCRIPT Language=Javascript>
+
+
+
+function SubmitBid(){
+
+        document.bid.submit();
+
+}
+
+
+
+function SubmitBid2(){
+
+        document.bid2.submit();
+
+}
+
+</SCRIPT>
+
+<TABLE WIDTH="769" BGCOLOR="#FFFFFF" BORDER=0>
+  <TR>
+
+    <TD width="565"> 
+      <CENTER>
+        <?  print $std_font.$TPL_BIDS_value; ?>
+        <!--
+
+<A HREF="email_request.php?"> <? $std_font.print $MSG_107 ?></A> |
+
+-->
+        <A HREF="friend.php?id=<?print $id;?>"> 
+        <? print $std_font.$MSG_106 ?></A>&nbsp|&nbsp<a href="#post"><? print $std_font.$MSG_645;?></a> 
+      </CENTER>
+
+
+
+<CENTER>
+
+        <TABLE WIDTH="565" BORDER="0">
+          <TR VALIGN=top>
+
+            <TD WIDTH="33"></TD>
+
+            <TD COLSPAN="3" width="524"> 
+              <!-- Get auction data  -->
+              <!-- Get number of bids -->
+              <FONT FACE="Times New Roman, Times, serif" SIZE="6"> 
+              <? print $tlt_font.$TPL_title_value ?>
+              </FONT> </TD>
+
+  </TR>
+
+  <TR> 
+            <TD WIDTH=33></TD>
+
+            <TD WIDTH=524> 
+              <? print $std_font.$TPL_pict_url_value ?>
+              <BR>
+              <A HREF="#description"><IMG SRC="./images/info.gif" BORDER=0></A> 
+              <A HREF="#description"> 
+              <? print $std_font.$MSG_109 ?>
+              </A> &nbsp;&nbsp;&nbsp; 
+              <? print $MSG_611 ?>
+              <FONT COLOR="#ff3300"><B> 
+              <? echo $TPL_nr ?>
+              </B> </FONT> 
+              <? print $MSG_612 ?>
+              <BR>
+							<BR>
+
+        <TABLE BORDER=0 WIDTH="100%" CELLSPACING="0" CELLPADDING="2">
+
+        <!--   #Vendedor#    -->
+
+        <TR>
+
+        <TD WIDTH="30%">
+
+                <B><? print $std_font.$MSG_125 ?> :</B>
+
+         </TD> 
+                  <TD> 
+                    <? print $std_font.$TPL_vendetor_value ?> 
+                    <? print $std_font.$TPL_num_feedbacks ?> 
+                    <? print $TPL_rate_radio ?>
+                    <!-- Get current number of feedbacks  -->
+                  </TD>
+                </TR>
+
+
+
+        <? print $std_font.$TPL_hight_bidder_id ?>
+
+
+
+<!-- auction type -->
+
+        <TR>
+                  <TD WIDTH="30%" height="25"> <B> 
+                    <? print $std_font.$MSG_900 ?>
+                    :</B> </TD> 
+                  <TD height="25"> 
+                    <? print $std_font; ?>
+                    <? print $TPL_auction_type; ?>
+                  </TD>
+                </TR>
+
+
+
+<!-- number of items -->
+
+		<SCRIPT LANGUAGE="PHP"> /* if ($atype==2): */</SCRIPT>
+
+			<TR><TD WIDTH="30%">
+
+			<B> <? print $std_font.$MSG_901 ?>:</B>
+
+			</TD> <TD>
+
+
+
+			  <? print $std_font; ?>
+
+			  <? print $TPL_auction_quantity; ?>
+
+			  
+
+			</TD></TR>
+
+		<SCRIPT LANGUAGE="PHP">/* endif; */</SCRIPT>
+
+
+
+<!-- ends -->
+
+		<TR><TD WIDTH="30%">
+
+        <B> <? print $std_font.$MSG_118 ?>:</B>
+
+         </TD> <TD>
+
+
+
+		  <? print $std_font; ?>
+
+        <? print $TPL_days_difference_value ?>
+
+        <? print $TPL_hours_difference_value ?>
+
+        <? print $TPL_minutes_difference_value ?>
+
+        <? print $TPL_seconds_difference_value ?>
+
+        
+		</TD></TR>
+
+
+
+<!--    ** Numer of bids  -->
+
+        <TR>  <TD WIDTH="30%">
+
+	        <B><? print $std_font.$MSG_119 ?>:</B>
+
+        </TD> <TD>
+
+
+
+        <? print $std_font.$TPL_num_bids_value ?>
+
+
+
+         </TD> </TR>
+
+
+
+<!--    ** Starting bid  -->
+
+        <TR>
+
+        <TD WIDTH="30%">
+
+	        <B><? print $std_font.$MSG_127 ?>:</B>
+
+        </TD> <TD>
+
+
+
+	        <? print $std_font.$TPL_currency_value1 ?>
+
+
+
+        </TD></TR>
+
+
+
+<!--    ** Current bid   -->
+
+        <TR>
+
+        <TD WIDTH="30%">
+
+                <B> <? print $std_font.$MSG_116 ?>:</B>
+
+        </TD><TD>
+
+
+
+        <? print $std_font.$TPL_currency_value2 ?>
+
+
+
+        </TD></TR>
+
+
+
+<!--    ** Bid increment  -->
+
+        <TR>
+
+        <TD WIDTH="30%">
+
+                <B><? print $std_font.$MSG_120 ?>:</B>
+
+         </TD> 
+                  <TD><? print $std_font.$TPL_currency_value3 ?></FONT>
+ </TD>
+                </TR>
+
+
+
+<!--    ** Minimum bid (next possible bid)  -->
+
+        <TR>
+
+        <TD WIDTH="30%">
+
+                <B><? print $std_font.$MSG_124 ?>:</B>
+
+        </TD><TD>
+
+
+
+	        <? print $std_font.$TPL_currency_value4 ?>
+
+
+
+        </TD></TR>
+
+
+
+
+
+
+
+<!--    ** Reserve price  -->
+
+        <TR>
+
+        <TD WIDTH="30%">
+
+                <B><? print $std_font.$MSG_021 ?>:</B>
+
+         </TD> <TD>
+
+
+
+	        <? print $std_font.$TPL_reserve_price ?>
+
+
+
+        </TD></TR>
+
+
+
+<!--    ** If auction is closed -->
+
+		<SCRIPT LANGUAGE="PHP">if ($AuctionIsClosed): </SCRIPT>
+
+        <TR>
+
+                  <TD COLSPAN=2> <B>
+                    <? print $std_font.$MSG_904 ?>
+                    </B> 
+                    <? print $std_font.$TPL_currency_value3 ?>
+                  </TD>
+
+		</TR>
+
+		<SCRIPT LANGUAGE="PHP">endif;</SCRIPT>
+
+
+
+
+
+
+
+        </TABLE></TD></TR></TABLE></CENTER></TD>
+    <TD width="204" align="left"> 
+      <!-- Bidding table      -->
+      <?
+	if(!$AuctionIsClosed)
+	{
+?>
+      <table width="100%" bgcolor="<?=$FONTCOLOR[$SETTINGS[tableheadercolor]]?>" cellspacing="1" cellpadding="1">
+        <tr> 
+          <td> 
+            <table width="100%" cellspacing="0" cellpadding="4">
+              <tr bgcolor="#EBEBEB"> 
+                <td align=center valign=top> <b>
+                  <? print $std_font.$MSG_115 ?>
+                  </b> 
+                  <form name=bid action="bid.php" method=post>
+                    <input type="hidden" name="bid_next" value="<? print $TPL_next_bid_value; ?>">
+                    <input type="hidden" name="seller_id" value="<? print $TPL_user_id_value; ?>">
+                    <input type="hidden" name="title" value="<? print $TPL_title_value; ?>" >
+                    <input type="hidden" name="category" value="<? print $TPL_category_value; ?>" >
+                    <input type="hidden" name="id" value="<? print $TPL_id_value; ?>">
+                    <b> 
+                    <? print $std_font.$MSG_124 ?>
+                    :<br>
+                    <? print $TPL_currency_value4 ?>
+                    </b> <br>
+                    <br>
+                    <? if ($atype==2): ?>
+                    <? print $sml_font.$MSG_903 ?>
+                    :<br>
+                    <input type=text name=qty size=10>
+                    <br>
+                    <? endif; ?>
+                    <? print $sml_font.$MSG_121 ?>
+                    <br>
+                    <input type=text name=bid size=15>
+                    <? print $sml_font; ?>
+                    <input type=submit name="Input" value=<? print $MSG_102; ?>
+
+					>
+                    <br>
+                  </form>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <?
+	}
+?>
+    
+    </TD> 
+  </TR> </TABLE> 
+<div align="left"><IMG SRC="./images/transparent.gif" WIDTH=750 HEIGHT=2></div>
+<TABLE WIDTH="765" BGCOLOR="#FFFFFF" BORDER="0">
+  <TR>
+
+                <TD WIDTH="5%"></TD>
+
+                <TD WIDTH="95%">
+
+        <A NAME="description"></A>
+
+	        <? print $tlt_font.$MSG_109 ?></font>
+
+        <BR>
+
+                <?=$std_font?><?=$TPL_description_value ?>
+
+        <A NAME="image"></A> <BR><BR>
+
+        <CENTER>
+
+
+
+        <? print $std_font.$TPL_pict_url ?>
+
+
+ 
+        </CENTER> <BR> 
+<div align="left"><IMG SRC="./images/transparent.gif" WIDTH=750 HEIGHT=4></div>
+<TABLE WIDTH="760" BGCOLOR="#FFFFFF" BORDER="0">
+  <TR>
+
+          
+    <TD WIDTH="42"></TD>
+
+          
+          <TD WIDTH="512"> <B> 
+            <? print  $std_font.$MSG_110 ?>
+            :</B> 
+            <!-- Get location description  -->
+            <? print $std_font.$TPL_location_name_value ?>
+            <? print $std_font.$TPL_location_zip_value ?>
+            <BR>
+
+        <B><? print $std_font.$MSG_025 ?>:</B>
+
+        <? print $std_font.$TPL_shipping_value ?>
+
+        <? print $std_font.$TPL_international_value ?>
+
+        <BR>
+
+
+
+        <B><? print $std_font.$MSG_026 ?>:</B>
+
+        <? print $std_font.$TPL_payment_value ?>
+
+        <BR><BR>
+
+        <B><? print $std_font.$MSG_111 ?>:</B>
+
+
+
+        <? print $std_font.$TPL_date_string1 ?>
+
+        <BR>
+
+        <B><? print $std_font.$MSG_112 ?>:</B>
+
+
+
+        <? print $std_font.$TPL_date_string2 ?>
+
+        <BR>
+
+        <B><? print $std_font.$MSG_113 ?>:</B>
+
+
+
+        <? print $std_font.$TPL_id_value ?>
+
+        <BR><BR>
+            <B>
+            <? print $std_font.$MSG_041 ?>
+            :</B> 
+            <? print $std_font.$TPL_cat_value ?>
+          </TD> 
+          <TD WIDTH="192"> 
+            <!--  Bidding table  -->
+            <?
+	if(!$AuctionIsClosed)
+	{
+?>
+            <TABLE WIDTH="100%" BGCOLOR="<?=$FONTCOLOR[$SETTINGS[tableheadercolor]]?>" CELLSPACING="1" CELLPADDING="1">
+
+        <TR>
+
+        <TD>
+
+        <TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="4">
+
+        <TR BGCOLOR="#EBEBEB">
+
+        <TD ALIGN=center VALIGN=top>
+
+	        <B><? print $std_font.$MSG_115 ?></B>
+
+
+        <FORM NAME=bid2 ACTION="bid.php" METHOD=post>
+
+					<INPUT TYPE="hidden" NAME="bid_next" VALUE="<? print $TPL_next_bid_value; ?>">
+
+					<INPUT TYPE="hidden" NAME="seller_id" VALUE="<? print $TPL_user_id_value; ?>">
+
+					<INPUT TYPE="hidden" NAME="title" VALUE="<? print $TPL_title_value; ?>" >
+
+					<INPUT TYPE="hidden" NAME="category" VALUE="<? print $TPL_category_value; ?>" >
+
+					<INPUT TYPE="hidden" NAME="id" VALUE="<? print $TPL_id_value; ?>">
+
+
+
+
+							<B> <? print $std_font.$MSG_124 ?>:<BR>
+
+							<? print $TPL_currency_value4 ?></B>
+
+					<BR><BR>
+
+
+
+					<? if ($atype==2): ?>
+
+						<? print $sml_font.$MSG_903 ?>:<BR>
+
+						<INPUT TYPE=text NAME=qty SIZE=10><BR>
+
+					<? endif; ?>
+
+
+
+					<? print $sml_font.$MSG_121 ?>
+
+					<BR><INPUT TYPE=text NAME=bid SIZE=15>
+                    <? print $sml_font; ?>
+                    <INPUT TYPE=submit NAME="" VALUE=<? print $MSG_102; ?>
+
+					>
+
+					<BR></FORM> </TD> </TR>  </TABLE>  
+  
+          </TD>
+        </TR> </TABLE> 
+          </TD>
+
+                </TR> </TABLE>
+			
+  <TABLE WIDTH="760" BGCOLOR="#FFFFFF" BORDER="0">
+  <TR>
+          <td align="right"> 
+            <div align="center"><IMG SRC="./images/linea.gif" WIDTH=750 HEIGHT=6> </div>
+            
+<TABLE WIDTH="690" BORDER=0 align="center">
+  <TR>
+			   
+    <TD ALIGN=LEFT><a name="post"> <B> <? print $tlt_font.$MSG_645;?></b><br></font>
+     </a> <br>
+                  <?
+}
+
+	if(!$AuctionIsClosed)
+	{
+
+	/* get auction request  */
+	$query = "select * from PHPAUCTION_request where req_auction='$id'";
+	$result = mysql_query($query);
+	$linee	= mysql_num_rows($result);
+
+		
+	for ($i=0; $i<$linee; $i++)
+		{
+						
+			$req_user = mysql_result ( $result, $i, "req_user" );
+			  $query2 = "select nick from PHPAUCTION_users where id='$req_user'";
+			  $result2 = mysql_query($query2);
+			  $req_nick = mysql_result ($result2, 0, "nick");
+
+			  $req_auction = mysql_result ( $result, $i, "req_auction" );
+			  $req_text = stripslashes(mysql_result ( $result, $i, "req_text" ));
+
+			  $req_user = $req_nick;
+			  
+			  $req_date = mysql_result ( $result, $i, "req_date" );
+	   
+	   		  $year     = substr($req_date,0,4);
+			  $month    = substr($req_date,4,2);
+			  $day      = substr($req_date,6,2);
+			  $hours    = substr($req_date,8,2);
+			  $minutes  = substr($req_date,10,2);
+			  $seconds  = substr($req_date,12,2);
+
+			  $date_string   = ArrangeDate($day,$month,$year,$hours,$minutes);
+			  $req_date = $date_string;
+			  
+	
+
+			  if ($req_user == $TPL_user_nick_value)
+	   		  	 {
+				 $label_text = "  $MSG_649  ";
+				 $domrisp = "$ttl_font $MSG_648 ";
+				 }
+			  else 
+	   		     {
+				 $label_text = "  $MSG_650  ";
+				 $domrisp = "$MSG_651 ".$TPL_user_nick_value;
+				 }
+				 
+	   	   print
+	   
+				   "<TABLE BORDER=0 WIDTH=\"100%\">".
+				   "<TR>".
+				   "<TD ALIGN=LEFT WIDTH=\"50%\">".$std_font."<B>$MSG_653</B> ".$req_user."</FONT></TD>".
+				   "<TD ALIGN=LEFT>".$std_font."<B>$MSG_654</B> ".$req_date."</FONT></TD>".
+				   "</TR>".
+				   "<TR>".
+				   "<TD ALIGN=LEFT COLSPAN=2>".$std_font."<B>".$label_text."</B></FONT></TD>".
+				   "</TR>".
+				   "<TR>".
+				   "<TD ALIGN=LEFT COLSPAN=2>".$std_font.$req_text."</FONT></TD>".
+				   "</TR>".
+				   "</TABLE>".
+				   "<br>";
+				   ?>
+                  <IMG SRC="./images/linea.gif" WIDTH=600 HEIGHT=7> 
+                  <?
+	    }
+}
+?>
+                </TD>
+			   </TR>
+			 </TABLE>
+            <a href="#top"><? print $std_font.$MSG_652 ?></a> 
+            <?
+	if(!$AuctionIsClosed)
+	{
+
+if($HTTP_SESSION_VARS["PHPAUCTION_LOGGED_IN"])
+
+
+	{
+	      
+			$user = "select id, nick from PHPAUCTION_users where id='$PHPAUCTION_LOGGED_IN'";
+			$result_user = mysql_query($user);
+		$idutente  = mysql_result($result_user,0,"id");
+		$nick  = mysql_result($result_user,0,"nick");
+			If(mysql_num_rows == 0)
+			{
+			"";
+			}
+			  if ($nick == $TPL_user_nick_value)
+				 $domrisp = "$MSG_648 ";
+			  else 
+				 $domrisp = "$MSG_647 ".$TPL_user_nick_value;
+
+print
+
+"<BR><BR>".
+"<TABLE BORDER=0 WIDTH=\"100%\">".
+"<TR>".
+"<TD ALIGN=CENTER>".
+" $tlt_font".$domrisp."</FONT>".
+"</TD>".		
+"</TR>".
+"<TR>".
+"<TD ALIGN=CENTER>".
+	"<TABLE BORDER=0>".
+		   "<TR>".
+		   "<TD ALIGN=CENTER>".
+		   "<FORM ACTION=\"request.php?SESSION_ID=".urlencode($sessionIDU)."&id=".$TPL_id_value.
+		   		 "\" method=\"post\">".
+				 "<INPUT TYPE=\"hidden\" NAME=\"reqauction\" VALUE=".$TPL_id_value.">".
+		   		 "<INPUT TYPE=\"hidden\" NAME=\"requser\" VALUE=".	$idutente.">".
+		   		 "<TEXTAREA WRAP=VIRTUAL NAME=\"reqtext\" ROWS=5 COLS=43></TEXTAREA>".
+				 "<BR>".
+				 "<INPUT TYPE=\"submit\" NAME=\"inviato\" VALUE=\" Submit\">".
+				 "<INPUT TYPE=\"reset\">".
+		   "</FORM>".
+		   "</TD>".
+		   "</TR>".
+	"</TABLE>".
+"</TD>".
+"</TR>".
+"</TABLE>".
+"</CENTER>";
+
+}
+
+else
+{
+
+?>
+
+<CENTER><? print $tlt_font.$MSG_646;?></FONT><BR></CENTER>
+<?
+}
+
+	}	
+  ?>
+          </TD>
+        </TR>
+
+        </TABLE>
+		         
+   
+    </td>
+</tr>
+
+</table>
