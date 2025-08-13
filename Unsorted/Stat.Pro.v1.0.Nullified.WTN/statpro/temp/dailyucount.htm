@@ -1,0 +1,41 @@
+<h2>Còàòèñòèêà ïî äíÿì çà $rumonth{$in{month}} $in{year}</h2>
+<table width="100%" cellpadding=8 cellspacing=1>
+  <tr valign="top"> 
+    <td width=350>
+<img src="/cgi-bin/statpro/grstat.cgi?go=daily">
+Âñåãî çà $rumonth{$in{month}} $in{year}:<br>
+&nbsp;&#149;&nbsp;õîñòîâ: <b>$totimp</b><br>
+&nbsp;&#149;&nbsp;õèòîâ: <b>$totimpall</b><br>
+<p><b>Âûáåðèòå ìåñÿö:</b></p>
+                 <form action="view.cgi" method=POST>
+                 <input type=hidden name=date value=$in{date}>
+<table>
+  <tr>
+    <td>
+      <select name="month">
+        <option $selected{Jan} value="Jan">ßíâàðü</option>
+        <option $selected{Feb} value="Feb">Ôåâðàëü</option>
+        <option $selected{Mar} value="Mar">Ìàðò</option>
+        <option $selected{Apr} value="Apr">Àïðåëü</option>
+        <option $selected{May} value="May">Ìàé</option>
+        <option $selected{Jun} value="Jun">Èþíü</option>
+        <option $selected{Jul} value="Jul">Èþëü</option>
+        <option $selected{Aug} value="Aug">Àâãóñò</option>
+        <option $selected{Sep} value="Sep">Ñåíòÿáðü</option>
+        <option $selected{Oct} value="Oct">Îêòÿáðü</option>
+        <option $selected{Nov} value="Nov">Íîÿáðü</option>
+        <option $selected{Dec} value="Dec">Äåêàáðü</option>
+      </select>      
+      <input type="text" name="year" value="$in{year}" size="4">
+      ãîäà</td>
+    <td>&nbsp;
+      <input type="submit" value="Ïîêàçàòü">
+    </td>
+  </tr>
+</table>
+</form>
+      <p>&nbsp;</p>
+      </td>
+    <td>@mstats</td>
+  </tr>
+</table>
