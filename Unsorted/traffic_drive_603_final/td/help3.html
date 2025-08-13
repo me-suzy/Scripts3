@@ -1,0 +1,117 @@
+<html><head>
+<title>Traffic-Drive CJ/TGP v6.03 free :: Admin Interface :: Help</title>
+<style type="text/css">
+<!--
+BODY{font-size:10px;font-family:verdana;}
+A:LINK {font-family:verdana; font-size:10px;color:#000082;text-decoration:none;font-weight:bold}
+A:ACTIVE {font-family:verdana; font-size:10px;color:#000082;text-decoration:none;font-weight:bold}
+A:VISITED {font-family:verdana; font-size:10px;color:#000082;text-decoration:none;font-weight:bold}
+A:HOVER {font-family:verdana; font-size:10px;color:#000082;text-decoration:underline;font-weight:bold}
+TABLE {font-size:10px;font-family:verdana;background:#E9E9E9;}
+INPUT {background:#FFECF5;border : 1px solid #ffffff;font-size:10px;font-family:verdana;color:#B30059;}
+.fnfm {background:#FFECF5;border : 1px solid #ffffff;font-size:10px;font-family:verdana;color:#B30059;}
+.fn1 {font-size:10px;font-weight:bold;font-family:verdana;}
+.fnh {font-size:18px;font-weight:bold;font-family:verdana;}
+.button {background:#FFFFE6;font-size:14px;font-family:verdana;color:#000082;}
+.select {background:#FFECF5;border:1px solid #ffffff;font-size:10px;font-family:verdana;color:#B30059;}
+-->
+</style>
+</head>
+<body bgcolor=#FFFFFF text=#000000 link=#000082 vlink=#000082 alink=#000082>
+<table align=center width=760><tr><td width=100% align=center>
+<font class=fnh>Traffic-Drive CJ/TGP v6.03 free</font><br>Admin Interface :: Help
+</td></tr></table><br>
+<table align=center width=760><tr><td width=100% align=center>
+<a href="help.html">Manual</a>&nbsp;&nbsp;&nbsp;
+<a href="help2.html">Main Table</a>&nbsp;&nbsp;&nbsp;
+<a href="help3.html">Settings</a>
+</td></tr></table><br>
+<table align=center width=760><tr><td>
+<table align=center width=606 cellpadding=5><tr>
+<td width=190 align=left bgcolor=#B9FFE9><font class=fn1>Settings</font></td>
+<td></td>
+</tr></table>
+<table align=center><tr><td width=600 align=left bgcolor=#D7D7D7>
+<li><font class=fnfm>My Details</font><br><br>
+<font class=fnfm>my url</font> - url of your site.<br>
+Should specify <font class=fnfm>index.php</font>  file (for example http://mysite.com/index.php).
+In case if <font class=fnfm>index.php</font> is installed as index of  directory (for example such line <font class=fnfm>DirectoryIndex index.php</font>
+ in <font class=fnfm>.htaccess</font> file) it is possible to specify directories url (for example http://mysite.com/).<br>
+<font class=fnfm>my title</font> - the name of site.<br>
+<font class=fnfm>my email</font>, <font class=fnfm>my icq</font> - the contact data is displayed in webmaster's interface.<br>
+<font class=fnfm>extra url</font> - url where exits of overflow should be sent.<br><br>
+<li><font class=fnfm>Script Settings</font><br><br>
+<font class=fnfm>authentification</font> - recognition of belonging to trade<br>
+The script can work in 2 modes:<br><br>
+- <font class=fnfm>enable ID authentification</font> - recognition of belonging to trade by value <font class=fnfm>from</font>
+ transmitted in url at reference to a site and by <font class=fnfm>referer</font> value transmitted by browser.<br>
+- <font class=fnfm>referer authentification only</font> - recognition of belonging to trade only by <font class=fnfm>referer</font> value transmitted by browser,
+ <font class=fnfm>from</font> value transmitted in url at reference to a site is ignored.<br><br>
+<font class=fnfm>recalculate time (seconds)</font> - time interval between recalculations.<br><br>
+<font class=fnfm>unique time (IP-log time) (seconds)</font> - storage time of IP in IP-log.<br><br>
+<font class=fnfm>refering URLs</font> - to perform or not to perform refering URLs log<br><br>
+<li><font class=fnfm>In Pages</font><br><br>
+<font class=fnfm>file extension</font> - extension of entrance pages (without a dot)<br>
+<font class=fnfm>method</font> - method of entrance pages<br><br>
+<li><font class=fnfm>Default Group</font><br><br>
+- trade group by default. It is used in other adjustments.<br><br>
+<li><font class=fnfm>TGP & Real Content Features</font><br><br>
+<font class=fnfm>default out to url(hurl) percent</font> - percent of exits to real content by default.<br><br>
+<font class=fnfm>default first time click</font> - adjustment of the "first click":<br>
+<font class=fnfm>out to real content</font> - "first click" always goes to content<br>
+<font class=fnfm>use percent</font> - not to process "first click" in special way<br><br>
+<font class=fnfm>default tracking of first time click to url(hurl):</font><br>  
+<font class=fnfm>track</font> - consider any first exit to content as the first one - if option of exit <font class=fnfm>gtr=0</font> is not set<br>
+<font class=fnfm>don't track</font> - not to consider any first exit to content as the first one - if option of exit <font class=fnfm>gtr=1</font> is not set<br><br>
+<li><font class=fnfm>Default Out</font> - default values, when there is no options of exit<br><br>
+<font class=fnfm>group</font><br>
+<font class=fnfm>default group</font> - exit by default only to sites with number of group by default<br>
+<font class=fnfm>custom groups</font> - exit by default only to sites of the specified groups (groups are divided <font class=fnfm>-</font> symbol)<br><br>
+<font class=fnfm>target</font><br>
+<font class=fnfm>any site</font> - exit by default to sites of any type<br>
+<font class=fnfm>pictures site</font> - exit by default only to sites such as "only pictures" or "mixed"<br>
+<font class=fnfm>movies site</font> - exit by default only to sites such as "only movies" or "mixed"<br><br>
+<li><font class=fnfm>New Trades Defaults</font> - adjustments of new trades, registered through webmaster's interface.<br><br>
+<font class=fnfm>group</font><br>
+<font class=fnfm>default group</font> - new trade will be appropriated to default group, 
+ hour schedule of groups of new trade is filled by number of group by default<br>
+<font class=fnfm>webmaster should choose the group (non-blank fields)</font> - webmaster should choose the group manually.
+Here it is necessary to define, which groups will be accessible to the webmaster for choice
+ and specify names of these groups. Names of groups inaccessible for webmaster to choose 
+ are necessary to leave clear.<br><br>
+<font class=fnfm>in pages prefix</font> - prefix of entrance page compared to the new trade depending on its group.<br><br>
+<font class=fnfm>site type</font><br>
+<font class=fnfm>webmaster can choose</font> - webmaster chooses the type of his site<br>
+<font class=fnfm>set to</font> - rigid comparison of type of site to the new trade<br><br>
+<font class=fnfm>default trade type</font> - type of trade established for new trade<br><br>
+<font class=fnfm>default ratio</font> - ratio, established for new trade<br><br>
+<font class=fnfm>default hourly force</font> - this value fills the hourly schedule of forced traffic of new trade<br><br>
+<font class=fnfm>default daily in trigger</font> - established for new trade<br><br>
+<font class=fnfm>default daily out trigger</font> - established for new trade<br><br> 
+<font class=fnfm>default previous hour in trigger</font> - established for new trade<br><br>  
+<font class=fnfm>default previous hour out trigger</font> - established for new trade<br><br>
+<font class=fnfm>include new trade in top list</font> - whether to include new trade to toplist<br><br>
+<li><font class=fnfm>Top List</font> - toplist settings<br><br>
+<font class=fnfm>members maximum</font> - quantity of toplist members<br>
+If to set quantity of toplist members to <font class=fnfm>0</font> - toplist is not formed<br>
+<font class=fnfm>order</font> - the order of sorting sites in toplist<br><br>
+<li><font class=fnfm>Webmaster's Interface Control</font><br><br>
+<font class=fnfm>signup form</font> - permission or prohibition of establishment of new trades through the webmaster's interface<br>
+<font class=fnfm>webmaster's stats</font> - permission or prohibition for the webmaster to view status of trade on your site<br><br>
+In a case if the webmaster can view status of trade on your site:<br>
+<font class=fnfm>webmaster's stats raw in</font> - whether to show the raw ins to the webmaster<br>
+<font class=fnfm>webmaster's stats unique in</font> - whether to show the unique ins to the webmaster<br>
+<font class=fnfm>webmaster's stats clicks</font> - whether to show the quantity of clicks, which exits have gone to trade<br>
+<font class=fnfm>webmaster's stats gallery clicks</font> - whether to show the quantity of clicks, which exits have gone to real content<br>
+<font class=fnfm>webmaster's stats productivity</font> - whether to show the productivity of trade<br><br>
+<li><font class=fnfm>Admin Interface Control</font><br><br>
+<font class=fnfm>use special group colors</font> - here it is possible to set color of display of trade in main table according to its group.
+Color is specified in <font class=fnfm>#ffffff</font> format.<br><br>
+</td></tr></table>
+</td></tr></table>
+<br>
+<table align=center width=760><tr><td width=100% align=center>
+<a href="a.php">back to admin interface</a><br>
+</td></tr></table>
+</body>
+</html>
