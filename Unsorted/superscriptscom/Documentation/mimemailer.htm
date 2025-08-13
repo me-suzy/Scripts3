@@ -1,0 +1,180 @@
+<html>
+
+<head>
+<title>Mime Mailer Documentation</title>
+
+<meta name="Microsoft Border" content="t, default"></head>
+
+<body><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+
+<table border="0" width="33%" cellpadding="0">
+  <tr>
+    <td width="50%"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/" ONCLICK="parent.f=0"><img src="../pix/banners/miniprizm.gif" alt="cgi scripts" border="0" WIDTH="305" HEIGHT="59"></a></font></td>
+    <td width="50%" bgcolor="#FFFFFF"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/ads/rotate.cgi?url=&amp;user=" target="new" ONCLICK="parent.f=0"><img src="http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user=" border="0" width="468" height="60"></a></font></td>
+  </tr>
+</table>
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="16%"><p align="center"><a href="../dsstoday/index.html"><font color="#000000" face="Arial"><img src="../pix/main/news.jpg" alt="CGI NEWS" align="left" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="16%"><p align="center"><a href="../scripts/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/scripts.jpg" alt="CGI Scripts" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../mastergate/index.html"><font color="#000000" face="Arial"><img src="../pix/main/access.jpg" alt="Access The CGI Archive" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../contact.html"><font color="#000000" face="Arial"><img src="../pix/main/contact.jpg" alt="Contact Superscripts" WIDTH="104" HEIGHT="68"></font></a></td>
+    <td width="17%"><p align="center"><a href="../support.html"><font color="#000000" face="Arial"><img src="../pix/main/dox.jpg" alt="CGI Documentation" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../download/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/download.jpg" alt="Download CGI Scripts Here" align="right" WIDTH="105" HEIGHT="65"></font></a></td>
+  </tr>
+  <tr>
+    <td width="16%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/dsstoday/index.html" style="color: rgb(255,255,255)"><strong>News</strong></a></font></td>
+    <td width="16%" bgcolor="#000000"><p align="center"><a href="/scripts/" style="color: rgb(255,255,255)"><font face="Arial" color="#FFFFFF"><strong>CGI Scripts</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><a style="color: rgb(255,255,255)" href="../mastergate/index.html"><font face="Arial" color="#FFFFFF"><strong>Become A Member</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../contact.html"><strong>Contact
+    Us</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../support.html"><strong>Support</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/download/index.shtml" style="color: rgb(255,255,255)"><strong>Download
+    Area</strong></a></font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+
+<table border="0" width="75%" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <p><big><big><strong><font face="Arial" color="#FF0000">Documentation<br>
+      </font></strong><font face="Arial" color="#000000">MIME MAILER:&nbsp; V2.2</font></big></big></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Copyright 2001 Psybercore, Inc. - All Rights
+        Reserved. </small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">Selling redistributing or modifying any or
+        all of the code for this program without prior written consent is expressly forbidden. You
+        must obtain written permission before redistributing this software over the Internet or in
+        any other medium. In all cases copyright and header information must remain intact.</font></small></p>
+      </blockquote>
+      <hr align="left">
+      <p><big><strong><font face="Arial" color="#000000">System Requirements</font></strong> </big><ul>
+        <li><small><font face="Arial" color="#000000">Perl 5</font></small></li>
+        <li><font face="Arial" color="#000000"><small>Sendmail</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Preliminaries</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Determine the path to PERL 5 on your web
+          server host.&nbsp; Note that some web hosting companies run both PERL 4 and PERL 5.&nbsp;
+          Make ABSOLUTELY sure you are not setting this up under PERL 4.&nbsp; Ask your
+          administrator if you are not sure. </small></font></li>
+      </ul>
+      <ul>
+        <li><a href="../../tutorial/index.html"><font face="Arial" color="#000000"><small>If you
+          need to review or learn the basics of CGI and Perl visit the tutorial</small></font></a></li>
+      </ul>
+      <ul>
+        <li><a href="../download/index.shtml"><font face="Arial" color="#000000"><small>Download the
+          tarfile for this program and save it to your desktop.</small></font></a></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Unpack the tar archive on your desktop using a
+          program that unpacks UNIX TAR ARCHIVES. If you don't have such a program then download
+          WINZIP FREE from <a HREF="http://www.shareware.com/">SHAREWARE.COM</a>.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>After you have unpacked the TAR archive you
+          will have a collection of folders and files on your desktop.&nbsp; Now you have to do some
+          basic editing of each of these files (or at least some of them).&nbsp; Use a text editor
+          such as wordpad, notepad, BBEdit, simpletext, or teachtext to edit the files.&nbsp; These
+          are NOT WORD PROCESSOR DOCUMENTS they are just simple TEXT files so don't save them as
+          word processor documents or save them with extentions such as .txt or they will NOT WORK.
+          &nbsp; Note that there may be a some files inside of folders which are &quot;blank&quot;.
+          &nbsp; This is normal.</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Preparing the CGI scripts</small></font></h2>
+      <blockquote>
+        <h2><small><font face="Arial" color="#FF0000"><small>Define Path To PERL 5</small></font></small></h2>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>The first step is to open up each and every
+        file that has a .cgi extention and edit line number one of each script.&nbsp; Each of the
+        cgi scripts is written in perl 5. For your scripts to run they must know where perl 5 is
+        installed on your web server. The path to perl 5 is defined to a cgi script in the first
+        line of the file. In each of the cgi scripts the first line of code looks something like
+        this: </small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#FF0000"><small>#!/usr/bin/perl</small></font></p>
+        </blockquote>
+        <p><font face="Arial" color="#000000"><small>If the path to perl 5 on your web server is
+        different from /usr/bin/perl you must edit the first line of each cgi script to reflect
+        the correct path. If the path to perl 5 is the same no changes are necessary. If you do
+        not know the path to perl 5 ask the webmaster or system administrator at your server site.
+        &nbsp; </small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big><strong>Configure the .cgi files</strong></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><big>configure.cgi</big></font></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">This file pretty much runs the whole
+        show.&nbsp; If you screw this one up don't count on anything working properly. &nbsp; In
+        other words, make sure you take the time to do this step CORRECTLY.&nbsp; Ask your
+        administrator if you need to.&nbsp; Below are the variables used in ALL of the other cgi
+        scripts.&nbsp; All of the other cgi programs USE configure.cgi to figure out where certain
+        things are.&nbsp; </font></small><font SIZE="2"><ul>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$sendmailpm =
+            &quot;/full/path/to/cgi-bin/mimemailer&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$smtpserver = &quot;name of your mail
+            SMTP server&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$formurla = &quot;FULL URL TO YOUR
+            FORM (OR MAY LEAVE BLANK)&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$formurlb = &quot;ALTERNATE URL TO
+            YOUR FORM (OR MAY LEAVE BLANK)&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$formurlc = &quot;&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$formurld = &quot;&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$mailprogram = '/path/to/sendmail';</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$filedirectory =
+            &quot;/full/path/to/cgi-bin/mimemailer/files&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$replyaddress = &quot;YOURNAME
+            &lt;you\@yourreplyaddress.com&gt;&quot;;</font><font SIZE="2"></li>
+          <li></font><font color="#FF0000" face="Arial" SIZE="2">$emailsubject = &quot;SUBJECT LINE OF
+            EMAIL!&quot;;</font><font SIZE="2"></li>
+        </ul>
+        <p></font><font color="#FF0000" face="Arial" SIZE="2">$sendmailpm</font><font face="Arial" color="#000000"><small> is the full path to the mimemailer installation directory</small></font><font SIZE="2"></p>
+        </font><p><font color="#FF0000" face="Arial" SIZE="2">$smtpserver</font><font face="Arial" color="#000000"><small> is the name of your OUTGOING mail server (eg: &nbsp;
+        smtp.yourdomain.com)</small></font></p>
+        <p><font color="#FF0000" face="Arial" SIZE="2">$formurla</font><font face="Arial" color="#000000"><small> is the VALID URL of where the ordering selection form should be
+        (this is a security protocol).&nbsp; You can leave this blank if you want to.</small></font></p>
+        <p><font color="#FF0000" face="Arial" SIZE="2">$formurlb-d</font><font face="Arial" color="#000000"><small> are alternate URLS for the index.html page used to order the file.
+        &nbsp; These might be used for example (see our demo).&nbsp; Our demo can be accessed from
+        both <a href="http://www.superscripts.com/">http://www.superscripts.com/demo/mime</a>, <a href="http://superscripts.com/demo/mime/">http://superscripts.com/demo/mime/</a>, and <a href="http://www.superscripts.com/demo/mime/index.html">http://www.superscripts.com/demo/mime/index.html</a>,
+        etc.</small></font></p>
+        <p><font color="#FF0000" face="Arial" SIZE="2">$mailprogram</font><font face="Arial" color="#000000"><small> is simple the path to sendmail</small></font></p>
+        <p><font color="#FF0000" face="Arial" SIZE="2">$filedirectory</font><font face="Arial" color="#000000"><small> is the full path to the files you are selling (it is recommended
+        to store these inside the cgi-bin or below root)</small></font></p>
+        <p><font color="#FF0000" face="Arial" SIZE="2">$replyaddress</font><font face="Arial" color="#000000"><small> - email address used to reply to the seller (thats YOU)</small></font></p>
+        <p><font color="#FF0000" face="Arial" SIZE="2">$emailsubject</font><font face="Arial" color="#000000"><small> is the subject of the email message you want to use when sending
+        your files</small></font></p>
+      </blockquote>
+      <h2><font face="Arial" color="#000000"><small>Upload Your Edited CGI and Database Files</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Upload all of the cgi files (.cgi) into a
+          directory you create called &quot;mimemailer&quot; inside cgi-bin/clickblasters/</small></font></li>
+        <li><small><font face="Arial" color="#000000">Make a directory inside of your
+          /cgi-bin/mimemailer folder called files and put all the files you will be selling into
+          this folder</font></small></li>
+        <li><font face="Arial" color="#000000"><small>Make a directory inside of your normal
+          webspace (http://www.yourdomain.com/mimemailer) called mimemailer and upload index.html
+          here.</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Change the html code of the selection drop
+          down menu to reflect the filenames of the files you are selling (leave the default
+          banner.gif there while testing though).</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Chmod the files</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Chmod all the .cgi files to 755.&nbsp; Chmod
+          everything else to 666 or 777</small></font></li>
+      </ul>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
