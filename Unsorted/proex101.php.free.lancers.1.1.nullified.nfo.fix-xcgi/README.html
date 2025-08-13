@@ -1,0 +1,150 @@
+<html>
+<head>
+<title>
+PHP Freelancers by ProEx101 README
+</title>
+</head>
+<body>
+<b>
+You are currently viewing the official documentation of PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a>.<br>
+In this documentation, you will find:<br>
+- <a href="README.html#req">requirements</a><br>
+- <a href="README.html#set">setup intructions</a><br>
+- <a href="README.html#upg">upgrading from version 1.0</a><br>
+- <a href="README.html#ins">instructions for use of including files</a><br>
+- <a href="README.html#err">error instructions</a><br>
+- <a href="README.html#uni">uninstall instructions</a><br>
+- <a href="README.html#bug">bugs and their fixes</a><br>
+- <a href="README.html#inf">information on update ideas</a><br>
+- <a href="README.html#off">official homepage</a><br>
+- <a href="README.html#res">resources for more information</a><br>
+- <a href="README.html#liv">live demo</a><br>
+- <a href="README.html#ter">terms of use</a><br>
+- <a href="README.html#dis">disclaimer</a><br>
+<br>
+<br>
+<a name="req">Requirements</a> To Install and Run PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a>:<br>
+- <a href="http://www.PHP.net/" target="_blank">PHP</a> 3.0.18 or higher (Recommended version: 4.0.1 or higher as used on the <a href="http://www.proex101.com/" target="_blank">ProEx101</a> web servers.)<br>
+- <a href="http://www.MySQL.com/" target="_blank">MySQL</a><br>
+- users must have cookies enabled browser<br>
+- atleast 520 KB of free/unused webspace<br>
+<br>
+<a name="set">Setup</a> Instructions For PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a> (do this in order from first to last):<br>
+1. Upload all files to your website in the same directory, this includes images.<br>
+2. Customize the SQL mode and variables in sql.php to match your own SQL connections.<br>
+3. Read and then run one-timesetup.php by clicking on the "Run" link.<br>
+4. Go to admin_setup.php, (after you run one-timesetup.php, the password will already be given when you click on the link to go to admin_setup.php), customize the form fields to fit your website, and then save the variable.<br>
+5. Create a file named privacy.html containing your privacy policy and upload it to the same directory that the PHP Freelancers script by <a href="http://www.proex101.com/" target="_blank">ProEx101</a> is in.<br>
+6. Create a file named terms.html containing your terms and conditions and upload it to the same directory that the PHP Freelancers script by <a href="http://www.proex101.com/" target="_blank">ProEx101</a> is in.<br>
+7. Create a file named featured.html containing your details to your users describing the "Featured" status for projects that pay a $**.00 fee to get their project noticed and upload it to the same directory that the PHP Freelancers script by <a href="http://www.proex101.com/" target="_blank">ProEx101</a> is in.<br>
+8. Create a file named aboutspecial.html containing your details to your users describing the "Special" status for freelancers such as about paying a one-time $**.00 research fee, and $**.00/month after that to keep their "Special" status and upload it to the same directory that the PHP Freelancers script by <a href="http://www.proex101.com/" target="_blank">ProEx101</a> is in.<br>
+9. If you want other payment options for your users (must enable in admin_setup.php file), create a file named payment.html containing these other payment options and upload it to the same directory that the PHP Freelancers script by <a href="http://www.proex101.com/" target="_blank">ProEx101</a> is in.<br>
+10. If you want to customize the HTML forms, etc. of the script, we suggest that you visit <a href="http://www.ScriptLance.com/" target="_blank">http://www.ScriptLance.com/</a> (a website running the CGI version of Freelancers), and open a new project so a programmer from there can customize the script HTML design for you.<br>
+<br>
+<a name="upg">Upgrade</a> From Version 1.0 Instructions for PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a>:<br>
+1. Upload ALL files from the PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a> ZIP file containing version 1.1 to your website.<br>
+2. Run upgrade.php and then immediately after delete upgrade.php<br>
+<br>
+<a name="ins">Special</a> Instructions For PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a> (you must rename your file to .php/.php3 and upload it to the same directory as PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a> for all of these):<br>
+- To include the count of current freelancers in your database, insert this where you would like the count to appear:  &lt;? $getop = file("http://URL/to/PHPFreelancers/directory/d_count.php?count=f"); $getopr = implode("", $getop); echo $getopr; ?><br>
+- To include the count of current buyers in your database, insert this where you would like the count to appear:  &lt;? $getop2 = file("http://URL/to/PHPFreelancers/directory/d_count.php?count=b"); $getopr2 = implode("", $getop2); echo $getopr2; ?><br>
+- To include the count of current users (freelancers and buyers) in your database, insert this where you would like the count to appear:  &lt;? $getop3 = file("http://URL/to/PHPFreelancers/directory/d_count.php"); $getopr3 = implode("", $getop3); echo $getopr3; ?><br>
+- To include the top projects by average bid, sorted by greatest to least bid, insert this where you would like the top projects to appear: &lt;? $getop4 = file("http://URL/to/PHPFreelancers/directory/d_topprojects.php?show=<i>xx</i>"); $getopr4 = implode("", $getop4); echo $getopr4; ?>  Replace "<i>xx</i>" with the number of top projects to display.<br>
+- To include the most recent projects posted on your website, sorted by most recent to oldest project posted, insert this where you would like the most recent projects to appear: &lt;? $getop5 = file("http://URL/to/PHPFreelancers/directory/d_projects.php?show=<i>xx</i>"); $getopr5 = implode("", $getop5); echo $getopr5; ?>  Replace "<i>xx</i>" with the number of most recent projects to display.<br>
+- To include the top freelancers, sorted by number of reviews and rating (greatest to least), insert this where you would like the top freelancers to appear: &lt;? $getop6 = file("http://URL/to/PHPFreelancers/directory/d_top.php?show=<i>xx</i>"); $getopr6 = implode("", $getop6); echo $getopr6; ?>  Replace "<i>xx</i>" with the number of top "freelancers" to display.<br>
+<br>
+<a name="err">Error</a> Instructions For PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a>:<br>
+- If you get an error related to "MySQL Error", contact <a href="mailto:DaDJRock@SmartCGIs.com">DaDJRock@SmartCGIs.com</a> immediately, this means that your script has experienced a fatal error.<br>
+- If you get an error related to "Parse Error", that means that you (or a programmer who customized/installed the script for you) has interrupted the printing of any HTML forms, etc. by forgetting to include \ before a " or ' (depending on the section of the script), etc.  We suggest that you either get a refund if you got someone else to do this for you, and/or just plain old visit <a href="http://www.SmartCGIs.com/phpfreelancers/" target="_blank">http://www.SmartCGIs.com/phpfreelancers/</a> and click on the "Installation" link.  This could also be caused if you are running a less than required version of PHP.<br>
+- If you get any other type of error, it is due to your customization of the script, and we suggest that you visit <a href="http://www.SmartCGIs.com/phpfreelancers/" target="_blank">http://www.SmartCGIs.com/phpfreelancers/</a> and click on the "Installation" link.<br>
+- Any serious errors should immediately be notified to <a href="mailto:DaDJRock@SmartCGIs.com">DaDJRock@SmartCGIs.com</a><br>
+<br>
+<a name="uni">Uninstall</a> Instructions For PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a>:<vr>
+1. Visit uninstall.php on your web server.<br>
+2. Click the "Run" link.<br>
+3. Enter you MySQL password in the input box.  TIP: Your MySQL password is almost always your FTP password, but may differ.<br>
+4. Once you receive the uninstall successful message, delete all files (38) contained in PHP Freelancers from your server, for a complete list, view the below:<ul>
+<li>admin.php</li>
+<li>admin_setup.php</li>
+<li>br.php</li>
+<li>buyers.php</li>
+<li>createsubject.gif</li>
+<li>cron.php</li>
+<li>d_count.php</li>
+<li>d_projects.php</li>
+<li>d_top.php</li>
+<li>d_topprojects.php</li>
+<li>deposit_2checkout.php</li>
+<li>deposit_paypal.php</li>
+<li>depositmoney.gif</li>
+<li>editinfo.gif</li>
+<li>featured.gif</li>
+<li>feedback.php</li>
+<li>forum.php</li>
+<li>fr.php</li>
+<li>freelancers.php</li>
+<li>invite.gif</li>
+<li>layoutdemo.html</li>
+<li>one-timesetup.php</li>
+<li>placebid.gif</li>
+<li>postreply.gif</li>
+<li>project.php</li>
+<li>README.html</li>
+<li>search.php</li>
+<li>send.php</li>
+<li>special.gif</li>
+<li>star.gif</li>
+<li>star2.gif</li>
+<li>transfermoney.gif</li>
+<li>uninstall.php</li>
+<li>urgent.gif</li>
+<li>vars.php</li>
+<li>viewall.gif</li>
+<li>viewboard.gif</li>
+<li>withdrawmoney.gif</li>
+</ul>
+<a name="bug">Known</a> Bugs For PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a>:<br>
+Bug 1: You may get errors all over your script and you are positive you didn't do anything wrong, this is because you don't have a server that is not capable of the version of PHP that is required to run this script.<br>
+Fix 1: Unavailable!  We are trying our very best to require only the lowest version of PHP, but a lot of newer scripting functionality is needed.<br>
+Bug 2: If you suspend/ban an IP address from PHP Freelancers, and for every user of yours who visit the script (even if they're not banned or suspended), it might display the banned/suspended message and disable them access.  This is because a variable is used in PHP called $REMOTE_ADDR, your server may not return the proper value, but this doesn't happen often unless you use a shared server.<br>
+Fix 2: The admin can update whether they want to have the feature to disable/enable the banned/suspended functions.  If they disable this, the above bug will not occur.<br>
+- If you find a bug in the script, please immediately contact <a href="mailto:DaDJRock@SmartCGIs.com">DaDJRock@SmartCGIs.com</a> clearly stating the time and date the bug was shown, the url/web address to the file the bug was found in, where the bug was found in that file, and a detailed description of the bug that was found.  If this happens and it is a real bug, you will get the bug update free automatically.<br>
+<br>
+<a name="inf">Update</a> Ideas For PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a>:<br>
+If you have an idea for an update of PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a>, please contact <a href="mailto:DaDJRock@SmartCGIs.com">DaDJRock@SmartCGIs.com</a> with complete details of your idea.<br>
+<br>
+<a name="off">To</a> view the official homepage of PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a>, visit <a href="http://www.proex101.com/freelancers/" target="_blank">http://www.proex101.com/freelancers/</a><br>
+<br>
+<a name="res">For</a> more information on PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a>, visit:<br>
+The Knowledge Base: <a href="http://www.proex101.com/freelancers/knowledge.php" target="_blank">http://www.proex101.com/freelancers/knowledge.php</a><br>
+The Forum: <a href="http://www.proex101.com/freelancers/forum.php" target="_blank">http://www.proex101.com/freelancers/forum.php</a><br>
+<br>
+<a name="liv">For</a> a live demo of PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a>, visit <a href="http://www.proex101.com/freelancers/freelancers.php" target="_blank">http://www.proex101.com/freelancers/freelancers.php</a><br>
+Details:  Every file that is in the actual script is in the demo, but restricted access will still apply (as with the scripts when purchased) to do fatal actions.<br>
+<br>
+<a name="ter">Terms</a> of Use For PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a>:<br>
+By purchasing PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a>, "the user" (you) are in binding contract with the end user agreement as originally viewed in newest form at <a href="http://www.proex101.com/freelancers/terms.php" target="_blank">http://www.proex101.com/freelancers/terms.php</a><br>
+As follows, the end user agreement for PHP Freelancers Version 1.0 by <a href="http://www.proex101.com/" target="_blank">ProEx101</a>.<br>
+- Re-Distribution of PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a> is strictly prohibited.  Any reselling or re-distribution must be consulted with <a href="mailto:webmaster@SmartCGIs.com">webmaster@SmartCGIs.com</a> and <a href="mailto:DaDJRock@SmartCGIs.com">DaDJRock@SmartCGIs.com</a><br>
+&nbsp;&nbsp;-- If permission is given to the user (and ONLY if permission is given to the user) may you resell/re-distribute PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a> for the price supplied by <a href="mailto:webmaster@SmartCGIs.com">webmaster@SmartCGIs.com</a> and <a href="mailto:DaDJRock@SmartCGIs.com">DaDJRock@SmartCGIs.com</a>  In whole nor in part may PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a> be modified then resold/re-distributed to any individual.<br>
+- By modifying PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a>, you are doing so by your own free will and any errors caused/resulting from your modifications/customizations may not at anytime be requested to be helped with by <a href="http://www.SmartCGIs.com/" target="_blank">SmartCGIs.com</a> or <a href="http://www.proex101.com/" target="_blank">ProEx101</a><br>
+- <a href="http://www.proex101.com/" target="_blank">ProEx101</a> is in partnership with <a href="http://www.SmartCGIs.com/" target="_blank">SmartCGIs.com</a> and PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a> is supplied by and provided only for users abiding by this end user agreement and any other agreements <a href="http://www.proex101.com/" target="_blank">ProEx101</a> and <a href="http://www.SmartCGIs.com/" target="_blank">SmartCGIs.com</a> wishes to place on this script.<br>
+- THIS SCRIPT IS NOT FREE!  If you got this script for free or just someplace other than <a href="http://www.SmartCGIs.com/" target="_blank">SmartCGIs.com</a>, please immediately notify <a href="mailto:webmaster@SmartCGIs.com">webmaster@SmartCGIs.com</a> and <a href="mailto:DaDJRock@SmartCGIs.com">DaDJRock@SmartCGIs.com</a>, we do offer rewards for this type of information.  Although, all PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a> scripts are tracked everytime they are run or uploaded to any web server and are verified of registry and if not registered, we will already be supplied with all information needed to prosecute the offendor.<br>
+- PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a> is copyright 2001 <a href="http://www.proex101.com/" target="_blank">ProEx101</a>, <a href="http://www.SmartCGIs.com/" target="_blank">SmartCGIs.com</a>, and <a href="http://www.R3N3.com/" target="_blank">R3N3 Internet Services</a> by U.S. and international copyright laws and any infringement to the rights reserved will be tracked and any offendors will be prosecuted to the fullest extent of the law.<br>
+- If at anytime <a href="http://www.proex101.com/" target="_blank">ProEx101</a> or <a href="http://www.SmartCGIs.com/" target="_blank">SmartCGIs.com</a> chooses to change this agreement, you are required to abide by it and view it weekly incase modifications have been made at: <a href="http://www.proex101.com/freelancers/terms.php" target="_blank">http://www.proex101.com/freelancers/terms.php</a>
+- Any offendors of the above end user agreement of PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a> will be prosecuted to the fullest extent of the law whether offence is in whole or in part, no differences will be made.<br>
+<a href="http://www.proex101.com/" target="_blank">ProEx101</a> and <a href="http://www.SmartCGIs.com/" target="_blank">SmartCGIs.com</a> supply full security and privacy for any scripts including but not limited to PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a> and Freelancers by <a href="http://www.SmartCGIs.com/" target="_blank">SmartCGIs.com</a>  We take offence seriously and will track any offendors by IP address along with contacting the offendor's ISP.<br>
+<br>
+<a name="dis">Disclaimer</a> For PHP Freelancers by <a href="http://www.proex101.com/" target="_blank">ProEx101</a>:<br>
+<a href="http://www.proex101.com/" target="_blank">ProEx101</a> and <a href="http://www.SmartCGIs.com/" target="_blank">SmartCGIs.com</a> do not hold any responsibility for your/user actions used to abuse this script and will not assist you or any others if your script is abused in such ways as fraud.  No part of this script should not function if instructions are followed out and installation is successful, if this is not followed out and only at that time may you request help from <a href="mailto:DaDJRock@SmartCGIs.com">DaDJRock@SmartCGIs.com</a> but nothing is guarenteed.<br>
+This complete script is based on the PERL/CGI Freelancers from <a href="http://www.SmartCGIs.com/freelancers/" target="_blank">http://www.SmartCGIs.com/freelancers/</a> though the scripting functionality is not in anyway copied/re-designed just for PHP.<br>
+<br>
+Thank-you for using a script by <a href="http://www.proex101.com/" target="_blank">ProEx101</a>,<br>
+<br>
+<a href="mailto:DaDJRock@SmartCGIs.com">Daniel</a><br>
+Owner/Administrator<br>
+<a href="http://www.proex101.com/" target="_blank">ProEx101 Web Services</a><br>
+Partner Programmer of <a href="http://www.SmartCGIs.com/" target="_blank">SmartCGIs.com</a>
+</b>
+</body>
+</html>
