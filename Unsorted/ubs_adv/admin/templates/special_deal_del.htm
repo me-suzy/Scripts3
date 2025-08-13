@@ -1,0 +1,32 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1"></head>
+<body aLink="blue" vLink="blue" link="blue" background="images/bg.jpg">
+$headinclude 
+<form method="post" action="admin.php">
+		<input type="hidden" name="send" value="send">
+		<input type="hidden" name="action" value="$action">
+		
+  <table cellpadding=4 cellspacing=1 width="95%" bgcolor="#000000" align="center">
+    <tr> 
+      <td colspan=4 background="images/cellpic.gif"><font size=2 color="white" face="Tahoma"><b>» 
+        Delete Deal<font color="red" size=1> $error</font></b></font></td>
+    </tr>
+    <tr> 
+      <td width="10%" background="images/cat1.jpg">&nbsp;</td>
+	  <td width="10%" background="images/cat1.jpg"><font size=1 color="black" face="Tahoma"><b>Deal 
+        name </b></font></td>
+      <td width="60%" background="images/cat1.jpg"><font size=1 color="black" face="Tahoma"><b>Description</b></font></td>
+      <td width="20%" background="images/cat1.jpg"><font size=1 color="black" face="Tahoma"><b>Stock</b></font></td>
+    </tr>
+    $special_deal_delbit 
+    <tr> 
+      <td colspan=4 align="center" background="images/cat1.jpg"> 
+        <input type="submit" value="Delete Deal" class="inputbtn">
+      </td>
+    </tr>
+  </table>
+</form>
+	</body>
+</html>
