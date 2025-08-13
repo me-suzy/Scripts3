@@ -1,0 +1,474 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+
+		<LINK rel=stylesheet type="text/css" href="documentation.css">
+
+<TITLE>phpYellow Pages - Easily create your very own Yellow Page directories on the web! - Dreamriver.com - php software mysql database software download apps</TITLE>
+
+	<META NAME="keywords" CONTENT="yellow, pages, phpYellow, php, software, Yellow, ads, listings">
+	<META NAME="description" CONTENT="Easily create your very own Yellow Page directories on the web!">
+	<META NAME="Author" CONTENT="Richard Creech, DreamRiver.com. Web: http://www.dreamriver.com Email: phpYellow@dreamriver.com">
+
+	</HEAD>
+
+
+<body class="yellow">
+
+
+
+<h1>phpYellow Pages Developer's Guide</h1>
+
+
+<!-- start of the dec30 navigation bar for the documentation -->
+<div align="center">
+<a href="DOCSindex.html">Docs Home</a> | 
+<a href="DOCSreadme.html">Read Me</a> | 
+<a href="DOCSfaq.html">FAQ</a> | 
+<a href="DOCSlicense.html">License</a> | 
+<a href="DOCSsecurity.html">Security</a> | 
+<a href="DOCSinstallNotes.html">Install</a> | 
+<a href="DOCSchangeLog.html">ChangeLog</a> | 
+<a href="DOCScustomize.html">Customize</a> | 
+<a href="DOCSpaidListings.html">Paid Listings</a>  
+</div>
+<!-- end of the dec30 navigation bar for the documentation -->
+
+
+
+<span style="color:Coral;font-size:48px;">CUSTOMIZE</span>
+
+
+
+<h2>CUSTOMIZE</h2>
+
+<p>You may want to change the look and feel of phpYellow Pages. Make a backup copy 
+before working on any file. Here are major Customization topics:</p>
+
+<ul>
+<li><a href="#likely">Files Likely to Need Cosmetic Change</a>
+<li><a href="#showOneRecord">Change the Look and Feel of each Record</a>
+	<ul>
+		<li><a href="#RESULTS_ON_ONE_LINEdataShown">Add, remove or modify the data shown with RESULTS_ON_ONE_LINE</a></li>
+		<li><a href="#RESULTS_ON_ONE_LINEoff">Turn Off RESULTS_ON_ONE_LINE</a></li>
+		<li><a href="#Complete">Change Data Shown with Complete Record Display</a></li>
+		
+	</ul>
+<li><a href="#preferred">Preferred Customization Methods</a>
+<li><a href="#css">W3C Cascading Style Sheets</a>
+<li><a href="#netscape">Netscape Display Optimization</a>
+<li><a href="#bridge">CMS Bridge</a>
+<li><a href="#category">Use Your Own Categories</a>
+<li><a href="#categoryadmin">Changing the categories within administration</a>
+<li><a href="#province">Customize State, Province or Country lists</a>
+<li><a href="#requiredata">Modify the data fields you want to make <b>required</b></a>
+<li><a href="#highlight">Link a URL to a specific Database Record with the Highlight Feature</a>
+<li><a href="#dbstructure">Database Structure and Explanation</a>
+<li><a href="#addfields">So you want to add more database fields?</a>
+<li><a href="#removeGoPremium">Remove the &quot;Go Premium&quot; Button</a>
+<li><a href="#answerplus">Partner with AnswerPlus Communications</a>
+<li><a href="#setupanswerplus">Setup AnswerPlus for phpYellow Pages</a>
+<li><a href="DOCSpaidListings.html">Payment for Ads - Paid Listings</a>
+</ul>
+
+
+
+<h2><a name="likely">Files Likely to Need Cosmetic Change</a></h2>
+
+<p>
+These are some of the files you may change to effect the look and feel you want:
+</p>
+
+<OL>
+<LI>header.php - modify to suit
+<LI>footer.php - modify to suit - *** a link to Dreamriver.com is required *** 
+unless you have purchased a copy.
+<LI>yellow.css - modify to suit using a .css editor like Topstyle from <a href="http://www.bradsoft.com">http://www.bradsoft.com</a>
+<LI>oneRecord.php - modify to suit. This file is the central template for how one record looks like to the users, for the Standard Edition.
+<li>categories.php - modify to suit. Add your very own categories!
+</OL>
+
+
+<h2><a name="showOneRecord">Change the Look and Feel of each Record</a></h2>
+<h3>Premium Edition</h3>
+<p>
+phpYellow Pages is capable of showing any combination of data [database fields] you wish. If the data 
+is contained within the database, then the data may be displayed in a record. 
+</p>
+<p>
+<h3>Display Type</h3>
+With phpYellow Pages version 2.32 or higher you may choose to offer:
+
+<ul>
+	<li>RESULTS_ON_ONE_LINE and <i>Complete display</i> or</li>
+	<li><i>Complete display only</i></li>
+</ul>
+
+<p>RESULTS_ON_ONE_LINE is useful for displaying a large number of records. 
+A few features of each record are shown on one line, with a link to  
+complete record detail. 
+<br><br>
+<i>Complete display only</i> is useful for a smaller total recordset - where the visitor 
+is not overwhelmed with listings. Example: a small specialized directory. Note that 
+the Search form is designed to <b>let your visitors choose</b> between Complete and One Line results. 
+</p>
+
+<h4><a name="RESULTS_ON_ONE_LINEoff">Turn Off RESULTS_ON_ONE_LINE</a></h4>
+<p>
+If you do not wish to offer RESULTS_ON_ONE_LINE - you only want to offer 
+Complete detail - then:
+<ol>
+	<li>open util.php, save as utilBACKUP.php, and close this file</li>
+	<li>open util.php, find the constant called &quot;RESULTS_ON_ONE_LINE&quot;</li>
+	<li>change the constant value from &quot;yes&quot; to &quot;&quot;, save and upload to your server</li>
+</ol>
+The result of your change will look like this:<br><br>
+
+<font color="brown">define</font>
+<font color="purple">("RESULTS_ON_ONE_LINE", </font>
+<font color="red" size=+2>""</font>
+<font color="brown">);</font>
+<font color="green">// no value exists between the double quotes, it is empty.</font>
+
+
+<h4><a name="RESULTS_ON_ONE_LINEdataShown">Add, remove or modify the data shown with RESULTS_ON_ONE_LINE</a></h4>
+To change WHAT data [database fields] are displayed with RESULTS_ON_ONE_LINE:
+<ol>
+	<li>open premiumListingOneLine.php, save as premiumListingOneLineBACKUP.php, and close this file</li>
+	<li>open premiumListingFirstPage.php as a reference for variables you may use</li>
+	<li>open premiumListingOneLine.php</li>
+	<li>add, remove or modify any variable [database field] you wish in premiumListingOneLine.php. Possible 
+	choices of fields to modify or add are contained within premiumListingFirstPage.php</li>
+	<li>save and upload to your server</li>
+</ol>
+
+
+</p>
+
+<h3><a name="Complete">Change Data Shown with Complete Record Display</a></h3> 
+phpYellow Pages can show different data based on the rank of any listing. Ranks may be 
+Basic, Preferred, or First Page. showOneRecord.php is the central switching file for 
+<b>Complete</b> display which determines which file is rendered based on the rank of a listing. It is 
+used for EVERY user initiated search. The file showOneRecord.php conditionally shows:
+</p>
+
+<ul>
+<li>premiumListingFirstPage.php or
+<li>premiumListingPreferred.php or
+<li>premiumListingBasic.php or
+<li>oneRecord.php
+</ul>
+
+</p>
+Each of these four files may display different data, and that data can be modified to appear different. 
+To change how a First Page listing appears open up premiumListingFirstPage.php 
+and modify it to suit. Do the same for the other files. 
+</p>
+<p>
+showOneRecord.php is just a small file. Open it up, take a look, and you will see the logic of 
+how records are displayed in every user initiated search.
+</p>
+
+<h3>Standard Edition</h3>
+<p>
+The Standard Edition does not recognize and does not use ranks for listings in searches. Accordingly, 
+one file is used to show results for user initiated searches - oneRecord.php. This file can 
+be modified to suit your taste. Using plain HTML or php you can show data or rearrange the 
+look, or change color or font-size or font-family ... basically any change you want to make to 
+customize how your records look you can make.
+</p>
+
+
+<h2><a name="preferred">Preferred Customization Methods</a></h2>
+<p>It is preferable to make as many changes as possible using an external 
+style sheet. By making changes to the external style sheet you keep your 
+content separate from the formatting (font, color, position and so on...). This 
+in turn allows you to:</p>
+
+<ol>
+<li>easily make sitewide changes with just one file
+<li>easily upgrade to a premium version of phpYellow Pages
+<li>easily upgrade to a newer version of phpYellow Pages
+</ol>
+
+<p>The more changes you make to the original php files the more work you are creating 
+for yourself in the long term. Do yourself a favor and keep the content separate 
+from the formatting - by learning how to use <b><i>cascading style sheets</i></b>. The Web Developer's 
+Virtual Library has <a href="http://www.wdvl.com">excellent resources for you to learn CSS styles</a>.
+ </p>
+
+
+<h3><a name="css">W3C Cascading Style Sheets</a></h3>
+<p>phpYellow Pages is compliant with the W3C's HTML 4.0, which since 1997 has been 
+recommending that you keep structure apart from formatting. 
+For example, in a Heading 1 tag colored red, the heading tags will be in 
+the html document, and the color for the heading will be in an external .css 
+file. This makes it easy to make sitewide changes in formatting to every 
+page, but at the cost of a learning curve for .css - well worth it! 
+You may find .css tutorials online and contained within better html editors.
+</p>
+
+
+<h3><a name="netscape">Netscape Display Optimization</a></h3>
+<p>Netscape users will be familiar with display dysfunctionality in Netscape, especially in regard to W3C cascading style sheets. I am happy to report 
+that Netscape 6 (and higher versions) do a tolerable job in supporting Level 
+1 CSS. Most (if not all) of phpYellow Pages only uses CSS Level 1, and most 
+phpYellow Pages should display tolerably well in Netscape 6 or higher. </p>
+
+<b>How to Optimize for Other Netscape Browsers</b><br>
+<p>
+The formatting for phpYellow Pages is driven with external cascading style sheets. There is also browser detection. 
+When a user loads any page a javascript detects their browser and loads a .css file for that specific browser make. To change the look 
+and feel for Netscape simply open netscape.css in any css editor and format this file to suit your tastes. You can have a totally 
+different look and feel for Netscape visitors - and another for Internet Explorer visitors.
+</p>
+<p>
+You can add more browser types by adding another case statement block and a related css file in the yellow.js script. Based on an analysis of website traffic most surfers use recent browser versions. You can add specific versioning if you want
+	   but the traffic that will use it will tend to be negligible ...
+</p>
+
+
+
+<h2><a name="bridge">CMS Bridge</a></h2>
+<p>
+Parts of Version 2.24 and higher versions incorporate CMS Bridge middleware. This is useful if 
+you are using a Nuke software product and want to integrate your Nuke copy 
+with the phpYellow Pages application. See <a href="http://portal.dbserve.net/codeshare/cms_bridge.htm">
+http://portal.dbserve.net/codeshare/cms_bridge.htm</a>
+for instructions and information. 
+</p>
+
+
+
+<h2><a name="category">Use Your Own Categories</a></h2>
+
+<p>One of the ways to customize phpYellow is to make changes to the category values. For example, instead of offering a generic Yellow Page service, you may change all the category values to the type of service you wish to have an online directory for. You may want to build a directory just for Real Estate services in your city, or create a Tourism only directory, or a High Tech services directory for your state, or an Automobile Dealer directory in your country, or ... the potential is limited only by your imagination. To make such a change will dramatically specialize your phpYellow implementation and very possibly enable you to provide a UNIQUE service not offered elsewhere.</P> 
+
+<P>
+Specialized directories can be created by using the categories*.php files as found in the distribution package. To do so, change the filename containing the categories you want to &quot;categories.php&quot;.
+</p>
+<h3>How to Change an Individual Category</h3>
+<p>It's easy to customize the categories of products and services in phpYellow. Open up the file named categories.php in your html editor. Add, edit or remove one or more categories like this:
+</p>
+
+<h3>Example</h3>
+<p>Replace each select list item with the value and value displayed to the user that you want. For example, within categories.php:
+</p>
+<code>
+&lt;option value="Air-Conditioning"&gt;Air Conditioning&lt;/option&gt;
+</code>
+
+
+<p>Above you may change the actual value of &quot;Air-Conditioning&quot; to, for example, "Education". Also remember to change the words between the begin and end of the &lt;option&gt; tags to &quot;Education&quot;. 
+The value= contains the data which gets posted to the database. The other identical category word is what the user actually sees when they view the drop down list.
+</p>
+<p>Upload the new categories.php file to your web server and that's all you need to do - if these changes are made before you go online with your phpYellow implementation.
+</p>
+
+<p>In NO CIRCUMSTANCE should you change any php or selected code or variables when making these category option changes. Change the option values only. By making these changes you are merely altering the V A L U E S that get selected by the user and sent or searched from the database. Instead of storing generic Yellow page like values, you are storing specialized values for your particular implementation - for example all services and products relating to "Education", or "Internet Products and Services" - whatever your implementation is. Changing the values makes all the difference - everything else still works exactly the same way - it is the values that make the results different. Any developer can make these value changes by following the steps detailed above.
+</p>
+
+
+<h3><a name="categoryadmin">Changing the categories within Administration</a></h3>
+<p>In PREMIUM version 2.22 and higher you may change the category of a listing using a point and click tool. This tool 
+is called 'Set CKEY Parameters'. The listing expiry date, category, position, payment required and status may be changed. 
+A pop up window reports the result of your selection and automatically closes in POPUPTIMEOUT milliseconds. You may set 
+your own value for POPUPTIMEOUT in the util.php file.
+</p>
+
+<img src="../appimage/setckeyparametersSnapshot.png" width="389" height="183" border=0 alt="Change the category of a listing using a point and click tool">
+
+<p>
+For example, you can change a category submitted by the user for their listing from "Computer Software" to "Internet Products". To do so you need to note the ckey number stamped on the listing (obtained via any search), then use the number in the 'Set CKEY Parameters' admin tool as pictured above.
+</p>
+
+
+<h3><a name="province">How to Customize Your Provinces</a></h3>
+see below
+
+<h3>How to Customize Your Countries</h3>
+
+<p>Changing provinces or countries is exactly the same as changing categories. Open up the provinces or countries file, make desired changes, save and upload to your web server. 
+</p>
+
+
+
+<h2><a name="requiredata">Modify the data fields you want to make <b>required</b></a></h2>
+<p>The bare minimum requirements for any listing is email and password. If you wnat to make 
+MORE data fields required then follow these steps:
+
+	<h3>HOW TO MAKE DATA REQUIRED</h3>
+	<p>To require certain data to be entered by the user:
+	<ol>
+		<li>save yellow.js as yellowORIGINAL.js</li>
+		<li>open yellow.js in your html editor</li>
+		<li>find the data to require: example: locate the // Phone section</li>
+		<li>copy the phone section from the // start of ... to the // end of ...</li> 
+		<li>paste the phone section in yellow.js where it says &quot;paste below this line&quot;</li>
+		<li>save yellow.js and upload to your web server</li>
+		<li>test by adding a new record</li>
+		<li>[OPTIONAL] color code [red] the new fields you require in the file addForm.php</li>
+	</ol>
+	</p>
+
+
+
+<h2><a name="highlight">Highlight - Link a URL to a specific Database Record</a></h2>
+<p>You can build a link to point toward a specific record. The highlight feature 
+is used to do so. Highlight selects a specific record number using the form:</p> 
+
+<p><b>http://www.yourDomain.com/phpYellow/yellowresult.php?goal=highlight&ckey=1</b></p>
+
+<p>Change ckey to the value of your record. ckey may be located 
+by completing any search and looking for &quot; On correspondence quote ckey# &quot;. 
+By default this is found in each displayed listing. You may also find it by 
+asking the webmaster. ckey is the unique database key for the category record.
+For example, when you submit a listing you have a single 
+contact table record number, called yps. When you submit one or more 
+category records each record has a unique number called ckey. The two tables are 
+joined together as needed using a common id. A special script is programmed 
+to find the ckey and display the related contact and category record on a page 
+all by itself.</p>
+
+		
+<a name="dbstructure"><h2>Database Structure and Explanation</h2></a>
+
+<p>
+You can view the database fields, their datatypes and attributes here:<br><br> 
+<a href="DOCSinstallNotes.html#createTable">DOCSinstallNotes.html#createTable</a> 
+<br><br>The word &quot;field&quot; means the same as &quot;column&quot;. 
+
+<ul>
+<li>
+The YPS field is the primary key for the contact table. This number is autoincremented 
+by the database RDBMS whenever a record is added. You can consider this number to be the 
+unique customer ID number. Each customer has one YPS number, and only one.
+
+<li>
+The CKEY field is the primary key for the category table. This number is autoincremented 
+by the database RDBMS whenever a record is added. You can consider this number to be the 
+unique listing or record number for the specific category used by this one customer.
+Each customer has one YPS number, and at least one or more CKEY 
+numbers. The Standard Edition will only allow you to have one category per every contact 
+listing. The Premium Edition will allow you to have many category listings for each one 
+contact listing.
+
+<li>
+The CKEY and YPSID fields are NOT RELATED. 
+
+<li>
+The YPSID is the foreign key in the category table which points to the parent record in the 
+contact table. When the YPSID (in the category table) and the YPS (in the contact table) are 
+joined together it makes one complete listing.
+
+<li>
+There is a one to many relationship possible between the contact and category tables. 
+Accordingly, the relationship is a parent to child relationship. The YPSID relates or 
+joins the category record with the parent contact record.
+
+<li>
+The CKEY is just a number which is incremented with each category insert, and does not 
+relate to the parent contact table.
+
+</ul>
+</p>
+
+
+
+<h2><a name="addfields">So you want to add more database fields?</a></h2>
+<p>
+It's not easy. One must consider the logic of the application in every respect 
+before adding a single field. If a field is added to a table, then the scripts 
+which insert, update, search on, delete or otherwise use the field must also 
+be modified to accept the new field. Then testing takes place. If all is well, the 
+new code is uploaded to the recipient website. The documentation should be updated 
+to reflect the new table structure. You can count on a minimum of USD$100 per extra 
+field added to the phpYellow Pages application if you ask DreamRiver to quote on your 
+changes. The feasibility and desirability of any proposed changes is also considered.
+</p>
+
+
+<h2><a name="removeGoPremium">Remove the &quot;Go Premium&quot; Button</a></h2>
+<p>This method simply removes the button and replaces it with nothing.</p>
+<ol>
+	<li>open premiumGoButton.php in an html editor</li>
+	<li>save premiumGoButton.php as premiumGoButtonORIGINAL.php</li>
+	<li>open premiumGoButton.php and remove lines 4 to 24</li>
+	<li>[step 3 removes everything in the form object, from the beginning 
+	    of the form tag to the closing form tag]</li>
+	<li>save and upload to your server</li>
+</ol>
+
+
+
+<h2><a name="answerplus">Partner with AnswerPlus Communications</a></h2>
+<p>
+<a href="http://www.answerplus.com/"><img align="left" vspace="2" hspace="10" src="../appimage/answerplusGirl.jpg" width="110" height="112" border=0 alt="Partner with AnswerPlus Communications"></a>
+Partner with AnswerPlus Communications and stay ahead of the competition. 
+Personalize your website, and dramatically increase your web service.  Get 
+immediate live on-line assistance from our customer service representatives, 
+using our award winning call centre software!    Our goal is to keep your 
+potential customers interested and locked on to your website and to 
+personally guide them to complete their purchase while avoiding abandoning 
+your site. </p>
+
+<p>Further details are on the AnswerPlus Communications website at <a href="http://www.answerplus.com/">www.answerplus.com</a>.   If you are interested call and talk to one of our consultants at 1-800-661-2522 Monday - Friday, 8 am - 4 pm Pacific Time, or email us at <a href="mailto:info@answerplus.com">info@answerplus.com</a>.
+</p>
+
+<a name="setupanswerplus"><h3>Setup AnswerPlus with phpYellow Pages</h3></a>
+
+<p>
+After you create an account with Answerplus it is easy to use Answerplus in phpYellow Pages. To do so you open one file and change the CONSTANTS contained within it. Here's how - open phpYellow/util.php and :<br><br>
+
+Step 1: set the constant USEANSWERPLUS to a value of &quot;yes&quot;<br>
+Step 2: set the Answerplus Accounts<br>
+<ul>
+<li>enter the value for CALLBACKACCOUNT. Leave this unchanged if you did not purchase this feature.
+<li>enter the value for CALLBACKWEBSTRING. Leave unchanged if not used.
+<li>enter the value for WEBCHATACCOUNT. Leave this unchanged if you did not purchase this feature.
+<li>enter the value for WEBCHATWEBSTRING. Leave unchanged if not used.
+</ul>
+Step 3: save util.php and upload it to your web server
+</p>
+
+
+<p>END OF DOCUMENT</p>
+
+
+
+<!-- start of the dec30 navigation bar for the documentation -->
+<div align="center">
+<a href="DOCSindex.html">Docs Home</a> | 
+<a href="DOCSreadme.html">Read Me</a> | 
+<a href="DOCSfaq.html">FAQ</a> | 
+<a href="DOCSlicense.html">License</a> | 
+<a href="DOCSsecurity.html">Security</a> | 
+<a href="DOCSinstallNotes.html">Install</a> | 
+<a href="DOCSchangeLog.html">ChangeLog</a> | 
+<a href="DOCScustomize.html">Customize</a> | 
+<a href="DOCSpaidListings.html">Paid Listings</a>  
+</div>
+<!-- end of the dec30 navigation bar for the documentation -->
+
+
+
+
+
+<p class="sitedesign">All Pages Copyright&copy;2000,2001,2002 <a href="http://www.dreamriver.com">Dreamriver.com</a>. All rights reserved.</p>
+
+
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+
+</body>
+</html>
+
+
