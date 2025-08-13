@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+
+<title>phpYellow Pages - Connect to a Payment Gateway Processor - How to Make Worldpay Work with phpYellow Pages</title>
+
+
+      <link rel="stylesheet" type="text/css" href="../../yellow.css">
+
+	<META NAME="keywords" CONTENT="phpYellow, Pages, php, Yellow, add, edit, delete, listing, login, below">
+	<META NAME="description" CONTENT="How to Make Worldpay Work with phpYellow Pages ...">
+	<META NAME="Author" CONTENT="Richard Creech, Web: http://www.dreamriver.com Email: richardc@dreamriver.com">
+	<META NAME="GENERATOR" CONTENT="Blood, Sweat & Tears">
+
+	</HEAD>
+
+<BODY>
+<h1>How to Make Worldpay Work<br>with phpYellow Pages</h1>
+
+
+<!-- start of links to individual gateway instructions -->
+<div align="center">
+<a href="../../docs/DOCSpaidListings.html">Guide</a> | 
+<a href="../index.html">General</a> | 
+<a href="../authorizenet/index.html">Authorizenet</a> | 
+<a href="../clickbank/index.html">Clickbank</a> | 
+<a href="../paypal/index.html">Paypal</a> | 
+<a href="../self/index.html">Self</a> | 
+</div>
+<!-- end of links to individual gateway instructions -->
+
+
+<h2>Pretest</h2>
+<p>Before changing anything make sure that your phpYellow Pages is processing paid listings. This is how:
+
+<ol>
+	<li>open util.php</li>
+	<li>set the CONSTANT value for BYPASSCARDPROCESSOR from &quot;no&quot; to &quot;yes&quot;</li>
+	<li>set the CONSTANT value for PAIDLISTINGS from &quot;&quot; to &quot;yes&quot;</li>
+	<li>save util.php to your web server</li>
+	<li>go to phpYellow Pages and add a test listing</li>
+	<li>find any test listing</li>
+	<li>click on the &quot;Go Premium&quot; button</li>
+	<li>complete the checkout page details and click on &quot;Next Step&quot;</li>
+	<li>on the <i>Proceed to Purchase?</i> page click on &quot;Next Step&quot;</li>
+	<li>the result is an upgraded Premium Listing</li>
+</ol>
+DO NOT PROCEED UNTIL THIS PRETEST IS WORKING TO YOUR SATISFACTION.
+</p>
+
+
+
+
+<p>
+phpYellow Pages can use Worldpay to process Premium Listing payments. 
+A small amount of configuration is needed on the Worldpay Administration 
+System (WAS) to make basic settings. Also, phpYellow Pages must be 
+configured as below:
+</p>
+
+<h2>Makes these changes on Worldpay Administration System (WAS)</h2>
+
+<p><a href="https://select.worldpay.com/wcc/admin">https://select.worldpay.com/wcc/admin</a></p>
+
+
+<p>Make these changes to WAS - Installations - Configuration options :</p>
+<ol>
+	<li>Description : phpYellow Pages</li>
+	<li>Customer description : Service - Premium Listing</li>
+	<li>Merchant's shop URL : http://www.yourdomain.com/phpYellow/yellowresult.php</li>
+	<li>Callback URL : http://www.yourdomain.com/phpYellow/premiumProcessPayment.php</li>
+	<li>Callback enabled? Yes, check this checkbox</li>
+	<li>Leave all other configuration options on this page unchanged</li>
+</ol>
+
+<p>Make these changes to /phpYellow/gateways/worldpay/resultY.html</p>
+<ol>
+	<li>open the file, find the form action</li>
+	<li>change the form action to be action=&quot;http://www.yourdomain.com/phpYellow/new.php&quot;<br>
+	Example: http://www.dreamriver.com/phpYellow/new.php
+	</li>
+	
+		
+</ol>
+
+
+<p>Make these changes to WAS - Installations - File Management :</p>
+<ol>
+	<li>upload resultY.html</li>
+</ol>
+
+
+
+
+<h2>Makes these changes to phpYellow Pages</h2>
+
+In the file called util.php make these changes:
+
+<ol>
+	<li>define("PAIDLISTINGS", "yes");</li>
+	<li>define("SENDRECEIPT", "yes"); /* [optional - WAS can be configured to send an email receipt] */</li>
+	<li>define("MERCHANTACCOUNT", "Your Worldpay Installation ID");</li>
+	<li>define("BYPASSCARDPROCESSOR", "no");</li>
+	<li>define("GATEWAYPROCESSOR", "worldpay");</li>
+	<li>define("POSTTRANSACTIONSURL", "https://select.worldpay.com/wcc/purchase");</li>
+	<li>save and upload to your webserver</li>
+</ol>
+
+<h2>Testing</h2>
+<p>Make a few test listings to make sure everything works the way you want it to.</p>
+
+
+
+<h2>Done!</h2>
+<p>
+This completes the steps to integrate your payment processing with phpYellow Pages. Congratulations, 
+you can start earning revenue using online payment and automatically paid listings.
+</p>
+
+
+
+<p><br></p>
+
+<!-- start of links to individual gateway instructions -->
+<div align="center">
+<a href="../../docs/DOCSpaidListings.html">Guide</a> | 
+<a href="../index.html">General</a> | 
+<a href="../authorizenet/index.html">Authorizenet</a> | 
+<a href="../clickbank/index.html">Clickbank</a> | 
+<a href="../paypal/index.html">Paypal</a> | 
+<a href="../self/index.html">Self</a> | 
+</div>
+<!-- end of links to individual gateway instructions -->
+
+
+<p><br></p>
+<p><br></p>
+
+
+
+
+
+</body>
+</html>
