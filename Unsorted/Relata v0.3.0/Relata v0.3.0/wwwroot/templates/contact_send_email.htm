@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+<meta http-equiv="Expires" content="Fri, Jun 12 1981 08:20:00 GMT">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+<link rel="stylesheet" type="text/css" href="{WWW_DIR}templates/global.css">
+
+<title>
+Send an email
+</title>
+
+<script type="text/javascript">
+	// focus the window
+	window.focus();
+</script>
+<script type="text/javascript" src="{WWW_DIR}contact/send_email.js"></script>
+
+</head>
+<body bgcolor="#496088">
+
+<div class="main">
+
+<div align="center" style="font-size: 18px; font-family: arial;">
+	{MESSAGE}
+</div>
+
+<form action="{PHP_SELF}?session_id={SESSION_ID}" method="post" enctype="multipart/form-data" onsubmit="copyfilename()" name="email_form">
+<input type="hidden" name="filename">
+
+<table border="0" align="center">
+  <tr>
+	<td class="form">Receiver:</td>
+	<td><input type="text" size="60" class="form" name="receiver" value="{RECEIVER}"/></td>
+ </tr>
+ <tr>
+	<td class="form">Receiver name:</td>
+	<td><input type="text" size="60" class="form" name="receiver_name" value="{RECEIVER_NAME}"/></td>
+ </tr>
+ <tr>
+	<td class="form">Reply address:</td>
+	<td><input type="text" name="reply_address" size="60" class="form" /></td>
+ </tr>
+ <tr>
+	<td class="form">Reply name:</td>
+	<td><input type="text" name="reply_name" value="Relata" size="60" class="form" /></td>
+ </tr>
+  <tr>
+	<td class="form">Subject:</td>
+	<td><input type="text" name="subject" size="60" class="form" /></td>
+ </tr>
+ <tr>
+ 	<td class="form">
+		Email Type:
+	</td>
+	<td class="form">
+		<input type="radio" name="type" value="text" checked>Text
+		<input type="radio" name="type" value="html" >HTML	
+	</td>
+ </tr>
+  <tr>
+	<td class="form">Attachment</td>
+	<td><input type="file" name="attachment"></td>
+ </tr>
+ <tr>
+ 	<td colspan="2" class="form" align="center">Message</td>
+ </tr>
+ <tr>
+	<td colspan="2" class="form" align="center"><textarea rows="25" cols="70" name="message" class="form"></textarea></td>
+ </tr>
+ <tr>
+ 	<td colspan="2"><hr></td>
+ </tr>
+ <tr>
+ 	<td colspan="2" align="center"><input type="submit" name="action" value="  Send  " class="form"><input type="button" onclick="self.close();" value="  Close  " class="form"></td>
+ </tr>
+</table>
+
+</form>
+
+</div>
+
+</body>
+</html>
