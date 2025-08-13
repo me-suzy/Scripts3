@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>$master_board_name - Profile Options</title>
+$headinclude
+</head>
+
+<body bgcolor="{pagebgcolor}" text="{fontcolorfirst}"{hgpicture}{bgproperties} id="bg">
+        $header
+                <tr bgcolor="{tableb}" id="tableb">
+			<td><table cellpadding=0 cellspacing=0 border=0 width="100%">
+				<tr>
+					<td><font face="{font}" size=1><b><a href="main.php?styleid=$styleid$session" class="link">$master_board_name</a> » <a href="profile.php?boardid=$boardid&styleid=$styleid$session" class="link">Control Panel of $user_name</a> » Change Profile Options</b></font></td>
+					<td align="right"><font face="{font}" size=1><b>$navibar_hello</b></font></td>
+				</tr>
+			</table></td>
+		</tr>
+		</table><br>
+		<table border=0 cellpadding=4 cellspacing=1 width="100%" bgcolor="{tablebordercolor}">
+                        <tr bgcolor="{tablea}" id="title">
+                                <TD COLSPAN=2><FORM ACTION="profile.php" METHOD="POST"><FONT face="{font}" size=2  color="{fontcolorsecond}"><B>Change Options - $user_name</B></font></td>
+                        </tr>
+                        <tr bgcolor="{tablea}" id="title">
+                                <td colspan=2><FONT face="{font}" size=2  color="{fontcolorsecond}"><b>Registration, Cookies & Privacy</b></font></td>
+                        </tr>
+                        <tr bgcolor="{tablec}" id="tablec">
+                                <td><FONT face="{font}" size=2><B>Use Ghost-Mode?</B><br><font size=1>Choose yes if you don't want you to add to 'Who Is Online'.</font></font></td>
+                                <td><INPUT TYPE="radio" NAME="ghost" VALUE="1" $ghost[1]><FONT face="{font}" size=2> yes <INPUT TYPE="radio" NAME="ghost" VALUE="0" $ghost[0]> no</font></td>
+                        </tr>
+                        <tr bgcolor="{tableb}" id="tableb">
+                                <td><FONT face="{font}" size=2><B>Use cookies?</B><br></font></td>
+                                <td><INPUT TYPE="radio" NAME="slink" VALUE="1" $slink[1]><FONT face="{font}" size=2> yes <INPUT TYPE="radio" NAME="slink" VALUE="0" $slink[0]> no</font></td>
+                        </tr>
+                        <tr bgcolor="{tablea}" id="title">
+                                <td colspan=2><FONT face="{font}" size=2  color="{fontcolorsecond}"><b>Email & Notification</b></font></td>
+                        </tr>
+                        <tr bgcolor="{tablec}" id="tablec">
+                                <td><FONT face="{font}" size=2><b>Can we email you?</b><br><font size=1>Choose this option(recommended), if you want to receive important notes from us. We do not send any spam!</font></font></td>
+                                <td><INPUT TYPE="radio" NAME="mod_email" VALUE="1" $mod_email[1]><FONT face="{font}" size=2> yes <INPUT TYPE="radio" NAME="mod_email" VALUE="0" $mod_email[0]> no</font></td>
+                        </tr>
+                        <tr bgcolor="{tableb}" id="tableb">
+                                <td><FONT face="{font}" size=2><b>Hide email address?</b><br><font size=1>Choose this option if you don't want members to see your email address in your profile and members list. Only Administrators and Moderators can see your email address. We will not give it to any third party.</font></font></td>
+                                <td><INPUT TYPE="radio" NAME="hide_email" VALUE="0" $hide_email[0]><FONT face="{font}" size=2> yes <INPUT TYPE="radio" NAME="hide_email" VALUE="1" $hide_email[1]> no</font></td>
+                        </tr>
+                       <tr bgcolor="{tablec}" id="tablec">
+                                <td><FONT face="{font}" size=2><b>Can members send you emails with the formmailer?</b></font></td>
+                                <td><INPUT TYPE="radio" NAME="form_email" VALUE="1" $form_email[1]><FONT face="{font}" size=2> yes <INPUT TYPE="radio" NAME="form_email" VALUE="0" $form_email[0]> no</font></td>
+                        </tr>
+                        <tr bgcolor="{tablea}" id="title">
+                                <td colspan=2><FONT face="{font}" size=2  color="{fontcolorsecond}"><b>Thread View Options</b></font></td>
+                        </tr>
+                        <tr bgcolor="{tableb}" id="tableb">
+                                <td><FONT face="{font}" size=2><b>Show signatures of others?</font></b></td>
+                                <td><INPUT TYPE="radio" NAME="show_signature" VALUE="0" $show_signature[0]><FONT face="{font}" size=2> yes <INPUT TYPE="radio" NAME="show_signature" VALUE="1" $show_signature[1]> no</font></td>
+                        </tr>
+                        <tr bgcolor="{tablec}" id="tablec">
+                                <td><FONT face="{font}" size=2><B>Show userimage under username?</B></font></td>
+                                <td><INPUT TYPE="radio" NAME="show_userpic" VALUE="0" $show_userpic[0]><FONT face="{font}" size=2> yes <INPUT TYPE="radio" NAME="show_userpic" VALUE="1" $show_userpic[1]> n0</font></td>
+                        </tr>
+                        <tr bgcolor="{tableb}" id="tableb">
+                                <td><FONT face="{font}" size=2><B>Show threads:</font></B></td>
+                                <td><select name="s_prunedays">
+                                            <option value="0" $s_prunedays[0]>Default</option>
+                                            <option value="1" $s_prunedays[1]>Show Threads from last day</option>
+                                            <option value="2" $s_prunedays[2]>Show Threads from last 2 days</option>
+                                            <option value="5" $s_prunedays[3]>Show Threads from last 5 days</option>
+                                            <option value="10" $s_prunedays[4]>Show Threads from last 10 days</option>
+                                            <option value="20" $s_prunedays[5]>Show Threads from last 20 days</option>
+                                            <option value="30" $s_prunedays[6]>Show Threads from last 30 days</option>
+                                            <option value="45" $s_prunedays[7]>Show Threads from last 45 days</option>
+                                            <option value="60" $s_prunedays[8]>Show Threads from last 60 days</option>
+                                            <option value="75" $s_prunedays[9]>Show Threads from last 75 days</option>
+                                            <option value="100" $s_prunedays[10]>Show Threads from last 100 days</option>
+                                            <option value="365" $s_prunedays[11]>Show Threads from the last year</option>
+                                            <option value="1000" $s_prunedays[12]>Show all Threads from the beginning</option>
+                                </select></td>
+                        </tr>
+                         <tr bgcolor="{tablec}" id="tablec">
+                                <td><FONT face="{font}" size=2><b>Display of posts in threads:</b><br><font size=1>Set here how many Posts do you want to see per Site. Default is 20.</font></font></td>
+                                <td><select name="s_umaxposts">
+                                            <option value="0" $s_umaxposts[0]>Default</option>
+                                            <option value="5" $s_umaxposts[1]>Show 5 Posts per Site</option>
+                                            <option value="10" $s_umaxposts[2]>Show 10 Posts per Site</option>
+                                            <option value="20" $s_umaxposts[3]>Show 20 Posts per Site</option>
+                                            <option value="30" $s_umaxposts[4]>Show 30 Posts per Site</option>
+                                            <option value="40" $s_umaxposts[5]>Show 40 Posts per Site</option>
+                                </select></td>
+                        </tr>
+                        <tr bgcolor="{tablea}" id="title">
+                                <td colspan=2><FONT face="{font}" size=2  color="{fontcolorsecond}"><b>More Options</b></font></td>
+                        </tr>
+                        <tr bgcolor="{tablec}" id="tablec">
+                                <td><FONT face="{font}" size=2><b>Use BB Code?</b><br><font size=1>This option makes it easier to use format texts and to add smilies. (Javascript must be activte)</font></font></td>
+                                <td><INPUT TYPE="radio" NAME="use_bbcode" VALUE="1" $use_bbcode[1]><FONT face="{font}" size=2> yes <INPUT TYPE="radio" NAME="use_bbcode" VALUE="0" $use_bbcode[0]> no</font></td>
+                        </tr>
+                        <tr bgcolor="{tableb}" id="tableb">
+                                <td><FONT face="{font}" size=2><b>Select theme:</b><br><font size=1>Select here a different theme for the whole Forum.</font></font></td>
+                                <td><select name="ustyleset">
+                                            <option value="0">Default</option>
+                                            $u_style
+                                </select></td>
+                        </tr>
+                </table>
+        </div><br>
+        <div align="center">
+                <input type="hidden" name="mode" value="$mode">
+                <INPUT TYPE="HIDDEN" NAME="boardid" VALUE="$boardid">
+                <INPUT TYPE="HIDDEN" NAME="send" VALUE="send">
+                $session_post
+                <INPUT class="input" TYPE="SUBMIT" VALUE="Save">
+                <INPUT class="input" TYPE="RESET" VALUE="Delete">
+        </div>
+        </form>
+        $footer
+</body>
+</html>
