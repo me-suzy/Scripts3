@@ -1,0 +1,224 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ 			"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title></title>
+	
+<meta http-equiv="Expires" content="Fri, Jun 12 1981 08:20:00 GMT">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+<link rel="stylesheet" type="text/css" href="{WWW_DIR}templates/activity.css">
+<link rel="stylesheet" type="text/css" href="{WWW_DIR}templates/global.css">
+
+</head>
+
+<body class="colored">
+
+<script type="text/javascript" src="{WWW_DIR}events.js"></script>
+<script type="text/javascript" src="{WWW_DIR}activity/activity_week.js"></script>
+<script type="text/javascript" src="{WWW_DIR}activity/inputboxwidth.js"></script>
+
+<script language="Javascript" type="text/javascript">
+
+// reload left frame
+var reload;
+{RELOAD}
+
+if(reload)
+	eval("parent.left" + parent.winid + ".location.reload();");
+
+</script>
+
+<form name="activities" action="{PHP_SELF}?session_id={SESSION_ID}" method="post">
+<input type="hidden" name="source" value="activity_week">
+<input type="hidden" name="date" value="{DATE}">
+
+<div class="main">
+
+<table width="90%" cellpadding="0" border="0">
+ <tr>
+	<td valign="right">
+		<div class="date" style="display: block;">
+			{FDATE}
+		</div>
+	</td>
+ </tr>
+ <tr>
+    <td>
+	
+	
+<table cellpadding="0" cellspacing="0" border="1" width="100%">
+ <tr>
+	<td class="time">*</td>
+ 	<td class="activity">	
+		<div id="view_notime" class="editbox">&nbsp;</div>
+		<div id="edit_notime" class="editbox" style="display: none;">
+			<script type="text/javascript">document.write('<input type="text" size="'+inputboxwidth+'" name="edit_notime" onblur="normalview(\'notime\')"></textarea>')</script>
+		</div>
+	</td>
+ </tr>
+ <tr>
+	<td class="time">8am</td>
+ 	<td class="activity">	
+		<div id="view_8" class="editbox">&nbsp;</div>
+		<div id="edit_8" class="editbox" style="display: none;">
+			<script type="text/javascript">document.write('<input type="text" size="'+inputboxwidth+'" name="edit_8" onblur="normalview(\'8\')"></textarea>')</script>
+		</div>
+	</td>
+ </tr>
+ <tr>
+	<td class="time">9am</td>
+ 	<td class="activity">
+		<div id="view_9" class="editbox">&nbsp;</div>
+		<div id="edit_9" class="editbox" style="display: none;">
+			<script type="text/javascript">document.write('<input type="text" size="'+inputboxwidth+'" name="edit_9" onblur="normalview(\'9\')"></textarea>')</script>
+		</div>		
+	</td>
+ </tr>
+ <tr>
+	<td class="time">10am</td>
+ 	<td class="activity">
+	
+		<div id="view_10" class="editbox">&nbsp;</div>
+		<div id="edit_10" class="editbox" style="display: none;">
+			<script type="text/javascript">document.write('<input type="text" size="'+inputboxwidth+'" name="edit_10" onblur="normalview(\'10\')"></textarea>')</script>		
+		</div>
+		
+	</td>
+ </tr>
+ <tr>
+	<td class="time">11am</td>
+ 	<td class="activity">
+	
+		<div id="view_11" class="editbox">&nbsp;</div>
+		<div id="edit_11" class="editbox" style="display: none;">
+			<script type="text/javascript">document.write('<input type="text" size="'+inputboxwidth+'" name="edit_11" onblur="normalview(\'11\')"></textarea>')</script>
+		</div>
+		
+	</td>
+ </tr>
+ <tr>
+	<td class="time">12am</td>
+ 	<td class="activity">
+	
+		<div id="view_12" class="editbox">&nbsp;</div>
+		<div id="edit_12" class="editbox" style="display: none;">
+			<script type="text/javascript">document.write('<input type="text" size="'+inputboxwidth+'" name="edit_12" onblur="normalview(\'12\')"></textarea>')</script>
+		</div>
+		
+	</td>
+ </tr>
+ <tr>
+	<td class="time">1pm</td>
+ 	<td class="activity">
+	
+		<div id="view_13" class="editbox">&nbsp;</div>
+		<div id="edit_13" class="editbox" style="display: none;">
+			<script type="text/javascript">document.write('<input type="text" size="'+inputboxwidth+'" name="edit_13" onblur="normalview(\'13\')"></textarea>')</script>	
+		</div>
+		
+	</td>
+ </tr>
+ <tr>
+	<td class="time">2pm</td>
+ 	<td class="activity">
+	
+		<div id="view_14" class="editbox">&nbsp;</div>
+		<div id="edit_14" class="editbox" style="display: none;">
+			<script type="text/javascript">document.write('<input type="text" size="'+inputboxwidth+'" name="edit_14" onblur="normalview(\'14\')"></textarea>')</script>
+		</div>
+		
+	</td>
+ </tr>
+ <tr>
+	<td class="time">3pm</td>
+ 	<td class="activity">
+	
+		<div id="view_15" class="editbox">&nbsp;</div>
+		<div id="edit_15" class="editbox" style="display: none;">
+			<script type="text/javascript">document.write('<input type="text" size="'+inputboxwidth+'" name="edit_15" onblur="normalview(\'15\')"></textarea>')</script>	
+		</div>
+		
+	</td>
+ </tr>
+ <tr>
+	<td class="time">4pm</td>
+ 	<td class="activity">
+	
+		<div id="view_16" class="editbox">&nbsp;</div>
+		<div id="edit_16" class="editbox" style="display: none;">
+			<script type="text/javascript">document.write('<input type="text" size="'+inputboxwidth+'" name="edit_16" onblur="normalview(\'16\')"></textarea>')</script>
+		</div>
+		
+	</td>
+ </tr>
+ <tr>
+	<td class="time">5pm</td>
+ 	<td class="activity">
+	
+		<div id="view_17" class="editbox">&nbsp;</div>
+		<div id="edit_17" class="editbox" style="display: none;">
+			<script type="text/javascript">document.write('<input type="text" size="'+inputboxwidth+'" name="edit_17" onblur="normalview(\'17\')"></textarea>')</script>
+		</div>
+		
+	</td>
+ </tr>
+ <tr>
+	<td class="time">6pm</td>
+ 	<td class="activity">
+	
+		<div id="view_18" class="editbox">&nbsp;</div>
+		<div id="edit_18" class="editbox" style="display: none;">
+			<script type="text/javascript">document.write('<input type="text" size="'+inputboxwidth+'" name="edit_18" onblur="normalview(\'18\')"></textarea>')</script>
+		</div>
+		
+	</td>
+ </tr>
+ <tr>
+	<td class="time">7pm</td>
+ 	<td class="activity">
+	
+		<div id="view_19" class="editbox">&nbsp;</div>
+		<div id="edit_19" class="editbox" style="display: none;">
+			<script type="text/javascript">document.write('<input type="text" size="'+inputboxwidth+'" name="edit_19" onblur="normalview(\'19\')"></textarea>')</script>
+		</div>
+		
+	</td>
+ </tr>
+</table>
+    </td>
+ </tr>
+  <tr>
+    <td align="right">
+		<input type="submit" name="action" value="  OK  " class="form" style="background: #D4D0C8;" />
+	</td>
+	</td>
+ </tr>
+</table>
+</div>
+
+</form>
+
+<script type="text/javascript">
+
+var times = new Array();
+
+setuprow("notime","{NOTIME}");
+setuprow("8","{08}");
+setuprow("9","{09}");
+setuprow("10","{10}");
+setuprow("11","{11}");
+setuprow("12","{12}");
+setuprow("13","{13}");
+setuprow("14","{14}");
+setuprow("15","{15}");
+setuprow("16","{16}");
+setuprow("17","{17}");
+setuprow("18","{18}");
+setuprow("19","{19}");
+
+</script>
+
+</body>
+</html>
