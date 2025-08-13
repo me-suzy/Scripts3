@@ -1,0 +1,61 @@
+------------------------------------
+calendar_smallmonth_day
+------------------------------------
+
+<!-- a single day on the small calendars -->
+<td class="<if condition="$show['highlightweek']">alt2<else />alt1</if>"<if condition="$show['highlighttoday']"> style="border:solid 1px red; font-weight:bold" title="$vbphrase[today]"</if>>
+	<if condition="$show['daylink']">
+		<if condition="$show['dontshowweek']"><span class="smallfont"></if><a href="$vboptions[bburl]/calendar.php?$session[sessionurl]do=getinfo&amp;day=$year-$month-$day&amp;c=$calendarid" title="$eventdesc">$day</a><if condition="$show['dontshowweek']"></span></if>
+	<else />
+		<if condition="$show['dontshowweek']"><span class="smallfont">$day</span><else />$day</if>
+	</if>
+</td>
+
+
+
+
+
+------------------------------------
+calendar_smallmonth_day_other
+------------------------------------
+
+<!-- a single day from another month on the small calendars -->
+<td class="smallfont"><em><if condition="$show['dontshowweek']"><span class="smallfont">$day</span><else />$day</if></</em></td>
+
+
+
+
+------------------------------------
+calendar_smallmonth_header
+------------------------------------
+
+<tr>
+<if condition="$show['dontshowweek']">
+<td class="tcat" colspan="$colspan" align="left"><span class="smallfont"><b>$vba_options[portal_blockbullet] 
+<else />
+<td class="tcat" colspan="$colspan" align="center"><b>
+</if><a href="$vboptions[bburl]/calendar.php?$session[sessionurl]month=$month&amp;year=$year&amp;c=$calendarid&amp;do=displaymonth">$monthname $year</a></td>
+</tr>
+<tr align="center">
+	<if condition="!$show['dontshowweek']"><td class="thead">&nbsp;</td></if>
+	<if condition="$show['day1']"><td class="thead">$day1</td></if>
+	<if condition="$show['day2']"><td class="thead">$day2</td></if>
+	<if condition="$show['day3']"><td class="thead">$day3</td></if>
+	<if condition="$show['day4']"><td class="thead">$day4</td></if>
+	<if condition="$show['day5']"><td class="thead">$day5</td></if>
+	<if condition="$show['day6']"><td class="thead">$day6</td></if>
+	<if condition="$show['day7']"><td class="thead">$day7</td></if>
+</tr>
+$calendarrowbits
+
+
+
+
+------------------------------------
+calendar_smallmonth_week
+------------------------------------
+
+<tr align="center">
+<if condition="$show['dontshowweek'] != 1">	<td class="thead"><a href="calendar.php?$session[sessionurl]c=$calendarid&amp;week=$firstweek&amp;do=displayweek&amp;month=$month" title="$vbphrase[view_this_week_in_detail]" style="font-family:arial,sans-serif; text-decoration:none">&gt;</a></td></if>
+	$calendardaybits
+</tr>
