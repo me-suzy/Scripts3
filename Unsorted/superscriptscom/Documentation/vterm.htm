@@ -1,0 +1,426 @@
+<html>
+
+<head>
+<title>Documentation VTERM 1.0</title>
+
+<meta name="Microsoft Border" content="t, default"></head>
+
+<body><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+
+<table border="0" width="33%" cellpadding="0">
+  <tr>
+    <td width="50%"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/" ONCLICK="parent.f=0"><img src="../pix/banners/miniprizm.gif" alt="cgi scripts" border="0" WIDTH="305" HEIGHT="59"></a></font></td>
+    <td width="50%" bgcolor="#FFFFFF"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/ads/rotate.cgi?url=&amp;user=" target="new" ONCLICK="parent.f=0"><img src="http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user=" border="0" width="468" height="60"></a></font></td>
+  </tr>
+</table>
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="16%"><p align="center"><a href="../dsstoday/index.html"><font color="#000000" face="Arial"><img src="../pix/main/news.jpg" alt="CGI NEWS" align="left" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="16%"><p align="center"><a href="../scripts/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/scripts.jpg" alt="CGI Scripts" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../mastergate/index.html"><font color="#000000" face="Arial"><img src="../pix/main/access.jpg" alt="Access The CGI Archive" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../contact.html"><font color="#000000" face="Arial"><img src="../pix/main/contact.jpg" alt="Contact Superscripts" WIDTH="104" HEIGHT="68"></font></a></td>
+    <td width="17%"><p align="center"><a href="../support.html"><font color="#000000" face="Arial"><img src="../pix/main/dox.jpg" alt="CGI Documentation" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../download/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/download.jpg" alt="Download CGI Scripts Here" align="right" WIDTH="105" HEIGHT="65"></font></a></td>
+  </tr>
+  <tr>
+    <td width="16%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/dsstoday/index.html" style="color: rgb(255,255,255)"><strong>News</strong></a></font></td>
+    <td width="16%" bgcolor="#000000"><p align="center"><a href="/scripts/" style="color: rgb(255,255,255)"><font face="Arial" color="#FFFFFF"><strong>CGI Scripts</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><a style="color: rgb(255,255,255)" href="../mastergate/index.html"><font face="Arial" color="#FFFFFF"><strong>Become A Member</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../contact.html"><strong>Contact
+    Us</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../support.html"><strong>Support</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/download/index.shtml" style="color: rgb(255,255,255)"><strong>Download
+    Area</strong></a></font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+
+<table border="0" width="75%" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <p><big><big><strong><font face="Arial" color="#FF0000">Documentation<br>
+      </font></strong><font color="#000000" face="Arial">VTERM:&nbsp; V2.2</font></big></big></p>
+      <p><img src="../pix/logos/authnet.gif" alt="authnet.gif (6418 bytes)" WIDTH="396" HEIGHT="86"></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Copyright 2001 Psybercore, Inc. - All Rights
+        Reserved. </small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font color="#000000" face="Arial">Selling redistributing or modifying any or
+        all of the code for this program without prior written consent is expressly forbidden. You
+        must obtain written permission before redistributing this software over the Internet or in
+        any other medium. In all cases copyright and header information must remain intact.</font></small></p>
+      </blockquote>
+      <h1><small><strong><small><font color="#000000" face="Arial"><small>System Requirements</small></font></small></strong></small></h1>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>Supports Authorize.net Version 3.0</small></font></li>
+        <li><small><font face="Arial"><a href="../scripts/Net_SSLeay.pm-1.05.tar.gz">SSLEAY/Open SSL</a>
+          required for using port 443</font></small></li>
+        <li><font color="#000000" face="Arial"><small>A web browser</small></font></li>
+        <li><font color="#000000" face="Arial"><small>Perl 5 </small></font></li>
+        <li><font color="#000000" face="Arial"><small>Sendmail</small></font></li>
+        <li><font color="#000000" face="Arial"><small>SSL Server with CGI Capabilities Recommended </small></font></li>
+        <li><font color="#000000" face="Arial"><a href="../online.html"><small>Compatible online
+          merchant account</small></a></font></li>
+        <li><small><font color="#000000" face="Arial"><a href="../online.html">Merchant Account with
+          Online Validation</a> and ability to communicate through cgi interface REQUIRED for
+          realtime validation</font></small></li>
+      </ul>
+      <h2><font color="#000000" face="Arial"><small>Misc notes regarding authorize.net</small></font></h2>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>If you process cards from NON US countries
+        you will want to set $REJECTAVSMISMATCH = &quot;FALSE&quot;.&nbsp; If you dont then it
+        will reject ALL cards from foreign countries.</small></font></p>
+        <p><font color="#000000" face="Arial"><small>Do not bother setting the $TESTREQUEST to
+        &quot;TRUE&quot;&nbsp; the testmode is pretty much useless and you can VOID transactions
+        easily enough through the virtual terminal login @ authorize.net.&nbsp; If you set it to
+        TRUE the cgi may not function correctly.</small></font></p>
+      </blockquote>
+      <h2><font color="#000000" face="Arial"><small>Preliminaries</small></font></h2>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>Determine the path to PERL 5 on your web
+          server host.&nbsp; Note that some web hosting companies run both PERL 4 and PERL 5.&nbsp;
+          Make ABSOLUTELY sure you are not setting this up under PERL 4.&nbsp; Ask your
+          administrator if you are not sure. </small></font></li>
+      </ul>
+      <ul>
+        <li><a href="../tutorial/index.html"><font color="#000000" face="Arial"><small>If you need
+          to review or learn the basics of CGI and Perl visit the tutorial</small></font></a></li>
+      </ul>
+      <ul>
+        <li><font color="#000000" face="Arial"><small><a href="http://www.superscripts.com/download/">Download</a> the tarfile for this program and
+          save it to your desktop.&nbsp; Make sure you use the version for Authorize.net 3.0 since
+          2.5 is being phased out.&nbsp; You can still download the Authorize.net V2.5 compatible
+          version if you need it.</small></font></li>
+      </ul>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>Unpack the tar archive on your desktop using a
+          program that unpacks UNIX TAR ARCHIVES. If you don't have such a program then download
+          WINZIP FREE from <a HREF="http://www.shareware.com/">SHAREWARE.COM</a>.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>After you have unpacked the TAR archive you
+          will have a collection of folders and files on your desktop.&nbsp; Now you have to do some
+          basic editing of each of these files (or at least some of them).&nbsp; Use a text editor
+          such as wordpad, notepad, BBEdit, simpletext, or teachtext to edit the files.&nbsp; These
+          are NOT WORD PROCESSOR DOCUMENTS they are just simple TEXT files so don't save them as
+          word processor documents or save them with extentions such as .txt or they will NOT WORK.
+          &nbsp; Note that there may be a some files inside of folders which are &quot;blank&quot;.
+          &nbsp; This is normal.</small></font></li>
+      </ul>
+      <h2><font color="#000000" face="Arial"><small>Preparing the CGI scripts</small></font></h2>
+      <blockquote>
+        <h2><small><font face="Arial" color="#FF0000"><small>Define Path To PERL 5</small></font></small></h2>
+      </blockquote>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>The first step is to open up each and every
+        file that has a .cgi extention and edit line number one of each script.&nbsp; Each of the
+        cgi scripts is written in perl 5. For your scripts to run they must know where perl 5 is
+        installed on your web server. The path to perl 5 is defined to a cgi script in the first
+        line of the file. In each of the cgi scripts the first line of code looks something like
+        this: </small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#FF0000"><small>#!/usr/bin/perl</small></font></p>
+        </blockquote>
+        <p><font color="#000000" face="Arial"><small>If the path to perl 5 on your web server is
+        different from /usr/bin/perl you must edit the first line of each cgi script to reflect
+        the correct path. If the path to perl 5 is the same no changes are necessary. If you do
+        not know the path to perl 5 ask the webmaster or system administrator at your server site.
+        &nbsp; </small></font></p>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big><strong>Configure the .cgi files</strong></big></font></p>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <p><small><font face="Arial">Only a few variables have to be changed.&nbsp; Many can be
+        left at their default values.</font></small></p>
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><big>configure.cgi</big></font><ul>
+          <li><font face="Arial" color="#FF0000" SIZE="2">$mailprogram =
+            '/var/qmail/bin/sendmail';&nbsp; </font><font face="Arial" SIZE="2" color="#000000">path
+            to sendmail</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">$adminemail =
+            &quot;info\@yourdomain.com&quot;; </font><font face="Arial" SIZE="2" color="#000000">your
+            email address</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">$help=&quot;http://www.superscripts.com/demo/vterm/help.html&quot;;
+            &nbsp; </font><font face="Arial" SIZE="2" color="#000000">path to the help.html file</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">$referer = &quot;yourdomain.com&quot;; </font><font face="Arial" SIZE="2" color="#000000">your domain name</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">$LOGIN=&quot;provided by
+            authorize.net&quot;; </font><font face="Arial" SIZE="2" color="#000000">see below</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">$PASSWORD=&quot;provided by
+            authorize.net&quot;; </font><font face="Arial" SIZE="2" color="#000000">see below</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">$DESCRIPTION = &quot;whatever&quot;; </font><font face="Arial" SIZE="2" color="#000000">set to a description of your product you are selling</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">$remote = &quot;secure.authorize.net&quot;; </font><font face="Arial" SIZE="2" color="#000000">do not change</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">$script = &quot;/gateway/transact.dll&quot;;
+            </font><font face="Arial" SIZE="2" color="#000000">do not change</font><font face="Arial" color="#FF0000" SIZE="2"> </font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">$port = &quot;443&quot;; </font><font face="Arial" SIZE="2" color="#000000">do not change: </font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">$TYPE = &quot;NA&quot;; </font><font face="Arial" SIZE="2" color="#000000">see below</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">$AUTHCODE = &quot;&quot;; </font><font face="Arial" SIZE="2" color="#000000">see below</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">$EMAILCUSTOMER = &quot;TRUE&quot;; </font><font face="Arial" SIZE="2" color="#000000">see below</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">$ECHODATA = &quot;TRUE&quot;; </font><font face="Arial" SIZE="2" color="#000000">see below</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">$REJECTAVSMISMATCH = &quot;FALSE&quot;; </font><font face="Arial" SIZE="2" color="#000000">see below</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">$TESTREQUEST = &quot;FALSE&quot;; </font><font face="Arial" SIZE="2" color="#000000">see below</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">$DELIMCHARACTER = &quot;|&quot;; </font><font face="Arial" SIZE="2" color="#000000">see below</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">$ENCAPSULATE = &quot;FALSE&quot;; </font><font face="Arial" SIZE="2" color="#000000">see below</font></li>
+        </ul>
+      </blockquote>
+      <blockquote>
+        <ul>
+          <p><small><font face="Arial">LOGIN <br>
+          Required for transactions other than test transactions.&nbsp; This is the assigned
+          Authorize.Net login id. </font></small></p>
+          <p><small><font face="Arial">PASSWORD <br>
+          Required for Credit or Post Authorization transactions. For details on the use of
+          transaction types, see the Authorize.Net User's Guide. </font></small></p>
+          <p><small><font face="Arial">TYPE <br>
+          May be one of: NA (means Normal Authorization) <br>
+          &nbsp;AO (means Authorization Only) <br>
+          &nbsp;CR (means Credit) <br>
+          &nbsp;PA (means Post Authorization) </font></small></p>
+          <p><small><font face="Arial">EMAILCUSTOMER<br>
+          Set this value to &quot;TRUE&quot; if you want an email sent to the Buyer's E-mail(the
+          value specified in the EMAIL field) notifying him of the transaction details.(The fields
+          INVOICE AMOUNT METHOD DESCRIPTION CUSTID NAME ADDRESS CITY STATE ZIP COUNTRY PHONE FAX
+          EMAIL and their values will be included in the email)</font></small></p>
+          <p><small><font face="Arial">ECHODATA <br>
+          If this field is not provided with a value of &quot;TRUE&quot;, only the first 5 RESPONSE
+          fields (see below) will be returned, otherwise all allowed fields provided in the request
+          will be returned in the response. </font></small></p>
+          <p><small><font face="Arial">REJECTAVSMISMATCH <br>
+          If this field is not provided with a value of &quot;TRUE&quot;, the transaction will be
+          accepted if it is authorized by FDC, even if the AVS response is a mismatch. &nbsp;
+          Otherwise, the transaction must pass the &quot;AVS test&quot; with either a matching zip
+          code, address, or both. </font></small></p>
+          <p><small><font face="Arial">TESTREQUEST <br>
+          If this field is provided with a value of &quot;TRUE&quot; the script will perform all
+          validation functions except actually authorizing the transaction and storing it in the
+          merchant's batch, regardless of whether the merchant's configuration is set to LIVE or
+          TEST mode. In other words, the response would be equivalent to the merchant being in TEST
+          mode </font></small></p>
+          <p><small><font face="Arial">DELIMCHARACTER <br>
+          If you want the RESPONSE FIELDS delimited by something other than the default (comma),
+          provide the DELIMCHARACTER here. </font></small></p>
+          <p><small><font face="Arial">ENCAPSULATE <br>
+          If you want the response fields encapsulated in double quotes (ex. &quot;response
+          data&quot;), provide this request field set to &quot;TRUE&quot;; otherwise, the response
+          fields will not be encapsulated. </font></small></p>
+          <p><font color="#000000" face="Arial"><small>The fields used by authorize.net are
+          described at the TOP of each database.&nbsp; <a href="../tutorial/index.html">Please see
+          authorize.net documentation</a> for any confusion regarding the structure/syntax of the
+          form fields and their required values.</small></font></p>
+        </ul>
+      </blockquote>
+      <h2><font color="#000000" face="Arial"><small>Form actions</small></font></h2>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Change the form action of index.html to point
+        to upload.cgi</small></font></p>
+      </blockquote>
+      <h2><font color="#000000" face="Arial"><small>Permissions</small></font></h2>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Set all the file permissions to 755. &nbsp;
+        Upload everything into your cgi-bin somewhere.</small></font></p>
+      </blockquote>
+      <h2><font color="#000000" face="Arial"><small>Creating a database to upload</small></font></h2>
+      <blockquote>
+        <p align="left"><font color="#000000" face="Arial"><small>You have two options.&nbsp; You
+        can create a database from scratch or upload an existing flatfile database from your
+        desktop.&nbsp; Note - the UPLOAD does not actually upload the database across the
+        internet.&nbsp; Rather it uploads directly into your web browser.&nbsp; There is a DEMO
+        database file containing 3 records included in the tarfile.&nbsp; Use this to play around
+        and test the software.</small></font></p>
+        <p align="left"><font color="#000000" face="Arial"><small>Click on the BROWSE button to
+        locate your flatfile billing database.&nbsp; The database must be created in a field
+        delimited, flat file format using the PIPE | character to separate fields.&nbsp; The
+        fields must be arranged EXACTLY in the following order:</small></font></p>
+        <font size="1"><p><font color="#FF0000" face="Arial">$NAME|$ADDRESS|$CITY|$STATE|$ZIP|$COUNTRY|$PHONE|$EMAIL|$ACCTNO|$ABACODE|$BANKNAME|</font></font></p>
+        <p><font color="#FF0000" face="Arial" size="1">$CARDNUM|$EXPDATE|$AMOUNT|$REBILL|$CYCLE|$METHOD|$STATUS|</font></p>
+        <p><font color="#FF0000" face="Arial" size="1">$RESPONSE</font></p>
+        <p><font face="Arial" SIZE="2" color="#000000">Each field is described below</font></p>
+        <div align="center"><center><table border="0" width="54%" cellspacing="4" cellpadding="0">
+          <tr>
+            <td width="33%" bgcolor="#FF0000"><font size="2" face="Arial" color="#FFFFFF">FIELD</font></td>
+            <td width="67%" bgcolor="#000000"><font face="Arial" color="#FFFFFF"><small>Description</small></font></td>
+          </tr>
+          <tr>
+            <td width="33%" bgcolor="#FF0000"><font size="2" face="Arial" color="#FFFFFF">$NAME</font></td>
+            <td width="67%" bgcolor="#000000"><font size="2" face="Arial" color="#FFFFFF">The
+            cardholders name (first and last)</font></td>
+          </tr>
+          <tr>
+            <td width="33%" bgcolor="#FF0000"><font size="2" face="Arial" color="#FFFFFF">$ADDRESS</font></td>
+            <td width="67%" bgcolor="#000000"><font size="2" face="Arial" color="#FFFFFF">Billing
+            address</font></td>
+          </tr>
+          <tr>
+            <td width="33%" bgcolor="#FF0000"><font size="2" face="Arial" color="#FFFFFF">$CITY</font></td>
+            <td width="67%" bgcolor="#000000"><font size="2" face="Arial" color="#FFFFFF">Billing city</font></td>
+          </tr>
+          <tr>
+            <td width="33%" bgcolor="#FF0000"><font size="2" face="Arial" color="#FFFFFF">$STATE</font></td>
+            <td width="67%" bgcolor="#000000"><font size="2" face="Arial" color="#FFFFFF">billing
+            state</font></td>
+          </tr>
+          <tr>
+            <td width="33%" bgcolor="#FF0000"><font size="2" face="Arial" color="#FFFFFF">$ZIP</font></td>
+            <td width="67%" bgcolor="#000000"><font size="2" face="Arial" color="#FFFFFF">billing
+            zipcode</font></td>
+          </tr>
+          <tr>
+            <td width="33%" bgcolor="#FF0000"><font size="2" face="Arial" color="#FFFFFF">$COUNTRY</font></td>
+            <td width="67%" bgcolor="#000000"><font size="2" face="Arial" color="#FFFFFF">billing
+            country (optional)</font></td>
+          </tr>
+          <tr>
+            <td width="33%" bgcolor="#FF0000"><font size="2" face="Arial" color="#FFFFFF">$PHONE</font></td>
+            <td width="67%" bgcolor="#000000"><font size="2" face="Arial" color="#FFFFFF">billing
+            phone number</font></td>
+          </tr>
+          <tr>
+            <td width="33%" bgcolor="#FF0000"><font size="2" face="Arial" color="#FFFFFF">$EMAIL</font></td>
+            <td width="67%" bgcolor="#000000"><font size="2" face="Arial" color="#FFFFFF">billing
+            email address</font></td>
+          </tr>
+          <tr>
+            <td width="33%" bgcolor="#FF0000"><font size="2" face="Arial" color="#FFFFFF">$ACCTNO</font></td>
+            <td width="67%" bgcolor="#000000"><font size="2" face="Arial" color="#FFFFFF">checking
+            account number (if billing by check)</font></td>
+          </tr>
+          <tr>
+            <td width="33%" bgcolor="#FF0000"><font size="2" face="Arial" color="#FFFFFF">$ABACODE</font></td>
+            <td width="67%" bgcolor="#000000"><font size="2" face="Arial" color="#FFFFFF">checking
+            routing number (if billing by check)</font></td>
+          </tr>
+          <tr>
+            <td width="33%" bgcolor="#FF0000"><font size="2" face="Arial" color="#FFFFFF">$BANKNAME</font></td>
+            <td width="67%" bgcolor="#000000"><font size="2" face="Arial" color="#FFFFFF">checking
+            bank name (if billing by check)</font></td>
+          </tr>
+          <tr>
+            <td width="33%" bgcolor="#FF0000"><font size="2" face="Arial" color="#FFFFFF">$CARDNUM</font></td>
+            <td width="67%" bgcolor="#000000"><font size="2" face="Arial" color="#FFFFFF">credit card
+            number (if billing by credit card)</font></td>
+          </tr>
+          <tr>
+            <td width="33%" bgcolor="#FF0000"><font size="2" face="Arial" color="#FFFFFF">$EXPDATE</font></td>
+            <td width="67%" bgcolor="#000000"><font size="2" face="Arial" color="#FFFFFF">expiration
+            date (if billing by credit card)&nbsp; format is monthyear (eg:&nbsp; 0202)</font></td>
+          </tr>
+          <tr>
+            <td width="33%" bgcolor="#FF0000"><font size="2" face="Arial" color="#FFFFFF">$AMOUNT</font><p>&nbsp;</td>
+            <td width="67%" bgcolor="#000000"><font size="2" face="Arial" color="#FFFFFF">amount to
+            bill.&nbsp; must be followed by 2 decimal places.&nbsp; eg:&nbsp; 10.00</font></td>
+          </tr>
+          <tr>
+            <td width="33%" bgcolor="#FF0000"><font size="2" face="Arial" color="#FFFFFF">$REBILL</font></td>
+            <td width="67%" bgcolor="#000000"><font size="2" face="Arial" color="#FFFFFF">days between
+            billing periods.&nbsp; eg:&nbsp; 30 for every 30 days</font></td>
+          </tr>
+          <tr>
+            <td width="33%" bgcolor="#FF0000"><font size="2" face="Arial" color="#FFFFFF">$CYCLE</font></td>
+            <td width="67%" bgcolor="#000000"><font size="2" face="Arial" color="#FFFFFF">days since
+            last billing.&nbsp; when this value exceeds the REBILL value billing may occur</font></td>
+          </tr>
+          <tr>
+            <td width="33%" bgcolor="#FF0000"><font size="2" face="Arial" color="#FFFFFF">$METHOD</font></td>
+            <td width="67%" bgcolor="#000000"><font size="2" face="Arial" color="#FFFFFF">method of
+            billing.&nbsp; values must equal one of the following:&nbsp; ACH (for checking), Visa,
+            MasterCard, Discover,Amex, Diners Club, JCB.&nbsp; This field is case sensitive.</font></td>
+          </tr>
+          <tr>
+            <td width="33%" bgcolor="#FF0000"><font size="2" face="Arial" color="#FFFFFF">$STATUS</font></td>
+            <td width="67%" bgcolor="#000000"><font size="2" face="Arial" color="#FFFFFF">values equal
+            passed, failed or testing.&nbsp; If the last billing attempt failed this will cause the
+            entry to be highlighted in red.&nbsp; This value can be re-initialized in the edit
+            menu.&nbsp; This field value is generated by the billing software.</font></td>
+          </tr>
+          <tr>
+            <td width="33%" bgcolor="#FF0000"><font size="2" face="Arial" color="#FFFFFF">$RESPONSE</font></td>
+            <td width="67%" bgcolor="#000000"><font size="2" face="Arial" color="#FFFFFF">this field
+            contains error messages returned by authorize.net.&nbsp; The problem must be corrected in
+            the edit menu in order to bill successfully.</font><p>&nbsp;</td>
+          </tr>
+        </table>
+        </center></div>
+      </blockquote>
+      <h2><font color="#000000" face="Arial"><small>Operation Notes</small></font></h2>
+      <blockquote>
+        <p align="left"><font color="#000000" face="Arial"><small><strong>View Clients</strong>
+        &nbsp;&nbsp;&nbsp; Allows you to see your current billing database clients.&nbsp; You can
+        edit, delete, or bill individual records by using the PROCESS buttons.&nbsp; Note that
+        entries highlighted in YELLOW are ready for billing.&nbsp; These accounts have been active
+        for longer than their normal billing cycle (CYCLE &gt; REBILL).&nbsp; Accounts highlighted
+        in RED have experienced problems with billing (card bounced, bad expiration date, card
+        rejected, etc).&nbsp; If you click on EDIT you can find out the specific problem with the
+        account and correct it by switching the STATUS drop down menu to CLEAR STATUS.</small></font></p>
+        <blockquote>
+          <p align="left"><font color="#FF0000" face="Arial"><strong><small>DIFFERENT HIGHLIGHT
+          COLORS MEAN DIFFERENT THINGS</small></strong></font></p>
+        </blockquote>
+        <blockquote>
+          <table border="0" cellPadding="0" cellSpacing="4" width="39%">
+            <tr>
+              <td bgColor="#ffff00" width="100%"><font face="Arial"><small>HIGHLIGHTED YELLOW = CLIENT
+              SCHEDULED TO BE BILLED</small></font></td>
+            </tr>
+            <tr>
+              <td width="100%"><font face="Arial"><small>NO HIGHLIGHT = CLIENT NOT DUE FOR BILLING</small></font></td>
+            </tr>
+            <tr>
+              <td bgColor="#ff0000" width="100%"><font face="Arial"><small>HIGHLIGHTED RED = THERE IS A
+              PROBLEM WITH THIS CLIENTS BILLING INFORMATION</small></font></td>
+            </tr>
+          </table>
+        </blockquote>
+        <p align="left"><font color="#000000" face="Arial"><small><strong>Download</strong>
+        &nbsp;&nbsp;&nbsp;&nbsp; Dumps the current billing database to your browser as a flat file
+        database.&nbsp; You can then save the updated database to your desktop for future use.
+        &nbsp;&nbsp; Make sure that you DO NOT DIRECTLY SAVE the browser output from the DOWNLOAD
+        feature.&nbsp; CLICK DOWNLOAD, then VIEW SOURCE, then save the text file that your browser
+        opens up.&nbsp; Save as a txt file and not html.</small></font></p>
+        <p align="left"><font color="#000000" face="Arial"><small><strong>Add Client</strong>
+        &nbsp;&nbsp;&nbsp; Allows you to manually add a new client to your billing database.</small></font></p>
+        <p align="left"><font color="#000000" face="Arial"><small><strong>Edit</strong>&nbsp;&nbsp;&nbsp;
+        The edit radio box causes the process button for that client to pull up an edit
+        form.&nbsp; You can make changes to the individual client records and make them permanent
+        by clicking on the submit button inside the edit menu.&nbsp; It will also bring up any
+        BILLING ERRORS previously experienced with the account being edited which can be corrected
+        by the STATUS pull down menu by selecting &quot;CLEAR STATUS&quot;.</small></font></p>
+        <p align="left"><font color="#000000" face="Arial"><small><strong>Delete</strong>&nbsp;&nbsp;&nbsp;
+        The delete radio box causes the corresponding process button to delete the record from
+        your billing database.&nbsp; This is not reversible.&nbsp; To delete ALL of the accounts
+        and start over simply quit your browser.</small></font></p>
+        <p align="left"><font color="#000000" face="Arial"><small><strong>Bill</strong>&nbsp;&nbsp;&nbsp;
+        The BILL radio box when checked causes the corresponding process button for that client to
+        bill their credit card through your authorize.net account.&nbsp; The billing will only
+        occur when the billing CYCLE exceeds the REBILL time.&nbsp; CYCLE is the number of days
+        since the last billing occurred.&nbsp; REBILL is the number of days between billing
+        cycles.&nbsp; Thus if CYCLE &gt; REBILL the account will be highlighted in yellow unless
+        there was a previous billing failure and it will be highlighted in red.&nbsp; If you wish
+        to alter the billing CYCLE use the edit menu to bump up the CYCLE value.&nbsp; Also note
+        that when you bill a client the CYCLE value will be reset to zero.&nbsp; The CYCLE value
+        will increment by 1 each day thereafter.&nbsp; Accounts that are not highlighted in YELLOW
+        (eg white or red) cannot be billed.</small></font></p>
+        <p align="left"><font color="#000000" face="Arial"><small><strong>Notify</strong>&nbsp;&nbsp;&nbsp;
+        Clicking on the notify button will email billing messages to all the clients with bad
+        billing data informing them that they need to submit corrected billing information.&nbsp;
+        It will send the error message contained in the $RESPONSE field so your clients will know
+        what they need to do to correct their billing information.</small></font></p>
+        <p align="left"><font color="#000000" face="Arial"><small><strong>If you want to start
+        over</strong> &nbsp;&nbsp;&nbsp; If, for whatever reason, you want to completely start
+        over and clear out all the data simply quit your browser.&nbsp; This will dump all of the
+        information out of your browser.</small></font></p>
+        <p align="left"><font color="#000000" face="Arial"><small><strong>Help Link</strong>
+        &nbsp;&nbsp;&nbsp; This pulls up the help menu.</small></font></p>
+      </blockquote>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
