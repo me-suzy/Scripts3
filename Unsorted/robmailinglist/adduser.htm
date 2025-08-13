@@ -1,0 +1,55 @@
+<html>
+<head><title>Add to / Remove from the mailing list</title></head>
+
+<font face=arial size=2>
+
+<center>
+<font size=4><b> RobMail v2.04 adduser.cgi Samples </b></font>
+
+<!-- same as in index.html, with adduser.cgi instead of robmail.cgi -->
+<form action="http://www.yourhost.com/~you/cgi-bin/adduser.cgi" method="post">
+
+Name: <input type="text" name="name" size=30><br>
+E-Mail: <input type="text" name="email" size=30><br>
+
+<!-- this is the name of the list that you want the user to be added to -->
+<!-- change "default" to the name of the list you want to add to -->
+<input type="hidden" name="list" value="default">
+
+<input type="hidden" name="what" value="add">
+<input type="submit" value="Submit">
+
+</form>
+<p>
+
+
+<!-- same as in index.html, with adduser.cgi instead of robmail.cgi -->
+<form action="http://www.yourhost.com/~you/cgi-bin/adduser.cgi" method="post">
+
+E-Mail: <input type="text" name="email" size=30><br>
+
+<!-- this is the name of the list that you want the user to be removed from -->
+<!-- change "default" to the name of the list you want to remove from -->
+<input type="hidden" name="list" value="default">
+
+<input type="hidden" name="what" value="remove">
+<input type="submit" value="Submit">
+
+</form>
+
+<table border=0 cellpadding=2 bgcolor=lightgrey>
+<tr><td align=center><font face=arial size=2>
+<b>RobMail</b>
+<form action="http://www.yourhost.com/~you/cgi-bin/adduser.cgi" method="post">
+
+E-Mail: <input type="text" name="email" size=10><br>
+<input type="radio" name="what" value="add" checked> Subscribe<br>
+<input type="radio" name="what" value="remove"> Unsubscribe<br>
+
+<input type="hidden" name="list" value="default">
+<input type="hidden" name="name" value="Sir / Madam">
+<input type="submit" value="Submit">
+</form>
+</td></tr></table>
+
+</html>
