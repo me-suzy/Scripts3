@@ -1,0 +1,30 @@
+<?
+$ubbt_lang['FILE_TOO_BIG']="Files can be no larger than {$config['filesize']}";
+$ubbt_lang['READ_PERM']  = 	"You have read only privileges for this forum";
+$ubbt_lang['EDIT_MORE']  = 	"Edit some more";
+$ubbt_lang['POST_ICON']  =     "Ikon";
+$ubbt_lang['SPELL_CHECK']  = 	"Helyesírás ellenõrzés";
+$ubbt_lang['SPELL_BODY']  = 	"Az ellenõrzött szöveg a következõ:";
+$ubbt_lang['NAME_TAKEN']  = 	"Az ön által választott nevet már regisztálta valaki, válasszon másikat.";
+$ubbt_lang['BAD_UNAME']  = 	"A névben nem használhat HTML kódot, vagy szóközt elõtte vagy utána.";
+$ubbt_lang['LONG_NAME']  = 	"A név nem elég hosszú.";
+$ubbt_lang['LOCKED']  = 	"Ez a témakör zárolva és Önnek nincs joga ide írni.";
+$ubbt_lang['TWO_POLLS']  = 	"You may only have 1 poll in a post.";
+$ubbt_lang['PREV_POST']  = 	"Üzenet megnézése";
+$ubbt_lang['SUB_VOTE']  = 	"Submit vote";
+$ubbt_lang['POST_BODY']  = 	"Ellenõrizze üzenetét!  Ha minden rendben kattintson 'Rendben' gombra.  Ha nem, használja a böngészõje vissza gombját a módosításhoz.";
+$ubbt_lang['YES_FILE2']  = 	"Ha gondolja, csatolhat fájlt az üzenetéhez.  Fájl méretmaximum  {$config['filesize']} bájt lehet. ";
+$ubbt_lang['NO_FILE2']  = 	"Fájl csatolása engedélyezve, Önnek  Mozilla 4+ kompatibilis böngészõt kell használni.";
+$ubbt_lang['POST_TEXT']  = 	"Üzenet";
+$ubbt_lang['DO_EMAIL']  = 	"Az összes választ kérem e-mail -ben postázni.";
+$ubbt_lang['DO_PREVIEW']  = 	"Meg szeretném nézni üzeneteimet elküldés elõtt";
+$ubbt_lang['CAN_ATTACH']  = 	"és/vagy fájl csatolása";
+$ubbt_lang['NO_DUPS']  = 	"Ez az üzenet már bent van az adatbázisban.";
+$ubbt_lang['UNREGED_USER']  = 	"Nem regisztrált";
+$ubbt_lang['REPLY_SUB']  = 	"Válasz az üzenetére";
+$ubbt_lang['REPLY_BOD']  = 	"válaszolt az Ön üzenetére a  site-on.";
+$ubbt_lang['POST_ENTERED']  = 	"Üzenet elküldve.";
+$ubbt_lang['MOD_CONFIRM']  = 	"Üzenete elfogadva.  Ez a témakör teljesen moderált, így mások csak az adminisztrátor vagy a moderátor jóváhagyása után olvashtják el.  Visszatérés a fórumhoz.";
+$ubbt_lang['FORUM_RETURN']  = 	"Vissza a fórumhoz";
+$ubbt_lang['VIEW_POST']  = 	"Üzenet megnézése";
+?>
