@@ -1,0 +1,1091 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+
+		<LINK rel=stylesheet type="text/css" href="documentation.css">
+
+<TITLE>phpYellow Pages - Easily create your very own Yellow Page directories on the web! - Dreamriver.com - php software mysql database software download apps</TITLE>
+
+	<META NAME="keywords" CONTENT="yellow, pages, phpYellow, php, software, Yellow, ads, listings">
+	<META NAME="description" CONTENT="Easily create your very own Yellow Page directories on the web!">
+	<META NAME="Author" CONTENT="Richard Creech, DreamRiver.com. Web: http://www.dreamriver.com Email: phpYellow@dreamriver.com">
+
+	</HEAD>
+
+
+<body class="yellow">
+
+
+<h1>phpYellow Pages Developer's Guide</h1>
+
+
+
+<!-- start of the dec30 navigation bar for the documentation -->
+<div align="center">
+<a href="DOCSindex.html">Docs Home</a> | 
+<a href="DOCSreadme.html">Read Me</a> | 
+<a href="DOCSfaq.html">FAQ</a> | 
+<a href="DOCSlicense.html">License</a> | 
+<a href="DOCSsecurity.html">Security</a> | 
+<a href="DOCSinstallNotes.html">Install</a> | 
+<a href="DOCSchangeLog.html">ChangeLog</a> | 
+<a href="DOCScustomize.html">Customize</a> | 
+<a href="DOCSpaidListings.html">Paid Listings</a>  
+</div>
+<!-- end of the dec30 navigation bar for the documentation -->
+
+
+
+
+<span style="color:Coral;font-size:48px;">CHANGE LOG</span>
+
+<p>Next Release information, historical version information, and a <a href="#todo">To Do list</a> 
+and <a href="#wishlist">a Wish List</a> are included in this document.</p>
+
+
+<h3>Next Release</h3>
+<p>These are changes coming in the next release:</p>
+
+<pre>
+File                        Change
+no changes to date
+</pre>
+
+
+
+
+
+<pre>
+<h2>Version 2.45 Released July 22, 2002</h2>
+
+<p>This release is to fix a bug in the Free Edition &quot;Send a Comment&quot; module. 
+The Premium edition was not affected.</p>
+
+<pre>
+File                                Change
+yellowgoal.php, yellowresult.php    reimported from the sample website. 
+yellowgoal.php                      $yps = !isset($yps)?NULL:$_REQUEST['yps']; // added on line 22
+</pre>
+
+
+
+<pre>
+<h2>Version 2.44 Released July 9, 2002</h2>
+
+<p>This is another minor Premium release to bring code in step with new php variable capture/initialization.</p>
+
+
+File                        Change
+yellowgoal.php              intialized or captured $goal at beginning of page - newer php versions would not correctly send a message
+categories.php              initialized or captured $category variable line 5 : $category = !isset($category)?"Select a category":$HTTP_POST_VARS['category']; 
+premiumBuyForm.php          fixed typo in x_login where underscore characters were not present
+
+
+
+
+<h2>Version 2.43 Released July 3, 2002</h2>
+
+<p>This is a minor release. Fixed an insert bug in the Standard free Edition (unaffected in Premium Edition). 
+Other miscellaneous changes as below.</p>
+
+<pre>
+File                        Change
+adminresult.php             include("premiumQuotaFull.php"); // file name change line 166
+categoryForm.php            yemail duplicated deleted, added $customer_password line 111
+yellowgoal.php              $goal = !isset($goal)?NULL:$HTTP_POST_VARS['goal']; // line 12
+                            initialize addForm.php variables line 172
+yellowresult.php            $goal = $_REQUEST['goal']; // capture or initialize the goal variable line 31
+admin.php                   changed Instant Destroy results to target popup window
+easysql.php                 $query = stripslashes($query); // added to line 111, changed version to 1.6
+phpyellowpageslogo.gif      added
+phpbook.gif                 added to footer.php
+
+
+</pre>
+
+
+
+
+<h2>Version 2.42 Released June 23, 2002</h2>
+
+<p>This very minor upgrade includes fixes for a couple of 
+glitches as below, and upgrades for files only used with the Premium Edition:
+</p>
+
+<pre>
+File                        Change
+premiumProcessPayment.php   Worldpay paid listings updated
+addForm.php                 modified 4.1.2 handling of variables
+priceChart.php              cosmetic change only
+admin.php                   fixed broken phpinfo() link (only broken when using < PHP 4.1 )
+adminOnly.php               yardstick changed to PHP version 4.1 or higher
+adminLogin.php              fixed admin.php include: include($adminHome); 
+premiumProcessPayment.php   paypal paid listings updated
+adminOneRecord.php          line 8 category variable name changed to $yfcategory   
+adminresult.php             line 263, 264, 265 changed to $HTTP_POST_VARS['totalmatches']; same for offset and primaryField variables
+yellowresult.php            image insert and update code conditional execution modified for new phpversion number calculation.
+</pre>
+
+
+
+<h2>Version 2.41 Released June 10, 2002</h2>
+
+<p>This relatively minor upgrade was to make phpYellow Pages 
+run more smoothly on Microsoft IIS Web server. Variables were 
+accepted from $HTTP_POST_VARS['foo'] or initialized to NULL in many 
+pages. phpYellow Pages error_reporting with E_ALL will result in very 
+few E_NOTICE warnings. E_NOTICE should be turned off for production 
+serving.
+</p>
+
+
+
+
+<h2>Version 2.40 Released June 8, 2002</h2>
+
+<p>PHP version compatibility additions are the major change in this release. 
+All php versions 4.04 or higher are supported, including the newer 4.2.0 
+using superglobals and updated file upload security code. Also included 
+is support for paid Basic listings in the Premium edition.
+</p>
+<p>
+New pages are also added for instructions on How To Make phpYellow Pages Work with 
+various payment gateway processors. The instructions are available to everyone. 
+The functionality of paid listings will work in the paid Premium Edition only.</p>
+
+<pre>
+adminresult.php             added Instant Destroy
+admin.php
+premiumGoButton.php         changed button text label
+util.php                    supports all paid listings, plus the files below ...
+premiumListingBasic.php     
+goPremium.php               
+premiumCheckout.php    
+premiumProcessPayment.php
+premiumPriceChart.php
+categoryForm.php
+categories.php              4.1.2 upgrade, plus the files below ...
+findRecordLike.php
+manageForm.php
+backNextControlsForm.php    changed line 13 to read the variable name of 'citytofind' example: name="citytofind"
+many files                  upgraded to pass PHP 4.2.0 E-All error checking free of any notices
+yellowresult.php            changed to support pre and post PHP4.1.2 file upload methods
+premiumImageUpload412.php   new
+premiumImageUpload404.php   new
+phpinfo.php                 modified admin access method
+premiumExportEmailList.php  ditto
+premiumBackup.php           ditto
+easysql.php                 minor upgrades
+yellow.css                  added favcolor class definition
+admin.php                   changed top image 
+yellowresult.php            near line 411 should be: $goPremiumUrl = INSTALLPATH . "goPremium.php";
+version 2.34                to be included in this release
+version 2.33                to be included in this release
+
+</pre>
+
+
+<h2>Version 2.34 Released April 25, 2002</h2>
+
+<p>A CMS Bridge change, administrative logout capability and some minor changes are 
+introduced in this release.</p>
+
+<pre>
+File                        Change
+cms_bridge/sync_user.php    cms bridge modification
+adminOnly.php               added administrative Log Out capability
+adminLogOut.php             new
+admin.php                   phpinfo link changed to post method
+index.php                   FEATURELISTING changed to FEATURELISTINGNUMBER on line 51
+</pre>
+
+
+
+<h2>Version 2.33 Released April 14, 2002</h2>
+
+<p>This version sees an important security update for the php4 logo upload issue as well 
+as new support for sessions while using administration.</p>
+
+<pre>
+File                        Change
+admin.php                   added php 4 session support for administration
+adminLogin.php              new
+adminLoginForm.php          new
+adminOnly.php               new
+easysql.php                 added php 4 session support for administration
+adminresult.php             added php 4 session support for administration
+yellowresult.php            upgraded logo upload code to meet new standard
+addForm.php                 upgraded algorithm used to determine IP address
+</pre>
+
+<h2>Version 2.32 Released March 20, 2002</h2>
+<p>
+Version 2.32 affects the Premium Edition only. No changes were made to the Standard Edition 2.30. 
+The noteworthy Premium Edition changes include user selectable results display length (results on 
+one line or complete detail results), colored scroll bars, the addition of support for Paypal 
+paid listings, configurable currency symbols [for non $ currency usage] and other changes as below:
+</p>
+
+
+<pre>
+File                        Change
+yellow.css                  introduced colored scroll bars (IE only feature)
+/docs/DOCScustomize.html    customization details updated
+yellowresult.php            added support for selectable display length - complete or on one line with a link to details
+premiumSearchForm.php       ditto
+backNextControlsForm.php    ditto
+util.php                    ditto
+indexDynamicListings.php    ditto
+premiumBuyForm.php          added support for configurable currency symbol
+premiumBuy.php              ditto
+util.php                    ditto
+premiumProcessPayment.php   ditto - for email notification
+indexDynamicListings.php    modified to simplify customer changes to appearance
+</pre>
+
+
+
+
+
+<h2>Version 2.31 </h2>
+<p>
+Version 2.31 was released to a limited number of paid customers only 
+who were requiring customization of phpYellow Pages Premium.
+They were provided with the latest version and then that was customized further.
+</p>
+
+<h2>Version 2.30 Released February 22, 2002</h2>
+</p>This version sees the introduction of &quot;Get Map&quot; for 
+the Premium edition. The map feature links a customer's record to 
+the Mapquest database, which shows a map of exactly where the customer 
+is located. A bridge has also been built [by Bob] to integrate all 
+phpYellow editions with PWS. $basicListingExpiry is now added to the 
+free Standard edition. Major cosmetic and structural modifications 
+were made throughout the application. Do NOT upgrade to this version
+unless you are prepared to remake your look and feel on the new pages. 
+Make a backup first. There are too many changes to detail here.<p>
+<pre>
+File                        Change
+all                         structural and cosmetic changes to most all files
+docs/DOCSlicense.html       a return link is now required
+oneRecord.php               updated to enable display of the Get Map feature for the Premium edition only
+index.php                   major structural, internal changes in how data is displayed with included files
+misc. files                 CMS integration for PWS, including update of affected files
+db:yareacode varchar(7)     changed database area code field to handle international values
+addForm.php                 now handles international area code values
+UKcounties.php              added. For use in the UK to replace country select [drop down] list with UK counties
+premiumSearchForm.php       added to replace advancedSearchForm.php
+advancedSearchForm.php      no longer used, replaced.
+indexDynamicListings.php    added to show dynamic indexes for Premium AND Standard editions
+featureListing.php          no longer used, replaced by indexDynamicListings.php
+various /docs               updated and expanded documentation files
+yellow.js                   modified data required by client side javascript to be only email and password, added customization instructions
+highlight.php               cosmetics changed
+exampleRecord.php           added to show user new listing in example highlight mode
+easysql.php                 removed FORMBACKGROUND, no longer used
+footer.php                  rewrote CONSTANT usage for NT
+header.php                  rewrote CONSTANT usage for NT
+premiumPriceChart.php       replaces priceChart.php with display changes
+priceChart.php              replaced by premiumPriceChart.php
+yellowresult.php            Add Category, Update category modules modified for text concerning images, no real functional change
+tellafriend.php             subtle text display changes
+goPremium.php               replaces upgrade.php, with minor text modifications "logo" to "image"
+upgrade.php                 replaced by goPremium.php
+util-dist.php               $basicListingExpiry
+</pre>
+
+
+<h2>Version 2.24 for limited custom installs only</h2>
+<p>
+Version 2.24 was released to a limited number of paid customers only 
+who were requiring customization of phpYellow Pages Premium.
+They were provided with the latest version and then that was customized further.
+</p>
+
+
+
+<h2>Version 2.23 Released January 7th, 2002</h2>
+<p>
+The Premium version 2.22 is unchanged. This release contains a fix for a 
+bug found in the Standard 2.22 edition only. The premium 
+Edition is NOT affected. 
+</p>
+
+
+
+<h2>Version 2.22 Released January 1st, 2002</h2>
+
+<p>
+This is a major release with all files affected. Contains significant 
+new features including:
+<ul>
+<li>stealth [hidden] email addresses</li>
+<li>export email addresses to list [lightweight, Premium only] </li>
+<li>icons displayed for each listing</li>
+<li>search by area code [Premium only]</li>
+<li>new paid listings /docs page</li>
+<li>QUEUED listings</li>
+<li>change any category with Set CKEY Parameters [Premium only]</li>
+<li>appimage folder created for images used by phpYellow</li>
+<li>new Frequently Asked Questions /docs page</li>
+<li>new and newly updated listings page</li>
+</ul>
+</p>
+
+
+
+<pre>
+File                         Action
+docs/DOCSpaidListings.html   new
+adminresult.php              added new premium module
+docsInstallNotes.html        updated
+exportEmailList.php          new
+manageForm.php               updated for new state field 
+adminGoalControls.php        modified to post method for going to admin
+checkout.php                 removed email from displaying
+featureListing.php           ditto
+adminViewQueueForm.php       reenabled support for managing queued listings
+yellowgoal.php               added support for stealth email to prevent spammers from reaching listers
+commentForm.php              ditto
+oneRecord.php                removed display of email addresses
+countries.php                stopped "*" and "All Countries" from showing in Add
+backNextControlsForm.php     added area code
+advancedSearchForm.php       changed state input type, added area code for narrow results with modifier
+yellow.js                    removed state code
+addForm.php                  changed the state field from a select list to a text input type
+yellowresult.php             added support for basic listing expiry, modified logo insert and update code
+misc documentation           updated miscellaneous documentation files in the /phpYellow/docs folder
+advancedSearchForm.php       dec22 fixed bug which was reporting all, rather than nonexpired and aproved listings
+adminresult.php              modified to support change of category while using 'Set CKEY Parameters' admin tool
+categories.php               stopped the "*" category from being selected in a new listing
+util.php                     added support for changing expiration date for basic listings
+yellowresult.php             ditto
+upgradeForm.php              renamed some variables to integrate with admin and user initiated launches
+yellowgoal.php               removed and updated modules
+oneRecord.php                added four icons to the standard oneRecord.php display, placed ALL application images into the new /phpYellow/appimage folder, visitors logos will use /phpYellow/userlogo instead.
+yellowresult.php             modified highlight module
+upgrade.php                  updated content
+paymentSpecialMessage.php    added this to make the payment process clear - special message from website owner possible
+yellow.js                    eased the level of javascript form object validation for the addForm.php to make things easier for a lister
+all /docs files              updated and included new Frequently Asked Questions [FAQ] page
+yellowresult.php             Netscape 4.76 backwards compatibility changes
+yfrecord.php
+featuredListing.php
+oneRecord.php
+advancedSearchForm.php
+index.php
+new.php                     added new and newly updated listings page
+footer.php                  ditto
+header.php                  ditto
+adminresult.php             changed sort order for 'Manage Listings' in Admin Center
+</pre>
+
+
+
+<h2>Version 2.21 Released November 22nd, 2001.</h2>
+<p>
+This version sees the introduction of images for the Premium version only. 
+A different image may be shown with every listing. Also, for the free and paid versions 
+popup administration windows are added. Normally shunned by users, the popup has found a 
+home here in administration because it is set to automatically display each message 
+AND automatically close after POPUPTIMEOUT milliseconds. You may change POPUPTIMEOUT in util.php. 
+Payment module and miscellaneous upgrades also exist in this version as detailed below:
+
+</p>
+
+<pre>
+File                     Action
+adminSetStatusControls.php popup windows for administration - they automatically close after their message is displayed.
+admin.php
+adminresult.php
+adminGoalControls.php
+
+
+						logo support
+addForm.php
+adminresult.php
+admingoalcontrols.php
+adminOneRecord.php
+buy.php
+featureListing.php
+footer.php
+highlightRecord.php
+loginForm.php
+oneRecord.php
+util.php
+util-dist.php
+yellow.js
+yellowresult.php
+
+
+yellowresult.php		payment module upgrade
+buy.php
+buyForm.php
+processPayment.php
+checkout.php
+paymentInstructions.php
+						
+						other miscellaneous
+installSecurity.php      added button for a 'Launch tips on how to customize' page
+netscape.css             changed look and feel
+advancedSearchForm.php   changed look and feel - removed some rows to improve Netscape rendering
+header.php               changed look and feel - removed style class
+</pre>
+
+
+<h2>Version 2.20</h2>
+
+<p>Version 2.20 is a MAJOR release with ALL files affected. Key changes include the introduction of browser detection in both the Standard and Premium versions. The browser detection is linked to serving different .css files for different browsers. More information is available in the online phpYellow Pages Developer's Guide. Also, a brand new installation script really makes installing a breeze - even faster than before! While all files are affected, following are some specific changes:
+</p>
+
+
+<pre>
+File			Action
+install.html       Wow! Load this file in your browser and your phpYellow installation is as easy as pie.
+all page level     added browser detection via javascript with customizable css file invocations in yellow.js
+checkout.php       added functionality for optional live phone connect or live web chat during customer purchase of a paid listing
+documentation      updated most documentation files contained within the /docs folder
+SearchForm         added table formatting Premium version to improve appearance in Netscape browsers
+admin.php          minor functionality changes, including direct link to dreamriver mailto for paid customers
+login.php          removed dynamic reference to logos
+upgrade.php        simple formatting changes
+footer.php         modified with 2 links: one link points to the Developer's Guide, the other points to Dreamriver
+index.php          added two shockwave Flash movies to the search page
+SearchForm         line breaks dynamically expand to accomodate dynamic category numbers
+login.php          repointed email note for edit exactly to login.php rather than the default home page for phpYellow Pages
+yellow.js          added functionality for optional live chat during customer purchase of a paid listing
+checkout.php       changed input box from text to password
+buy.php	      added functionality for optional live phone connect or live web chat during customer purchase of a paid listing
+tellafriend.php    changed page alignment and minor functionality
+</pre>
+
+
+
+
+<h2>Version 2.11</h2>
+<p>Version 2.11 contains very MINOR code upgrades, along with expanded 
+documentation in the Developer's Guide.</p>
+
+
+<h2>Version 2.10</h2>
+<p>Version 2.10 is a MAJOR upgrade release for the Premium version. 
+Key new features include Feature Listing! and NEW Index Every Search, 
+along with an expanded payment module for Premium Paid Listings. More 
+details are available on Dreamriver's Fatpipe Digital Download showcase. </p>
+
+<p>
+The free Standard version saw a couple of code upgrades to enhance 
+cosmetic effect, along with one bug fix for a wrong file invocation - spotted 
+and fixed earlier on the online forum by users :)
+</p>
+
+
+
+<h2>Version 2.04</h2>
+<p>Version 2.04 contains a new tax module intended for use 
+with the payment module.</p>
+
+
+
+
+<h2>Version 2.03</h2>
+<p>Version 2.03 marks the integration of <b>multiple database tables</b> into the standard version. 
+Also, the front end is improved in the standard version with the addition 
+of the new <b>Click By Category</b> feature.</p>
+
+<p>An <b>installation file</b> also appears in version 2.03 which will help upgrade an old 
+installation or swiftly implement a new installation. The same install.php file works 
+for both Standard and Premium versions. This file should be deleted from the web server after use.</p>
+
+<p>A minor upgrade in version 2.03 is implementation wide <b>support for local PC 
+implementation</b>. A default localhost util-dist.php file is included. This 
+enables you to run phpYellow Pages locally, on your own machine, if you also
+have installed mysql, php and web server software, all freely available.</p> 
+
+<p>This version uses <b>&quot;traditional&quot; php code</b>. NO classes or objects are used 
+in this code. This makes it easier for developers, students and beginners to easily change the 
+code to match your needs.</p>
+
+
+
+<p>In general, any version upgrade should totally replace existing files, except 
+of course for any database table data.</p>
+
+<h2>The Shift at Version 2.0</h2>
+<p>Version 2.0 marks a significant change in the features, options and code 
+within phpYellow Pages. The version 2.0 PAID features are vastly exanded. 
+This includes a payment system for premium listings, preview of new listings 
+prior to publication, multi-category submissions per each listing, many more table 
+fields and other significant structural and functional changes. An installation 
+script does much of the installation for you, although some configuration and 
+file transfer is required.</p>
+
+
+
+<h2>Versions 1.2 and lower</h2>
+The following changes were made to older versions of phpYellow Pages. They are included here for archive reasons - you shouldn't need them as you _should_ be running the latest version of the software.
+
+<pre>
+The following changes have been made to the download package at:
+
+	http://www.dreamriver.com/software/phpyellow/phpYellow.zip
+
+February 27, 2001
+Start of Version 1.1 UPGRADE	
+Version Change from 1.062 to 1.1
+
+Note: This is a substantive upgrade with many cosmetic and functional changes.
+
+	FILE				ACTION
+	yrecord.php3		removed because of code changes
+	provinces			added commented out Javascript to require a valid province or state selection. Must be uncommented to work. 
+	countries			added javascript to require a valid country selection in add or edit mode
+	categories			added javascript to require a valid category selection in Add or Edit mode.
+	util-dist.php3		modified for Premium
+	many files			cosmetic changes
+	ysearchagain.php3	modified for premium version
+	yellowresult.php3	modified for premium version
+	backNextControlsForm.php3 modified hidden variables
+	license.txt			minor changes to license.txt - including phpYellow application name, dates.
+	backNextControlsForm.php3	added new form to enhance navigational features for results: Back, Next
+	ysearchagain.php3	reformatted
+	easysql.php3		fixed double empty line insert so caret focus remains in character 1 location of query textarea box
+	yfadmin-record.php3	changed form property method to "get" from "post" to enable Netscape access. Replaced all single quote html entities with double quotes
+   	yellowresult.php3   the "Click for next results" incorrectly used category as an argument. It has been changed to "ycategory" - and then replaced by the backNextControlsForm.php3
+	
+	
+	
+	
+	
+December 11, 2000	
+Start of Version 1.062 UPGRADE	
+Version Change from 1.061 to 1.062 
+
+	Note: this version is a Netscape upgrade version. Netscape users can now access Admin. Also, displayed formatting works somewhat better in Netscape, but worse in IE.
+
+	FILE			ACTION
+	header.php3		validation cleanup - brought files closer to meeting strict w3c standards
+	admin-login.php3	ditto
+	footer.php3		ditto
+	admin.php3		phototop anchor fix for Netscape (NS).
+	yellow.css		changed th selector properties, added .small class for NS. Added H4 selector.
+	yfrecord.php3		changed size to small to look better in NS.
+	yellowresult.php3	changed the dynamic search heading on line 234 from th to h4 and added new .css selector for it. This is a NS fix.
+END OF VERSION 1.062 UPGRADE	
+
+
+	
+November 19, 2000	
+Start of Version 1.061 UPGRADE
+Version Change from 1.06 to 1.061
+
+FILE			ACTION
+util-dist.php3		added a missing semi colon on about line 25 here: define("SHOWSQL", "no" );<--- semicolon was missing, preventing phpYellow from working. 
+util.php3		ditto. util-dist.php3 is the same file as util.php3. "util-dist.php3" is the file that arrives with the distribution files and is renamed util.php3 and uploaded to your server.
+END OF Version 1.061 UPGRADE		
+
+
+
+	
+November 16, 2000	
+Start of Version 1.06 UPGRADE
+Version Change from 1.051 to 1.06
+
+FILE			ACTION
+adminresult.php3    	found and fixed a "$yfphone = $sql->data[9];" omission bug. Caused by commented out code block. Bug affected administration 'Find Record Like' and 'Set-Rank' display of records only. Did NOT affect record database integrity.
+dev-mess.php3       	refreshed message
+admin.php3		added link to phpFD File Downloader live demo & tour
+yellowadd_form.php3	changed categories, provinces and countries to included files for easier customization
+yadmin-manage.php3	ditto
+ysearchagain.php3	ditto
+yellowedit_form.php3	ditto
+provinces.php3		added
+countries.php3		added
+categories.php3		added	
+yellowresult.php3	deleted commented out code for $yfphone
+admin.php3		the reference to dreamriver website links have been moved to http://dreamriver.com/resources/whois.php & /resources/submit.php
+END OF Version 1.06 UPGRADE	
+
+	
+November 03, 2000:
+START OF VERSION 1.051 UPGRADE
+Version Change from 1.05 to 1.051
+
+	FILE			ACTION
+	adminresult.php3	upgraded setRank functionality, extended FindARecord to 100 results, refined admin manage result order by
+	yfadmin-record.php3	added yfcategory hidden variable, reformatted form
+	4 files			added more categories. Affected yellowadd_form, yellowedit_form, yadmin-manage, ysearchagain. Deleted unused categories.
+	yellowresult.php3	added 'ORDER BY yps DESC' to display the most recent listing first
+END OF VERSION 1.051 UPGRADE	
+
+
+October 26, 2000:
+START OF VERSION 1.05 UPGRADE
+Version Change from 1.042 to 1.05
+
+	FILE				ACTION
+	adminresult.php3		removed database close functions - also in most files
+	util-dist.php3			added multiline commenting as a precaution
+	yellowresult.php3		included test for magicquotes and if absent then use of addslashes() for insert and update
+	yellowedit_form.php3    &nbsp; in cellular field
+	yellowadd_form.php3		ditto
+	admin.php3              phpinfo() added to Setup section
+	phpinfo.php3			added
+	yellowresult.php3		mail() 4th argument use: added mail headers: replyto, from, xmailer - tests great!
+	easysql.php3			Re: EasySQL misreported result fix - deferred to future new app release
+	all static viewable php re-optimized title, meta tags and first paragraph
+
+How to Upgrade:
+1. save a copy of your existing util.php3 file on your local machine
+2. create a new directory on your local machine for the new phpYellow files
+3. download and extract the new version upgrade files into your new directory
+4. Paste your existing util.php3 file into util-dist.php3 : CONSTANTS only, everything above the '/* END OF CONSTANT DECLARATIONS */' line, 
+5. Save the new util-dist.php3 as util.php3
+6. ftp upload the new directory of files into your existing phpYellow installation, overwriting all existing files.
+7. do a test add, edit, search and delete to make sure all is well- see your Admin module for support options
+END OF VERSION 1.05 UPGRADE
+
+
+
+October 13, 2000:
+START OF VERSION 1.042 UPGRADE
+Version Change from 1.041 to 1.042
+
+FILE			ACTION
+
+yfadmin-record		consolidated smart controls and formatted appearance
+adminresult.php3	sql order by is now in descending order - newest listing is first
+yellowresult.php3	added clickable update link in email notification sent to webmaster so you can get to edit new records more easily
+admin.php3          	the admin link to changeLog.txt now points to the most recent copy on Dreamriver, not to the aging bundled distribution files
+--->                	security.txt, install.txt, readme.txt reviewed and updated
+--->                	added addslashes() and stripslashes() as needed to yellowgoal,yellowresult, adminresult.php3
+util.php3           	modified function
+
+Installation Note: when replacing util.php3 for this upgrade you only need to:
+a) open util-dist.php3 
+b) copy all the code starting where it says "// Web enabled version checking" up to and including the end of the file
+c) paste the copied code into the corresponding section in util.php3 - essentially everything at the bottom
+d) upload util.php3 and all the other files to the server.
+END OF VERSION 1.042 UPGRADE
+
+
+
+October 11, 2000:
+START OF VERSION 1.041 UPGRADE
+Version Change from 1.03 to 1.041
+Version Note: this version fixes reported bugs of a serious nature in version 1.03. For details see below:
+
+	FILE			ACTION
+	adminresult.php3	removed one layer of data validation for user add, edit, delete and Administration Add, Edit and Delete
+	yellowresult.php3	ditto, plus removed all quotemeta 
+	util-dist.php3		updated the version number, modified the verify() function
+	dev-mess.php3		rewrote developers message
+END OF VERSION 1.041 UPGRADE
+
+
+
+October 10, 2000:
+START OF VERSION 1.03 UPGRADE
+Version Change from 1.02 to 1.03
+Version Note: this version is "mostly cosmetic". There were no reported bugs of a serious nature in version 1.02. See below for details:
+
+	FILE			ACTION
+	admin.php3		added "Setup" heading for table column, photo, and new Heading links and #photoTop named anchor
+	all with submit buttons	added new .css class selector for colored submit buttons, removed select .css formnav classes in same
+	yadmin-manage.php3	added #photoTop named anchor to page
+	all viewable php files	upgraded and integrated the title, meta keyword and meta description html elements to improve search engine rankings
+	yellow.css		created a new class selector and named it "ivory" - used first on admin.php3
+	admin.php3		added a viewable version number under the "Support" heading so you know what version of phpYellow you have - without opening util.php3
+	passwordresult.php3	deleted
+	yellowgoal.php3		copied password processing into this for improved security, code review and cleanup
+	adminresult.php3	code review and cleanup
+	yellowresult.php3	code review and cleanup including use of quotemeta()
+END OF VERSION 1.03 UPGRADE
+
+
+
+September 26, 2000:
+START OF VERSION 1.02 UPGRADE
+Version Change from 1.01 to 1.02
+Version Note: Version 1.02 is an enhancement version. There were no reported bugs in Version 1.01 to date
+
+	FILE			ACTION
+	:util-dist.php3		HOSTSERVER constant reset to "" to enable easysql.php3 to test for it
+	:easysql.php3 		added
+	:admin.php3 		added functionality for easysql including link
+	:testdb.php3 		added link to easysql.php3
+	:install.txt 		updated for easysql process
+
+September 24, 2000
+	FILE			ACTION
+	: install.txt		added comments about customization of categories
+	: admin.php3		made several cosmetic changes to text 
+	: ysearchagain.php3	replaced all double quote marks with single quote marks in field values to assist in category customization, also added php comment to show where customization can start in each of the 4 files ysearchagain, yellowadd_form, yellowedit_form and yadmin-manage.php3
+	: yellowadd_form.php3	ditto
+	: yellowedit_form.php3	ditto
+	: yadmin-manage.php3	ditto
+	: admin-login.php3	javascript upgrade to set focus to form on body load
+	: password.php3		ditto javascript upgrade
+END OF VERSION 1.02 UPGRADE
+
+
+
+September 21, 2000
+START OF VERSION 1.01 UPGRADE
+Version Change from 1.0 to 1.01
+
+a) This version change fixed a results display problem with users searching phpYellow with Netscape browsers.
+b) Minor cosmetic facelifts are included.
+c) The fix for the delete bug as mentioned in the support forum is included.
+d) Files affected: most files have been modified since the last version. A complete upgrade to the latest version is warranted. Complete this upgrade by ftping the newest files to your webserver.
+
+NOTE: To avoid unnecessary work and to avoid overwriting your configuration util.php3 file, open it up and paste in this code block over the existing block:
+// Web enabled version checking
+define("PRODUCTNAME", "phpYellow"); // DO NOT CHANGE.
+define("INSTALLVERSION", "1.01"); // DO NOT CHANGE.
+// Reserved for Premium Yellow Service // DO NOT CHANGE.
+// END OF CONSTANT DECLARATIONS
+
+The only significant change to the util.php3 file is the version number, used in version checking. The current version number is 1.01 . This simple change in pasting the code block above saves you the time of rewriting the entire util.php3 configuration file on ftp upload. The remaining new files should, of course, also be uploaded.
+END OF VERSION 1.01 UPGRADE 
+
+
+
+
+// Preview Release Only - NOT INCLUDED IN ZIP FILE - under evaluation at http://www.dreamriver.com/phpYellow/
+Start of Version 1.1 UPGRADE - PREVIEW RELEASE
+Version Change from 1.1 to 1.12
+
+	FILE				ACTION
+	easysql.php			modified line 204 affected_rows function to use linkidentifier, not result, as changed in php release mysql_affected_rows
+	util.php			addition and restructuring of constants to improve paid version
+	tellAFriend.php		added
+	yellow_edit.php		description field size change
+	yellow_add.php		description field size change
+	easysql.php			altered table to increase description to varchar(255)
+	easysql.php			altered table field to: ycategory varchar(50) to allow larger categories
+	yellow.js			suppressed fax, added better error handling
+	backupTemplate.php	added NEW backup utility for Premium version
+	backup.php			added
+	admin.php			updated for new backup
+	yellowadd_form.php	updated for multi category adds
+	yellowresult.php	updated
+	util-Premium.php	updated
+	advertise.php		updated
+// end of Preview Release changes
+
+
+</pre>
+		
+	<h2><a name="todo">TODO LIST</a></h2>
+<pre>
+
+
+It would make more sense if user could first login and then from the
+users manage account page, add-edit and delete as needed.
+
+
+> can you tell me how I can use the Multilanguage-Version for my =
+> Premium-Version? I only need the german languages file and maybe the =
+> english. I have download the mulitlanguage version too, but I don`t know =
+> how I can use the languages files.
+
+
+Recurring payment 
+
+Expanded quotaFull handling - email notification
+
+> Thus the browser by default sets the web address to the root address from which the page resides, 
+and this is why the web address is displayed incorrectly.  I believe, although not tested,
+a test for url needs to be placed so only if url>0 does the hyperlink get presented. 
+otherwise it just prints company name with no hyperlink. (if --else statement)
+
+</pre>
+
+
+
+	<h2><a name="wishlist">WISH LIST</a></h2>
+<pre>
+
+1) User language(s):
+a) for the beginning: German
+b) later a selective multi lingual approach would be necessary (=
+advertiser can place the same add in several languages  the internet search
+user can choose his language to view the ads)
+2) Privacy mail:
+the advertiser can choose if he wishes to activate the privacy mail feature
+3) Categories:
+a) Each category needs the option for a different set of data fields
+(i.e. automotive, jobs, insurance, business opportunities, real estate etc.)
+to accommodate the different objectives for the offer
+b) the search parameters in each should be accordingly different
+4) Photos:
+The advertiser should be able to choose if he wants to publish photos with
+the advert and how many, which is important for the pricing
+5) URL
+the advertisers should decide if he wants to publish his URL, which is
+important for pricing
+6) Multiple ads:
+advertiser wishes to place several adverts
+a) possibility to import from a structured data sheet (.xls, etc.) or
+text file (.txt, .doc, etc.)
+b) import gateway to other internet programs i.e. Multiple Listing
+Service with realtors
+7) User help:
+is there a possibility to write help texts for various functions
+8) Payment - necessary are the following features
+a) international Credit Card processing in multiple countries
+b) automatic renewing charge function
+c) export of data in order to submit charge orders to the bank
+9) Various charge options:
+a) distinction between private and commercial advertiser
+b) charge plans
+(1) general (default) charge plan
+(2) option of predefined charge plans
+(3) individual charge plan per customer
+c) promotions i.e.
+(1) every advert placed in June gets one month free of charge
+(2) first three months free of charge
+(3) place 2 adverts, third free etc.
+d) additional charge parameters i.e.
+(1) charge for adverts with photo(s)
+(2) charge for own URL-link
+(3) charge for extra visibility
+(4) charge for priority ranking etc.
+
+
+
+========================
+
+
+Have you created anything like directory listing program
+that displays complete pages for each entry?
+
+
+Also is it possible to
+> make a different feature listing for each category.
+
+
+My dream is a search form searches everything by default with
+> no need to select Keyword or Company, and a search that searches the
+> first and last names.  I continue to hope.
+
+
+
+> I thinking about maximizing revenue stream from paid
+> Yellow Pages. Below is description of functionality
+> which could maximalize revenue for every Yallow Pages
+> I think.
+>
+> I. There should be more premium listing types in
+> Yellow Pages which affects search results. All result
+> is for practice areas (which is just your category)
+>
+> 1. First for whole US (will be most expensive). For
+> each of practice areas only one purchase is allowed.
+> So only one lawyer or lawyers company could purchase
+> Fist in whole US for persion. This will appers always
+> first in search result. Border of first in US will be
+> three frames.
+>
+> 2. First for whole State. For each practice ares (your
+> category) and for each state only one could be
+> purchased. In search result this will appers second
+> after first in US if first in US exists for practice
+> area (your category). If there is no first in US for
+> practice area first in State will apper first. Border
+> of first in State will be two frames.
+>
+> 3. First for whole County (you could add county fild
+> to database) - only one for county could be purchased.
+> Work the same as 1 and 2 exept will appers third in
+> first in US and state exist. Will appers second if one
+> of first in US or State exists. Will appers first if
+> first in US and State do not exist. Border of first in
+> County will be in very bold frame.
+>
+> 4. First for City. - only one for City could be
+> purchased. Works at 1,2 and 3. Only one could be
+> purchased for practice area (your category) for City.
+> Will appers after County. Will be 4 if exists US,
+> State and County. Will be 3 if exist two from US,State
+> and County. Will be 2 if exist one from US,State and
+> County. Will be first if there is now US, State or
+> County purchsed. Border of first in County will be in
+> middle bold frame.
+>
+> 5. Premium Listing will be in frame. Unlimited number
+> could be purchased for practice area (your category).
+> Will be displayed after 1,2,3,4 from nearlest to
+> farest insite Premium listing from zip code.
+>
+> 6. Basic listing without frame. Unlimited number could
+> be purchased for practice area (your category). Will
+> be displayed after all Premium listing and from
+> nearlest to farest from zip code.
+>
+> Comment to 5 and 6. Zip code will work insite premium
+> and basic listing so all premium listings will be
+> displayed before basic leasting even if particural
+> premium record will be farrer from zip code then
+> record in Basic listings.
+>
+> II. Little change to payment. In payment should be
+> amount limit for which customer can use credit card.
+> For example if amount of bill will be greater then
+> $200 customer must use differen payment that credit
+> card(to big for credit card proccessing) so credit
+> card check box will be unavailabe (or gray) with
+> comment then total amount is more then $200 so we do
+> not accept crdit card for bigger amount then $200.
+> This could be system variable so it could be set to
+> another amount easily like $300 or another.
+>
+
+
+
+
+> * comment system. People should be able to write comments on certain
+> companies (comments should also have the possibility to be reviewed first)
+> * html field for paid listings (so paid listings can insert some html text
+> in their ad)
+> * improve admin interface.
+> * themes ?
+
+
+
+I would prefer that a search automatically searched all
+the fields in the ad, not just company and description.
+
+
+Can you custome make a copy of PHP-Yellowpages for me with a review this site feature and a 5 star, 
+rate this site feature? if so can it be with a registration for visitors who then would place there 
+comment and to be able to rate the site. as far as reviews...it would be e-mailed to the owner of 
+the ad so that they can respond to the poster by e-mail. This feature should have cookies so that 
+only one post per visitor. give the option of sending another image with a second ad, 
+
+
+4. Add pager field
+
+Editing:
+1. Only display the one that you look for. This is a
+special case. Normally, as a business owner, you only
+own one or two businesses. However, when I do
+database import, I have to assign them all to me.
+Therefore I may own thousands of businesses and it
+will be a long list to sort through. I have to go to
+the back end, and edit it at the table level.
+
+Interface:
+
+
+3. Highlight the category that has new entries since
+the last time (day/week)
+4. Display the last time the business was updated (is
+it in the lastupdate field of contact?)
+
+
+Data model:
+1. Add a field to records the business
+
+Configuration:
+1. business submittion should be on pending until
+approved by administrator to prevent from bad entry.
+It should be configurable when log in as admin.
+
+Integration:
+
+
+
+
+Is it possible to add more then
+1 image to your "yellow page' script?
+
+Ideally we would want to have paid listings
+and a way for the client to make coupons
+with your system..
+like http://rlaj.com/scripts/bizdirectory/biz-dir.html
+
+
+> 5.  Does it have business review feature?  I want user
+> to be able to rate the company's service.
+
+
+1) Create one function for updating feature listing in the ADMIN Option.
+
+2) Create one table for register visitors (B2C) that want to receive emails campaign.
+
+3) Create one function for sending emails campaign:
+Visitors (B2C), Company (B2B).
+
+4) user login cookies
+
+
+	> What do you think about parsing data from a large yellow pages database like
+    > Infousa?  Then adding the results after my results.  
+
+> Offer during the installation process a list of (say 200) possible fields -
+> with check box options - that the installer can select/deselect and then it
+> writes the category list for them.  Just a thought.
+> 
+> Also, on the "wish list", I'd really LOVE to see sub-categories!
+
+	Do you foresee a mass e-mail submit feature?? Would be great if the admin
+could e-mail all non paying businesses, reminding them of premium options..
+
+  I think it would be great to send out a reminder a
+> week or so before ad expiration.
+
+	
+	
+	subcategories
+	possibility to change advertise.php3 and the fieldnames in the emails too?	
+	email activation link for new listing submissions
+	convert Premium version to Multilingual
+	more separation between admin update from user update
+	more gateway processor options
+
+	user login cookies 
+	database abstraction layer
+
+</pre>
+
+<p>END OF DOCUMENT</p>
+
+
+
+<!-- start of the dec30 navigation bar for the documentation -->
+<div align="center">
+<a href="DOCSindex.html">Docs Home</a> | 
+<a href="DOCSreadme.html">Read Me</a> | 
+<a href="DOCSfaq.html">FAQ</a> | 
+<a href="DOCSlicense.html">License</a> | 
+<a href="DOCSsecurity.html">Security</a> | 
+<a href="DOCSinstallNotes.html">Install</a> | 
+<a href="DOCSchangeLog.html">ChangeLog</a> | 
+<a href="DOCScustomize.html">Customize</a> | 
+<a href="DOCSpaidListings.html">Paid Listings</a>  
+</div>
+<!-- end of the dec30 navigation bar for the documentation -->
+
+
+
+
+<p class="sitedesign">All Pages Copyright&copy;2000,2001,2002 <a href="http://www.dreamriver.com">Dreamriver.com</a>. All rights reserved.</p>
+
+
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+
+</body>
+</html>
+
+
