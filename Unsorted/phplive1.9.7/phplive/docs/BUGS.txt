@@ -1,0 +1,7 @@
+
+Found a Bug?
+****************************************
+
+Just email us a detailed location and what you did to find it.  You can
+email the bug to tech@osicodes.com with the subject "PHP Live! Bug!"
+
