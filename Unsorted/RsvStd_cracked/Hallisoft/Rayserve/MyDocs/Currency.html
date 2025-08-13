@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<TITLE>Currency Selector</TITLE>
+	<LINK REL="stylesheet" HREF="Style/RSV.css" TYPE="text/css">
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	<META NAME="Description" CONTENT="">
+	<META NAME="Keywords" CONTENT="">
+</HEAD>
+<BODY>
+<H3 ALIGN="center">Change Currency Display</H3>
+<DIV ALIGN="center">
+<FORM>
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="3">
+<TR><TD CLASS="popup">By default the currency used in the &quot;Total Cost&quot; box at the top of the main browser window is the same as that used to quote our roo rates. You can change this to display the equivalent amount in any of the currencies below.</TD></TR>
+<TR><TD CLASS="popup" ALIGN="center">&nbsp;<P>Select a currency then press the &quot;Apply&quot; button.</P></TD></TR>
+
+<!-- OPTION VALUES ARE IN THE FORM: CURRENCT SYMBOL*SYMBOL POSITION*CURRENCY FORMAT*EXCHANGE RATE 
+     CHANGE EXCHANGE RATE TO SUIT YOU OWN CURRENCY 
+     IF YOU ADD NEW OPTIONS KEEP THE SAME FORMAT. DELETE OPTIONS IF YOU WISH -->
+
+<TR><TD CLASS="popup" ALIGN="center">
+<SELECT NAME="Currency">
+	<OPTION VALUE="$*B*A*1.00">US Dollars</OPTION>
+	<OPTION VALUE="&pound;*B*A*0.685">UK Pounds</OPTION>
+	<OPTION VALUE="&euro;*B*B*1.096">Euros</OPTION>
+	<OPTION VALUE="DM*A*B*2.12">German Marks</OPTION>
+	<OPTION VALUE="Fr*B*B*7.12">French Francs</OPTION>
+	<OPTION VALUE="G*B*B*2.45">Dutch Guilders</OPTION>
+	<OPTION VALUE="Lire *B*E*1713">Italian Lire</OPTION>
+	<OPTION VALUE="C$*B*A*1.63">Canadian Dollars</OPTION>
+	<OPTION VALUE="A$*B*A*1.71">Australian Dollars</OPTION>
+	<OPTION VALUE="&yen;*B*B*166.00">Japanese Yen</OPTION>
+</SELECT>
+&nbsp;&nbsp;
+<INPUT TYPE="button" NAME="ApplyBtn" VALUE="Apply" onClick="window.opener.setDisplayCurrency(document.forms[0].Currency.options[document.forms[0].Currency.options.selectedIndex].value);">&nbsp;&nbsp;
+<INPUT TYPE="button" NAME="CloseBtn" VALUE="Close" onClick="self.close();">
+</TD>
+</TR><TR>
+<TD ALIGN="center"><SPAN CLASS="popwarn">Please note that the currency used for billing<BR>is the currency in which our prices are quoted.</SPAN></TD></TR>
+</TABLE>
+</FORM>
+</DIV>
+<P></P>
+
+<!-- YOU CAN REMOVE THE LINK TO OUR SITE IF YOU WISH -->
+<DIV CLASS="authinfo"ALIGN="center"><A HREF="http://www.hallisoft.com/RSV/index.html" TARGET="frameFix">Powered by Rayserve</A></DIV>
+
+</BODY>
+</HTML>
+
