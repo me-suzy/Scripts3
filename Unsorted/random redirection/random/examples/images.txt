@@ -1,0 +1,10 @@
+#
+# This file contains URLs, one per line.
+# List a URL multiple times to increase its chances of being used.
+#
+http://kuoi.asui.uidaho.edu/~collinf/programs/random/images/blue.gif
+http://kuoi.asui.uidaho.edu/~collinf/programs/random/images/green.gif
+http://kuoi.asui.uidaho.edu/~collinf/programs/random/images/purple.gif
+http://kuoi.asui.uidaho.edu/~collinf/programs/random/images/red.gif
+http://kuoi.asui.uidaho.edu/~collinf/programs/random/images/teal.gif
+http://kuoi.asui.uidaho.edu/~collinf/programs/random/images/yellow.gif
