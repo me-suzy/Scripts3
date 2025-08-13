@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+
+<title>phpYellow Pages - Connect to a Payment Gateway Processor - How to Make Local Card Processing Work with phpYellow Pages</title>
+
+
+      <link rel="stylesheet" type="text/css" href="../../yellow.css">
+
+	<META NAME="keywords" CONTENT="phpYellow, Pages, php, Yellow, add, edit, delete, listing, login, below">
+	<META NAME="description" CONTENT="How to Make Local card Processing Work with phpYellow Pages...">
+	<META NAME="Author" CONTENT="Richard Creech, Web: http://www.dreamriver.com Email: richardc@dreamriver.com">
+	<META NAME="GENERATOR" CONTENT="Blood, Sweat & Tears">
+
+	</HEAD>
+
+<BODY>
+
+
+
+<h1>How to Make Local card Processing Work<br> with phpYellow Pages</h1>
+
+
+
+<!-- start of links to individual gateway instructions -->
+<div align="center">
+<a href="../../docs/DOCSpaidListings.html">Guide</a> | 
+<a href="../index.html">General</a> | 
+<a href="../authorizenet/index.html">Authorizenet</a> | 
+<a href="../clickbank/index.html">Clickbank</a> | 
+<a href="../paypal/index.html">Paypal</a> | 
+<a href="../worldpay/index.html">Worldpay</a> 
+</div>
+<!-- end of links to individual gateway instructions -->
+
+
+
+<h2>Pretest</h2>
+<p>Before changing anything make sure that your phpYellow Pages is processing paid listings. This is how:
+
+<ol>
+	<li>open util.php</li>
+	<li>set the CONSTANT value for BYPASSCARDPROCESSOR from &quot;no&quot; to &quot;yes&quot;</li>
+	<li>set the CONSTANT value for PAIDLISTINGS from &quot;&quot; to &quot;yes&quot;</li>
+	<li>save util.php to your web server</li>
+	<li>go to phpYellow Pages and add a test listing</li>
+	<li>find any test listing</li>
+	<li>click on the &quot;Go Premium&quot; button</li>
+	<li>complete the checkout page details and click on &quot;Next Step&quot;</li>
+	<li>on the <i>Proceed to Purchase?</i> page click on &quot;Next Step&quot;</li>
+	<li>the result is an upgraded Premium Listing</li>
+</ol>
+DO NOT PROCEED UNTIL THIS PRETEST IS WORKING TO YOUR SATISFACTION.
+</p>
+
+
+
+
+
+<h2>OVERVIEW</h2>
+<p>
+A visitor will make a listing, choose to "Go Premium", enter 
+the checkout page where they may choose Credit Card by Internet;  
+next the visitor proceeds to the buy page and clicks on "Next Step".
+</p>
+<p>
+At this point the processing changes. Instead of passing the 
+transaction to a third party payment gateway provider for real 
+time processing, the transaction is handled locally.
+</p>
+
+<h3>Disadvantages of Local card Processing</h3>
+<p>
+Loss of security due to local handling of credit card details is the 
+primary disadvantage of local processing. Another disadvantage of 
+local card processing is that you lose spontaneous 
+buys - buys that consumers make only because they will get what 
+they paid for right away. You may also want to have someone else 
+take care of the credit card processing. For some products, for 
+example software, there may be a real expectation that the product
+is delivered instantly after payment is made.
+</p>
+
+
+<h3>Advantage of Local card Processing</h3>
+<p>
+Local card processing saves money - you don't pay a third party 
+payment gateway setup fee, monthly fee, discount fee or 
+transaction fee. You may pay a discount fee or transaction fee 
+only - for your merchant account. Also, local processing 
+decreases fraudulent payment by interposing a human - you - in the 
+authorization process. This is not yet done in "real time" 
+payment. Since you control the card payments on your account local 
+processing gives you more control over credit card processing.
+</p>
+
+
+The upside of local processing we have found to be:<br>
+a) saves money<br>
+b) improves fraud detection<br>
+c) gives you more control over card processing<br>
+<br><br>
+The downside is:<br>
+a) potential loss of security<br>
+b) loss of spontaneous consumer buys<br>
+c) you must process your own transactions<br>
+
+<p>
+How can you implement local card processing with phpYellow Pages?
+</p>
+
+<h2>HOW TO IMPLEMENT</h2>
+<h3>General</h3>
+<p>
+Implementing this payment handling feature will NOT process your 
+card transactions. Local card processing means that YOU will 
+process the credit card. You MUST have your own merchant account 
+to do so. phpYellow can obtain the card data from your customers, 
+but YOU need to process the card data.
+</p>
+
+<h3>Detail</h3>
+<pre>
+a) make sure you have premiumEnterCardDetails.php in your 
+   /phpYellow folder.
+
+b) in util.php modify GATEWAYPROCESSOR to be "self", like this:
+
+   define("GATEWAYPROCESSOR", "self");
+
+   in util.php modify POSTTRANSACTIONSURL to be "http://www.yourDomain.com/phpYellow/premiumEnterCardDetails.php" like this:
+
+   define("POSTTRANSACTIONSURL", "http://www.yourDomain.com/phpYellow/premiumEnterCardDetails.php");
+
+   Save and upload util.php to your web server.
+
+c) Create a new database table by:
+   i) go to admin.php
+   ii) click on run EasySQL
+   iii) open  up premiumCreateTablepypccSQL.txt
+   iv) copy and paste all of the text into EasySQL
+   v) click on "Run My Query"
+
+d) use a program like phpMyAdmin from http://www.phpwizard.net 
+   to retreive and manage the data. Free to download.
+
+e) USE A SECURE CONNECTION WHEN ACCESSING YOUR DATA.
+
+   If you have a secure server, this is how to adapt phpYellow Pages to work with it:
+   
+   i) open util.php modify POSTTRANSACTIONSURL to be "https://www.yourDomain.com/phpYellow/premiumEnterCardDetails.php"
+      Doing so will cause the page to load in secure mode, if your server supports it.
+   
+
+f) remove card data after it is confirmed paid.
+</pre>
+
+
+
+<h2>Done!</h2>
+<p>
+This completes the steps to integrate your payment processing with phpYellow Pages. Congratulations, 
+you can start earning revenue using online payment and automatically paid listings.
+</p>
+
+<p><br></p>
+
+
+
+<!-- start of links to individual gateway instructions -->
+<div align="center">
+<a href="../../docs/DOCSpaidListings.html">Guide</a> | 
+<a href="../index.html">General</a> | 
+<a href="../authorizenet/index.html">Authorizenet</a> | 
+<a href="../clickbank/index.html">Clickbank</a> | 
+<a href="../paypal/index.html">Paypal</a> | 
+<a href="../worldpay/index.html">Worldpay</a> 
+</div>
+<!-- end of links to individual gateway instructions -->
+
+
+<p><br></p>
+<p><br></p>
+
+
+</body>
+</html>
