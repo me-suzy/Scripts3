@@ -1,0 +1,38 @@
+body
+{
+	background-color: #D4D0C8;
+    border-width: 1px;
+	border-style: outset;
+	border-top-color: #ffffff;
+	border-left-color: #ffffff;
+	height: 33px;
+    z-index: 0;
+}
+
+#taskbar
+{
+	background-color: #D4D0C8;
+	width: 100%;
+	position: absolute; top: 5px;
+	margin-left: 10px;
+	z-index: 2;
+}
+
+.taskbaritem
+{
+	background-color: #D4D0C8;
+	width: 150px;
+	height: 20px;
+	display: inline;
+	border-width: 2px;
+	border-style: inset;
+	text-align: center;
+	font-family: verdana;
+	font-size: 10px;
+	font-style: bold;
+	margin: 1px;
+	padding: 1px;
+	cursor: pointer;
+	cursor: hand;
+	z-index: 3;
+}
