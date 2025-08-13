@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>Profiler Help - Settings</title>
+<style>
+<!--
+A {text-decoration: underline; color: #000000;}
+A:hover {text-decoration: none; color: #000000;}
+.form {background-color: #ffffff; color: #000000; font-family: Tahoma; border-style: inset; border-color: #336699; border-width: 1pt;}
+.submit {background-color: #336699; color: #ffffff; font-family: Tahoma; font-size: 8pt; border-style: inset; border-color: #000000; border-width: 1pt;}
+-->
+</style>
+</head>
+<body bgcolor=ffffff text=black>
+<table border=0 cellpadding=1 cellspacing=2 width=400>
+  <tr>
+    <td width=400 colspan=2 bgcolor=003366><font face=tahoma size=2 color=white>Settings</font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>PHP Directory</b></font></td>
+    <td width=300><font face=tahoma size=2>The server path to your directory that will contain Profiler.php<br><i>Example: /home/sites/site1/web</i><br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>PHP URL</b></font></td>
+    <td width=300><font face=tahoma size=2>The url to your directory that will contain Profiler.php<br><i>Example: http://www.youdomain.com</i><br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>Clan Tag</b></font></td>
+    <td width=300><font face=tahoma size=2>Your clan tag which will be automatically added to the beginning of all clan members.<br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>Clan Ranks</b></font></td>
+    <td width=300><font face=tahoma size=2>The different ranks that your clan will use. You can have as many or as little as you like.<br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>Clan Factions</b></font></td>
+    <td width=300><font face=tahoma size=2>The different factions that your clan will use. You can have as many or as little as you like.<br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>Custom Stats</b></font></td>
+    <td width=300><font face=tahoma size=2>The different statistics that your clan will use to profile members. You can have as many or as little as you like.<br>The checkbox beside causes the form field to be required when signing up a new member.<br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>Background Color 1 & 2</b></font></td>
+    <td width=300><font face=tahoma size=2>A background color used throughout the script.<br><i>Example: #336699</i><br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>Font Face</b></font></td>
+    <td width=300><font face=tahoma size=2>The font face used throughout the script.<br><i>Example: Tahoma</i><br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>Font Size 1 & 2</b></font></td>
+    <td width=300><font face=tahoma size=2>The font size used throughout the script.<br><i>Example: 2</i><br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>Font Color</b></font></td>
+    <td width=300><font face=tahoma size=2>The font color used throughout the script.<br><i>Example: 000000</i><br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>Code of Conduct</b></font></td>
+    <td width=300><font face=tahoma size=2>Your clan rules / regulations / requirements.<br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>Use Image</b></font></td>
+    <td width=300><font face=tahoma size=2>Yes or No. Determines whether or not your clan will use a member portrait / image.<br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>Image Directory Name</b></font></td>
+    <td width=300><font face=tahoma size=2>The directory that will contain member portraits / images. This directory is in your PHP directory<br><i>Example: images</i><br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>Image Height</b></font></td>
+    <td width=300><font face=tahoma size=2>The height of your clan portraits / images<br><i>Example: 50</i><br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>Image Width</b></font></td>
+    <td width=300><font face=tahoma size=2>The width of your clan portraits / images<br><i>Example: 50</i><br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>News Date Format</b></font></td>
+    <td width=300><font face=tahoma size=2>The news date format. This field uses the PHP defined date() function. For more information consult the <a href='http://www.php.net/manual/en/function.date.php' target=_new>PHP documents</a>.<br><i>Example: l F d, Y</i><br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>News Display Amount</b></font></td>
+    <td width=300><font face=tahoma size=2>The number of news posts displayed as new posts. All other posts are archived<br><i>Example: 8</i><br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>News Format</b></font></td>
+    <td width=300><font face=tahoma size=2>The format you wish to use for each news post. Custom HTML tags are:<br>
+    &lt;id&gt; - The post ID number<br>
+    &lt;subject&gt; - The subject of the news post<br>
+    &lt;date&gt; - The date of the news post<br>
+    &lt;email&gt; - The email address of the author<br>
+    &lt;author&gt; - The author of the news post<br>
+    &lt;news&gt; - The posted news or article<br>
+    &lt;comments&gt; - The comment count on the news post<br>
+    <br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>News Headlines Format</b></font></td>
+    <td width=300><font face=tahoma size=2>The format you wish to use for each news headline. Custom HTML tags are:<br>
+    &lt;id&gt; - The post ID number<br>
+    &lt;subject&gt; - The subject of the news post<br>
+    &lt;date&gt; - The date of the news post<br>
+    &lt;email&gt; - The email address of the author<br>
+    &lt;author&gt; - The author of the news post<br>
+    &lt;news&gt; - The posted news or article<br>
+    <br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>News Comment Format</b></font></td>
+    <td width=300><font face=tahoma size=2>The format you wish to use for each comment. Custom HTML tags are:<br>
+    &lt;name&gt; - The name of the comment author<br>
+    &lt;email&gt; - The email of the comment author<br>
+    &lt;date&gt; - The date the comment was posted<br>
+    &lt;comment&gt; - The comment<br>
+    <br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>Ranks Navigation Pannel</b></font></td>
+    <td width=300><font face=tahoma size=2>Yes or No. Displays the navigation pannel on the 'view ranks' page<br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>Ranks Format</b></font></td>
+    <td width=300><font face=tahoma size=2>The format you wish to use for the ranks page. Custom HTML tags are:<br>
+    &lt;id&gt; - The ID of the member<br>
+    &lt;alias&gt; - The alias of the member<br>
+    &lt;email&gt; - The email address of the member<br>
+    &lt;rank&gt; - The rank of the member<br>
+    &lt;faction&gt; - The faction of the member<br>
+    As well as any of your custom statistics. If 'First Name' is a statistic you use then the HTML tag would be &lt;First Name&gt;
+    <br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>Profiles Format</b></font></td>
+    <td width=300><font face=tahoma size=2>The format you wish to use for the profiles page. Custom HTML tags are:<br>
+    &lt;id&gt; - The ID of the member<br>
+    &lt;alias&gt; - The alias of the member<br>
+    &lt;email&gt; - The email address of the member<br>
+    &lt;rank&gt; - The rank of the member<br>
+    &lt;faction&gt; - The faction of the member<br>
+    As well as any of your custom statistics. If 'First Name' is a statistic you use then the HTML tag would be &lt;First Name&gt;
+    <br><br></font></td>
+  </tr>
+  <tr>
+    <td width=100 valign=top><font face=tahoma size=2><b>Main Page Format</b></font></td>
+    <td width=300><font face=tahoma size=2>The format you wish to use for the main page. Custom HTML tags are:<br>
+    &lt;viewnews&gt; - Displays current news posts<br>
+    <br><br></font></td>
+  </tr>
+</table>
+</body>
+</html>
+    
