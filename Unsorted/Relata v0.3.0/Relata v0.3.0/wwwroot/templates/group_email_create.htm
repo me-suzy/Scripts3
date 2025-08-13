@@ -1,0 +1,148 @@
+ <!--DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+ "http://www.w3.org/TR/html4/strict.dtd"-->
+<html>
+<head>
+<title>
+</title>
+<script type="text/javascript" src="{WWW_DIR}lib/formcheck.js"></script>
+
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="{WWW_DIR}templates/global.css">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="{WWW_DIR}templates/group-email.css">
+
+<meta http-equiv="Expires" content="Fri, Jun 12 1981 08:20:00 GMT">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+</head>
+<body class="colored">
+
+<div class="groupemail">
+<center>
+<table width="400">
+ <tr>   
+ 	<td colspan="3">
+ 	 <br>
+	 <form method="post" action="{FORM_URL}" name="group_email_create_form" onSubmit="return check_group_email_create();">	
+	 <input type="hidden" name="user_id" value={USER_ID}>	 
+	 <div align="center">
+	 <table border="0" cellspacing="0" cellpadding="0">	   
+	  <tr>
+	 	 <td>
+		  &nbsp;
+		 </td>
+	     <td>
+          <span class="field-titles">*Message Title/Description</span><br>
+  	      <textarea name="msg_description" rows="3" cols="60 wrap="hard">{MSG_DESCRIPTION}</textarea>
+	     </td>
+		 <td>
+		  &nbsp;
+		 </td>
+      </tr>
+      <tr>
+ 	  	<td colspan="3">
+	     &nbsp;
+	  	</td>
+      </tr>
+      <tr>
+	  	<td>
+	     &nbsp;
+	   	</td> 
+	    <td> 
+	     <span class="field-titles">From - <em>*email&nbsp;</em></span><br>
+	     <input type="text" size="25" name="from_email" value="{FROM_EMAIL}"><br>
+	     <span class="field-titles">From - <em>*user friendly name&nbsp;</em></span><br>
+	     <input type="text" size="25" name="from_name" value="{FROM_NAME}"><br>
+	    </td>
+	    <td>
+	     &nbsp;
+	    </td>		
+      </tr> 
+	  <tr>
+	  	<td colspan="3">
+		 &nbsp;
+		</td>
+	  </tr>
+      <tr>
+	  	<td>
+		 &nbsp;
+		</td>
+		<td>
+		 <span class="field-titles">*Subject</span><br>
+		 <input type="text" name="msg_subject" size="50" value="{MSG_SUBJECT}">
+        </td>
+		<td>
+		 &nbsp;
+		</td>
+	 </tr>
+	 <tr>
+	 	<td colspan="3">
+		 &nbsp;
+		</td>
+	 </tr>
+	 <tr>
+	 	<td>
+		 &nbsp;
+		</td>
+		<td>
+		 <span class="field-titles">Destination Site</span><br>
+		 <input type="text" name="destination_site" size="50" value="{DESTINATION_SITE}">
+		</td>
+		<td>
+		 &nbsp;
+	  	</td>
+      </tr>
+      <tr>
+ 	    <td>
+		 &nbsp;
+		</td>
+		<td>
+		 <br>
+		 <input type="checkbox" name="append_var" value="{CONTACT_ID}"><span class="field-titles">Append Contact ID to Destination URL</span>
+		</td>
+		<td>
+		 &nbsp;
+		</td>
+	  </tr>
+	  <tr>
+	  	<td colspan="3">
+	 	 &nbsp;
+		</td>
+	  </tr>
+	  <tr>
+	  	<td>
+		 &nbsp;
+		</td>
+		<td>
+		 <span class="field-titles">*Message</span><br>
+		 <textarea name="msg_body" rows="25" cols="60" wrap="hard" >{MSG_BODY}</textarea>
+		</td>
+		<td>
+		 &nbsp;
+		</td>
+	  </tr>
+	  <tr>
+	  	<td>
+		 &nbsp;
+		</td>
+		<td align="center">
+		 <br>
+		 <input type="submit" value="    Preview    " name="choice" class="form" style="background: #D4D0C8;">
+		 <input type="submit" value="Send Test Email" name="choice" class="form" style="background: #D4D0C8;">
+		 <input type="submit" value="     Blast     " name="choice" class="form" style="background: #D4D0C8;" onclick"document.group_email_create_form.action={BLAST};">
+		 <br>
+		 <input type="reset"  value="     Reset     " name="choice" class="form" style="background: #D4D0C8;">
+		 <input type="button" value="    Cancel     " name="choice" class="form" style="background: #D4D0C8;" onclick="location.href='{CANCEL}';">
+		</td>
+		<td>
+		 &nbsp;
+		</td>
+	  </tr>
+	 </table>
+	 </form>
+	</td>
+ </tr>
+</table>
+</center>
+</div>
+</body>
+</html>
