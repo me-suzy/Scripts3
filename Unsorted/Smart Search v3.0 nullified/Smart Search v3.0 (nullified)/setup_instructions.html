@@ -1,0 +1,295 @@
+<!-- 
+#===========================================================#
+#   Program Name    	: Smart Search
+#   Program Version 	: 3.0
+#   Program Author  	: http://www.smartCGIs.com
+#   Home Page       	: http://www.smartCGIs.com
+#   Retail Price    	: $89.00 United States Dollars
+#	Our Price			: $000.00 United States Dollars
+#   Nullified By    	: RaiHaN
+#===========================================================#
+ -->
+<html>
+
+<head>
+<title>Smart Search Setup</title>
+</head>
+
+<body>
+
+<p align="center"><u><strong>Smart Search (v3.0) Setup Instructions</strong></u></p>
+
+<p align="center"><a href="#upgrade"><small>Go to bottom if you are upgrading</small></a></p>
+
+<p><strong>Setup:</strong> 
+
+<ol>
+  <li>Set the path to perl at the top of each CGI file (except vars.cgi)<br>
+    e.g. #!/usr/bin/perl</li>
+  <li>Open <strong>vars.cgi</strong> and follow the instructions inside to customize the
+    script.</li>
+  <li>Edit <strong>welcome.txt</strong> with the message you want new members to receive by
+    e-mail.</li>
+  <li>Edit all HTML files with header and footer info. <strong>News.html</strong> will contain
+    the HTML displayed to members on the main account page (<strong>accounts.cgi</strong>).
+    The text (.txt) files contain text displayed in e-mail messages.</li>
+  <li>Create a directory in your cgi-bin (such as &quot;smartsearch&quot;).</li>
+  <li>Upload all files in ASCii mode. Put all HTML and TXT files (except <strong>directories.txt</strong>)
+    in a subdirectory called &quot;html&quot; (&quot;smartsearch/html&quot;).</li>
+  <li>Put <strong>directories.txt</strong>, <strong>confirm.data</strong>, <strong>ccpay.data</strong>, <b>ccpay_2checkout.temp</b>, <b>paypal.data</b> and <strong>submissions.data</strong> in the same directory as the CGIs. Change the
+    permissions of these files to CHMOD 777.</li>
+  <li>Create a subdirectory called &quot;accounts&quot; (&quot;smartsearch/accounts&quot;),
+    one called &quot;keywords&quot; (&quot;smartsearch/keywords&quot;), &quot;data&quot; (&quot;smartsearch/data&quot;), and another called &quot;cached&quot; (&quot;smartsearch/cached&quot;). Depending on your server, you might
+    need to change the permissions of these 4 directories to CHMOD 777.</li>
+  <li>Change the file permissions of all CGI files to CHMOD 755.</li>
+  <li>You are done! Test it out now...</li>
+</ol>
+
+<p>
+<center>
+<table width=500>
+<tr><td>
+<b><a href="http://www.searchfeed.com/rd/SmartCGIs.jsp" target="_blank">Searchfeed</a> and Smart CGIs promotion!</b> Did you know that we worked out a deal with <a href="http://www.searchfeed.com/rd/SmartCGIs.jsp" target="_blank">Searchfeed</a> to pay YOU an extra 20% commission over their regular payout rate? If you don't know what <a href="http://www.searchfeed.com/rd/SmartCGIs.jsp" target="_blank">Searchfeed</a> is: it's a search engine which pays YOU every time you refer a visitor who clicks on the search results. Smart Search can display their listings on YOUR search results pages, making it easier to generate clicks. Just signup by <a href="http://www.searchfeed.com/rd/SmartCGIs.jsp" target="_blank">clicking here</a> and you will make 133% more money than their other affiliates!
+</td></tr>
+</table>
+</center>
+
+
+<p><strong>How to use:</strong> 
+
+<ul>
+  <li>Unless you create your own HTML forms: send people to signup.cgi to create an account,
+    to accounts.cgi to add listings (and more), and smartsearch.cgi to perform searches.</li>
+  <li>Run admin.cgi to approve submissions, add money to user accounts, and more.</li>
+  <li>If you want to accept credit card deposits with <a
+    href="http://zzz.clickbank.net/r/?smartcgis" target="_blank">ClickBank</a>: Signup and
+    then provide the necessary info in <strong>vars.cgi</strong> for it to work. Don't forget
+    to upload <strong>ccpay.cgi</strong> and to change your &quot;thank you&quot; page URL at <a
+    href="http://zzz.clickbank.net/r/?smartcgis" target="_blank">ClickBank</a> to the URL of <strong>ccpay.cgi</strong>.
+    Test it out with zero dollars (and Clickbank will let you provide fake credit card info)
+    and a test account to make sure it works.</li>
+<li>If you want to accept credit card deposits with <a href="http://www.2checkout.com/cgi-bin/aff.2c?sid=13221" target="_blank">2checkout</a>: Signup, specify your 2checkout ID number in vars.cgi, and change your "return URL" to the URL of <b>ccpay_2checkout.cgi</b> on your site. You will find the "return URL" form by logging in at 2checkout.com, click on "Shopping Cart" at the top, then on "Cart Details", provide the URL and press "Save changes".</li>
+
+  <li>If you are using the <a href="http://zzz.clickbank.net/r/?smartcgis"
+    target="_blank">ClickBank</a> or <a href="http://www.2checkout.com/cgi-bin/aff.2c?sid=13221" target="_blank">2checkout</a> feature: <strong>payment.html</strong> contains the html
+    members see when they want to deposit money into their account. The tag [cc_form]
+    will be replaced with the form to make a deposit. <strong>payment_complete.html</strong> contains the HTML members see after depositing money. The
+    tag [amount] will be replaced with the dollar amount they deposited, the tag
+    [order_number] will be replaced by the person's unique order number, and the tag
+    [username] is again replaced by their username.</li>
+<li>If you are also using <a href="https://www.paypal.com/affil/pal=webmaster%40smartcgis.com"
+    target="_blank">PayPal</a> for deposits, the [paypal_form] tag in <strong>payment_complete.html</strong> will be replaced by the form to make a deposit using Paypal.</li>
+
+  <li>If you use the affiliate program feature, <strong>affiliates.html</strong> contains all
+    the info your members need about it, including the HTML to put on their sites. In that
+    HTML file, The tag [username] will be replaced with their username (which is required in
+    the search form they put on their site). The HTML for an example form is in that file,
+    just make sure the URL points to your <strong>smartsearch.cgi</strong> file on your site.</li>
+</ul>
+
+<ul>
+  <li>If you want to include bidded listings on your site somewhere, use the following SSI
+    tag:</li>
+</ul>
+
+<blockquote>
+  <p>&lt;!--#include virtual=&quot;/path/to/cgi/include.cgi?keywords=<font color="#FF0000">your_keyword</font>&amp;show=<font
+  color="#FF0000">show_number</font>&quot; --&gt;</p>
+  <p>Replace <font color="#FF0000">your_keyword</font> with the keyword you want to show
+  listings for. Replace <font color="#FF0000">show_number</font><font color="#000000"> with
+  the number of listings you want to display (default is 5).</font></p>
+  <p><font color="#000000">That will only display the title (with link), if you want to also
+  display the description, URL, or cost of bid, you can add the following:</font></p>
+  <p>&lt;!--#include virtual=&quot;/path/to/cgi/include.cgi?keywords=your_keyword&amp;<font
+  color="#FF0000">desc=1</font>&amp;<font color="#FF0000">url=1</font>&amp;<font
+  color="#FF0000">cost=1</font>&quot; --&gt;</p>
+  <p>If you want to use a Javascript tag instead of SSI, just add &quot;&amp;java=1&quot; to
+  the end and put it in a tag like the following:</p>
+  <p>&lt;script src=&quot;http://www.mysite.com/include.cgi?keywords<font color="#000000">=your_keyword</font><font
+  color="#FF0000">&amp;java=1</font>&quot;&gt;&lt;/script&gt;</p>
+</blockquote>
+
+<ul>
+  <li>If you want to display the top keywords searched for this month, put the following tag.
+    Replace <font color="#FF0000">pop_number</font> with the number of keywords you want to
+    display.</li>
+</ul>
+
+
+<blockquote>
+  <p>SSI: &lt;!--#include virtual=&quot;/path/to/cgi/include.cgi?pop=<font color="#FF0000">pop_number</font>&quot;
+  --&gt;</p>
+  <p>Java: &lt;script src=&quot;http://www.mysite.com/include.cgi?pop=<font color="#FF0000">pop_number</font><font
+  color="#000000">&amp;java=1</font>&quot;&gt;&lt;/script&gt;</p>
+</blockquote>
+
+<ul>
+  <li>All information displayed with the <b>include.cgi</b> file can be used by your affiliates too (and they will get credit). For example:</li>
+</ul>
+
+<blockquote>
+  <p>SSI: &lt;!--#include virtual=&quot;/path/to/cgi/include.cgi?keywords=your_keyword&username=<font color="#FF0000">my_username</font>&quot;
+  --&gt;</p>
+  <p>Java: &lt;script src=&quot;http://www.mysite.com/include.cgi?keywords=your_keyword&username=<font color="#FF0000">my_username</font><font
+  color="#000000">&amp;java=1</font>&quot;&gt;&lt;/script&gt;</p>
+</blockquote>
+
+<ul>
+  <li>You can provide affiliates with a database style print out of your search results if you want. This can be used by programmers who want to include your search results in their search engine script. The search listings will be printed out one per line, in tab delimited format (data is seperated by tab spaces). Just tell them to use the following URL:<p>
+  http://www.yourdomain.com/cgi-bin/include.cgi?keywords=<i>your_keywords</i>&username=<i>my_username</i>&db=1
+  </li>
+</ul>
+
+
+
+<ul>
+  <li>If you want your keywords to be in organized in categories, put something like the
+    following inside the <strong>directories.txt</strong> file:</li>
+</ul>
+
+<blockquote>
+  <p><small><font color="#008000">tech/hardware/computers/computer accessories/monitors<br>
+  tech/hardware/computers/computer accessories/printers<br>
+  tech/hardware/computers/computer accessories/scanners<br>
+  tech/hardware/computers/ibm<br>
+  tech/hardware/computers/compaq<br>
+  tech/hardware/computers/mac<br>
+  tech/hardware/laptops<br>
+  tech/hardware/keyboards<br>
+  tech/software</font><font color="#808080"><br>
+  </font></small></p>
+</blockquote>
+
+<blockquote>
+  <p>Now I'll explain... You can put as many directories as you want (although a plain text
+  Perl file can't hold more than 5000 lines). You don't have to list the main directories,
+  just the deepest sub-directory. In the example above I don't need to put:</p>
+  <p><font color="#FF0000"><small>tech<br>
+  tech/hardware<br>
+  tech/hardware/computers<br>
+  tech/hardware/computers/computer accessories<br>
+  tech/hardware/computers/computer accessories/monitors</small></font></p>
+  <p>I only need to put:</p>
+  <p><font color="#008000"><small>tech/hardware/computers/computer accessories/monitors</small></font></p>
+  <p>The CGI can figure out by itself the directories above that one. Also, DO NOT repeat
+  any directories in another group, the CGI will just match the keyword to the first one it
+  finds. For example, if you have:</p>
+  <p><font color="#FF0000"><small>software/downloads<br>
+  music/news<br>
+  music/mp3/downloads</small></font></p>
+  <p>The &quot;downloads&quot; is repeated, that's not good. What you should put is
+  something like this:</p>
+  <p><font color="#008000"><small>software/software downloads<br>
+  music/news<br>
+  music/mp3/mp3 downloads</small></font></p>
+  <p>You wouldn't get an error message if you didn't do this, but the CGI would simply take
+  the first directory it finds. In the above example (the red one), if someone searched for
+  &quot;downloads&quot;, the CGI would tell them they are in the
+  &quot;software/downloads&quot; category.</p>
+  <p>If this was too confusing, you will figure it out as you test the directories out :)</p>
+</blockquote>
+
+<ul>
+  <li>If you want to let your visitors pick which external search site's results should be
+    used, you can give them a form like this:</li>
+</ul>
+
+<blockquote>
+  <form method="POST" action="smartsearch.cgi">
+    <div align="left"><p><input type="text" name="keywords" size="10"><select name="crawlsite"
+    size="1">
+      <option selected value="1">Dmoz.org</option>
+      <option value="2">MSN.com</option>
+      <option value="3">SearchFeed.com</option>
+      <option value="4">AltaVista.com</option>
+      <option value="0">None</option>
+    </select><input type="submit" value="Search" name="submit"></p>
+    </div>
+  </form>
+</blockquote>
+
+<blockquote>
+  <p>The HTML for this is:</p>
+  <p><font color="#808080"><small><small>&lt;form method=&quot;POST&quot;
+  action=&quot;smartsearch.cgi&quot;&gt;<br>
+  &lt;div align=&quot;left&quot;&gt;&lt;p&gt;&lt;input type=&quot;text&quot;
+  name=&quot;keywords&quot; size=&quot;10&quot;&gt;&lt;select name=&quot;crawlsite&quot;<br>
+  size=&quot;1&quot;&gt;<br>
+  &lt;option selected value=&quot;1&quot;&gt;Dmoz.org&lt;/option&gt;<br>
+  &lt;option value=&quot;2&quot;&gt;MSN.com&lt;/option&gt;<br>
+  &lt;option value=&quot;3&quot;&gt;SearchFeed.com&lt;/option&gt;<br>
+  &lt;option value=&quot;4&quot;&gt;AltaVista.com&lt;/option&gt;<br>
+  &lt;option value=&quot;0&quot;&gt;None&lt;/option&gt;<br>
+  &lt;/select&gt;&lt;input type=&quot;submit&quot; value=&quot;Search&quot;
+  name=&quot;submit&quot;&gt;&lt;/p&gt;<br>
+  &lt;/div&gt;<br>
+  &lt;/form&gt;</small></small></font></p>
+  <p>This is done by passing on the variable &quot;crawlsite&quot; with the appropriate
+  number. 1 is Dmoz.org, 2 is MSN, etc. and 0 (zero) is none (no external search
+  results). If you don't use this type of form, the default one will be used (as set in
+  vars.cgi).</p>
+</blockquote>
+
+<ul>
+  <li>If you want to allow people to upload Microsoft Excel Spreadsheets to submit search listings, you will need to install the <b>Spreadsheet::ParseExcel</b> perl module on your server. Ask your web host to install it if you don't know how. Important note: this module requires the <b>OLE::Storage_Lite</b> module to work. And THAT module requires the following modules: <b>IO::Handle</b> (included in IO), <b>IO::File</b> (included in IO), and <b>IO::Scalar</b>. I know that's a lot of modules, and I hesitated adding the Excel feature to Smart Search because of all the modules required, but I figured you might still want this great feature. So it's up to you if you can and want to install the required modules. You can find perl modules <a href="http://search.cpan.org" target="_blank">here</a>, and module installation instructions <a href="http://www.rcbowen.com/imho/perl/modules.html" target="_blank">here</a>. Good luck!</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p><small>Note: Generally this CGI and it's data files should not use up too much space on
+your server, except for the click logs which might add up if you have a heavily used site.
+For most people 5 MB would be more than enough for this CGI.</small></p>
+
+<p>&nbsp;</p>
+<a name="upgrade"></a>
+<table border="1" width="100%" cellspacing="0" bordercolor="#000000">
+  <tr>
+    <td width="100%" bgcolor="#000000"><a name="upgrade"></a><strong><font color="#FFFFFF"><strong>Upgrade
+    Instructions</strong></font></strong></td>
+  </tr>
+  <tr>
+    <td width="100%"><ul>
+      <li>Replace all CGI files.</li>
+<li>Upload the new <b>ccpay_2checkout.cgi</b>, <b>paypal.cgi</b>, and <b>excel.cgi</b> CGI files as well, change their permissions to CHMOD 755.</li>
+<li>Upload the new <b>ccpay_2checkout.temp</b> and <b>paypal.data</b> files as well (in the same directory as the CGI files). Set the permissions of these 2 files to CHMOD 777.</li>
+<li>Create a sub-directory called "data" and change its permissions to CHMOD 777. Nothing needs to be uploaded into it.</li>
+<li>The <b>payment.html</b> template file has a new tag: [paypal_form] will be replaced by the form to deposit funds using Paypal. So you might want to add that tag to it.</li>
+<li>Results grabbed from Google.com are no longer available (various reasons), instead MSN.com was added.</li>
+<li>"Approve All Submissions" button in admin has been removed due to problems with large amounts of submissions. You can approve/deny maximum 100 submissions at once now.</li>
+    </ul>
+    </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p>If you experience any problems with the results pulled from any of the other search
+engines (LWP module feature), e-mail <a href="mailto:webmaster@smartcgis.com">webmaster@smartcgis.com</a></p>
+
+<p>&nbsp;</p>
+
+<p><u><strong>Special Notice to Resellers:</strong></u></p>
+<p>
+				
+	You can use this script on any site of yours, but if you sell one   
+	of these sites, you are required to FIRST purchase a new copy for 	
+	the new owner. If you don't, it's considered copyright infringement 
+	and we will prosecute any offenders. WE MONITOR EBAY.COM AUCTIONS,	
+	SO BEWARE. If you want to work out any	reseller deals with us,		
+  contact webmaster@smartcgis.com		
+</p>
+
+<p>&nbsp;</p>
+
+<p><u><strong>Support:</strong></u></p>
+
+<p>Technical support is not provided, but if you have small problems, send<br>
+questions to <a href="mailto:webmaster@smartcgis.com">webmaster@smartcgis.com</a><br>
+<br>
+<br>
+<br>
+Check out <a href="http://www.smartcgis.com">http://www.smartcgis.com</a> for updates to
+the CGI.<br>
+Send suggestions for future versions to <a href="mailto:webmaster@smartcgis.com">webmaster@smartcgis.com</a></p>
+</body>
+</html>
