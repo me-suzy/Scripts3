@@ -1,0 +1,209 @@
+
+
+H1  {
+	font-size : large;
+	font-weight : bold;
+	text-transform : uppercase;
+	color : White;
+	background-color : transparent;
+	margin-left : auto;
+	font : italic;
+	font-family : cursive;
+}
+
+H2  {
+	font-size : small;
+	font-weight : bold;
+	text-align : left;
+	color : #FFCC00;
+	background-color : transparent;
+	font-style : oblique;
+}
+
+H3  {
+	font-size : medium;
+	font-family : sans-serif;
+	font-weight : bold;
+	font-style : italic;
+	color : #336600;
+	text-transform : none;
+	margin-left : 15px;
+}
+
+
+H4 {
+	background-color : transparent;
+	color : Black;
+	font-weight : bold;
+	font : normal normal bold 14px sans-serif;
+	margin-left : 15px;
+}
+
+P {
+	margin-left : 15px;
+}
+
+
+
+
+A  {
+
+
+}
+
+
+A:LINK {
+	background-color : transparent;
+	color : #7B68EE;
+}
+
+
+
+
+A:Visited  {
+
+	color : #7B68EE;
+
+	background-color : transparent;
+
+}
+
+
+A:Active  {
+
+	color : #FFFFF0;
+
+	background-color : Red;
+
+}
+
+
+
+A:Hover  {
+	color : #FFCC00;
+	background-color : #006600;
+}
+
+
+
+.myerrorlook {
+	color : #CC3333;
+	font-weight : bold;
+}
+
+
+
+BODY  {
+	font-size : small;
+	font-family : sans-serif;
+	color : Black;
+	font : "MS Sans Serif", Geneva, sans-serif;
+	text-align : left;
+	margin-top : 0px;
+	margin-left : 35px;
+	background-color : navy;
+	scrollbar-face-color: #333399;
+	scrollbar-highlight-color: gold;
+	scrollbar-3dlight-color: ivory;
+	scrollbar-darkshadow-color: gray;
+	scrollbar-shadow-color: silver;
+	scrollbar-arrow-color: #FFCC00;
+	scrollbar-track-color: lightblue;
+}
+
+
+
+
+
+
+
+.copyright  {
+	font-size : xx-small;
+	font-family : sans-serif;
+	color : #2F4F4F;
+	text-align : left;
+	text-indent : 0px;
+	margin : 5px;
+}
+
+
+
+
+
+
+.input {
+	background-color : White;
+	color : Black;
+	font-weight : bolder;
+}
+
+
+
+table  {
+
+	text-align : left;
+
+}
+
+
+th  {
+	font-size : small;
+	font-family : sans-serif;
+	font-weight : bold;
+	color : #FFFFF0;
+	background-color : Navy;
+	text-align : left;
+	font-variant : small-caps;
+}
+
+
+
+td  {
+	padding : 3px;
+	font : x-small;
+}
+
+
+
+
+.accessdenied  {
+
+
+
+	font-size : 170px;
+
+
+
+	font-family : sans-serif;
+
+
+
+	font-weight : bold;
+
+
+
+	color : Red;
+
+
+
+}
+
+
+.tableRowOne {
+	background-color : White;
+}
+
+.tableRowTwo {
+	background-color : #DCDCDC;
+}
+
+
+.submit {
+	color : Black;
+	background-color : #FFCC00;
+	font-weight : bold;
+}
+
+
+
+
