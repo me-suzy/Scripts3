@@ -1,0 +1,36 @@
+body {background: #FFFFFF;}
+
+#topdivision {position:absolute; top: 0; left: 0;}
+#leftdivision {position:absolute; top: 131; left: 0;}
+#maindivision {position:absolute; top: 80; left: 140;}
+#logbar {position:absolute; top: 65; left: 200;}
+
+.main {font-family:verdana,helvetica; font-size:11px;}
+.main_bold {font-family:verdana,helvetica; font-size:11px; font-weight: bold;}
+.summary_message {font-family:verdana,helvetica; color: #FF0000; font-size:11px; font-weight: bold;}
+.maincolor {background: #808080;}
+.formfield {background: #0099ff; font-family:verdana,helvetica; font-size:11px; font-weight: bold; border: 1 solid;}
+
+a.link:link {font-family:verdana,helvetica; font-size:11px; color: #808080; text-decoration: none;}
+a.link:active {font-family:verdana,helvetica; font-size:11px; color: #808080; text-decoration: none;}
+a.link:visited {font-family:verdana,helvetica; font-size:11px; color: #808080; text-decoration: none;}
+a.link:hover {font-family:verdana,helvetica; font-size:11px; color: #0099ff; text-decoration: none;}
+
+a.copyrightlink:link {font-family:verdana,helvetica; font-size:11px; color: #808080; text-decoration: none;}
+a.copyrightlink:active {font-family:verdana,helvetica; font-size:11px; color: #808080; text-decoration: none;}
+a.copyrightlink:visited {font-family:verdana,helvetica; font-size:11px; color: #808080; text-decoration: none;}
+a.copyrightlink:hover {font-family:verdana,helvetica; font-size:11px; color: #000000; text-decoration: none;}
+
+BODY {SCROLLBAR-FACE-COLOR: #3366ff; SCROLLBAR-HIGHLIGHT-COLOR: #3366ff; SCROLLBAR-SHADOW-COLOR: #3366ff;
+SCROLLBAR-3DLIGHT-COLOR: #3366ff; SCROLLBAR-ARROW-COLOR:  #0099ff; SCROLLBAR-TRACK-COLOR: #0099ff;
+SCROLLBAR-DARKSHADOW-COLOR: #3366ff;}
+
+
+
+
+
+
+
+
+
+
