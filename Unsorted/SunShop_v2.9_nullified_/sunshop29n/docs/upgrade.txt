@@ -1,0 +1,72 @@
+Thank you for purchasing SunShop.
+Update Version 2.9 - Released 10-24-02
+Copyright 2001-2002 Turnkey Web Tools.
+
+To upgrade the from version 2.7 or 2.8 to 2.9 simply replace the files on your 
+server with the files in this full version package. *IMPORTANT* Leave your 
+config.php on your server intact as that information will not change. If 
+you made alterations to any of the older files you may want to back them 
+up to you local hard drive before doing so.
+
+If you need to upgrade from version 2.6 or later, download that package first 
+and only upload and run the upgrade.php script from that version. After you 
+have done that follow the steps above.
+
+*PLEASE NOTE* - If you or we made any modifications to your script for 
+implementing your merchant account or for any other reason, please
+talk to us before upgrading. 
+
+*Release Notes*
+Below you will find a list of changes implemented in version 2.9. 
+
+1. Added ability to add additional admin accounts with limited or full access
+priveleges.
+
+2. Out of stock items are now shown when you login. If there are any out of 
+stock items you will also see alink to view only those items in the "Products" 
+menu.
+
+3. Mass mail issue has been fixed. No more emailing of admin account details.
+
+4. Added prices and a total to the package list.
+
+5. When viewing orders the newest ones are now shown. Also, pending orders are 
+highlighted.
+
+6. More flaxabilty when viewing order, you can show by date range and order by all
+columns by clicking on those columns.
+
+7. Added a completely editable template system... we hope everyone enjoys this
+one.
+
+8. No problems having options that include - in them. Options are now parsed with -> 
+making it easier to add variation to your options list.
+
+9. Added a comletly new options system... you can now add uplimited options with as
+many payment addon options as you want.
+
+10.Fixed the USPS system... now working 100%. Dont forhet you need an account for 
+this one.
+
+11. Added custom fields to get information on a per item basis from your clients.
+Example: Sellig Trophies? Now you can collect information on what they want 
+engraved on it.
+
+12. Fixed issue with checkout not showing the modified price when options requiring 
+additional cost are added.
+
+13. Solved issue with not be able to login to view status of orders when accounts are 
+turned off.
+
+14. If discount coupons are not used, discounts amount of 0.00 is no longer shown on 
+the confirmation page.
+
+15. Bug in login error page fixed. Contact email is displayed corectly.
+
+16. Added a rollover option to view options easier when viewing cart or selecting 
+shipping method. Putting mouse over the truncated options list shows thema all.
+
+17. Added a "zoom" feature to view full size of the images when viewing an item.
+
+18. We know we did more but we cant remember everything! Enjoy!
+ 
