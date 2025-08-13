@@ -1,0 +1,174 @@
+<html>
+<head>
+<title>Top Story - Basic  v 1.0 - Documentation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">################################################################################ 
+  <br>
+  # TOPSTORY BASIC Version 1.0 , Released: 02-08-2003 <br>
+  # Copyright (C) 2001 MERT YALDIZ - mertyaldiz@superonline.com <br>
+  #<br>
+  # This program is free software; you can redistribute it and/or <br>
+  # modify it under the terms of the GNU General Public License <br>
+  # as published by the Free Software Foundation; either version 2 <br>
+  # of the License, or (at your option) any later version. <br>
+  #<br>
+  # This program is distributed in the hope that it will be useful, <br>
+  # but WITHOUT ANY WARRANTY; without even the implied warranty of <br>
+  # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the <br>
+  # GNU General Public License for details. <br>
+  #<br>
+  # You should have received a copy of the GNU General Public License <br>
+  # along with this program; if not, write to the Free Software <br>
+  # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA. 
+  <br>
+  # <br>
+  ############################################################################## 
+  </font><font color="#666666"><br>
+  <br>
+  <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">TOPSTORY 
+  BASIC Version 1.0</font><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><br>
+  Top Story Basic is a news publishing script. You can post news any time any 
+  where to your website by using the password protected administration section.<br>
+  TopStory Basic uses MySQL database to store the data</font></font> </p>
+<p><font color="#FF0000" face="Verdana, Arial, Helvetica, sans-serif" size="2"><b>COPYRIGHT 
+  <br>
+  ------------</b></font><br>
+  <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#666666">This 
+  script is distributed with GPL licence. Please read <a href="gpl.html" target="_blank">GPL 
+  Licence text</a> for more information.<br>
+  Please do not exclude my name and the links to my site in order to support myphpscripts.com 
+  serving for free.</font></p>
+<p><br>
+  <font size="2"><b><font color="#FF0000" face="Verdana, Arial, Helvetica, sans-serif">SETUP<br>
+  ------</font></b></font><br>
+  <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#666666">1) 
+  Create a folder named 'topstory',<br>
+  </font></p>
+<p><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#666666"> 
+  2) Modify the lines below in the 'config.php' file 'inc' folder;</font></p>
+<p><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#666666"> 
+  /**<br>
+  * PATHS AND URLS<br>
+  */<br>
+  $url="enter the url of your website here";<br>
+  $path="enter/the/physical/path/to/your/public/directory/here";<br>
+  $tst["folder"]="topstory"; // This is the name of the folder that you will upload 
+  your files<br>
+  $tst["headerfile"]="enter/the/physical/path/to/your/header/file/here";<br>
+  $tst["footerfile"]="enter/the/physical/path/to/your/footer/file/here";<br>
+  /**<br>
+  * DATABASE VARIABLES <br>
+  */<br>
+  $tst["db"]["host"]="localhost";// This is the host for your database<br>
+  $tst["db"]["name"]="";// Enter your database name here<br>
+  $tst["db"]["user"]="root"; // Enter your database username here<br>
+  $tst["db"]["pass"]="1111";// Enter your database password here<br>
+  $tst["tbl"]["articles"]="articles"; // This is the name of the table that will 
+  store your data<br>
+  /**<br>
+  * USERNAME AND PASSWORD FOR ADMINISTRATION SECTION <br>
+  */<br>
+  $tst["admin"]["usrName"]="admin";// Enter your adminstration username here<br>
+  $tst["admin"]["usrPass"]="password"; // Enter your adminstration password here<br>
+  /**<br>
+  * OTHER CONFIGURATION VARIABLES <br>
+  */<br>
+  $tst["conf"]["laps"]=604800; // Enter the time (in seconds) here that how long 
+  an article will be displayed as new<br>
+  $tst["conf"]["topNewsList"]=5;// Enter the number of articles displayed in the 
+  latest articles section<br>
+  $tst["conf"]["allowHtml"]=1;// Enter 0 here if you do not want to allow html 
+  code in the articles else enter 1 to allow html<br>
+  $tst["langf"]="turk"; // Enter &quot;eng&quot; for english Or &quot;turk&quot; 
+  for turkish</font></p>
+<p><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#666666">3) 
+  Modify the header.php and footer.php in "inc" directory to fit the script looks 
+  like your website. <br>
+  <br>
+  4) Also you may want to modify the language packs in the &quot;lang&quot; folder 
+  and the css file in "lib" directoy. But this is optional.</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">5) 
+  Upload your files to the directory you have created.</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">6) 
+  Goto your admin pages (e.g:http://www.your-website.com/topstory/admin)</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">7) 
+  Enter your username and password </font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">8) 
+  If this is the first time you run the script, the script will search the database 
+  for the table needed to store your data,<br>
+  if the table not found, the script will create it for you with the name you 
+  have entered above.</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">9) 
+  After the table created succesfully, you will be redirected to admin pages and 
+  now you will be ready to use the script.</font></p>
+<p><b><font color="#FF0000" size="2" face="Verdana, Arial, Helvetica, sans-serif">* 
+  UPLOAD THE SCRIPT IN ASCII MODE</font></b></p>
+<p> <font size="2"><b><font color="#FF0000" face="Verdana, Arial, Helvetica, sans-serif">USAGE<br>
+  -------<br>
+  How to give link to the script :</font></b></font></p>
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#666666"> 
+<p>- <b>www.your-site.com/topstory/index.php</b> is the main file that lists the 
+  summary of the all news.<br>
+  Give a link to this file for all the news </p>
+<p>-<b>www.your-site.com/topstory/topStory.php</b> and <b>www.your-site.com/topstory/topStory_js.php</b> 
+  are the files that display the latest articles<br>
+  The number of articles that will be displayed is determined in the config file 
+  with <b>$tst["conf"]["topNewsList"] </b>variable.<br>
+  You can call these files in two ways:</p>
+<p>1) you can include <b>topStory.php</b> to your home page as<b> <i>include(&quot;topstory/topStory.php&quot;);</i></b><br>
+  2) You can call <b>topsStory_js.php </b>from any HTML page<b> </b>as<br>
+  <i> <b>&lt;script language=&quot;javascript&quot; src=&quot;http://www.your-site.com/topstory/topStory_js.php&gt;&lt;/script&gt;</b></i></p>
+</font> 
+<p><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#666666">They 
+  both will display the same thing.<br>
+  -fullStory.php is the file that displays the news fully. </font><br>
+  <br>
+  <font size="2"><b><font color="#FF0000" face="Verdana, Arial, Helvetica, sans-serif">Adminsintration 
+  :</font></b></font> </p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">Your 
+  administration section is at <b>http://www.your-site.com/topstory/admin/</b><br>
+  When you enter your username and password You will be redirected to main page 
+  of admin section.<br>
+  You will see the statistics about your articles on the main page.<br>
+  <b>1) Post News :</b><br>
+  Click on the link '<b>Post News</b>' on the top of the admin pages to post news.<br>
+  Fill out the form here to post your news. <br>
+  -To the header field enter the brief summary of your article<br>
+  -Enter your article in the body field<br>
+  -If you select the status of your article as <b>passive</b>, your news will 
+  be added to the database but will not be displayed to your visitors.<br>
+  -If you select the status of your article as <b>active</b>, your news will be 
+  added to the database and will be displayed to your visitors. <br>
+  ** You can change the status of your articles whenever you want from the<b> 
+  List / Manage New</b>s section.</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666"><b>2)List 
+  / Manage News :</b><br>
+  Here the news will be listed that are stored in your database<br>
+  You can edit the news by clicking on the <b>Edit</b> <b>button</b> located on 
+  the right side of the news<br>
+  You can delete the individual news by clicking on the <b>Delete</b> <b>button</b> 
+  located on the right side of the news <br>
+  You can check the boxes on the left of the news and clicking on the button &quot;<b>DELETE 
+  THE SELECTED MESSAGES</b>&quot; you will be able to delete multiple news at 
+  once<br>
+  You can click on the <b>DELETE ALL THE NEWS button</b> to delete all the news.</font></p>
+<p><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">3) 
+  Changing the status of an article</font></b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666"><br>
+  When you are in the listing mode , on the left side of each article header, 
+  There is a light (red/green) indicating the status of the article.<br>
+  <br>
+  The <b>green light</b> indicates that the status of the article is <b>active</b>. 
+  If you click on the green light, the status of the article will be passive and 
+  the light will turn to red.<br>
+  The <b>red light</b> indicates that the status of the article is <b>passive</b>.If 
+  you click on the red light, the status of the article will be active and the 
+  light will turn to green.</font><br>
+</p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666"> 
+  **Please do not hesitate to write your comments and questions to <a href="mailto:mert@myphpscripts.com">mert@myphpscripts.com</a> 
+  **</font></p>
+</body>
+</html>
