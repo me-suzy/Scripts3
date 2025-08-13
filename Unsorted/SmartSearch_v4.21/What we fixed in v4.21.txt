@@ -1,0 +1,19 @@
+Fixed in v4.21:
+
+
+
+Capitalization of keywords in accounts.cgi search produces bad results
+- accounts_search.cgi
+
+Database rebuilding problem
+- listings.cgi
+
+Better whitespace checking in account manager
+- accounts_manage.cgi
+
+
+
+Added:
+
+Special tags added to admin mass e-mail option
+- admin_email.cgi
