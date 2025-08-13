@@ -1,0 +1,317 @@
+<html>
+
+<head>
+<title>Documentation IBILL BROKER</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="description" content="Billing system and Affiliate referal system for IBILL Company.&nbsp; Allows you to payout affiliates a commission on your IBILL sales. &nbsp; Superfast code for even the largest sites.&nbsp; Fully automatic control of your password sales and databases.&nbsp; Deletes users automatically after accounts expire. &nbsp; Handles unlimited account configurations of recurring, nonrecurring, and web900. &nbsp;&nbsp; Manual admin interface allows you to add/delete/search and modify accounts. &nbsp; Advertisers signup and receive realtime statistics on their commissions.&nbsp; Each account has independant commissions so you can structure your sales commissions any way you want.&nbsp; Does not require server sides includes.&nbsp; Your advertisers may access their statistics in realtime.&nbsp; Allows you to revoke sales in the event of fraud or chargeback from the admin interface.">
+<meta NAME="keywords" CONTENT="Mastergate, cgi, Web Security, htaccess, Password Automation, IBILL, Adult Security, Pay Site, htpasswd, Password Protection, IBILL Company CGI, CGI Scripts, SSL, Security Gateway, Gateway">
+<meta name="robots" content="index">
+<meta name="revisit-after" Content="14 days">
+
+<meta name="Microsoft Border" content="t, default"></head>
+
+<body style="background-image: url('../demo/superclix/background.gif')"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+
+<table border="0" width="33%" cellpadding="0">
+  <tr>
+    <td width="50%"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/" ONCLICK="parent.f=0"><img src="../pix/banners/miniprizm.gif" alt="cgi scripts" border="0" WIDTH="305" HEIGHT="59"></a></font></td>
+    <td width="50%" bgcolor="#FFFFFF"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/ads/rotate.cgi?url=&amp;user=" target="new" ONCLICK="parent.f=0"><img src="http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user=" border="0" width="468" height="60"></a></font></td>
+  </tr>
+</table>
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="16%"><p align="center"><a href="../dsstoday/index.html"><font color="#000000" face="Arial"><img src="../pix/main/news.jpg" alt="CGI NEWS" align="left" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="16%"><p align="center"><a href="../scripts/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/scripts.jpg" alt="CGI Scripts" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../mastergate/index.html"><font color="#000000" face="Arial"><img src="../pix/main/access.jpg" alt="Access The CGI Archive" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../contact.html"><font color="#000000" face="Arial"><img src="../pix/main/contact.jpg" alt="Contact Superscripts" WIDTH="104" HEIGHT="68"></font></a></td>
+    <td width="17%"><p align="center"><a href="../support.html"><font color="#000000" face="Arial"><img src="../pix/main/dox.jpg" alt="CGI Documentation" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../download/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/download.jpg" alt="Download CGI Scripts Here" align="right" WIDTH="105" HEIGHT="65"></font></a></td>
+  </tr>
+  <tr>
+    <td width="16%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/dsstoday/index.html" style="color: rgb(255,255,255)"><strong>News</strong></a></font></td>
+    <td width="16%" bgcolor="#000000"><p align="center"><a href="/scripts/" style="color: rgb(255,255,255)"><font face="Arial" color="#FFFFFF"><strong>CGI Scripts</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><a style="color: rgb(255,255,255)" href="../mastergate/index.html"><font face="Arial" color="#FFFFFF"><strong>Become A Member</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../contact.html"><strong>Contact
+    Us</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../support.html"><strong>Support</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/download/index.shtml" style="color: rgb(255,255,255)"><strong>Download
+    Area</strong></a></font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+
+<table border="0" width="75%" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <p><big><big><strong><font face="Arial" color="#FF0000">Documentation<br>
+      </font></strong><font face="Arial" color="#000000">IBILL BROKER:&nbsp; V4.0</font></big></big></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Copyright 2001 Psybercore, Inc. - All Rights
+        Reserved. </small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">Selling redistributing or modifying any or
+        all of the code for this program without prior written consent is expressly forbidden. You
+        must obtain written permission before redistributing this software over the Internet or in
+        any other medium. In all cases copyright and header information must remain intact.</font></small></p>
+      </blockquote>
+      <hr align="left">
+      <p><big><strong><font face="Arial" color="#000000">System Requirements</font></strong></big><ul>
+        <li><small><font face="Arial" color="#000000">Unix, NT, Linux</font></small></li>
+        <li><font face="Arial" color="#000000"><small>Apache, IIS3.0, IIS4.0, Enterprise</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Perl 5 or Perl 5 exe (NT)</small></font></li>
+        <li><font face="Arial" color="#000000"><small>NT requires installation of <a href="http://www.dafweb.com/daf30">DAF</a></small></font></li>
+        <li><font face="Arial" color="#000000"><small>Requires prior installation of Agents of
+          Fortune and IBILL Processor</small></font></li>
+      </ul>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>If you are installing this on an NT Server
+        you MUST have a program called DAF installed.&nbsp; Your ISP should either already HAVE
+        this installed or be willing to install it since it is IMPOSSIBLE to run a password site
+        without it. &nbsp; The guy that created DAF is really cool and very helpful if you are
+        installing this yourself.&nbsp; <a href="http://www.dafweb.com/daf30">Visit his website</a>
+        or <a href="mailto:daf@dafweb.com">email</a> him for assistance with DAF. </small></font></p>
+      </blockquote>
+      <p><strong><big><font face="Arial" color="#000000">Upgrading from previous versions</font></big></strong><ul>
+        <li><small><font face="Arial" color="#000000">Download the new IBILL PROCESSOR tarball and
+          replace search.cgi and delete.cgi, and remove restore.cgi</font></small></li>
+        <li><font face="Arial" color="#000000"><small>Download the new IBILL BROKER tarball and
+          replace accountcreate.cgi</small></font></li>
+      </ul>
+      <p><strong><big><font face="Arial" color="#000000">Preliminary Installations Required</font></big></strong><ul>
+        <li><small><font face="Arial" color="#000000"><a href="../download/index.html">Download</a>
+          and install IBILL PROCESSOR on your webserver</font></small></li>
+        <li><font face="Arial" color="#000000"><small><a href="../download/index.html">Download</a>
+          and install AGENTS OF FORTUNE on your webserver</small></font></li>
+      </ul>
+      <p><strong><big><font face="Arial" color="#000000">Preliminaries</font></big></strong><ul>
+        <li><small><font face="Arial" color="#000000">Determine the path to PERL 5 on your web
+          server host.&nbsp; Note that some web hosting companies run both PERL 4 and PERL 5.&nbsp;
+          Make ABSOLUTELY sure you are not setting this up under PERL 4.&nbsp; Ask your
+          administrator if you are not sure. </font></small></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>If you need to review or learn the basics of
+          CGI and Perl check out the <a href="../tutorial/index.html">superscripts tutorial
+          archives.</a></small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small><a href="http://www.superscripts.com/download/">Download</a> the tarfile for this program and
+          save it to your desktop.</small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Unpack the tar archive on your desktop using a
+          program that unpacks UNIX TAR ARCHIVES. If you don't have such a program then download
+          WINZIP FREE from <a HREF="http://www.shareware.com/">SHAREWARE.COM</a>.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>After you have unpacked the TAR archive you
+          will have a collection of folders and files on your desktop.&nbsp; Now you have to do some
+          basic editing of each of these files (or at least some of them).&nbsp; Use a text editor
+          such as wordpad, notepad, BBEdit, simpletext, or teachtext to edit the files.&nbsp; These
+          are NOT WORD PROCESSOR DOCUMENTS they are just simple TEXT files so don't save them as
+          word processor documents or save them with extentions such as .txt or they will NOT WORK.
+          &nbsp; Note that there may be a some files inside of folders which are &quot;blank&quot;.
+          &nbsp; This is normal.</small></font></li>
+      </ul>
+      <p><strong><big><font face="Arial" color="#000000">Preparing the CGI scripts</font></big></strong></p>
+      <blockquote>
+        <p><small><font face="Arial" color="#FF0000">Define Path To PERL 5</font></small></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>The first step is to open up each and every
+        file that has a .cgi extention and edit line number one of each script.&nbsp; Each of the
+        cgi scripts is written in perl 5. For your scripts to run they must know where perl 5 is
+        installed on your web server. The path to perl 5 is defined to a cgi script in the first
+        line of the file. In each of the cgi scripts the first line of code looks something like
+        this: </small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#FF0000"><small>#!/usr/bin/perl</small></font></p>
+        </blockquote>
+        <p><font face="Arial" color="#000000"><small>If the path to perl 5 on your web server is
+        different from /usr/bin/perl you must edit the first line of each cgi script to reflect
+        the correct path. If the path to perl 5 is the same no changes are necessary. If you do
+        not know the path to perl 5 ask the webmaster or system administrator at your server site.
+        &nbsp; </small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big><strong>Configure the .cgi files</strong></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><big>edit path to /cgi-bin/agents/configure.cgi in
+        accountcreate.cgi</big></font></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Find the line near the beginning of the
+        accountcreate.cgi file that reads:</small></font></p>
+        <font size="3"><blockquote>
+          <p></font><font face="Arial" color="#FF0000" size="2">require
+          &quot;/path/to/cgi-bin/agents/payout.cgi&quot;;</font><font size="3"></p>
+        </blockquote>
+        <p></font><font face="Arial" color="#000000"><small>Make sure this maps correctly to the
+        path of ../cgi-bin/agents/configure.cgi</small></font><font size="3"></p>
+        </font>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><big>edit path to /cgi-bin/agents/configure.cgi in
+        payout.cgi</big></font></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Find the line near the beginning of the
+        payout.cgi file that reads:</small></font></p>
+        <font size="3"><blockquote>
+          <p></font><font face="Arial" color="#FF0000" size="2">require
+          &quot;/path/to/cgi-bin/agents/payout.cgi&quot;;</font><font size="3"></p>
+        </blockquote>
+        <p></font><font face="Arial" color="#000000"><small>Make sure this maps correctly to the
+        path of ../cgi-bin/agents/configure.cgi</small></font><font size="3"></p>
+        </font>
+      </blockquote>
+      <p><strong><big><font face="Arial" color="#000000">Upload payout.cgi and accountcreate.cgi</font></big></strong></p>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">After you have unpacked the mbill.tar file
+        simply upload payout.cgi over the /cgi-bin/agents/payout.cgi file and upload
+        accountcreate.cgi over /cgi-bin/mastergate/accountcreate.cgi</font></small></p>
+      </blockquote>
+      <p><big><strong><font face="Arial" color="#000000">Editing mastergate/index.html - THE
+      MEMBER SIGN UP PAGE</font></strong></big></p>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">The index.html file in the top level
+        mastergate directory must be edited to supply correct information for each of your credit
+        card account, web 900 account or dedicated 900 account buttons.</font></small></p>
+        <p>&nbsp;</p>
+      </blockquote>
+      <blockquote>
+        <p><strong><font face="Arial" color="#000000">Credit Card Buttons</font></strong></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">Review the following lines of code from the
+        credit card section and edit them according to the instructions given. <br>
+        <br>
+        </font><font face="Arial" color="#FF0000">&lt;input type=&quot;hidden&quot;&nbsp;
+        name=&quot;ref1&quot; value=&quot;/path/to/cgi-bin/mastergate/8050100&quot;&gt; <br>
+        </font><font face="Arial" color="#000000"><br>
+        The field ref1 has it's value field set to 8050100. The value field is the account
+        masteraccount-sub account number of this button and must be changed to contain one of your
+        IBILL account numbers. In the example above I use masteraccount 8050 and subaccount 100
+        (8050100)<br>
+        <br>
+        </font><font face="Arial" color="#FF0000">&lt;input type=&quot;hidden&quot;&nbsp;
+        name=&quot;ref2&quot; value=&quot;30&quot;&gt; <br>
+        </font><font face="Arial" color="#000000"><br>
+        The field ref2 is the number of days this account is good for. In this example I have set
+        it to 30 days.&nbsp; You must set the value field of ref2 to the correct number of days
+        that corresponds to the sub account referred to by ref1 (for recurring set to 9999999)
+        &nbsp; (99999999 is a LONG TIME). </font></small></p>
+        <p><small><font face="Arial" color="#FF0000">&lt;input type=&quot;hidden&quot;&nbsp;
+        name=&quot;ref3&quot; value=&quot;5.43&quot;&gt; <br>
+        </font><font face="Arial" color="#000000"><br>
+        The field ref3 is the VALUE of the COMMISSION you are paying out to advertisers. &nbsp;
+        Thus if an advertisers sends you a signup on this particular account he/she would be
+        earning a commission of $5.43.&nbsp; Do not put a dollar sign in here - JUST A NUMBER. </font></small></p>
+        <p><small><font face="Arial" color="#FF0000">&lt;input type=&quot;hidden&quot;&nbsp;
+        name=&quot;ref4&quot; value=&quot;1.43&quot;&gt; <br>
+        </font><font face="Arial" color="#000000"><br>
+        The field ref3 is the VALUE of the COMMISSION you are paying out to second level
+        affiliates.&nbsp; Remeber that a second level affiliate is the affiliate that refered the
+        affiliate that refered the sale :)&nbsp; This is optional and can be set to zero.</font></small></p>
+        <p><small><font face="Arial" color="#FF0000">&lt;input type=&quot;hidden&quot;
+        name=&quot;account&quot; value=&quot;1234567&quot;&gt; <br>
+        </font><font face="Arial" color="#000000"><br>
+        The value field of this line refers to the same account referred to by ref1. Set this
+        value field to the same value as you set the account number earlier. <br>
+        <br>
+        </font><font face="Arial" color="#FF0000">&lt;input type=&quot;submit&quot;
+        value=&quot;$9.95 for 30 days by credit card&quot;&gt; <br>
+        </font><font face="Arial" color="#000000"><br>
+        This line contains the price and expire information as displayed to your client. Change
+        the value field to indicate whatever number of dollars per time this sub account
+        purchases.<br>
+        </font></small></p>
+      </blockquote>
+      <blockquote>
+        <p><strong><font face="Arial" color="#000000">Web 900 or Dedicated 900 Buttons</font></strong></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">Review the following lines of code from the
+        web 900 section and edit them according to the instructions given. <br>
+        <br>
+        </font><font face="Arial" color="#FF0000">&lt;input type=&quot;hidden&quot;
+        name=&quot;account&quot; value=&quot;1234567&quot;&gt; <br>
+        </font><font face="Arial" color="#000000"><br>
+        The field account has it's value field set to 1234567. This corresponds to the particular
+        web 900 account.<br>
+        <br>
+        </font><font face="Arial" color="#FF0000">&lt;input type=&quot;hidden&quot;
+        name=&quot;return&quot;
+        value=&quot;http://www.yourdomain.com/mastergate/1234567.html&quot;&gt;&gt; <br>
+        </font><font face="Arial" color="#000000"><br>
+        The value field should be changed to contain the path of the redeem page for your 900
+        pincodes.&nbsp; There is an example page in the unpack.&nbsp; I will explain how to create
+        these later.<br>
+        <br>
+        </font><font face="Arial" color="#FF0000">&lt;input type=&quot;submit&quot;
+        value=&quot;$9.95 for 30 days by credit card&quot;&gt; </font></small></p>
+        <p><font face="Arial" color="#000000"><small>This line contains the price and expire
+        information as displayed to your client. Change the value field to indicate whatever
+        number of dollars per time this sub account purchases.</small></font></p>
+        <p>&nbsp;</p>
+      </blockquote>
+      <p><big><strong><font face="Arial" color="#000000">Editing webgood pages for web 900 -
+      stored on YOUR SERVER</font></strong></big></p>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">The webgood (or redeem) pages used for web
+        900 numbers are stored inside http://yourdomain.com/mastergate/. &nbsp; Each web 900
+        account will have a unique page for redeeming pincodes.&nbsp; For this example we will use
+        the FICTICIOUS account number 8050500.&nbsp; Use the template provided for you
+        (8050500.html) and edit as described below. You must create ONE WEBGOOD PAGE PER ACCOUNT.</font></small></p>
+      </blockquote>
+      <blockquote>
+        <p><strong><font face="Arial" color="#000000">Edit Form Action</font></strong></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><small>&lt;form
+        action=&quot;http://yourdomain.com/cgi-bin/mastergate/accountcreate.cgi&quot;&gt;</small></font></p>
+        <p><font face="Arial" color="#000000"><small>Edit to point to accountcreate.cgi on your
+        system</small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><strong><font face="Arial" color="#000000">Edit ref1,ref2 and ref3 HIDDEN FORM FIELDS</font></strong></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><small>&lt;input type=&quot;hidden&quot;
+        name=&quot;ref1&quot; value=&quot;/path/to/cgi-bin/mastergate/8050500&quot;&gt;</small></font></p>
+        <p><font face="Arial" color="#000000"><small>Edit to point to the location of the PINCODE
+        file for this account</small></font></p>
+        <p><font face="Arial" color="#FF0000"><small>&lt;input type=&quot;hidden&quot;
+        name=&quot;ref2&quot; value=&quot;30&quot;&gt;</small></font></p>
+        <p><font face="Arial" color="#000000"><small>Edit to be the NUMBER OF DAYS this account is
+        for (example is 30 days)</small></font></p>
+        <p><small><font face="Arial" color="#FF0000">&lt;input type=&quot;hidden&quot;&nbsp;
+        name=&quot;ref3&quot; value=&quot;5.43&quot;&gt; <br>
+        </font><font face="Arial" color="#000000"><br>
+        The field ref3 is the VALUE of the COMMISSION you are paying out to advertisers. &nbsp;
+        Thus if an advertisers sends you a signup on this particular account he/she would be
+        earning a commission of $5.43.&nbsp; Do not put a dollar sign in here - JUST A NUMBER. </font></small></p>
+        <p><small><font face="Arial" color="#FF0000">&lt;input type=&quot;hidden&quot;&nbsp;
+        name=&quot;ref4&quot; value=&quot;1.43&quot;&gt; <br>
+        </font><font face="Arial" color="#000000"><br>
+        The field ref3 is the VALUE of the COMMISSION you are paying out to second level
+        affiliates.&nbsp; Remeber that a second level affiliate is the affiliate that refered the
+        affiliate that refered the sale :)&nbsp; This is optional and can be set to zero.</font></small></p>
+      </blockquote>
+      <blockquote>
+        <p><strong><font face="Arial" color="#000000">Use the agents version of the webgood page</font></strong></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">Notice that the g1234567.hmf file from this
+        tar archive has the hidden ref3 and ref4 fields.&nbsp; You must use this template instead
+        of the file from the IBILL PROCESSOR tar archive</font></small></p>
+      </blockquote>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
