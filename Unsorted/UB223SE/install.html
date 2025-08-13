@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>UltraBoard 2000 Manual</title>
+  <style type="text/css">
+    h1 { font-size : 20pt; }
+    h2 { font-size : 18pt; }
+    h3 { font-size : 16pt; }
+    h4 { font-size : 14pt; }
+    body { font-family : Verdana; }
+    font.static   { font-family : Courier New; }
+    font.type     { font-weight : bold; }
+    font.variable { font-family : Courier New; font-style : italic;}
+    font.waring   { color : Red; font-style : italic;}
+    font.note     { color : Red; font-style : italic;}
+    blockquote.code { font-family : Courier New; }
+    font { font-size : x-small; }
+    li { font-size : x-small; }
+  </style>
+</head>
+
+<body>
+
+<h1>UltraBoard 2000 Online Manual</h1>
+
+<h2>Installation on Unix/Linux and NT Web Servers Using FTP</h2>
+
+<ol>
+
+<li>
+Download the UltraBoard ZIP file from the <a href="http://www.ub2k.com">UltraBoard Official WebSite</a>, and extract the archive on your desktop computer.<p>
+</li>
+
+<li>
+Open the <b>install.cgi</b>, <b>UltraBoard.cgi</b>, and <b>SpellChecker.cgi</b>.<p>
+  <blockquote>
+  look at the first line, it says:
+    <blockquote class="code"><b>#!/usr/bin/perl</b></blockquote>
+  and change it to correct location of Perl 5 on your web server.
+  </blockquote>
+<font class="note">(<b>note:</b> if this is where Perl 5 is located on your server then go to step 3. if that is NOT where Perl 5 is and you don't know the location of Perl 5 on your web server, then ask your system administrator or find it on your hosts web site.)</font><p>
+<font class="note">(<b>note:</b> if your web server does not allow <b>.cgi</b> extension, please rename those files to a <b>.pl</b> extension. especailly on a <b>Windows</b> web server with <b>IIS</b>!!)</font><p>
+</li>
+
+<li>
+Create a <b>/UltraBoard</b> directory in <b><font class="variable">path_of_document_root</font>/cgi-bin</b> directory on your web server, and chmod it into <b>755</b>. <font class="waring">(<b>warning:</b> if your server does not allow <b>binary files</b> within <b>/cgi-bin</b>, then please create another <b>/UltraBoard</b> directory in <b><font class="variable">path_of_document_root</font></b>)</font><p>
+</li>
+
+<li>
+Create a <b>/Private</b> directory within <b><font class="variable">path_of_document_root</font>/cgi-bin/UltraBoard</b>, and chmod it into <b>777</b>.<br>
+Create a <b>/Public</b> directory within <b><font class="variable">path_of_document_root</font>/UltraBoard</b>, and chmod it <b>777</b>. <font class="waring">(<b>warning:</b> if your server does not allow <b>binary files</b> within <b>/cgi-bin</b>, then please create the <b>/Public</b> directory within <b><font class="variable">path_of_document_root</font>/UltraBoard</b>)</font><p>
+</li>
+
+<li>
+Upload the following files and directory to the <b><font class="variable">path_of_document_root</font>/cgi-bin/UltraBoard</b> directory on your web server in the correct <b>mode</b>.
+<p><ul>
+	<li><b>Private.tar</b><br><i>please upload in <b>binary</b> mode</i> <font class="waring">(<b>warning:</b> don't extract this archive and then upload the individual files)</font>
+	<li><b>Public.tar</b><br><i>please upload in <b>binary</b> mode</i> <font class="waring">(<b>warning:</b> don't extract this archive and then upload the individual files)</font>
+	<li><b>UltraBoard.cgi</b><br><i>please upload in <b>ascii</b> mode, and chmod this file to <b>755</b></i>
+	<li><b>SpellChecker.cgi</b><br><i>please upload in <b>ascii</b> mode, and chmod this file to <b>755</b></i>
+	<li><b>install.cgi</b><br><i>please upload in <b>ascii</b> mode, and chmod this file to <b>755</b></i><p>
+  <li><b>/Archive</b><br>
+    <ul>
+      <li><b>Tar.pm</b><br><i>please upload in <b>ascii</b> mode</i></li>
+    </ul>
+  </li>
+</ul></p>
+</li>
+
+<li>
+Use your web browser to access the web based installation at <font class="type">http://<font class="variable">your.domain.com</font>/<font class="variable">url_of_ultraboard_directory</font>/install.cgi</font>, and fill out following fields.
+
+<p><ol>
+	<li>type in <b><font class="variable">path_of_document_root</font>/cgi-bin/UltraBoard</b> <font class="note">(<b>note:</b> the path that the script has determined should be correct)</font><p>
+  <li>if your server does not allow <b>binary files</b> within <b>/cgi-bin</b>, then you should type in as <b><font class="variable">path_of_document_root</font>/UltraBoard</b>, otherwise type in as <b><font class="variable">path_of_document_root</font>/cgi-bin/UltraBoard</b><p>
+  <li>please type in <font class="type">http://<font class="variable">your.domain.com</font>/<font class="variable">url_of_ultraboard_directory</font></font> <font class="note">(<b>note:</b> the url that the script has
+determined should be correct)</font><p>
+
+	<li>please type in the <b>URL</b> for the path that you typed in for <b>field 2</b>.<p>
+
+  <li>please choose which database engine that you want to use within UltraBoard 2000.<p><font class="note">(<b>note:</b> non MySQL users please go to field 6)</font><p>for mysql users please fill out the database server, name (as ultraboard), username (as <font class="variable">USERNAME</font>), and password (as <font class="variable">PASSWORD</font>) correctly!<p>
+
+  <li>please choose which kind of mailing system that you want to use <font class="note">(<b>note:</b> most Windows servers don't have <a href="http://www.sendmail.org" target="_blank">sendmail</a> system, please use SMTP for the mailing system of UltraBoard 2000; <b>note:</b> please check out <a href="http://www.activestate.com" target="_blank">ActiveState</a>, they are porting sendmail to the Windows server!)</font><p>
+
+  <li>enter your <b>email address</b>.<p>
+
+  <li>enter the <b>time zone name</b> of your area.<p>
+
+  <li>enter <b>how many hours different</b> from your web server to your area. <font class="note">(note: from -12 to +13)</font><p>
+
+  <li>choose the <b>date</b> format of your area that you want to use.</font><p>
+
+  <li>choose the <b>time</b> format of your area that you want to use.</font><p>
+
+</ol></p>
+push the <b>Start Install</b> button to start the installation...<p>
+</li>
+
+<li>When you see all <font color="Green">green color responses</font>, then the installation should be done, and you can start to configure UltraBoard 2000.<br>When you see <font color="Olive">olive color response</font>, then there are some errors on the installation, however you may still run UltraBoard 2000 without problems.<br>When you see <font color="Red">red color response</font>, then there are some errors on the installation that you need to fix, otherwise you can't run UltraBoard 2000.
+<p>
+</li>
+
+<li>Now you should remove following files and directory:
+<p><ul>
+	<li><b>Private.tar</b>
+	<li><b>Public.tar</b>
+	<li><b>install.cgi</b>
+  <li><b>/Archive</b><br>
+    <ul>
+      <li><b>Tar.pm</b></li>
+    </ul>
+  </li>
+</ul></p>
+</li>
+
+</ol>
+
+<h2>Post Installation Configuration</h2>
+
+<font>you must do following within <b>ultraboard control panel</b> to complete the forum setup after the installation:</font>
+
+<ol>
+
+<li>create a administrator account</li>
+<li>configure system options for further system setting</li>
+<li>configure general options for forum setting</li>
+<li>configure style options for color setting</li>
+<li>create member groups</li>
+<li>create categories</li>
+<li>create boards</li>
+<li>backup database (please backup database at least monthly)</li>
+<li>turn the ultraboard online</li>
+
+</ol>
+
+<h2>Appendix. Links</h2>
+
+<font>Some links that you should know:</font>
+<ul>
+	<li>UltraBoard (http://<font class="variable">your.domain.com</font>/<font class="variable">url_of_ultraboard_directory</font>/UltraBoard.cgi)</li>
+	<li>UltraBoard Control Panel (http://<font class="variable">your.domain.com</font>/<font class="variable">url_of_ultraboard_directory</font>/UltraBoard.cgi?CP=1)<p></li>
+
+  <li>UltraBoard 2000 Offical Website (<a href="http://www.ub2k.com" target="_blank">http://www.ub2k.com</a>)</li>
+  <li>The maker of UltraBoard 2000, UltraScripts.com, Inc. (<a href="http://www.ultrascripts.com" target="_blank">http://www.ultrascripts.com</a>)</li>
+  <li>The maker of Spell Checker, SpellChecker.net, Inc. (<a href="http://www.spellchecker.net" target="_blank">http://www.spellchecker.net</a>)<p></li>
+
+  <li>Perl Offical Website (<a href="http://www.perl.com" target="_blank">http://www.perl.com</a>)</li>
+  <li>ActiveState Perl Offical Website (<a href="http://www.activestate.com" target="_blank">http://www.activestate.com</a>)<p></li>
+
+  <li>The CGI Resources Index (<a href="http://cgi.resourceindex.com" target="_blank">http://cgi.resourceindex.com</a>)</li>
+  <li>If you really like UltraBoard 2000, please give us <a href="http://cgi.resourceindex.com/detail/03326.html" target="_blank">a rate</a> or <a href="http://cgi.resourceindex.com/detail/03326.html" target="_blank">leave a comment</a> for others people to read.
+    <blockquote>
+      <form method=POST action="http://cgi-resources.com/rate/index.cgi" target="_blank">
+      <input type=hidden name="referer" value="http://cgi-resources.com/">
+      <input type=hidden name="link_code" value="03326">
+      <input type=hidden name="category_name" value="Programs and Scripts/Perl/Bulletin Board Message Systems/">
+      <input type=hidden name="link_name" value="UltraBoard">
+      <b>Script Rating:</b><br>
+      <select name="rating" style="font-family : Verdana; font-size : 9pt;">
+        <option selected>--
+        <option>10
+        <option>9
+        <option>8
+        <option>7
+        <option>6
+        <option>5
+        <option>4
+        <option>3
+        <option>2
+        <option>1
+      </select> <input type="Submit" value="Rate it" style="font-family : Verdana; font-size : 9pt;">
+      </form>
+    </blockquote>
+  </li>
+</ul>
+
+<h2>UltraBoard License Agreement</h2>
+<font>By using this software program, you agree to be obliged by the terms and conditions of this License Agreement.</font><p>
+
+<h3>USES</h3>
+<font>This License Agreement only grants the licensee to install this software program onto a single server, in use by a single domain. If the licensee uses this software program under multiple domains or subdomains, the licensee must purchase additional licenses for each domain or subdomain. The licensee receive free upgrade for one year.</font><p>
+
+<h3>MODIFICATIONS AND CHANGES </h3>
+<font>The licensee may modify or change this software program to suit licensee's needs, at licensee's own risk. The licensee may modify the source code for licensee's own use. However, the modified source code must not be resold or distributed.</font><p>
+
+<h3>COPYRIGHT NOTICES</h3>
+<font>Copyright notices included within the CGI scripts and within source files of this software program must not be modified or removed. These copyrights notices, including "powered by" wording, and the about document on help page, must be visible to the end user. Licensee's use of this software program permits Ultrascripts.com, Inc. to refer the licensee in promotional materials and/or on our web site, unless an expressed written agreement is made to prohibit such use.</font><p>
+
+<h3>TRANSFER OF LICENSE</h3>
+<font>The licensee is not allowed to transfer this license to any other party without expressed written consent of Ultrascripts.com, Inc.</font><p>
+
+<h3>TERMINATION</h3>
+<font>Ultrascripts.com, Inc. shall have right, at any time, to terminate this license if the licensee breaches this license in any manner.</font><p>
+
+<h3>WARRANTIES</h3>
+<font>THIS SOFTWARE PROGRAM AND THE ACCOMPANYING FILES ARE SOLD "AS IS" AND WITHOUT WARRANTIES AS TO PERFORMANCE OR MERCHANTABILITY OR ANY OTHER WARRANTIES WHETHER EXPRESSED OR IMPLIED. THE SELLER ALSO MAKES NO WARRANTY OF FITNESS FOR A PARTICULAR PURPOSE.</font><p>
+
+<font>ANY LIABILITY OF THE SELLER WILL BE LIMITED EXCLUSIVELY TO PRODUCT REPLACEMENT OR REFUND OF PURCHASE PRICE.</font><p>
+
+<font>The licensee must assume the entire risk of using the software program.</font><p>
+
+<h3>JURISDICTION</h3>
+<font>This License Agreement is governed by the laws of the State of New York. Both the licensee and Ultrascripts.com, Inc. agree to submit to the jurisdiction of the courts of the State of New York and the venue of the County of New York.</font><p>
+
+</body>
+</html>
