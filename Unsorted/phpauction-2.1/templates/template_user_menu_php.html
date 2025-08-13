@@ -1,0 +1,146 @@
+<?
+
+/*
+
+
+
+   Copyright (c), 1999, 2000 - phpauction.org
+
+
+
+   This program is free software; you can redistribute it and/or modify
+
+   it under the terms of the GNU General Public License as published by
+
+   the Free Software Foundation (version 2 or later).
+
+
+
+   This program is distributed in the hope that it will be useful,
+
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+
+   GNU General Public License for more details.
+
+
+
+   You should have received a copy of the GNU General Public License
+
+   along with this program; if not, write to the Free Software
+
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+
+
+*/
+
+?>
+
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--
+
+function submitlogin ()
+
+{
+
+	document.user_login.submit ();
+
+}
+
+//-->
+
+</SCRIPT>
+
+<TABLE WIDTH="765" CELLPADDING=0 CELLSPACING=0 BGCOLOR="#FFFFFF" BORDER=0>
+
+<TR>
+
+<TD>
+
+<? print $tlt_font; ?>
+
+<BR>
+
+<CENTER>
+				<B> 
+				<?
+
+		print $tlt_font.$MSG_205;
+
+	?>
+				<BR>
+				</B> 
+				<TABLE WIDTH="50%" CELLSPACING="0" CELLPADDING="1" BORDER="0" BGCOLOR="<?=$FONTCOLOR[$SETTINGS[bordercolor]]?>">
+					<TR> 
+						<TD>
+							<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="3">
+								<TR>
+									<TD> 
+										<? print $nav_font; ?>
+										<? print $MSG_247."<B>$HTTP_SESSION_VARS[PHPAUCTION_LOGGED_IN_USERNAME]</B>"; ?>
+									</TD>
+								</TR>
+								<?
+								if(isset($HTTP_SESSION_VARS[TMP_MSG]))
+								{
+								?>
+								<TR> 
+									<TD BGCOLOR="#FF9933"> 
+									<?
+										print $std_font."<B><FONT COLOR=white>$TMP_MSG</FONT></b></FONT>";
+										session_name($SESSION_NAME);
+										session_unregister("TMP_MSG");
+									?>
+									</TD>
+								</TR>
+								<?
+									}
+								?>
+								<TR> 
+									<TD BGCOLOR="#FFFFFF"> 
+										<UL>	<? print $std_font; ?>
+											<LI> 
+											
+												<A HREF="yourauctions.php"> 
+												<? print $MSG_618; ?>
+												</A> </LI>
+											<LI> 
+												<? print $std_font; ?>
+												<A HREF="yourbids.php"> 
+												<? print $MSG_620; ?>
+												</A> </LI>
+											<LI> 
+												<? print $std_font; ?>
+												<A HREF="edit_data.php"> 
+												<? print $MSG_621; ?>
+												</A> </LI>
+											<LI> 
+												<? print $std_font; ?>
+												<A HREF="logout.php"> 
+												<? print $MSG_245; ?>
+												</A> </LI>
+										</UL>
+									</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+				</TABLE>
+				<BR>
+          <BR>
+
+
+</CENTER>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+
