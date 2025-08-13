@@ -1,0 +1,48 @@
+# phpMyAdmin MySQL-Dump
+# version 2.5.0
+# http://www.phpmyadmin.net/ (download page)
+#
+# Host: localhost
+# Generation Time: Jul 26, 2003 at 04:44 PM
+# Server version: 4.0.12
+# PHP Version: 4.3.1
+# Database : `stardev_livehelp`
+# --------------------------------------------------------
+
+#
+# Dumping data for table `livehelp_settings`
+#
+
+INSERT INTO `table_prefix_livehelp_settings` VALUES (1, 'site_name', 'stardevelop.com Live Help');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (2, 'site_address', 'http://livehelp.stardevelop.com');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (3, 'offline_email', 'enquiry@stardevelop.com');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (4, 'livehelp_name', 'stardevelop.com Live Help');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (5, 'livehelp_logo', '/livehelp/icons/helplogo_sm.gif');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (6, 'welcome_note', 'Welcome to our real-time customer support.<br>A customer service representative will be with your shortly');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (7, 'guest_smilies', 'true');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (8, 'admin_smilies', 'false');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (9, 'font_type', 'Verdana, Arial, Helvetica, sans-serif');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (10, 'font_size', '2');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (11, 'font_color', '#000000');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (12, 'sent_font_color', '#666666');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (13, 'received_font_color', '#000000');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (14, 'font_link_color', '#000000');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (15, 'background_color', '#FFFFFF');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (16, 'background_image', '');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (17, 'guest_chat_font_size', '2');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (18, 'admin_chat_font_size', '2');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (19, 'offline_logo', '/livehelp/images/offline_msg.gif');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (20, 'online_logo', '/livehelp/images/online_msg.gif');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (21, 'offline_logo_without_email', '/livehelp/images/offline.gif');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (22, 'online_brb_logo', '/livehelp/images/online_brb.gif');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (23, 'disable_login_details', 'false');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (24, 'disable_offline_email', 'false');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (25, 'departments', 'false');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (26, 'default_department', 'Sales');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (27, 'connection_timeout', '30');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (28, 'keep_alive_timeout', '15');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (29, 'chat_refresh_rate', '2');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (30, 'user_panel_refresh_rate', '10');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (31, 'timezone', '10');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (32, 'language_type', 'en');
+INSERT INTO `table_prefix_livehelp_settings` VALUES (33, 'admin_homepage', '/livehelp/admin/reports_index.php');
