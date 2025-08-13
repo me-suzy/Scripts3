@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title></title>
+
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="{WWW_DIR}templates/global.css" />
+
+<script type="text/javascript" src="{WWW_DIR}lib/formcheck.js"></script>
+
+</head>
+
+<body class="colored">
+
+<script type="text/javascript">
+
+var session_id = "{SESSION_ID}";
+
+{RELOAD}
+
+</script>
+<script type="text/javascript" src="{WWW_DIR}settings/settings.js"></script>
+
+<form action="{FORM_URL}?session_id={SESSION_ID}" {TARGET} method="post" name="settings" onsubmit="ieformsubmitbugfix_groups(); return check_settings_groups();">
+<input type="hidden" name="group_id" />
+<input type="hidden" name="action" value="" />
+
+<div class="main">
+
+<div class="mode">{TEMPLATE_MODE}</div>
+<table class="form" cellspacing="5" width="300" border="0">
+<tr>
+	<td colspan="3">
+	{SETTINGS_NAV}
+	</td>
+</tr>
+<tr>
+ 	<td class="form" align="right" valign="top">
+<span class="field-titles">Name:</span>
+	</td>
+	<td width="5">&nbsp;</td>
+	<td valign="top" class="form"><input type="text" name="group_name" size="20" class="form" />
+    </td>
+</tr> 
+<tr>
+ 	<td class="form" align="right" valign="top">
+<span class="field-titles">Description:</span>
+	</td>
+	<td width="5">&nbsp;</td>
+	<td valign="top" class="form"><textarea name="group_desc" rows="6" cols="25" class="form" style="background: #ffffff;"></textarea>
+    </td>
+</tr> 
+
+<tr>
+    <td class="form" align="right" valign="top">&nbsp;
+	<td width="5">&nbsp;</td>
+    <td class="form"><br>
+	<input type="submit" value="   OK   " class="form" onclick="document.settings.action.value='   OK   '" style="background: #D4D0C8;" />
+	<input type="{ACTION2}" value=" {ACTION2_LABEL} " class="form"  onclick="document.settings.action.value=' Delete '" style="background: #D4D0C8;"/>
+	</td>
+</tr>
+</table>
+
+</form>
+</div>
+
+<!-- hidden loader frame -->
+{LOADER}
+
+</body>
+</html>
