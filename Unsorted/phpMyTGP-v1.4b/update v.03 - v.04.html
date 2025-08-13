@@ -1,0 +1,26 @@
+<body bgcolor="white">
+<P><h1>  upgrade from 
+phpMyTGP  ver.0.3b  to ver.0.4b</font></h1>
+Replace files from archive with update.<br>
+Run <b><i>update_to_v4.php</i></b> from <i>phpmytgp/install</i> directory<br>
+or alter table mytgp_set from your MySQL base manually by <b><i>update_to_v.0.4.sql</i></b>
+</P>
+<p>
+<h1>WHATS NEW v.0.4</h1>
+<ul>
+<li>Fixed some old bugs
+<li>Added some new bugs
+<li>Possibility to limit daily submissions number from one webmaster per category, per domain, per email and total separately for trusted and regular webmasters
+<li>Now your can work with VIP galleries submited from trusted webmasters:<br>
+&nbsp;&nbsp;&nbsp;- Add new galleries from <i><b>addvip.php</b></i> file<br>
+&nbsp;&nbsp;&nbsp;- New Menu added <b>VIP Setup Section</b> to admin script<br>
+&nbsp;&nbsp;&nbsp;- Don't forget check <b>USE VIP POSTS?</b> in Settings for working with VIP galleries<br>
+&nbsp;&nbsp;&nbsp;- You can check VIP galleries anyway from template file <b><i>vip.tpl</i></b><br>
+&nbsp;&nbsp;&nbsp;- You can place VIP galleries first in list by checking <i>Stay VIP First?</i> in Settings Section of Admin Menu<br>
+&nbsp;&nbsp;&nbsp;- Separatly setup rotate out days for VIP galleries and other posts<br>
+&nbsp;&nbsp;&nbsp;- New template file <b><i>vip.tpl</i></b> describe how to mark VIP galleries and new template field for <b><i>link.tpl</i></b> <i>&lt;!--vip--&gt;</i> show this mark in the list of all galleries
+<li>When you add new rule to blacklist program can delete all existing posts with this rule from base
+<li>Settings to forbid new window openning, status line change, onClick, onMouseover scripts
+</ul>    
+</p>
+</body>
