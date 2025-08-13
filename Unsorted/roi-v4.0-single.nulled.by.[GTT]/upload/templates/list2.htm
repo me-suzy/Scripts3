@@ -1,0 +1,56 @@
+
+<table border=0 cellspacing=0 cellpadding=0 width=100%>
+<tr><td width=250>&nbsp;</td>
+<td align=left><h1 style="color: #427b7b; margin-left: 0px; margin-bottom: 0px; margin-top: 0px;" class=wheader>Listing 
+        Wizard</h1></td>
+</tr></table>
+
+<form action=listwizard.php method=post style="margin-top: 0px; margin-bottom: 0px;" name="keywords">
+%hiddenfields%
+<input type="hidden" name="step" value="2">
+<script language="JavaScript">
+ function ChangePrice()
+ {
+  for (var i=0;i<(document.keywords.all.value);i++)
+   {
+    if (eval("keywords.kr["+i+"].checked"))
+     {
+      eval("keywords.price["+i+"].value = "+keywords.newprice.value);
+     }
+   }
+ }
+
+ function SelectAllKws()
+ {
+  for (var i=0;i<(document.keywords.all.value);i++)
+   {
+    eval("keywords.kr["+i+"].checked = "+keywords.al.checked+";");
+
+   }
+ }
+</script>
+<table border=0 width=100%>
+<tr><td>
+<table border=0 width=80% cellspacing=0 cellpadding=0>
+<tr>
+<td rowspan=10 valign=top width=110>
+<table border=0 cellspacing=0 cellpadding=0>
+<tr><td width=98>
+<ul style="margin-left: 10px;margin-top: 0px;">
+                      <li>Step 1<br>
+                        Specifying listing name, type and keywords<br>
+                        <br>
+                      <li><b>Step 2<br>
+                        Specifying price for each keyword</b><br>
+                        <br>
+                      <li>Step 3<br>
+                        Listing data revision
+                    </ul>
+</td>
+
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr></table>
+</td>
+<td colspan=2 valign="top">
+<br>
+<b>Name:&nbsp;&nbsp;</b>%listing_name%
