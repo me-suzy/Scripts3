@@ -1,0 +1,162 @@
+<?
+
+#///////////////////////////////////////////////////////
+#//  COPYRIGHT 2002 PHPAuction.org ALL RIGHTS RESERVED//
+#//  For Source code for the GPL version go to        //  
+#//  http://phpauction.org and download               //
+#//  Supplied by CyKuH [WTN]                          //
+#///////////////////////////////////////////////////////
+?>
+
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--
+
+function submitlogin ()
+
+{
+
+	document.user_login.submit ();
+
+}
+
+//-->
+
+</SCRIPT>
+
+<TABLE WIDTH="765" CELLPADDING=0 CELLSPACING=0 BGCOLOR="#FFFFFF" BORDER=0>
+
+<TR>
+
+<TD>
+
+<? print $tlt_font; ?>
+
+<BR>
+
+<CENTER>
+				<B> 
+				<?
+
+		print $tlt_font.$MSG_205;
+
+	?>
+				<BR>
+				</B> 
+				<TABLE WIDTH="500" CELLSPACING="0" CELLPADDING="1" BORDER="0" BGCOLOR="<?=$FONTCOLOR[$SETTINGS[bordercolor]]?>">
+					<TR> 
+						<TD>
+							<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="3">
+								<TR> 
+									<TD COLSPAN="2"> 
+										<? print $nav_font; ?>
+										<? print $MSG_247."<B>$HTTP_SESSION_VARS[PHPAUCTION_LOGGED_IN_USERNAME]</B>"; ?>
+									</TD>
+								</TR>
+								<?
+								if(isset($HTTP_SESSION_VARS[TMP_MSG]))
+								{
+								?>
+								<TR> 
+									<TD BGCOLOR="#FF9933" COLSPAN="2"> 
+										<?
+										print $std_font."<B><FONT COLOR=white>$TMP_MSG</FONT></b></FONT>";
+										session_name($SESSION_NAME);
+										session_unregister("TMP_MSG");
+									?>
+									</TD>
+								</TR>
+								<?
+									}
+								?>
+								<TR VALIGN="TOP"> 
+									<TD BGCOLOR="#FFFFFF" WIDTH="50%"> 
+										<UL>
+											<? print $std_font; ?>
+											<LI> 
+												<? print $std_font; ?>
+												<A HREF="edit_data.php"> 
+												<? print $MSG_621; ?>
+												</A></LI>
+											<LI> 
+												<? print $std_font; ?>
+												<A HREF="credits_account.php"> 
+												<? print $MSG_430; ?>
+												</A></LI>
+											<LI> 
+												<? print $std_font; ?>
+												<A HREF="buy_credits.php"> 
+												<? print $MSG_431; ?>
+												</A> </LI>
+											<LI> 
+												<? print $std_font; ?>
+												<A HREF="auction_watch.php"> 
+												<? print $MSG_471; ?>
+												</A> </LI>
+											<LI> 
+												<? print $std_font; ?>
+												<A HREF="item_watch.php"> 
+												<? print $MSG_472; ?>
+												</A> </LI>
+											<LI> 
+												<? print $std_font; ?>
+												<A HREF="logout.php"> 
+												<? print $MSG_245; ?>
+												</A> </LI>
+										</UL>
+									</TD>
+
+                  <TD BGCOLOR="white" WIDTH="50%" VALIGN="top">
+                    <? print $std_font; ?>
+                    <UL>
+                      <LI>
+											<? print $std_font; ?>
+											 <A HREF="bulkupload.php">
+                        <? print $MSG_703; ?>
+                        </A> </LI>
+                      <LI> <A HREF="yourauctions.php">
+                        <? print $MSG_618; ?>
+                        </A> </LI>
+                      <LI>
+                        <? print $std_font; ?>
+                        <A HREF="yourbids.php"> 
+                        <? print $MSG_620; ?>
+                        </A></LI>
+                      <LI> 
+                        <? print $std_font; ?>
+                        <A HREF="selling.php"> 
+                        <? print $MSG_453; ?>
+                        </A></LI>
+                      <LI> 
+                        <? print $std_font; ?>
+                        <A HREF="buying.php"> 
+                        <? print $MSG_454; ?>
+                        </A></LI>
+                      <LI> 
+					
+                        <? print $std_font; ?>
+                        <a href="yourfeedback.php"> 
+                        <? print $MSG_478 ?>
+                        </a></LI>
+                    </UL>
+									</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+				</TABLE>
+				<BR>
+          <BR>
+
+
+</CENTER>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+
