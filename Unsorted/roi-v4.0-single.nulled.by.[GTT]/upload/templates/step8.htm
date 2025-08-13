@@ -1,0 +1,76 @@
+<table border=0 cellspacing=0 cellpadding=0 width=100%>
+<tr><td width=250>&nbsp;</td>
+<td align=left><h1 style="color: #427b7b; margin-left: 0px; margin-bottom: 0px; margin-top: 0px;" class=wheader>Action Wizard</h1></td>
+</tr></table>
+
+<form action=wizard.php method=post style="margin-top: 0px; margin-bottom: 0px;">
+%hiddenfields%
+
+<table border=0 width=100%>
+<tr><td>
+<table border=0 cellspacing=4 cellpadding=0 width=80%>
+<tr>
+<td rowspan=10 valign=top width=110>
+
+<table border=0 cellspacing=0 cellpadding=0>
+<tr><td width=98>
+
+<font size=2 color=#427b7b>
+
+<ul style="margin-left: 18px;margin-top: 2px;">
+<li>Step 1<br>
+Specifying campaign name and URL
+<br><br>
+<li>Step 2<br>
+Specifying campaign price<br><br>
+<li>Step 3<br>
+Adding the tracking link to your advert.<br><br>
+<li>Step 4<br>
+Action data revision. 
+</ul>
+</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+</tr></table>
+</font>
+</td>
+
+<td colspan=2>
+
+The following action was added to the current campaign:
+<br>
+<table border=0 cellspacing=3 cellpadding=2>
+<tr>
+<td><b>Action name:</b></td>
+<td>%action_name%</td>
+</tr>
+<tr>
+<td><b>Action link:</b></td>
+<td>%action_link%</td>
+</tr>
+%prices%
+</table>
+
+<br>
+Please check if the information above is correct. If you would like to make any changes, please click Previous to move back to the certain step of this wizard.
+
+<br><br>
+Please click Add action to add one more action to this campaign.
+<br><br>Click Finish to add the current action to campaign and get back to campaign edit panel.
+<br><br>
+<table border=0 cellspacing=3 cellpadding=2 width=93%>
+<tr>
+<td align=right>
+<input type=image src="images/button-previous.gif" name=prev value=prev title=Previous>
+&nbsp;&nbsp;&nbsp;
+<input type=image src="images/button-add-action.gif" name=addaction value=new title="Add action">
+&nbsp;&nbsp;&nbsp;
+<input type=image src="images/button-finish.gif" name=finish2 value=finish title="Finish">
+</td></tr></table>
+
+</td>
+</tr></table></td></tr></table>
+
+
+
+</form>
