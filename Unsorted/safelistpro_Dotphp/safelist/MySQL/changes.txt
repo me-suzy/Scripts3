@@ -1,0 +1,30 @@
+
+
+Changed on 01/05/2002
+-----------------------------------------------
+o  Okay, some of you asked about automatic rebilling. With paypal this is not possible due to them requiring 
+   both the users paypal email AND password for rebills. So, what we have done is set it up so the account is 
+   disabled after xx days, and pops a screen asking them to pay for another month. (if you choose rebilling)
+
+o  Added Admin Web Panel with the following options available:
+      o  Add Users Manually, bypassing payment.
+      o  Modify User Info.
+      o  Delete Users.
+      o  Email Users.
+
+o  Bounced emails module to allow for removing bouncing email addies from the list automatically.
+   Handles the following mail daemons bounces:
+      o  sendmail
+      o  qmail
+      o  exim
+   These daemons handle the vast majority of internet mail.
+      o To use this feature requires your server have Mail::Audit installed.
+
+
+Changed on 01/06/2002
+-----------------------------------------------
+
+o  MySQL Compatibility added. You can now choose either the flatfile text version or the MySQL one.
+
+o  Added a remove feature that (optionally) can disable a users account if they decide to opt out.
+
