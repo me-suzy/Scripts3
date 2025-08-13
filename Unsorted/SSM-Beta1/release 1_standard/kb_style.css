@@ -1,0 +1,10 @@
+.SelectedButton {BORDER-LEFT: #707070 1px solid; BORDER-RIGHT: #cacaca 1px solid; BORDER-BOTTOM: #cacaca 1px solid; BORDER-TOP: #707070 1px solid; FONT-SIZE: 7pt; COLOR: #ffffff; FONT-FAMILY: verdana,arial,sans-serif,verdana; BACKGROUND-COLOR: #a6a6a6}
+.UnselectedButton {BORDER-RIGHT: #a6a6a6 1px solid; BORDER-TOP: #a6a6a6 1px solid; FONT-SIZE: 7pt; BORDER-LEFT: #a6a6a6 1px solid; COLOR: #ffffff; BORDER-BOTTOM: #a6a6a6 1px solid; FONT-FAMILY: verdana, arial,sans-serif,verdana; BACKGROUND-COLOR: #a6a6a6}
+input.button {background-color: #F8F8F8;color: #333333;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 11px;font-weight : bold; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; }
+.prefinput{color: #333333;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 11px;font-weight: normal;border-color: #333333;text-indent: 2px; border-top-width: 1px;border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px; background: #dddddd;}
+.cat{color: #828282;text-decoration:none;}
+.cat:hover{color: #949494;text-decoration:underline;}
+.art{color: #7f7f7f;text-decoration:none;}
+.art:hover{color: #7f7f7f;text-decoration:underline;}
+.header{margin-left: 10px; font-family: Verdana; font-size: 15px; color: #828282; font-weight: bold}
+.body{margin-left: 10px; font-family: Verdana; font-size: 12px; color: black}
