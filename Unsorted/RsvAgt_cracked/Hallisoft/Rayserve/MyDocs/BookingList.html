@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+	<TITLE>Booking List</TITLE>
+	<LINK REL="stylesheet" HREF="Style/RSV.css" TYPE="text/css">
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	<META NAME="Description" CONTENT="">
+	<META NAME="Keywords" CONTENT="">
+
+	<!-- THE AUTO LOADING SCRIPT IS BELOW CHANGE index.html IF NECESSARY -->
+	<SCRIPT LANGUAGE="Javascript" TYPE="text/Javascript">
+		if(!parent.frames['MainFrame']){parent.location.href='index.html';}
+	</SCRIPT>
+
+</HEAD>
+<BODY>
+
+<H1 ALIGN="center">Booking List</H1>
+The table below shows a list of the room(s) you specified in the booking form. You can add more rooms, delete the list or confirm bookings using the buttons at the bottom of this page. Individual bookings can be modified using the buttons in the first column of the table. (Top button to change and lower button to delete).
+<P></P>
+
+<!-- GENERATED HTML BEGINS HERE -->
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+	parent.showBookingList('ICON','Icons/Edit.gif','Icons/Delete.gif','ChangeForm.html');
+</SCRIPT>
+<!-- GENERATED HTML ENDS HERE -->
+
+<BR>
+<DIV CLASS="nsbugfix" ALIGN="center">
+<FORM>
+<INPUT TYPE="button" NAME="AddBtn" VALUE="Add Another Room" onClick="parent.newBooking('BookingForm.html');">&nbsp;&nbsp;
+<INPUT TYPE="button" NAME="ConfBtn" VALUE="Confirm All Bookings" onClick="parent.confBooking('Checkout.html');">&nbsp;&nbsp;
+<INPUT TYPE="button" NAME="CancBtn" VALUE="Delete All Bookings" onClick="parent.deleAll('BookingList.html');">&nbsp;&nbsp;
+<INPUT TYPE="button" NAME="HelpBtn" VALUE="Help!" onClick="parent.helpMe('ConfForm');">
+</FORM>
+</DIV>
+<P></P>
+
+<!-- MENU USING DEFAULT PAGE NAMES -->
+<DIV ALIGN="center">
+<HR WIDTH="70%">
+<A HREF="Tariff.html" TARGET="MainFrame">Tariffs</A><IMG SRC="Icons/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="Availability.html" TARGET="MainFrame">Availability</A><IMG SRC="Icons/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="BookingForm.html" TARGET="MainFrame">Booking Form</A><IMG SRC="Icons/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<SPAN CLASS="hlite">Booking List</SPAN><IMG SRC="Icons/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="Checkout.html" TARGET="MainFrame">Confirm Bookings</A><BR>
+<A HREF="Email.html" TARGET="MainFrame">Email Us</A><IMG SRC="Icons/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="javascript:parent.newWin('Currency.html','Currency_Display',370,270,1)">Change Currency</A><IMG SRC="Icons/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<A HREF="javascript:parent.newWin('Convert.html','Currency_Convertion',370,340,1)">Currency Conversion</A><IMG SRC="Icons/Diamond.gif" BORDER="0" WIDTH="6" HEIGHT="6" HSPACE="10" ALT="">
+<HR WIDTH="70%">
+</DIV>
+
+<!-- YOU CAN REMOVE THE LINK TO OUR SITE IF YOU WISH -->
+<DIV CLASS="authinfo"ALIGN="center"><A HREF="http://www.hallisoft.com/RSV/index.html" TARGET="frameFix">Powered by Rayserve</A></DIV>
+
+</BODY>
+</HTML>
