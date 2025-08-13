@@ -1,0 +1,254 @@
+<?
+
+/*
+
+
+
+   Copyright (c), 1999, 2000 - phpauction.org
+
+
+
+   This program is free software; you can redistribute it and/or modify
+
+   it under the terms of the GNU General Public License as published by
+
+   the Free Software Foundation (version 2 or later).
+
+
+
+   This program is distributed in the hope that it will be useful,
+
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+
+   GNU General Public License for more details.
+
+
+
+   You should have received a copy of the GNU General Public License
+
+   along with this program; if not, write to the Free Software
+
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+
+
+*/
+
+?>
+<body leftmargin="0" topmargin="0" marginheight="0">
+<TABLE WIDTH="100%" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING="0" CELLSPACING="0" height="525">
+  <TR>
+
+    <TD height="548"> 
+      <CENTER>
+        <B> 
+        <?
+
+	print $tlt_font.$MSG_509;
+
+?>
+        </B> 
+        <? print $err_font; ?>
+        <b> 
+        <?
+
+	echo $TPL_errmsg;
+
+?>
+        </b><BR>
+        		<FORM NAME=details ACTION="<?=basename($PHP_SELF)?>" METHOD="POST">
+					
+          <TABLE WIDTH="100%" BORDER="0" CELLPADDING="4" height="552" align="center">
+            <TR> 
+              <TD rowspan="15"WIDTH="70"></TD>
+              <TD WIDTH="415" ALIGN="right" height="31"><b> 
+                <? print $std_font; ?>
+                <? print $MSG_002; ?>
+                </b></TD>
+              <TD WIDTH="556" height="31"> 
+                <? print $tlt_font; ?>
+                <? echo $TPL_name; ?>
+              </TD>
+            </TR>
+            <TR> 
+              <TD WIDTH="415" VALIGN="top" ALIGN="right" height="31"> <B> 
+                <? print $std_font; ?>
+                <? print $MSG_003; ?>
+                </B> </TD>
+              <TD WIDTH="556" valign="top"> 
+                <? print $std_font; ?>
+                <b> 
+                <? print $TPL_nick; ?>
+                </b> <b> 
+                <? echo $TPL_num_feedback; ?>
+                <? if(!$TPL_rate) $TPL_rate=0; ?>
+                <img src="./images/estrella_<? echo $TPL_rate; ?>.gif" align="top"></b> 
+              </TD>
+            </TR>
+            <TR> 
+              <TD COLSPAN="2"  BGCOLOR="<?=$FONTCOLOR[$SETTINGS[headercolor]]?>" VALIGN="top" align="center"> 
+                <? print $std_font; ?>
+                <? print $MSG_617; ?>
+              </TD>
+            </TR>
+            <TR> 
+              <TD WIDTH="415"  BGCOLOR="<?=$FONTCOLOR[$SETTINGS[headercolor]]?>" VALIGN="top" ALIGN="right"> 
+                <B> 
+                <? print $std_font; ?>
+                <? print $MSG_268; ?>
+                </B> </TD>
+              <TD WIDTH="556" BGCOLOR="<?=$FONTCOLOR[$SETTINGS[headercolor]]?>"> 
+                <INPUT TYPE=password NAME=TPL_password SIZE=20 MAXLENGTH=20>
+                <? print $std_font.$MSG_050; ?>
+              </TD>
+            </TR>
+            <TR> 
+              <TD WIDTH="415" BGCOLOR="<?=$FONTCOLOR[$SETTINGS[headercolor]]?>" VALIGN="top" ALIGN="right" > 
+                <? print $std_font; ?>
+                <B> 
+                <? print $MSG_005; ?>
+                </B> </TD>
+              <TD WIDTH="556" BGCOLOR="<?=$FONTCOLOR[$SETTINGS[headercolor]]?>"> 
+                <INPUT TYPE=password NAME=TPL_repeat_password SIZE=20 MAXLENGTH=20>
+              </TD>
+            </TR>
+            <TR> 
+              <TD WIDTH="415"  VALIGN="top" ALIGN="right"> 
+                <? print $std_font; ?>
+                <B> 
+                <? print $MSG_006; ?>
+                </B> </TD>
+              <TD WIDTH="556"> 
+                <INPUT TYPE=text NAME=TPL_email SIZE=50 MAXLENGTH=50 VALUE="<? echo $TPL_email; ?>">
+              </TD>
+            </TR>
+            <TR> 
+              <TD WIDTH="415" VALIGN="top" ALIGN="right"><B> 
+                <? print $std_font; ?>
+                <?
+
+  		print $std_font.$MSG_252;
+
+  	?>
+                </B></TD>
+              <TD WIDTH="556"> 
+                <INPUT type=text name=TPL_birthdate size=10 maxlength=10 value="<? echo $TPL_birthdate; ?>">
+                <?
+
+  		print $std_font.$MSG_253;
+
+  	?>
+              </TD>
+            </TR>
+            <TR> 
+              <TD WIDTH="415" VALIGN="top" ALIGN="right"> 
+                <? print $std_font; ?>
+                <B> 
+                <? print $MSG_009; ?>
+                </B> </TD>
+              <TD WIDTH="556"> 
+                <INPUT TYPE=text NAME=TPL_address SIZE=40 MAXLENGTH=255 VALUE="<? echo $TPL_address; ?>">
+              </TD>
+            </TR>
+            <TR> 
+              <TD WIDTH="415" VALIGN="top" ALIGN="right"> 
+                <? print $std_font; ?>
+                <B> 
+                <? print $MSG_010; ?>
+                </B> </TD>
+              <TD WIDTH="556"> 
+                <INPUT TYPE=text NAME=TPL_city SIZE=25 MAXLENGTH=25 VALUE="<? echo $TPL_city; ?>">
+              </TD>
+            </TR>
+            <TR> 
+              <TD WIDTH="415" VALIGN="top" ALIGN="right"> 
+                <? print $std_font; ?>
+                <B> 
+                <? print $MSG_011; ?>
+                </B> </TD>
+              <TD WIDTH="556"> 
+                <INPUT TYPE=text NAME=TPL_prov SIZE=10 MAXLENGTH=10 VALUE="<? echo $TPL_prov; ?>">
+              </TD>
+            </TR>
+            <TR> 
+              <TD WIDTH="415" VALIGN="top" ALIGN="right"> 
+                <? print $std_font; ?>
+                <B> 
+                <? print $MSG_014; ?>
+                </B> </TD>
+              <TD WIDTH="556"> 
+                <SELECT NAME=TPL_country>
+                  <OPTION VALUE=""> 
+                  <? print $MSG_015; ?>
+                  </OPTION>
+                  <?  echo $country; ?>
+                </SELECT>
+              </TD>
+            </TR>
+            <TR> 
+              <TD WIDTH="415" VALIGN="top" ALIGN="right"> 
+                <? print $std_font; ?>
+                <B> 
+                <? print $MSG_012; ?>
+                </B> </TD>
+              <TD WIDTH="556"> 
+                <INPUT TYPE=text NAME=TPL_zip SIZE=8 MAXLENGTH=6 VALUE="<? echo $TPL_zip; ?>">
+              </TD>
+            </TR>
+            <TR> 
+              <TD WIDTH="415" VALIGN="top" ALIGN="right"> 
+                <? print $std_font; ?>
+                <B> 
+                <? print $MSG_013; ?>
+                </B> </TD>
+              <TD WIDTH="556"> 
+                <INPUT TYPE=text NAME=TPL_phone SIZE=40 MAXLENGTH=40 VALUE="<? echo $TPL_phone; ?>">
+              </TD>
+            </TR>
+            <TR> 
+             	<? 
+				if($SETTINGS[newsletter] == 1){
+				?>
+              <TD WIDTH="415" ALIGN="right" height="2"> 
+                <p><b><i><font size="2"> 
+                  <? print $std_font.$MSG_608; ?>
+                  </font></i></b><br>
+                </p>
+              <TD WIDTH="556" height="2"> 
+                <input type="radio" name="TPL_nletter" value="1" 	<? if($TPL_nletter == 1 ) print " CHECKED";?> >
+                YES 
+                <input type="radio" name="TPL_nletter" value="2" 	<? if($TPL_nletter == 2 ) print " CHECKED";?>>
+
+                NO &nbsp<font size="2"> 
+                <? print $std_font.$MSG_609; ?>
+                .</font> </TD>
+            </TR>
+            <?
+	}
+	else
+	
+ ?>
+            <TR> 
+              <TD WIDTH="415" VALIGN="top" ALIGN="right" height="38"> <B> 
+                <? //print $std_font.$MSG_097; ?>
+                </B> </TD>
+              <TD WIDTH="556" height="38"> 
+                <input type=submit name="Input">
+                <input type=reset name="Input">
+              </TD>
+            </TR>
+          </TABLE>
+
+	<INPUT type="hidden" NAME="action" VALUE="update">
+
+</FORM>
+
+</center>
+
+</TD>
+<TD rowspan="16"WIDTH="70"></TD>
+</TR>
+
+</TABLE>
