@@ -1,0 +1,436 @@
+<html>
+<head>
+<title>
+</title>
+<!-- ns6 bug ... needs to load different style sheet -->
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="{WWW_DIR}templates/contact{NS6_CONTACT_CSS}.css">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="{WWW_DIR}templates/global.css">
+
+<meta http-equiv="Expires" content="Fri, Jun 12 1981 08:20:00 GMT">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+</head>
+<body onload="start()" class="colored">
+
+<script type="text/javascript" src="{WWW_DIR}events.js"></script>
+<script type="text/javascript" src="{WWW_DIR}lib/formcheck.js"></script>
+<script type="text/javascript" src="{WWW_DIR}contact/contact.js"></script>
+
+<script type="text/javascript">
+// reload the left frame
+{RELOAD}
+
+var session_id = "{SESSION_ID}";
+</script>
+
+
+<!-- js inserts tabs in here -->
+<div id="tabs"></div>
+
+<!-- return check_contact(); -->
+<form action="{FORM_URL}?session_id={SESSION_ID}" target="{TARGET}" method="post" name="contacts_form" onsubmit="save_phone_comm(); ">
+<input type="hidden" name="phone_comm">
+<input type="hidden" name="palm_dphone_num">
+<input type="hidden" name="mode" value="{MODE}">
+
+<!-- all of the divs are absolutley positioned on top of each other. The tabs change which one becomes visible -->
+<div class="maincontact" id="name">
+
+<div class="mode">{TEMPLATE_MODE}</div>
+
+<table cellspacing="0" cellpadding="5" width="100%" border="0">
+ <tr>
+ <td class="form" width="50%">
+
+		<table width="350">
+		 <tr>
+
+		<tr>
+			<td class="form" align="right" width="100">
+				<span class="field-titles">Prefix:</span>
+			</td>
+			<td width="5">&nbsp;</td>
+			<td>
+				<select name="prefix" class="form">
+				    <option value=""></option>
+					<option value="mr">Mr.</option>
+					<option value="ms">Ms.</option>
+					<option value="mrs">Mrs.</option>
+					<option value="dr">Dr.</option>	
+				</select>
+			</td>		
+		</tr>
+		 <tr>
+			<td class="form" align="right" width="100"><span class="field-titles">First Name:</span></td><td width="5">&nbsp;</td><td><input type="text" name="fname" size="30" maxlength="250" class="form" /></td>
+		</tr><tr>
+			<td class="form" align="right" width="100"><span class="field-titles">Last Name:</span></td><td width="5">&nbsp;</td><td><input type="text" size="30" name="lname" maxlength="250" class="form" /></td>
+		</tr><tr>
+			<td class="form" align="right" width="100"><span class="field-titles">Middle Name:</span></td><td width="5">&nbsp;</td><td><input type="text" size="30" name="mname" maxlength="250" class="form" /></td>
+		 </tr><tr>
+			<td class="form" align="right" width="100"><span class="field-titles">Title:</span></td><td width="5">&nbsp;</td><td><input type="text" size="30" name="title" maxlength="250" class="form" /></td>
+		 </tr><tr>
+			<td class="form" align="right" width="100"><span class="field-titles">Company:</span></td><td width="5">&nbsp;</td><td><input type="text" size="30" maxlength="250" name="company" class="form" /></td>
+		 </tr>
+		 <tr>
+ 	<td class="form" align="right" valign="top" width="100">
+		<span class="field-titles">Address:</span>
+	</td>
+	<td width="5">&nbsp;</td>
+	<td valign="top" class="form"><input type="radio" name="address" value="business" checked onclick="changeaddr();" class="form" style="background: #D4D0C8;" />Business<br>
+		<input type="radio" name="address" value="personal" onclick="changeaddr();" class="form" style="background: #D4D0C8;" />Personal<br>
+		<input type="radio" name="address" value="alternate" onclick="changeaddr();" class="form" style="background: #D4D0C8;" />Alternate
+    </td>
+ </tr> 
+ <tr>
+	<td class="form" align="right" width="100">
+		<span class="field-titles">Street:</span>
+	</td>
+	<td width="5">
+		&nbsp;
+	</td>
+	<td>
+		<input type="text" name="street" size="30" onchange="changeaddrfield('street');" maxlength="250" class="form" />
+	</td>
+</tr>
+<tr>
+	<td class="form" align="right" width="100">
+		<span class="field-titles">City:</span>
+	</td>
+	<td width="5">
+		&nbsp;
+	</td>
+	<td>
+		<input type="text" name="city" size="30" onchange="changeaddrfield('city');" maxlength="250" class="form" />
+	</td>
+ </tr>
+ <tr>
+	<td class="form" align="right" width="100">
+		<span class="field-titles">State:</span>
+	</td>
+	<td width="5">
+		&nbsp;
+	</td>
+	<td>
+		<input type="text" name="state" size="30" onchange="changeaddrfield('state');" maxlength="250" class="form" />
+	</td>
+</tr>
+<tr>
+	<td class="form" align="right" width="100">
+		<span class="field-titles">Zip:</span>
+	</td>
+	<td width="5">
+		&nbsp;
+	</td>
+    <td>
+		<input type="text" name="zip" size="8" onchange="changeaddrfield('zip');" maxlength="15"class="form" />
+	</td>
+ </tr>
+ <tr>
+	<td class="form" align="right" width="100">
+		<span class="field-titles">Country:</span>
+	</td>
+	<td width="5">
+		&nbsp;
+	</td>
+	<td>
+		<input type="text" name="country" size="30" onchange="changeaddrfield('country');" maxlength="250" class="form" />
+	</td>
+ </tr>
+		<tr>
+			<td class="form" align="right" width="100"><span class="field-titles">Is Prospect?</span></td><td width="5">&nbsp;</td><td class="form" >
+
+	<select name="is_prospect" class="form">
+	    <option value=""></option>
+		<option value="y">Yes</option>
+		<option value="n">No</option>	
+	</select>
+
+	</td>
+		</tr>
+		<tr>
+	<td class="form" align="right" width="100"><span class="field-titles">Email Type:</span></td><td width="5">&nbsp;</td><td class="form" >
+	
+	<select name="email_type" class="form">
+		<option value=""></option>
+		<option value="t">Text</option>
+		<option value="h">HTML</option>
+	</select>
+	
+	</td>
+		</tr>		
+			 <tr>
+			 	<td class="form" align="right" width="100"><span class="field-titles">Website 1:</span></td><td width="5">&nbsp;</td>
+				<td><input type="text" name="website1" size="30" maxlength="250" class="form" /></td>
+			 </tr>
+			 <tr>
+			 	<td class="form" align="right" width="100"><span class="field-titles">Website 2:</span></td><td width="5">&nbsp;</td>
+				<td><input type="text" name="website2" size="30" maxlength="250" class="form" /></td>
+			 </tr>
+			<td align="right" width="100">
+			<input type="radio" name="palm_dphone" value="1" onclick="var this_button=document.contacts_form.contact_lbl1.value; changedphone(this_button);" class="form" style="background: #D4D0C8;"/>
+				<select name="contact_lbl1" class="form" onchange="var is_on=true; show_email_button(this,is_on);">
+					<option value="0" selected>Work</option>
+					<option value="1" >Home</option>
+					<option value="2" >Fax</option>
+					<option value="3" >Other</option>
+					<option value="4" >E-mail</option>
+					<option value="5" >Main</option>
+					<option value="6" >Pager</option>
+					<option value="7" >Mobile</option>
+				</select>
+			</td><td width="5">&nbsp;</td>
+			<td valign="middle">
+				<input type="text" size="15" name="contact_val1" maxlength="250" class="form" />
+					<span style="visibility: hidden;" id="email_btn1">
+					 <img src="{WWW_DIR}templates/images/email_norm.gif"
+						alt="Click here to send an email to this contact"
+						onmouseover="this.src='{WWW_DIR}templates/images/email_roll.gif'"
+						onmouseout="this.src='{WWW_DIR}templates/images/email_norm.gif'"
+						onmousedown="this.src='{WWW_DIR}templates/images/email_down.gif'"
+						onClick="Mail='mailto:' + document.contacts_form.contact_val1.value; window.location.href=Mail;" align="absmiddle"/>
+					</span>
+				</td>
+		 </tr>
+		 <tr>
+			<td align="right" width="100"><input type="radio" name="palm_dphone" value="2" onclick="var this_button=document.contacts_form.contact_lbl2.value; changedphone(this_button);" class="form" style="background: #D4D0C8;"/>
+				<select name="contact_lbl2" class="form" onchange="var is_on=document.contacts_form.palm_dphone[1].checked; show_email_button(this,is_on);">
+					<option value="0" >Work</option>
+					<option value="1" selected>Home</option>
+					<option value="2" >Fax</option>
+					<option value="3" >Other</option>
+					<option value="4" >E-mail</option>
+					<option value="5" >Main</option>
+					<option value="6" >Pager</option>
+					<option value="7" >Mobile</option>
+				</select>
+			</td><td width="5">&nbsp;</td>
+			<td>
+				<input type="text" size="15" name="contact_val2" maxlength="250" class="form" />
+				<span style="visibility: hidden;" id="email_btn2">
+					 	<img src="{WWW_DIR}templates/images/email_norm.gif"
+						alt="Click here to send an email to this contact"
+						onmouseover="this.src='{WWW_DIR}templates/images/email_roll.gif'"
+						onmouseout="this.src='{WWW_DIR}templates/images/email_norm.gif'"
+						onmousedown="this.src='{WWW_DIR}templates/images/email_down.gif'"
+						onClick="Mail='mailto:' + document.contacts_form.contact_val2.value; window.location.href=Mail;" align="absmiddle"/>
+				</span>
+			</td>
+		 </tr>
+		 <tr>
+			<td align="right" width="100"><input type="radio" name="palm_dphone" value="3" onclick="var this_button=document.contacts_form.contact_lbl3.value; changedphone(this_button);" class="form" style="background: #D4D0C8;"/>
+				<select name="contact_lbl3" class="form" onchange="var is_on=document.contacts_form.palm_dphone[2].checked; show_email_button(this,is_on);">
+					<option value="0" >Work</option>
+					<option value="1" >Home</option>
+					<option value="2" selected>Fax</option>
+					<option value="3" >Other</option>
+					<option value="4" >E-mail</option>
+					<option value="5" >Main</option>
+					<option value="6" >Pager</option>
+					<option value="7" >Mobile</option>
+				</select>
+			</td><td width="5">&nbsp;</td>
+			<td>
+				<input type="text" size="15" name="contact_val3" maxlength="250" class="form" />
+				<span style="visibility: hidden;" id="email_btn3">
+					    <img src="{WWW_DIR}templates/images/email_norm.gif"
+						alt="Click here to send an email to this contact"
+						onmouseover="this.src='{WWW_DIR}templates/images/email_roll.gif'"
+						onmouseout="this.src='{WWW_DIR}templates/images/email_norm.gif'"
+						onmousedown="this.src='{WWW_DIR}templates/images/email_down.gif'"
+						onClick="Mail='mailto:' + document.contacts_form.contact_val3.value; window.location.href=Mail;" align="absmiddle"/>
+				</span>
+			</td>
+		 </tr>
+		 <tr>
+			<td align="right" width="100"><input type="radio" name="palm_dphone" value="4" onclick="var this_button=document.contacts_form.contact_lbl4.value; changedphone(this_button);" class="form" style="background: #D4D0C8;"/>
+				<select name="contact_lbl4"class="form" onchange="var is_on=document.contacts_form.palm_dphone[3].checked; show_email_button(this,is_on);">
+					<option value="0" >Work</option>
+					<option value="1" >Home</option>
+					<option value="2" >Fax</option>
+					<option value="3" selected>Other</option>
+					<option value="4" >E-mail</option>
+					<option value="5" >Main</option>
+					<option value="6" >Pager</option>
+					<option value="7" >Mobile</option>
+				</select>
+			</td>
+			<td width="5">&nbsp;</td>
+			<td>
+				<input type="text" size="15" name="contact_val4" maxlength="250" class="form"/>
+				<span style="visibility: hidden;" id="email_btn4">
+					 	<img src="{WWW_DIR}templates/images/email_norm.gif"
+						alt="Click here to send an email to this contact"
+						onmouseover="this.src='{WWW_DIR}templates/images/email_roll.gif'"
+						onmouseout="this.src='{WWW_DIR}templates/images/email_norm.gif'"
+						onmousedown="this.src='{WWW_DIR}templates/images/email_down.gif'"
+						onClick="Mail='mailto:' + document.contacts_form.contact_val4.value; window.location.href=Mail;" align="absmiddle"/>
+				</span>
+			</td>
+		 </tr>
+		 <tr>
+			<td align="right" width="100"><input type="radio" name="palm_dphone" value="5" onclick="var this_button=document.contacts_form.contact_lbl5.value; changedphone(this_button);" class="form" style="background: #D4D0C8;"/>
+				<select name="contact_lbl5" class="form" onchange="var is_on=document.contacts_form.palm_dphone[4].checked; show_email_button(this,is_on);">
+					<option value="0" >Work</option>
+					<option value="1" >Home</option>
+					<option value="2" >Fax</option>
+					<option value="3" >Other</option>
+					<option value="4" selected>E-mail</option>
+					<option value="5" >Main</option>
+					<option value="6" >Pager</option>
+					<option value="7" >Mobile</option>
+				</select>
+			</td>
+			<td width="5">&nbsp;</td>
+			<td>
+				<input type="text" size="15" name="contact_val5" maxlength="250" class="form" />
+				<span style="visibility: hidden;" id="email_btn5">
+					 	<img src="{WWW_DIR}templates/images/email_norm.gif"
+						alt="Click here to send an email to this contact"
+						onmouseover="this.src='{WWW_DIR}templates/images/email_roll.gif'"
+						onmouseout="this.src='{WWW_DIR}templates/images/email_norm.gif'"
+						onmousedown="this.src='{WWW_DIR}templates/images/email_down.gif'"
+						onClick="Mail='mailto:' + document.contacts_form.contact_val5.value; window.location.href=Mail;" align="absmiddle"/>
+				</span>
+			</td>
+		 </tr>
+ 		<tr>
+		 <td colspan="3" align="left">
+		 <span class="regular-text" style="visibility: hidden; position: absolute;" id="dphone_work">&nbsp;&nbsp;&nbsp;Work is the primary contact.<br></span>
+		<span class="regular-text" style="visibility: hidden; position: absolute;" id="dphone_home">&nbsp;&nbsp;&nbsp;Home is the primary contact.<br></span>
+		<span class="regular-text" style="visibility: hidden; position: absolute;" id="dphone_fax">&nbsp;&nbsp;&nbsp;Fax is the primary contact.<br></span>
+		<span class="regular-text" style="visibility: hidden; position: absolute;" id="dphone_other">&nbsp;&nbsp;&nbsp;Other is the primary contact.<br></span>
+		<span class="regular-text" style="visibility: hidden; position: absolute;" id="dphone_email">&nbsp;&nbsp;&nbsp;Email is the primary contact.<br></span>
+		<span class="regular-text" style="visibility: hidden; position: absolute;" id="dphone_main">&nbsp;&nbsp;&nbsp;Main is the primary contact.<br></span>
+		<span class="regular-text" style="visibility: hidden; position: absolute;" id="dphone_pager">&nbsp;&nbsp;&nbsp;Pager is the primary contact.<br></span>
+		<span class="regular-text" style="visibility: hidden; position: absolute;" id="dphone_mobile">&nbsp;&nbsp;&nbsp;Mobile is the primary contact.<br></span><br>
+		</td>
+		 </tr>
+		 <tr>
+			<td class="form" align="right" valign="top" width="100">
+				<span class="field-titles">Groups:</span>
+			</td>
+			<td width="5">&nbsp;</td>
+			<td>
+				<div id="groups">
+		          {GROUPS}
+	            </div>
+			</td>		
+		</tr>
+		</table>	
+		</td>
+		<td align="center" class="form" width="50%" height="450">
+			<span class="field-titles">Notes:</span><br>			
+			{NOTES}			
+		</td>
+	</tr>
+	<tr><td colspan="2" align="center">
+	<hr />
+	</td></tr>
+	<tr>
+	<td colspan="2" align="center">
+		<input type="submit" name="action" value="   OK   " class="form" style="background: #D4D0C8;" />
+		<input type="{ACTION2}" name="action" value=" {ACTION2_LABEL} " class="form" style="background: #D4D0C8;"/>
+	<br>
+	</td>
+	</tr>
+</table>
+
+</div>
+
+
+<div id="palm" class="maincontact" style="visibility: {ALL_BROWSERS_VISIBLITY}">
+
+
+<table class="form" cellspacing="5" width="350" border="0">
+<tr>
+	<td class="form" align="right" width="100"><span class="field-titles">Custom 1:</span></td>
+	<td width="5">&nbsp;</td>
+	<td><input type="text" name="palm_custfield1" size="30" class="form" /></td>
+</tr>
+<tr>
+	<td class="form" align="right" width="100"><span class="field-titles">Custom 2:</span></td>
+	<td width="5">&nbsp;</td>
+	<td><input type="text" name="palm_custfield2" size="30" maxlength="250" class="form" /></td>
+</tr>
+<tr>
+	<td class="form" align="right" width="100"><span class="field-titles">Custom 3:</span></td>
+	<td width="5">&nbsp;</td>
+	<td><input type="text" name="palm_custfield3" size="30" maxlength="250" class="form" /></td>
+</tr>
+<tr>
+	<td class="form" align="right" width="100"><span class="field-titles">Custom 4:</span></td>
+	<td width="5">&nbsp;</td>
+	<td><input type="text" name="palm_custfield4" size="30" maxlength="250" class="form" /></td>
+</tr>
+<tr>
+	<td class="form" align="right" width="100"><span class="field-titles">Palm&nbsp;Category:</span></td>
+	<td width="5">&nbsp;</td>
+	<td>{PALM_CATNAME}</td>
+</tr>
+<tr>
+	<td class="form" align="right" valign="top" width="100"><span class="field-titles">Palm Notes:</span></td>
+	<td width="5">&nbsp;</td>
+	<td><textarea name="palm_notes" cols="40" rows="10" class="form" style="background: #ffffff;"></textarea></td>
+</tr>
+  <tr>
+	<td class="form" align="right" width="100">&nbsp;</td>
+	<td width="5">&nbsp;</td>
+	<td><br><input type="submit" name="action"    value="   OK   " class="form" style="background: #D4D0C8;" /></td>
+ </tr>
+</table>
+
+</div>
+
+<div id="xtra" class="maincontact" style="visibility: {ALL_BROWSERS_VISIBLITY}">
+
+<table cellspacing="5" width="350">
+		{EXTRA_FIELDS}
+ <tr>
+	<td class="form">
+		&nbsp;
+	</td>
+	<td width="5">
+		&nbsp;
+	</td>
+	<td>
+		<input type="submit" name="action"    value="   OK   " class="form" style="background: #D4D0C8;" />
+	</td>
+ </tr>
+</table>
+
+</div>
+
+<span class="copyright">Relata<SUP><FONT SIZE="-1">TM</FONT></SUP> Software Copyright Stratabase Inc. All Rights Reserved</span>
+
+
+<input type="hidden" name="contact_id" />
+
+<input type="hidden" name="bus_street" />
+<input type="hidden" name="bus_city" />
+<input type="hidden" name="bus_state" />
+<input type="hidden" name="bus_country" />
+<input type="hidden" name="bus_zip" />
+
+<input type="hidden" name="hm_street" />
+<input type="hidden" name="hm_city" />
+<input type="hidden" name="hm_state" />
+<input type="hidden" name="hm_country" />
+<input type="hidden" name="hm_zip" />
+
+<input type="hidden" name="alt_street" />
+<input type="hidden" name="alt_city" />
+<input type="hidden" name="alt_state" />
+<input type="hidden" name="alt_country" />
+<input type="hidden" name="alt_zip" />
+<input type="hidden" name="user_notes" />
+
+</form>
+
+<script type="text/javascript" src="{WWW_DIR}contact/contact2.js"></script>
+
+<!-- hidden loader frame -->
+{LOADER}
+
+</body>
+</html>
