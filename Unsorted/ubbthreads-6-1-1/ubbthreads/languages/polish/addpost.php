@@ -1,0 +1,30 @@
+<?
+$ubbt_lang['FILE_TOO_BIG']="Files can be no larger than {$config['filesize']}";
+$ubbt_lang['READ_PERM']  = 	"W tym forum masz prawa tylko do czytania";
+$ubbt_lang['POST_ICON']  =     "Ikonka do wiadomo¶ci";
+$ubbt_lang['SPELL_CHECK']  = 	"Sprawd¼ pisowniê";
+$ubbt_lang['SPELL_BODY']  = 	"Poni¿ej jest wiadomo¶æ po sprawdzeniu.  Prawdopodobne b³êdy zosta³y <u>podkre¶lone</u>. W nawiasach znajduj± siê podpowiedzi. Skorzystaj z swojej przegl±darki, ¿eby wróciæ do poprzedniej strony.";
+$ubbt_lang['NAME_TAKEN']  = 	"Nazwa u¿ytkownika, której próbujesz u¿yæ jest ju¿ u¿ywana przez kogo¶ innego.";
+$ubbt_lang['BAD_UNAME']  = 	"Nazwa u¿ytkownika nie mo¿e zawieraæ kodu HTML oraz nie mo¿e zaczynaæ siê i konæczyæ spacj±";
+$ubbt_lang['LONG_NAME']  = 	"Nazwa u¿ytkownika ma niew³a¶ciw± d³ugo¶æ.";
+$ubbt_lang['LOCKED']  = 	"Ten w±tek zosta³ zablokowany, a Ty nie masz odpowiednich praw by dodaæ do niego now± wiadomo¶æ.";
+$ubbt_lang['TWO_POLLS']  = 	"Wiadomo¶æ mo¿e zawieraæ tylko 1 ankietê.";
+$ubbt_lang['PREV_POST']  = 	"Zobacz wiadomo¶æ";
+$ubbt_lang['SUB_VOTE']  = 	"Zag³osuj";
+$ubbt_lang['POST_BODY']  = 	"Tak wygl±da Twoja wiadomo¶æ. Je¶li wszystko wygl±da OK wci¶nij przycisk 'Dalej'.  Je¶li nie to wróæ do poprzedniej strony i zmieñ co trzeba.";
+$ubbt_lang['YES_FILE2']  = 	"Do swojej wiadomo¶ci mo¿esz do³±czyæ plik. Rozmiar pliku jest ograniczony do  {$config['filesize']} bajtów";
+$ubbt_lang['NO_FILE2']  = 	"Do³±czanie plików jest dozwolone, ale musisz mieæ przegl±darkê kompatybiln± conajmniej z Netscape 4.";
+$ubbt_lang['EDIT_MORE']  = 	"Edytuj wiêcej";
+$ubbt_lang['POST_TEXT']  = 	"Tekst wiadomo¶ci";
+$ubbt_lang['DO_EMAIL']  = 	"Wy¶lij mi odpowiedzi na tê wiadomo¶æ emailem";
+$ubbt_lang['DO_PREVIEW']  = 	"Chcê podejrzeæ moj± wiadomo¶æ";
+$ubbt_lang['CAN_ATTACH']  = 	"i/lub do³±czyæ plik";
+$ubbt_lang['NO_DUPS']  = 	"Ta wiadomo¶æ zosta³a ju¿ wpisana do bazy.";
+$ubbt_lang['UNREGED_USER']  = 	"Niezarejestrowany";
+$ubbt_lang['REPLY_SUB']  = 	"Odpowied¼ na Twoj± wiadomo¶æ";
+$ubbt_lang['REPLY_BOD']  = 	"odpowiedzia³ na Twoj± wiadomo¶æ na forum: .";
+$ubbt_lang['POST_ENTERED']  = 	"Twoja wiadomo¶æ zosta³a opublikowana.";
+$ubbt_lang['MOD_CONFIRM']  = 	"Twoja wiadomo¶æ zosta³a przyjêta.  To forum jest moderowane, a wiêc Twoja wiadomo¶æ zostanie opublikowana dopiero po zaakceptowaniu przez administratora lub moderatora. Za chwilê wrócisz do forum.";
+$ubbt_lang['FORUM_RETURN']  = 	"Powrót do forum";
+$ubbt_lang['VIEW_POST']  = 	"Zobacz swoj± wiadomo¶æ";
+?>
