@@ -1,0 +1,17 @@
+<?
+
+$message = "Hello $nickname,
+
+This is an automatic response from Your Item Watch. 
+Someone has bid on an item you have added to your item watch list.
+
+Auction Title: $auc_title
+
+Current Bid: $new_bid2
+
+Auction URL
+$auction_url";
+
+mail($e_mail,"$sitename - Item Watch",$message,"From:$SETTINGS[sitename] <$SETTINGS[adminmail]>\nReplyTo:$SETTNGS[adminmail]"); 
+
+?>
