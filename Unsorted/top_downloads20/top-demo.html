@@ -1,0 +1,519 @@
+<html>
+<head>
+<title>Top Downloads</title>
+<style type=text/css>
+td { font-family: Arial, Helvetica, sans-serif; font-size: 8pt}
+a:hover { color: #000099; text-decoration: underline }
+select {  font-family: Arial, Helvetica, sans-serif; font-size: 8pt}
+input {  font-size: 8pt}
+tt {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13pt; font-weight: bold}
+a {  text-decoration: none}
+</style>
+<script language="Javascript">
+<!--
+function Demo() {
+  alert('This is a demo!');
+}
+// -->
+</script>
+</head>
+<body bgcolor="#FFFFFF" background="gif/texture1.gif" text="#000000" link="#000000" vlink="#000000" alink="#000000">
+<form method="post">
+<table width="560" border="0" cellspacing="0" cellpadding="2" height="55" align="center">
+  <tr> 
+    <td> <tt>Top Downloads 2.0</tt></td>
+    <td align="right"> <img src="gif/point.gif" width="9" height="9"><a href="javascript:Demo()">Administration</a> 
+      | <img src="gif/point.gif" width="9" height="9"><a href="javascript:Demo()">Downloads by 
+      Day</a> | <img src="gif/point.gif" width="9" height="9"><a href="javascript:Demo()">Check 
+      for Updates</a></td>
+  </tr>
+  <tr>
+    <td><img src="gif/point2.gif" width="9" height="9"><b>Date: Wed, 04 October 2000 15:06</b></td>
+    <td align="right">
+      <select name="files" onChange="javascript:Demo()">
+        <option selected>show details</option>
+        <option value="stat.zip">Access Stats 1.11</option>
+        <option value="pollphp.zip">Advanced Poll 1.25</option>
+        <option value="acountphp.zip">Animated Counter PHP</option>
+        <option value="acountssi.zip">Animated Counter SSI</option>
+        <option value="clock.zip">Clock</option>
+        <option value="dcountphp.zip">Daily Counter PHP 1.1</option>
+        <option value="dcountssi.zip">Daily Counter SSI</option>
+        <option value="date.zip">Date</option>
+        <option value="links.zip">Free Link Page 1.2</option>
+        <option value="guestbook.zip">Guestbook 1.5</option>
+        <option value="countphp.zip">Simple Counter PHP</option>
+        <option value="countssi.zip">Simple Counter SSI</option>
+        <option value="poll.zip">Template File</option>
+        <option value="topdl.zip">Top Downloads 1.2</option>
+      </select>
+    </td>
+  </tr>
+</table>
+<table bgcolor="#F7F7F7" border=0 cellpadding=2 cellspacing=1 width=560 align=center>
+  <tr>
+    <td colspan=2 bgcolor="#E1A8A8"><font color="#990000"><b>Top 15 Downloads</b></font></td>
+  </tr>
+    <tr>
+      <td>Advanced Poll 1.25</td>
+      <td nowrap><img src="gif/red.gif" width=310 height=10> 5355</td>
+    </tr>
+    <tr>
+      <td>Access Stats 1.11</td>
+      <td nowrap><img src="gif/purple.gif" width=184 height=10> 3193</td>
+    </tr>
+    <tr>
+      <td>Guestbook 1.5</td>
+      <td nowrap><img src="gif/yellow.gif" width=154 height=10> 2666</td>
+    </tr>
+    <tr>
+      <td>Animated Counter PHP</td>
+      <td nowrap><img src="gif/yellow.gif" width=143 height=10> 2471</td>
+    </tr>
+    <tr>
+      <td>Top Downloads 1.2</td>
+      <td nowrap><img src="gif/yellow.gif" width=127 height=10> 2204</td>
+    </tr>
+    <tr>
+      <td>Daily Counter PHP 1.1</td>
+      <td nowrap><img src="gif/pink.gif" width=110 height=10> 1908</td>
+    </tr>
+    <tr>
+      <td>Free Link Page 1.2</td>
+      <td nowrap><img src="gif/pink.gif" width=98 height=10> 1704</td>
+    </tr>
+    <tr>
+      <td>Simple Counter PHP</td>
+      <td nowrap><img src="gif/pink.gif" width=79 height=10> 1372</td>
+    </tr>
+    <tr>
+      <td>Animated Counter SSI</td>
+      <td nowrap><img src="gif/aqua.gif" width=63 height=10> 1096</td>
+    </tr>
+    <tr>
+      <td>Clock</td>
+      <td nowrap><img src="gif/aqua.gif" width=62 height=10> 1088</td>
+    </tr>
+    <tr>
+      <td>Date</td>
+      <td nowrap><img src="gif/aqua.gif" width=56 height=10> 978</td>
+    </tr>
+    <tr>
+      <td>Daily Counter SSI</td>
+      <td nowrap><img src="gif/aqua.gif" width=44 height=10> 771</td>
+    </tr>
+    <tr>
+      <td>Simple Counter SSI</td>
+      <td nowrap><img src="gif/aqua.gif" width=34 height=10> 593</td>
+    </tr>
+    <tr>
+      <td>Template File</td>
+      <td nowrap><img src="gif/blue.gif" width=0 height=10> 3</td>
+    </tr>
+    <tr>
+      <td>Statistic</td>
+      <td>Last Download: <font color="#660066">Wed, 4 October 2000 15:11</font>
+        Total Downloads: <font color="#FF0000">25402</font></td>
+    </tr>
+  </table>
+ <table border=0 width="560" align="center" cellspacing="1" cellpadding="3">
+  <tr> 
+    <td valign="top"> Top Downloads 2.0<br>http://www.proxy2.de</td>
+    <td align="right"> 
+       <select name="option">
+         <option value="total" selected>downloads total</option>
+         <option value="perDay">downloads per day</option>
+       </select>
+       <select name="top">
+         <option value="10" selected>Top 10</option>
+         <option value="15">Top 15</option>
+         <option value="20">Top 20</option>
+         <option value="30">Top 30</option>
+         <option value="all">all</option>
+       </select>
+       <input type="submit" value="Submit" onclick="Demo(); return false">
+    </td>
+  </tr>
+</table>
+</form>
+<hr width="560" size="1">
+<br>
+<br>
+<form method="post">
+<table width="560" border="0" cellspacing="0" cellpadding="2" height="55" align="center">
+  <tr> 
+    <td> <tt>Top Downloads 2.0</tt></td>
+    <td align="right"> <img src="gif/point.gif" width="9" height="9"><a href="javascript:Demo()">Administration</a> 
+      | <img src="gif/point.gif" width="9" height="9"><a href="javascript:Demo()">Downloads by 
+      Day</a> | <img src="gif/point.gif" width="9" height="9"><a href="javascript:Demo()">Check 
+      for Updates</a></td>
+  </tr>
+  <tr>
+    <td><img src="gif/point2.gif" width="9" height="9"><b>Date: Wed, 11 October 2000 22:38</b></td>
+    <td align="right">
+      <select name="files" onChange="javascript:Demo()">
+        <option selected>show details</option>
+        <option value="stat.zip">Access Stats 1.11</option>
+        <option value="pollphp.zip">Advanced Poll 1.25</option>
+        <option value="acountphp.zip">Animated Counter PHP</option>
+        <option value="acountssi.zip">Animated Counter SSI</option>
+        <option value="clock.zip">Clock</option>
+        <option value="dcountphp.zip">Daily Counter PHP 1.1</option>
+        <option value="dcountssi.zip">Daily Counter SSI</option>
+        <option value="date.zip">Date</option>
+        <option value="links.zip">Free Link Page 1.2</option>
+        <option value="guestbook.zip">Guestbook 1.5</option>
+        <option value="countphp.zip">Simple Counter PHP</option>
+        <option value="countssi.zip">Simple Counter SSI</option>
+        <option value="poll.zip">Template File</option>
+        <option value="topdl.zip">Top Downloads 1.2</option>
+      </select>
+    </td>
+  </tr>
+</table>
+<table bgcolor="#F7F7F7" border=0 cellpadding=2 cellspacing=1 width=560 align=center>
+  <tr>
+    <td colspan=2 bgcolor="#E1A8A8"><font color="#990000"><b>Details for stat.zip</b></font></td>
+  </tr>
+  <tr>
+    <td width=35%>Filename</td>
+    <td>stat.zip</td>
+  </tr>
+  <tr>
+    <td width=35%>Description</td>
+    <td>Access Stats 1.11</td>
+  </tr>
+  <tr>
+    <td width=35%>Added on</td>
+    <td>Mon, 19 June 2000 15:05</td>
+  </tr>
+  <tr>
+    <td width=35%>Total days</td>
+    <td>114</td>
+  </tr>
+  <tr>
+    <td width=35%>Downloads per day</td>
+    <td>27.93</td>
+  </tr>
+  <tr>
+    <td width=35%>Downloads total</td>
+    <td>3193</td>
+  </tr>
+  <tr>
+    <td width=35%>Total percent</td>
+    <td>12.57%</td>
+  </tr>
+</table>
+ <table border=0 width="560" align="center" cellspacing="1" cellpadding="3">
+  <tr> 
+    <td valign="top"> Top Downloads 2.0<br>http://www.proxy2.de</td>
+    <td align="right"> 
+       <select name="option">
+         <option value="total" selected>downloads total</option>
+         <option value="perDay">downloads per day</option>
+       </select>
+       <select name="top">
+         <option value="10" selected>Top 10</option>
+         <option value="15">Top 15</option>
+         <option value="20">Top 20</option>
+         <option value="30">Top 30</option>
+         <option value="all">all</option>
+       </select>
+       <input type="submit" value="Submit" onclick="Demo(); return false">
+    </td>
+  </tr>
+</table>
+</form>
+<hr width="560" size="1">
+<br>
+<br>
+<form method="post">
+<table width="560" border="0" cellspacing="0" cellpadding="2" height="55" align="center">
+  <tr> 
+    <td> <tt>Top Downloads 2.0</tt></td>
+    <td align="right"> <img src="gif/point.gif" width="9" height="9"><a href="javascript:Demo()">Administration</a> 
+      | <img src="gif/point.gif" width="9" height="9"><a href="javascript:Demo()">Downloads by 
+      Day</a> | <img src="gif/point.gif" width="9" height="9"><a href="javascript:Demo()">Check 
+      for Updates</a></td>
+  </tr>
+  <tr>
+    <td><img src="gif/point2.gif" width="9" height="9"><b>Date: Wed, 04 October 2000 15:07</b></td>
+     <td align="right"><img src="gif/back.gif" width=9 height=14>&nbsp;<a href="javascript:Demo()"><font color="#000099">back</font></a> &nbsp;</td>
+  </tr>
+</table>
+<table width="560" border="0" cellspacing="1" cellpadding="2" align="center" bgcolor="#F7F7F7">
+  <tr bgcolor="#E1A8A8"> 
+    <td><font color="#990000"><b>Downloads by Day</b></font></td>
+  </tr>
+  <tr>
+    <td><br><br><br>
+      <table bgcolor="#F7F7F7" border=0 cellpadding=0 cellspacing=1>
+        <tr valign="bottom">
+          <td>169<br><img src="gif/bar.gif" width=15 height=87 alt="Thu, 07 September 2000"></td>
+          <td>173<br><img src="gif/bar.gif" width=15 height=89 alt="Fri, 08 September 2000"></td>
+          <td>187<br><img src="gif/bar.gif" width=15 height=96 alt="Sat, 09 September 2000"></td>
+          <td>251<br><img src="gif/bar.gif" width=15 height=129 alt="Sun, 10 September 2000"></td>
+          <td>251<br><img src="gif/bar.gif" width=15 height=129 alt="Mon, 11 September 2000"></td>
+          <td>227<br><img src="gif/bar.gif" width=15 height=117 alt="Tue, 12 September 2000"></td>
+          <td>278<br><img src="gif/bar.gif" width=15 height=143 alt="Wed, 13 September 2000"></td>
+          <td>315<br><img src="gif/bar.gif" width=15 height=162 alt="Thu, 14 September 2000"></td>
+          <td>265<br><img src="gif/bar.gif" width=15 height=137 alt="Fri, 15 September 2000"></td>
+          <td>295<br><img src="gif/bar.gif" width=15 height=152 alt="Sat, 16 September 2000"></td>
+          <td>205<br><img src="gif/bar.gif" width=15 height=106 alt="Sun, 17 September 2000"></td>
+          <td>199<br><img src="gif/bar.gif" width=15 height=102 alt="Mon, 18 September 2000"></td>
+          <td>315<br><img src="gif/bar.gif" width=15 height=162 alt="Tue, 19 September 2000"></td>
+          <td>313<br><img src="gif/bar.gif" width=15 height=161 alt="Wed, 20 September 2000"></td>
+          <td>217<br><img src="gif/bar.gif" width=15 height=112 alt="Thu, 21 September 2000"></td>
+          <td>263<br><img src="gif/bar.gif" width=15 height=136 alt="Fri, 22 September 2000"></td>
+          <td>304<br><img src="gif/bar.gif" width=15 height=157 alt="Sat, 23 September 2000"></td>
+          <td>225<br><img src="gif/bar.gif" width=15 height=116 alt="Sun, 24 September 2000"></td>
+          <td>274<br><img src="gif/bar.gif" width=15 height=141 alt="Mon, 25 September 2000"></td>
+          <td>278<br><img src="gif/bar.gif" width=15 height=143 alt="Tue, 26 September 2000"></td>
+          <td>257<br><img src="gif/bar.gif" width=15 height=132 alt="Wed, 27 September 2000"></td>
+          <td>264<br><img src="gif/bar.gif" width=15 height=136 alt="Thu, 28 September 2000"></td>
+          <td>269<br><img src="gif/bar.gif" width=15 height=139 alt="Fri, 29 September 2000"></td>
+          <td>248<br><img src="gif/bar.gif" width=15 height=128 alt="Sat, 30 September 2000"></td>
+          <td>227<br><img src="gif/bar.gif" width=15 height=117 alt="Sun, 01 October 2000"></td>
+          <td>265<br><img src="gif/bar.gif" width=15 height=137 alt="Mon, 02 October 2000"></td>
+          <td>340<br><img src="gif/bar.gif" width=15 height=175 alt="Tue, 03 October 2000"></td>
+          <td>348<br><img src="gif/bar.gif" width=15 height=180 alt="Wed, 04 October 2000"></td>
+          <td>79<br><img src="gif/bar2.gif" width=15 height=40 alt="today"></td>
+        </tr>
+       </table>
+      </td>
+    </tr>
+    <tr>
+      <td>Statistic: <font color="#660066">Thu, 07 September 2000</font> to<font color="#660066">
+        Wed, 04 October 2000</font> Total Downloads: <font color="#FF0000">7301</font>
+      </td>
+    </tr>
+</table>
+ <table border=0 width="560" align="center" cellspacing="1" cellpadding="3">
+  <tr> 
+    <td valign="top"> Top Downloads 2.0<br>http://www.proxy2.de</td>
+    <td align="right"> 
+       <select name="option">
+         <option value="total" selected>downloads total</option>
+         <option value="perDay">downloads per day</option>
+       </select>
+       <select name="top">
+         <option value="10" selected>Top 10</option>
+         <option value="15">Top 15</option>
+         <option value="20">Top 20</option>
+         <option value="30">Top 30</option>
+         <option value="all">all</option>
+       </select>
+       <input type="submit" value="Submit" onclick="Demo(); return false">
+    </td>
+  </tr>
+</table>
+</form>
+<hr width="560" size="1">
+<br>
+<br>
+<form method="post">
+ <table width="560" border="0" align="center">
+  <tr>
+    <td height="40"><tt>Administration Centre</tt></td>
+  </tr>
+ </table>
+ <table width="560" border="0" cellspacing="0" cellpadding="3" align="center">
+   <tr bgcolor="#E1A8A8">
+     <td><b>Administration</b></td>
+   </tr>
+   <tr bgcolor="#F7F7F7"> 
+     <td> 
+       <input type="password" name="password" size="24">
+       <input type="submit" value="Submit" onclick="Demo(); return false">
+     </td>
+   </tr>
+   <tr bgcolor="#F7F7F7"> 
+     <td>Please enter a valid password!</td>
+   </tr>
+   <tr> 
+     <td><br>
+       This script can be found at <a href="javascript:Demo()">http://www.proxy2.de</a> 
+       | <a href="javascript:Demo()">Back to Top Downloads</a></td>
+   </tr>
+ </table>
+</form>
+<hr width="560" size="1">
+<br>
+<br>
+<script language="Javascript">
+<!--
+function set_value(entry, old_value) {
+ var new_value = window.prompt("Change value for entry '"+entry+"' to:",old_value)
+ var found = 0;
+ if (new_value != "" && new_value != null) {
+    alert('This is a demo!');
+ }
+}
+function ChangeEntry(entry, old_name, feature) {
+ var new_name = window.prompt("Enter a new "+feature+" for "+entry+":",old_name)
+ var found = 1;
+ if (new_name != "" && new_name != null) {
+    alert('This is a demo!');
+ }
+}
+function del_entry(entry) {
+ if (window.confirm("Do you really want to delete this entry: "+entry)) {
+    alert('This is a demo!');
+ }
+}
+// -->
+</script>
+ <table width="560" border="0" align="center">
+  <tr>
+    <td height="40"><tt>Administration Centre</tt></td>
+    <td height="40" align="right" valign="bottom"><img src="gif/point.gif" width="9" height="9"><a href="javascript:Demo()">Back to Top Downloads</a></td>
+  </tr>
+ </table>
+ <table bgcolor="#F7F7F7" border=1 cellspacing=0 cellpadding=3 width="560" align="center">
+    <tr bgcolor="#E1A8A8"> 
+      <td><b>Description</b></td>
+      <td><b>Filename</b></td>
+      <td><b>Downloads</b></td>
+      <td><b>Location</b></td>
+      <td><b>Entry</b></td>
+    </tr>
+    <tr>
+      <td><a href="javascript:ChangeEntry('acountphp.zip','Animated Counter PHP','description')">Animated Counter PHP</a></td>
+      <td><a href="javascript:ChangeEntry('acountphp.zip','acountphp.zip','FileID')">acountphp.zip</a></td>
+      <td><a href="javascript:set_value('acountphp.zip','2471')">2471</a></td>
+      <td><a href="javascript:ChangeEntry('acountphp.zip','http://localhost/downloads/acountphp.zip','URL')">set location</a></td>
+      <td><a href="javascript:del_entry('acountphp.zip')">delete</a></td>
+    </tr>
+    <tr>
+      <td><a href="javascript:ChangeEntry('acountssi.zip','Animated Counter SSI','description')">Animated Counter SSI</a></td>
+      <td><a href="javascript:ChangeEntry('acountssi.zip','acountssi.zip','FileID')">acountssi.zip</a></td>
+      <td><a href="javascript:set_value('acountssi.zip','1096')">1096</a></td>
+      <td><a href="javascript:ChangeEntry('acountssi.zip','http://localhost/downloads/acountssi.zip','URL')">set location</a></td>
+      <td><a href="javascript:del_entry('acountssi.zip')">delete</a></td>
+    </tr>
+    <tr>
+      <td><a href="javascript:ChangeEntry('clock.zip','Clock','description')">Clock</a></td>
+      <td><a href="javascript:ChangeEntry('clock.zip','clock.zip','FileID')">clock.zip</a></td>
+      <td><a href="javascript:set_value('clock.zip','1088')">1088</a></td>
+      <td><a href="javascript:ChangeEntry('clock.zip','http://localhost/downloads/clock.zip','URL')">set location</a></td>
+      <td><a href="javascript:del_entry('clock.zip')">delete</a></td>
+    </tr>
+    <tr>
+      <td><a href="javascript:ChangeEntry('countphp.zip','Simple Counter PHP','description')">Simple Counter PHP</a></td>
+      <td><a href="javascript:ChangeEntry('countphp.zip','countphp.zip','FileID')">countphp.zip</a></td>
+      <td><a href="javascript:set_value('countphp.zip','1372')">1372</a></td>
+      <td><a href="javascript:ChangeEntry('countphp.zip','http://localhost/downloads/countphp.zip','URL')">set location</a></td>
+      <td><a href="javascript:del_entry('countphp.zip')">delete</a></td>
+    </tr>
+    <tr>
+      <td><a href="javascript:ChangeEntry('countssi.zip','Simple Counter SSI','description')">Simple Counter SSI</a></td>
+      <td><a href="javascript:ChangeEntry('countssi.zip','countssi.zip','FileID')">countssi.zip</a></td>
+      <td><a href="javascript:set_value('countssi.zip','593')">593</a></td>
+      <td><a href="javascript:ChangeEntry('countssi.zip','http://localhost/downloads/countssi.zip','URL')">set location</a></td>
+      <td><a href="javascript:del_entry('countssi.zip')">delete</a></td>
+    </tr>
+    <tr>
+      <td><a href="javascript:ChangeEntry('date.zip','Date','description')">Date</a></td>
+      <td><a href="javascript:ChangeEntry('date.zip','date.zip','FileID')">date.zip</a></td>
+      <td><a href="javascript:set_value('date.zip','978')">978</a></td>
+      <td><a href="javascript:ChangeEntry('date.zip','http://localhost/downloads/date.zip','URL')">set location</a></td>
+      <td><a href="javascript:del_entry('date.zip')">delete</a></td>
+    </tr>
+    <tr>
+      <td><a href="javascript:ChangeEntry('dcountphp.zip','Daily Counter PHP 1.1','description')">Daily Counter PHP 1.1</a></td>
+      <td><a href="javascript:ChangeEntry('dcountphp.zip','dcountphp.zip','FileID')">dcountphp.zip</a></td>
+      <td><a href="javascript:set_value('dcountphp.zip','1908')">1908</a></td>
+      <td><a href="javascript:ChangeEntry('dcountphp.zip','http://localhost/downloads/dcountphp.zip','URL')">set location</a></td>
+      <td><a href="javascript:del_entry('dcountphp.zip')">delete</a></td>
+    </tr>
+    <tr>
+      <td><a href="javascript:ChangeEntry('dcountssi.zip','Daily Counter SSI','description')">Daily Counter SSI</a></td>
+      <td><a href="javascript:ChangeEntry('dcountssi.zip','dcountssi.zip','FileID')">dcountssi.zip</a></td>
+      <td><a href="javascript:set_value('dcountssi.zip','771')">771</a></td>
+      <td><a href="javascript:ChangeEntry('dcountssi.zip','http://localhost/downloads/dcountssi.zip','URL')">set location</a></td>
+      <td><a href="javascript:del_entry('dcountssi.zip')">delete</a></td>
+    </tr>
+    <tr>
+      <td><a href="javascript:ChangeEntry('guestbook.zip','Guestbook 1.5','description')">Guestbook 1.5</a></td>
+      <td><a href="javascript:ChangeEntry('guestbook.zip','guestbook.zip','FileID')">guestbook.zip</a></td>
+      <td><a href="javascript:set_value('guestbook.zip','2666')">2666</a></td>
+      <td><a href="javascript:ChangeEntry('guestbook.zip','http://localhost/downloads/guestbook.zip','URL')">set location</a></td>
+      <td><a href="javascript:del_entry('guestbook.zip')">delete</a></td>
+    </tr>
+    <tr>
+      <td><a href="javascript:ChangeEntry('links.zip','Free Link Page 1.2','description')">Free Link Page 1.2</a></td>
+      <td><a href="javascript:ChangeEntry('links.zip','links.zip','FileID')">links.zip</a></td>
+      <td><a href="javascript:set_value('links.zip','1704')">1704</a></td>
+      <td><a href="javascript:ChangeEntry('links.zip','http://localhost/downloads/links.zip','URL')">set location</a></td>
+      <td><a href="javascript:del_entry('links.zip')">delete</a></td>
+    </tr>
+    <tr>
+      <td><a href="javascript:ChangeEntry('poll.zip','Template File','description')">Template File</a></td>
+      <td><a href="javascript:ChangeEntry('poll.zip','poll.zip','FileID')">poll.zip</a></td>
+      <td><a href="javascript:set_value('poll.zip','3')">3</a></td>
+      <td><a href="javascript:ChangeEntry('poll.zip','http://localhost/archiv/poll.zip','URL')">set location</a></td>
+      <td><a href="javascript:del_entry('poll.zip')">delete</a></td>
+    </tr>
+    <tr>
+      <td><a href="javascript:ChangeEntry('pollphp.zip','Advanced Poll 1.25','description')">Advanced Poll 1.25</a></td>
+      <td><a href="javascript:ChangeEntry('pollphp.zip','pollphp.zip','FileID')">pollphp.zip</a></td>
+      <td><a href="javascript:set_value('pollphp.zip','5355')">5355</a></td>
+      <td><a href="javascript:ChangeEntry('pollphp.zip','http://localhost/downloads/pollphp.zip','URL')">set location</a></td>
+      <td><a href="javascript:del_entry('pollphp.zip')">delete</a></td>
+    </tr>
+    <tr>
+      <td><a href="javascript:ChangeEntry('stat.zip','Access Stats 1.11','description')">Access Stats 1.11</a></td>
+      <td><a href="javascript:ChangeEntry('stat.zip','stat.zip','FileID')">stat.zip</a></td>
+      <td><a href="javascript:set_value('stat.zip','3193')">3193</a></td>
+      <td><a href="javascript:ChangeEntry('stat.zip','http://localhost/downloads/stat.zip','URL')">set location</a></td>
+      <td><a href="javascript:del_entry('stat.zip')">delete</a></td>
+    </tr>
+    <tr>
+      <td><a href="javascript:ChangeEntry('topdl.zip','Top Downloads 1.2','description')">Top Downloads 1.2</a></td>
+      <td><a href="javascript:ChangeEntry('topdl.zip','topdl.zip','FileID')">topdl.zip</a></td>
+      <td><a href="javascript:set_value('topdl.zip','2204')">2204</a></td>
+      <td><a href="javascript:ChangeEntry('topdl.zip','http://localhost/downloads/topdl.zip','URL')">set location</a></td>
+      <td><a href="javascript:del_entry('topdl.zip')">delete</a></td>
+    </tr>
+    <tr> 
+      <td><b><font color="#336600">&gt;&gt;Total Files:</font></b> <font color="#FF0000">14</font></td>
+      <td colspan="4"><b><font color="#336600">&gt;&gt;Total Downloads:</font></b> <font color="#FF0000">25402</font></td>
+    </tr>
+  </table>
+  <form method="post" name="form">
+    <table width="560" border="0" align="center">
+      <tr> 
+        <td colspan="2"><input type="submit" name="action" value="Scan" onclick="Demo(); return false" class="input">
+          <select name="type" class="input">
+            <option value="all" selected>all files</option>
+            <option value="avi">*.avi</option>
+            <option value="mp3">*.mp3</option>
+            <option value="zip">*.zip</option>
+            <option value="exe">*.exe</option>
+            <option value="gz">*.gz</option>
+          </select> Scan base directory for new files 
+          <hr size="1"></td>
+      </tr>
+      <tr>
+        <td>External Location: </td>
+        <td><input type="text" name="new_loc" value="http://" size="32">
+      </tr>
+      <tr> 
+        <td>Filename ID: </td>
+        <td><input type="text" name="new_id" size="32"></td>
+      </tr>
+      <tr> 
+        <td>Description: </td>
+        <td><input type="text" name="description" size="32">
+          <input type="submit" name="action" value="Add entry" onclick="Demo(); return false" class="input"></td>
+      </tr>
+      <tr> 
+        <td colspan="2"><br>This script can be found at
+         <img src="gif/point2.gif" width="9" height="9"><a href="javascript:Demo()"><font color="#990000"><u>http://www.proxy2.de</u></font></a> 
+         | <img src="gif/point2.gif" width="9" height="9"><a href="javascript:Demo()">Back to Top Downloads</a></td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>
+
