@@ -1,0 +1,193 @@
+<html>
+
+
+<head>
+
+<link rel=STYLESHEET href="style.css" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>{TITLE}</title>
+		<meta name="Title" content="{TITLE}">
+		<meta name="Description" content="{META}">
+		<meta name="KeyWords" content="{META}">
+</head>
+
+
+<script>
+	function open_window(link,w,h) {
+		var win = "width="+w+",height="+h+",menubar=no,location=no,resizable=yes,scrollbars=yes";
+		newWin = window.open(link,'newWin',win);
+		newWin.focus();
+	}
+	function confirmDelete() {
+		temp = window.confirm('Are you sure you want to unsubscribe?');
+		if (temp) {
+			window.location="index.php?killuser=yes";
+		};
+	}
+	function validate() {
+		if (document.form1.email.value.length<1) {
+			alert("Please input your e-mail");
+			return false;
+		};
+		if (document.form1.email.value == 'Email') {
+			alert("Please input your e-mail");
+			return false;
+		};
+		return true;
+	}
+	function validate_disc() {
+		if (document.formD.nick.value.length<1) {
+			alert("Please input your nickname");
+			return false;
+		};
+
+		if (document.formD.topic.value.length<1) {
+			alert("Please input post subject");
+			return false;
+		};
+
+		return true;
+	}
+	function validate_search() {
+
+		if (document.Sform.price1.value!="" && ((document.Sform.price1.value < 0) || isNaN(document.Sform.price1.value))) {
+			alert("Price should be a positive number");
+			return false;
+		};
+		if (document.Sform.price2.value!="" && ((document.Sform.price2.value < 0) || isNaN(document.Sform.price2.value))) {
+			alert("Price should be a positive number");
+			return false;
+		};
+
+		return true;
+	}
+
+</script>
+
+
+	<body>
+<br><br>
+<center>
+		<table border="0" cellpadding="0" cellspacing="0" width="755">
+			<tr>
+				<td bgcolor="black">
+
+
+<table width=99% cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td width=1%><img src="images/watch.jpg"></td>
+<td align=right valign=top>
+
+<TABLE HEIGHT=175>
+<TR><TD ALIGN=RIGHT VALIGN=TOP>
+<table cellspacing=1 border=0>
+<tr align=right><td><a class=light href="index.php">Home</a></td></tr>
+<tr align=right><td>{REGISTER/HOME}</td></tr>
+<tr align=right><td><a class=light href="index.php?show_price=yes">Price list</a></td></tr>
+<tr align=right><td><a class=light href="index.php?aux_page=aux1"><nobr>About us</nobr></td></tr>
+<tr align=right><td><a class=light href="index.php?aux_page=aux2"><nobr>Shipping and delivery</nobr></td></tr>
+<tr align=right><td><a class=light href="index.php?currency=1">Change currency</a></td></tr>
+</table>
+</TD></TR>
+<TR><TD VALIGN=BOTTOM>
+{SEARCH}
+</TD></TR>
+</TABLE>
+
+</td>
+</tr>
+</table>
+
+				</td>
+				<td background="images/red_bg.jpg" width=1% valign=top>
+
+<table cellpadding=4 height=160>
+<tr>
+<td align=center valign=top>
+{AUTHORIZATION}
+</td>
+</tr>
+<tr>
+<td valign=bottom align=center>
+&nbsp;
+</td>
+</tr>
+</table>
+
+				</td>
+			</tr>
+			<tr>
+				<td bgcolor="white" valign=top>
+
+<table width=100% cellpadding=10>
+<tr><td>
+{MAIN_CONTENT}
+</td></tr>
+</table>
+
+				</td>
+				<td bgcolor=black valign=top>
+
+<table border=0 height=431 background="images/timer.jpg" width=100%>
+
+<tr>
+<td>
+
+{SHOPPING_CART}
+
+</td>
+</tr>
+
+
+<tr>
+<td valign=top>
+
+
+<table border=0 width=100% cellspacing=4 cellpadding=0>
+
+<tr>
+<td colspan=3 background="images/bg1.gif" height=1><img src="images/bg1.gif"></td>
+</tr>
+
+<tr>
+<td background="images/bg2.gif" height=1><img src="images/bg2.gif"></td>
+<td>
+<table><tr><td>{CATEGORIES}</td></tr></table>
+</td>
+<td background="images/bg2.gif" height=1><img src="images/bg2.gif"></td>
+</tr>
+
+<tr>
+<td colspan=3 background="images/bg1.gif" height=1><img src="images/bg1.gif"></td>
+</tr>
+</table>
+
+<br><br><br>
+{VOTING}
+
+<center>
+<p>
+{LANGUAGE}
+</center>
+
+</td>
+</tr>
+</table>
+</center>
+				</td>
+			</tr>
+			<tr>
+				<td bgcolor="white" valign=bottom align=right><a href="http://www.shop-script.com"><img src="images/cr1.gif" border=0></a></td>
+				<td bgcolor=black valign=bottom align=right>
+					<table cellpadding=0 cellspacing=0 width=100% border=0>
+					<tr>
+						<td valign=center align=center><a class=light href="http://www.shop-script.com"><img src="images/ss10.gif" border=0 alt="PHP shopping cart software Shop-Script"></a></td>
+						<td width=1% align=right valign=bottom><img src="images/cr2.jpg"></td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</body>
+
+</html>
