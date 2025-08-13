@@ -1,0 +1,32 @@
+<?
+$ubbt_lang['FILE_TOO_BIG']="Les fichiers ne peuvent pas avoir une taille supèrieure à {$config['filesize']}";
+$ubbt_lang['FILESALLOWED']  =  "Les fichiers que vous pouvez uploader doivent avoir les extensions suivantes";
+$ubbt_lang['FILESEXCLUDE']  = 	"Les fichiers que vous pouvez uploader ne peuvent pas avoir les extensions suivantes";
+$ubbt_lang['POST_ICON']  =     "Icône du Message";
+$ubbt_lang['SPELL_CHECK']  = 	"Vérifier l'orthographe";
+$ubbt_lang['SPELL_BODY']  = 	"L'ortographe de votre messages a été vérifiée ci-dessous.  Les erreurs possibles sont <u>soulignées</u>, avec les suggestions entre crochets suivant immédiatement les mots.";
+$ubbt_lang['NAME_TAKEN']  = 	"Le nom que vous avez entré pour écrire votre message est déjà enregistré par un autre utilisateur.";
+$ubbt_lang['BAD_UNAME']  = 	"Vous ne pouvez pas utiliser de caractères HTML ou d'espaces avant ou après votre nom d'usager.";
+$ubbt_lang['LONG_NAME']  = 	"Le nom d'usager n'est pas de la longueur appropriée.";
+$ubbt_lang['READ_PERM']  = 	"Les privilèges associés à votre compte sur ce forum ne vous permettent que la lecture";
+$ubbt_lang['LOCKED']  = 	"Ce sujet est verrouillé et vous n'avez pas les permissions suffisantes pour ajouter un message à celui-ci.";
+$ubbt_lang['TWO_POLLS']  = 	"Vous ne pouvez avoir qu'un sondage par message.";
+$ubbt_lang['PREV_POST']  = 	"Voir aperçu du Message";
+$ubbt_lang['SUB_VOTE']  = 	"Valider le vote";
+$ubbt_lang['POST_BODY']  = 	"Ce qui suit est un aperçu de votre message. Si tout semble correct vous pouvez cliquer sur 'Continuer' et votre message sera inscrit.";
+$ubbt_lang['YES_FILE2']  = 	"Vous pouvez joindre un fichier à votre message si vous le souhaitez. La taille du fichier est limitée à  {$config['filesize']} octets";
+$ubbt_lang['NO_FILE2']  = 	"Bien que les fichiers joints soient autorisés'on permette des attachements de fichier, vous devez utiliser un fureteur compatible à Mozilla 4+ pour ce service.";
+$ubbt_lang['EDIT_MORE']  = 	"Editer d'avantage";
+$ubbt_lang['POST_TEXT']  = 	"Message";
+$ubbt_lang['DO_EMAIL']  = 	"Envoyer toutes les réponses à ma vraie adresse email";
+$ubbt_lang['DO_PREVIEW']  = 	"Je souhaite voir un aperçu de mon message";
+$ubbt_lang['CAN_ATTACH']  = 	"et/ou joindre un fichier";
+$ubbt_lang['NO_DUPS']  = 	"Ce message a déjà été inscrit dans la base de données.";
+$ubbt_lang['UNREGED_USER']  = 	"Non-enregistré";
+$ubbt_lang['REPLY_SUB']  = 	"Réponse à votre message";
+$ubbt_lang['REPLY_BOD']  = 	"a répondu à votre message sur le site : ";
+$ubbt_lang['POST_ENTERED']  = 	"Votre message a été inscrit.";
+$ubbt_lang['MOD_CONFIRM']  = 	"Votre message a été accepté. Ce groupe de discussion étant entièrement modéré le message ne sera pas visible avant qu'un Administrateur ou un Modérateur ne le valide. Vous allez être retourné au forum sous peu.";
+$ubbt_lang['FORUM_RETURN']  = 	"Retourner au forum";
+$ubbt_lang['VIEW_POST']  = 	"Visualiser votre message";
+?>
