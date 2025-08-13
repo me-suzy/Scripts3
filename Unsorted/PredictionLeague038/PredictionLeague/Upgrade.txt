@@ -1,0 +1,18 @@
+Upgrade Instructions for Prediction League.
+-------------------------------------------
+
+General
+-------
+1. Copy the css and SystemVars.php files to a temporary directory.
+2. Install the new files.
+3. Copy the old css file back.
+4. Edit SystemVars.php and add the configuration from the old SystemVars.php
+
+From Version 0.37 and below.
+5. If you want to enable encryption follow this procedure.
+    - Ensure useEncryption = FALSE in SystemVars.php
+    - Log in as Admin User
+    - Run adminEncryptPasswords
+    - set useEncryption = TRUE in SystemVars.php
+  The use of encryption will be transparent to the users but will afford you and
+  the user better protection
