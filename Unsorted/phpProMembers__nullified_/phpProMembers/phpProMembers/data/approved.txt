@@ -1,0 +1,15 @@
+Hello <<first_name>> <<last_name>>,
+
+Your account at <<site_name>> has been approved.
+
+Your account details is as follows:
+
+User Name: <<user_name>>
+
+Password: <<password>>
+
+If you have any questions regarding your account please e-mail us at <<company_email>>.
+
+Thank You,
+
+<<company_name>>
