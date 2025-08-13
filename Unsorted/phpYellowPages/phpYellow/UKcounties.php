@@ -1,0 +1,73 @@
+<?php echo"\n\n";?>
+<!-- START of UKcounties.php -->
+<select name="ystate" class="input">
+<option value="<?php echo $ystate;?>" SELECTED><?php echo $ystate;?></option>
+<option value="">All counties</option>
+<option value="">It does not matter</option>
+<option value="">- - - - - - - - - - - - </option>
+<!-- Add, remove or change any of the select option items below. -->
+<option value="Avon">Avon</option>
+<option value="Bedfordshire">Bedfordshire</option>
+<option value="Berkshire">Berkshire</option>
+<option value="Borders">Borders</option>
+<option value="Buckinghamshire">Buckinghamshire</option>
+<option value="Cambridgeshire">Cambridgeshire</option>
+<option value="Central">Central</option>
+<option value="Cheshire">Cheshire</option>
+<option value="Cleveland">Cleveland</option>
+<option value="Cumbria">Cumbria</option>
+<option value="Cornwall">Cornwall</option>
+<option value="Dorset">Dorset</option>
+<option value="Devon">Devon</option>
+<option value="Derbyshire">Derbyshire</option>
+<option value="Dumfries">Dumfries</option>
+<option value="East Sussex">East Sussex</option>
+<option value="Essex">Essex</option>
+<option value="Fife">Fife</option>
+<option value="Galloway">Galloway</option>
+<option value="Gloucestershire">Gloucestershire</option>
+<option value="Grampian">Grampian</option>
+<option value="Greater London">Greater London</option>
+<option value="Gwent">Gwent</option>
+<option value="Gwynedd">Gwynedd</option>
+<option value="Hampshire">Hampshire</option>
+<option value="Hereford">Hereford</option>
+<option value="Hertfordshire">Hertfordshire</option>
+<option value="Highlands">Highlands</option>
+<option value="Humberside">Humberside</option>
+<option value="Isle of White">Isle of White</option>
+<option value="Kent">Kent</option>
+<option value="Lancashire">Lancashire</option>
+<option value="Leicestershire">Leicestershire</option>
+<option value="Lothian">Lothian</option>
+<option value="Lincolnshire">Lincolnshire</option>
+<option value="Mid Glamorgan">Mid Glamorgan</option>
+<option value="Manchester">Manchester</option>
+<option value="Merseyside">Merseyside</option>
+<option value="Northamptonshire">Northamptonshire</option>
+<option value="Norfolk">Norfolk</option>
+<option value="Nottinghamshire">Nottinghamshire</option>
+<option value="North Yorkshire">North Yorkshire</option>
+<option value="Oxfordshire">Oxfordshire</option>
+<option value="Orkney Islands">Orkney Islands</option>
+<option value="Powys">Powys</option>
+<option value="Shetland Islands">Shetland Islands</option>
+<option value="Shropshire">Shropshire</option>
+<option value="Staffordshire">Staffordshire</option>
+<option value="Somerset">Somerset</option>
+<option value="South Yorkshire">South Yorkshire</option>
+<option value="South Glamorgan">South Glamorgan</option>
+<option value="Strathclyde">Strathclyde</option>
+<option value="Surrey">Surrey</option>
+<option value="Suffolk">Suffolk</option>
+<option value="Tayside">Tayside</option>
+<option value="Tyne & Wear">Tyne & Wear</option>
+<option value="Wiltshire">Wiltshire</option>
+<option value="Worcester">Worcester</option>
+<option value="Warwickshire">Warwickshire</option>
+<option value="West Sussex">West Sussex</option>
+<option value="West Midlands">West Midlands</option>
+<option value="West Yorkshire">West Yorkshire</option>
+<option value="West Glamorgan">West Glamorgan</option>
+</select>
+<!-- END of UKcounties.php -->
