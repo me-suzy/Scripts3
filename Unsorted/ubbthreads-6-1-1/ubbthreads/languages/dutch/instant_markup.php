@@ -1,0 +1,29 @@
+<?
+$ubbt_lang['ENTERCOLOR'] = "Voer hier de lettertype kleur in die je wilt gebruiken. Dat mag een kleurcode zijn zoals '#ff1123' of gewoon 'blue'";
+$ubbt_lang['FONT_COLOR'] = "Lettertype kleur";
+$ubbt_lang['INST_GRAEMLIN'] = "Graemlins";
+$ubbt_lang['INST_UBB'] = "UBB Code";
+$ubbt_lang['ENTERURL'] = "Voer hier het volledige URL (adres) van de link in.";
+$ubbt_lang['ENTERURL2'] = "Voer hier de titel van de website in.  Als je bijvoorbeeld naar de URL van Infopop wilt linken, gebruik je als titel: Infopop Homepage.";
+$ubbt_lang['ENTERURL3'] = "Titel van de website";
+$ubbt_lang['ENTEREMAIL'] = "Voer hier het volledige email adres in.";
+$ubbt_lang['BOLDIT'] = "Voer hier de tekst die je VET wilt weergeven in.";
+$ubbt_lang['ITALICIZE'] = "Voer hier de tekst die je SCHUIN wilt weergeven in.";
+$ubbt_lang['ENTERIMAGE'] = "Voer hier het volledige URL (adres) van de afbeelding in.";
+$ubbt_lang['ENTERITEM'] = "Voer hier het nieuw lijst item in.  Iedere lijst-goep moet voorafgegaan worden door een 'Lijst start' en afgesloten worden met een 'Lijst einde' om juist te worden weergegeven.";
+$ubbt_lang['ENTERPOLL'] = "Voer de titel van deze enquête in";
+$ubbt_lang['ENTEROPTION'] = "Voer een optie van deze enquête in.  Iedere enquête moet voorafgegaan worden door een 'Enquête start' en afgesloten worden met een 'Enquête einde' om juist te worden weergegeven.";
+$ubbt_lang['J_HYPER'] = "URL";
+$ubbt_lang['J_EMAIL'] = "Email";
+$ubbt_lang['J_BOLD'] = "Vet";
+$ubbt_lang['J_ITALICS'] = "Schuin";
+$ubbt_lang['J_QUOTE'] = "Citaat";
+$ubbt_lang['J_CODE'] = "Code";
+$ubbt_lang['J_LISTSTART'] = "Lijst Start";
+$ubbt_lang['J_LISTITEM'] = "Lijst item";
+$ubbt_lang['J_LISTEND'] = "Lijst einde";
+$ubbt_lang['J_IMAGE'] = "Afbeelding";
+$ubbt_lang['J_POLLSTART'] = "Enquête start";
+$ubbt_lang['J_POLLOPTION'] = "Enquête optie";
+$ubbt_lang['J_POLLSTOP'] = "Enquête einde";
+?>
