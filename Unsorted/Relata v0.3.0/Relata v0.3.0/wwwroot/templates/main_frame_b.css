@@ -1,0 +1,14 @@
+.icon
+{
+	border-width: 1px;
+	margin: 1px;
+	border-style: outset;
+	width: 13px;
+	height: 11px;
+	padding: 0px;
+	background: #D4D0C8;
+	border-color: black;
+	cursor: pointer;
+	cursor: hand;
+	float: right;
+}
