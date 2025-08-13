@@ -1,0 +1,28 @@
+This file describes the changes in this version of RateMyStuff.
+
+----------------
+
+Template Changes:
+
+Edited templates/newuser.html template to add Bio/HookUp options
+Edited templates/userpage.html template to add Bio/HookUp options
+Edited templates/votepage.html template to support HookUp link
+Added templates/hookup.html template
+Added templates/hookup_about.html template
+Added templates/hookup_reply.html template
+Added templates/hookup_send.html template
+Added templates/hookupform.html template
+Added templates/hookup_mail_new.txt template
+Added templates/hookup_mail_reply.txt template
+Added templates/error.html template 
+Added templates/generic.html template
+
+Script Changes:
+
+Added hookup.php script
+Edited _all_ other scripts except admin.php and report.php
+
+Database Changes:
+
+Added hookups table
+Edited users table to add 'hookup' and 'bio' fields
