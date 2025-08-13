@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>$master_board_name - Choose Avatar</title>
+$headinclude
+</head>
+
+<body bgcolor="{pagebgcolor}" text="{fontcolorfirst}"{hgpicture}{bgproperties} id="bg">
+       $header
+                <tr bgcolor="{tableb}" id="tableb">
+			<td><table cellpadding=0 cellspacing=0 border=0 width="100%">
+				<tr>
+					<td><font face="{font}" size=1><b><a href="main.php?styleid=$styleid$session">$master_board_name</a> » <a href="profile.php?boardid=$boardid&styleid=$styleid$session">Control Panel of $user_name</a> » Choose Avatar</b></font></td>
+					<td align="right"><font face="{font}" size=1><b>$navibar_hello</b></font></td>
+				</tr>
+			</table></td>
+		</tr>
+		</table><br>
+		<table border=0 cellpadding=4 cellspacing=1 width="100%" bgcolor="{tablebordercolor}">
+                        <tr bgcolor="{tablea}" id="title">
+                                <TD COLSPAN=2><FORM ACTION="profile.php" METHOD="POST" ENCTYPE="multipart/form-data"><FONT face="{font}" size=2  color="{fontcolorsecond}"><B>Edit Profile - $user_name</B></font></td>
+                        </tr>
+                        <tr bgcolor="{tablea}" id="title">
+                                <td colspan=2><FONT face="{font}" size=2  color="{fontcolorsecond}"><b>Avatar</b></font></td>
+                        </tr>
+                        <tr bgcolor="{tablec}" id="tablec">
+                                <td width="50%"><FONT face="{font}" size=2><B>Use avatar:</B><br><font size=1>Avatars are small images which are shown under your username in every post.</font></font></td>
+                                <td width="50%"><FONT face="{font}" size=2><INPUT TYPE="RADIO" NAME="avatarid" VALUE="0"$checked> No<br><font size=1>(Your custom avatar will be deleted when you choose this option.)</font></font></td>
+                        </tr>$avatar_choice
+                </table>
+        </div><br>
+        <div align="center">
+                <input type="hidden" name="mode" value="$mode">
+                <input type="hidden" name="send" value="send">
+                $session_post
+                <INPUT class="input" TYPE="SUBMIT" VALUE="Save">
+                <INPUT class="input" TYPE="RESET" VALUE="Reset">
+        </div>
+        </form>
+        $footer
+</body>
+</html>
