@@ -1,0 +1,57 @@
+<?
+#///////////////////////////////////////////////////////
+#//  COPYRIGHT 2002 PHPAuction.org ALL RIGHTS RESERVED//
+#//  For Source code for the GPL version go to        //  
+#//  http://phpauction.org and download               //
+#//  Supplied by CyKuH [WTN]                          //
+#///////////////////////////////////////////////////////
+
+?>
+
+<TABLE WIDTH="100%" BGCOLOR="#FFFFFF" BORDER=0>
+
+<TR>
+
+<TD>
+
+<CENTER>
+
+<? print $tlt_font.$MSG_028; ?>
+</B></I>
+
+</FONT>
+
+
+
+<BR>
+
+<BR>
+	<? print $std_font.$MSG_484.print_money($FEE)." (".print_money($SETUP_FEE)." ".$MSG_690." + ".print_money($GALLERY_FEE)." ".$MSG_691.")".$MSG_485; ?>
+<BR>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="business" value="<?=$SETTINGS[paypaladdress]?>">
+<input type="hidden" name="item_name" value="PayAuctionSetupFee">
+<input type="hidden" name="item_number" value="<?=$sessionVars["SELL_auction_id"]?>">
+<input type="hidden" name="amount" value="<?=doubleval($FEE)?>">
+<input type="hidden" name="image_url" value=<?=$SETTINGS[siteurl]."uploaded/".$SETTINGS[logo]?>>
+<input type="hidden" name="return" value="<?=$SETTINGS[siteurl]."thanks.php"?>">
+<input type="hidden" name="cancel_return" value="<?=$SETTINGS[siteurl]."cancel.php"?>">
+<input type="image" src="images/paypal.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+</FORM>	
+
+
+	</FONT>
+
+<BR><BR>
+
+</CENTER>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+
+
