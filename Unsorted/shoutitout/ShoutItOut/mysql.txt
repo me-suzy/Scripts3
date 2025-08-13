@@ -1,0 +1,22 @@
+CREATE TABLE badwords (
+  id int(11) NOT NULL auto_increment,
+  words text NOT NULL,
+  PRIMARY KEY  (id),
+  UNIQUE KEY id (id),
+  KEY id_2 (id)
+) TYPE=MyISAM;
+
+INSERT INTO badwords VALUES (1, 'fuck,shit,piss,cunt,asshole,motherfucker,dick,fuk,blow,sex,tit,pussy,slut,whore,cum,horny,oral,anal,bitch,nigger,crap,bastard,clit,felacio,pik,kusse,fisse,røv,sperm,spasser,cock,kusse,skede,patter,idiot,perker,neger,blowjob,pis,bøsse,numse,lort,sexy,bitch,bitches,blowjobbers,Bitch,Blowjob,Ass');
+
+# --------------------------------------------
+
+CREATE TABLE shout (
+  id int(11) NOT NULL auto_increment,
+  ip varchar(20) NOT NULL default '',
+  link varchar(30) NOT NULL default '',
+  name_id varchar(30) NOT NULL default '',
+  text text NOT NULL,
+  time varchar(40) NOT NULL default '',
+  PRIMARY KEY  (id),
+  KEY id (id)
+) TYPE=MyISAM;  
