@@ -1,0 +1,30 @@
+<?
+$ubbt_lang['FILE_TOO_BIG']=	"Los archivos no deben tener m&aacute;s de {$config['filesize']}";
+$ubbt_lang['POST_ICON']  =	"Insertar Icono";
+$ubbt_lang['SPELL_CHECK']  = 	"Revisar ortograf&iacute;a";
+$ubbt_lang['SPELL_BODY']  = 	"Tu mensaje pasado por el corrector de ortograf&iacute;a queda as&iacute;:";
+$ubbt_lang['NAME_TAKEN']  = 	"Ya existe un miembro con el nombre que est&aacute;s intentando poner el mensaje.  El nombre ya est&aacute; registrado por otra persona, lo siento.";
+$ubbt_lang['BAD_UNAME']  = 	"En el nombre del miembro no se permite c&oacute;digo HTML ni espacios en blanco antes o despu&eacute;s del nombre.";
+$ubbt_lang['LONG_NAME']  = 	"El nombre de Miembro no tiene la longitud correcta.";
+$ubbt_lang['READ_PERM']  = 	"En este foro solo tienes permiso de lectura.";
+$ubbt_lang['LOCKED']  = 	"Conversaci&oacute;n Cerrada.";
+$ubbt_lang['TWO_POLLS']  = 	"Solo se permite una encuesta por mensaje";
+$ubbt_lang['PREV_POST']  = 	"Ver como me queda";
+$ubbt_lang['SUB_VOTE']  = 	"Enviar mi Voto";
+$ubbt_lang['POST_BODY']  = 	"Esto es una vista preliminar de tu mensaje.  Si todo parece estar bien pulsa sobre el bot&oacute;n \"Continuar\" para ponerlo en el foro.  Si no es as&iacute;, y prefieres hacer alg&uacute;n cambio, puedes seguir editando tu mensaje.";
+$ubbt_lang['YES_FILE2']  = 	"Si lo deseas, puedes adjuntar un archivo a tu mensaje.  El tama&ntilde;o del archivo est&aacute; limitado a  {$config['filesize']} bytes.";
+$ubbt_lang['NO_FILE2']  = 	"Aunque efectivamente se permite adjuntar archivos, es necesario usar un browser (navegador de p&aacute;ginas) compatible con Mozilla 4+ para poder usar este servicio.";
+$ubbt_lang['EDIT_MORE']  = 	"Seguir editando";
+$ubbt_lang['POST_TEXT']  = 	"Enviar";
+$ubbt_lang['DO_EMAIL']  = 	"Deseo recibir por email las respuestas que pongan a mi mensaje.";
+$ubbt_lang['DO_PREVIEW']  = 	"Deseo previsualizar mi mensaje";
+$ubbt_lang['CAN_ATTACH']  = 	"y/o adjuntar un archivo";
+$ubbt_lang['NO_DUPS']  = 	"El mensaje ya existe.";
+$ubbt_lang['UNREGED_USER']  = 	"No Registrado";
+$ubbt_lang['REPLY_SUB']  = 	"Respuestas a tu mensaje";
+$ubbt_lang['REPLY_BOD']  = 	"contest&oacute; a tu mensaje en: .";
+$ubbt_lang['POST_ENTERED']  = 	"Tu mensaje ha sido enviado.";
+$ubbt_lang['MOD_CONFIRM']  = 	"Este tablero est&aacute; totalmente moderado, por lo que tu mensaje no aparecer&aacute; hasta que el Administrador o Moderador lo revise.";
+$ubbt_lang['FORUM_RETURN']  = 	"Volver al foro";
+$ubbt_lang['VIEW_POST']  = 	"Ver tu mensaje";
+?>
