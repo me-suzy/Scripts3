@@ -1,0 +1,19 @@
+a:link {
+	color: #800000;
+	text-decoration: underline }
+	
+a:active {
+	color: #800000;
+	text-decoration: none }
+
+a:visited {
+	color: #800000;
+	text-decoration: underline }
+
+a:hover {
+	text-decoration: none;
+	color: #808080; }
+font { font-family: Verdana,Arial,Helvetica,sans-serif; 
+	font-size: 8pt 
+}
+
