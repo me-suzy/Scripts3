@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+
+      <link rel="stylesheet" type="text/css" href="../../yellow.css">
+
+		<title>phpYellow Pages - Choose a Payment Processor - How to make Clickbank work with phpYellow Pages</title>
+
+	<META NAME="keywords" CONTENT="phpYellow, Pages, php, Yellow, add, edit, delete, listing, login, below">
+	<META NAME="description" CONTENT="How to make Clickbank work with phpYellow Pages...">
+	<META NAME="Author" CONTENT="Richard Creech, Web: http://www.dreamriver.com Email: richardc@dreamriver.com">
+	<META NAME="GENERATOR" CONTENT="Blood, Sweat & Tears">
+
+<body>
+
+
+<h1>How to Make Clickbank Work<br>with phpYellow Pages</h1>
+
+
+<!-- start of links to individual gateway instructions -->
+<div align="center">
+<a href="../docs/DOCSpaidListings.html">Guide</a> | 
+<a href="../index.html">General</a> | 
+<a href="../authorizenet/index.html">Authorize.net</a> | 
+<a href="../paypal/index.html">Paypal</a> | 
+<a href="../self/index.html">Self</a> | 
+<a href="../worldpay/index.html">Worldpay</a> 
+</div>
+<!-- end of links to individual gateway instructions -->
+
+
+
+<h2>Pretest</h2>
+<p>Before changing anything make sure that your phpYellow Pages is processing paid listings. This is how:
+
+<ol>
+	<li>open util.php</li>
+	<li>set the CONSTANT value for BYPASSCARDPROCESSOR from &quot;no&quot; to &quot;yes&quot;</li>
+	<li>set the CONSTANT value for PAIDLISTINGS from &quot;&quot; to &quot;yes&quot;</li>
+	<li>save util.php to your web server</li>
+	<li>go to phpYellow Pages and add a test listing</li>
+	<li>find any test listing</li>
+	<li>click on the &quot;Go Premium&quot; button</li>
+	<li>complete the checkout page details and click on &quot;Next Step&quot;</li>
+	<li>on the <i>Proceed to Purchase?</i> page click on &quot;Next Step&quot;</li>
+	<li>the result is an upgraded Premium Listing</li>
+</ol>
+DO NOT PROCEED UNTIL THIS PRETEST IS WORKING TO YOUR SATISFACTION.
+</p>
+
+
+
+
+
+<h2>OVERVIEW</h2>
+<p>
+To integrate a ClickBank account with phpYellow Pages Premium Edition (for realtime payments):
+</p>
+<p>
+a) the phpYellow "buy" page "premiumBuyForm.php" needs to be custom tailored. 
+   A custom tailored ClickBank buy page is available in the /clickbank folder.
+   Copy it into the /phpYellow folder, overwriting the file that is there.
+</p>
+
+
+<p>
+b) the receiving url "premiumProcessPayment.php" must be identified as the 
+   thank you page in your ClickBank administration, like this:
+<br><br>
+
+	<code>
+   http://www.yourdomain.com/phpYellow/premiumProcessPayment.php
+   </code>
+</p>
+
+  <p> 
+   Note: the Thankyou page link in your clickbank administration will NOT 
+   work. The phpYellow thank you page is dynamic. It needs to receive certain 
+   variables that are dynamically generated - like those made when purchasing 
+   a Premium listing. Examples of these variables include ckey, item, duration...  
+   It is because these dynamic variables are not present by simply clicking the link 
+   to the thank you page that they do NOT work on your ClickBank administration page.
+   </p>
+
+
+<p>
+c) you must enter your clickbank nickname next to CLICKBANK_NICKNAME in util.php.
+   Save and upload to your web server.
+</p>
+
+<pre>
+===============================================================
+REQUEST A PRICE LIMIT INCREASE FROM CLICKBANK - START COPY HERE
+===============================================================
+
+TESTING
+Start
+1. add a basic listing to phpYellow Pages
+2. click on "Go Premium"
+
+premiumCheckout.php page
+3. enter your email and password
+4. select a First Page listing
+5. select ONE MONTH duration (NO OTHER DURATION WILL WORK UNTIL YOUR PRICE LIMIT IS RAISED)
+6. select payment method of "Credit Card by Internet"
+7. click on "Next Step"
+
+
+premiumBuy.php page
+8. click on "Click Here to Purchase"
+
+
+ClickBank Enter Card Details page
+9. just click the submit button - enter no details.
+
+
+premiumThankYou.php
+10. finished
+
+===============================================================
+REQUEST A PRICE LIMIT INCREASE FROM CLICKBANK - END COPY HERE
+===============================================================
+</pre>
+
+
+<h2>GO LIVE</h2>
+<p>
+Copy these integration notes in an email to clickbank and make a price increase request.
+<p>
+<p>
+When the request is granted go to your ClickBank administration and add more "links" like this:
+<p>
+
+<pre>
+
+Item         Duration in months   clickbank linknumber
+First Page   1                    1
+First Page   2                    2
+First Page   3                    3
+First Page   4                    4
+First Page   5                    5
+First Page   6                    6
+First Page   7                    7
+First Page   8                    8   
+First Page   9                    9
+First Page   10                   10
+First Page   11                   11
+First Page   12                   12
+Preferred    13                   13
+Preferred    14                   14
+Preferred    15                   15
+Preferred    16                   16
+Preferred    17                   17
+Preferred    18                   18
+Preferred    19                   19
+Preferred    20                   20
+Preferred    21                   21
+Preferred    22                   22
+Preferred    23                   23
+Preferred    24                   24
+
+</pre>
+
+
+<h3>Modify Price Offered</h3>
+<p>
+To set the prices make the changes in util.php and upload to your web server. 
+Do NOT use a currency symbol.
+<p>
+
+<h3>Mofify Duration Offered</h3>
+<p>
+To change the months offered on premiumCheckout.php modify premiumCheckout.php - NOT util.php
+</p>
+
+
+
+<h2>Done!</h2>
+<p>
+This completes the steps to integrate your payment processing with phpYellow Pages. Congratulations, 
+you can start earning revenue using online payment and automatically paid listings.
+</p>
+
+<p><br></p>
+
+
+<!-- start of links to individual gateway instructions -->
+<div align="center">
+<a href="../docs/DOCSpaidListings.html">Guide</a> | 
+<a href="../index.html">General</a> | 
+<a href="../authorizenet/index.html">Authorize.net</a> | 
+<a href="../paypal/index.html">Paypal</a> | 
+<a href="../self/index.html">Self</a> | 
+<a href="../worldpay/index.html">Worldpay</a> 
+</div>
+<!-- end of links to individual gateway instructions -->
+
+
+<p><br></p>
+<p><br></p>
+
+
+
+</body>
+</html>
