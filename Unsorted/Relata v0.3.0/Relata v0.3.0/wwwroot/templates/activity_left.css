@@ -1,0 +1,98 @@
+/* 
+
+Relates to:
+/templates/ac.js 
+/templates/a.htm
+/templates/a.css
+
+*/
+
+/*  mini calendar in the left frame */
+body
+{
+	background-color: #D4D0C8;
+	/*border-left-style: outset;
+	border-right-style: outset;
+	border-bottom-style: outset;
+	border-width: 2px;
+	*/
+}
+td.calendar
+{
+	background-color: #E6E6E6;
+	empty-cells: hide;
+	font-family: arial;
+	font-size: 9px;
+	width: 14%;
+	height: 20px;
+	cursor: pointer;
+	cursor: hand;
+	border-style: outset;
+	border-width: 1px;
+}
+.today
+{
+	background-color: #808080;
+	color: white;
+	border-width: 1px;
+	border-color: black;
+}
+
+#calendar
+{
+	left: 10px; 
+	right: 10px;
+	font-family: verdana;
+	font-size: 8pt;
+    padding: 2px;
+}
+
+th
+{
+	background-color: #648CAC;
+	color: white;
+	border-width: 1px;
+	border-style: outset;
+	border-color: #2070d9;
+	font-family: verdana;
+	font-size: 9px;
+	text-align: center;
+	padding: 2px;
+	margin: 0px;
+}
+
+.calendaractivity
+{
+	background-color: #E6E6E6;
+	border-style: inset;
+	empty-cells: hide;
+	font-family: arial;
+	font-size: 9px;
+	width: 14%;
+	height: 20px;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.activitylist
+{
+	background-color: #E6E6E6;
+	font-family: verdana;
+	font-size: 9px;
+	text-align: center;
+	empty-cells: hide;
+	cursor: pointer;
+	cursor: hand;
+}
+
+
+#leftnavbox
+{
+	width: 230px;
+	margin-left: 10px;
+	margin-right: 0px;
+	padding: 2px;
+	background-color: white;
+	border: 2px;
+	border-style: ridge;
+}
