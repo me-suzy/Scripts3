@@ -1,0 +1,151 @@
+/*###############################################################################################
+#
+#  project           	: phpBazar
+#  filename          	: style_white.css
+#  last modified by  	: Erich Fuchs
+#  supplied by          : Reseting
+#  nullified by		: CyKuH [WTN]
+#  purpose           	: Styles Configuraion File
+#
+###############################################################################################*/
+
+
+
+body 			{ background: #FFFFFF url(images/style_white_background.gif); font-family:Verdana, Arial, sans-serif; font-size: 10pt; margin-top:10px; margin-bottom:10px; }
+
+
+
+a:link 			{ font-family:Verdana, Arial, sans-serif; color:#000000; font-weight:bold; text-decoration:underline; }
+
+a:visited 		{ font-family:Verdana, Arial, sans-serif; color:#000000; font-weight:bold; text-decoration:underline; }
+
+a:active 		{ font-family:Verdana, Arial, sans-serif; color:#FF0000; font-weight:bold; text-decoration:underline; }
+
+a:hover 		{ font-family:Verdana, Arial, sans-serif; color:#0000FF; font-weight:bold; text-decoration:none; }
+
+
+
+p,ul,ol,li,div,td,th,address,blockquote,nobr,b,i
+
+			{ font-family:Verdana,Arial,sans-serif; color:#AAAAAA; }
+
+
+
+p,ul,ol,li,div,td,th,address,nobr,b,i
+
+			{ font-family:Verdana,Arial,sans-serif; font-size:10pt; }
+
+
+
+form,input,option,select
+
+			{ font-family:Verdana,Arial,sans-serif; font-size:8pt; font-family: Helv;}
+
+
+
+#red 			{ font-family:Verdana,Arial,sans-serif; font-style:normal; color: #CC0000; }
+
+span.censored 		{ font-family:Verdana,Arial,sans-serif; color:#FF0000; }
+
+
+
+div.mainheader 		{ font-family:Verdana, Arial, sans-serif; font-size:12pt; color:#000000; text-align:right; ; font-weight: bold}
+
+div.maintext 		{ font-family:Verdana, Arial, sans-serif; font-size:10pt; text-align:justify; ; color: #000000}
+
+div.mainleft 		{ font-family:Verdana, Arial, sans-serif; font-size:10pt; text-align:left; ; color: #000000}
+
+div.mainmenu 		{ font-family:Verdana, Arial, sans-serif; font-size:8pt; text-align:left; ; color: #000000}
+
+div.mainpages 		{ font-family:Verdana, Arial, sans-serif; font-size:7pt; text-align:right; margin-right:0px; ; color: #000000}
+
+div.maincatnav 		{ font-family:Verdana,Arial,sans-serif; font-size:7pt; text-align:left; margin-left:0px; }
+
+div.maininputleft 	{ font-family:Verdana, Arial, sans-serif; font-size:10pt; text-align:right;  ; color: #000000}
+
+
+
+div.sideheader 		{ font-family:Verdana, Arial, sans-serif; font-size:10pt; color:#000000; text-align:right; ; font-weight: bold}
+
+div.sidetext 		{ font-family:Verdana, Arial, sans-serif; font-size:8pt; text-align:justify; ; color: #000000}
+
+div.sideleft 		{ font-family:Verdana, Arial, sans-serif; font-size:8pt; text-align:left; ; color: #000000}
+
+
+
+div.smsubmit		{ font-family:Verdana,Arial,sans-serif; font-size:10pt; text-align:center; }
+
+
+
+div.smallleft 		{ font-family:Verdana, Arial, sans-serif; font-size:8pt; text-align:left; ; color: #000000}
+
+div.smallcenter 	{ font-family:Verdana, Arial, sans-serif; font-size:8pt; text-align:center;; color: #000000}
+
+div.smallright 		{ font-family:Verdana, Arial, sans-serif; font-size:8pt; text-align:right; ; color: #000000}
+
+div.spaceleft 		{ font-family:Verdana, Arial, sans-serif; font-size:4pt; text-align:left; ; color: #000000}
+
+div.whiteleft 		{ font-family:Verdana,Arial,sans-serif; font-size:10pt; text-align:left; color:#FFFFFF;}
+
+
+
+div.footer 		{ font-family:Verdana, Arial, sans-serif; font-size:8pt; text-align:center;; color: #000000}
+
+
+
+td.class1 		{ background: #111111; border:0px; }
+
+td.class2 		{ background: #FFFFFF; border:0px none; text-align:justify; vertical-align:top; }
+
+
+
+td.class3 		{ background: #FFFFFF; border:1px #000000 solid; }
+
+td.class4 		{ background: #FF0000; border:0px; text-align:justify; vertical-align:top; }
+
+
+
+td.votebarout 		{ background: #EEEEEE; border:0px; }
+
+td.votebarin 		{ background: #777777; border:0px; }
+
+td.votetext 		{ font-family:Verdana, Arial, sans-serif; font-size:8pt; ; color: #000000}
+
+div.votespace   	{ font-family:Verdana, Arial, sans-serif; font-size:4pt; ; color: #000000}
+
+
+
+td.ratebarout 		{ background: #CCCCCC; border:0px; }
+
+td.ratebarin 		{ background: #883300; border:0px; }
+
+div.ratespace   	{ font-family:Verdana,Arial,sans-serif; font-size:4pt; }
+
+
+
+td.gbheader 		{ background: #FFFFFF; border:1px #000000 solid; font-weight:bold; text-align:center ;}
+
+td.gbtable1 		{ background: #FFFFFF; border:1px #000000 solid; vertical-align:top; width:30%; }
+
+td.gbtable2 		{ background: #FFFFFF; border:1px #000000 solid; vertical-align:top; }
+
+
+
+td.classcat1 		{ background: #FFFFFF; border:1px #000000 solid; vertical-align:middle; text-align:center; width:6%; height:40px;}
+
+td.classcat2 		{ background: #FFFFFF; border:1px #000000 solid; vertical-align:top; width:44%; }
+
+td.classcat3 		{ background: #FFFFFF; border:1px #000000 solid; vertical-align:middle; text-align:center; width:10%; height:50px;}
+
+td.classcat4 		{ background: #FFFFFF; border:1px #000000 solid; vertical-align:top; width:90%; }
+
+td.classcat5 		{ background: #FFFFFF; border:1px #000000 solid; vertical-align:top; text-align:center; width:20%; }
+
+td.classcat6 		{ background: #FFFFFF; border:1px #000000 solid; vertical-align:top; width:80%; }
+
+
+
+td.classadd1 		{ border:0; vertical-align:top; text-align:right; width:35%; }
+
+td.classadd2 		{ border:0; vertical-align:top; text-align:left; }.status {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #000000; text-align: center; background-color: #FF0000}
+
