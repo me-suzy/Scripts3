@@ -1,0 +1,262 @@
+<BODY><HTML>
+
+<p>
+Upgrade instructions are listed in reverse order.  So if you keep up with each 
+upgrade, your upgrade instructions will be right at the top. (NOTE: If you have to run an altertable, make sure you only click on it one time and do not hit the stop button during this time.  Some altertables will take awhile to finish.
+
+<p>
+<br>
+<i>If you can it is always a good idea to back up your SQL database.  You can use something like phpMyAdmin for this or from a telnet prompt.  The command varies for different SQL servers.  MySQL for example would be something like
+this:
+<br><br>
+	mysqldump databasename > databasename.dump
+<br></i>
+<p>
+<i>When you are done upgrading make sure you remove all altertable scripts from your server</i>
+
+<p>
+NOTE: <b>You never need to overwrite your config.inc.php, theme.inc.php or main.inc.php files with the new ones</b>.  Once you have run all of the altertables you can go into the admin section and bring up the config and theme editors.  Any new variables that have been added will be highlighted in a different color depending on your stylesheet settings.  Running the config editor will also update your version #.
+
+<p>
+WARNING:  When running some of the altertable scripts your browser may end up timing out.  Do not reload/refresh the page.  Mysql will still be working and it will continue as normal when it's done.
+<p>
+<p>
+
+<b>----- VERSION 6.1 to 6.1.1</b>
+<br>
+Minor upgrade.  Overwrite your existing files with the files listed in CHANGEDFILES.txt or you can do a full upgrade by overwriting all files except for main.inc.php, config.inc.php and theme.inc.php.  Running the config editor in the admin section will update your version #.  No altertables to run.
+
+<br><br>
+<b>----- VERSION 6.0.3 to 6.1</b><br>
+This is a full upgrade in which every script has been updated. However only a handful of templates were changed.   This was necessary to accomodate the custom cookie and tablename prefixes.  If you don't want to overwrite all of your templates then you can look at the CHANGEDFILES.txt file to see what templates have changed.
+<br><br>Upload all files including the files in the images directory.  Several new images added along with a graemlins directory that is now used for the instant graemlins and the graemlin upload feature.  In order to use the new admin functions you'll need to make sure that your icons, newicons and graemlins directories and all of the files within are writeable by the webserver.<br><br>
+Once new files are in place you can bring up <a href="altertable-6.0-6.1.php">altertable-6.0-6.1.php</a> in your browser to upgrade your database.
+<br><br>
+There are a few new config options so you'll want to make sure you run the admin config editor to set these.
+<br><br>
+A few new classes were added to the stylesheets to make the "quote" markup look a litle better.  You'll need to add these to any custom stylesheets you have (the colors will need to be adjusted):<br><br>
+blockquote {<br>
+   font-size:9pt; <br>
+   border:1px solid #000033;<br>
+   margin:0px 20px; <br>
+   padding:0px 10px<br>
+}<br>
+blockquote .small {<br>
+   background:#000033;<br>
+   margin-left:-10px; i<br>
+   padding:1px 2px<br>
+}<br>
+blockquote hr {<br>
+   visibility:hidden;<br>
+   height:1px<br>
+}<br>
+blockquote br {<br>
+   font-size:1px<br>
+}<br>
+
+
+<br><br>
+<b>----- VERSION 6.0.1 to 6.0.2</b>
+<br>
+Minor upgrade (many template changes necessary to get rid of a long standing problem with forms and special characters or language modifications).  Overwrite your existing files with the files listed in CHANGEDFILES.txt or you can do a full upgrade by overwriting all files except for main.inc.php, config.inc.php and theme.inc.php.  Running the config editor in the admin section will update your version #.  No altertables to run.
+
+<br><br>
+<b>----- VERSION 6.0 to 6.0.1</b>
+<br>
+Minor upgrade.  Overwrite your existing files with the files listed in CHANGEDFILES.txt or you can do a full upgrade by overwriting all files except for main.inc.php, config.inc.php and theme.inc.php.  Running the config editor in the admin section will update your version #.  No altertables to run.
+
+
+<b>----- VERSION 5.5.1 to 6.0</b>
+<br>
+Major upgrade.  No file was left untouched so you will need to replace all files with the new package.  There is a new template directory that stores the HTML for the scripts along with an online editor.  To use the online editor you will need to change the permissions on the the template files to be writeable.  Chmod 666 or 664 on the files.
+<p>
+NOTE: <b>For this upgrade it is necessary to overwrite your main.inc.php file</b>.  Make sure you copy your $thispath variable out of the old one and place it in the new one.  Normally you will never have to do this, but one new feature for this upgrade requires it.
+<p>
+You will also need to upload the <b>images in the images/icons folder</b> as there are several new ones and the <b>stylesheets</b>, and add this new class to any of your existing stylesheets:
+<p>
+.tablesurround {
+  background:#505092;
+}
+<p>
+Once new files are in place you can bring up <a href="altertable-5.5-6.0.php">altertable-5.5-6.0.php</a> in your browser to upgrade your database.
+
+<p>
+The authentication system has been changed so you will need to login to the forums again once this is finished.  The next step requires you to run the online config editor to update the version # and set any new variables.
+
+<p>
+Font colors have also been changed and are no longer language dependent.  The markup has been changed to [color:red]test[/color]  This now accepts any color instead of the defined list.
+
+<p>
+There is also a new option that will allow you to move your config.inc.php file outside of the html tree if you wish.  To do this, you need to add the following to your main.inc.php file:
+<p>
+// PATH TO YOUR config.inc.php file.  BY DEFAULT THIS IS THE<br>
+// SAME AS $thispath, BUT IF YOU MOVE config.inc.php TO ANY<br>
+// OTHER LOCATION YOU MUST SPECIFY IT HERE.<br>
+   $configdir = "/path/to/dir/containing/config.inc.php";
+<p>
+When adding the above you need to make sure you put it before this:
+<p>
+// DO NOT EDIT ANYTHING BELOW THIS LINE!<br>
+   include("$thispath/ubbt.inc.php");
+
+<p>
+<p>
+
+
+<b>----- VERSION 5.5 to 5.5.1</b>
+<br>
+Minor upgrade.  Overwrite your existing files with the files listed in CHANGEDFILES.txt.  Running the config editor in the admin section will update your version #.  No altertables to run.
+
+<p>
+<p>
+<b>----- VERSION 5.4.6 to 5.5</b>
+<br>
+This upgrade has changed just about every file in the installation so you will need to do a full upgrade.  This was needed for the new way of requiring the language files to make things work better on the variety of platforms UBB.threads will be installed on.  There are new files as well, in the includes section and the admin section.  There are also admin editors for the files in the includes section now, so you will need to make sure you make these files writeable, chmod 664 or 666 on unix, writeable on windows.
+<br><br> 
+This upgrade does  require you to update your main.inc.php file, but you will not have to do this for any future upgrade.
+<br><br>
+Next bring up <a href="altertable-5.4.6-5.5.php">altertable-5.4.6-5.5.php</a> in your browser to upgrade your database.
+<br><br>
+If you have any stylesheets that are not default then you will want to add 2 new classes.  One for the poll bar graphs which sets the color:
+<p>
+.pollcolor {<br>
+  background: choosecolor;<br>
+}
+<p>
+The other is for the new moderator column on the main forum listing.<p>
+.modcolumn {<br>
+  background: choosecolor;<br>
+  color: choosecolor;<br>
+}
+
+<p>
+<p>
+
+
+<b>----- VERSION 5.4.4 to 5.4.5</b>
+<br>
+The name change from wwwthreads to UBB.threads hit a wide variety of scripts so it is best if you can do a full upgrade.  If this isn't possible you can use a diff program to see all of the actual changes.
+<br>
+<br>
+Next bring up <a href="altertable-5.4.4-5.4.5.php">altertable-5.4.4-5.4.5.php</a> in your browser to upgrade your database.
+<br>
+<br>
+
+The only significant change is the current main.inc.php script has been renamed to ubbt.inc.php.  A new main.inc.php has one variable that you need to edit.  This to prepare for a installer/upgrader script that I will be working on.
+
+<p>
+<p>
+
+<b>----- VERSION 5.4.3 to 5.4.4</b>
+<br>
+Replace the files in the CHANGEDFILES.txt file, or overwrite all of your existing files with the new ones.  Next bring up <a href="altertable-5.4.3-5.4.4.php">altertable-5.4.3-5.4.4.php</a> in your browser to upgrade your database.
+
+<p>
+<p>
+
+<b>----- VERSION 5.4.2 to 5.4.3</b>
+<br>
+Replace the files in the CHANGEDFILES.txt file, or overwrite all of your existing files with the new ones.  Next bring up <a href="altertable-5.4.2-5.4.3.php">altertable-5.4.2-5.4.3.php</a> in your browser to upgrade your database.
+
+<p>
+<p>
+
+<b>----- VERSION 5.4.1 to 5.4.2</b>
+<br>
+Replace the files in the CHANGEDFILES.txt file, or overwrite all of your existing files with the new ones.  Next bring up <a href="altertable-5.4.1-5.4.2.php">altertable-5.4.1-5.4.2.php</a> in your browser to upgrade your database.
+
+<p>
+<p>
+
+<b>----- VERSION 5.4 to 5.4.1</b>
+<br>
+Replace the files in the CHANGEDFILES.txt file, or overwrite your exsiting files wit
+h the new package.  No altertables to run. 
+
+<p>
+<p>
+
+<b>----- VERSION 5.4b to 5.4b2</b>
+<br>
+Replace the files in the CHANGEDFILES.txt file, or overwrite your exsiting files with the new package.  No altertables to run.
+
+
+<p>
+<p>
+
+<b>----- VERSION 5.3 to 5.4</b>
+Replace the files in the CHANGEDFILES.txt file, or orverwrite your existing files wi
+th the new package.  Run <a href="altertable-5.3-5.4.php">altertable 5.3-5.4.php</a> from the browser.  New images 
+and icons added and also a new class has been added to all of the stylesheets
+so you will need to add this to your own stylesheets as this is used for the tex
+t and table cell for the text next to the navigation icons:
+<br>
+
+.navigation{
+<br>
+  background: #b6b7da;
+<br>
+  font-size:   8pt;
+<br>
+  font-family: helvetica,arial;
+<br>
+}
+<br>
+<br>
+
+Also, the new style of icons for navigation have the text next to them for easy
+translation.  If you are using navigation images that have text inside them and
+you want to continue to use this style of images you will need to go into generi
+c.php in your languages folder and comment out the block of code for this text (You will see where you need to do this). 
+
+<p>
+<p>
+
+<b>----- VERSION 5.2 to 5.3</b>
+<br>
+Replace the files in the CHANGEDFILES.txt file, or overwrite your existing files wit
+h the new package.  Run <a href="altertable-5.2-5.3.php">altertable-5.2-5.3.php</a>.  A new option has been added to the config.inc.php file so you will need to bring up the config editor in the admin area.  You will see the new option in a different color than the others.
+
+<p>
+<p>
+
+<b>----- VERSION 5.1.6 to 5.2</b>
+<br>
+Replace the files in the CHANGEDFILES.txt file, or overwrite your existing files
+with the new package.  No altertables to run.
+<br>
+<br>
+
+NOTE: There is a new administration section for editing the config files and
+filters online.  However, in order to do this these files must be made writeable
+by the webserver.  Depending on your server this would be a matter of chmoding
+the files in the filters,stylesheets and modules directory to 664.  This can be
+done by executing a command like 'chmod 664 *' when in one of these directories.
+<br>
+<br>
+
+New config variables in config.inc.php and theme.inc.php will be highlighted in
+the online editor.
+
+<p>
+<p>
+
+<b>----- VERSION 5.1.5 to 5.1.6</b>
+<br>
+Replace the files in the CHANGEDFILES.txt file, or overwrite your exsiting files with the new package.  No altertables to run.
+
+<p>
+<p>
+
+<b>----- VERSION 5.1.4 to 5.1.5</b>
+<br>
+Replace the files in the CHANGEDFILES.txt file, or overwrite your existing files with the new package.  No altertables to run.
+
+<p>
+<p>
+
+<b>----- VERSION 5.1.3 to 5.1.4</b>
+<br>
+Replace the files in the CHANGEDFILES.txt file, or orverwrite your existing files with the new package.  No altertables to run.
+
+</body></html>
