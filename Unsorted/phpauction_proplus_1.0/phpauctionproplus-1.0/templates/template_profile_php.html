@@ -1,0 +1,104 @@
+<?
+#///////////////////////////////////////////////////////
+#//  COPYRIGHT 2002 PHPAuction.org ALL RIGHTS RESERVED//
+#//  For Source code for the GPL version go to        //  
+#//  http://phpauction.org and download               //
+#//  Supplied by CyKuH [WTN]                          //
+#///////////////////////////////////////////////////////
+?>
+
+<TABLE WIDTH="100%" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING="0" CELLSPACING="0">
+<TR>
+<TD>
+<!--   -- users profile  ---    -->
+<center><a href="item.php?id=<? echo $auction_id; ?>">
+<? print $std_font.$MSG_138; ?></a></center>
+<BR>
+
+<BR><CENTER><B><? print $tlt_font.$MSG_206 ?></B><BR><BR></CENTER>
+<CENTER>
+
+        <TABLE WIDTH="456" BORDER="0" CELLSPACING="1" CELLPADDING="1" BGCOLOR="#CCCCCC">
+          <TR>
+<TD>
+              <TABLE WIDTH="100%" BORDER="0" CELLSPACING="1" CELLPADDING="4" BGCOLOR="#CCCCCC">
+                <TR BGCOLOR="#FFFFFF"> 
+                  <TD COLSPAN="2" height="50"> <B> 
+                    <? echo $tlt_font.$TPL_user_value; ?>
+                    </B> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <? print $std_font.$MSG_502; ?>
+                    <? print $TPL_num_feedbacks ?>
+                    <table width="38%" border="0" cellspacing="0" cellpadding="0" align="right">
+                      <tr>
+                        <td align="right" valign="bottom"><a href="./feedback.php?id=<? print $TPL_user_id ?>&faction=show"> 
+                          <? print $std_font; ?>
+                          <? print $MSG_208 ?>
+                          </a></td>
+                      </tr>
+                    </table>
+                    <BR>
+                    <? print $TPL_rate_ratio_value  ?>
+                </TR>
+<TR BGCOLOR="#FFFFFF">
+<TD COLSPAN="2">
+                    <TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="0" height="35">
+                      <TR> 
+                        <TD valign="top"> 
+                          <? print $std_font; ?>
+                          <A HREF="./feedback.php?id=<? print $TPL_user_id ?>"> 
+                          <? print $MSG_207 ?>
+                          </A> <br>
+                          <? print $std_font; ?>
+                          <? print $ERR_705 ?>
+                          <A HREF="./feedback.php?id=<? print $TPL_user_id ?>&faction=show"> 
+                          </A> </TD>
+                      </TR>
+                    </TABLE>
+</TD>
+</TR>
+
+                <TR BGCOLOR="#FFFFFF"> 
+                  <TD WIDHT="40%" valign="top"> 
+                    <? print $std_font.$MSG_209 ?>
+                  </TD>
+                  <TD WIDTH="60%" valign="top"> 
+                    <? print $std_font.$TPL_ADC_value ?>
+                    <BR>
+</TD>
+</TR>
+
+                <TR BGCOLOR="#FFFFFF"> 
+                  <TD WIDHT="40%" valign="top"> 
+                    <? print $std_font.$MSG_210 ?>
+                  </TD>
+                  <TD WIDTH="60%" valign="top"> 
+                    <? print $std_font; ?>
+                    <A HREF="email_request.php?user_id=<? print $TPL_user_id ?>&username=<? print $TPL_user_value; ?>">
+                    <? print $TPL_user_value ?>
+                    </A> <BR>
+</TD>
+</TR>
+
+                <TR  BGCOLOR="#FFFFFF"> 
+                  <TD WIDHT="40%" VALIGN="top" height="2"> 
+                    <? print $std_font.$MSG_212 ?>
+                  </TD>
+                  <TD WIDTH="60%" height="2" valign="top"> 
+                    <? print $std_font; ?>
+                    <A HREF="active_auctions.php?user_id=<? print $TPL_user_id?>"> 
+                    <? print $MSG_213 ?>
+                    </A><BR>
+<A HREF="closed_auctions.php?user_id=<? print $TPL_user_id?>"><? print $MSG_214 ?></A>
+<BR>
+</TD>
+</TR>
+
+
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+<BR>
+</CENTER></TD>
+</TR>
+</TABLE>
