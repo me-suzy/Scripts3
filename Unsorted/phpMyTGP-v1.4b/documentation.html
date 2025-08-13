@@ -1,0 +1,210 @@
+<body bgcolor="white">
+<p>
+<i>Sorry for my English - it's not my native lamguage.</i>
+</p>
+<p>
+<h1>WHATS NEW v.0.4</h1>
+<ul>
+<li>Fixed some old bugs
+<li>Added some new bugs
+<li>Possibility to limit daily submissions number from one webmaster per category, per domain, per email and total separately for trusted and regular webmasters
+<li>Now your can work with VIP galleries submited from trusted webmasters:<br>
+&nbsp;&nbsp;&nbsp;- Add new galleries from <i><b>addvip.php</b></i> file<br>
+&nbsp;&nbsp;&nbsp;- New Menu added <b>VIP Setup Section</b> to admin script<br>
+&nbsp;&nbsp;&nbsp;- Don't forget check <b>USE VIP POSTS?</b> in Settings for working with VIP galleries<br>
+&nbsp;&nbsp;&nbsp;- You can check VIP galleries anyway from template file <b><i>vip.tpl</i></b><br>
+&nbsp;&nbsp;&nbsp;- You can place VIP galleries first in list by checking <i>Stay VIP First?</i> in Settings Section of Admin Menu<br>
+&nbsp;&nbsp;&nbsp;- Separatly setup rotate out days for VIP galleries and other posts<br>
+&nbsp;&nbsp;&nbsp;- New template file <b><i>vip.tpl</i></b> describe how to mark VIP galleries and new template field for <b><i>link.tpl</i></b> <i>&lt;!--vip--&gt;</i> show this mark in the list of all galleries
+<li>When you add new rule to blacklist program can delete all existing posts with this rule from base
+<li>Settings to forbid new window openning, status line change, onClick, onMouseover scripts
+</ul>    
+</p>
+<p>
+<h1>WHATS NEW v.0.3</h1>
+<ul>
+<li>You can write your comments to author directly from mail menu
+<li>Script now can check posted galleries on 'window.open' script within it
+<li>Show only not empty categories in admin menu while checking posts
+<li>New tag in default.tpl - &lt;!--list|CATNAME|NUMPOST|-->. 
+Show NUMPOST postings from category CATNAME on main page of your TGP
+<li>Some small bugs fixed
+</ul>    
+</p>
+<p>
+<h1>WHATS NEW v.0.2</h1>
+<ul>
+<li>Restriction on amount of simultaneously showed posts before their check
+<li>Added Button "Accept Changes" in Post Menu Section for more convenient work with checked posts
+<li>More exact debug messages at work with database
+<li>Corrected: Automatic updating base on time
+<li>Corrected: Updating files of categories from patterns
+</ul>    
+</p>
+<p><b><font size="5">  phpMyTGP Manual.</font></b></p>
+<p><STRONG>About some Settings fields<BR></STRONG>
+<UL type=square>
+<li><STRONG>Admin password - </STRONG>Change and Remember 
+  This Field!
+  
+<li><STRONG>Admin Mail</STRONG> - Your email address
+  
+<li><STRONG>TGP Name</STRONG> - This is what your TGP 
+  site will be called
+  <LI><STRONG>Language file</STRONG>  - show content of 
+directory <EM>\phpMyTGP\language\</EM> with language 
+  templates. 
+  <LI><STRONG>PhpMyTGP Setup Dir - </STRONG>The server path to your phpMyTGP files <FONT size=2><STRONG>( <FONT 
+  color=#ff0000>example : /home/you/public_html/phpMyTGP/</FONT> ) WITH TRAILING 
+  SLASH</STRONG></FONT>      
+    
+  <LI><STRONG>TGP Main FileName</STRONG>&nbsp;- This is the name of the&nbsp;main file that will be 
+  created as your main tgp page. The extention of this file will be used for all 
+  sub pages created from <A href="#templates">templates</A>&nbsp;as well
+  <LI><STRONG>TGP Main Dir</STRONG> - The server path to your&nbsp;TGP html 
+  directory <STRONG><FONT size=2>( <FONT color=#ff0000>example : 
+  /home/you/public_html/tgp/</FONT> ) WITH TRAILING SLASH</FONT></STRONG>
+  <LI><STRONG>TGP Main URL</STRONG> - The URL to your&nbsp;phpMyTGP html 
+  directory. <B><FONT size=-1>( <FONT color=#ff0000>example : http://www.yoursite.com/tgp/</FONT> ) 
+  WITH TRAILING SLASH</FONT></B>
+  <LI><STRONG>Path to SENDMAIL</STRONG> - The server path to your mail program. 
+  <B><FONT size=-1>( <FONT color=#ff0000>example : /usr/sbin/sendmail</FONT> ) 
+  NO TRAILING SLASH</FONT></B>
+  <LI><STRONG>Length of LIST template</STRONG>          - 
+  amount of lines which will be displayed in html files if the command &lt;! -- list 
+  --&gt; is applied in <A href="#templates">templates</A> 
+  <LI><STRONG>Auto validate post</STRONG> - Set program to auto validate all 
+  posts
+  <LI><STRONG>Send E-Mail</STRONG> - Send user an email after he signs up with 
+  content of template <EM>mailwelcome.tpl</EM> and when user post rotated out 
+  with content of template <EM>mailout.tpl</EM>
+  <LI><STRONG>Precheck postings</STRONG> - Set program to try check postings (linkback and server 
+  response) before its applied. 
+  <LI><STRONG>Max Post per Domain</STRONG> - Maximum posting allow per domain 
+  name
+  <LI><STRONG>Max Post per E-Mail</STRONG> - Maximum posting allow per E-Mail
+  <LI><STRONG>Rebuild Time</STRONG> - amount of time in minutes after which the 
+  program will update contents of all pages
+  <LI><STRONG>Rotate Days</STRONG> - amount of time in days after which the 
+  program will delete old galleries from your base
+  <LI><STRONG>Check Phrase</STRONG> - Phrase (usually from linkback to your tgp) on which 
+  presence will be checked all galleries ( <b><FONT color=#ff0000 size=-1>example : yoursite.com/tgp/</FONT></b> )</LI> 
+  </UL>
+<P><a name="templates"></a><STRONG>Templates<BR></STRONG>phpMyTGP creates 
+all pages from a series of template files from <EM>/phpMyTGP/templates/</EM> directory. This enables the 
+webmaster to have complete control of the entire site layout and design. Each 
+template has a series of tags that can be used to place specific script 
+generated content. If this seems confusing just look at included template files. 
+It is really VERY simple and flexible. 
+<UL>
+<li><STRONG>VIP Template<BR></STRONG> 
+  Template file - <STRONG><EM>vip.tpl</EM></STRONG> 
+  describe how mark VIP galleries in the list. <BR>
+<li><STRONG>Link Template<BR></STRONG>There is one 
+  template file - <STRONG><EM>link.tpl</EM></STRONG> for 
+  formatting the link&nbsp;on posted gallery. <BR>
+  <P><B>You can use these Template Tags :</B> 
+  <BR><TT>&lt;!--date--&gt;&nbsp;&nbsp; &nbsp;&nbsp; : This prints the date of 
+  posting of&nbsp;gallery.</TT><BR><TT>&lt;!--catname--&gt;&nbsp;&nbsp; : This 
+  prints the category of gallery.</TT><BR><TT><FONT 
+  color=#000000>&lt;!--desc</FONT><FONT color=#000000>--&gt;&nbsp;&nbsp;&nbsp; 
+  &nbsp; : This prints the description of gallery.</FONT></TT><BR><TT><FONT 
+  color=#000000>&lt;!--images</FONT><FONT color=#000000>--&gt;&nbsp;&nbsp;&nbsp; 
+  : This prints the number of images in gallery.</FONT></TT><BR>
+  <TT><FONT color=#000000>&lt;!--vip</FONT><FONT color=#000000>--&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  : This prints VIP mark how described in <b><i>vip.tpl</i></b></FONT></TT><BR>
+  <TT><FONT 
+  color=#000000>&lt;!--url</FONT><FONT 
+  color=#000000>--&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;: This prints the url of 
+  gallery.</FONT></TT><BR><STRONG><FONT color=#ff0000> for 
+  example this template: <BR></FONT><FONT color=#000000>&lt;!--date--&gt; - 
+  &lt;!--catname--&gt; - &lt;!--images--&gt; thumbs of&lt;a href= 
+  "&lt;!--url--&gt;"&lt;!--desc--&gt;&lt;/a&gt;&lt;BR&gt;<BR></FONT><FONT 
+  color=#ff0000>will show like this:<BR></FONT><FONT 
+  color=#000000>12 Sep 2002 - MENS - 15 thumbs of cool mens<BR></FONT></STRONG></P>
+  <LI>
+  <P><STRONG>Category Templates<BR></STRONG>There are two default files: 
+  <STRONG><EM>default.tpl </EM></STRONG>and <STRONG><EM>categories.tpl<BR>- 
+  default.tpl - </EM></STRONG>This file is used for the main "overall" category 
+  this will always be used for the main index page<BR>- 
+  <STRONG><EM>categories.tpl - </EM></STRONG>This file is the default template 
+  for all&nbsp;categories<BR><BR>- <STRONG><EM>Separate Category Files</EM> 
+  -</STRONG>&nbsp;You can make a separate template file for each category. The 
+  template files will be named according to the category names they must be in 
+  all lower and can only contain letters &amp; numbers. So if you had a category 
+  called&nbsp;<B><FONT color=#ff0000>Mens</FONT></B> the template file you would 
+  create would be called <B><FONT color=#ff0000>mens.tpl</FONT></B>.<BR><BR>In both of the above cases you have the ability to use the 
+  following tags in the templates. These tags will be replaced with the 
+  appropriate content when the html is generated. <STRONG>Remember when placing 
+  these tags that they are all lower case.<BR><BR>You can use these Template 
+  Tags :</STRONG> <BR>
+
+  <TT>&lt;!--join--&gt;&nbsp;&nbsp;&nbsp;&nbsp;: This place a 
+  link directly to the submission form.<BR></TT><TT>&lt;!--terms--&gt;&nbsp;&nbsp;&nbsp;: This place a link to the 
+  terms and condition form.</TT><BR><TT>&lt;!--navbox--&gt;&nbsp;&nbsp;: This generates a drop 
+  down nav box to every category.</TT><BR><TT>&lt;!--link--&gt;&nbsp;&nbsp; &nbsp;: This prints 
+  the&nbsp;one link to submited&nbsp;gallery.</TT><BR><TT>&lt;!--list--&gt;&nbsp;&nbsp;&nbsp; : This outputs the list of N 
+  galleries, where N setup in settings.<BR><BR>
+  &lt;!--list|CATNAME|NUMPOST|-->&nbsp;:  ONLY 
+  FOR <STRONG><EM><FONT face="Times New Roman">default.tpl !!!</FONT></EM></STRONG>
+  Show NUMPOST postings from category CATNAME on main page of your TGP.
+  <br>
+  &lt;!--catname--&gt;&nbsp;: ONLY 
+  FOR <STRONG><EM><FONT face="Times New Roman">categories.tpl or separate 
+  category files!!! </FONT></EM></STRONG>This prints the category of curent TGP page.</TT></P>
+  <LI>
+  <P><STRONG>Terms Template<BR></STRONG>This template is 
+  very simple, it is a standard HTML file called 
+  <STRONG><EM>terms.tpl</EM></STRONG> with terms and condition of your 
+  TGP <BR><STRONG>You can use these Template 
+  Tags :<BR></STRONG><FONT 
+  face="Courier New"><tt>  &lt;!--join--&gt;&nbsp;&nbsp;&nbsp;: This place a 
+  link to the submission form.</tt></FONT></P>
+  <LI>
+  <P><FONT face="Courier New"><b>New Gallery Submission 
+  Template</b> <BR>
+  </FONT><FONT 
+  face="Times New Roman">The <B><EM>new.tpl</EM></B> file controls the layout of 
+  the gallery submission form.<BR><STRONG>You can use these Template Tags 
+  :</STRONG>
+  <BR><FONT face="Courier New"> &lt;!--start--&gt;&nbsp;: This tag is 
+  required and starts the submission form.</FONT> <BR><TT>&lt;!--email--&gt;&nbsp; : This tag places a box for the 
+  uses to input his email.</TT> <BR><TT>&lt;!--cats--&gt;&nbsp;&nbsp; : This tag places a drop 
+  down box of available categories.</TT> <BR><TT>&lt;!--pics--&gt;&nbsp;&nbsp; : This allows the user to 
+  select the number of pics in his gallery.</TT> <BR><TT>&lt;!--url--&gt;&nbsp;&nbsp;&nbsp; : This tag places a 
+  box for the users gallery URL.</TT> <BR><TT>&lt;!--desc--&gt;&nbsp;&nbsp; : This tag places a box for 
+  the users gallery description.</TT> <BR><TT>&lt;!--mlist--&gt;&nbsp; : This tag places a check box 
+  that allows the user to be added to your mailing list.</TT> <BR><TT>&lt;!--finish--&gt; : This is 
+  required &amp; finishes the submission html form</TT></FONT>          
+  </P>
+  <LI>
+  <P><FONT face="Times New Roman"><STRONG>Post template<BR></STRONG>The <STRONG><EM>post.tpl</EM></STRONG> file 
+  controls the page that is shown to the webmaster after completing the sign up 
+  process.<BR><STRONG>You can use these Template Tags :</STRONG> 
+  <BR><TT>&lt;!--email--&gt;&nbsp; : This tag show user submited email.</TT> 
+  <BR><TT>&lt;!--cats--&gt;&nbsp;&nbsp; : This tag show user submited 
+  category.</TT> <BR><TT>&lt;!--pics--&gt;&nbsp;&nbsp; : This show the number of 
+  pics in his gallery.</TT> <BR><TT>&lt;!--url--&gt;&nbsp;&nbsp;&nbsp; : This 
+  tag show the submited gallery URL.</TT> <BR><TT>&lt;!--desc--&gt;&nbsp;&nbsp; 
+  : This tag show the submited gallery&nbsp;description.</TT> 
+  <BR><TT>&lt;!--link--&gt;&nbsp;&nbsp; : Curently not in 
+  use</TT></FONT>
+  
+  </P>
+  <LI>
+  <P>Mail templates<BR>The <FONT 
+  color=#000000><STRONG><EM>mailwelcome.tpl</EM></STRONG></FONT> , 
+  <STRONG><EM>mailout.tpl</EM></STRONG> and 
+  <STRONG><EM>maildelete.tpl</EM></STRONG> files is the email messages 
+  that&nbsp;are sent to the&nbsp;user after they submit there gallery, after 
+  there gallery was rotated out and after there gallery was not 
+  approved.<BR><STRONG>You can use these Template Tags :</STRONG> 
+  <BR><TT>&lt;!--email--&gt;&nbsp; : This tag show user submited email.</TT> 
+  <BR><TT>&lt;!--catname--&gt;: This tag show user submited category.</TT> 
+  <BR><TT>&lt;!--pics--&gt;&nbsp;&nbsp; : This show the number of pics in his 
+  gallery.</TT> <BR><TT>&lt;!--url--&gt;&nbsp;&nbsp;&nbsp; : This tag show the 
+  submited gallery URL.</TT> <BR><TT>&lt;!--desc--&gt;&nbsp;&nbsp; : This tag 
+  show the submited gallery&nbsp;description.</TT><TT><BR>&lt;!--tgpname--&gt;&nbsp;&nbsp; : This tag show the name 
+  of your TGP.</TT><BR><TT>&lt;!--link--&gt;&nbsp;&nbsp; : Curently not in 
+  use</TT> </P></LI><B></B></UL>
+</body>
