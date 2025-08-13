@@ -1,0 +1,154 @@
+                            #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%
+                        #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%
+                    #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%
+                #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%
+            #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%
+        #%#%#%#%#%#%#%#%#%#%#%$õáßð¤³. \\//  /¯` /¯_ | .³¤ðßáõ$#%#%#%#%#%#%#%#%#%#%
+    #%#%#%#%#%#%#%#%#%#%#%#%#%$õáßð¤³. //\\  \_, \_/ | .³¤ðßáõ$#%#%#%#%#%#%#%#%#%#%#%#%
+#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%
+¤³                                                                                        ²¡
+¤³    .JL           .JNNN                      JN`              _JNNNN            ._      ²¡
+¤³    NNNL        _NN"`                  ___  (NF            _N"   (NNL          (NN      ²¡
+¤³     NNNL    .JN"                    NNNNNNNNN)          JN"      4NN.         `"       ²¡
+¤³      4NNN._NF`                     NN)   4NNN         .NN        `NNN                  ²¡
+¤³       4NNNN                       (NN     `NN)       (NN         JNNN)        (NN      ²¡
+¤³       JNNNNN.                     (NN      (F        NN)        JN`NNN        (N)      ²¡
+¤³     .NN` 4NNNL                    (NN.               NNN_    _NN`  (NN        `NN      ²¡
+¤³    JN`     4NNN_                   NNL               `NNNNNNN"     `NN)        NN      ²¡
+¤³  .NN`       `NNNN.                 (NNL      _                      NN)        NN      ²¡
+¤³  NN`          4NNN.                 4NNNL__JN)                  .  .NN`        N"      ²¡
+¤³  N"            `N"                    "NNN"`                   NNNNNN`                 ²¡
+¤³                                                                                        ²¡
+ÄÚÄÚ                                            ÄÚÄÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  ÄÚÄÚ    phpFreelancers (c) ProEx101             ÄÚÄÚ
+    ÄÚÄÚ                                            ÄÚÄÚ
+      ÄÚÄÚ     CGI Group...........: xCGI             ÄÚÄÚ
+        ÄÚÄÚ     SUPPLiER............: drew010          ÄÚÄÚ
+          ÄÚÄÚ     CRACKER.............: drew010          ÄÚÄÚ
+            ÄÚÄÚ     PACKAGER............: idle             ÄÚÄÚ
+              ÄÚÄÚ     TESTER..............: drew010,zeedy2k  ÄÚÄÚ
+                ÄÚÄÚ     RELEASE DATE.......: 05/09/2002        ÄÚÄÚ
+                  ÄÚÄÚ     PROTECTiON.........: Callbacks         ÄÚÄÚ
+                    ÄÚÄÚ     SiZE...............: 114.688 BYTES     ÄÚÄÚ
+                      ÄÚÄÚ                                            ÄÚÄÚ 
+                        ÄÚÄÚ                                            ÄÚÄÚ
+                          ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+      ²½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½²
+     ³#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#³
+    ²##³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³³##²
+    ½¤²                                                                          ³¡¾
+    ½¤²  ===================================                                     ³¡¾
+    ½¤²  ::: RELEASE iNFO                :::                                     ³¡¾
+    ½¤²  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                                     ³¡¾
+    ½¤²                                                                          ³¡¾
+    ½¤²  Run your own professional services marketplace and collect 		 ³¡¾
+    ½¤²  commissions, just like elance.com! And now with enough power to run     ³¡¾
+    ½¤²  any website!								 ³¡¾
+    ½¤²  -Unlike the regular Freelancers, which is designed for small to medium  ³¡¾
+    ½¤²  size websites, this PHP script can handle any size business             ³¡¾
+    ½¤²  because it uses MySQL technology!  					 ³¡¾
+    ½¤²  -Runs with very little requirements. 					 ³¡¾
+    ½¤²  -Very easy setup. Anyone can do it! 					 ³¡¾	
+    ½¤²  -You decide what "freelancers" and "buyers" are called. For example,    ³¡¾
+    ½¤²    at ScriptLance.com it's "programmers" and "webmasters". 		 ³¡¾
+    ½¤²  -Advanced admin gives you maximum control: 				 ³¡¾
+    ½¤²  -Easily edit all options you picked during setup. 			 ³¡¾
+    ½¤²  -Manage list of banned usernames, e-mails, and IPs. 			 ³¡¾
+    ½¤²  -View financial information, such as deposits, withdrawals, and a 	 ³¡¾
+    ½¤²    monthly profit report! 						 ³¡¾
+    ½¤²  -Delete accounts, suspend accounts, give special status, add/remove     ³¡¾
+    ½¤²    funds, and more. 							 ³¡¾
+    ½¤²  -Refund project commissions. 						 ³¡¾
+    ½¤²  -Track last recorded login times and delete inactive accounts.          ³¡¾
+    ½¤²  -Find and close projects. 						 ³¡¾
+    ½¤²  -E-mail all members. 							 ³¡¾
+    ½¤²  -Make announcements wherever you want. 				 ³¡¾	
+    ½¤²  -E-mail address must be confirmed before finishing signup process.      ³¡¾
+    ½¤²  -Create unlimited job categories. 					 ³¡¾
+    ½¤²  -Allow users to pick only one category or several. 			 ³¡¾
+    ½¤²  -When a project is posted, freelancers who might be interested are      ³¡¾
+    ½¤²    automatically notified.            					 ³¡¾
+    ½¤²  -When a freelancer places a bid, he can choose to be notified when      ³¡¾
+    ½¤²    someone places a bid lower than his bid. 				 ³¡¾
+    ½¤²  -Individual message boards for each project! 				 ³¡¾
+    ½¤²  -Private messages can be posted on message board. 			 ³¡¾
+    ½¤²  -Messages can be sent to another user by e-mail, all web based, 	 ³¡¾
+    ½¤²    thus keeping e-mail addresses hidden. 				 ³¡¾
+    ½¤²  -Buyer can extend the end date on their project. You decide the 	 ³¡¾
+    ½¤²    maximum days. 							 ³¡¾
+    ½¤²  -Buyer can pick a freelancer anytime they want. 			 ³¡¾
+    ½¤²  -All users can be rated after they take part in a project. 		 ³¡¾
+    ½¤²  -Ratings and reviews are displayed for eveyone. 			 ³¡¾
+    ½¤²  -Allow buyers to pay to have their project featured. Which means a 	 ³¡¾
+    ½¤²    graphic appears beside it, and you can choose to waive your 		 ³¡¾
+    ½¤²    commission on such projects. 					 ³¡¾
+    ½¤²  -A members account gets frozen automatically if their balance is 	 ³¡¾
+    ½¤²    below zero for a certain amount of days. Thus encouraging             ³¡¾
+    ½¤²    people to deposit money and pay your commission. 			 ³¡¾
+    ½¤²  -Many options to deposit money into accounts: credit card,              ³¡¾
+    ½¤²    paypal, mail, or your own custom option. 				 ³¡¾
+    ½¤²  -If you use 2checkout.com to accept credit cards, the entire            ³¡¾
+    ½¤²    depositing transaction is automatic. If you use another credit 	 ³¡¾
+    ½¤²    card processing service, users can be sent to another payment         ³¡¾
+    ½¤²    location (username and amount are passed along).                      ³¡¾
+    ½¤²  -Paypal.com deposits are also completely automatic.                     ³¡¾
+    ½¤²  -Any other types of deposits can still be done by the admin.            ³¡¾
+    ½¤²  -Withdrawals are simple: Members request a withdrawal                   ³¡¾
+    ½¤²    (paypal, mail, bank wire, or other), their information is             ³¡¾
+    ½¤²    recorded, and you either approve or deny it. These                    ³¡¾
+    ½¤²    transactions are also archived. 					 ³¡¾
+    ½¤²  -Members can transfer money to another member. This is how              ³¡¾
+    ½¤²    buyers pay freelancers for a project and freelancers can              ³¡¾
+    ½¤²    refund money to buyers who request it. 				 ³¡¾
+    ½¤²  -You can display a lot of information on your pages using               ³¡¾
+    ½¤²    PHP or Javascript, such as: The total number of members,              ³¡¾
+    ½¤²    freelancers, or buyers, the newest projects, the top rated            ³¡¾
+    ½¤²    freelancers, etc...   						 ³¡¾
+    ½¤²  -Referral system built-in: You decide how much money members            ³¡¾
+    ½¤²    make for referring a freelancer and how much for a buyer.             ³¡¾
+    ½¤²    Referrals are tracked using Cookies. Funds are added to               ³¡¾
+    ½¤²    the member's account automatically when a referred user               ³¡¾
+    ½¤²    signs up. 								 ³¡¾
+    ½¤²                                                                          ³¡¾
+    ½¤²                                                                          ³¡¾
+    ½¤²                                                                          ³¡¾
+    ½¤²  URL ::: http://www.ProEx101.com                                         ³¡¾
+    ½¤²                                                                          ³¡¾
+    ½¤²  ===================================                                     ³¡¾
+    ½¤²  ::: INSTALL iNFO                :::                                     ³¡¾
+    ½¤²  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                                     ³¡¾
+    ½¤²                                                                          ³¡¾
+    ½¤²  Look at the Readme.html file.                                           ³¡¾
+    ½¤²                                                                          ³¡¾
+    ½¤²  ===================================                                     ³¡¾
+    ½¤²  ::: NEWS                        :::                                     ³¡¾
+    ½¤²  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                                     ³¡¾
+    ½¤²                                                                          ³¡¾
+    ½¤²  We always look for ppl to help us out:                                  ³¡¾
+    ½¤²                                                                          ³¡¾
+    ½¤²  * Nullers/Crackers ::                                                   ³¡¾
+    ½¤²    Who can remove call home codes from perl/asp/php/ect. scripts         ³¡¾
+    ½¤²  * Site Hackers ::                                                       ³¡¾
+    ½¤²    Find security holes in sites to grab scripts and whatnot...           ³¡¾
+    ½¤²  * Carders ::                                                            ³¡¾
+    ½¤²    You will basically card sites requested...To get scripts...           ³¡¾
+    ½¤²  * Other ppl who think can help us out                                   ³¡¾
+    ½¤²                                                                          ³¡¾
+    ½¤²  ===================================                                     ³¡¾
+    ½¤²  ::: GREETiNGS                   :::                                     ³¡¾
+    ½¤²  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                                     ³¡¾
+    ½¤²                                                                          ³¡¾
+    ½¤²  CGiWAREZ :: ALOHA :: Other CGI releasers                                ³¡¾
+    ½¤²                                                                          ³¡¾
+    ½¤²  ===================================                                     ³¡¾
+    ½¤²  ::: CONTACT US                  :::                                     ³¡¾
+    ½¤²  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                                     ³¡¾
+    ½¤²                                                                          ³¡¾
+    ½¤²  MAiL....: xcgigroup@yahoo.com                                           ³¡¾
+    ½¤²  HTTP....: PRIVATE                                                       ³¡¾
+    ½¤²  iRC.....: N/A                                                           ³¡¾
+    ½¤²                                                                          ³¡¾
+    ¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾¾
+    ¼¼ NFO by: TWiLiGHT                                     Last Update: 03/25/02 ¼¼
+    ²½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½²
