@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<LINK REL="stylesheet" HREF="Style/RSVSetup.css" TYPE="text/css">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<SCRIPT LANGUAGE="Javascript" TYPE="text/Javascript">if(!parent.frames['PageFrame']){parent.location.href='Setup.html';}</SCRIPT>
+<TITLE>Rayserve Professional</TITLE>
+</HEAD>
+<BODY>
+<H1 ALIGN="center">Create a New Data File</H1>
+<H2>Section 1</H2>
+Creation of a new data file is split into several steps. Begin by completing the form below then press the &quot;Continue&quot; button.
+<P></P>
+<DIV ALIGN="center">
+<FORM>
+<TABLE BORDER="0" CELLSPACING="1" CELLPADDING="1">
+<TR><TD>1.&nbsp;&nbsp;</TD><TD CLASS="inf">Room rates per room or per person per room.</TD>
+						   <TD CLASS="inf"><INPUT TYPE="radio" NAME="RateType" VALUE="1" CHECKED>&nbsp;Room</TD>
+						   <TD CLASS="inf"><INPUT TYPE="radio" NAME="RateType" VALUE="0">&nbsp;Person</TD></TR>
+<TR><TD>2.&nbsp;&nbsp;</TD><TD CLASS="inf">Type of room rate matrix.</TD>
+						   <TD CLASS="inf"><INPUT TYPE="radio" NAME="Matrix" VALUE="1" CHECKED>&nbsp;Seasonal</TD>
+						   <TD CLASS="inf"><INPUT TYPE="radio" NAME="Matrix" VALUE="0">&nbsp;Daily</TD></TR>
+<TR><TD>3.&nbsp;&nbsp;</TD><TD CLASS="inf">Immediate update of reservation table.</TD>
+							<TD CLASS="inf"><INPUT TYPE="radio" NAME="Update" VALUE="1">&nbsp;Yes</TD>
+							<TD CLASS="inf"><INPUT TYPE="radio" NAME="Update" VALUE="0" CHECKED> No</TD></TR>
+<TR><TD>4. &nbsp;&nbsp;</TD><TD CLASS="inf">Percentage of adult rate to apply to children.</TD>
+							<TD COLSPAN="2" CLASS="input"><INPUT TYPE="text" NAME="RedRate" SIZE="31" VALUE="" MAXLENGTH="6" onChange="if(document.forms[0].RateType[1].checked=='1'){parent.isPosPercent(this.value,this.name)}"></TD></TR>
+<TR><TD>5. &nbsp;&nbsp;</TD><TD CLASS="inf">The number of different room types.</TD>
+							<TD COLSPAN="2" CLASS="input"><INPUT TYPE="text" NAME="NumTypes" SIZE="31" VALUE="" MAXLENGTH="2" onChange="parent.isPosInteger(this.value,this.name)"></TD></TR>
+<TR><TD>6. &nbsp;&nbsp;</TD><TD CLASS="inf">The number of rate bands in the matrix.&nbsp;&nbsp;</TD>
+							<TD COLSPAN="2" CLASS="input"><INPUT TYPE="text" NAME="NumBands" SIZE="31" VALUE="" MAXLENGTH="2" onChange="parent.isPosInteger(this.value,this.name)"></TD></TR>
+<TR><TD>7. &nbsp;&nbsp;</TD><TD CLASS="inf">Minimum lead time in days for reservations.&nbsp;&nbsp;</TD>
+							<TD COLSPAN="2" CLASS="input"><INPUT TYPE="text" NAME="LeadTime" SIZE="31" VALUE="7" MAXLENGTH="2" onChange="parent.isPosInteger(this.value,this.name)"></TD></TR>
+<TR><TD>8. &nbsp;&nbsp;</TD><TD CLASS="inf">Maximum number of nights that can be booked.&nbsp;&nbsp;</TD>
+							<TD COLSPAN="2" CLASS="input"><INPUT TYPE="text" NAME="MaxNights" SIZE="31" VALUE="365" MAXLENGTH="3" onChange="parent.isPosInteger(this.value,this.name)"></TD></TR>
+<TR><TD>9. &nbsp;&nbsp;</TD><TD CLASS="inf">Minimum number of nights that can be booked.&nbsp;&nbsp;</TD>
+							<TD COLSPAN="2" CLASS="input"><INPUT TYPE="text" NAME="MinNights" SIZE="31" VALUE="1" MAXLENGTH="3" onChange="parent.isPosInteger(this.value,this.name)"></TD></TR>
+<TR><TD>10. &nbsp;&nbsp;</TD><TD CLASS="inf">Date from which reservations can be accepted.&nbsp;&nbsp;</TD>
+							<TD COLSPAN="2">
+							<SELECT NAME="FirstDay">
+							<OPTION VALUE="1">1</OPTION>
+							<OPTION VALUE="2">2</OPTION>
+							<OPTION VALUE="3">3</OPTION>
+							<OPTION VALUE="4">4</OPTION>
+							<OPTION VALUE="5">5</OPTION>
+							<OPTION VALUE="6">6</OPTION>
+							<OPTION VALUE="7">7</OPTION>
+							<OPTION VALUE="8">8</OPTION>
+							<OPTION VALUE="9">9</OPTION>
+							<OPTION VALUE="10">10</OPTION>
+							<OPTION VALUE="11">11</OPTION>
+							<OPTION VALUE="12">12</OPTION>
+							<OPTION VALUE="13">13</OPTION>
+							<OPTION VALUE="14">14</OPTION>
+							<OPTION VALUE="15">15</OPTION>
+							<OPTION VALUE="16">16</OPTION>
+							<OPTION VALUE="17">17</OPTION>
+							<OPTION VALUE="18">18</OPTION>
+							<OPTION VALUE="19">19</OPTION>
+							<OPTION VALUE="20">20</OPTION>
+							<OPTION VALUE="21">21</OPTION>
+							<OPTION VALUE="22">22</OPTION>
+							<OPTION VALUE="23">23</OPTION>
+							<OPTION VALUE="24">24</OPTION>
+							<OPTION VALUE="25">25</OPTION>
+							<OPTION VALUE="26">26</OPTION>
+							<OPTION VALUE="27">27</OPTION>
+							<OPTION VALUE="28">28</OPTION>
+							<OPTION VALUE="29">29</OPTION>
+							<OPTION VALUE="30">30</OPTION>
+							<OPTION VALUE="31">31</OPTION>
+							</SELECT>
+							&nbsp;
+							<SELECT NAME="FirstMonth">
+							<OPTION VALUE="1">January</OPTION>
+							<OPTION VALUE="2">February</OPTION>
+							<OPTION VALUE="3">March</OPTION>
+							<OPTION VALUE="4">April</OPTION>
+							<OPTION VALUE="5">May</OPTION>
+							<OPTION VALUE="6">June</OPTION>
+							<OPTION VALUE="7">July</OPTION>
+							<OPTION VALUE="8">August</OPTION>
+							<OPTION VALUE="9">September</OPTION>
+							<OPTION VALUE="10">October</OPTION>
+							<OPTION VALUE="11">November</OPTION>
+							<OPTION VALUE="12">December</OPTION>
+							</SELECT>
+							&nbsp;
+							<SELECT NAME="FirstYear">
+							<OPTION VALUE="2001">2001</OPTION>
+							<OPTION VALUE="2002">2002</OPTION>
+							<OPTION VALUE="2003">2003</OPTION>
+							<OPTION VALUE="2004">2004</OPTION>
+							<OPTION VALUE="2005">2005</OPTION>
+							<OPTION VALUE="2006">2006</OPTION>
+							<OPTION VALUE="2007">2007</OPTION>
+							<OPTION VALUE="2008">2008</OPTION>
+							<OPTION VALUE="2009">2009</OPTION>
+							<OPTION VALUE="2010">2010</OPTION>
+							</SELECT>
+							</TD></TR>
+<TR><TD>11. &nbsp;&nbsp;</TD><TD CLASS="inf">Date up to which reservations can be accepted.&nbsp;&nbsp;</TD>
+							<TD COLSPAN="2">
+							<SELECT NAME="LastDay">
+							<OPTION VALUE="1">1</OPTION>
+							<OPTION VALUE="2">2</OPTION>
+							<OPTION VALUE="3">3</OPTION>
+							<OPTION VALUE="4">4</OPTION>
+							<OPTION VALUE="5">5</OPTION>
+							<OPTION VALUE="6">6</OPTION>
+							<OPTION VALUE="7">7</OPTION>
+							<OPTION VALUE="8">8</OPTION>
+							<OPTION VALUE="9">9</OPTION>
+							<OPTION VALUE="10">10</OPTION>
+							<OPTION VALUE="11">11</OPTION>
+							<OPTION VALUE="12">12</OPTION>
+							<OPTION VALUE="13">13</OPTION>
+							<OPTION VALUE="14">14</OPTION>
+							<OPTION VALUE="15">15</OPTION>
+							<OPTION VALUE="16">16</OPTION>
+							<OPTION VALUE="17">17</OPTION>
+							<OPTION VALUE="18">18</OPTION>
+							<OPTION VALUE="19">19</OPTION>
+							<OPTION VALUE="20">20</OPTION>
+							<OPTION VALUE="21">21</OPTION>
+							<OPTION VALUE="22">22</OPTION>
+							<OPTION VALUE="23">23</OPTION>
+							<OPTION VALUE="24">24</OPTION>
+							<OPTION VALUE="25">25</OPTION>
+							<OPTION VALUE="26">26</OPTION>
+							<OPTION VALUE="27">27</OPTION>
+							<OPTION VALUE="28">28</OPTION>
+							<OPTION VALUE="29">29</OPTION>
+							<OPTION VALUE="30">30</OPTION>
+							<OPTION VALUE="31">31</OPTION>
+							</SELECT>
+							&nbsp;
+							<SELECT NAME="LastMonth">
+							<OPTION VALUE="1">January</OPTION>
+							<OPTION VALUE="2">February</OPTION>
+							<OPTION VALUE="3">March</OPTION>
+							<OPTION VALUE="4">April</OPTION>
+							<OPTION VALUE="5">May</OPTION>
+							<OPTION VALUE="6">June</OPTION>
+							<OPTION VALUE="7">July</OPTION>
+							<OPTION VALUE="8">August</OPTION>
+							<OPTION VALUE="9">September</OPTION>
+							<OPTION VALUE="10">October</OPTION>
+							<OPTION VALUE="11">November</OPTION>
+							<OPTION VALUE="12">December</OPTION>
+							</SELECT>
+							&nbsp;
+							<SELECT NAME="LastYear">
+							<OPTION VALUE="2001">2001</OPTION>
+							<OPTION VALUE="2002">2002</OPTION>
+							<OPTION VALUE="2003">2003</OPTION>
+							<OPTION VALUE="2004">2004</OPTION>
+							<OPTION VALUE="2005">2005</OPTION>
+							<OPTION VALUE="2006">2006</OPTION>
+							<OPTION VALUE="2007">2007</OPTION>
+							<OPTION VALUE="2008">2008</OPTION>
+							<OPTION VALUE="2009">2009</OPTION>
+							<OPTION VALUE="2010">2010</OPTION>
+							</SELECT>
+							</TD></TR>
+</TABLE>
+<P>
+<INPUT TYPE="button" NAME="Btn1" VALUE="Continue" onClick="parent.saveStepOne(this.form)">&nbsp;&nbsp;
+<INPUT TYPE="reset" VALUE="Clear">
+</FORM>
+</DIV>
+<P></P>
+<DIV ALIGN="center">
+<HR WIDTH="50%">
+<A HREF="http://www.hallisoft.com/RSV/index.html">Rayserve</A> is copyright Ray Halliwell
+<HR WIDTH="50%"></DIV>
+</BODY>
+</HTML>
