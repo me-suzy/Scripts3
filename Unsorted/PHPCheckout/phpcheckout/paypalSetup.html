@@ -1,0 +1,80 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Setting Up phpCheckout to work with PayPal IPN</title>
+
+      <link rel=stylesheet type="text/css" href="appinstaller.css">
+
+
+<meta name="Generator" content="EditPlus">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+</head>
+
+<body>
+
+<h1>Setting Up phpCheckout to work with PayPal IPN</h1>
+
+<p style="color:white;">To set up phpCheckout to work with PayPal Instant Payment Notification 
+you need to configure phpCheckout and your PayPal account.</p>
+
+
+<h2>Steps for phpCheckout</h2>
+
+<span style="color:white;">
+<ol>
+	<li>upload the separate pro*.php pages from your local machine to your web server /phpcheckout folder</li>
+	<li>open the file called configure-dist-premium.php in a non invasive html editor (<a href="http://www.editplus.com">http://www.editplus.com</a> is a good free editor)</li>
+	<li>enter values for the following CONTANTS:
+<ul>
+	<li>RECEIVER_EMAIL - an email address registered in your PayPal account - this is the paypal email account that funds will be credited to</li>
+	<li>PROCESSOR - the name of your processor - paypal or localhost</li>
+	<li>POSTTRANSACTIONSURL - the URL to post online payment transactions to using the built in form</li>
+	<li>USEREFERER - 'no' is for testing only, 'yes' will approve payments only FROM the REFERER you define below</li>
+		<li>REFERER - https://www.paypal.com/cgi-bin/webscr</li>
+	<li>NOTIFYADMINWHENSALE - if 'yes' is entered an email receipt for EVERY online sale is sent to the email address on the next line</li>
+	<li>NOTIFIYADMINADDRESS - The email address which will receive notification about sales if 'NOTIFYADMINWHENSALE' is 'yes', above</li>
+</ul>
+<li>save this file as 'configure.php' and upload to your web server</li>
+
+</ol>
+
+<h2>Steps for PayPal IPN</h2>
+
+<ol>
+<li>log in to your secure PayPal account at <a href="https://www.paypal.com">https://www.paypal.com</a></li>
+<li>turn Instant Payment Notification on:
+
+	<p>Profile > Selling Preferences > Instant Payment Notification Preferences > Edit > check the checkbox and clear the url box</p>
+	<img src="appimage/ipnpreferences.jpg" width="472" height="302" border=0 alt="This is how your IPN paypal setup should look">
+	</li>
+<li>click Save, and Log Out</li>
+</ol>
+
+
+<h2>Make a Test Payment</h2>
+
+<ol>
+<li>Paypal advises to setup a Personal account, in addition to your Business or Premier account, in order to test the system</li>
+<li>_IF_ you have a second PayPal account then pay one account using the other account</li>
+<li>you may add a test item of $1 to your phpcheckout for this purpose</li>
+</ol>
+
+
+<h2>All done???</h2>
+
+Congratulations, you're finished and can start earning $$$.
+</span>
+
+
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+
+
+</body>
+</html>
