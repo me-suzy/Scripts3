@@ -1,0 +1,41 @@
+<html>
+<head>
+<title></title>
+
+<link rel="stylesheet" type="text/css" href="{WWW_DIR}templates/leftnavbuttons.css" />
+
+<meta http-equiv="Expires" content="Fri, Jun 12 1981 08:20:00 GMT">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+</head>
+<body>
+
+<script type="text/javascript" src="{WWW_DIR}events.js"></script>
+
+<script type="text/javascript" src="{WWW_DIR}leftnavbuttons.js"></script>
+<script type="text/javascript">
+	session_id = "{SESSION_ID}";
+	btn = addbutton("Add Opportunity");
+</script>
+
+<div id="leftnavbox">
+
+	<script type="text/javascript" src="{WWW_DIR}list.js"></script>
+	
+	<script type="text/javascript">
+	// the url to go when the button is clicked on
+	// the id given to the function on addbtn() is appended to the end
+	main_url="{WWW_DIR}opportunity/opp_main.php?session_id={SESSION_ID}&opp_id="
+	loader_url="{WWW_DIR}opportunity/opp_loader.php?session_id={SESSION_ID}&opp_id="
+	
+	var btns = new Array;
+	
+	{ROWS}
+		
+	</script>
+
+</div>
+
+</body>
+</html>
