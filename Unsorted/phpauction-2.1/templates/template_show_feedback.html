@@ -1,0 +1,179 @@
+<?
+
+/*
+
+
+
+   Copyright (c), 1999, 2000 - phpauction.org
+
+
+
+   This program is free software; you can redistribute it and/or modify
+
+   it under the terms of the GNU General Public License as published by
+
+   the Free Software Foundation (version 2 or later).
+
+
+
+   This program is distributed in the hope that it will be useful,
+
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+
+   GNU General Public License for more details.
+
+
+
+   You should have received a copy of the GNU General Public License
+
+   along with this program; if not, write to the Free Software
+
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+
+
+*/
+
+?>
+
+
+
+<SCRIPT Language="JavaScript">
+
+
+
+function SubmitForm(){
+
+	document.addfeedback.submit();
+
+}
+
+
+
+function ResetForm(){
+
+	document.addfeedback.reset();
+
+}
+
+
+
+//-->
+
+</script>
+
+<TABLE WIDTH="100%" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING="0" CELLSPACING="0">
+
+<TR>
+
+<TD>
+
+<center>
+
+<a href="item.php?id=<? echo $auction_id; ?>">
+
+<? print $std_font.$MSG_138; ?></a>
+
+ |</FONT>
+
+<a href="profile.php?id=<? echo $id; ?>">
+
+<? print $std_font.$MSG_505; ?></FONT></a>
+
+</center>
+
+<BR>
+
+<CENTER>
+
+<BR>
+
+<B><? print $tlt_font.$MSG_222; ?></FONT></B>
+
+</FONT>
+
+<BR>
+
+<?
+
+	echo $err_font.$TPL_errmsg;
+
+?>
+
+</FONT>
+
+<BR>
+
+<FORM name=addfeedback action="feedback.php?id=<? echo $id; ?>" method="POST">
+
+<TABLE width="70%" CELLSPACING="0" CELLPADDING="0" BGCOLOR="#EEEEEE">
+
+<TR>
+
+<TD>
+
+	<TABLE width="100%" CELLSPACING="1" CELLPADDING="1">
+
+
+
+	<tr  BGCOLOR="#FFFFFF">
+
+		<td ALIGN=right>
+
+
+
+		<B>
+
+		  <? echo "<B>$tlt_font$TPL_nick</FONT></B>
+
+		           $std_font($TPL_feedbacks_num)
+
+		           <BR>$TPL_rate_ratio_value
+
+		           <BR><BR>";
+
+		  ?>
+
+		</B>
+
+		</td>
+
+	</tr>
+
+
+
+
+
+
+
+	<? echo stripslashes($echofeed); ?>
+
+
+
+
+
+	</TABLE>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+	<INPUT type="hidden" name="TPL_nick_hidden" value="<? echo $TPL_nick; ?>">
+
+</FORM>
+
+<BR>
+
+
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+
