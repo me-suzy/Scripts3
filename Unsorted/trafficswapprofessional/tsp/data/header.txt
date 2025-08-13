@@ -1,0 +1,7 @@
+<html>
+
+<head>
+<title>#CONFIG0#</title>
+</head>
+
+<body bgcolor="#FF00000" text="#FFFFFF" link="#FFFF00" vlink="#FFFF00" alink="#FF0000">
