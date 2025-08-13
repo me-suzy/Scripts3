@@ -1,0 +1,56 @@
+<form action=campaigns.php method=post>
+<input type=hidden name=ch value="update_action">
+<input type=hidden name=id value=%id%>
+<script language=JavaScript><!--
+function Show(form,n){
+form.action_price.disabled = true;
+if(n==2)form.action_price.disabled = false;
+
+}
+//--></script>
+
+<center><br>
+<table border=0 cellspacing=3 cellpadding=5>
+<tr>
+<td><b>Action name:</b></td>
+<td><input type=text name=action_name size=30 class=txt value="%action_name%"></td>
+</tr>
+
+<tr>
+<td><b>Action link:</b></td>
+<td><input type=text class=txt size=30 name=action_link value="%action_link%"></b></td>
+</tr>
+<tr>
+<td colspan=2>
+
+<table border=0 width=40% cellspacing=0 cellpadding=0>
+
+<tr>
+<td colspan=2><input type=radio onClick="Show(this.form,2);" name=typer value=2%end_point%>
+&nbsp;<b>End point:</b></td>
+</tr>
+
+<tr>
+<td valign=bottom>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Income:&nbsp;</td>
+<td><input type=text class=txt name=action_price value="%action_price%"></td>
+
+<tr><td colspan=2><br></td></tr>
+
+<tr>
+<td colspan=2><input type=radio onClick="Show(this.form,1);" name=typer value=1%intermediate%>
+&nbsp;<b>Intermediate</b></td>
+</tr>
+
+<script>
+var n=%n%;
+Show(this.document.forms[0],n);
+</script>
+</table>
+</td></tr>
+
+<tr>
+<td colspan=2 align=right><input type=image src="images/button-change.gif" border=0></td>
+</tr>
+
+</table>
+<br><br></center>
