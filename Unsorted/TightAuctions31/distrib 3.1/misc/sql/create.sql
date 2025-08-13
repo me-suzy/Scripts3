@@ -1,0 +1,84 @@
+CREATE TABLE UserAccounts ( 
+	UserAccountID INT NOT NULL AUTO_INCREMENT, 
+	MemberID VARCHAR(10) NOT NULL,
+	Password VARCHAR(10) NOT NULL,
+	Email VARCHAR(50) NOT NULL,
+	First VARCHAR(20) NOT NULL,
+	Middle VARCHAR(20),
+	Last VARCHAR(20) NOT NULL,
+	City VARCHAR(40) NOT NULL,
+	State VARCHAR(25) NOT NULL,
+	DateRegistered INT NOT NULL,
+        CreatedIPAddress VARCHAR(15) NOT NULL,
+        ModifiedIPAddress VARCHAR(15) NOT NULL,        
+	PRIMARY KEY (UserAccountID) );
+
+CREATE TABLE Ads ( 
+	AdID INT NOT NULL AUTO_INCREMENT, 
+	UserAcctID INT NOT NULL,
+	CatID INT NOT NULL,
+	Title VARCHAR(255) NOT NULL,
+	Description TEXT NOT NULL,
+	Price DECIMAL(10,2) NOT NULL,
+        Quantity INT NOT NULL,
+	InitialAdDate INT NOT NULL,
+	BeginDate INT NOT NULL,
+	EndDate INT NOT NULL, 
+        CreatedIPAddress VARCHAR(15) NOT NULL,        
+        ModifiedIPAddress VARCHAR(15) NOT NULL,        
+	PRIMARY KEY (AdID) );
+
+CREATE TABLE AuctionAds ( 
+	AdID INT NOT NULL AUTO_INCREMENT, 
+	UserAcctID INT NOT NULL,
+	CatID INT NOT NULL,
+	Title VARCHAR(255) NOT NULL,
+	Description TEXT NOT NULL,
+	StartPrice DECIMAL(10,2) NOT NULL,
+	ReservePrice DECIMAL(10,2) NOT NULL,
+	Quantity INT NOT NULL,
+	InitialAdDate INT NOT NULL,
+	BeginDate INT NOT NULL,
+	EndDate INT NOT NULL, 
+	CreatedIPAddress VARCHAR(15) NOT NULL,        
+	ModifiedIPAddress VARCHAR(15) NOT NULL,        
+	PRIMARY KEY (AdID) );
+
+CREATE TABLE Bids (
+	BidID INT NOT NULL AUTO_INCREMENT,
+	AdID INT NOT NULL,
+	UserAcctID INT NOT NULL,
+	MaxBid DOUBLE NOT NULL,
+	BidDate INT NOT NULL,
+	CreatedIPAddress VARCHAR(15) NOT NULL,     	
+	PRIMARY KEY (BidID) );
+
+CREATE TABLE Categories ( 
+	CategoryID INT NOT NULL AUTO_INCREMENT, 
+	ParentCatID INT NOT NULL,
+	Level INT NOT NULL,
+	Name VARCHAR(255) NOT NULL,
+	PRIMARY KEY (CategoryID) );
+
+CREATE TABLE PrivateEmails ( 
+	EmailID INT NOT NULL AUTO_INCREMENT, 
+	FromAcctID INT NOT NULL,
+	ToAcctID INT NOT NULL,
+	Subject VARCHAR(255),
+	Body TEXT,
+	TimeSent INT NOT NULL,
+	TimeDelivered INT NOT NULL,
+	AcctRefFlag INT NOT NULL,
+        IPAddress VARCHAR(15) NOT NULL,
+	PRIMARY KEY (EmailID) );
+
+CREATE TABLE Feedback (
+	FeedbackID INT NOT NULL AUTO_INCREMENT,
+	ForUserAcctID INT,
+	ByUserAcctID INT,
+	Comment VARCHAR(100),
+	Rating INT,
+	ForUserRole INT,
+	FeedbackDate INT NOT NULL,
+	CreatedIPAddress VARCHAR(15) NOT NULL,    
+	PRIMARY KEY (FeedbackID) );
