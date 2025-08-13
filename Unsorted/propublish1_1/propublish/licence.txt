@@ -1,0 +1,30 @@
+All use of this program is under strict licence. If you do not agree, do not use this program.  
+You normally need to buy this program, but we have some few exceptions:
+This is when you do not need to buy a licence:
+An ideal organisazion, like red cross, churches etc. 
+On webpages that do not have income from the program (no bannerads, no pay-per-ad, no membershop) 
+All websites that fall under the above categories, MUST have the link/image clicable back to us. Note that you are allowed to download the program for evaulation with dummy-data up to 10 days if you do not qualify for free-licence, so you can test everything. 
+
+
+I (Are Haugsdal email:support@deltascripts.com), or my company (Haugsdal Webtjenester/DeltaScripts), 
+or any other person related in/to this program accepts NO liability or 
+claims whatsoever. Some few examples of these liabilities/claims: 
+Damages in any way to people, property, machines, working hours, repair work or any other costs 
+releated to this program in any matter. 
+
+ALL USE OF THIS PROGRAM IS ON YOUR OWN RISK AND COSTS. 
+
+This program is not programmed to be 100% secure, and therefore can not be used in life critical environments, 
+or heavy critical e-commerce (mission-critical) envirionments that will loose from hundreds of dollar 
+to millions of dollar of small coding errors. (Anyway, Haugsdal Webtjenester/Are Haugsdal accept no liabilities).
+
+In order to use this program at your website where you recieve money by banner ads, subscription etc, you will neeed to pay yhe license. 
+You can evaluate it for 7 days with dummy data. 
+
+Any claim, or disputes shall be governed by the laws and courts in Norway. 
+
+
+You may not reproduce and/or (re)sell the hole program, 
+or any part of our code without the written aknowledge from the author of this program, 
+Are Haugsdal. All code is copyright 2001/2002 Haugsdal Webtjenester.
+
