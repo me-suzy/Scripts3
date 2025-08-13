@@ -1,0 +1,73 @@
+<?
+
+#///////////////////////////////////////////////////////
+#//  COPYRIGHT 2002 PHPAuction.org ALL RIGHTS RESERVED//
+#//  For Source code for the GPL version go to        //  
+#//  http://phpauction.org and download               //
+#//  Supplied by CyKuH [WTN]                          //
+#///////////////////////////////////////////////////////
+?>
+
+
+<TABLE WIDTH="765" CELLPADDING=0 CELLSPACING=0 BGCOLOR="#FFFFFF" BORDER=0>
+
+<TR>
+
+<TD>
+
+<? print $tlt_font; ?>
+
+<BR>
+
+<CENTER>
+				<B> 
+				<? print $tlt_font.$MSG_482;?>
+				<BR>
+				</B> 
+					<TABLE WIDTH="450" CELLSPACING="0" CELLPADDING="1" BORDER="0" BGCOLOR="<?=$FONTCOLOR[$SETTINGS[bordercolor]]?>">
+						<TR> 
+							<TD> 
+								<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="3">
+									<TR> 
+										<TD BGCOLOR="#FFFFFF"> 
+											<? print $std_font; ?>
+											<? print $MSG_480.print_money($AMOUNT).$MSG_481?>
+										</TD>
+									</TR>
+									<TR> 
+										<TD BGCOLOR="#FFFFFF" ALIGN=RIGHT>&nbsp; </TD>
+									</TR>
+									<TR> 
+										
+									<TD BGCOLOR="#FFFFFF" ALIGN=CENTER>
+									<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+									<input type="hidden" name="cmd" value="_xclick">
+									<input type="hidden" name="business" value="<?=$SETTINGS[paypaladdress]?>">
+									<input type="hidden" name="item_name" value="PaySignUpFee">
+									<input type="hidden" name="item_number" value="<?=$USER_ID?>">
+									<input type="hidden" name="amount" value="<?=doubleval($AMOUNT)?>">
+									<input type="hidden" name="image_url" value=<?=$SETTINGS[siteurl]."uploaded/".$SETTINGS[logo]?>>
+									<input type="hidden" name="return" value="<?=$SETTINGS[siteurl]."thanks.php"?>">
+									<input type="hidden" name="cancel_return" value="<?=$SETTINGS[siteurl]."cancel.php"?>">
+									<input type="image" src="images/paypal.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+									</FORM>	
+								
+									</TD>
+									</TR>
+								</TABLE>
+							</TD>
+						</TR>
+					</TABLE>
+				<BR>
+          <BR>
+
+
+</CENTER>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+
