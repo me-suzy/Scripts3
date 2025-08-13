@@ -1,0 +1,30 @@
+<?
+$ubbt_lang['FILE_TOO_BIG']="Files can be no larger than {$config['filesize']}";
+$ubbt_lang['READ_PERM']  = 	"In acest forum aveti drepturi doar de citire";
+$ubbt_lang['POST_ICON']  = 	"Icon pentru mesaj";
+$ubbt_lang['SPELL_CHECK']  = 	"Corecteaza";
+$ubbt_lang['SPELL_BODY']  = 	"Acesta este mesajul corectat. Posibilele erori sint <u>subliniate</u>, iar sugestiile sint incadrate in parantezele patrate care urmeaza. Pentru revenirea la ecranul anterior folositi butonul Inapoi al browser-ului.";
+$ubbt_lang['NAME_TAKEN']  = 	"Numele pe care l-ati introdus este deja inregistrat si folosit de catre altcineva.";
+$ubbt_lang['BAD_UNAME']  = 	"Nu puteti folosi HTML in nume si nu puteti avea spatii inainte sau dupa acesta.";
+$ubbt_lang['LONG_NAME']  = 	"Numele nu are lungimea corespunzatoare.";
+$ubbt_lang['LOCKED']  = 		"Acest thread este inchis si nu aveti drepturile necesare pentru a scrie mesaje.";
+$ubbt_lang['TWO_POLLS']  = 	"Nu puteti avea mai mult de un chestionar intr-un mesaj";
+$ubbt_lang['PREV_POST']  = 	"Previzualizeaza mesajul";
+$ubbt_lang['SUB_VOTE']  = 	"Voteaza";
+$ubbt_lang['POST_BODY']  = 	"Acesta este mesajul in forma sa finala. Daca totul este in regula apasati pe 'Continua' si acesta va fi introdus. Daca nu, folositi formularul de mai jos pentru a-l edita in continuare.";
+$ubbt_lang['YES_FILE2']  = 	"Puteti atasa un fisier daca doriti. Dimensiunea acestuia este limitata la  {$config['filesize']} bytes.";
+$ubbt_lang['NO_FILE2']  = 	"Cu toate ca atasarea fisierelor este permisa, nu puteti folosi aceasta facilitate daca nu aveti un browser compatibil Mozilla 4+.";
+$ubbt_lang['EDIT_MORE']  = 	"Editeaza mai departe";
+$ubbt_lang['POST_TEXT']  = 	"Post";
+$ubbt_lang['DO_EMAIL']  = 	"Trimite toate raspunsurile la adresa reala de email.";
+$ubbt_lang['DO_PREVIEW']  = 	"Vreau sa vad un preview";
+$ubbt_lang['CAN_ATTACH']  = 	"si/sau sa atasez un fisier";
+$ubbt_lang['NO_DUPS']  = 	"Acest mesaj a fost deja introdus in baza de date.";
+$ubbt_lang['UNREGED_USER']  = 	"Neinregistrat";
+$ubbt_lang['REPLY_SUB']  = 	"Raspuns la post-ul tau";
+$ubbt_lang['REPLY_BOD']  = 	"a raspuns la post-ul tau pe site-ul: .";
+$ubbt_lang['POST_ENTERED']  = 	"Mesajul a fost introdus.";
+$ubbt_lang['MOD_CONFIRM']  = 	"Mesajul a fost acceptat. Acest board este moderat complet asa ca nu o sa apara pina nu va fi citit si aprobat de un administrator sau moderator. In scurt timp veti fi redirectionat inapoi spre forum.";
+$ubbt_lang['FORUM_RETURN']  = 	"Intoarcere la forum.";
+$ubbt_lang['VIEW_POST']  = 	"Vizualizeaza mesajul";
+?>
