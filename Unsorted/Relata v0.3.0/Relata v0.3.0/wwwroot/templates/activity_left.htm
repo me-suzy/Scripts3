@@ -1,0 +1,64 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ 			"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title></title>
+
+<link rel="stylesheet" type="text/css" href="{WWW_DIR}templates/activity_left.css">
+<link rel="stylesheet" type="text/css" href="{WWW_DIR}templates/global.css">
+
+<script type="text/javascript">session_id = "{SESSION_ID}";</script>
+<script type="text/javascript" src="{WWW_DIR}events.js"></script>
+<script type="text/javascript" src="{WWW_DIR}activity/calendar.js"></script>
+<script type="text/javascript" src="{WWW_DIR}activity/activity.js"></script>	
+
+<meta http-equiv="Expires" content="Fri, Jun 12 1981 08:20:00 GMT">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+</head>
+
+<body onLoad="Defaults(); setuphistory(); ">
+
+
+<form name="when">
+
+<table align="center">
+ <tr>
+	<td>
+		<input type="button" value="<--" onClick="Skip('-')">
+	</td>
+	<td>   
+   		<select name="month" onChange="On_Month()">
+			<script type="text/javascript"> print_months(); </script>
+       </select>
+   </td>
+   <td><input type="text" name="year" size=4 maxlength=4 onKeyPress="return Check_Nums()" onKeyUp="On_Year()"></td>
+   <td><input type="button" value="-->" onClick="Skip('+')">
+   
+   </td>
+ </tr>
+</table>
+
+</form>
+
+<div id="leftnavbox" align="center">
+
+<!-- JS writes the calendar into this DIV -->
+<div id="calendar"></div>
+
+<input type="button" onclick="changerightframe('{WWW_DIR}activity/add.php?session_id={SESSION_ID}');" class="form" value="Add Activity">
+
+<table width="100%" align="center">
+ <tr>
+	<th class="calendar">Name</th>
+	<th class="calendar">Date</th>
+	<th class="calendar">Priority</th>
+ </tr>
+	{ACTIVITY_LIST}
+</table>
+
+</div>
+
+</body>
+</html>
