@@ -1,0 +1,234 @@
+<?#//v.1.0.0
+
+#///////////////////////////////////////////////////////
+#//  COPYRIGHT 2002 PHPAuction.org ALL RIGHTS RESERVED//
+#//  For Source code for the GPL version go to        //  
+#//  http://phpauction.org and download               //
+#//  Supplied by CyKuH [WTN]                          //
+#///////////////////////////////////////////////////////
+
+?>
+
+
+
+<SCRIPT Language=Javascript>
+
+
+
+function SubmitFriendForm(){
+
+	document.friend.submit();
+
+}
+
+
+
+
+
+function ResetFriendForm(){
+
+	document.friend.reset();
+
+}
+
+
+
+</SCRIPT>
+
+<TABLE WIDTH="100%" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING="0" CELLSPACING="0">
+
+<TR>
+
+<TD>
+
+<CENTER>
+
+<? print $std_font; ?>
+
+<A HREF="item.php?id=<? print $TPL_auction_id; ?>"><? print $MSG_138; ?></FONT></A>
+
+<!--
+
+<A HREF="bidhistory.php?id=<? print $TPL_auction_id; ?>"><? print $MSG_105; ?></FONT></A>
+
+
+
+<A HREF="seller.php?id=<? print $TPL_auction_id; ?>"><? print $MSG_107; ?></FONT></A>
+
+-->
+
+</CENTER>
+
+
+
+    	<? print $tlt_font; ?>
+
+    	<BR><CENTER>
+
+    	<B><? print $MSG_645; ?></B></CENTER>
+
+
+
+<FORM NAME="sendemail" ACTION="send_email.php" METHOD=POST>
+
+		<TABLE WIDTH="760">
+
+
+
+			<!-- error message here -->
+
+			<TR>
+
+				<TD WIDTH="10"></TD>
+
+				<TD ALIGN=right></TD>
+
+				<TD>
+
+					<? print $err_font.$TPL_error_text; ?>
+					<? print $std_font.$MSG; ?>
+
+				</TD>
+
+			</TR>
+
+
+
+	    	<!-- seller's nick -->
+
+			<TR>
+
+				<TD WIDTH="10"></TD>
+
+				<TD ALIGN=right>
+
+					<? print $std_font; ?>
+
+					<B><? print $MSG_459; ?></B>
+
+				</TD>
+
+				<TD>
+
+					<INPUT TYPE="HIDDEN" NAME="seller_nick" SIZE="25" VALUE="<? print $TPL_seller_nick_value; ?>">
+				<? print $std_font.$TPL_seller_nick_value; ?>
+
+				</TD>
+
+			</TR>
+
+
+
+			<!-- seller's email -->
+
+	    	<TR>
+
+				<TD WIDTH="10"></TD>
+
+				<TD ALIGN=right>
+
+					<? print $std_font; ?>
+
+					<B><? print $MSG_017; ?></B>
+
+				</TD>
+
+				<TD>
+
+					<INPUT TYPE="HIDDEN" NAME="item_title" SIZE="25" VALUE="<? print $TPL_item_title; ?>">
+				<? print $std_font.$TPL_item_title; ?>
+
+				</TD>
+
+			</TR>
+
+
+
+			<!-- your email -->
+
+	    	<TR>
+
+	    	<TD WIDTH="10"></TD>
+
+			<TD ALIGN=right>
+
+	    	<? print $std_font; ?>
+
+			<B><? print $MSG_142; ?></B>
+
+			</TD>
+
+			<TD>
+
+			<INPUT TYPE="TEXT" NAME="sender_name" SIZE="25" VALUE="<? print $TPL_sender_name_value; ?>">
+
+			</TD>
+
+			</TR>
+
+
+
+			<!-- your name -->
+
+			<TR>
+
+	    	<TD WIDTH="10"></TD>
+
+			<TD ALIGN=right>
+
+				<? print $std_font; ?>
+
+				<B><? print $MSG_143; ?></B>
+
+			</TD>
+
+			<TD>
+
+				<INPUT TYPE="TEXT" NAME="sender_email" SIZE="25" VALUE="<? print $TPL_sender_email_value; ?>">
+
+			</TD>
+
+			</TR>
+
+
+
+			<!-- comment -->
+
+			<TR>
+
+	    	<TD WIDTH="10"></TD>
+
+			<TD ALIGN=right VALIGN=TOP>
+
+				<? print $std_font; ?>
+
+				<B><? print $MSG_650; ?></B>
+
+			</TD>
+
+			<TD>
+
+				<TEXTAREA NAME="sender_question" COLS="23" ROWS="6"><? print $TPL_sender_question; ?></TEXTAREA>
+
+				<BR><BR>
+				<INPUT TYPE="hidden" NAME="seller_email" VALUE="<? print $TPL_seller_email_value; ?>">
+				<INPUT TYPE="hidden" NAME="id" VALUE="<? print $TPL_auction_id; ?>">
+				<INPUT TYPE="hidden" NAME="action" VALUE="Envía a tu amigo">
+
+   <INPUT TYPE=submit NAME="">
+
+   <INPUT TYPE=reset NAME="">			</TD>
+
+			</TR>
+
+
+
+		</TABLE>
+
+</FORM>
+
+</TD>
+
+</TR>
+
+</TABLE>
