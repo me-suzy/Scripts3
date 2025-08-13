@@ -1,0 +1,32 @@
+.activity
+{
+	background: #ebebeb;
+	vertical-align: bottom;
+	width: 100%;
+	font-family: arial;
+	font-size: 12px;
+}
+
+td.time
+{
+	background: #648CAC;
+	color: #ffffff;
+	font-family: arial;
+	font-weight: bold;
+	text-align: center;
+	font-size: 12px;
+}
+div.editbox
+{
+	width: 100%;
+	padding: 6px;
+}
+
+.date
+{
+	color: #808080;
+	font-size: 25px;
+	font-family: "Arial Black", "Verdana", "Arial";
+	float: right;
+	display: block;
+}
