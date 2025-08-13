@@ -1,0 +1,343 @@
+<html><head>
+<title>Traffic-Drive CJ/TGP v6.03 free :: Admin Interface :: Help</title>
+<style type="text/css">
+<!--
+BODY{font-size:10px;font-family:verdana;}
+A:LINK {font-family:verdana; font-size:10px;color:#000082;text-decoration:none;font-weight:bold}
+A:ACTIVE {font-family:verdana; font-size:10px;color:#000082;text-decoration:none;font-weight:bold}
+A:VISITED {font-family:verdana; font-size:10px;color:#000082;text-decoration:none;font-weight:bold}
+A:HOVER {font-family:verdana; font-size:10px;color:#000082;text-decoration:underline;font-weight:bold}
+TABLE {font-size:10px;font-family:verdana;background:#E9E9E9;}
+INPUT {background:#FFECF5;border : 1px solid #ffffff;font-size:10px;font-family:verdana;color:#B30059;}
+.fnfm {background:#FFECF5;border : 1px solid #ffffff;font-size:10px;font-family:verdana;color:#B30059;}
+.fn1 {font-size:10px;font-weight:bold;font-family:verdana;}
+.fnh {font-size:18px;font-weight:bold;font-family:verdana;}
+.button {background:#FFFFE6;font-size:14px;font-family:verdana;color:#000082;}
+.select {background:#FFECF5;border:1px solid #ffffff;font-size:10px;font-family:verdana;color:#B30059;}
+-->
+</style>
+</head>
+<body bgcolor=#FFFFFF text=#000000 link=#000082 vlink=#000082 alink=#000082>
+<table align=center width=760><tr><td width=100% align=center>
+<font class=fnh>Traffic-Drive CJ/TGP v6.03 free</font><br>Admin Interface :: Help
+</td></tr></table><br>
+<table align=center width=760><tr><td width=100% align=center>
+<a href="help.html">Manual</a>&nbsp;&nbsp;&nbsp;
+<a href="help2.html">Main Table</a>&nbsp;&nbsp;&nbsp;
+<a href="help3.html">Settings</a>
+</td></tr></table><br>
+<table align=center width=760><tr><td>
+<table align=center width=606 cellpadding=5><tr>
+<td width=190 align=left bgcolor=#B9FFE9><font class=fn1>Use</font></td>
+<td></td>
+</tr></table>
+<table align=center><tr><td width=600 align=left bgcolor=#D7D7D7>
+<font class=fnfm>a.php</font> - administrator's interface<br>
+<font class=fnfm>w.php</font> - webmaster's interface<br>
+<font class=fnfm>index.php</font> - index file of the script<br>
+<font class=fnfm>o.php</font> - target file of a script<br>
+<font class=fnfm>top.txt</font> - toplist<br>
+</td></tr></table>
+<table align=center width=606 cellpadding=5><tr>
+<td width=190 align=left bgcolor=#B9FFE9><font class=fn1>Before using</font></td>
+<td></td>
+</tr></table>
+<table align=center><tr><td width=600 align=left bgcolor=#D7D7D7>
+<li>Check all settings in administrator's interface.
+<font class=fnfm>my url</font> should specify <font class=fnfm>index.php</font> file (for example http://mysite.com/index.php).
+In case if <font class=fnfm>index.php</font> is set as an index of directory (for example line <font class=fnfm>DirectoryIndex index.php</font>
+in <font class=fnfm>.htaccess</font> file) it is possible to specify directories url (for example http://mysite.com/).<br><br>
+<li>Before using it is necessary to create entrance page (entrance pages). The name of page should be<br>
+<font class=fnfm>[prefix][N].[extension]</font><br>
+<font class=fnfm>[prefix]</font> - any arbitrary symbols. Prefix can be empty.<br>
+<font class=fnfm>[N]</font> - number. Since 1.<br>
+<font class=fnfm>[extension]</font> - any extension.<br>
+After installation, for new trade an empty prefix and extension <font class=fnfm>html</font> is set by default.<br><br>
+For example edit entrance page <font class=fnfm>1.html</font>.
+You can also create pages <font class=fnfm>2.html</font>, <font class=fnfm>3.html</font>, etc.<br>
+In case of presence of several entrance pages with an identical prefix at each repeated reference the page with next serial number will be shown if it exists to surfer
+<br><br>
+The script can operate with several sets of entrance pages.
+Using prefix, it is possible to set separate entrance pages for groups of traders or personally for each trade.<br><br>
+For example it is possible to create new trader and to set a prefix of entrance pages <font class=fnfm>test</font> for him.
+In this case at entering hit from the trader the script will search for entrance page <font class=fnfm>test1.html</font>.
+At repeated enter of same surfer from this trade the script will search for page <font class=fnfm>test2.html</font>.
+If such page does not exist - <font class=fnfm>test1.html</font> is shown again.<br><br>
+<li>Choose method of entrance page - inclusion or redirect.<br>
+In case of inclusion contents of page are included in <font class=fnfm>index.php</font>. In this case SSI-extensions
+which can be situated on entrance page are not processed. php-commands work. For example insertion of the toplist - <font class=fnfm>&lt;?php include("top.txt") ?&gt;</font><br>
+In a case of redirection at the reference to <font class=fnfm>index.php</font> after necessary actions of the script redirection to entrance page occurs.<br><br>
+<li>Webmaster's interface<br>
+Go in administrator's interface, press <font class=fnfm>Edit Files</font> menu item and edit files wm1.txt and wm2.txt.
+wm1.txt will be shown to webmaster before the signup-form, wm2.txt - after signup will successfully passed.
+</td></tr></table>
+<table align=center width=606 cellpadding=5><tr>
+<td width=190 align=left bgcolor=#B9FFE9><font class=fn1>Options of exit (in examples)</font></td>
+<td></td>
+</tr></table>
+<table align=center><tr><td width=600 align=left bgcolor=#D7D7D7>
+Syntax: <font class=fnfm>o.php?option</font><br>
+It is possible to use several options at once<br>
+<font class=fnfm>o.php?option1&option2&option3&etc</font><br>
+All values set by options of exit are prioritier and block values set in administrator's interface.<br><br>
+<li><font class=fnfm>site=domain.com</font><br>
+- exit only to trade with the domain domain.com, unique case when the suspended trade can receive exit<br><br>
+<li><font class=fnfm>grp=1</font><br>
+- exit only to trades of group 1<br>
+<li><font class=fnfm>grp=2-3-7</font><br>
+- exit only to trades of groups 2,3,7<br><br>
+<li><font class=fnfm>ln=a</font> (<font class=fnfm>ln=p</font>, <font class=fnfm>ln=m</font>)<br>
+- exit to sites of all types (only to "mixed" or "pictures only" sites, only to "mixed" or "movies only" sites)<br><br>
+<li><font class=fnfm>lnk=blabla</font><br>
+- link tracking. Exit is marked as <font class=fnfm>blabla</font> and written in database of tracking.
+Results of tracking for last 24 hours for trades are accessible in administrator's interface<br><br>
+Options of exit to real content:<br><br>
+<li><font class=fnfm>url=http://www.mygalleries.com/page.html</font><br>
+- an exit to <font class=fnfm>http://www.mygalleries.com/page.html</font> in the percentage ratio set in administrator's interface or set obviously
+ by options <font class=fnfm>gpr</font> or <font class=fnfm>htg</font><br><br>  
+<li><font class=fnfm>hurl=alias1</font><br>
+- exit to url corresponding to alias <font class=fnfm>alias1</font>, stored in database.
+Operations with aliases - addition, editing, deleting - are made in administrator's interface.
+If url for a alias <font class=fnfm>alias1</font> is found in the database, action of option is similar to option url, otherwise the option is ignored.<br><br> 
+<li><font class=fnfm>gpr=63</font><br>
+- obvious instruction of percent (63 %) of exit to url (hurl), blocks the percent set in administrator's interface.
+It is meaningful to apply together with options url, hurl<br><br>
+<li><font class=fnfm>htg=1</font>, <font class=fnfm>gpr=100</font><br>
+- exit is always to url (hurl). It is meaningful to apply together with options url, hurl<br><br> 
+<li><font class=fnfm>gtr=1</font> (<font class=fnfm>gtr=0</font>)<br>
+- it is obviously specified, that this exit on url (hurl) should to consider (be not counted) as first,
+ blocks settings in the administrator's interface. It is meaningful to apply together with options url, hurl<br><br>
+<li><font class=fnfm>gfc=1</font> (<font class=fnfm>gfc=0</font>)<br>
+- it is obviously specified whether to send strictly on url (hurl) if it is the first click on url (hurl) (to send only in percentage ratio),
+ blocks settings in management interface. It is meaningful to apply together with options url, hurl<br><br>
+The first click on content is considered the first only for corresponding entrance page.
+If at repeated call of the same surfer from trade the entrance page with following number is shown,
+then script considers that the first click on the second entrance page was not made yet.
+</td></tr></table>
+<table align=center width=606 cellpadding=5><tr>
+<td width=190 align=left bgcolor=#B9FFE9><font class=fn1>Division of the proceeding traffic</font></td>
+<td></td>
+</tr></table>
+<table align=center><tr><td width=600 align=left bgcolor=#D7D7D7>
+The script possesses the most powerful opportunities on division of the proceeding traffic.
+There are 2 types of division which can be applied in common:<br><br>
+<li>Division by site type.<br>
+The script can distinguish 3 types of site of the trader:<br>
+- <font class=fnfm>mixed</font><br>
+- <font class=fnfm>pictures only</font><br>
+- <font class=fnfm>movies only</font><br>
+Using links with options of exit on your site it is possible to direct the traffic to sites of the certain type.
+For example, exit by link <font class=fnfm>&lt;a href="o.php?ln=p"&gt;Pictures Here&lt;/a&gt;</font> will be directed only to sites of types
+ mixed or pictures only, exit by link <font class=fnfm>&lt;a href="o.php?ln=m"&gt;Movies Here&lt;/a&gt;</font> will be directed only to sites of types
+ mixed or movies only, exit by link <font class=fnfm>&lt;a href="o.php?ln=a"&gt;Free Porn Here&lt;/a&gt;</font> will be directed to sites of any type.
+Default site type at exit is set in the administrator's interface.
+If division by site types is not necessary, all traders should receive <font class=fnfm>mixed</font> type.<br><br>
+<li>Division by groups.<br>
+Division into <font class=fnfm>99</font> groups is avaliable. The group <font class=fnfm>0</font> is service and means that trade is suspended.
+Each administrator defines principle of an accessory to groups independently.
+Usually group corresponds to one niche on multiniches sites.
+Or it is possible to enter any other division proceeding from your needs.
+It is possible to use separate group for new sites.
+If division by groups is not necessary, all traders are appropriated to <font class=fnfm>1</font> group.
+Using links with options of exit on your site it is possible to direct traffic to sites of the certain groups.
+For example, exit by link <font class=fnfm>&lt;a href="o.php?grp=1"&gt;Teen sites&lt;/a&gt;</font> will be directed only to sites of group 1,
+exit by link <font class=fnfm>&lt;a href="o.php?grp=2"&gt;Fetish sites&lt;/a&gt;</font> will be directed only to sites of group 2,
+exit by link <font class=fnfm>&lt;a href="o.php?grp=5"&gt;Gay sites&lt;/a&gt;</font> will be directed only to sites of group 5,
+exit by link <font class=fnfm>&lt;a href="o.php?grp=1-2-5"&gt;Porn sites&lt;/a&gt;</font> will be directed only to sites of groups 1,2,5<br>
+Value of group by default at exit is specified in the administrator's interface.<br>
+You can appoint the prefix of entrance pages for each group.
+</td></tr></table>
+<table align=center width=606 cellpadding=5><tr>
+<td width=190 align=left bgcolor=#B9FFE9><font class=fn1>The schedule</font></td>
+<td></td>
+</tr></table>
+<table align=center><tr><td width=600 align=left bgcolor=#D7D7D7>
+For each trade the schedule of groups (<font class=fnfm>st</font>) and quantities of forced traffic (<font class=fnfm>fr</font>) by hours is set.
+It is possible to establish various groups for one trade. The group <font class=fnfm>0</font> means that at the given hour trade will be suspended.
+</td></tr></table>
+<table align=center width=606 cellpadding=5><tr>
+<td width=190 align=left bgcolor=#B9FFE9><font class=fn1>How does the script works</font></td>
+<td></td>
+</tr></table>
+<table align=center><tr><td width=600 align=left bgcolor=#D7D7D7>
+Each of trade during each moment of time has characteristics:<br>
+<font class=fnfm>owed</font> - duty to trader<br>
+<font class=fnfm>frn</font> - quantities of forced traffic in the current hour<br>
+<font class=fnfm>a</font> - valid group<br>
+Trades with <font class=fnfm>a=0</font> (suspended trades) do not receive exit without dependence from <font class=fnfm>owed</font> and <font class=fnfm>frn</font>
+(exception makes option of exit <font class=fnfm>o.php?site=trader.com</font>).<br>
+Conditionally functioning of the script can be divided into hour intervals.
+In the beginning of each hour calculate (proceeding from established ratio, trade type and parameters for 23 last hours)
+ duty to the trader for last 23 hours (<font class=fnfm>dowed</font>).
+<font class=fnfm>owed</font> is set equal <font class=fnfm>dowed+fr</font>, <font class=fnfm>frn</font> is set equal <font class=fnfm>fr</font> 
+(<font class=fnfm>fr</font> - quantity of forced traffic set in the schedule).<br>
+The first exits are always sent to trade with nonzero <font class=fnfm>frn</font> amount until
+ all amount of the forced traffic will not be given.<br>
+Then exit on trades is proceeded by order of decrease <font class=fnfm>owed</font>.<br>
+All exits are unique, the script does not give to one trade an exit with one IP twice.<br>
+Once in 60 seconds (60 seconds by default, the interval can be changed in administrator's interface) 
+<font class=fnfm>owed</font> is recalculated counting statistics of trade in the current hour and check of triggers occurs. 
+</td></tr></table>
+<table align=center width=606 cellpadding=5><tr>
+<td width=190 align=left bgcolor=#B9FFE9><font class=fn1>Triggers</font></td>
+<td></td>
+</tr></table>
+<table align=center><tr><td width=600 align=left bgcolor=#D7D7D7>
+Triggers either reset the valid group of a trade in <font class=fnfm>0</font> (if not the condition of any of set triggers satisfies),
+or return group from schedule to trade (if conditions of triggers are processed).<br><br>
+<li><font class=fnfm>ditr</font> - daily in trigger.<br>
+It is checked only if nonzero value of trigger is set.<br>
+If the quantity of raw ins from trader in last 24 hours including current is less <font class=fnfm>ditr</font>
+ - trade stops (<font class=fnfm>a</font> is reset to <font class=fnfm>0</font>).<br>
+Trade stops if <font class=fnfm>[rin24] < [ditr]</font><br>
+<font class=fnfm>rin24</font> - quantity of raw ins from trade in last 24 hours including current<br><br>
+<li><font class=fnfm>hitr</font> - in trigger for previous hour.<br>
+It is checked only if nonzero value of trigger is set.<br>
+If the quantity of raw ins from trader in previous hour is less <font class=fnfm>hitr</font>
+ - trade stops (<font class=fnfm>a</font> is reset to <font class=fnfm>0</font>).<br>
+Trade stops if <font class=fnfm>[rin_previous_hour] < [hitr]</font><br>
+<font class=fnfm>rin_previous_hour</font> - the quantity of raw ins from trader in previous hour<br><br>
+<li><font class=fnfm>dotr</font> - daily out trigger.<br>
+Restriction of exit. It is checked only if nonzero value of trigger is set.<br>
+If a difference of quantity of the exits to the trade in last 24 hours including current and raw ins from the trade
+ in last 24 hours including current is more <font class=fnfm>dotr</font> - trade stops (<font class=fnfm>a</font> reset to <font class=fnfm>0</font>).<br> 
+Trade stops if <font class=fnfm>[out24 - rin24] > [dotr]</font><br>
+<font class=fnfm>out24</font> - quantity of exits to the trade in last 24 hours including current<br>
+<font class=fnfm>rin24</font> - quantity of raw ins from the trade in last 24 hours including current<br><br>
+<li><font class=fnfm>hotr</font> - out trigger for previous hour.<br>
+Restriction of exit. It is checked only if nonzero value of trigger is set.<br>
+If a difference of quantity of the exits to the trade in previous hour current and raw ins from the trade
+ in in previous hour is more <font class=fnfm>hotr</font> - trade stops (<font class=fnfm>a</font> reset to <font class=fnfm>0</font>).<br> 
+Trade stops if <font class=fnfm>[out_previous_hour - rin_previous_hour] > [hotr]</font><br>
+<font class=fnfm>out_previous_hour</font> - quantity of exits to the trade in previous hour<br>
+<font class=fnfm>rin_previous_hour</font> - quantity of raw ins from the trade in previous hour<br><br>
+Triggers can be set separately for each trade in administrator's interface.
+</td></tr></table>
+<table align=center width=606 cellpadding=5><tr>
+<td width=190 align=left bgcolor=#B9FFE9><font class=fn1>Recognition of surfers uniqueness</font></td>
+<td></td>
+</tr></table>
+<table align=center><tr><td width=600 align=left bgcolor=#D7D7D7>
+For recognition of uniqueness the script uses only surfer's IP. The script does not use cookie.<br>
+All IP are logged and are accessible to viewing in administrator's interface.
+Storage time of IP is set in administrator's interface (3600 seconds by default).
+The conclusion about uniqueness or repeated call of the visitor is made proceeding from presence of his IP in log file.
+It is recommended not to set storage time of IP too long on sites with large amount of traffic. It influences on speed of the script.
+</td></tr></table>
+<table align=center width=606 cellpadding=5><tr>
+<td width=190 align=left bgcolor=#B9FFE9><font class=fn1>Recognition of belonging to the trade</font></td>
+<td></td>
+</tr></table>
+<table align=center><tr><td width=600 align=left bgcolor=#D7D7D7>
+The script can work in 2 modes:<br><br>
+- <font class=fnfm>enable ID authentification</font> - recognition of belonging to trade by value <font class=fnfm>from</font>
+ transmitted in url at reference to a site and by <font class=fnfm>referer</font> value transmitted by browser.<br>
+- <font class=fnfm>referer authentification only</font> - recognition of belonging to trade only by <font class=fnfm>referer</font> value transmitted by browser,
+ <font class=fnfm>from</font> value transmitted in url at reference to a site is ignored.<br><br>
+</td></tr></table>
+<table align=center width=606 cellpadding=5><tr>
+<td width=190 align=left bgcolor=#B9FFE9><font class=fn1>Overflow</font></td>
+<td></td>
+</tr></table>
+<table align=center><tr><td width=600 align=left bgcolor=#D7D7D7>
+Overflow - repeated hits from same IP (is more than quantity of traders),
+ arise for example when using various programs for downloading site entirely,
+at passage of spiders of search engines and also if quantity of traders is not enough, but site has high productivity.<br>
+Overflows are sent to <font class=fnfm>extra url</font>, set in administrator's interface.
+<font class=fnfm>User Agent</font> of the client program is registered in file ua.txt at owerflow, which is accessible to viewing
+ in administrator's interface.<br>
+Using <font class=fnfm>.htaccess</font> file it is possible to forbid access to your site for programs with certain <font class=fnfm>User Agent</font> value.
+</td></tr></table>
+<table align=center width=606 cellpadding=5><tr>
+<td width=190 align=left bgcolor=#B9FFE9><font class=fn1>Toplist</font></td>
+<td></td>
+</tr></table>
+<table align=center><tr><td width=600 align=left bgcolor=#D7D7D7>
+Toplist - file <font class=fnfm>top.txt</font> - is formed in the beginning of each hour.<br>
+The quantity of members of the toplist is set in administrator's interface.
+If quantity of members of the toplist is set <font class=fnfm>0</font> - toplist will not form.<br>
+For each member of the toplist the line from the pattern of line (file <font class=fnfm>toptpl.txt</font>) is formed.
+Variables in pattern are replaced with the valid values.<br>
+Go in administrator's interface, press <font class=fnfm>Edit Files</font> menu item and edit file <font class=fnfm>toptpl.txt</font>.<br><br>
+In  pattern of toplist line it is possible to use the following variables:<br>
+<font class=fnfm>%num%</font> - rank, number<br>
+<font class=fnfm>%name%</font> - title<br>
+<font class=fnfm>%dom%</font> - domain<br>
+<font class=fnfm>%rin%</font> - raw ins (last hour)<br>
+<font class=fnfm>%uin%</font> - unique ins (last hour)<br>
+<font class=fnfm>%cl%</font> - clicks to trades (last hour)<br>
+<font class=fnfm>%gcl%</font> - clicks to real content (last hour)<br>
+<font class=fnfm>%out%</font> - exits (last hour)<br>
+<font class=fnfm>%drin%</font> - raw ins (last 23 hours)<br>
+<font class=fnfm>%duin%</font> - unique ins (last 23 hours)<br>
+<font class=fnfm>%dcl%</font> - clicks to trades (last 23 hours)<br>
+<font class=fnfm>%dgcl%</font> - clicks to real content (last 23 hours)<br>
+<font class=fnfm>%dout%</font> - exits (last 23 hours)<br><br>
+For example, the pattern of line by default looks like:<br>
+<font class=fnfm>%num% &lt;a href="o.php?site=%dom%"&gt;%name%&lt;/a&gt; %uin% %out%&lt;br&gt;</font><br><br>
+Resulting toplist for example looks like::<br>
+<font class=fnfm>
+1 &lt;a hreà="o.php?site=domain1.com"&gt;Trade 1&lt;/a&gt; 1000 2000&lt;br&gt;<br>
+2 &lt;a hreà="o.php?site=domain2.com"&gt;Trade 2&lt;/a&gt; 500 600&lt;br&gt;<br>
+...
+</font><br><br>
+In case of need it is possible to use any quantity of breakers <font class=fnfm>topbrN.txt</font>, where <font class=fnfm>N</font> -  an integer from 1 and further.<br>
+If necessary go in the administrator's interface, press <font class=fnfm>Edit Files</font> menu item and create files
+<font class=fnfm>topbrN.txt</font>.<br>
+Contents of breaker are inserted into the toplist file after N-member (of N-line).<br><br>
+For example create breakers:<br>
+topbr2.txt:<br><br>
+<font class=fnfm>&lt;/td&gt;&lt;td&gt;</font><br><br>
+topbr4.txt:<br><br>
+<font class=fnfm>&lt;/td&gt;&lt;td&gt;</font><br><br>
+topbr6.txt:<br><br>
+<font class=fnfm>&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</font><br><br>
+and set quantity of members - <font class=fnfm>6</font>.<br><br>
+You have file <font class=fnfm>top.txt</font>:<br><br>
+<font class=fnfm>
+1 &lt;a hreà="o.php?site=domain1.com"&gt;Trade 1&lt;/a&gt; 1000 2000&lt;br&gt;<br>
+2 &lt;a hreà="o.php?site=domain2.com"&gt;Trade 2&lt;/a&gt; 500 600&lt;br&gt;<br>
+&lt;/td&gt;&lt;td&gt;<br>
+3 &lt;a hreà="o.php?site=domain3.com"&gt;Trade 3&lt;/a&gt; 400 500&lt;br&gt;<br>
+4 &lt;a hreà="o.php?site=domain4.com"&gt;Trade 4&lt;/a&gt; 300 400&lt;br&gt;<br>
+&lt;/td&gt;&lt;td&gt;<br>
+5 &lt;a hreà="o.php?site=domain5.com"&gt;Trade 5&lt;/a&gt; 200 300&lt;br&gt;<br>
+6 &lt;a hreà="o.php?site=domain6.com"&gt;Trade 6&lt;/a&gt; 100 200&lt;br&gt;<br>
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+</font><br><br>
+Insert toplist in entrance page:<br><br>
+<font class=fnfm>
+...<br>
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;<br>
+&lt;?php include("top.txt") ?&gt;<br>
+...
+</font><br><br>
+In result the tabulared variant of toplist is created:<br><br>
+<font class=fnfm>
+...<br>
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;<br>
+1 &lt;a hreà="o.php?site=domain1.com"&gt;Trade 1&lt;/a&gt; 1000 2000&lt;br&gt;<br>
+2 &lt;a hreà="o.php?site=domain2.com"&gt;Trade 2&lt;/a&gt; 500 600&lt;br&gt;<br>
+&lt;/td&gt;&lt;td&gt;<br>
+3 &lt;a hreà="o.php?site=domain3.com"&gt;Trade 3&lt;/a&gt; 400 500&lt;br&gt;<br>
+4 &lt;a hreà="o.php?site=domain4.com"&gt;Trade 4&lt;/a&gt; 300 400&lt;br&gt;<br>
+&lt;/td&gt;&lt;td&gt;<br>
+5 &lt;a hreà="o.php?site=domain5.com"&gt;Trade 5&lt;/a&gt; 200 300&lt;br&gt;<br>
+6 &lt;a hreà="o.php?site=domain6.com"&gt;Trade 6&lt;/a&gt; 100 200&lt;br&gt;<br>
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br>
+&lt;font size=1&gt;powered by &lt;/font&gt;&lt;a href="http://traffic-drive.com"&gt;&lt;font size=1&gt;Traffic-Drive&lt;/font&gt;&lt;/a&gt;<br>
+...
+</font><br><br>
+Line<br>
+<font class=fnfm>
+&lt;font size=1&gt;powered by &lt;/font&gt;&lt;a href="http://traffic-drive.com"&gt;&lt;font size=1&gt;Traffic-Drive&lt;/font&gt;&lt;/a&gt;
+</font><br>
+is inserted into the end of toplist automatically.
+</td></tr></table>
+</td></tr></table>
+<br>
+<table align=center width=760><tr><td width=100% align=center>
+<a href="a.php">back to admin interface</a><br>
+</td></tr></table>
+</body>
+</html>
