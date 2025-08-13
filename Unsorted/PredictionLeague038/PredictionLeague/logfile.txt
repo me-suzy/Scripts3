@@ -1,0 +1,64 @@
+
+------------------------
+Aug/17/2002 18:21:23 
+Successfully registered test during creation
+------------------------
+Aug/17/2002 18:21:23 
+Successfully registered test during login
+------------------------
+Aug/17/2002 18:21:49 
+Successfully registered JohnA during login
+------------------------
+Aug/17/2002 18:22:31 
+Added fixture 2003-11-21 12:00  .
+insert into MatchData (matchdate,hometeam,awayteam) VALUES ("2003-11-21 12:00","","")
+------------------------
+Aug/17/2002 18:22:37 
+Removed fixture.
+Used delete from MatchData where matchdate="2003-11-21 12:00:00" and hometeam="" and awayteam="".
+1 affected.
+------------------------
+Aug/17/2002 18:22:37 
+Remove user prediction.
+Used delete from PredictionData where matchdate="2003-11-21 12:00:00" and hometeam="" and awayteam="".
+0 affected.
+------------------------
+Aug/17/2002 18:23:02 
+Added fixture 2003-11-21 12:12:12 Germany Aruba.
+insert into MatchData (matchdate,hometeam,awayteam) VALUES ("2003-11-21 12:12:12","Germany","Aruba")
+------------------------
+Aug/17/2002 21:54:45 
+Successfully registered JohnA during login
+------------------------
+Aug/17/2002 21:56:55 
+User deleted.
+User = test
+Password = 
+Email = 
+Icon = 
+Sent to john@predictionfootball.com.
+Version = 0.36
+------------------------
+Aug/19/2002 09:39:43 
+Successfully registered JohnA during login
+------------------------
+Aug/19/2002 13:13:04 
+Unable to set cookie test cookie
+------------------------
+Aug/19/2002 13:14:36 
+Unable to set cookie test cookie
+------------------------
+Aug/19/2002 13:18:16 
+Successfully registered JohnA during login
+------------------------
+Aug/19/2002 13:18:21 
+Successfully registered JohnA during login
+------------------------
+Oct/10/2002 09:05:23 
+Successfully registered JohnA during login
+------------------------
+Oct/10/2002 10:18:35 
+Successfully registered JohnA during login
+------------------------
+Oct/10/2002 10:20:37 
+Successfully registered JohnA during login
