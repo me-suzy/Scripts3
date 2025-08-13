@@ -1,0 +1,70 @@
+<BODY BGCOLOR=#200080 TEXT=#FFFFFF LINK=#8080FF VLINK=#8080FF ALINK=#A00000>
+<FORM METHOD=POST ACTION="/tts-cgi/tts-member.cgi">
+<INPUT TYPE=HIDDEN NAME="Account" VALUE="#RECORD#">
+<INPUT TYPE=HIDDEN NAME="Password" VALUE="#PASSWORD#">
+<CENTER>
+<H2>Account Details for #RECORD#</H2><HR>
+Welcome back, #NAME#!<br>Your account was created #CREATED#<P>
+
+<TABLE BORDER=3 BGCOLOR=#4020A0 CELLPADDING=10>
+<TR><TD COLSPAN=2><CENTER><B>Hit Statistics</B>
+  <TABLE BORDER=1 WIDTH=100%>
+  <TR><TD WIDTH=25%></TD><TH Width=25%>In</TH><TH WIDTH=25%>Out</TH><TH>Ref Out</TH></TR>
+  <TR><TD>Today</TD><TH>#IN#</TH><TH>#OUT#</TH><TH>#REFOUT#</TH></TR>
+  <TR><TD>Total</TD><TH>#TOTALIN#</TH><TH>#TOTALOUT#</TH><TH>#TOTALREFOUT#</TH></TR>
+  </TABLE>
+</CENTER>
+<BR>
+Your Name is<BR>
+<INPUT TYPE=TEXT NAME="Name" VALUE="#NAME#" SIZE=40><P>
+
+Your E-mail address is<BR>
+<INPUT TYPE=TEXT NAME="Email" VALUE="#EMAIL#" SIZE=40><P>
+
+Your Site's Name is<BR>
+<INPUT TYPE=TEXT NAME="Title" VALUE="#TITLE#" SIZE=40><P>
+
+Your Site's URL is<BR>
+<INPUT TYPE=TEXT NAME="SiteURL" VALUE="#SITEURL#" SIZE=40><P>
+
+Your Site's Descriptions are (one per line)<BR>
+<TEXTAREA NAME="Slogan" COLS=40 ROWS=3>#SLOGAN#</TEXTAREA><P>
+
+Your Site's Banner URLs are (one per line)<BR>
+<TEXTAREA NAME="BannerURL" COLS=40 ROWS=3>#BANNERURL#</TEXTAREA><P>
+
+Your Site's Sample URLs are (one per line)<BR>
+<TEXTAREA NAME="SampleURL" COLS=40 ROWS=3>#SAMPLEURL#</TEXTAREA><P>
+
+Your Site's Thumbnail URL is<BR>
+<INPUT TYPE=TEXT NAME="ThumbnailURL" VALUE="#THUMBNAILURL#" SIZE=40><P>
+
+Categories (Choose one)<BR>
+Current category is #CATEGORY#.<BR>
+<INPUT TYPE=Radio NAME="Category" VALUE="#CATEGORY#" CHECKED>Leave on to keep current category<HR>
+<TABLE BORDER=0 WIDTH=100%>
+<TR>
+<TD><INPUT TYPE=RADIO NAME="Category" VALUE="links">Adult Links</TD>
+<TD><INPUT TYPE=RADIO NAME="Category" VALUE="lesbian">Lesbian</TD>
+<TD><INPUT TYPE=RADIO NAME="Category" VALUE="teen">Teen</TD>
+<TD><INPUT TYPE=RADIO NAME="Category" VALUE="gay">Gay</TD>
+</TR><TR>
+<TD><INPUT TYPE=RADIO NAME="Category" VALUE="hardcore">Hardcore</TD>
+<TD><INPUT TYPE=RADIO NAME="Category" VALUE="fetish">Fetish</TD>
+<TD><INPUT TYPE=RADIO NAME="Category" VALUE="asian">Asian</TD>
+</TR>
+</TABLE>
+<P>
+
+New Password<BR>
+<B>Fill this in ONLY if you want to change your password!</B><BR>
+<INPUT TYPE=PASSWORD NAME="NewPassword" SIZE=8> Password
+
+<INPUT TYPE=PASSWORD NAME="NewConfirm" SIZE=8> Confirmation<P>
+
+</TD></TR>
+<TR>
+<TH WIDTH=50%><INPUT TYPE=SUBMIT NAME="submit" VALUE="Update Account"></TH>
+<TH><INPUT TYPE=RESET VALUE="Reset Form"></TH>
+</TR>
+</TABLE>
