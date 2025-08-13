@@ -1,0 +1,103 @@
+<?
+
+/*
+
+
+
+   Copyright (c), 1999, 2000 - phpauction.org
+
+
+
+   This program is free software; you can redistribute it and/or modify
+
+   it under the terms of the GNU General Public License as published by
+
+   the Free Software Foundation (version 2 or later).
+
+
+
+   This program is distributed in the hope that it will be useful,
+
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+
+   GNU General Public License for more details.
+
+
+
+   You should have received a copy of the GNU General Public License
+
+   along with this program; if not, write to the Free Software
+
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+
+
+*/
+
+
+?>
+
+
+
+
+<TABLE WIDTH="765" CELLPADDING=0 CELLSPACING=0 BGCOLOR="#FFFFFF" BORDER=0>
+
+<TR>
+
+<TD>
+
+<? print $tlt_font; ?>
+
+<BR>
+
+<CENTER>
+        <B> <? print $MSG_215; ?> </B> <BR>
+        <BR>
+
+<?
+
+	echo $err_font.$TPL_errmsg;
+
+?>
+
+
+
+
+
+<FORM NAME="user_login" ACTION="<? print basename($PHP_SELF); ?>" METHOD=POST>
+
+          <TABLE WIDTH="50%" CELLSPACING="0" CELLPADDING="0" BORDER="0">
+            <TR>
+              <TD colspan="2"> <? print $std_font; ?> <? print $MSG_216; ?>
+              </TD>
+            </TR>
+            <TR>
+              <TD> <? print $std_font; ?> <B><? print $MSG_003; ?></B> </TD>
+              <TD>
+                <INPUT TYPE="password" NAME="TPL_username" SIZE="25" VALUE="">
+              </TD>
+            </TR>
+            <TR>
+              <TD>&nbsp;</TD>
+              <TD> <BR>
+                <INPUT TYPE=submit NAME="">
+              </TD>
+            </TR>
+          </TABLE>
+
+	      <INPUT type="hidden" NAME="action" VALUE="ok">
+          <BR>
+          <BR>
+        </FORM>
+
+</CENTER>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+
