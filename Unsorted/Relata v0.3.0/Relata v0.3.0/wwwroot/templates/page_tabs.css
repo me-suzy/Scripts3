@@ -1,0 +1,34 @@
+.tab-normal
+{
+	text-align: center;
+	width: 160px;
+	background: #D4D0C8;
+	padding: 2px;
+	margin: 2px;
+	border: 2px;
+	border-style: outset;
+	font-family: verdana;
+	font-size: 12px;
+	font-weight: bold;
+	cursor: pointer;	/* w3 dom */
+	cursor: hand;		/* ie */
+	position: relative;
+	top: 0px;
+}
+.tab-selected
+{
+    text-align: center;
+	width: 160px;
+	background: #D4D0C8;
+	padding: 2px;
+	margin: 2px;
+	border: 2px;
+	border-style: inset;
+	font-family: verdana;
+	font-size: 12px;
+	font-weight: bold;
+	cursor: pointer;	/* w3 dom */
+	cursor: hand;		/* ie */
+	position: relative;
+	top: 0px;
+}
