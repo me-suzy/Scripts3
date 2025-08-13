@@ -1,0 +1,38 @@
+Please follow the instructions exactly. If after installation you are getting errors, please refer back to this guide. 
+
+Full installation takes around 5 minutes, depending on your connection speed. 
+
+============================== 
+INSTALLATION 
+============================== 
+
+1) Using your mySQL manager, create a database for phpManager. Please remember to add a username to the database, otherwise you won't be able to connect to it. To create the correct tables, use the supplied "phpmanager.sql" dump file. For instructions on how to setup a database, please consult your webhost providers documentation. 
+
+2) Unzip the phpManager.zip file. 
+
+3) Open the "root" folder, then open "connect.php" in Notepad. Enter your database connection details. 
+
+4) FTP into your server, then upload the "root" folder to your base directory (root directory) i.e One level below public_html. You may name this folder anything you wish. 
+
+5) Open "variables.php" in Notepad. Enter into "$rootdirectory" the server path to your "root" folder uploaded in step 4. Do NOT put a trailing slash at the end. 
+
+e.g $rootdirectory = "/home/yourdomain/root"; 
+
+6) Upload the contents of the phpManager folder (minus the "root" folder) to any directory on your server. Chmod 666 all the files in the "emails" directory. 
+
+7) Point your browser to the "admin" folder on your server and login to your Admin CP. The default user/pass is: admin/admin. It is recommended you change this ASAP. 
+
+Admin CP: /admin/index.php 
+
+Client CP: /clients/index.php 
+
+Order Form: /order/index.php 
+
+Congratulations, you have successfully installed phpManager 
+
+Please Note: If you are getting the following error: 
+
+input in flex scanner failed in /home/yourdomain/public_html/root/languages on line 1 
+
+This means that your installation is not correct as it cannot read your language files. Please double check your installation.
+
