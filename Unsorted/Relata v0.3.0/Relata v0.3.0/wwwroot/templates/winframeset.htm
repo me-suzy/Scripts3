@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+   "http://www.w3.org/TR/html4/frameset.dtd">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+
+<script type="text/javascript">
+winid = {WINID};
+
+// stores the history for the back / forward buttons
+var btnhistory = new Array;
+
+// stores the array element corresponding with 'curbtn'
+var btnhistory_cnt = 0;
+
+// stores the button id that we are currently on
+var curbtn;
+
+// get the www dir
+var www_dir = "{WWW_DIR}";
+
+// record if the page is just being loaded
+var firstbtn = true;
+
+</script>
+
+<frameset rows="25,*" border="0" frameborder="0" framespacing="0">
+	<frame src="{WWW_DIR}toolbar_buttons.htm" name="toolbar" scrolling="no" marginheight="0" marginwidth="0">
+	
+	<FRAMESET cols="{LEFT_WIDTH}, *" border="0" frameborder="0" framespacing="0">
+		<FRAME src="{LEFT}" frameborder="0" name="left{WINID}" marginwidth="0" marginheight="0" target="main{WINID}" />
+		<FRAME src="{MAIN}" frameborder="0" name="main{WINID}" marginwidth="0" marginheight="0" />
+	</FRAMESET>
+</frameset>
+
+</HTML>
