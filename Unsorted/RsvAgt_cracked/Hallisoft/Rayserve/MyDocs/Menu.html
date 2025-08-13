@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	<TITLE>Site Menu</TITLE>
+	<LINK REL="stylesheet" HREF="Style/RSV.css" TYPE="text/css">
+
+	<!-- THE AUTO LOADING SCRIPT IS BELOW CHANGE index.html IF NECESSARY -->
+	<SCRIPT LANGUAGE="Javascript" TYPE="text/Javascript">
+		if(!parent.frames['MainFrame']){parent.location.href='index.html';}
+	</SCRIPT>
+
+	<SCRIPT LANGUAGE="Javascript" TYPE="text/Javascript">
+		var Image_1 = new Image();
+		Image_1.src = "Icons/Btn6.gif";
+		var Image_2 = new Image();
+		Image_2.src = "Icons/Btn7.gif";
+
+		function ImageRolloverOn(Old_Image){
+			document.images[Old_Image].src = Image_2.src;}
+		function ImageRolloverOff(Old_Image){
+			document.images[Old_Image].src = Image_1.src;}
+	</SCRIPT>
+
+</HEAD>
+<BODY>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="2">
+<TR><TD>
+<IMG SRC="Icons/Btn6.gif" BORDER="0" WIDTH="25" HEIGHT="25" ALT="" NAME="B1">
+</TD><TD>
+<A HREF="Tariff.html" TARGET="MainFrame" onMouseOver="ImageRolloverOn('B1')" onMouseOut="ImageRolloverOff('B1')">Tariffs</A>
+</TD></TR><TR><TD>
+<IMG SRC="Icons/Btn6.gif" BORDER="0" WIDTH="25" HEIGHT="25" ALT="" NAME="B2">
+</TD><TD>
+<A HREF="Availability.html" TARGET="MainFrame" onMouseOver="ImageRolloverOn('B2')" onMouseOut="ImageRolloverOff('B2')">Availability</A>
+</TD></TR><TR><TD>
+<IMG SRC="Icons/Btn6.gif" BORDER="0" WIDTH="25" HEIGHT="25" ALT="" NAME="B3">
+</TD><TD>
+<A HREF="BookingForm.html" TARGET="MainFrame" onMouseOver="ImageRolloverOn('B3')" onMouseOut="ImageRolloverOff('B3')">Booking Form</A>
+</TD></TR><TR><TD>
+<IMG SRC="Icons/Btn6.gif" BORDER="0" WIDTH="25" HEIGHT="25" ALT="" NAME="B4">
+</TD><TD>
+<A HREF="BookingList.html" TARGET="MainFrame" onMouseOver="ImageRolloverOn('B4')" onMouseOut="ImageRolloverOff('B4')">Booking List</A>
+</TD></TR><TR><TD>
+<IMG SRC="Icons/Btn6.gif" BORDER="0" WIDTH="25" HEIGHT="25" ALT="" NAME="B5">
+</TD><TD>
+<A HREF="Checkout.html" TARGET="MainFrame" onMouseOver="ImageRolloverOn('B5')" onMouseOut="ImageRolloverOff('B5')">Confirm</A>
+</TD></TR><TR><TD>
+<IMG SRC="Icons/Btn6.gif" BORDER="0" WIDTH="25" HEIGHT="25" ALT="" NAME="B6">
+</TD><TD>
+<A HREF="Email.html" TARGET="MainFrame" onMouseOver="ImageRolloverOn('B6')" onMouseOut="ImageRolloverOff('B6')">Email Us</A>
+</TD></TR><TR><TD>
+<IMG SRC="Icons/Btn6.gif" BORDER="0" WIDTH="25" HEIGHT="25" ALT="" NAME="B7">
+</TD><TD>
+<A HREF="javascript:parent.newWin('Currency.html','Currency_Display',370,270,1)" onMouseOver="ImageRolloverOn('B7')" onMouseOut="ImageRolloverOff('B7')">Currency</A>
+</TD></TR><TR><TD>
+<IMG SRC="Icons/Btn6.gif" BORDER="0" WIDTH="25" HEIGHT="25" ALT="" NAME="B8">
+</TD><TD>
+<A HREF="javascript:parent.newWin('Convert.html','Currency_Convertion',370,340,1)" onMouseOver="ImageRolloverOn('B8')" onMouseOut="ImageRolloverOff('B8')">Convert</A>
+</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>
