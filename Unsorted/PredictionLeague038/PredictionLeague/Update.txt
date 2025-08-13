@@ -1,0 +1,58 @@
+Changes
+-------
+Added test for date in post of prediction.
+Added fix for posting results at same time and date.
+
+0.29
+Added admin features for modifying and deleting fixtures.
+Added LogMsg feature
+
+0.30
+Added checkbox for disabling database creation if it already exists.
+
+0.31 14 July 2002
+Fixed link when  trying to change icon when creating a new user.
+Added limit to number of admin users.
+Removed display of new users from prediction index.
+
+0.32
+Fixed columns display when not logged in.
+Files Changed
+  SystemVars.php (version number only)
+  SortFunctions.php (Fix table tag)
+
+0.33
+Fixed prediction league name in email notifications.
+  SendPassword.php
+  SystemVars.php
+  CreateAdminUser.php
+
+0.34
+Added session_destroy to the logout.
+  security.php
+Added test for session registered correctly in ShowMyPredictions.php (redirect from login)
+  ShowMyPredictions.php
+Added more logs and multiple retries at registering the user for sessions.
+Added scoring details and cookie details to help.
+Added redirect to help if cookies are not enabled.
+Fixed scoring problem for simulataneous games.
+  SortFunctions.php
+Moved LoginPanel to left.
+  LoginPanel.php
+  HelpIndex.php
+  PredictionIndex.php
+  ShowMatchResults.php
+0.35
+Added some example CSS files
+Added a.PRED to css. Request for different color for prediction link text.
+  Changed SortFunctions.php to add this.
+Added Lower for cookies to HelpIndex.php
+
+0.36
+Added email users option
+
+0.37
+Added support for fake BCC for older PHP versions when sending email to users.
+
+0.38
+Added SESSION testing to install scripts.
