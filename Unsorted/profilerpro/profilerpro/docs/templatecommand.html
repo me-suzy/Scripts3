@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Profiler Help - Template File Commands</title>
+<style>
+<!--
+A {text-decoration: underline; color: #000000;}
+A:hover {text-decoration: none; color: #000000;}
+.form {background-color: #ffffff; color: #000000; font-family: Tahoma; border-style: inset; border-color: #336699; border-width: 1pt;}
+.submit {background-color: #336699; color: #ffffff; font-family: Tahoma; font-size: 8pt; border-style: inset; border-color: #000000; border-width: 1pt;}
+-->
+</style>
+</head>
+<body bgcolor=ffffff text=black>
+<table border=0 cellpadding=1 cellspacing=2 width=400>
+  <tr>
+    <td width=400 colspan=2 bgcolor=003366><font face=tahoma size=2 color=white>Template File Commands</font></td>
+  </tr>
+  <tr>
+    <td width=400><font face=tahoma size=2>
+    To insert a command into template.php you need to use standard PHP commands.
+    An example command would be &lt;?php echo $site[text]; ?&gt;<br><br>
+    Below is a list of the available commands.<br>
+    &lt;?php echo $site[text]; ?&gt; - The main body<br><br>
+    &lt;?php echo $site[title]; ?&gt; - The title<br><br>
+    &lt;?php echo $site[status]; ?&gt; - Displays login status of the current user<br><br>
+    &lt;?php echo $site[headlines]; ?&gt; - Current headlines<br><br>
+    &lt;?php echo $site[events]; ?&gt; - Current Events<br><br>
+    &lt;?php echo $site[top_menu]; ?&gt; - Profiler Navigation (Top Format)<br><br>
+    &lt;?php echo $site[side_menu]; ?&gt; - Profiler Navigation (Side Format)<br><br>
+    The two navigation styles are designed to give flexibility to website designs. It is recommended that you choose one or the other.
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
