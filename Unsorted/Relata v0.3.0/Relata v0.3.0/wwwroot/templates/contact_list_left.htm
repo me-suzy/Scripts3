@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title></title>
+
+<link rel="stylesheet" type="text/css" href="{WWW_DIR}templates/leftnavbuttons.css" />
+<link rel="stylesheet" type="text/css" href="{WWW_DIR}templates/global.css" />
+<script type="text/javascript" src="{WWW_DIR}events.js"></script>
+
+<meta http-equiv="Expires" content="Fri, Jun 12 1981 08:20:00 GMT">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+<script type="text/javascript">
+	document.write('<base target="main' + parent.winid + '">');
+</script>
+
+</head>
+<body bgcolor="#D4D0C8">
+
+<script type="text/javascript" src="{WWW_DIR}leftnavbuttons.js"></script>
+<script type="text/javascript">
+	session_id = "{SESSION_ID}";
+	btn = addbutton("Add Contact");
+</script>
+<br>
+<span class="field-titles">Sort By:</span>
+<br>
+<form>
+<select class="form" name="order_by" onchange="orderBy(this[this.selectedIndex].value)">
+{ORDER_BY_DROP_LIST}
+</select>
+</form>
+<div id="contact-leftnavbox">
+<script type="text/javascript" src="{WWW_DIR}list.js"></script>
+<script type="text/javascript">
+
+		// the url to go when the button is clicked on
+		// the id given to the function on addbtn() is appended to the end
+		loader_url = "{WWW_DIR}contact/contact_loader.php?session_id={SESSION_ID}&contact_id="
+		main_url = "{WWW_DIR}contact/contact_main.php?session_id={SESSION_ID}&contact_id="
+		
+		{ROWS}
+</script>
+
+</div>
+
+</body>
+</html>
