@@ -1,0 +1,42 @@
+#PopUpCalendar
+{
+	position:absolute; 
+	left:0px; 
+	top:0px; 
+	z-index:7; 
+	width:200px; 
+	height:77px; 
+	overflow: visible; 
+	visibility: hidden; 
+	background-color: #FFFFFF; 
+	border: 1px none #000000"
+}
+#monthSelector
+{
+	position:absolute; 
+	left:0px; 
+	top:0px; 
+	z-index:9; 
+	width:181px; 
+	height:27px; 
+	overflow: visible; 
+	visibility:inherit
+}
+
+#monthDays
+{
+	position:absolute; 
+	left:0px; 
+	top:52px; 
+	z-index:8; 
+	width:200px; 
+	height:17px; 
+	overflow: visible; 
+	visibility:inherit; 
+	background-color: #FFFFFF; 
+	border: 1px none #000000
+}
+.day-over
+{
+	background-color: red;
+}
