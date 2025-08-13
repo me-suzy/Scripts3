@@ -1,0 +1,167 @@
+# phpMyAdmin SQL Dump
+# version 2.5.2
+# http://www.phpmyadmin.net
+#
+# Host: localhost
+# Generation Time: Sep 19, 2003 at 11:21 PM
+# Server version: 4.0.15
+# PHP Version: 4.2.3
+# 
+# Database : `stardev_livehelp`
+# 
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `livehelp_commands`
+#
+# Creation: Jul 30, 2003 at 07:33 PM
+# Last update: Aug 19, 2003 at 11:00 AM
+#
+
+CREATE TABLE livehelp_commands (
+  command_id int(5) NOT NULL auto_increment,
+  type varchar(10) NOT NULL default '',
+  description varchar(255) NOT NULL default '',
+  contents varchar(255) NOT NULL default '',
+  PRIMARY KEY  (command_id)
+) TYPE=MyISAM;
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `livehelp_messages`
+#
+# Creation: Jul 30, 2003 at 07:33 PM
+# Last update: Sep 19, 2003 at 11:03 PM
+#
+
+CREATE TABLE livehelp_messages (
+  message_id bigint(20) NOT NULL auto_increment,
+  from_login_id bigint(20) NOT NULL default '0',
+  to_login_id bigint(20) NOT NULL default '0',
+  message_datetime datetime NOT NULL default '0000-00-00 00:00:00',
+  message tinytext NOT NULL,
+  dest_flag tinyint(1) NOT NULL default '0',
+  src_flag tinyint(1) NOT NULL default '0',
+  PRIMARY KEY  (message_id)
+) TYPE=MyISAM;
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `livehelp_requests`
+#
+# Creation: Sep 18, 2003 at 08:03 AM
+# Last update: Sep 19, 2003 at 11:21 PM
+#
+
+CREATE TABLE livehelp_requests (
+  request_id bigint(20) NOT NULL auto_increment,
+  session_id varchar(150) NOT NULL default '',
+  ip_address varchar(100) NOT NULL default '',
+  user_agent varchar(200) NOT NULL default '',
+  last_request datetime NOT NULL default '0000-00-00 00:00:00',
+  last_refresh datetime NOT NULL default '0000-00-00 00:00:00',
+  current_page varchar(100) NOT NULL default '',
+  current_page_title varchar(150) NOT NULL default '',
+  page_path text NOT NULL,
+  request_flag tinyint(1) NOT NULL default '0',
+  PRIMARY KEY  (request_id)
+) TYPE=MyISAM;
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `livehelp_responses`
+#
+# Creation: Jul 30, 2003 at 07:33 PM
+# Last update: Aug 20, 2003 at 01:44 AM
+#
+
+CREATE TABLE livehelp_responses (
+  response_id int(5) NOT NULL auto_increment,
+  contents varchar(255) NOT NULL default '',
+  PRIMARY KEY  (response_id)
+) TYPE=MyISAM;
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `livehelp_sessions`
+#
+# Creation: Jul 30, 2003 at 07:33 PM
+# Last update: Sep 19, 2003 at 11:20 PM
+#
+
+CREATE TABLE livehelp_sessions (
+  login_id bigint(20) NOT NULL auto_increment,
+  session_id varchar(150) NOT NULL default '',
+  username varchar(30) NOT NULL default '',
+  datetime datetime NOT NULL default '0000-00-00 00:00:00',
+  email varchar(50) NOT NULL default '',
+  ip_address varchar(100) NOT NULL default '',
+  server varchar(100) NOT NULL default '',
+  department varchar(50) NOT NULL default '',
+  rating tinyint(1) NOT NULL default '0',
+  active bigint(20) NOT NULL default '0',
+  last_refresh datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (login_id)
+) TYPE=MyISAM;
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `livehelp_settings`
+#
+# Creation: Jul 30, 2003 at 07:33 PM
+# Last update: Sep 18, 2003 at 10:28 AM
+#
+
+CREATE TABLE livehelp_settings (
+  setting_id bigint(20) NOT NULL auto_increment,
+  setting_name varchar(50) NOT NULL default '',
+  setting_value varchar(255) NOT NULL default '',
+  PRIMARY KEY  (setting_id)
+) TYPE=MyISAM;
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `livehelp_statistics`
+#
+# Creation: Jul 30, 2003 at 07:33 PM
+# Last update: Sep 19, 2003 at 10:28 PM
+#
+
+CREATE TABLE livehelp_statistics (
+  statistics_id bigint(20) NOT NULL auto_increment,
+  login_id bigint(20) NOT NULL default '0',
+  user_agent varchar(200) NOT NULL default '',
+  resolution varchar(200) NOT NULL default '',
+  hostname varchar(200) NOT NULL default '',
+  referer_url varchar(200) NOT NULL default '',
+  PRIMARY KEY  (statistics_id)
+) TYPE=MyISAM;
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `livehelp_users`
+#
+# Creation: Jul 30, 2003 at 07:33 PM
+# Last update: Sep 19, 2003 at 11:17 PM
+#
+
+CREATE TABLE livehelp_users (
+  user_id bigint(20) NOT NULL auto_increment,
+  username varchar(30) NOT NULL default '',
+  password varchar(30) NOT NULL default '',
+  first_name varchar(50) NOT NULL default '',
+  last_name varchar(50) NOT NULL default '',
+  email varchar(50) NOT NULL default '',
+  department varchar(100) NOT NULL default '',
+  last_login_id bigint(20) NOT NULL default '0',
+  status int(1) NOT NULL default '0',
+  PRIMARY KEY  (user_id)
+) TYPE=MyISAM;
