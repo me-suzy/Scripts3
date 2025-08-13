@@ -1,0 +1,291 @@
+<html>
+
+<head>
+<title>Superclix Professional Documentation</title>
+
+<meta name="Microsoft Border" content="t, default"></head>
+
+<body><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+
+<table border="0" width="33%" cellpadding="0">
+  <tr>
+    <td width="50%"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/" ONCLICK="parent.f=0"><img src="../pix/banners/miniprizm.gif" alt="cgi scripts" border="0" WIDTH="305" HEIGHT="59"></a></font></td>
+    <td width="50%" bgcolor="#FFFFFF"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/ads/rotate.cgi?url=&amp;user=" target="new" ONCLICK="parent.f=0"><img src="http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user=" border="0" width="468" height="60"></a></font></td>
+  </tr>
+</table>
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="16%"><p align="center"><a href="../dsstoday/index.html"><font color="#000000" face="Arial"><img src="../pix/main/news.jpg" alt="CGI NEWS" align="left" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="16%"><p align="center"><a href="../scripts/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/scripts.jpg" alt="CGI Scripts" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../mastergate/index.html"><font color="#000000" face="Arial"><img src="../pix/main/access.jpg" alt="Access The CGI Archive" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../contact.html"><font color="#000000" face="Arial"><img src="../pix/main/contact.jpg" alt="Contact Superscripts" WIDTH="104" HEIGHT="68"></font></a></td>
+    <td width="17%"><p align="center"><a href="../support.html"><font color="#000000" face="Arial"><img src="../pix/main/dox.jpg" alt="CGI Documentation" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../download/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/download.jpg" alt="Download CGI Scripts Here" align="right" WIDTH="105" HEIGHT="65"></font></a></td>
+  </tr>
+  <tr>
+    <td width="16%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/dsstoday/index.html" style="color: rgb(255,255,255)"><strong>News</strong></a></font></td>
+    <td width="16%" bgcolor="#000000"><p align="center"><a href="/scripts/" style="color: rgb(255,255,255)"><font face="Arial" color="#FFFFFF"><strong>CGI Scripts</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><a style="color: rgb(255,255,255)" href="../mastergate/index.html"><font face="Arial" color="#FFFFFF"><strong>Become A Member</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../contact.html"><strong>Contact
+    Us</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../support.html"><strong>Support</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/download/index.shtml" style="color: rgb(255,255,255)"><strong>Download
+    Area</strong></a></font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+
+<table border="0" width="75%" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <p><big><big><strong><font face="Arial" color="#FF0000">Documentation<br>
+      </font></strong><font face="Arial" color="#000000">SUPERCLIX PROFESSIONAL:&nbsp; V4.1</font></big></big></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Copyright 2001 Psybercore, Inc. - All Rights
+        Reserved. </small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">Selling redistributing or modifying any or
+        all of the code for this program without prior written consent is expressly forbidden. You
+        must obtain written permission before redistributing this software over the Internet or in
+        any other medium. In all cases copyright and header information must remain intact.</font></small></p>
+      </blockquote>
+      <hr align="left">
+      <h1><small><font face="Arial" color="#000000"><small>System Requirements</small></font></small></h1>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Perl 5</small></font></li>
+        <li><font face="Arial" color="#000000"><small><a href="http://www.mysql.com">Mysql</a>
+          Database Software</small></font></li>
+        <li><a href="../download/Msql-Mysql-modules-1.2200.tar.gz"><font face="Arial" color="#000000"><small>Msql-Mysql Module</small></font></a></li>
+        <li><a href="../download/DBI-1.09.tar"><font face="Arial" color="#000000"><small>DBI Module</small></font></a></li>
+        <li><font face="Arial" color="#000000"><small>Sendmail</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Password protection ability recommended</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Unix recommended</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Preliminaries</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Determine the path to PERL 5 on your web
+          server host.&nbsp; Note that some web hosting companies run both PERL 4 and PERL 5.&nbsp;
+          Make ABSOLUTELY sure you are not setting this up under PERL 4.&nbsp; Ask your
+          administrator if you are not sure. </small></font></li>
+      </ul>
+      <ul>
+        <li><a href="../tutorial/index.html"><font face="Arial" color="#000000"><small>If you need
+          to review or learn the basics of CGI and Perl visit the tutorial</small></font></a></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small><a href="http://www.superscripts.com/download/">Download</a> the tarfile for this program and
+          save it to your desktop.</small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Unpack the tar archive on your desktop using a
+          program that unpacks UNIX TAR ARCHIVES. If you don't have such a program then download
+          WINZIP FREE from <a HREF="http://www.shareware.com/">SHAREWARE.COM</a>.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>After you have unpacked the TAR archive you
+          will have a collection of folders and files on your desktop.&nbsp; Now you have to do some
+          basic editing of each of these files (or at least some of them).&nbsp; Use a text editor
+          such as wordpad, notepad, BBEdit, simpletext, or teachtext to edit the files.&nbsp; These
+          are NOT WORD PROCESSOR DOCUMENTS they are just simple TEXT files so don't save them as
+          word processor documents or save them with extentions such as .txt or they will NOT WORK.
+          &nbsp; Note that there may be a some files inside of folders which are &quot;blank&quot;.
+          &nbsp; This is normal.</small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Create your MYSQL database and upload the .sql
+          file included in the tarball.&nbsp; <a href="../tutorial/index.html">See the tutorial for
+          more information on MYSQL</a></small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Preparing the CGI scripts</small></font></h2>
+      <blockquote>
+        <h2><small><font face="Arial" color="#FF0000"><small>Define Path To PERL 5</small></font></small></h2>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>The first step is to open up each and every
+        file that has a .cgi extention and edit line number one of each script.&nbsp; Each of the
+        cgi scripts is written in perl 5. For your scripts to run they must know where perl 5 is
+        installed on your web server. The path to perl 5 is defined to a cgi script in the first
+        line of the file. In each of the cgi scripts the first line of code looks something like
+        this: </small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#FF0000"><small>#!/usr/bin/perl</small></font></p>
+        </blockquote>
+        <p><font face="Arial" color="#000000"><small>If the path to perl 5 on your web server is
+        different from /usr/bin/perl you must edit the first line of each cgi script to reflect
+        the correct path. If the path to perl 5 is the same no changes are necessary. If you do
+        not know the path to perl 5 ask the webmaster or system administrator at your server site.
+        &nbsp; </small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big><strong>Configure the .cgi files</strong></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><big>configure.cgi</big></font></p>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>This file pretty much runs the whole
+        show.&nbsp; If you screw this one up don't count on anything working properly. &nbsp; In
+        other words, make sure you take the time to do this step CORRECTLY.&nbsp; Ask your
+        administrator if you need to.&nbsp; Below are the variables used in ALL of the other cgi
+        scripts.&nbsp; All of the other cgi programs USE configure.cgi to figure out where certain
+        things are.</small></font><font SIZE="2"><ul>
+          <li><font face="Arial">$mysqldatabase = &quot;mysql database name&quot;;&nbsp; </font></font><font SIZE="2" face="Arial">If you are using a seperate mysql server Set $mysqldatabase to
+            databasenameServername</font><font SIZE="2"></li>
+          <li><font face="Arial">$mysqlusername = &quot;mysql username&quot;;</font></li>
+          <li><font face="Arial">$mysqlpassword = &quot;mysql password&quot;;</font></li>
+          <li><font face="Arial">$localurl = &quot;yourdomain.com&quot;;</font></li>
+          <li><font face="Arial">$mailprogram='/path/to/sendmail';</font></li>
+          <li><font face="Arial">$adminemail = &quot;you\@yourdomain.com&quot;;</font></li>
+          <li><font face="Arial">$cgidirectory = &quot;/path/to/cgi-bin/superclix&quot;;</font></li>
+          <li><font face="Arial">$cgiurl = &quot;http://www.yourdomain.com/cgi-bin/superclix&quot;;</font></li>
+          <li><font face="Arial">$webmasterurl =
+            &quot;http://www.yourdomain.com/superclix/webmasters&quot;;</font></li>
+          <li><font face="Arial">$clickthroughurl = &quot;http://www.yourdomain.com/&quot;;</font></li>
+          <li><font face="Arial">$agentcode = &quot;superclix&quot;;</font></li>
+          <li><font face="Arial">$primarycommission = 25; #cash reward in CENTS to FIRST LEVEL </font></li>
+          <li><font face="Arial">$secondarycommission = 5; #cash reward in CENTS to SECOND LEVEL (set
+            to zero if you dont want to use this)</font></li>
+          <li><font face="Arial">$minpayout = 0; #minimum threshold before checks are sent and
+            statistics are seen</font></li>
+        </ul>
+        </font>
+      </blockquote>
+      <h2><font face="Arial" color="#000000"><small>Upload Your Edited CGI and Database Files</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Upload all of the cgi files (.cgi) into a
+          directory you create called &quot;superclix&quot; inside your cgi-bin</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Make a directory inside of your
+          /cgi-bin/superclix folder called data and upload the schedule.db file into this directory.</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Upload The Edited HTML Files</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Make a directory inside of your webspace
+          called superclix and 2 directories inside of this called webmasters and admin</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Modify the form action tags of the signup page
+          (superclix/index.html) admin (superclix/admin/index.html) page and the webmasters
+          (superclix/webmasters/index.html) page and upload these into their respective directories.</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Upload Your Banner(s)</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Call your banner banner.gif and upload this
+          into the http://www.yourdomain.com/webmasters/ directory</small></font></li>
+        <li><font face="Arial" color="#000000"><small>You will need to modify banner.cgi if you plan
+          to use more than one banner image</small></font></li>
+      </ul>
+    </blockquote>
+    <blockquote>
+      <h2><font face="Arial" color="#000000"><small>Upload Your Banner image</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Upload your banner into the webmaster
+          directory.&nbsp; </small></font></li>
+      </ul>
+    </blockquote>
+    <blockquote>
+      <p align="left"><font face="Arial" color="#000000"><small>WHEN YOU ARE FINISHED...</small></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><small>http://www.yourdomain.com/superclix/index.html</small></font></p>
+        <p><font face="Arial" color="#000000"><small>&nbsp;&nbsp;&nbsp; SIGNUP PAGE FOR NEW
+        AFFILIATES</small></font></p>
+        <p><font face="Arial" color="#FF0000"><small>http://www.yourdomain.com/superclix/webmasters/index.html</small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#000000"><small>Where users will login to get bannercode,
+          check stats, modify info</small></font></p>
+        </blockquote>
+        <p><font face="Arial" color="#FF0000"><small>http://www.yourdomain.com/superclix/admin/index.html</small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#000000"><small>Password protected admin area</small></font></p>
+        </blockquote>
+        <p><font face="Arial" color="#FF0000"><small>ALL CGI will be
+        http://www.yourdomain.com/cgi-bin/superclix/</small></font></p>
+      </blockquote>
+      <h2><font face="Arial" color="#000000"><small>File Access Permissions</small></font></h2>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>File access permissions must be set correctly
+        for this program to run. The table below lists the permissions of each file which are to
+        be set by the unix command ( chmod ) used to set the correct access permissions. You must
+        set the access permissions for each of these files.</small></font><ul>
+          <li><strong><font face="Arial" size="2" color="#000000">SET PERMISSIONS TO 755</font></strong></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">/cgi-bin/superclix/add.cgi</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">/cgi-bin/superclix/banners.cgi</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">/cgi-bin/superclix/bydate.cgi</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">/cgi-bin/superclix/byuser.cgi</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">/cgi-bin/superclix/configure.cgi</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">/cgi-bin/superclix/deleteuser.cgi</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">/cgi-bin/superclix/enter.cgi</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">/cgi-bin/superclix/export.cgi</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">/cgi-bin/superclix/getinfo.cgi</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">/cgi-bin/superclix/getpaid.cgi</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">/cgi-bin/superclix/getpayout.cgi</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">/cgi-bin/superclix/login.cgi</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">/cgi-bin/superclix/modify.cgi</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">/cgi-bin/superclix/newday.cgi</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">/cgi-bin/superclix/overview.cgi</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">/cgi-bin/superclix/premodify.cgi</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">/cgi-bin/superclix/start.cgi</font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">/cgi-bin/superclix/stats.cgi</font></li>
+          <li><font face="Arial" size="2" color="#000000"><strong>SET PERMISSIONS TO 777</strong></font></li>
+          <li><font face="Arial" color="#FF0000" SIZE="2">/cgi-bin/superclix/data/schedule.db</font></li>
+        </ul>
+      </blockquote>
+      <p><strong><big><font face="Arial" color="#000000"><big>Crontab newday.cgi</big></font></big></strong></p>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">The newday.cgi file must be set to execute
+        every day at midnight.&nbsp; If you dont do this, your stats will become corrupted.&nbsp; </font></small></p>
+      </blockquote>
+      <h2><font face="Arial" color="#000000"><small>Operating your Affiliates Program</small></font></h2>
+      <blockquote>
+        <p align="left"><font face="Arial" color="#000000"><big><strong>ADMINISTRATION</strong></big></font></p>
+      </blockquote>
+      <blockquote>
+        <blockquote>
+          <p><font face="Arial" color="#000000"><small>The administrative interface is basically a
+          navigational and editing interface.&nbsp; If you take a little time to push buttons you
+          will see how it works.&nbsp; You can zoom into the statistics from any point starting at
+          the yearly overview and zooming into the individual users statistics. &nbsp; From the
+          payout menu you can revoke sales or delete affiliates. </small></font></p>
+        </blockquote>
+        <p align="left"><font face="Arial" color="#000000"><big><strong>EXPORTING PAY TABLES</strong></big></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#000000"><small>The payout menu allows you to export the
+          current pay period sales data into a flat file ASCII delimited database which will appear
+          in your web browser.&nbsp; Save this file as TEXT and you can import it into your favorite
+          database program.</small></font></p>
+        </blockquote>
+        <p align="left"><font face="Arial" color="#000000"><big><strong>CHANGING PAYOUT SCHEDULES</strong></big></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#000000"><small>The file inside of /cgi-bin/data/schedules.db
+          is a table of the pay periods broken up into one pay period per line.&nbsp; The default
+          pay schedule consists of 24 periods (24 lines).&nbsp; There are no restrictions to how you
+          can restructure this table.&nbsp; Make sure you do NOT have any extra blank lines in this
+          file however or it will totally throw off your statistics.</small></font></p>
+        </blockquote>
+        <p align="left"><font face="Arial" color="#000000"><big><strong>SETTING UP THE
+        CLICKTHROUGH GATEWAY</strong></big></font></p>
+        <blockquote>
+          <font SIZE="2"><p><font face="Arial">Superclix uses what is called a &quot;GATEWAY&quot;
+          for paying out affiliates.&nbsp; The idea is that the affiliate only gets PAID for the
+          click after reaching a secondary or deeper page of your website.&nbsp; For example, if I
+          send you a click and the visitor exits - i dont get paid.&nbsp; If they explore the site
+          and they reach the order page or whatever - this triggers the payout script (getpaid.cgi)
+          by server sides includes and THEN I get paid. &nbsp; This is a great way to increase the
+          effectiveness of paying people per click and it discourages cheaters.&nbsp; Detailed
+          instructions are below:</font><ul>
+            <li><font face="Arial">Use enter.cgi for your affiliate link code. This is generated in the
+              member login area (get bannercode) automatically <font color="#FF0000">http://www.yourdomain.com/cgi-bin/superclix/enter.cgi?$username</font></font></li>
+            <li><font face="Arial">Inside of the gateway page (say the order page or whatever) place
+              getpaid.cgi inside an image tag or execute with server sides includes.</font></li>
+            <li><font face="Arial">When getpaid.cgi is executed 2 things happen. The cookie is trashed
+              so the affiliate cannot get paid again from that same web surfer and the stats for that
+              affiliate are incremented by one unique click.</font></li>
+          </ul>
+          </font>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
