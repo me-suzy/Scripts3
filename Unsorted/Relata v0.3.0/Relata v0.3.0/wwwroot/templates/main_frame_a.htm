@@ -1,0 +1,53 @@
+<html>
+<head>
+	<title></title>
+
+<LINK REL="stylesheet" TYPE="text/css" HREF="{WWW_DIR}templates/main_frame_a.css">
+
+</head>
+<body>
+
+<script type="text/javascript">www_dir = "{WWW_DIR}";</script>
+<script type="text/javascript" src="{WWW_DIR}main_frame_a.js"></script>
+<script type="text/javascript" src="{WWW_DIR}make-win.js"></script>
+<script type="text/javascript" src="{WWW_DIR}events.js"></script>
+
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+	<td><span class="relata-title">Relata<SUP><FONT SIZE="-1">TM</FONT></SUP></span></td>
+	<td width="80%"><div id="buttons"></div></td>
+	
+	<td>
+		<div onclick="top.location.href='logout.php?session_id={SESSION_ID}';" id="logout" class="logout-button">
+			Logout
+		</div>
+	</td>
+    <td align="right" valign="middle">
+		<div id="animatedlogo" align="center" width="45" height="42">
+			<img src="{WWW_DIR}templates/images/animstrata.gif" width="45" height="42" border="0">
+		</div>
+	</td>
+</tr>
+</table>
+
+<script type="text/javascript">
+
+// print the buttons
+makebtn("Contacts","contactmanager");
+makebtn("Accounts","account");
+makebtn("Opportunities","opportunities");
+makebtn("Activities","activities");
+makebtn("Settings","settings");
+makebtn("Group Email","groupemail");
+
+// give the logout button properties
+logoutbtn = document.getElementById('logout');
+addevent(logoutbtn,"mousedown",btnchange,false);
+addevent(logoutbtn,"mouseup",btnchange,false);
+addevent(logoutbtn,"mouseout",btnchange,false);
+
+</script>
+
+
+</body>
+</html>
