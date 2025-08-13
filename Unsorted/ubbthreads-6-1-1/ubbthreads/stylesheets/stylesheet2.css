@@ -1,0 +1,144 @@
+A:link, A:visited, A:active, A:hover { 
+}
+A:link  { 
+}
+A:visited { 
+}
+A:active {
+}
+A:HOVER { 
+  color: #000088; 
+  background: #F4EAC6;
+}
+.onbody{
+}
+.onbody A:LINK {
+}
+.onbody A:VISITED {
+}
+.onbody A:ACTIVE {
+}
+BODY,P,TABLE,TD,TR {   
+  font-size:   10pt;
+  font-family: verdana,arial,sans-serif;
+}
+FORM {
+  display: inline;
+  margin-bottom: 0;
+}
+BODY {
+  background: #FFFFEE;
+}
+PRE {
+  font-size:   9pt;
+  font-family: courier;
+}
+.tablesurround {
+  background:#505092;
+}
+.tableborders {
+  background: #b6b7da;
+}
+.tdheader {
+  font-size:   10pt;
+  font-weight: bold;
+  background:  #b6b7da;
+  font-family: verdana,arial,sans-serif;
+}
+.menubar{
+  background: #b6b7da;
+}
+.navigation{
+  background: #b6b7da;
+  font-size:   8pt;
+  font-family: helvetica,arial;
+}
+.post {
+}
+.new {
+  font-size: 8pt;
+  color: red;
+}
+.catandforum {
+  font-size: 8pt;
+}
+.posttime {
+  font-size: 8pt;
+  text-align: center;
+  background: #FFFFEE;
+}
+.threadtotal {
+  font-size: 8pt;
+  background: #FFFFEE;
+}
+.posttotal {
+  background: #F4EAD7;
+  font-size: 8pt;
+}
+.modcolumn {
+  background: #F4EAD7;
+  font-size: 8pt;
+}
+.small {
+  font-size:   8pt;
+  font-family: helvetica,arial;
+}
+.standouttext {
+  color: blue;
+}
+.pollcolor {
+  background: blue;
+}
+.welcome {
+  font-family: Times new roman;
+}
+.forumtitle {
+}
+.forumdescript {
+  font-size: 8pt;
+}
+.lighttable {
+  background: #FFFFEE;
+}
+.darktable {
+  background: #F4EAD7;
+}
+.cleartable {
+  background: #FFFFEE;
+}
+.alternatetable {
+  background: #FFFFEE;
+}
+.subjecttable {
+  background: #f4ead7;
+}
+.footertable {
+  background: #F4EAD7;
+}
+.formboxes{
+  font-family: geneva, arial, sans-serif;
+  background-color: #F4EaD7;
+  font-size: 8pt;
+}
+.buttons {
+  font-family: geneva, arial, sans-serif;
+  background-color: #F4EaD7;
+  font-size: 8pt;
+}
+blockquote {
+   font-size:9pt; border:1px solid #F4EAD7;
+   margin:0px 20px; padding:0px 10px
+}
+blockquote .small {
+   background:#F4EAD7;
+   margin-left:-10px; padding:1px 2px
+}
+blockquote hr {
+   visibility:hidden;
+   height:1px
+}
+blockquote br {
+   font-size:1px
+}
+
+    
