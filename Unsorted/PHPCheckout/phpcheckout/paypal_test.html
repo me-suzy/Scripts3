@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+		<?php require_once("configure.php");?>
+      <script language="Javascript" src="phpcheckout.js"></script>
+      <script language="Javascript">loadCSSFile();</script>
+		<TITLE>PayPal Test -  <?php echo IMPLEMENTATIONNAME;?> - <?php echo BENEFIT;?> -  <?php echo ORGANIZATION;?> - Powered by phpcheckoutTM from DreamRiver http://wwww.dreamriver.com - Software Powers the Net - a DreamRiver Internet Software Product - php software mysql database - download - web database - dreamriver - freeware - sql - file downloader - internet application development - hot scripts - good value - database software - custom code - php e-mail software - ultimate web apps software - phpYellow Pages - EasySQL - phpTellAFriend - mysql php download - Easily create complete internet programs with php, apache, mysql and windows</TITLE>
+		<meta name="Generator" content="Custom Handmade">
+		<meta name="Author" content="DreamRiver.com, Richard Creech, http://www.dreamriver.com">
+		<meta name="Keywords" content="PHPCHECKOUT, checkout, php, check, out, php checkout, contact, shop, shopping, shopper, sales, catalog, online, retail, retailer, download, downloading, make, money, sell, product, products">
+		<meta name="Description" content="Contact DreamRiver.com about PHPCHECKOUT by visiting this page. Select one of many communication methods including phone, stealth email or snail mail options. Profit from your own digital downloads with PHPCHECKOUT.">
+</HEAD> 
+
+<body>
+<!-- START of body -->
+
+<h1>PayPal Test</h1>
+
+<h2>Test Only</h2>
+
+<p>
+This is just a test. If you complete this transaction you will not receive any product. You <b>will</b> be charged 
+a nominal amount for the service of testing the system.
+</p>
+
+
+
+NOTE: This is just a PayPal test. If you complete this transaction, you will not receive any doodads, or anything else.
+<!-- Begin PayPal Button -->
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="business" value="paypal@dreamriver.com">
+<input type="hidden" name="undefined_quantity" value="1">
+<input type="hidden" name="item_name" value="phpYellow Pages">
+<input type="hidden" name="item_number" value="2">
+<input type="hidden" name="amount" value="1.00">
+<input type="hidden" name="return" value="http://www.dreamriver.com/phpcheckout/pro_paypal.php">
+<input type="hidden" name="cancel_return" value="http://www.dreamriver.com/phpcheckout/proPaymentCancelled.php">
+<input type="hidden" name="notify_url" value="http://www.dreamriver.com/phpcheckout/pro_paypal.php">
+<input type="image" border="0" name="submit" src="http://images.paypal.com/images/x-click-but5.gif" alt="Buy doodads with PayPal">
+</form>
+<!-- End PayPal Button -->
+
+
+
+
+</body>
+</html>
