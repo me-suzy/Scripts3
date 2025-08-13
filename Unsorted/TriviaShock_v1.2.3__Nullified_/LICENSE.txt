@@ -1,0 +1,71 @@
+			License Agreement
+
+PINEAPPLE TECHNOLOGIES GRANTS THE END USER ("YOU" OR "YOUR") A NON 
+EXCLUSIVE AND NON-TRANSFERRABLE LICENSE TO USE THIS SOFTWARE PACKAGE 
+AND ITS DOCUMENTATION ("SOFTWARE") WHICH IS SUBJECT TO THE TERMS, 
+CONDITIONS, AND RESTRICTIONS LISTED BELOW. BY INSTALLING AND/OR USING 
+THIS SOFTWARE YOU HEREBY AGREE TO ALL OF THE TERMS, CONDITIONS, AND 
+RESTRICTIONS STATED IN THIS LICENSE.
+
+THIS SOFTWARE IS THE PROPRIETARY PROPERTY OF PINEAPPLE TECHNOLOGIES AND 
+IS PROTECED BY INTERNATIONAL COPYRIGHT AND INTELLECTUAL PROPERTY LAWS. 
+THIS LICENSE GRANTS ONLY THE USAGE OF THIS SOFTWARE AS STATED IN THE 
+TERMS AND CONDITIONS BELOW.
+
+(1) The user is entitled to run one (1) installation of the software 
+("instance"). An instance is defined by one (1) copy of the software 
+files, which utilize one (1) database, on one (1) website, with one (1) 
+domain name. 
+
+(2) You are prohibited from and shall not market, rent, timeshare, or 
+otherwise provide access to the source code of the software or the 
+control panel to any third parties. 
+
+(3) You are prohibited from and shall not market, rent, timeshare, or 
+otherwise provide third party access to the core functionality of the 
+software, included, but not limited to, the ability to create trivia games, 
+or the ability to collect statistics or internal data generated from the 
+usage of trivia games. 
+
+(4) The software files may be modified at your own risk. However, the 
+software, whether modified or not, cannot be distributed in any way, shape, 
+or form, in whole or in part. 
+
+(5) All Pineapple Technologies copyright notices and "Powered by TriviaShock" 
+notices displayed throughout the software must remain fully intact, visible, 
+and cannot be altered in any way or removed. 
+
+(6) In order to install this software you are required to provide the web 
+address (URL) of the domain name that you will be installing and using this 
+software on. You can enter your URL at http://www.triviashock.net/ 
+and you are required to keep this URL up to date should you transfer the 
+software to another domain name or web site. 
+
+(7) Pineapple Technologies reserves the right to revoke your license to use 
+the software should you not be in compliance with these terms. License fees 
+will not be refunded. 
+
+(8) License fees are non-refundable. It is your responsibility to first ensure 
+that your server meets the requirements to run the software. 
+
+(9) Pineapple Technologies will have the right to verify the validity of your 
+license information on your installation. Only your license number and URL where 
+you have installed the software will be collected, and under no circumstances will 
+Pineapple Technologies collect any personal information, usage statistics, or any 
+other information other than your license number and URL. 
+
+(10) Pineapple Technologies reserves the right to make changes to this license 
+agreement, and its terms and conditions at any time. 
+
+THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT ANY WARRANTY OF ANY KIND, 
+EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND 
+SATISFACTORY QUALITY. PINEAPPLE TECHNOLOGIES DISCLAIMS ALL LIABILITIES 
+TO ANY DIRECT, INDIRECT, INCIDENTAL,OR CONSEQUENTIAL DAMAGES CAUSED BY 
+THE USE OF THIS SOFTWARE PACKAGE, INCLUDING, BUT NOT LIMITED TO, LOSS 
+OF FINANCIAL REVENUE OR PROFITS, DATA CORRUPTION OR LOSS, INCURRED BY 
+EITHER YOU OR ANY THIRD PARTY. PINEAPPLE TECHNOLOGIES DOES NOT PROVIDE
+ANY WARRANTY OR GUARANTEE OF THE RELIABILITY OR ACCURACY OF THIS 
+SOFTWARE AND MAKES NO REPRESENTATION THAT THE SOFTWARE WILL RUN 
+UNINTERRUPTED, BE FREE OF ERRORS, OR OTHERWISE BE SUITABLE FOR YOUR 
+NEEDS.
