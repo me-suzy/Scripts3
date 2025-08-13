@@ -1,0 +1,332 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+    <TITLE>
+        Support Services Manager Documentation
+    </TITLE>
+</HEAD>
+   <BODY LINK="#0000ff">
+<P><U>      
+      <FONT FACE="Verdana"><STRONG>Support Services Manager ("SSM")</STRONG>   </U><br>Documentation<br>version 1.0 BETA (Standard Version)</P></FONT>      
+      <FONT FACE="Verdana" SIZE=2>
+<P><STRONG>INTRODUCTION</STRONG></P></FONT>      
+      <FONT FACE="Arial" SIZE=2>
+<P>Support Services Manager ("SSM") is a powerful Support Desk and Knowledge Base application.  It includes many powerful features to allow you to easily add a full-featured Knowledge Base along with a robust support request or "trouble ticket" management system to your existing support services.  Through SSM, you will be able to easily manage these effective systems and reduce the time and effort required in providing award-winning technical support.  In addition, certain versions of SSM allow you to integrate your Knowledge Base, Support Desk, and Web Community into one single sign-on environment, creating an easy, beneficial system to your users.  This level of integration is only possible with SSM or expensive custom development work, making SSM very cost-effective.  We hope that you find SSM to be a worthwhile addition to your online network.</P></FONT>      
+      <FONT FACE="Verdana" SIZE=2>
+<P><STRONG>SUMMARY FEATURE LIST</STRONG>  </P>
+   	<UL>
+   		<LI>Hassle Free Installation Process 
+   		<LI>Easily Integrate your Support Services, Knowledge 
+  Base, and User Community 
+   		<LI>Powerful Single Sign-On features that integrate into 
+  popular community software 
+   		<LI>Intuitive Client-Side Interface 
+   		<LI>Robust Knowledge Base features 
+   		<LI>Effective, effortless Administration tools which allow 
+  web-based access to your complete array of support services from anywhere 
+  worldwide 
+   		<LI>Superb technical Support 
+   		<LI>Powerful User Management features 
+   		<LI>Free</LI>
+   	</UL>
+<P><STRONG>SYSTEM REQUIREMENTS...</STRONG> </P></FONT>      
+      <FONT FACE="Arial" SIZE=2>
+<P>In order to successfully install and use SSM on your system, you will require the following components:</P>
+   	<UL>
+   		<UL>
+   			<LI>An HTTP server (i.e. Apache) 
+ 
+   			<LI>PHP (version 4.0.4 or higher recommended)</LI>
+   		</UL>
+   	</UL>
+   	<DIR>
+   		<DIR>
+   			<DIR>
+   				<DIR>   				    
+   				    <I><P>SSM was tested and run successfully under Apache on Linux with PHP version 4.0.6 &amp; under Personal Web Server on Windows with PHP version 4.0.4.</P></DIR>
+</DIR>
+</DIR>
+</DIR>
+
+
+<UL>
+
+<UL></I>
+   					<LI>MySQL Database Server</LI>
+</UL>
+</UL>   				    
+   				    <I>
+</I>
+<P>It is also recommended that you be somewhat knowledgeable in installing server-side PHP scripts. If, after reading this document, still require assistance with your installation of SSM, please read and follow the steps in the                                                     				    
+                                                    				       				    
+   				    <I>Getting Help</I> section of this document.</P></FONT>   				   
+   				   <FONT FACE="Verdana" SIZE=2>
+<P><STRONG>BEFORE INSTALLING</STRONG> </P>
+<P>Please adhere to the following guideline BEFORE installing SSM:</P>
+   					<OL>
+   						<OL>
+   							<LI>Please make sure that the web server which you will 
+    be running SSM on is capable of handling PHP applications requiring MySQL 
+    support. 
+ 
+   							<LI>Make sure that you have an FTP client with which to 
+    transfer files to your web server and a text editor with which to edit the 
+    required files. 
+ 
+   							<LI>Please read all enclosed documentation before installing SSM.</LI>
+   						</OL>
+   					</OL>
+<P><STRONG>INSTALLATION</STRONG></P>
+<P>The Installation process:</P>
+   					<OL>
+   						<OL>
+   							<LI>Extract the archive file, which you downloaded from 
+    the web. We recommend that you use the default file/folder locations. 
+ 
+   							<LI>Upload these files to your web server. Please make 
+    sure that you upload PHP/HTML/TXT files in ASCII format and Image files in 
+    BINARY format in your FTP client. In most cases selecting the Auto format 
+    should also accomplish the same thing. 
+ 
+   							<LI>CHMOD db.php so that it can be written to by the web 
+    server. 
+ 
+   							<LI>Use your browser and navigate to the folder in which 
+    you installed SSM into on your web server. Then select the subfolder 
+    install. From this folder, please run setup.php . Follow the on-screen 
+    prompts to setup and install the software and supporting database tables. 
+ 
+   							<LI>After you have completed all steps as directed by 
+    Setup, remove the install directory and all of the files that it contains. 
+ 
+   							<LI>SSM is now able to run on your server.  Please see below for a set of suggested guidelines before making SSM public.</LI>
+   						</OL>
+   					</OL>
+<P><STRONG>SETTING UP SSM</STRONG>  </P>
+<P>Tasks to accomplish before making your installation of SSM a public application for your site:</P>
+   					<OL>
+   						<OL>
+   							<LI>You should add subjects through the administration 
+    area. These help describe the contents of any submitted support requests 
+    ("tickets") and also serve as the categories for articles in the Knowledge 
+    Base. 
+ 
+   							<LI>It is suggested that you take time to add some 
+    useful articles to your Knowledge Base. Building the KB as a resource will 
+    help reduce the load on your support staff over time as users use the KB to 
+    help themselves. Therefore, should you find a question that is submitted 
+    frequently, add the answer to your KB as an article. 
+ 
+   							<LI>Should you wish to make SSM fit into your existing site design, you can also take some time at this stage to customize the appearance of it.  Two color variables have been included in the setup stage with the default values entered.  These can be changed in the administration area.  Should you need assistance customizing your copy of SSM, please post in our</FONT><A HREF="http://net.sheddtech.com/forums/">
+   						      						   <FONT FACE="Arial" SIZE=2>support community</FONT>
+</A>   						   
+   						   <FONT FACE="Verdana" SIZE=2>. It is beyond the scope 
+    of these documents to provide a complete guide to customizing SSM here. 
+    Unfortunately, templates are not a feature which have been included in the 
+    present release. They will be included in a future release, though so watch 
+    the update notification box in the administration area. News of any updates 
+    or patches will be shown there. 
+ 
+   							<LI>You are now ready to make your copy of SSM public.  We hope that you find SSM to be a useful addition to your support resources.  If this is the case, we ask that you please read our list of small requests, which are included below.</LI></OL></OL>
+<P><STRONG>USING SSM</STRONG> </P>
+   					<DIR>
+   						<DIR>
+<P>We feel that in most cases, SSM is a self-explanatory system.  We have included detailed explanations in most administrator features and the client side system includes clearly labeled functions.  We are at the present time developing additional Help documentation, so no detailed Help files are included at the present time.  Should you find a feature of SSM that you need explained, please contact us as described in this documents Getting Help section and well be more than happy to assist you.</P>
+   						</DIR>
+   					</DIR>
+<P><STRONG>IF YOU FIND SSM USEFUL</STRONG>    </P>
+   					<OL>
+   						<OL>
+   							<LI>We request that you rate our product at</FONT><A HREF="http://scripts.sheddtech.com/">
+   						      						   <FONT FACE="Arial" SIZE=2>http://scripts.sheddtech.com</FONT>
+</A>   						   
+   						   <FONT FACE="Verdana" SIZE=2>. This allows you to show that you 
+    are pleased with our work and bring additional users into our community 
+    where they can provide assistance to you in return. Please help us increase 
+    our community so that it becomes a powerful resource for our users, 
+    providing a repository for knowledge and user contributed additions and 
+    themes. 
+ 
+   							<LI>Please contribute to our community and share your 
+    comments with the development team. If you have found SSM useful, or if you 
+    have not, please let us know what you like and what you dont. If there is a 
+    feature that you would love to see included  let us know! 
+ 
+   							<LI>Please support the Sheddtech Script Shack. See the 
+    community for donation instructions. We thank you for your support in 
+    advance. The support of users like you is what allows us to produce products 
+    like SSM for the Open-Source Community. 
+ 
+   							<LI>Should you find yourself in a position needing custom web development work, please consider Shedd Technologies International (</FONT><A HREF="http://www.sheddtech.com/)">
+   						      						   <FONT FACE="Arial" SIZE=2>http://www.sheddtech.com/)</FONT>
+</A>   						   
+   						   <FONT FACE="Verdana" 
+   ><FONT size=2>. We provide high-quality web development 
+    tools and services at hard to beat prices. </FONT></LI></OL></OL>
+<P><STRONG><FONT size=2>GETTING HELP</FONT></STRONG> </P>
+   					<DIR>
+   						<DIR>
+<P><FONT size=2>If you need additional assistance after 
+reading the material in this document, there are several methods available for 
+your use:</FONT>                   </P>
+   						</DIR>
+   					</DIR>
+   					<UL>
+   						<UL>
+   							<LI><FONT size=2>The SheddNet Support System 
+  </FONT>   </LI>
+   						</UL>
+   					</UL>
+   					<DIR>
+   						<DIR>
+   							<DIR>
+   								<DIR>   								    
+   								    <I><P><FONT size=2>This is a queued system (powered by SSM) 
+that allows users to submit threaded support requests. This system is intended 
+to allow users to discuss support issues privately with the SheddNet Support 
+Team. Use this system especially if you would need to divulge personal 
+information such as usernames and passwords for installation 
+support.</FONT>                                                    </P>
+</I>
+<P><FONT size=2>This support system is accessible through 
+the link located at http://net.sheddtech.com/</FONT>                                                             				                                                               				              </P>
+   								</DIR>
+   							</DIR>
+   						</DIR>
+   					</DIR>
+   					<UL>
+   						<UL>
+   							<LI><FONT size=2>The SheddNet Forums </FONT>  </LI>
+   						</UL>
+   					</UL>
+   					<DIR>
+   						<DIR>
+   							<DIR>
+   								<DIR>   								    
+   								    <I><P><FONT size=2>Please use the Forums for the majority of 
+your support issues. This allows other users to assist in answering your 
+questions and it also allows for the development of a community based around 
+developing and supporting SSM. Please also post feature requests in the 
+appropriate section of the Forums.</FONT>                                                </P>
+</I>
+<P><FONT size=2>These forums are located at:</FONT>    </P>
+<P><FONT 
+size=2>http://net.sheddtech.com/forums/</FONT></P>
+   								</DIR>
+   							</DIR>
+   						</DIR>
+   					</DIR>
+<P><STRONG><FONT size=2>CHANGE LOG</FONT></STRONG> </P>
+   					<UL>
+   						<DIR>
+   							<DIR>
+   								<UL>   								    
+   								    <I><LI><FONT size=2>July 2002</FONT> </LI></UL>
+</DIR>
+</DIR>
+</UL>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR></I>
+<P><FONT size=2>Version 1.0 BETA Released</FONT>   </P>
+<P><FONT 
+size=2></FONT>&nbsp;</P>
+   							</DIR>
+   						</DIR>
+   				</DIR>
+   			</DIR>
+   		</DIR>
+   	</DIR>
+<P><STRONG><FONT size=2>LICENSE 
+AGREEMENT</FONT></STRONG> </P>
+   <pre><FONT size=2>Support Services Manager ("SSM") Software version 1.0 BETA
+End-User License Agreement
+This license is copyright 2001, by Shedd Technologies International
+SSM is a product of Shedd Technologies International
+copyright 2001-2002 by Shedd Technologies, All Rights Reserved
+
+Your use of this product ("SSM") is governed by this End-User 
+License that you agreed to upon downloading this product.  Any 
+usage or modification of this product in anyway that is not 
+specified or allowed under the following terms of this agreement 
+may void your license agreement and result in action by law against 
+you.
+
+
+END-USER LICENSE AGREEMENT
+
+
+Redistributions of source code must retain the above copyright 
+notice, this list of conditions and the following disclaimer. 
+
+Redistributions in any form other than the original source form must 
+reproduce the above copyright notice, this list of conditions and the 
+following disclaimer in the documentation and/or other materials 
+provided with the distribution.
+ 
+Shedd Technologies International may publish revised and/or new versions 
+of this license, each with a distinguishing version number. Once covered 
+code has been published under a particular version of the license, you 
+may always continue to use it under the terms of that version. You may 
+also choose to use such covered code under the terms of any subsequent 
+version of the license published by Shedd Technologies International. No 
+one other than Shedd Technologies International has the right to modify 
+the terms applicable to covered product created under this License.
+
+Redistributions of any form whatsoever must retain following acknowledgment 
+that exists at the bottom of all generated pages.  Removing this text will 
+void the license agreement and could result in legal action.
+
+Shedd Technologies International reserves all rights in regard to this product, 
+including the right to distribution.  Shedd Technologies also reserves the 
+right to terminate this license agreement with the End User ("You") at any time 
+for violating this agreement.  You will be notified in writing by Shedd Technologies 
+International before a termination takes effect.
+
+Redistribution and use in source and binary forms, with or without modification, 
+are restricted by Shedd Technologies International.  Please contact Shedd Technologies 
+International for information of redistributing this product.
+
+
+
+DISCLAIMER
+
+THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED
+WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED.  IN NO EVENT SHALL THE SHEDD TECHNOLOGIES INTERNATIONAL 
+DEVELOPMENT TEAM OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; 
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT 
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY 
+WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGE.
+</FONT>
+</pre>
+<P><FONT size=2></FONT>&nbsp;</P>
+<P><FONT size=2><STRONG>Shedd Technologies International 
+Development Team</STRONG></FONT>    </P>
+   	<DIR>
+   		<DIR>
+   			<DIR>
+   				<DIR>
+<P><FONT size=2>Robert Shedd, Project Manager</FONT>   </P>
+<P><FONT size=2>Special Thanks to the Sheddtech 
+Documentation Team</FONT>      </P>
+<P><FONT size=2></FONT>&nbsp;</P>
+   				</DIR>
+   			</DIR>
+   		</DIR>
+   	</DIR>
+<P><FONT size=2><STRONG>This document was created by the 
+Shedd Technologies International Documentation Team. All content is copyright 
+2002 by Shedd Technologies International, all rights 
+reserved.</STRONG></FONT>                      </P></FONT>
+   </BODY>
+</HTML>
