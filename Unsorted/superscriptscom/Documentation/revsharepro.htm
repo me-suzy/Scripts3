@@ -1,0 +1,593 @@
+<html>
+
+<head>
+<title>Revshare Pro - Affiliate CGI System for IBILL</title>
+<meta name="description" content="Completely automate your affiliate system and check writing with the REVSHARE TOOLKIT.&nbsp; The Revshare Toolkit allows you to fully automate your affiliate system into IBILL's Revshare system.&nbsp; Instant account activation from a single form. Real time statistics, support for recurring commissions, and ability to set different commission levels for each affiliate.&nbsp; Check processing and payouts are handled for you automatically.&nbsp; Ergonomic statistical interface allows zooming into sales records from year to day to sale.&nbsp; ">
+<meta name="keywords" content="IBILL, Revshare,Affiliate CGI Script, Commissions, Clickthrough Programs, Commission Programs, Affiliate Program, CGI Script, Realtime Statistics">
+<meta name="robots" content="index">
+<meta name="revisit-after" Content="14 days">
+
+<meta name="Microsoft Border" content="t, default"></head>
+
+<body bgcolor="#ffffff" marginheight="0" marginwidth="0" leftMargin="0" topMargin="0" alink="#003399" vlink="#003399" link="#003399"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+
+<table border="0" width="33%" cellpadding="0">
+  <tr>
+    <td width="50%"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/" ONCLICK="parent.f=0"><img src="../pix/banners/miniprizm.gif" alt="cgi scripts" border="0" WIDTH="305" HEIGHT="59"></a></font></td>
+    <td width="50%" bgcolor="#FFFFFF"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/ads/rotate.cgi?url=&amp;user=" target="new" ONCLICK="parent.f=0"><img src="http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user=" border="0" width="468" height="60"></a></font></td>
+  </tr>
+</table>
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="16%"><p align="center"><a href="../dsstoday/index.html"><font color="#000000" face="Arial"><img src="../pix/main/news.jpg" alt="CGI NEWS" align="left" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="16%"><p align="center"><a href="../scripts/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/scripts.jpg" alt="CGI Scripts" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../mastergate/index.html"><font color="#000000" face="Arial"><img src="../pix/main/access.jpg" alt="Access The CGI Archive" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../contact.html"><font color="#000000" face="Arial"><img src="../pix/main/contact.jpg" alt="Contact Superscripts" WIDTH="104" HEIGHT="68"></font></a></td>
+    <td width="17%"><p align="center"><a href="../support.html"><font color="#000000" face="Arial"><img src="../pix/main/dox.jpg" alt="CGI Documentation" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../download/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/download.jpg" alt="Download CGI Scripts Here" align="right" WIDTH="105" HEIGHT="65"></font></a></td>
+  </tr>
+  <tr>
+    <td width="16%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/dsstoday/index.html" style="color: rgb(255,255,255)"><strong>News</strong></a></font></td>
+    <td width="16%" bgcolor="#000000"><p align="center"><a href="/scripts/" style="color: rgb(255,255,255)"><font face="Arial" color="#FFFFFF"><strong>CGI Scripts</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><a style="color: rgb(255,255,255)" href="../mastergate/index.html"><font face="Arial" color="#FFFFFF"><strong>Become A Member</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../contact.html"><strong>Contact
+    Us</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../support.html"><strong>Support</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/download/index.shtml" style="color: rgb(255,255,255)"><strong>Download
+    Area</strong></a></font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+
+<table border="0" width="75%" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <p><big><big><strong><font face="Arial" color="#FF0000">Documentation<br>
+      </font></strong><font face="Arial" color="#000000">REVSHARE PRO:&nbsp; V8.2</font></big></big></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Copyright 2001 Psybercore, Inc. - All Rights
+        Reserved. </small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font face="Arial" color="#000000">Selling redistributing or modifying any or
+        all of the code for this program without prior written consent is expressly forbidden. You
+        must obtain written permission before redistributing this software over the Internet or in
+        any other medium. In all cases copyright and header information must remain intact.</font></small></p>
+      </blockquote>
+      <hr align="left">
+      <p><font face="Arial" color="#FF0000"><strong>WARNING - THIS IS FARILY ADVANCED CGI CODE</strong></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Our support policy confines us to answering
+        SPECIFIC questions about the installation.&nbsp; We do not teach perl, systems
+        configurations or unix as part of the <a href="http://www.superscripts.com/mastergate/">membership</a>.
+        &nbsp; If you require this level of support you will have to <a href="http://www.superscripts.com/mastergate/install.html">pay for installation</a>.
+        &nbsp; Feel free to give it a shot - if you have the time and like to learn you are on the
+        right page.&nbsp; For more information regarding support policies <a href="http://www.superscripts.com/mastergate/faq.html">read the FAQ.</a>&nbsp; If you
+        prefer to have the system installed for you simply <a href="http://www.psybercore.com/contact.html">contact PSYBERCORE</a> to have this
+        arranged.</small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><strong>Preleminary Material for review</strong></font><ul>
+        <li><a href="http://www.mysql.com"><font face="Arial" color="#000000"><small>Mysql Tutorial</small></font></a></li>
+        <li><small><font face="Arial">IBILL Revshare Documentation</font></small></li>
+        <li><font face="Arial" color="#000000"><small><a href="../tutorial/index.html">Perl and
+          Telnet Tutorials</a></small></font></li>
+      </ul>
+      <p><big><font face="Arial" color="#000000">System Requirements</font></big><ul>
+        <li><font face="Arial" color="#000000"><small>Perl 5</small></font></li>
+        <li><font face="Arial" color="#000000"><small><a href="http://www.mysql.com">Mysql</a>
+          Database Software</small></font></li>
+        <li><font face="Arial" color="#000000"><a href="../download/Msql-Mysql-modules-1.2200.tar.gz"><small>Msql-Mysql Module</small></a></font></li>
+        <li><font face="Arial" color="#000000"><a href="../download/DBI-1.09.tar"><small>DBI Module</small></a></font></li>
+        <li><font face="Arial" color="#000000"><small>Crontab recommended for backups</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Password protection ability recommended</small></font></li>
+        <li><small><font face="Arial" color="#000000">Customizable to work with all operating
+          systems</font></small></li>
+        <li><font face="Arial" color="#000000"><small>Customizable to work with all web servers</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Server Sides Includes</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Compatible with IBILL REVSHARE SYSTEM</small></font></li>
+        <li><font face="Arial" color="#000000"><small>If you are using NT you must have <a href="http://www.dafweb.com/daf30">DAF</a> installed</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Sendmail or Qmail Recommended</small></font></li>
+      </ul>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><strong>WARNING:&nbsp; This is an advanced cgi
+        system.&nbsp; You will need a programmer to ensure that you get this installed properly.
+        &nbsp; It is not recommended that anyone without a programming background attempt to
+        install or administrate this software unless you REALLY like to learn.&nbsp; Contact <a href="http://www.psybercore.com/contact.html">PSYBERCORE</a> for further information.</strong></font></p>
+      </blockquote>
+      <h1><font face="Arial" color="#000000"><small><small>Upgrading?</small></small></font></h1>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>It is NOT possible to upgrade from previous
+        versions to the V8.0 PROFESSIONAL VERSION</small></font></p>
+      </blockquote>
+      <h2><font face="Arial" color="#000000"><small>Preliminaries</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Determine the path to PERL 5 on your web
+          server host.&nbsp; Note that some web hosting companies run both PERL 4 and PERL 5.&nbsp;
+          Make ABSOLUTELY sure you are not setting this up under PERL 4.&nbsp; Ask your
+          administrator if you are not sure. </small></font></li>
+      </ul>
+      <ul>
+        <li><a href="../tutorial/index.html"><font face="Arial" color="#000000"><small>If you need
+          to review or learn the basics of CGI and Perl visit the tutorial</small></font></a></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small><a href="http://www.superscripts.com/download/">Download</a> the tarfile for this program and
+          save it to your desktop.</small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Unpack the tar archive on your desktop using a
+          program that unpacks UNIX TAR ARCHIVES. I recommend doing this on a telnet account with
+          the tar command to keep the directory structures intact.&nbsp; If you don't have such a
+          program then download WINZIP FREE from <a HREF="http://www.shareware.com/">SHAREWARE.COM</a>.&nbsp;
+          </small></font></li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>After you have unpacked the TAR archive you
+          will have a collection of folders and files on your desktop.&nbsp; Now you have to do some
+          basic editing of each of these files (or at least some of them).&nbsp; Use a text editor
+          such as wordpad, notepad, BBEdit, simpletext, or teachtext to edit the files.&nbsp; These
+          are NOT WORD PROCESSOR DOCUMENTS they are just simple TEXT files so don't save them as
+          word processor documents or save them with extentions such as .txt or they will NOT WORK.
+          &nbsp; Note that there may be a some files inside of folders which are &quot;blank&quot;.
+          &nbsp; This is normal.</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Preparing the CGI scripts</small></font></h2>
+      <blockquote>
+        <h2><small><font face="Arial" color="#FF0000"><small>Define Path To PERL 5</small></font></small></h2>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>The first step is to open up each and every
+        file that has a .cgi extention and edit line number one of each script.&nbsp; Each of the
+        cgi scripts is written in perl 5. For your scripts to run they must know where perl 5 is
+        installed on your web server. The path to perl 5 is defined to a cgi script in the first
+        line of the file. In each of the cgi scripts the first line of code looks something like
+        this: </small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#FF0000"><small>#!/usr/bin/perl</small></font></p>
+        </blockquote>
+        <p><font face="Arial" color="#000000"><small>If the path to perl 5 on your web server is
+        different from /usr/bin/perl you must edit the first line of each cgi script to reflect
+        the correct path. If the path to perl 5 is the same no changes are necessary. If you do
+        not know the path to perl 5 ask the webmaster or system administrator at your server site.
+        &nbsp; </small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big><strong>Previous installations required</strong></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>This script interfaces with <a href="../scripts/ibill.html">IBILL PROCESSOR</a> so you have to install <a href="../scripts/ibill.html">IBILL PROCESSOR</a> to handle the transactions.&nbsp; This
+        system handles the affiliates commissions.&nbsp; Once you have <a href="../scripts/ibill.html">IBILL PROCESSOR</a> installed simply install the REVSHARE
+        FILES and upload the accountcreate.cgi and configure.cgi replacement files included in
+        this tar file over the one distributed with the <a href="../scripts/ibill.html">IBILL
+        PROCESSOR</a>.</small></font></p>
+        <p><font face="Arial" color="#000000"><small>Also you have to have ALL of your IBILL
+        MEMBERSHIP SITES using pincodes from the SAME MASTER ACCOUNT.&nbsp; Since CMI now lets you
+        do all kinds of accounting breakdowns by sub account - using multiple master accounts is
+        useless anyway.</small></font></p>
+      </blockquote>
+      <p><big><strong><font face="Arial" color="#000000">Configure the .cgi files</font></strong></big></p>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><big>configure.cgi (the one used by revshare)</big></font></p>
+        <p><font face="Arial" color="#000000"><small>This file pretty much runs the whole
+        show.&nbsp; If you screw this one up don't count on anything working properly. &nbsp; In
+        other words, make sure you take the time to do this step CORRECTLY.&nbsp; Ask your
+        administrator for help if you need to.&nbsp; Below are the variables used in ALL of the
+        other cgi scripts.&nbsp; All of the other cgi programs use configure.cgi to figure out
+        where certain things are.</small></font></p>
+        <font size="2"><p></font><font face="Arial" color="#FF0000" size="2">$MasterAccountID =
+        &quot;axxxx&quot;;</font><font size="2"></p>
+        <blockquote>
+          <p>Your IBILL master account number (a8493 or whatever)</p>
+        </blockquote>
+        <p></font><font face="Arial" color="#FF0000" size="2">$MasterAccountNumber =
+        &quot;axxxx&quot;;</font><font size="2"></p>
+        <blockquote>
+          <p><font face="Arial">Again... </font>Your IBILL master account number (a8493 or whatever)</p>
+        </blockquote>
+        <p><font face="Arial" color="#FF0000" size="2">$agentcode = &quot;pickaname&quot;;</font></p>
+        <blockquote>
+          <p><font face="Arial" color="#000000">Use a UNIQUE name for your site (for example -
+          &quot;myaffiliate&quot;, or &quot;salesagent&quot;) DO NOT USE SPACES</font></p>
+        </blockquote>
+        <p><font face="Arial" color="#FF0000" size="2">$mailprogram='/path/to/sendmail';</font></p>
+        <blockquote>
+          <p><font face="Arial" color="#000000">Full path to SENDMAIL on your webserver</font></p>
+        </blockquote>
+        <p><font face="Arial" color="#FF0000" size="2">$adminemail =
+        &quot;you\@yourdomain.com&quot;;</font></p>
+        <blockquote>
+          <p><font face="Arial" color="#000000">Your email address (YOU HAVE TO USE THE BACKSLASH
+          HERE!)</font></p>
+        </blockquote>
+        <p><font face="Arial" color="#FF0000" size="2">$webmasterurl =
+        &quot;http://www.yourdomain.com/path/to/agents/webmasters&quot;;</font></p>
+        <blockquote>
+          <p><font face="Arial" color="#000000">Full URL to the webmasters&nbsp; directory
+          containing the login form</font></p>
+        </blockquote>
+        <p></font><font face="Arial" color="#FF0000" size="2">$clickthroughurl[x] =
+        &quot;http://www.targetdomain.com/&quot;;</font><font size="2"></p>
+        <blockquote>
+          <p></font><font face="Arial" color="#000000" size="2">This is the FULL URL where people
+          will be sent after clicking on your banner. </font><font size="2"><font color="#000000"><font face="Arial"><font size="2">You can have unlimited clickthroughurls with Revshare Pro.
+          &nbsp; If you are going to promote 3 sites you would have 3 clickthroughurls.&nbsp; The
+          default configure.cgi file is setup for 3 sites.</font></font></font></p>
+        </blockquote>
+        <p></font><font face="Arial" color="#FF0000" size="2">$ErrorURL=&quot;http://www.yourdomain.com/agents/error.html&quot;;</font><font size="2"></p>
+        <blockquote>
+          <p></font><font face="Arial" color="#000000" size="2">This is the FULL URL to the
+          error.html page (used by the cgi - not by you)</font><font size="2"></p>
+        </blockquote>
+        <p></font><font face="Arial" color="#FF0000" size="2">$SuccessURL=&quot;http://www.yourdomain.com/agents/thankyou.html&quot;;</font><font size="2"></p>
+        <blockquote>
+          <p></font><font face="Arial" color="#000000" size="2">This is the FULL URL </font><font size="2"><font color="#000000"><font face="Arial">to the thankyou.html page (used by the
+          cgi - not by you)</font></font></p>
+        </blockquote>
+        <p><font face="Arial" color="#FF0000" size="2">$cgiurl =
+        &quot;http://www.yourdomain.com/cgi-bin/agents&quot;;</font><font size="3"></p>
+        <blockquote>
+          <p></font><font face="Arial" color="#000000">Full URL to the agents directory containing
+          the .cgi files</font></p>
+        </blockquote>
+        <p><font face="Arial" color="#FF0000">$cgidirectory = &quot;/path/to/cgi-bin/agents&quot;;</font></p>
+        <blockquote>
+          <p></font><font size="3"><font size="2" face="Arial" color="#000000">This is the FULL PATH
+          to the </font><font face="Arial" color="#000000"><small>agents directory containing the
+          .cgi files</small></font><font size="2"></p>
+        </blockquote>
+        </font><p><font size="2" face="Arial" color="#FF0000">$datadirectory</font><font color="#FF0000"><font face="Arial" size="3"> = &quot;/</font><font size="2" face="Arial">path/to/agents/data&quot;;</font></font></p>
+        <blockquote>
+          <p><font size="2" face="Arial" color="#000000">This is the FULL PATH to the </font><small><font face="Arial" color="#000000">agents data directory</font></font><font face="Arial" color="#000000" size="3">. </font><font size="2" face="Arial" color="#000000">By default
+          is</font><font face="Arial" color="#000000" size="3"> </font></small><font size="2" face="Arial" color="#000000">/path/to/cgi-bin/agents/data</font><font size="3"></p>
+        </blockquote>
+        <p><font size="2" face="Arial" color="#FF0000">$localurl = &quot;yourdomain.com&quot;;</font><font size="2"></p>
+        <blockquote>
+          <p></font><font size="2" face="Arial" color="#000000">Your domain name</font></p>
+        </blockquote>
+        <p></font><font size="3" face="Arial" color="#FF0000">$</font><font size="2" face="Arial" color="#FF0000">mysqldatabase= &quot;revsharedatabase&quot;;</font><font size="2"></p>
+        <blockquote>
+          <p></font><font size="2" face="Arial" color="#000000">Your mysql database name.&nbsp; </font><font SIZE="2" face="Arial">If you are using a seperate mysql server Set $mysqldatabase to
+          databasenameServername</font><font size="2"></p>
+        </blockquote>
+        <p></font><font size="2" face="Arial" color="#FF0000">$mysqlusername=
+        &quot;username&quot;;</font><font size="2"></p>
+        <blockquote>
+          <p></font><font size="2" face="Arial" color="#000000">Your mysql </font><font size="2"><font color="#000000"><font face="Arial">username</font></font></p>
+        </blockquote>
+        <p></font><font size="2" face="Arial" color="#FF0000">$mysqlpassword=
+        &quot;password&quot;;</font><font size="2"></p>
+        <blockquote>
+          <p></font><font size="2" face="Arial" color="#000000">Your mysql password</font><font size="2"></p>
+        </blockquote>
+        </font>
+      </blockquote>
+      <h2><font face="Arial" color="#000000"><small>Upload Your Edited CGI and Database Files</small></font></h2>
+      <blockquote>
+        <p><font face="Arial" color="#000000" size="3"><small>The way I am going to go through
+        this is an installation where 3 sites are being promoted from a common portal.&nbsp; An
+        example would be if you owned a domain named <a href="http://www.money4traffic.com/">http://www.money4traffic.com/</a>
+        and wanted to promote 3 websites from one affiliate system.&nbsp; No problem - we will do
+        a SINGLE installation of revshare pro and interface it into THREE (3) installations of
+        IBILL PROCESSOR running on different machines.&nbsp; Sound easy enough?</small></font></p>
+      </blockquote>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Unpack the tarball (I would do this on a
+          telnet account to keep the directory structures intact).&nbsp; Create some directories
+          inside your affiliate domain (the one you are getting your promoters to signup under - not
+          your membership site(s)) as follows:</small></font><ul>
+            <li><a href="http://www.affiliatedomain.com/revshare/"><font face="Arial" color="#000000"><small>http://www.affiliatedomain.com/revshare/</small></font></a></li>
+            <li><font face="Arial" color="#000000"><small><a href="http://www.affiliatedomain.com/revshare/">http://www.affiliatedomain.com/revshare/</a>admin</small></font></li>
+            <li><font face="Arial" color="#000000"><small><a href="http://www.affiliatedomain.com/revshare/">http://www.affiliatedomain.com/revshare/</a>webmasters</small></font></li>
+            <li><a href="http://www.affiliatedomain.com/revshare/"><font face="Arial" color="#000000"><small>http://www.affiliatedomain.com/cgi-bin/revshare/</small></font></a></li>
+            <li><font face="Arial" color="#000000"><small><a href="http://www.affiliatedomain.com/revshare/">http://www.affiliatedomain.com/cgi-bin/revshare/</a>data/</small></font></li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Upload all the cgi files into the
+          /cgi-bin/revshare directory, upload the 3 text files (passwords, memberdatabase, and
+          schedule.db) into /cgi-bin/revshare/data/</small></font></li>
+        <li><small><font face="Arial">Upload your admin page into the admin directory, the webmaster
+          login page into the webmasters directory, and the signup page, error.html, thankyou.html
+          into the /revshare/ directory.&nbsp; If you untarred this by telnet this should all be
+          pretty obvious</font></small></li>
+        <li><small><font face="Arial">Dont do anything with the ibp-replacement files
+          (accountcreate.cgi, configure.cgi (for IBILL PROCESSOR) and the .shtml, .hmf files)... yet</font></small></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Make your banner page cool</small></font></h2>
+      <ul>
+        <li><small><font face="Arial" color="#000000">You will probably want to make the BANNERS
+          PAGE pretty for your affiliates.&nbsp; To do this, simply edit the html in between the </font><font face="Arial" color="#FF0000"><strong>ENDHEADER</strong></font><font face="Arial" color="#000000"> markers inside of banners.cgi</font></small></li>
+      </ul>
+      <p align="left"><big><font face="Arial" color="#000000">Password Protect the admin
+      Directory</font></big></p>
+      <blockquote>
+        <p align="left"><font face="Arial" color="#000000"><small><a href="../support/index.html">SEE
+        THE TUTORIAL FOR INSTRUCTIONS FOR PASSWORD PROTECTING DIRECTORIES</a></small></font></p>
+      </blockquote>
+      <h2><small><font face="Arial" color="#000000">Upload Your Banner image(s)</font></small></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Upload your banner(s) into the
+          http://yourdomain/agents/webmaster directory.&nbsp; </small></font></li>
+      </ul>
+      <p align="left"><font face="Arial" color="#000000"><small>WHEN YOU ARE FINISHED...</small></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><small>http://www.yourdomain.com/revshare/index.html</small></font></p>
+        <p><font face="Arial" color="#000000"><small>&nbsp;&nbsp;&nbsp; SIGNUP PAGE FOR NEW
+        AFFILIATES</small></font></p>
+        <p><font face="Arial" color="#FF0000"><small>http://www.yourdomain.com/revshare/webmasters/index.html</small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#000000"><small>Where users will login to get bannercode,
+          check stats</small></font></p>
+        </blockquote>
+        <p><font face="Arial" color="#FF0000"><small>http://www.yourdomain.com/revshare/admin/index.html</small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#000000"><small>Password protected admin area</small></font></p>
+        </blockquote>
+      </blockquote>
+      <h2><font face="Arial" color="#000000"><small>File Access Permissions</small></font></h2>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>File access permissions must be set correctly
+        for this program to run. The table below lists the permissions of each file which are to
+        be set by the unix command ( chmod ) used to set the correct access permissions. You must
+        set the access permissions for each of these files.&nbsp; As usual you will set all .cgi
+        files to 755 (rwx-r-x-r-x)and all other files and directories to 666 (rw-rw-rw).</small></font></p>
+      </blockquote>
+      <div align="center"><center><table WIDTH="448" HEIGHT="67" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+        <tr>
+          <td WIDTH="50%" HEIGHT="17" bgcolor="#000000"><blockquote>
+            <p ALIGN="left"><strong><font face="Arial" color="#FFFFFF">&nbsp;CHMOD 755</font></strong></p>
+          </blockquote>
+          </td>
+          <td WIDTH="50%" bgcolor="#000000"><blockquote>
+            <p ALIGN="left"><font face="Arial" color="#FFFFFF"><strong>&nbsp;CHMOD 777</strong></font></p>
+          </blockquote>
+          </td>
+        </tr>
+        <tr>
+          <td WIDTH="50%" HEIGHT="41"><ul>
+            <li><font size="2" face="Arial" color="#000000">add.cgi</font></li>
+            <li><font size="2" face="Arial" color="#000000">agents.cgi</font></li>
+            <li><font size="2" face="Arial" color="#000000">banners.cgi</font></li>
+            <li><font size="2" face="Arial" color="#000000">bydate.cgi</font></li>
+            <li><font size="2" face="Arial" color="#000000">byuser.cgi</font></li>
+            <li><font size="2" face="Arial" color="#000000">configure.cgi</font></li>
+            <li><font size="2" face="Arial" color="#000000">delete.user.cgi</font></li>
+            <li><font size="2" face="Arial" color="#000000">getinfo.cgi</font></li>
+            <li><font size="2" face="Arial" color="#000000">login.cgi</font></li>
+            <li><font size="2" face="Arial" color="#000000">newday.cgi</font></li>
+            <li><font size="2" face="Arial" color="#000000">overview.cgi</font></li>
+            <li><font size="2" face="Arial" color="#000000">payout.cgi</font></li>
+            <li><font size="2" face="Arial" color="#000000">revoke.cgi</font></li>
+            <li><font size="2" face="Arial" color="#000000">revshare.cgi</font></li>
+            <li><font size="2" face="Arial" color="#000000">stats.cgi</font></li>
+            <li><font size="2" face="Arial" color="#000000">start.cgi</font></li>
+          </ul>
+          </td>
+          <td WIDTH="50%"><ul>
+            <li><font size="2" face="Arial" color="#000000">data directory and everything inside
+              (schedule.db, passwords, memberdatabase)</font></li>
+          </ul>
+          <p><font face="Arial" color="#000000"><small><br>
+          </small></font></td>
+        </tr>
+      </table>
+      </center></div><hr>
+      <p><font face="Arial" color="#000000"><big>Modify your IBILL Processor Installation</big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>You need to already have <a href="../scripts/ibill.html">IBILL PROCESSOR</a> installed on your membership site(s).
+        &nbsp; Replace the IBILL PROCESSOR FILES accountcreate.cgi and configure.cgi with the ones
+        included with the REVSHARE PRO tarball.&nbsp; There is only one new variable in the
+        configure.cgi file.&nbsp; Just point it to the URL of payout.cgi</small></font></p>
+        <blockquote>
+          <font size="2"><p><font face="Arial" color="#FF0000">$payoutcgi =
+          &quot;http://www.yourdomain.com/cgi-bin/revshare/payout.cgi&quot;;</font></font></p>
+        </blockquote>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big>Edit your IBILL JOIN BUTTONS</big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>OK - Now here is a point that might seem
+        wierd.&nbsp; You are going to have to put your JOIN PAGES for your websites on your
+        AFFILIATE DOMAIN.&nbsp; You can work around this if you know what you are doing using
+        frames or whatever but I am going to only go through the basics of installing this
+        software.&nbsp; There are hundreds of ways to customize it but that would take forever to
+        discuss.&nbsp; </small></font></p>
+        <p><font face="Arial" color="#000000"><small>You also have to add a server sides includes
+        tag into the form buttons on your IBILL JOIN PAGES.&nbsp; You may have to rename your page
+        to .shtml instead of .html on some machines - ASK your system administrator the
+        requirements on your server to execute SSI.&nbsp; The tag should look like this and is
+        inserted inside the html for each join button:</small></font></p>
+        <blockquote>
+          <font size="2"><ul>
+            <li><font face="Arial" color="#FF0000">&lt;!-- COPY CODE BETWEEN THESE COMMENT LINES FOR
+              EACH CREDIT CARD SUB ACCOUNT --&gt;</font></li>
+            <li><font face="Arial" color="#FF0000">&lt;form method=&quot;POST&quot;
+              action=&quot;https://secure.</font></font><font size="2" color="#FF0000" face="Arial">ibill.com/cgi-win/ccard/ccard.exe&quot;&gt;</font><font size="2"></li>
+            <li><font face="Arial" color="#FF0000">&lt;INPUT type=&quot;hidden&quot;
+              name=&quot;hellopage&quot; value=&quot;ibillblack&quot;&gt;</font></li>
+            <li><font face="Arial" color="#FF0000">&lt;input type=&quot;hidden&quot;
+              name=&quot;reqtype&quot; value=&quot;secure&quot;&gt;</font></li>
+            <li><font face="Arial" color="#FF0000">&lt;input type=&quot;hidden&quot;
+              name=&quot;ref1&quot; value=&quot;/</font></font><font size="2" color="#FF0000" face="Arial">path/to/pincodefile&quot;&gt;</font><font size="2"></li>
+            <li><font face="Arial" color="#FF0000">&lt;input type=&quot;hidden&quot;
+              name=&quot;ref2&quot; value=&quot;</font></font><font size="2" color="#FF0000" face="Arial">3&quot;&gt;</font><font size="2"></li>
+            <li><font face="Arial" color="#FF0000">&lt;!--#EXEC CGI=&quot;/cgi-bin/</font></font><font size="2" color="#FF0000" face="Arial">revshare/revshare.cgi&quot; --&gt; </font><font size="2"></li>
+            <li><font face="Arial" color="#FF0000">&lt;input type=&quot;hidden&quot;
+              name=&quot;account&quot; value=&quot;</font></font><font size="2" color="#FF0000" face="Arial">pincodefile</font><font size="2"><font face="Arial" color="#FF0000">&quot;&gt;</font></li>
+            <li><font face="Arial" color="#FF0000">&lt;input type=&quot;submit&quot; value=&quot;$2.95
+              for 3 day</font></font><font size="2" color="#FF0000" face="Arial">s</font><font size="2"><font face="Arial" color="#FF0000"> by credit card&quot;&gt;&lt;/form&gt;</font></li>
+            <li><font face="Arial" color="#FF0000">&lt;!-- COPY CODE BETWEEN THESE COMMENT LINES FOR
+              EACH CREDIT CARD SUB ACCOUNT --&gt;</font></li>
+          </ul>
+          </font>
+        </blockquote>
+      </blockquote>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>When the button is called up on the
+        index.shtml page it reads the cookie (if any) and adds 2 extra form fields - one is the
+        revshare ID and the other is used by accountcreate.cgi (ref3).&nbsp; Likewise with the
+        900.html pages you create for IBILL Processor and check buttons - you just need to make
+        sure that the EXEC CGI command is pasted inside of the button code.&nbsp; Also for the
+        900.html pages you need to paste them in the redeem pages (1234567.shtml)</small></font></p>
+        <p><font face="Arial" color="#000000"><small>Note that the ref1 variable is the path on
+        your MEMBERSHIP DOMAIN (the membership site).&nbsp; The join page is on your AFFILIATE
+        DOMAIN but the button will send you to a webgood page which then executes a cgi on your
+        MEMBERSHIP DOMAIN.&nbsp; </small></font></p>
+        <p><font face="Arial" color="#FF0000"><small>JOIN PAGE =====&gt; HOST ON AFFILIATE DOMAIN
+        ======&gt; WEBGOOD PAGE WILL THEN GO TO&nbsp; =====&gt; MEMBERSHIP DOMAIN CGI</small></font></p>
+        <p><font face="Arial" color="#FF0000"><small><a href="http://www.affiliatedomain.com/join/index.shtml">http://www.affiliatedomain.com/join/index.shtml</a>
+        =====&gt; webgoodpage.hmf ======&gt; accountcreate.cgi</small></font></p>
+        <p><font face="Arial" color="#FF0000"><small>I hope that helps....</small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big>Replace web good pages</big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>You have to replace the webgood page(s) with
+        the special versions included with the Revshare Toolkit distribution.&nbsp; Just edit the
+        form action tags.</small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big>Set default commissions in REVSHARE</big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Before the system will accept any signups you
+        have to setup &quot;DEFAULT REVSHARE SPLITS&quot; inside of the <a href="https://secure2.ibill.com/cgi-win/ccard/cmi.exe">IBILL admin section</a> by logging
+        into your account @ IBILL</small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big>Cookies, IP's and Ports</big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>If you haven't guessed by now, this system
+        uses COOKIES to keep track of commissions.&nbsp; When an surfer clicks on one of your
+        affiliates banners a cookie is set inside their browser and remains there until something
+        like the year 2003.&nbsp; Anytime that visitor returns to your site and buys something
+        payout.cgi sucks the cookie out of the browser and writes to a database the commission
+        information.&nbsp; </small></font></p>
+        <p><font face="Arial" color="#000000"><small>The thing about cookies (and its a good
+        thing) is that you can only retrieve cookies that you sent.&nbsp; This means it is totally
+        IMPOSSIBLE for you to read all the cookies in my browser that have been set by 100's of
+        other websites tracking my behaviour.&nbsp; Cookies can only be read from the exact same
+        IP address and PORT that they were set by.</small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big>Notes for NT users</big></font></p>
+      <blockquote>
+        <p align="left"><font face="Arial" color="#000000"><small>You must turn encryption ON for
+        this installation to work on NT.&nbsp; Also you will probably (but not required) be using
+        sendmail or a compatible email program or modify add.cgi to work with your system.&nbsp; </small></font></p>
+      </blockquote>
+      <p><font face="Arial" color="#000000"><big>Crontab newday.cgi</big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>The newday.cgi file must be set to execute
+        every day at midnight.&nbsp; If you dont do this, your stats will become corrupted.&nbsp; </small></font></p>
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <h2><font face="Arial" color="#000000"><small><small>Setup your MYSQL database</small></small></font></h2>
+      <blockquote>
+        <p><font face="Arial" color="#000000"><small>Inside the folder mysql.stuff you will see
+        the perl modules you need to have installed plus a small readme file with the BASIC
+        commands you need to run this software and a file called agents.sql which sets up the
+        database in MYSQL to store all the required data for AGENTS.&nbsp; To setup the database
+        simply create a folder inside of /path/to/mysql/agents and upload the agents.sql file as
+        ASCII data.&nbsp; Then from the command line type</small></font></p>
+        <font size="2"><p></font><font size="2" color="#FF0000" face="Arial">../bin/mysqladmin -u
+        root -p create agentsdatabase</font></p>
+        <blockquote>
+          <p><font face="Arial" color="#000000"><small>This creates the actual database called
+          &quot;agentsdatabase&quot;</small></font></p>
+        </blockquote>
+        <font size="2"><p></font><font size="2" color="#FF0000" face="Arial">../bin/mysql -u root
+        -pMYSQLPASSWORD agentsdatabase &lt; agents.sql</font></p>
+        <blockquote>
+          <p><font face="Arial" color="#000000"><small>This loads the database tables into mysql</small></font></p>
+        </blockquote>
+        <p><small><font face="Arial" color="#000000">You should then login to MYSQL to &quot;show
+        tables&quot; and make sure everything got setup correctly</font></small></p>
+        <font size="2"><blockquote>
+          <p></font><font size="2" color="#FF0000" face="Arial">../bin/mysql -u root -p
+          agentsdatabase</font><font size="2"></p>
+        </blockquote>
+        <p></font><font color="#000000" size="2" face="Arial"><a href="http://www.mysql.com">If
+        you need help with MYSQL you need to go to the source for information:&nbsp; MYSQL.COM</a></font><font size="2"></p>
+        </font>
+      </blockquote>
+      <h2><font color="#000000" face="Arial"><small><small>Operating your Affiliates Program</small></small></font></h2>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Note that you have a seperate login area on
+        the stats.cgi (webmaster login) for the CASH reports.&nbsp; This is because there is no
+        way to tie the CMI database to your local database.&nbsp; IBILL prevents that.&nbsp; Thus
+        your affiliates are required to login a seperate time to see the CASH reports.&nbsp; Your
+        end provides the statistical reports only.</small></font></p>
+      </blockquote>
+      <blockquote>
+        <p align="left"><font color="#000000" face="Arial">START THE SYSTEM</font></p>
+        <blockquote>
+          <p align="left"><font color="#000000" face="Arial"><small>From telnet cd to the
+          cgi-bin/agents directory and run start.cgi</small></font></p>
+          <p align="left"><font face="Arial" color="#FF0000"><small>perl start.cgi</small></font></p>
+        </blockquote>
+        <p align="left"><font color="#000000" face="Arial">ADMINISTRATION</font></p>
+      </blockquote>
+      <blockquote>
+        <blockquote>
+          <p><font color="#000000" face="Arial"><small>The administrative interface is basically a
+          navigational and editing interface.&nbsp; If you take a little time to push buttons you
+          will see how it works.&nbsp; You can zoom into the statistics from any point starting at
+          the yearly overview and zooming into the individual users statistics. &nbsp; From the
+          payout menu you can revoke sales or delete affiliates. </small></font></p>
+        </blockquote>
+        <p align="left"><font color="#000000" face="Arial">EXPORTING PAY TABLES</font></p>
+        <blockquote>
+          <p><font color="#000000" face="Arial"><small>The payout menu allows you to export the
+          current pay period sales data into a flat file ASCII delimited database which is stored
+          inside the /cgi-bin/agents/logs directory.&nbsp; The file will be called #.payout.txt
+          where # is the numerical value of the current pay period.&nbsp; This database structure is
+          set by default to be seperated by the pipe character |</small></font></p>
+        </blockquote>
+        <p align="left"><font color="#000000" face="Arial">CHANGING PAYOUT SCHEDULES</font></p>
+        <blockquote>
+          <p><font color="#000000" face="Arial"><small>The file inside of /cgi-bin/data/schedules.db
+          is a table of the pay periods broken up into one pay period per line.&nbsp; The default
+          pay schedule consists of 24 periods (24 lines).&nbsp; There are no restrictions to how you
+          can restructure this table.&nbsp; Make sure you do NOT have any extra blank lines in this
+          file however or it will totally throw off your statistics.</small></font></p>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <p align="left"><font color="#000000" face="Arial">BACKUP PROCEEDURES</font></p>
+        <blockquote>
+          <p><font color="#000000" face="Arial"><small>It is HIGHLY recommended that you regularly
+          backup your database.&nbsp; In the event major computer malfunction, power outage, server
+          crash, etc you will be glad you did.&nbsp; To the MYSQL guru this is easily done by
+          executing the following command by crontab</small></font></p>
+          <font SIZE="2"><p></font><font size="2" color="#FF0000" face="Arial">../bin/mysqldump -u
+          root -pMYSQLPASSWORD agentsdatabase &gt; agentsdatabase.sql</font></p>
+        </blockquote>
+        <p align="left"><font color="#000000" face="Arial">RESTORE DATABASE</font></p>
+        <blockquote>
+          <p><font color="#000000" face="Arial"><small>To restore your database from a backup you
+          have to DROP your database, recreate the database, then reload the tables with the
+          commands:</small></font></p>
+          <font SIZE="2"><p><font size="2" color="#FF0000" face="Arial">DESTROY DATABASE</font></p>
+          <blockquote>
+            <p><font size="2" color="#FF0000" face="Arial">../bin/mysqladmin -u root -pMYSQLPASSWORD
+            drop agentsdatabase </font></p>
+          </blockquote>
+          <p><font size="2" color="#FF0000" face="Arial">CREATE DATABASE</font></p>
+          <blockquote>
+            <p><font size="2" color="#FF0000" face="Arial">../bin/mysqladmin -u root -p create
+            agentsdatabase</font></p>
+          </blockquote>
+          <p></font><font size="2" color="#FF0000" face="Arial">CREATE TABLES</font><font SIZE="2"></p>
+          <blockquote>
+            <p></font><font size="2" color="#FF0000" face="Arial">../bin/mysql -u root -pMYSQLPASSWORD
+            agentsdatabase &lt; agentsdatabase.sql</font><font SIZE="2"></p>
+          </blockquote>
+          </font>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
