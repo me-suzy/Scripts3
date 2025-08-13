@@ -1,0 +1,170 @@
+<HTML>
+<HEAD>
+<TITLE> CGI Programming by Collin Forbes: Installing Random Redirection</TITLE>
+<SCRIPT LANGUAGE="Javascript">
+<!-- 
+    if (navigator.userAgent.indexOf("Win") >= 0) {
+        document.write('<LINK REL="stylesheet" HREF="style/style-96.css">');
+    }
+    else {
+        document.write('<LINK REL="stylesheet" HREF="style/style-72.css">');
+    }
+// -->
+</SCRIPT>
+<NOSCRIPT>
+<LINK REL="stylesheet" HREF="style/style-96.css">
+</NOSCRIPT>
+</HEAD>
+<BODY BGCOLOR="#ffffff" TEXT="#000000" LINK="#000099" VLINK="#000099">
+
+<CENTER>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0">
+
+<TR>
+<TD COLSPAN="2" BGCOLOR="#00cc00">
+<IMG SRC="images/shim.gif" WIDTH="600" HEIGHT="3" ALT=""></TD></TR>
+
+<TR>
+<TD COLSPAN="2" BGCOLOR="#00cc00">
+&nbsp; 
+<FONT FACE="Helvetica,Arial" SIZE="+1">
+ CGI Programming by Collin Forbes </FONT></TD></TR>
+
+<TR>
+<TD COLSPAN="2" BGCOLOR="#00cc00">
+<IMG SRC="images/shim.gif" WIDTH="600" HEIGHT="3" ALT=""></TD></TR>
+
+<TR>
+<TD COLSPAN="2" BGCOLOR="#000000">
+<IMG SRC="images/shim.gif" WIDTH="600" HEIGHT="3" ALT=""></TD></TR>
+
+<TR>
+<TD BGCOLOR="#000000">
+<FONT FACE="Helvetica,Arial" COLOR="#ffffff">
+&nbsp; <B>Installing Random Redirection</B></FONT></TD>
+<TD BGCOLOR="#000000" ALIGN="right">
+<FONT FACE="Helvetica,Arial" SIZE="-1" COLOR="#ffffff">
+&nbsp; Updated: Thu, 20 Apr 2000 &nbsp; </FONT></TD></TR>
+
+<TR>
+<TD COLSPAN="2" BGCOLOR="#000000">
+<IMG SRC="images/shim.gif" WIDTH="600" HEIGHT="3" ALT=""></TD></TR>
+
+<TR>
+<TD COLSPAN="2">
+<IMG SRC="images/shim.gif" WIDTH="600" HEIGHT="3" ALT=""></TD></TR>
+
+<TR>
+<TD COLSPAN="2" VALIGN="top">
+
+  <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" ALIGN="left" WIDTH="200">
+  <TR>
+  <TD>
+    <P CLASS="navigation">
+    
+<A HREF="http://kuoi.asui.uidaho.edu/~collinf/scripts.html"><IMG SRC="images/bullet.gif"
+ WIDTH="20" HEIGHT="20" ALT="[*]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="http://kuoi.asui.uidaho.edu/~collinf/scripts.html"><B>Introduction &amp; Welcome</B></A><BR>
+
+<A HREF="index.html"><IMG SRC="images/collapse-arrow.gif"
+ WIDTH="20" HEIGHT="20" ALT="[-]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="index.html"><B>Random Redirection</B></A><BR>
+
+<IMG SRC="images/shim.gif" WIDTH="20" HEIGHT="20" 
+ ALT="" ALIGN="top"><A HREF="index.html"><IMG 
+ SRC="images/collapse-arrow.gif" WIDTH="20" HEIGHT="20"
+ ALT="&nbsp;[-]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="index.html">About Random Redirection</A><BR>
+
+<IMG SRC="images/shim.gif" WIDTH="40" HEIGHT="20"
+ ALT="" ALIGN="top"><A HREF="installation.html"><IMG 
+ SRC="images/bullet.gif" WIDTH="20" HEIGHT="20"
+ ALT="&nbsp;&nbsp;[*]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="installation.html">Installation</A><BR>
+
+<IMG SRC="images/shim.gif" WIDTH="40" HEIGHT="20"
+ ALT="" ALIGN="top"><A HREF="usage.html"><IMG 
+ SRC="images/bullet.gif" WIDTH="20" HEIGHT="20"
+ ALT="&nbsp;&nbsp;[*]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="usage.html">Usage</A><BR>
+
+<IMG SRC="images/shim.gif" WIDTH="20" HEIGHT="20" 
+ ALT="" ALIGN="top"><A HREF="http://kuoi.asui.uidaho.edu/~collinf/scripts.html/random/examples"><IMG 
+ SRC="images/collapse-arrow.gif" WIDTH="20" HEIGHT="20"
+ ALT="&nbsp;[-]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="http://kuoi.asui.uidaho.edu/~collinf/scripts.html/random/examples">Working Examples</A><BR>
+
+<IMG SRC="images/shim.gif" WIDTH="40" HEIGHT="20"
+ ALT="" ALIGN="top"><A HREF="http://kuoi.asui.uidaho.edu/~collinf/examples.html/random/image"><IMG 
+ SRC="images/bullet.gif" WIDTH="20" HEIGHT="20"
+ ALT="&nbsp;&nbsp;[*]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="http://kuoi.asui.uidaho.edu/~collinf/examples.html/random/image">A Random Image</A><BR>
+
+<IMG SRC="images/shim.gif" WIDTH="40" HEIGHT="20"
+ ALT="" ALIGN="top"><A HREF="http://kuoi.asui.uidaho.edu/~collinf/scripts.html/random/link"><IMG 
+ SRC="images/bullet.gif" WIDTH="20" HEIGHT="20"
+ ALT="&nbsp;&nbsp;[*]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="http://kuoi.asui.uidaho.edu/~collinf/scripts.html/random/link">A Random Link</A><BR>
+
+<IMG SRC="images/shim.gif" WIDTH="20" HEIGHT="20" 
+ ALT="" ALIGN="top"><A HREF="http://kuoi.asui.uidaho.edu/~collinf/scripts.html/random/downloads"><IMG 
+ SRC="images/collapse-arrow.gif" WIDTH="20" HEIGHT="20"
+ ALT="&nbsp;[-]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="http://kuoi.asui.uidaho.edu/~collinf/scripts.html/random/downloads">Download</A><BR>
+
+<IMG SRC="images/shim.gif" WIDTH="40" HEIGHT="20"
+ ALT="" ALIGN="top"><A HREF="http://kuoi.asui.uidaho.edu/~collinf/download.html/random.zip"><IMG 
+ SRC="images/bullet.gif" WIDTH="20" HEIGHT="20"
+ ALT="&nbsp;&nbsp;[*]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="http://kuoi.asui.uidaho.edu/~collinf/download.html/random.zip">random12.zip</A><BR>
+
+<IMG SRC="images/shim.gif" WIDTH="40" HEIGHT="20"
+ ALT="" ALIGN="top"><A HREF="http://kuoi.asui.uidaho.edu/~collinf/download.html/random.tar.gz"><IMG 
+ SRC="images/bullet.gif" WIDTH="20" HEIGHT="20"
+ ALT="&nbsp;&nbsp;[*]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="http://kuoi.asui.uidaho.edu/~collinf/download.html/random.tar.gz">random-1.2.tar.gz</A><BR>
+
+<A HREF="http://kuoi.asui.uidaho.edu/~collinf/about.html/collinf"><IMG SRC="images/expand-arrow.gif" 
+ WIDTH="20" HEIGHT="20" ALT="[+]" TITLE="" BORDER="0" ALIGN="top"></A>
+<A HREF="http://kuoi.asui.uidaho.edu/~collinf/about.html/collinf"><B>About Collin Forbes</B></A><BR>
+
+    <IMG SRC="images/shim.gif" WIDTH="190" HEIGHT="1" ALT=""></FONT>
+  </TD></TR></TABLE>
+
+  <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0">
+  <TR>
+  <TD>
+<!-- random/install.tmpl -->
+
+<P><B>Edit the random.cgi file</B><BR>
+Make sure the first line of the file points to the Perl 5 executable
+on your web server.  This is usually /usr/bin/perl or /usr/local/bin/perl,
+but it might be /usr/local/bin/perl5 or something else.
+
+<P>Set the "$default_file" variable to a filename on your system
+containing URLs to use as a default.  Be sure to include enough of
+the path for the program to find the file.  On some systems, you may
+be able to use relative paths (beginning with "../"), but you may need
+to use a full path starting with the root directory.  This file will be
+used when you didn't ask for an explicit file as part of the URL.
+
+<P><B>Install random.cgi on your web server</B><BR>
+Put it in a directory where you are allowed to run CGI scripts.
+Usually it's called cgi-bin/ but it may be different on your system.
+Make sure your web server knows how to run it.
+
+<P>On a unix server, this means setting the execute permissions on the file 
+or associating the file extension with the perl interpreter on your Windows
+server.  Set the execute permissions on a unix server by running 
+"<B>chmod&nbsp;755&nbsp;selection.cgi</B>."
+
+
+  </TD></TR>
+  </TABLE>
+
+</TD></TR>
+</TABLE>
+</CENTER>
+</BODY>
+</HTML>
+
