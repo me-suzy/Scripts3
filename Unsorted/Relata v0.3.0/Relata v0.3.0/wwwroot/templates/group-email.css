@@ -1,0 +1,26 @@
+.groupemail
+{
+    position: absolute;
+	top: 8px;
+	left: 8px;
+	background-color: #D4D0C8;
+	border-width: 1px;
+	border-style: outset;
+	border-top-color: #ffffff;
+	border-left-color: #ffffff;
+    color: #000000;
+	width: 78%;
+	padding: 0px;
+}
+
+.grouptext
+{
+   font-size: 10pt;
+   font-family: verdana,arial;
+}
+
+.grouptextsmall
+{
+   font-size: 7pt;
+   font-family: verdana,arial;
+}
