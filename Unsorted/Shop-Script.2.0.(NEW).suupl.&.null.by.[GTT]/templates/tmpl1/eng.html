@@ -1,0 +1,340 @@
+<html>
+
+
+<head>
+
+<link rel=STYLESHEET href="style.css" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>{TITLE}</title>
+		<meta name="Title" content="{TITLE}">
+		<meta name="Description" content="{META}">
+		<meta name="KeyWords" content="{META}">
+</head>
+
+
+<script>
+	function open_window(link,w,h) {
+		var win = "width="+w+",height="+h+",menubar=no,location=no,resizable=yes,scrollbars=yes";
+		newWin = window.open(link,'newWin',win);
+		newWin.focus();
+	}
+	function confirmDelete() {
+		temp = window.confirm('Are you sure you want to unsubscribe?');
+		if (temp) {
+			window.location="index.php?killuser=yes";
+		};
+	}
+	function validate() {
+		if (document.form1.email.value.length<1) {
+			alert("Please input your e-mail");
+			return false;
+		};
+		if (document.form1.email.value == 'Email') {
+			alert("Please input your e-mail");
+			return false;
+		};
+		return true;
+	}
+	function validate_disc() {
+		if (document.formD.nick.value.length<1) {
+			alert("Please input your nickname");
+			return false;
+		};
+
+		if (document.formD.topic.value.length<1) {
+			alert("Please input post subject");
+			return false;
+		};
+
+		return true;
+	}
+	function validate_search() {
+
+		if (document.Sform.price1.value!="" && ((document.Sform.price1.value < 0) || isNaN(document.Sform.price1.value))) {
+			alert("Price should be a positive number");
+			return false;
+		};
+		if (document.Sform.price2.value!="" && ((document.Sform.price2.value < 0) || isNaN(document.Sform.price2.value))) {
+			alert("Price should be a positive number");
+			return false;
+		};
+
+		return true;
+	}
+
+</script>
+
+<body marginwidth=0 marginheight=0 leftmargin=0 topmargin=0>
+
+
+
+
+<table border=0 width=100% cellspacing=0 cellpadding=0 bgcolor=#660F0F>
+
+<tr>
+<td width=1% valign=bottom>
+
+<table cellspacing=0 cellpadding=0 border=0>
+<tr>
+<td valign=bottom><img border=0 src="images/cart1.gif"></td>
+<td valign=bottom><img border=0 src="images/text.gif"></td>
+</tr>
+</table>
+
+</td>
+
+<td align=center colspan=3>
+
+<table width=90%>
+<tr>
+<td align=left>
+<table>
+<tr><td><img src="images/home.gif" border=0></td>
+<td><a class=light href="index.php">Home</a></td></tr>
+</table>
+</td>
+
+<td>
+<table>
+<tr><td><img src="images/price.gif" border=0></td>
+<td><a class=light href="index.php?show_price=yes">Price list</a></td></tr>
+</table>
+</td>
+
+<td>
+<table>
+<tr><td><img src="images/help.gif" border=0></td>
+<td><a class=light href="index.php?aux_page=aux1"><nobr>About us</nobr></a></td></tr>
+</table>
+</td>
+
+</tr>
+<tr>
+
+<td>
+<table>
+<tr><td><img src="images/register.gif" border=0></td>
+<td>{REGISTER/HOME}</td></tr>
+</table>
+</td>
+
+<td>
+<table>
+<tr><td><img src="images/currency.gif" border=0></td>
+<td><a class=light href="index.php?currency=yes">Change currency</a></td></tr>
+</table>
+</td>
+
+<td>
+<table>
+<tr><td><img src="images/order.gif" border=0></td>
+<td><a class=light href="index.php?aux_page=aux2">Shipping and payment</a></td></tr>
+</table>
+</td>
+
+</tr>
+</table>
+
+</td>
+
+<td align=center>
+
+{AUTHORIZATION}
+
+</tr>
+
+</table>
+
+
+
+
+
+
+
+<table border=0 width=100% cellspacing=0 cellpadding=0>
+
+<tr>
+<td bgcolor=#660F0F background="images/search_back.jpg" align=center valign=top>
+
+{SEARCH}
+
+</td>
+
+<td valign=top><img src="images/tr1.gif"></td>
+
+<TD WIDTH=100% VALIGN=TOP ROWSPAN=2>
+
+<br>
+<p>
+{MAIN_CONTENT}
+
+</TD>
+
+
+<td valign=top bgcolor=#660F0F>
+
+<Table cellspacing=0 cellpadding=2 width=100% border=0>
+ <Tr>
+	<Td bgcolor=black>
+		<table>
+		<tr>
+		 <td><img src="images/c.gif"></td>
+		 <td>&nbsp;&nbsp;<a class=light href="javascript:open_window('cart.php',400,300);">
+		     <font color=white>Shopping cart</font></a>
+		 </td>
+		</tr>
+		</table>
+	</Td>
+ </Tr>
+ <Tr>
+	<Td bgcolor=#8A3D3D>
+		<p>
+
+{SHOPPING_CART}
+
+
+	</Td>
+ </Tr>
+</Table>
+
+</tr>
+
+
+
+<tr>
+<td width=1% valign=top bgcolor=white>
+
+
+<table border=0 cellspacing=0 cellpadding=0 width=100% bgcolor=#8A3D3D>
+<tr>
+<td bgcolor=black>
+<table><tr><td><img src="images/pointer.gif"></td><td><b><font color=white>Catalog</font></b></td></tr></table>
+</td>
+</tr>
+<tr><td>
+
+{CATEGORIES}
+
+<tr>
+<td align=right><img src="images/tr3.gif"></td>
+</tr>
+</table>
+
+<br><br>
+
+<center>
+<font color=brown>
+make sure <b>cookies</b> are turned on in your browser!
+</font>
+</center>
+
+<br><br><br><br><br>
+
+</td>
+<td>&nbsp;</td>
+
+
+
+<td width=1% valign=top bgcolor=#660F0F><br> <!-- ïðàâûé ñòîëáåö ñ íîâîñòÿìè, ãîëîñîâàíèÿìè è ò.ä. Ïîêàçûâàòü èõ òîëüêî íà âèòðèíå -->
+
+<Table cellspacing=0 cellpadding=0 width=100%>
+<Tr>
+<Td bgcolor=black><table><tr><td><img src="images/pointer.gif"></td><td><b><font color=white>News</font></b></td></tr></table></Td>
+</Tr>
+<Tr>
+<Td bgcolor=#8A3D3D>
+<TABLE CELLPADDING=4>
+<TR><TD>
+
+<table cellspacing=1>
+<tr>
+
+{NEWS}
+
+</tr>
+</table>
+
+
+<br><br>
+
+</TD></TR></TABLE>
+
+</Td></Tr>
+
+<Tr><Td bgcolor=black>
+
+<table>
+<tr>
+<td><img src="images/pointer.gif"></td>
+<td><b><font color=white>Poll</font></b></td>
+</tr>
+</table>
+
+</Td></Tr>
+
+<Tr><Td bgcolor=#660F0F>
+
+
+{VOTING}
+
+</Td></Tr>
+
+<Tr><Td bgcolor=black>
+<table>
+<tr>
+<td><img src="images/pointer.gif"></td>
+<td><b><font color=white>Language</font></b></td>
+</tr>
+</table>
+</Td></Tr>
+<Tr><Td bgcolor=#660F0F align=center>
+
+
+{LANGUAGE}
+
+
+</Td></Tr></Table>
+
+
+</td></tr>
+
+<tr bgcolor=white>
+<td colspan=3 align=right valign=bottom><img src="images/tr2.gif"></td>
+<td align=center bgcolor=#660F0F>&nbsp;</td>
+</tr>
+
+
+<tr bgcolor=#660F0F>
+<td colspan=3 align=center>
+
+<table cellpadding=5><tr><td align=center>
+<font color=white>
+[ <a class=light href="index.php">Home</a> |
+<a class=light href="javascript:open_window('cart.php',400,300);">Shopping cart</a> |
+<a class=light href="index.php?currency=yes">Change currency</a> |
+<a class=light href="index.php?aux_page=aux1"><nobr>About us</nobr></a> |
+<a class=light href="index.php?aux_page=aux2">Shipping and payment</a> |
+<a class=light href="index.php?show_price=yes">Price list</a> |
+{REGISTER/HOME} ]</font><br>
+
+<font class=average color=#CC9090><i>Copyright © 2001-02, <a class=light href="mailto:info@shop-script.com"><u>Shop-Script 2.0</u></a>. All rights reserved.</i></font><br><br></td>
+
+</tr></table>
+<td>
+
+					<table cellpadding=0 cellspacing=0 width=100% border=0>
+					<tr>
+						<td valign=center align=center><a class=light href="http://www.shop-script.com"><img src="images/ss12.gif" border=0 alt="PHP shopping cart software Shop-Script"></a></font></td>
+					</tr>
+					</table>
+
+</td>
+
+
+</tr>
+</table>
+
+
+
+</body>
+</html>
