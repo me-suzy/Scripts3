@@ -1,0 +1,105 @@
+<HTML>
+<HEAD>
+<TITLE>PHPCart</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+
+<p align="center"><img border="0" src="PHPCart.gif" width="308" height="77">
+<p align="center"><b><font face="Verdana" size="2">BASKET</font></b></p>
+<p align="center">&nbsp;</p>
+<div align="center">
+  <center>
+  <table border="0" cellspacing="1" width="65%">
+    <tr>
+      <td width="100%" bgcolor="#C0C0C0">
+        <div align="center">
+          <table border="0" cellspacing="0" width="100%" cellpadding="0">
+            <tr>
+              <td width="100%" bgcolor="#FFFFFF">
+                <div align="center">
+                  <table border="0" cellspacing="5" width="100%" cellpadding="5">
+                    <tr>
+      <td colspan="6">
+        <p align="center">
+	    <A HREF="phpcart.php?action=view"><img src="images/viewcart_en.gif" border="0"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <A HREF="phpcart.php?action=clear"><img src="images/emptycart_en.gif" border="0" width="111" height="16"></A><BR><BR>
+        </p>
+      </td>
+                    </tr>
+                    <tr>
+	<TH bgcolor="#FF0000" width="45"><font color="#FFFFFF" size="1" face="Verdana"><b>ID</b></font></TH>
+	<TH bgcolor="#FF0000" width="129"><font color="#FFFFFF" size="1" face="Verdana"><b>Description</b></font></TH>
+	<TH bgcolor="#FF0000" width="204"><font color="#FFFFFF" size="1" face="Verdana"><b>Price</b></font></TH>
+	<TH bgcolor="#FF0000" width="204"><font color="#FFFFFF" size="1" face="Verdana"><b>Size</b></font></TH>
+	<TH bgcolor="#FF0000" width="204"><font color="#FFFFFF" size="1" face="Verdana"><b>Color</b></font></TH>
+                    </tr>
+                    <tr><FORM ACTION="phpcart.php" METHOD="post">
+	<TD width="45" valign="middle"><b><font size="1" face="Verdana">1001</font></b></TD><input type="hidden" value="1001" name="id">
+	<TD width="129" valign="middle"><b><font size="1" face="Verdana"> T-Shirt</font></b></TD><input type="hidden" value="T-Shirt" name="descr">
+	<TD width="204" valign="middle"><b><font size="1" face="Verdana">£8.59</font></b></TD><input type="hidden" value="8.59" name="price">
+	<TD width="204" valign="middle">
+        <p><select size="1" name="option1">
+          <option value="Small">Small</option>
+          <option value="Medium">Medium</option>
+          <option value="Large">Large</option>
+        </select></p>
+                      </TD>
+	<TD width="204" valign="middle"><select size="1" name="option2">
+        <option value="Blue">Blue</option>
+        <option value="Green">Green</option>
+        <option value="Red">Red</option>
+        <option value="Purple">Purple</option>
+        <option value="White">White</option>
+      </select></TD>
+	<TD width="112" valign="middle">
+        <p><input type="submit" value="Add to Basket" name="B1"></p></form>
+    </TD>
+                    </tr>
+                    <tr>
+	<TD width="45" valign="middle"><font face="Verdana" size="1"><b>1002</b></font></TD>
+	<TD width="129" valign="middle"><font size="1" face="Verdana"><b>Mobile Phone</b></font></TD>
+	<TD width="204" valign="middle"><b><font size="1" face="Verdana">£39.95</font></b></TD>
+	<TD width="204" valign="middle"></TD>
+	<TD width="204" valign="middle"></TD>
+	<TD width="112" valign="middle"><A HREF="phpcart.php?action=add&id=1002&descr=Mobile%20Phone&price=39.95&postage=2.99&quantity=1"><img src="images/add_cart.gif" border="0"></A></TD>
+                    </tr>
+                    <tr>
+	<TD width="45" valign="middle"><b><font size="1" face="Verdana">1003</font></b></TD>
+	<TD width="129" valign="middle"><b><font size="1" face="Verdana">Music CD</font></b></TD>
+	<TD width="204" valign="middle"><b><font size="1" face="Verdana">£14.99</font></b></TD>
+	<TD width="204" valign="middle"></TD>
+	<TD width="204" valign="middle"></TD>
+	<TD width="112" valign="middle"><A HREF="phpcart.php?action=add&id=1003&descr=Music%20CD&price=14.99&postage=39.95&quantity=1"><img src="images/add_cart.gif" border="0"></A></TD>
+                    </tr>
+                    <tr>
+	<TD width="45" valign="middle"><b><font size="1" face="Verdana">1004</font></b></TD>
+	<TD width="129" valign="middle"><font size="1" face="Verdana"><b>Book</b></font></TD>
+	<TD width="204" valign="middle"><b><font size="1" face="Verdana">£18.89</font></b></TD>
+	<TD width="204" valign="middle"></TD>
+	<TD width="204" valign="middle"></TD>
+	<TD width="112" valign="middle"><A HREF="phpcart.php?action=add&id=1004&descr=Book&price=18.89&quantity=1"><img src="images/add_cart.gif" border="0"></A></TD>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<!-- CyKuH [WTN] -->
+<p align="center">&nbsp;</p>
+<p align="center">
+<CENTER>
+</p>
+</CENTER>
+
+
+</BODY>
+</HTML>
+
+
