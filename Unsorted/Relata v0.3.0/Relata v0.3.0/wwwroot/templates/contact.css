@@ -1,0 +1,91 @@
+/* main div that holds all of the info, several are absolutley positioned on top of each other and controlled by JS tabs */
+.maincontact
+{
+	position: absolute;
+	top: 22px;
+	left: 8px;
+	background-color: #D4D0C8;
+	border-width: 2px;
+	border-top-style: outset;
+	border-left-style: outset;
+	border-right-style: outset;
+	border-bottom-style: outset;
+    color: #000000;
+	width: 97%;
+	padding: 0px;
+
+}
+
+.contact_delete
+{
+	position: relative;
+	background-color: #D4D0C8;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	border-width: 1px;
+	border-style: outset;
+	border-top-color: #ffffff;
+	border-left-color: #ffffff;
+    color: #000000;
+	padding: 0px;
+
+}
+
+/* box that holds all of the group checkboxes */
+#groups
+{
+	width: 150px; 
+	height: 100px; 
+	overflow: auto;
+	background-color: white;
+	border: 3px;
+	border-style: ridge;
+	font-family: verdana;
+	font-size: 10px;
+}
+/* normal tabs */
+.tab-normal
+{
+	display: inline;
+	width: 120px;
+	height: 22px;
+	background: #D4D0C8;
+	padding: 2px;
+	margin: 2px;
+	border: 2px;
+	border-style: outset;
+	text-align: center;
+	font-family: verdana;
+	font-size: 12px;
+	font-weight: bold;
+	cursor: pointer;	/* w3 dom */
+	cursor: hand;		/* ie */
+}
+/* selected tab */
+.tab-selected
+{
+	display: inline;
+	width: 120px;
+	height: 21px;
+	background: #D4D0C8;
+	margin: 2px;
+	border: 2px;
+	border-style: groove;
+	color: #496088;
+	text-align: center;
+	font-family: verdana;
+	font-size: 12px;
+	font-weight: bold;
+	cursor: pointer;	/* w3 dom */
+	cursor: hand;		/* ie */
+}
+
+/* invisible div that holds all of the tabs */
+#tabs
+{
+	z-index: 2; 
+	position: absolute;
+	top: 0px;
+	left: 8px;
+}
