@@ -1,0 +1,252 @@
+<html>
+<head><title>LINE9.com - Tek9 Pro README</title>
+<style>
+A{ie4:bug}
+A:hover{text-decoration:none}
+</style>
+<meta name=generator content="LINE9.com - Tek9 Pro v5.6">
+</head>
+<body bgcolor="#FFFFFF" link="#990000" vlink="#990000">
+<font face="Verdana,Arial" size=2>
+<h3>Setup instructions for LINE9.com - Tek9 Pro v5.6</h3>
+
+<h4>Step 1: Setup the Server</h4>
+<ol type=A>
+<li><b>If you are <a href="http://line9.com/contact/">hosting your software with LINE9</a>, then..</b></li>
+	<ol type=1>
+	<li>Extract all files from the .zip onto your workstation, and open the <b>\db\database.mdb</b> file. Open the Table called TBLGLOBAL. Edit 
+	the field in this Table called HOMEPAGE_URL. The default value in this field is set to an IP address of 127.0.0.1, but you will have to edit 
+	this to the IP address or domain name for <i>your</i> site. example: The HOMEPAGE_URL field could contain: 127.0.0.1, or: myDomain.net, 
+	or: line9.com, or: <i>machinename</i>/cart, etc etc. Get the idea? If not, 
+	<a href="http://line9.com/tek9.asp?pg=support&article=58" title="See a screen shot..">click here</a>.
+	</li>
+	<li>Next, we have to edit the DSN in the <b>\inx\database_connect.inc</b> file. This is the one file which connects your entire application 
+	to the database itself. Our SysAdmin has created the DSN at the server for you, and set it to the name of your domain. Just change the 
+	<font face=Courier>mydsn</font> name that's in that file now, to the name of your domain..<br>
+	example: <font color="#FF0000">If the name of your domain is:</font> <font face=Courier>yourdomain.com</font>, then the name of your DSN 
+	will be: <font face=Courier>yourdomain</font><br>
+	The code in database_connect.inc will look similar to this: <font face=Courier>DSNString = "DSN=yourdomain"</font>
+	</li>
+	<li>Ok, now that's all set, upload all these files and folders (but NOT the \db\ folder!) into your webroot. This is the default directory 
+	that you get logged in to when you use your FTP Client (such as CuteFTP, or Ws_FTP) to login to our servers. Make sure you maintain the 
+	directory structure that the .zip file extracts it's files/folders to! example: \ftproot\, \img\, \inx\, \ssl\, etc. All of these 
+	sub-directories MUST reside under your webroot, just as the .zip file created them for you.
+	</li>
+	<li>NOW, upload your database.mdb file, and the merchant_conf file to your /dbases/<i>yourdomain.com</i>/ location. (our SysAdmin will give 
+	you complete instructions on how to use your FTP client to login and upload your files, and database).
+	</li>
+	<li>Now that you have uploaded your database to its secure place on the server, delete the empty <b>\db\</b> folder off your workstation.
+	</li>
+	</ol>
+<br>
+<li><b>If you are hosting your software yourself (on your own webserver) then..</b></li>
+	<ol type=1>
+	<li>At your workstation; Extract all files from the .zip onto your workstation, and open the <b>\db\database.mdb</b> file. Open the Table 
+	called TBLGLOBAL. Edit the field in this Table called HOMEPAGE_URL. The default value in this field is set to an IP address of 127.0.0.1, 
+	but you will have to edit this to the IP address or domain name for <i>your</i> site. example: The HOMEPAGE_URL field could contain: 
+	127.0.0.1, or: myDomain.net, or: line9.com, or: <i>machinename</i>/cart, etc etc. Get the idea? If not, 
+	<a href="http://line9.com/tek9.asp?pg=support&article=58" title="See a screen shot..">click here</a>.
+	</li>
+	<li>At your workstation; Next, we have to edit the DSN in the <b>\inx\database_connect.inc</b> file. This is the one file which connects your 
+	entire application to the database itself. We will create the actual DSN at the server in a moment. Just change the 
+	<font face=Courier>mydsn</font> name that's in that file now, to the name of your domain..<br>
+	example: <font color="#FF0000">If the name of your domain is:</font> <font face=Courier>yourdomain.com</font>, then the name of your DSN 
+	will be: <font face=Courier>yourdomain</font><br>
+	The code in database_connect.inc will look similar to this: <font face=Courier>DSNString = "DSN=yourdomain"</font>
+	</li>
+	<li>At the server; Share the wwwroot folder (or whatever folder name you gave to your webroot when you installed Internet Information 
+	Server (IIS)) so that you can upload files to it from your workstation.
+	</li>
+	<li>At the server; Next, Set the Default Document(s);
+		<ul>
+		<li><b>If your webserver Operating System is..</b></li>
+		<li><b style="color:#990000">Windows 2000 Server</b>, open your Microsoft Management Console (MMC) and go to the Advanced properties for 
+		your Default Website.
+		</li>
+		<li><b style="color:#990000">Windows NT Server (<a href="http://support.microsoft.com/support/servicepacks/WinNT/4.0/" 
+		title="Get Service Pack 6a..">with SP6a</a>)</b>, then open the Internet Services Manager, and go to the Properties for your Default 
+		Website. The Advanced tab will allow you to enter your Default Documents.
+		</li>
+		<li><i><u>NOW that you have found the Default Document(s) field</u></i>, just enter the following string:<br>
+		<b>tek9.asp, default.asp, default.htm</b>  (these are the default files which your server will look for first, if you just enter a blank 
+		website address such as: www.line9.com/ into your web browser. (the server has to know what file your browser is asking for!))<br><br>
+		</li>
+		</ul>
+	</li>
+	<li>At the server; Next, we need to create a secure location on the webserver for your database file (other than the webroot). example:<br>
+	C:\InetSecure\databases\<i>yourdomain.com</i>\ (Why do this? So that visitors to your website cannot download your database file 
+	right over the web!
+	</li>
+	<li>At the server; Now we have to set the security permissions on the new folder you just created: Open Windows Explorer, right-click 
+	on the folder where your database will be located, click "Properties". Click security, and remove the "Everyone" group from the current 
+	permissions. Click "Add" and select the IUSR_<i>machinename</i> account and give that user Modify/Change permissions. (this 
+	will allow users to add items to their cart), and do the same thing for the IWAM_<i>machinename</i> account. Allow these new permissions 
+	to propogate to all files and sub-folders. Click OK.
+	</li>
+	<li>At the server; Share this new directory over the network too, so that you can upload your database to it from your workstation.
+	</li>
+	<li>At your workstation; Ok, now that's all set, upload all these files and folders (but NOT the \db\ folder!) into your webroot at the 
+	server. Make sure you maintain the directory structure that the .zip file extracted its files/folders to! example: \ftproot\, \img\, \inx\, 
+	\ssl\, etc. All of these sub-directories MUST exist, and reside under your webroot, just as the .zip file created them for you.
+	</li>
+	<li>At your workstation; NOW, upload your database.mdb file, and the merchant_conf file to your new, secured database directory.
+	</li>
+	<li>At your workstation; Now that you have uploaded your database to its secure place on the server, delete the empty <b>\db\</b> folder off your workstation.
+	</li>
+	<li>At the server; Install the object(s) that you will want to use to enhance this software. None of these are required, as your software 
+	will operate just fine without them, but real-time services, gateways, and subscription based vendors require servers to use their objects. 
+	These objects are what enable your webserver to communicate with theirs.
+		<ul>
+		<li><b>\_objects\Cybercash\</b> - Only needed if you use real-time Cybercash gateway to process your credit cards.</li>
+		<li><b>\_objects\FedExapi\</b> - Only needed if you want real-time FedEx integration on your Checkout page.</li>
+		<li><b>\_objects\MDAC\</b> - Only needed if you experience database or ODBC problems on your server.</li>
+		<li><b>\_objects\MightyUp\</b> - Only needed if you want to utilize web-based file upload.. No more FTP!</li>
+		<li>If you can't use MightyUp, then the webserver must have <a href="http://microsoft.com/ie" target="_blank">Microsoft Internet Explorer</a> (IE) v5.0 or later.</li>
+		<li><b>\_objects\MightyZip\</b> - Requires subscription with USPS zip lookup service. Auto-fills (City/State) on your Checkout page.</li>
+		<li><b>\_objects\PayflowPro\</b> - Only needed if you use real-time Verisign Payflow Pro gateway to process your credit cards.</li>
+		<li><b>\_objects\UPSapi\</b> - Only needed if you want real-time UPS integration on your Checkout page.</li>
+		<li><b>\_objects\USPSapi\</b> - Only needed if you want real-time USPS(Postal Service) integration on your Checkout page.</li>
+		</ul>
+	</li>
+	<li>At the server; Next, we need to connect your database.mdb file to your application; The application calls your database by name, so to do 
+	this we:<br>
+	Create a Microsoft Access <a href="http://line9.com/tek9.asp?pg=support&article=39" title="See a screen shot.."><b>System DSN</b></a>, and 
+	point it at your secured database.mdb file on the webserver.. (Start, Settings, Control Panel, ODBC Data Sources), and name the new DSN: 
+	<font face=Courier><b>yourdomain</b></font> (or whatever name you gave to it in your database_connect.inc file). By the way, it's 
+	<b>C</b>ase <b>S</b>ensitive, so be careful!) After you have typed your Data Source Name, browse to, and select the database.mdb file on 
+	the server. All you have to do is double-click on the the .mdb filename, and click OK. Leave everything else set to their defaults. This 
+	makes it so that your application software can refer to your database by name. In this case, the 'name' of your database is now: 
+	<font face=Courier>yourdomain</font>
+	</li>
+	<li>Now, get back to your workstation, it's time to start on your site! :)</li>
+	</ol>
+<br>
+<li><b>If you are hosting your software with some other WebHost (ISP) then..</b></li>
+	<ol type=1>
+	<li>At your workstation; Extract all files from the .zip onto your workstation, and open the <b>\db\database.mdb</b> file. Open the Table 
+	called TBLGLOBAL. Edit the field in this Table called HOMEPAGE_URL. The default value in this field is set to an IP address of 127.0.0.1, 
+	but you will have to edit this to the IP address or domain name for <i>your</i> site. example: The HOMEPAGE_URL field could contain: 
+	127.0.0.1, or: myDomain.net, or: line9.com, or: <i>machinename</i>/cart, etc etc. Get the idea? If not, 
+	<a href="http://line9.com/tek9.asp?pg=support&article=58" title="See a screen shot..">click here</a>.
+	</li>
+	<li>At your workstation; Next, we have to edit the DSN in the <b>\inx\database_connect.inc</b> file. This is the one file which connects your 
+	entire application to the database itself. Your host will tell you what DSN name to use here. Just change the 
+	<font face=Courier>mydsn</font> name that's in that file now, to the name your host gives you..<br>
+	example: <font color="#FF0000">If your host tells you to use a DSN name of:</font> <font face=Courier>yourdomain</font>, then the name of your DSN 
+	will be: <font face=Courier>yourdomain</font><br>
+	The code in database_connect.inc will look similar to this: <font face=Courier>DSNString = "DSN=yourdomain"</font>
+	</li>
+	<li>At your workstation; Ok, now that's all set, upload all these files and folders (but NOT the \db\ folder!) into your webroot at the 
+	server. Make sure you maintain the directory structure that the .zip file extracted its files/folders to! example: \ftproot\, \img\, \inx\, 
+	\ssl\, etc. All of these sub-directories MUST exist, and reside under your webroot, just as the .zip file created them for you.
+	</li>
+	<li>At your workstation; NOW, upload your database.mdb file, and the merchant_conf file to your separate, secured database directory.
+	</li>
+	<li>At your workstation; Now that you have uploaded your database to its secure place on the server, delete the empty <b>\db\</b> folder off your workstation.
+	</li>
+	<li>At the server; Next, Set the Default Document(s);
+		<ul>
+		<li><b>If your webserver Operating System is..</b></li>
+		<li><b style="color:#990000">Windows 2000 Server</b>, open your Microsoft Management Console (MMC) and go to the Advanced properties for 
+		your Default Website.
+		</li>
+		<li><b style="color:#990000">Windows NT Server (<a href="http://support.microsoft.com/support/servicepacks/WinNT/4.0/" 
+		title="Get Service Pack 6a..">with SP6a</a>)</b>, then open the Internet Services Manager, and go to the Properties for your Default 
+		Website. The Advanced tab will allow you to enter your Default Documents.
+		</li>
+		<li><i><u>NOW that you have found the Default Document(s) field</u></i>, just enter the following string:<br>
+		<b>tek9.asp, default.asp, default.htm</b>  (these are the default files which your server will look for first, if you just enter a blank 
+		website address such as: www.line9.com/ into your web browser. (the server has to know what file your browser is asking for!))<br><br>
+		</li>
+		</ul>
+	</li>
+	<li>At the server; Install the object(s) that you will want to use to enhance this software. None of these are required, as your software 
+	will operate just fine without them, but real-time services, gateways, and subscription based vendors require servers to use their objects. 
+	These objects are what enable your webserver to communicate with theirs.
+		<ul>
+		<li><b>\_objects\Cybercash\</b> - Only needed if you use real-time Cybercash gateway to process your credit cards.</li>
+		<li><b>\_objects\FedExapi\</b> - Only needed if you want real-time FedEx integration on your Checkout page.</li>
+		<li><b>\_objects\MDAC\</b> - Only needed if you experience database or ODBC problems on your server.</li>
+		<li><b>\_objects\MightyUp\</b> - Only needed if you want to utilize web-based file upload.. No more FTP!</li>
+		<li>If you can't use MightyUp, then the webserver must have <a href="http://microsoft.com/ie" target="_blank">Microsoft Internet Explorer</a> (IE) v5.0 or later.</li>
+		<li><b>\_objects\MightyZip\</b> - Requires subscription with USPS zip lookup service. Auto-fills (City/State) on your Checkout page.</li>
+		<li><b>\_objects\PayflowPro\</b> - Only needed if you use real-time Verisign Payflow Pro gateway to process your credit cards.</li>
+		<li><b>\_objects\UPSapi\</b> - Only needed if you want real-time UPS integration on your Checkout page.</li>
+		<li><b>\_objects\USPSapi\</b> - Only needed if you want real-time USPS(Postal Service) integration on your Checkout page.</li>
+		</ul>
+	</li>
+	<li>At the server; Next, we need to connect your database.mdb file to your application; The application calls your database by name, so to do 
+	this we:<br>
+	Create a Microsoft Access <a href="http://line9.com/tek9.asp?pg=support&article=39" title="See a screen shot.."><b>System DSN</b></a>, and 
+	point it at your secured database.mdb file on the webserver.. (Start, Settings, Control Panel, ODBC Data Sources), and name the new DSN: 
+	<font face=Courier><b>yourdomain</b></font> (or whatever name you gave to it in your database_connect.inc file). By the way, it's 
+	<b>C</b>ase <b>S</b>ensitive, so be careful!) After you have typed your Data Source Name, browse to, and select the database.mdb file on 
+	the server. All you have to do is double-click on the the .mdb filename, and click OK. Leave everything else set to their defaults. This 
+	makes it so that your application software can refer to your database by name. In this case, the 'name' of your database is now: 
+	<font face=Courier>yourdomain</font>
+	</li>
+	<li>That's it! As long as your server (your WebHost (ISP)) is setup correctly, you have uploaded everything to their correct locations, 
+	and the DSN has been created successfully, then it's time to start on your site!</li>
+	</ol>
+<br>
+<li><b>If you are hosting your software on your workstation (not a true webserver!), then..</b></li>
+	<ol type=1>
+	<li>Note: We do not recommend you try to run this software on Windows 95, ME, or 98 with Microsoft's Personal WebServer (PWS). Why?  Because 
+	PWS has very little support for it, we do not use it, we do not endorse it, nor do we know the configuration of your personal computer, what 
+	versions of Windows and PWS you are running, what drivers you have installed, and will have no idea how to help you when you get errors with 
+	PWS. If you need a place to temporarily host your site while you are building it, then feel free to 
+	<a href="http://line9.com/contact/">contact us</a>, and we will be more than happy to set you up with a free 30 day trial hosting account with 
+	us, so you can at least get your site ready before its actual launch. Thanx!
+	</li>
+	</ol>
+</ol>
+<h4>Step 2: Edit your template and website style file</h4>
+<ol type=A>
+<li>The file you will want to edit to make this software conform with your existing website resides at <b>\inx\template.inc</b>. 
+This file acts as the template, or framework for the pages in your site. There are instructions within that file too, which show you how to integrate the Template with your site.
+</li>
+<li>Lastly, edit your website style file: <b>\inx\style.inc</b>. We have included some example JavaScripts and StyleSheet code if you wish to use it, otherwise just delete 
+what's there and add your own.</li>
+</ol>
+<h4>Step 3: Login to your Intranet, and start adding pages and inventory</h4>
+<ol type=A>
+<li>Use a fairly new web browser such as Internet Explorer v5.0 or later, <a href="http://microsoft.com/ie" target="_blank">free from Microsoft</a>.</li>
+<li>We have included a web-based Intranet for you to be able to login and make changes;<br>
+(much easier than trying to manipulate individual files).<br>
+Login to: <b>http://<i>machinename</i>/ssl/intranet/</b> (this loads your Default Document, whether running this software locally, or remotely)<br>
+username: test<br>
+password: test
+</li>
+<li>(The above login username and password can be edited thru your Intranet also (in the Contacts Editor), OR, directly in your database thru tblContacts).
+</li>
+</ol>
+
+<h4>How do I..? &nbsp;(FAQ)</h4>
+<ul>
+<li><a href="http://line9.com/tek9.asp?pg=search&mode=results&searchBy=Support&srch=how+do+I+host+my+software+with">Host my software with LINE9?</a></li>
+<li><a href="http://line9.com/tek9.asp?pg=search&mode=results&searchBy=Support&srch=how+do+I+upgrade+from+a+previous+version">Upgrade from a previous version of this software?</a></li>
+<li><a href="http://line9.com/tek9.asp?pg=search&mode=results&searchBy=Support&srch=how+do+I+upsize+to+sql+server">Upsize the included database to my Microsoft SQL Server?</a></li>
+<li><a href="http://line9.com/tek9.asp?pg=search&mode=results&searchBy=Support&srch=how+do+I+edit+homepage">Edit my homepage (not a sub-page)?</a></li>
+<li><a href="http://line9.com/tek9.asp?pg=search&mode=results&searchBy=Support&srch=how+do+I+add+dynamic+content+template">Add dynamic content to my template?</a></li>
+<li><a href="http://line9.com/tek9.asp?pg=search&mode=results&searchBy=Support&srch=how+do+I+connect+merchant+account">Connect PayPal, or my bank Merchant Account?</a></li>
+<li><a href="http://line9.com/tek9.asp?pg=search&mode=results&searchBy=Support&srch=how+do+I+notify+customer+product+shipped">Notify my customer when their product(s) have shipped?</a></li>
+<li><a href="http://line9.com/support">Search the Knowledge Base for more..</a></li>
+<li><form action="http://line9.com/tek9.asp?pg=search&mode=results" method=post target="_blank"><input type=text name=srch size=30 maxlength=50><input type=hidden name=searchBy value=Support><input type=submit class=btn value="Search &#187;"></form></li>
+</ul>
+
+For further info, not contained in this document, or the online searchable Knowledge Base, feel free to contact your Support 
+Representative directly with your original Order ID, Order Date, and other Order info.. 
+<p>
+Thank You!<br>
+Team <a href="http://line9.com">LINE9.com</a>
+</font>
+<br>&nbsp;<br>&nbsp;<br>
+</body>
+</html>
+
+
+
+
+
+
+
