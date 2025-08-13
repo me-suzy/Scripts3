@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>$myboardname - Main Shop</title></head>
+<body background="images/bg.jpg" id="bg">
+<center>$header <BR>
+  <table width="98%" border="0" cellspacing="0" cellpadding="0">
+    <tr> 
+      <td background="images/bg2.jpg"> <div align="center">
+	     <BR>
+		 You are currently in slot: 
+		 $mylastchoiceslot2
+	     <BR>
+          Choose the slot to insert the the new item into: 
+        <FORM ACTION="shop-smallitem.php?action=changeslot" METHOD="POST">
+        <INPUT TYPE="HIDDEN" NAME="$action" VALUE="send">
+                        <select name="itemslot">
+                          <option value="useritem1" $itemslot[1]>Slot 1</option>
+                          <option value="useritem2" $itemslot[2]>Slot 2</option>
+                          <option value="useritem3" $itemslot[3]>Slot 3</option>
+                          <option value="useritem4" $itemslot[4]>Slot 4</option>
+                          <option value="useritem5" $itemslot[5]>Slot 5</option>
+						  <option value="useritem6" $itemslot[5]>Slot 6</option>
+						  <option value="useritem7" $itemslot[5]>Slot 7</option>
+						  <option value="useritem8" $itemslot[5]>Slot 8</option>
+                        </select>
+          <font color="white">$session_post
+          <input class="input" name="submit" type="SUBMIT" value="Change slot">
+          </font> 
+        </form>
+		<BR>
+        <font color="#FF0000">$myerror </font><BR>
+        <BR>
+          <table width="95%" border="0" cellspacing="1" cellpadding="2" bgcolor="#000000">
+            <tr> 
+              <td width="10%" background="images/cellpic.gif" height="38">&nbsp;</td>
+              <td width="60%" background="images/cellpic.gif">
+                <div align="Left"><font color="#FFFFFF">Minor Items</font></div>
+              </td>
+              <td width="30%" background="images/cellpic.gif">
+                <div align="right"><font color="#FFFFFF">Price</font></div>
+              </td>
+            </tr>
+<table width="95%" border="0" cellspacing="1" cellpadding="2" bgcolor="#000000">
+  <tr>
+    <td><center>
+          <table width="99%" background="images/cat1.jpg">
+	$shop_items
+          </table></center>
+    </td>
+  </tr>
+</table>
+          <BR>
+          <BR>$footer<BR>
+          <font face="{font}" size=1>Shop and inventory hack by: <b>The Stinger</b> © 2002 <br> 
+           inventory shop hack version: <b>0.98</b></font><BR>
+        </div>
+      </table></td>
+    </tr>
+  </table>
+  <BR><BR>
+</center>
+</body>
+</html>
