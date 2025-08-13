@@ -1,0 +1,5 @@
+Name = Default
+Author = Xnuiem
+Description = The basic light blue gradient with a light blue curved box around the body.
+Menu = 1
+Splash = 0
