@@ -1,0 +1,49 @@
+    <tr> 
+      <td background="images/cellpic.gif" height="30"> 
+        
+    <div align="center"><font color="#FFFFFF">What is your plan of action $challenger?</font></div>
+  </td>
+</tr>
+<tr> 
+      
+  <td background="images/cat1.jpg"> I want to:
+    <form action="arena.php?action=attack&myturn=$myturn" method="POST">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <input type="submit" name="attack" value="attack">
+    </form>
+    <form action="arena.php?action=guard&myturn=$myturn" method="POST">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="submit" name="guard" value="guard">
+    </form>
+    Use one of these items: <font color="#FF0000">$error </font> 
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr> 
+        <td width="50%"> Item1- $useritem1<br>
+          Item2- $useritem2<br>
+          Item3- $useritem3<br>
+          Item4- $useritem4<br>
+          Item5- $useritem5<br>
+          Item6- $useritem6<br>
+          Item7- $useritem7<br>
+          Item8- $useritem8 </td>
+        <td width="50%">
+		<a href="arena.php?action=useitem&item=firstitem&myturn=$myturn">Use 
+          item 1</a><br>
+          <a href="arena.php?action=useitem&item=seconditem&myturn=$myturn">Use 
+          item 2</a><br>
+          <a href="arena.php?action=useitem&item=thirditem&myturn=$myturn">Use 
+          item 3</a><br>
+          <a href="arena.php?action=useitem&item=fourthitem&myturn=$myturn">Use 
+          item 4</a><br>
+          <a href="arena.php?action=useitem&item=fifthitem&myturn=$myturn">Use 
+          item 5</a><br>
+          <a href="arena.php?action=useitem&item=sixthitem&myturn=$myturn">Use 
+          item 6</a><br>
+          <a href="arena.php?action=useitem&item=seventhitem&myturn=$myturn">Use 
+          item 7</a><br>
+          <a href="arena.php?action=useitem&item=eigthitem&myturn=$myturn">Use 
+          item 8</a> </td>
+      </tr>
+    </table>
+  </td>
+    </tr>
