@@ -1,0 +1,20 @@
+
+Hello %name%,
+
+Your account has been activated and you can 
+now start sending emails daily to our list.
+
+Your User Control Panel is located at:
+
+%userpage%
+
+Your login info is as follows:
+
+Username: %username%
+Password: %password%
+
+
+Thanks,
+
+YourSite.com Staff
+
