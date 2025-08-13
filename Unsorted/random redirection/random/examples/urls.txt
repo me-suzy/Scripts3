@@ -1,0 +1,8 @@
+#
+# This file contains URLs, one per line.
+# List a URL multiple times to increase its chances of being used.
+#
+http://kuoi.asui.uidaho.edu/
+http://www.yahoo.com/
+http://www.google.com/
+http://www.lycos.com/
