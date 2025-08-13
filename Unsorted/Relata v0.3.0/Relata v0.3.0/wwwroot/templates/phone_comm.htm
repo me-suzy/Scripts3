@@ -1,0 +1,46 @@
+<html>
+<head>
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="{WWW_DIR}templates/global.css">
+</head>
+<body bgcolor="#D4D0C8" onload="loaded = 'true';">
+
+<div style="text-align: center; font-size: 12px; font-family: verdana; top:0px;">
+<a href="ph_comm.php?session_id={SESSION_ID}&action=incoming&contact_id={CONTACT_ID}" >Incoming Call</a>
+|
+<a href="ph_comm.php?session_id={SESSION_ID}&action=outgoing&contact_id={CONTACT_ID}" >Outgoing Call</a>
+</div>
+
+<form name="ph_comm_form" action="{PHP_SELF}?session_id={SESSION_ID}" method="post">
+<input type="hidden" name="contact_id" value="{CONTACT_ID}">
+<input type="hidden" name="phone_call" value="{PHONE_CALL}">
+<input type="hidden" name="loaded">
+		
+<table align="center" cellpadding="2" cellspacing="0" border="0" >
+<tr>
+	<td align="center" valign="top">
+		<input type="text" size="25" name="ph_comm_notes" class="form">
+	</td>
+	<td>
+		<input type="submit" value="add" name="action" class="form" style="background: #D4D0C8;" />
+	</td>
+</tr>
+ <tr>
+ 	<td align="center" valign="middle" colspan="2">
+		<script type="text/javascript" src="{WWW_DIR}contact/ph_comm.js"></script>
+		<script type="text/javascript">
+			document.writeln('<textarea rows="'+phcommbox_rows+'" cols="'+phcommbox_cols+'" name="ph_comm_textarea" class="form">');
+		</script>{PH_COMM_TEXTAREA}</textarea>
+	</td>
+ </tr>
+</table>
+
+</form>
+
+<script language="Javascript">
+
+{FIELD_FOCUS}
+
+</script>
+
+</body>
+</html>
