@@ -1,0 +1,113 @@
+ <!--DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+ "http://www.w3.org/TR/html4/strict.dtd"-->
+<html>
+<head>
+<title>
+</title>
+
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="{WWW_DIR}templates/global.css">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="{WWW_DIR}templates/group-email.css">
+
+<script type="text/javascript" src="{WWW_DIR}lib/formcheck.js"></script>
+
+<meta http-equiv="Expires" content="Fri, Jun 12 1981 08:20:00 GMT">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+</head>
+<body class="colored">
+
+<div class="groupemail">
+<center>
+<table>
+ <tr>
+ 	<td colspan="3">
+	 <br>
+	 <form method="post" action="group_email_send_test.php">
+	 <input type="hidden" name="session_id" value={SESSION_ID}>
+	 <div align="center">
+	 <table border="0" cellpadding="0" cellspacing="0">
+	  <tr>
+	  	<td>
+		 &nbsp;
+		</td>	   
+	 	<td align=left"> 
+         <table border="0" cellpadding="0" cellspacing="0">		 
+	      <tr align="left"> 
+	      	<td>
+			 <span class="field-titles">From:&nbsp;</span>
+		    </td>
+			<td align="left">
+			 <span class="grouptext">{FROM_NAME}&nbsp;({FROM_EMAIL})</span>
+			</td>
+	      </tr>
+		  <tr>
+		  	<td>
+			 <span class="field-titles">Date:&nbsp;</span>
+			</td>
+			<td>
+			 <span class="grouptext">{DATE}</span>
+			</td>
+		  </tr>
+		  <tr>
+		  	<td>
+			 <span class="field-titles">To:&nbsp;</span>
+			</td>
+			<td>
+			 <input type="text" name="send_to_" value=""><br>
+			</td>
+		  </tr>
+		  <tr>
+		  	<td>
+			 <span class="field-titles">Subject:&nbsp;	</span>
+			</td>
+			<td>
+			 <span class="grouptext">{MSG_SUBJECT}</span>
+			</td>
+		  </tr>
+		 </table>
+		 </td>
+		 <td>
+		  &nbsp;
+		 </td>
+		</td>
+      </tr>
+	  <tr>
+	  	<td colspan="3">
+		 &nbsp;
+		</td>
+	  </tr>
+	  <tr>
+	  	<td>
+		 &nbsp;
+		</td>
+		<td>
+		 <span class="field-titles">message</span><br>
+		 <textarea cols="60" rows="25" wrap="hard">{MSG_BODY}</textarea>
+		</td>
+		<td>
+		 &nbsp;
+		</td>
+	  </tr> 
+      <tr>
+	  	<td>
+		 &nbsp;
+		</td>
+		<td>
+		 <input type="submit" value="send" name="choice" class="form" style="background: #D4D0C8;">
+		 <input type="submit" value="cancel" name="choice" class="form" style="background: #D4D0C8;">
+		</td>
+		<td>
+		 &nbsp;
+		</td>
+	  </tr>
+	 </table>
+	 </form>
+	</td>	 	 
+ </tr>
+</table>
+</center>
+
+</div>
+</body>
+</html>
