@@ -1,0 +1,235 @@
+<html>
+
+<head>
+<title>Documentation: Batch find and replace tool for entire websites.&nbsp; Batch regular
+expression filter</title>
+
+<meta name="Microsoft Border" content="t, default"></head>
+
+<body><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+
+<table border="0" width="33%" cellpadding="0">
+  <tr>
+    <td width="50%"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/" ONCLICK="parent.f=0"><img src="../pix/banners/miniprizm.gif" alt="cgi scripts" border="0" WIDTH="305" HEIGHT="59"></a></font></td>
+    <td width="50%" bgcolor="#FFFFFF"><font color="#000000" face="Arial"><a href="http://www.superscripts.com/ads/rotate.cgi?url=&amp;user=" target="new" ONCLICK="parent.f=0"><img src="http://www.superscripts.com/ads/rotate.cgi?banner=&amp;user=" border="0" width="468" height="60"></a></font></td>
+  </tr>
+</table>
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="16%"><p align="center"><a href="../dsstoday/index.html"><font color="#000000" face="Arial"><img src="../pix/main/news.jpg" alt="CGI NEWS" align="left" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="16%"><p align="center"><a href="../scripts/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/scripts.jpg" alt="CGI Scripts" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../mastergate/index.html"><font color="#000000" face="Arial"><img src="../pix/main/access.jpg" alt="Access The CGI Archive" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../contact.html"><font color="#000000" face="Arial"><img src="../pix/main/contact.jpg" alt="Contact Superscripts" WIDTH="104" HEIGHT="68"></font></a></td>
+    <td width="17%"><p align="center"><a href="../support.html"><font color="#000000" face="Arial"><img src="../pix/main/dox.jpg" alt="CGI Documentation" WIDTH="105" HEIGHT="65"></font></a></td>
+    <td width="17%"><p align="center"><a href="../download/index.shtml"><font color="#000000" face="Arial"><img src="../pix/main/download.jpg" alt="Download CGI Scripts Here" align="right" WIDTH="105" HEIGHT="65"></font></a></td>
+  </tr>
+  <tr>
+    <td width="16%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/dsstoday/index.html" style="color: rgb(255,255,255)"><strong>News</strong></a></font></td>
+    <td width="16%" bgcolor="#000000"><p align="center"><a href="/scripts/" style="color: rgb(255,255,255)"><font face="Arial" color="#FFFFFF"><strong>CGI Scripts</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><a style="color: rgb(255,255,255)" href="../mastergate/index.html"><font face="Arial" color="#FFFFFF"><strong>Become A Member</strong></font></a></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../contact.html"><strong>Contact
+    Us</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" style="color: rgb(255,255,255)" href="../support.html"><strong>Support</strong></a></font></td>
+    <td width="17%" bgcolor="#000000"><p align="center"><font face="Arial" color="#FFFFFF"><a ONCLICK="parent.f=0" href="/download/index.shtml" style="color: rgb(255,255,255)"><strong>Download
+    Area</strong></a></font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top">
+
+<table border="0" width="79%" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <p><big><big><strong><font face="Arial" color="#FF0000">Documentation<br>
+      </font></strong><font color="#000000" face="Arial">REGEXFILTER:&nbsp; V1.1</font></big></big></p>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>Copyright 2001 Psybercore, Inc. - All Rights
+        Reserved. </small></font></p>
+      </blockquote>
+      <blockquote>
+        <p><small><font color="#000000" face="Arial">Selling redistributing or modifying any or
+        all of the code for this program without prior written consent is expressly forbidden. You
+        must obtain written permission before redistributing this software over the Internet or in
+        any other medium. In all cases copyright and header information must remain intact.</font></small></p>
+      </blockquote>
+      <hr align="left">
+      <p><big><strong><font color="#000000" face="Arial">System Requirements</font></strong> </big><ul>
+        <li><font color="#000000" face="Arial"><small>Perl 5</small></font></li>
+        <li><font color="#000000" face="Arial"><small>Ability to run cgi scripts outside of your
+          cgi-bin</small></font></li>
+        <li><font color="#000000" face="Arial"><small>Telnet is nice but not required</small></font></li>
+      </ul>
+      <h2><font color="#000000" face="Arial"><small>Preliminaries</small></font></h2>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>Determine the path to PERL 5 on your web
+          server host.&nbsp; Note that some web hosting companies run both PERL 4 and PERL 5.&nbsp;
+          Make ABSOLUTELY sure you are not setting this up under PERL 4.&nbsp; Ask your
+          administrator if you are not sure. </small></font></li>
+      </ul>
+      <ul>
+        <li><a href="../../tutorial/index.html"><font color="#000000" face="Arial"><small>If you
+          need to review or learn the basics of CGI and Perl visit the tutorial</small></font></a></li>
+      </ul>
+      <ul>
+        <li><a href="../download/index.shtml"><font color="#000000" face="Arial"><small>Download the
+          tarfile for this program and save it to your desktop.</small></font></a></li>
+      </ul>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>Unpack the tar archive on your desktop using a
+          program that unpacks UNIX TAR ARCHIVES. If you don't have such a program then download
+          WINZIP FREE from <a HREF="http://www.shareware.com/">SHAREWARE.COM</a>.&nbsp; </small></font></li>
+      </ul>
+      <ul>
+        <li><font color="#000000" face="Arial"><small>After you have unpacked the TAR archive you
+          will have a collection of folders and files on your desktop.&nbsp; Now you have to do some
+          basic editing of each of these files (or at least some of them).&nbsp; Use a text editor
+          such as wordpad, notepad, BBEdit, simpletext, or teachtext to edit the files.&nbsp; These
+          are NOT WORD PROCESSOR DOCUMENTS they are just simple TEXT files so don't save them as
+          word processor documents or save them with extensions such as .txt or they will NOT WORK.
+          &nbsp; Note that there may be a some files inside of folders which are &quot;blank&quot;.
+          &nbsp; This is normal.</small></font></li>
+      </ul>
+      <h2><font color="#000000" face="Arial"><small>Preparing the CGI scripts</small></font></h2>
+      <blockquote>
+        <h2><small><font face="Arial" color="#FF0000"><small>Define Path To PERL 5</small></font></small></h2>
+      </blockquote>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>The first step is to open up each and every
+        file that has a .cgi extention and edit line number one of each script.&nbsp; Each of the
+        cgi scripts is written in perl 5. For your scripts to run they must know where perl 5 is
+        installed on your web server. The path to perl 5 is defined to a cgi script in the first
+        line of the file. In each of the cgi scripts the first line of code looks something like
+        this: </small></font></p>
+        <blockquote>
+          <p><font face="Arial" color="#FF0000"><small>#!/usr/bin/perl</small></font></p>
+        </blockquote>
+        <p><font color="#000000" face="Arial"><small>If the path to perl 5 on your web server is
+        different from /usr/bin/perl you must edit the first line of each cgi script to reflect
+        the correct path. If the path to perl 5 is the same no changes are necessary. If you do
+        not know the path to perl 5 ask the webmaster or system administrator at your server site.
+        &nbsp; </small></font></p>
+      </blockquote>
+      <p><font color="#000000" face="Arial"><big><strong>Configure the .cgi files</strong></big></font></p>
+      <blockquote>
+        <p><font face="Arial" color="#FF0000"><big>filter.cgi</big></font></p>
+      </blockquote>
+      <blockquote>
+        <p><font color="#000000" face="Arial"><small>This is the only file you need to edit.</small></font><font SIZE="2"><ul>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">@validsuffix = (htm,html,shtml);</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$rooturl=&quot;http://www.yourdomain.com/path/to/directory/to/spider/from/&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$pathroot =
+            &quot;/full/path/to/root/html/directory/of/domain&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$urltopath =
+            &quot;http://www.yourdomain.com&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$spiderfile =
+            &quot;/full/path/to/files.txt&quot;;</font><font SIZE="2"></li>
+          <li></font><font face="Arial" color="#FF0000" SIZE="2">$urllistfile =
+            &quot;/full/path/to/urls.txt&quot;;</font><font SIZE="2"></li>
+        </ul>
+        </font><ul>
+          <font SIZE="2">
+          <li></font><font face="Arial" color="#000000" size="2">@validsuffix is a comma separated
+            list of the file types you want the script to filter.&nbsp; In this configuration
+            (htm,html,shtml) page1.htm, page2.html, page2.shtml would all be targeted by the cgi
+            script.&nbsp; Another example (htm,html,shtml,txt) would also filter anything.txt</font><font size="3"></li>
+          <li></font><font face="Arial" color="#000000" size="2">$rooturl is the URL to the location
+            of the filter.cgi directory</font><font size="3"></li>
+          <li></font><font face="Arial" color="#000000" size="2">$pathroot is the FULL PATH to the
+            ROOT HTML directory of your domain.&nbsp; Note that it is NOT the FULL PATH to the
+            INSTALLATION directory.</font><font size="3"></li>
+          <li></font><font face="Arial" color="#000000" size="2">$urltopath is just your root URL - DO
+            NOT END THIS WITH A BACKSLASH!</font><font size="3"></li>
+          <li></font><font face="Arial" color="#000000" size="2">$spiderfile is the full path to
+            files.txt.&nbsp; After the script runs files.txt will contain a list of the paths to each
+            file spidered.</font><font size="3"></li>
+          <li></font><font face="Arial" color="#000000" size="2">$urllistfile is the full path to
+            urls.txt.&nbsp; After the script runs urls.txt will contain a list of all the urls hit by
+            the spider</font><font SIZE="2"><font face="Arial" color="#000000">.</font></li>
+          </font>
+        </ul>
+      </blockquote>
+      <h2><font face="Arial" color="#000000"><small>Upload Your Edited Files and Setup for
+      Execution</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Upload all of the files into the directory you
+          want to spider from.&nbsp; The spider will seek into every subdirectory from this point
+          inwards until it has hit every file.</small></font></li>
+        <li><font face="Arial" color="#000000"><small>Chmod filter.cgi to 755, Chmod urls.txt and
+          files.txt to 666 or 777</small></font></li>
+        <li><font face="Arial" color="#000000"><small>If you want to run this from the browser you
+          may have to set the permissions of your html files or spider targets to 666 or 777. &nbsp;
+          This is not really convenient from ftp but is extremely simple to do by telnet. &nbsp; If
+          you don't have telnet access try using our <a href="../scripts/vtelnet.html">virtual
+          telnet program</a>.&nbsp; To chmod all files from a directory and all those in its
+          included subdirectories use the &quot;recursive&quot; chmod command.&nbsp; Examples follow
+          below:</small></font><ul>
+            <li><font face="Arial" color="#FF0000"><small>chmod -R -f 777 *htm*</small></font></li>
+            <li><font face="Arial" color="#FF0000"><small>chmod -R -f 666 *htm*</small></font></li>
+            <li><font face="Arial" color="#FF0000"><small>chmod -R -f 777 *</small></font></li>
+          </ul>
+        </li>
+        <li><font face="Arial" color="#000000"><small>Note that the * is a wildcard and doing a
+          recursive chmod such as *htm* will keep you from frying your cgi script permissions
+          accidentally</small></font></li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Execute the CGI Script</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>To execute from the browser simply type in the
+          URL to filter.cgi and hit &quot;enter&quot;</small></font></li>
+        <li><font face="Arial" color="#000000"><small>To execute from virtual telnet or real telnet
+          the command would be</small></font><ul>
+            <li><font face="Arial" color="#FF0000"><small>cd /path/to/filter.cgi;perl filter.cgi</small></font></li>
+          </ul>
+        </li>
+      </ul>
+      <h2><font face="Arial" color="#000000"><small>Modifying the CGI Script for Other
+      Applications</small></font></h2>
+      <ul>
+        <li><font face="Arial" color="#000000"><small>Before executing this script it is HIGHLY
+          ADVISED that you backup your site just in case you do something stupid accidentally!</small></font></li>
+        <li><font face="Arial" color="#000000"><small>The default setup is set to search out and
+          delete all useless tags Microsoft FrontPage generates in your HTML.&nbsp; To perform a
+          different search and replace, or search and delete, edit the filter.cgi subroutine called
+          &quot;nukemicrosoft&quot;.&nbsp; Find the line inside of filter.cgi that looks like this</small></font><ul>
+            <li><font SIZE="2" color="#FF0000" face="Arial">$lines=~ s/&lt;!--msnavigation--&gt;//g;</font></li>
+          </ul>
+        </li>
+        <li><font face="Arial" color="#000000"><small>These are the lines that do the actual search
+          &amp; replace functions.&nbsp; You can add more lines if you want.&nbsp; There are 2 lines
+          in the default version.</small></font></li>
+        <li><small><font face="Arial" color="#000000">The format is simply $lines =~ s/</font><font face="Arial" color="#FF0000">SEEK</font><font face="Arial" color="#000000">/</font><font face="Arial" color="#8000FF">REPLACEWITH</font><font face="Arial" color="#000000">/g;</font></small></li>
+        <li><small><font face="Arial" color="#000000">Each $lines command you add will substitute
+          every occurrence of </font><font face="Arial" color="#FF0000">SEEK</font><font face="Arial" color="#000000"> with </font><font face="Arial" color="#8000FF">REPLACEWITH</font></small></li>
+        <li><small><font face="Arial">If you want to simply DELETE phrases just make </font><font face="Arial" color="#8000FF">REPLACEWITH </font><font face="Arial" color="#000000">blank
+          like so $lines =~ s/</font><font face="Arial" color="#FF0000">SEEK</font><font face="Arial" color="#000000">//g;</font></small></li>
+        <li><font face="Arial" color="#000000"><small>Here are 2 additional examples.&nbsp; The
+          first one replaces all instances of an old phone number (111-111-1111) with a new one
+          (222-222-2222).&nbsp; The second example deletes all instances of the phrase &quot;brand
+          new&quot;.</small></font><ul>
+            <li><font SIZE="2" color="#FF0000" face="Arial">$lines=~ s/111-111-1111/222-222-2222/g;</font></li>
+            <li><font SIZE="2" color="#FF0000" face="Arial">$lines=~ s/brand new//g;</font></li>
+          </ul>
+        </li>
+        <li><font size="2" face="Arial" color="#000000">One final note is you can use this with a
+          crontab file if you publish on a regular basis</font></li>
+        <li><font size="2" face="Arial" color="#000000">Another application is you can use this to
+          rotate keywords on your site like so:</font><ul>
+            <li><font size="2" face="Arial" color="#000000">Setup for example 3 installs of the script
+              (filter1.cgi, filter2.cgi, filter3.cgi:files1.txt,files2.txt,files3.txt,etc...)</font></li>
+            <li><font size="2" face="Arial" color="#000000">Setup the crontab file to run each version
+              at unique times say filter1.cgi on Monday, 2 on Wed, etc)</font></li>
+            <li><font size="2" face="Arial" color="#000000">That way each time those search engine
+              spiders hit your site you will get different results and weightings</font></li>
+          </ul>
+        </li>
+        <li><font size="2" face="Arial" color="#000000">These are just a few ideas of how you can
+          use this powerful script.&nbsp; The rest is up to your imagination and creativity!</font></li>
+      </ul>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
