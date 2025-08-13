@@ -1,0 +1,146 @@
+<h2>Còàòèñòèêà ïî ÷àñàì çà $in{date} $rusmonth{$in{month}} $in{year}</h2>
+<table width="100%" cellpadding=8 cellspacing=1>
+  <tr> 
+    <td width="350" valign="top">
+    <img src="/cgi-bin/statpro/grstat.cgi?go=hourly">
+Âñåãî çà $in{date} $rusmonth{$in{month}} $in{year}:<br>
+&nbsp;&#149;&nbsp;õîñòîâ: <b>$totimp</b><br>
+&nbsp;&#149;&nbsp;õèòîâ: <b>$totimpall</b><br>
+        <p><b>Âûáåðèòå äàòó:</b></p>
+       <form action="view.cgi" method=POST>
+	    <table>
+          <tr>
+            <td>
+              <input type=text name=date size=2 value="$in{date}">
+              <select name="month">
+                <option $selected{Jan} value="Jan">ßíâàðü</option>
+                <option $selected{Feb} value="Feb">Ôåâðàëü</option>
+                <option $selected{Mar} value="Mar">Ìàðò</option>
+                <option $selected{Apr} value="Apr">Àïðåëü</option>
+                <option $selected{May} value="May">Ìàé</option>
+                <option $selected{Jun} value="Jun">Èþíü</option>
+                <option $selected{Jul} value="Jul">Èþëü</option>
+                <option $selected{Aug} value="Aug">Àâãóñò</option>
+                <option $selected{Sep} value="Sep">Ñåíòÿáðü</option>
+                <option $selected{Oct} value="Oct">Îêòÿáðü</option>
+                <option $selected{Nov} value="Nov">Íîÿáðü</option>
+                <option $selected{Dec} value="Dec">Äåêàáðü</option>
+              </select>
+                <input type=text name=year value=$in{year} size=4>
+            </td>
+            <td>
+              <input type="submit" value="Ïîêàçàòü">
+            </td>
+          </tr>
+        </table></form>
+    </td>
+    <td valign="top">
+      <table border="0" width="100%" cellpadding="3" cellspacing=1>
+        <tr> 
+          <td width="15%" bgcolor="#f0f0f0"><b>Âðåìÿ</b></td>
+          <td width="20%" bgcolor="#f0f0f0">&nbsp;</td>
+          <td width="5%" bgcolor="#f0f0f0">&nbsp;</td>
+          <td width="15%" bgcolor="#f0f0f0"><b>Âðåìÿ</b></td>
+          <td width="20%" bgcolor="#f0f0f0">&nbsp;</td>
+          <td width="5%" bgcolor="#f0f0f0">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td>0:00</td>
+          <td align=center><small><b>$dimpall[0] / $dimp[0]</b></small></td>
+          <td>$pr[0]</td>
+          <td>12:00</td>
+          <td align=center><small><b>$dimpall[12] / $dimp[12]</b></small></td>
+          <td>$pr[12]</td>
+        </tr>
+        <tr> 
+          <td>1:00</td>
+          <td align=center><small><b>$dimpall[1] / $dimp[1]</td>
+          <td>$pr[1]</td>
+          <td>13:00</td>
+          <td align=center><small><b>$dimpall[13] / $dimp[13]</div></td>
+          <td>$pr[13]</td>
+        </tr>
+        <tr> 
+          <td>2:00</td>
+          <td align=center><small><b>$dimpall[2] / $dimp[2]</b></small></td>
+          <td>$pr[2]</td>
+          <td>14:00</td>
+          <td align=center><small><b>$dimpall[14] / $dimp[14]</b></small></td>
+          <td>$pr[14]</td>
+        </tr>
+        <tr> 
+          <td>3:00</td>
+          <td align=center><small><b>$dimpall[3] / $dimp[3]</b></small></td>
+          <td>$pr[3]</td>
+          <td>15:00</td>
+          <td align=center><small><b>$dimpall[15] / $dimp[15]</b></small></td>
+          <td>$pr[15]</td>
+        </tr>
+        <tr> 
+          <td>4:00</td>
+          <td align=center><small><b>$dimpall[4] / $dimp[4]</b></small></td>
+          <td>$pr[4]</td>
+          <td>16:00</td>
+          <td align=center><small><b>$dimpall[16] / $dimp[16]</b></small></td>
+          <td>$pr[16]</td>
+        </tr>
+        <tr> 
+          <td>5:00</td>
+          <td align=center><small><b>$dimpall[5] / $dimp[5]</b></small></td>
+          <td>$pr[5]</td>
+          <td>17:00</td>
+          <td align=center><small><b>$dimpall[17] / $dimp[17]</b></small></td>
+          <td>$pr[17]</td>
+        </tr>
+        <tr> 
+          <td>6:00</td>
+          <td align=center><small><b>$dimpall[6] / $dimp[6]</b></small></td>
+          <td>$pr[6]</td>
+          <td>18:00</td>
+          <td align=center><small><b>$dimpall[18] / $dimp[18]</b></small></td>
+          <td>$pr[18]</td>
+        </tr>
+        <tr> 
+          <td>7:00</td>
+          <td align=center><small><b>$dimpall[7] / $dimp[7]</b></small></td>
+          <td>$pr[7]</td>
+          <td>19:00</td>
+          <td align=center><small><b>$dimpall[19] / $dimp[19]</b></small></td>
+          <td>$pr[19]</td>
+        </tr>
+        <tr> 
+          <td>8:00</td>
+          <td align=center><small><b>$dimpall[8] / $dimp[8]</b></small></td>
+          <td>$pr[8]</td>
+          <td >20:00</td>
+          <td align=center><small><b>$dimpall[20] / $dimp[20]</b></small></td>
+          <td>$pr[20]</td>
+        </tr>
+        <tr> 
+          <td>9:00</td>
+          <td align=center><small><b>$dimpall[9] / $dimp[9]</b></small></td>
+          <td>$pr[9]</td>
+          <td>21:00</td>
+          <td align=center><small><b>$dimpall[21] / $dimp[21]</b></small></td>
+          <td>$pr[21]</td>
+        </tr>
+        <tr> 
+          <td>10:00</td>
+          <td align=center><small><b>$dimpall[10] / $dimp[10]</b></small></td>
+          <td>$pr[10]</td>
+          <td>22:00</td>
+          <td align=center><small><b>$dimpall[22] / $dimp[22]</b></small></td>
+          <td>$pr[22]</b></small></td>
+        </tr>
+        <tr> 
+          <td>11:00</td>
+          <td align=center><small><b>$dimpall[11] / $dimp[11]</b></small></td>
+          <td>$pr[11]</td>
+          <td>23:00</td>
+          <td align=center><small><b>$dimpall[23] / $dimp[23]</b></small></td>
+          <td>$pr[23]</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
