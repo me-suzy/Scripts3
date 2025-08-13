@@ -1,0 +1,151 @@
+<!--
+
+Placeholders available on this page:
+
+homepage_url	- URL of homepage directory
+listing_url	- URL of listing directory
+search_url	- URL of search engine
+
+images		- list of images (created using templatecells)
+file		- image filename (used in "image" templatecell)
+
+hfieldX		- homepage field value of field X, X is a number from 1 to 50
+hfieldX_ue	- homepage field value of field X url encoded for use in links
+
+user_num	- user number
+user_name	- user name
+user_name_ue	- user name (url encoded)
+user_file	- user homepage filename
+
+Templatecells on this page:
+
+image		- displayed for each homepage images
+no_images	- displayed if there are no homepage images
+
+-->
+
+<html><head>
+ <title>$user_name$</title>
+ <meta name="robots" content="index,follow">
+</head>
+<BODY bgcolor="#FFFFFF" TEXT="#000000" LINK="#000066" VLINK="#000066" alink="#000066">
+
+<center>
+
+<table border=0 cellspacing=0 cellpadding=2 width=590>
+ <tr>
+  <td>
+   <font face="arial,ms sans serif" size="4"><b>Your Real Estate</b></font>
+   <hr size=1>
+   <div align=right>
+   <font face="ms sans serif" size=1>
+   <a href="$homepage_url$">Our Agents</a> -
+   <a href="$listing_url$">Our Listings</a> -
+   <a href="$search_url$">Search Listings</a>
+   </font><br>
+   </div>
+  </td>
+ </tr>
+</table>
+
+<table border=0 cellspacing=0 cellpadding=0 width=580>
+ <tr><td><font face="arial,ms sans serif" size=3><b>Our Agents : $user_name$</b></font></td></tr>
+</table>
+
+<p><table border=0 cellspacing=0 cellpadding=2 width=590>
+ <tr>
+  <td rowspan=20 valign=top align=center width=165>
+
+<!-- template insert : $images$ -->
+
+<!-- templatecell : image -->
+<p><img src="./images/$file$" border=1 width=150 alt="Photo"><br>
+<font face="ms sans serif" size=1>$desc$</font><br>
+<!-- /templatecell : image -->
+
+<!-- templatecell : no_images -->
+<p>
+<table border=1 cellspacing=0 cellpadding=0 width=140 height=100>
+ <tr>
+  <td bgcolor="#EEEEEE" align=center><font face="tahoma,arial" size=4><b>Photo<br>Not<br>Available</b></font></td>
+ </tr>
+</table>
+<!-- /templatecell : no_images -->
+ 
+  </td>
+  <td valign=top>
+
+  <font face="ms sans serif" size=3><b>$user_name$</b></font>
+
+<table border=0 cellspacing=0 cellpadding=2 width=100%>
+ <tr>
+  <td width=1%><font face="ms sans serif" size=2>Specialty:&nbsp;</font></td>
+  <td><font face="ms sans serif" size=2>$hfield1$</font></td>
+ </tr>
+ <tr>
+  <td valign=top><font face="ms sans serif" size=2>Background:&nbsp;</font></td>
+  <td>
+   <font face="ms sans serif" size=2>$hfield2$</font></td>
+ </tr>
+ <tr>
+  <td><font face="ms sans serif" size=2>Phone:&nbsp;</font></td>
+  <td><font face="ms sans serif" size=2>$hfield3$</font></td>
+ </tr>
+ <tr>
+  <td><font face="ms sans serif" size=2>Fax:&nbsp;</font></td>
+  <td><font face="ms sans serif" size=2>$hfield4$</font></td>
+ </tr>
+ <tr>
+  <td><font face="ms sans serif" size=2>Cell:&nbsp;</font></td>
+  <td><font face="ms sans serif" size=2>$hfield5$</font></td>
+ </tr>
+ <tr>
+  <td><font face="ms sans serif" size=2>Pager:&nbsp;</font></td>
+  <td><font face="ms sans serif" size=2>$hfield6$</font></td>
+ </tr>
+ <tr>
+  <td><font face="ms sans serif" size=2>Email:&nbsp;</font></td>
+  <td><font face="ms sans serif" size=2><a href="mailto:$hfield7$">$hfield7$</a></font></td>
+ </tr>
+ <tr>
+  <td><font face="ms sans serif" size=2>Listings:&nbsp;</font></td>
+  <td><font face="ms sans serif" size=2><a href="$search_url$?user_num=$user_num$&search=1">View my listings</a></font></td>
+ </tr>
+</table>
+
+<!-- about this page -->
+<p><table border=1 cellspacing=0 cellpadding=4>
+ <tr>
+  <td bgcolor="#EEEEEE">
+   <font face="ms sans serif" size=2>This area can be customized for any
+   advertising you may have, including mortgage companies or insurance
+   companies. This also generates income to offset hosting services.<br>
+
+   </font>
+  </td>
+ </tr>
+</table>
+
+<!-- /about this page -->
+
+</td></tr></table>
+
+<p><hr size=1 width=590>
+<table border=0 cellspacing=0 cellpadding=2 width=590>
+ <tr>
+  <td valign=top>
+   <font face="ms sans serif" size=1>
+   ABC Real Estate Corporation<br>
+   123 Anystreet, Anytown, USA<br>
+   1-800-555-5555<br>
+   </font><br>
+  </td>
+  <td align=right valign=top>
+   <font face="ms sans serif" size=1>
+    Copyright &copy; 1999 ABC Real Estate Corp.<br>
+   </font><br>
+  </td>
+ </tr>
+</table>
+
+</body></html>
