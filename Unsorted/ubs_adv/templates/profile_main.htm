@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>$master_board_name - Control Panel of $user_name</title>
+$headinclude
+</head>
+
+<body bgcolor="{pagebgcolor}" text="{fontcolorfirst}"{hgpicture}{bgproperties} id="bg">
+        $header
+                <tr bgcolor="{tableb}" id="tableb">
+			<td><table cellpadding=0 cellspacing=0 border=0 width="100%">
+				<tr>
+					<td><font face="{font}" size=1><b><a href="main.php?styleid=$styleid$session" class="link">$master_board_name</a> » Control Panel of $user_name</b></font></td>
+					<td align="right"><font face="{font}" size=1><b>$navibar_hello</b></font></td>
+				</tr>
+			</table></td>
+		</tr>
+		</table><br>
+		<table border=0 bgcolor="{tablebordercolor}" cellpadding=4 cellspacing=1 width=100%>
+                        <tr bgcolor="{tablea}" id="title">
+                                <TD><FONT face="{font}" size=2 color="{fontcolorsecond}"><B>Summary</B></font></td>
+                        </tr>
+                        <tr bgcolor="{tablec}" id="tablec">
+                                <td><table width="100%">
+                                        <tr>
+                                        <td><table border="0" cellpadding="0" cellspacing="0" width="100"><tr><td bgcolor="{pagebgcolor}">
+                                                <table width="100%" cellpadding=2 cellspacing=1 border=0 bgcolor="{tablebordercolor}">
+                                                        <tr bgcolor="{tablea}" id="title">
+                                                                <td align="center" nowrap><FONT face="{font}" size=1 color="{fontcolorsecond}"><B>Buddy List</B></font></td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td align="center" bgcolor="{tableb}" id="tableb" width="100%"><table width="100%" border=0 cellpadding=2 cellspacing=0>
+                                                                        <tr>
+                                                                                <td width="50%" valign="middle"><hr></td>
+                                                                                <td nowrap valign="middle">&nbsp;<FONT face="{font}" size=1><b>Online</b></font>&nbsp;</td>
+                                                                                <td width="50%" valign="middle"><hr></td>
+                                                                        </tr>
+                                                                </table>
+                                                                <font face="{font}" size=1><b>$online</b></font>
+                                                                <table width="100%" border=0 cellpadding=2 cellspacing=0>
+                                                                        <tr>
+                                                                                <td width="50%" valign="middle"><hr></td>
+                                                                                <td nowrap valign="middle">&nbsp;<FONT face="{font}" size=1><b>Offline</b></font>&nbsp;</td>
+                                                                                <td width="50%" valign="middle"><hr></td>
+                                                                        </tr>
+                                                                </table>
+                                                                <font face="{font}" size=1><b>$offline</b></font></td>
+                                                        </tr>
+                                                </table>
+                                        </td></tr></table></td>
+                                        <td><table align="left">
+                                        <tr>
+                                                <td align="center"><img src="images/profile_edit.gif"></td>
+                                                <td><FONT face="{font}" size=2><b><a href="profile.php?mode=editprofile$session">» Edit Profile</a></b><br><font size=1>Show your information to others.</font></font></td>
+                                        </tr>
+                                        <tr>
+                                                <td align="center"><img src="images/profile_signatur.gif"></td>
+                                                <td><FONT face="{font}" size=2><b><a href="profile.php?mode=editsignature$session">» Edit Signature</a></b><br><font size=1>Edit your personal signature.</font></font></td>
+                                        </tr>
+                                        <tr>
+                                                <td align="center"><img src="images/profile_options.gif"></td>
+                                                <td><FONT face="{font}" size=2><b><a href="profile.php?mode=editoptions$session">» Edit Options</a></b><br><font size=1>Options which makes it easier for you to use this board.</font></font></td>
+                                        </tr>
+                                        <tr>
+                                                <td align="center"><img src="images/profile_pw.gif"></td>
+                                                <td><FONT face="{font}" size=2><b><a href="profile.php?mode=changepw$session">» Change Password</a></b><br><font size=1>If you want to change your password do it here.</font></font></td>
+                                        </tr>
+                                        <tr>
+                                                <td align="center"><img src="images/profile_buddy.gif"></td>
+                                                <td><FONT face="{font}" size=2><b><a href="profile.php?mode=buddy$session">» Buddy List</a></b><br><font size=1>Edit your buddy list.</font></font></td>
+                                        </tr>
+                                        <tr>
+                                                <td align="center"><img src="images/profile_ignore.gif"></td>
+                                                <td><FONT face="{font}" size=2><b><a href="profile.php?mode=ignore$session">» Ignore List</a></b><br><font size=1>Edit your ignore list.</font></font></td>
+                                        </tr>
+                                        <tr>
+                                                <td align="center"><img src="images/profile_mark.gif"></td>
+                                                <td><FONT face="{font}" size=2><b><a href="profile.php?mode=subscripe$session">» Favorites</a></b><br><font size=1>Here you can see your favorite topics and posts.</font></font></td>
+                                        </tr>
+                                        <tr>
+                                                <td align="center"><img src="images/profile_avatar.gif"></td>
+                                                <td><FONT face="{font}" size=2><b><a href="profile.php?mode=avatars$session">» Avatars</a></b><br><font size=1>Avatars are small images, which are shown under your username in every post.</font></font></td>
+                                        </tr>$profile_pmlink
+                                </table></td></tr></table></td>
+                        </tr>
+                </table>
+                <table width="100%">
+                        <tr>
+                                <td align="right">$board_jump</td>
+                        </tr>
+                </table>
+        </div>
+        $footer
+</body>
+</html>
