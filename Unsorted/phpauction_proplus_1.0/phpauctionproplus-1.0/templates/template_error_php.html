@@ -1,0 +1,52 @@
+<?
+#///////////////////////////////////////////////////////
+#//  COPYRIGHT 2002 PHPAuction.org ALL RIGHTS RESERVED//
+#//  For Source code for the GPL version go to        //  
+#//  http://phpauction.org and download               //
+#//  Supplied by CyKuH [WTN]                          //
+#///////////////////////////////////////////////////////
+?>
+
+
+<TABLE WIDTH="765" CELLPADDING=0 CELLSPACING=0 BGCOLOR="#FFFFFF" BORDER=0>
+<TR>
+		<TD><BR>
+<CENTER>
+				<B> <BR>
+				</B> 
+				<TABLE WIDTH="500" CELLSPACING="0" CELLPADDING="1" BORDER="0" BGCOLOR="<?=$FONTCOLOR[$SETTINGS[bordercolor]]?>">
+					<TR> 
+						<TD>
+							<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="3">
+								<TR> 
+									<TD BGCOLOR="#eeeeee"> <B>
+										<?=$tlt_font?><?=$MSG_415?>
+										</B></TD>
+								</TR>
+								<TR> 
+									<TD BGCOLOR="#FFFFFF"> 
+										<?=$std_font?>
+										<?=$SETTINGS[errortext]?>
+										<BR>
+										<FONT FACE=Courier SIZE=2>
+										<?=$SESSION_ERROR?>
+										</FONT>
+										<P>
+											<?=$std_font?>
+											<?=$MSG_416?>
+											<A HREF=mailto:<?=$SETTINGS[errormail]?>><?=$SETTINGS[errormail]?></A>
+										</P>
+									</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+				</TABLE>
+				<BR>
+          <BR>
+
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+
