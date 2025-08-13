@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>$master_board_name - Profile for $user_info[username]</title></head>
+<body background="images/bg.jpg">
+<div align="center"> $header 
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td background="images/bg2.jpg"> 
+        <div align="center"><BR>
+          <table width="95%" cellpadding="2" cellspacing="1" bgcolor="#000000">
+            <tr> 
+              <td background="images/cat2.jpg"><b>Name:</b></td>
+              <td background="images/cat2.jpg">$user_info[username]</td>
+            </tr>
+            <tr> 
+              <td background="images/cat1.jpg"><b>Date Registered:</b></td>
+              <td background="images/cat1.jpg">$regdate</td>
+            </tr>
+            <tr> 
+              <td colspan=2 background="images/cat2.jpg"> 
+                <div align="center"><img src="$userpic"><br>
+                  <font face="{font}" size=2>$user_info[userbackground]</font> 
+                </div>
+              </td>
+            </tr>
+            <tr> 
+              <td background="images/cat1.jpg"><b>Level:</b></td>
+              <td background="images/cat1.jpg">$user_info[userlevel] </td>
+            </tr>
+            <tr> 
+              <td background="images/cat2.jpg"><b>EXP: </b></td>
+              <td background="images/cat2.jpg">$user_info[userexp] </td>
+            </tr>
+            <tr> 
+              <td background="images/cat1.jpg"><b>HP:</b></td>
+              <td background="images/cat1.jpg">$user_info[userhitpoint]</td>
+            </tr>
+            <tr> 
+              <td background="images/cat2.jpg"><b>MP:</b></td>
+              <td background="images/cat2.jpg">$user_info[usermagicpoint]</td>
+            </tr>
+            <tr> 
+              <td background="images/cat1.jpg"><b>Class:</b></td>
+              <td background="images/cat1.jpg">$user_info[userclass]</td>
+            </tr>
+            <tr> 
+              <td background="images/cat2.jpg"><b>Alignment:</b></td>
+              <td background="images/cat2.jpg">$user_info[useralignment]</td>
+            </tr>
+            <tr> 
+              <td background="images/cat1.jpg"><b>Defense:</b></td>
+              <td background="images/cat1.jpg">$user_info[userdefense]</td>
+            </tr>
+            <tr> 
+              <td background="images/cat2.jpg"><b>Speed:</b></td>
+              <td background="images/cat2.jpg">$user_info[userspeed]</td>
+            </tr>
+            <tr> 
+              <td background="images/cat1.jpg"><b>Magic:</b></td>
+              <td background="images/cat1.jpg">$user_info[usermagic]</td>
+            </tr>
+            <tr> 
+              <td background="images/cat2.jpg"><b>Money:</b></td>
+              <td background="images/cat2.jpg">$$user_info[usermoney]</td>
+            </tr>
+          </table>
+        <BR></div>
+      </td>
+    </tr>
+  </table>
+
+  $footer </div>
+</body>
+</html>
