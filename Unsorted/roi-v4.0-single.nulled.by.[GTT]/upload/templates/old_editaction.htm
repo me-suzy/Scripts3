@@ -1,0 +1,31 @@
+<center><br>
+<table border=0 cellspacing=3 cellpadding=5>
+<tr>
+<td>Action name:</td>
+<td><b>%action_name%</b></td>
+<td><a href="campaigns.php?pid=editactionname&id=%id%"><img src="images/button-change.gif" border=0></a></td>
+</tr>
+
+<tr>
+<td>Action link:</td>
+<td><b>%action_link%</b></td>
+<td><a href="campaigns.php?pid=editactionlink&id=%id%"><img src="images/button-change.gif" border=0></a></td>
+</tr>
+
+<tr>
+<td>Price type:</td>
+<td><b>%action_type%</b></td>
+<td><a href="campaigns.php?pid=editactiontype&id=%id%"><img src="images/button-change.gif" border=0></a></td>
+</tr>
+
+<script language=JavaScript><!--
+ var n=%end_point%;
+if(n == 2){
+ this.document.writeln('<tr><td>Action income</td>');
+ this.document.writeln('<td><b>%action_income%</b></td>');
+ this.document.writeln('<td><a href="campaigns.php?pid=editactionincome&id=%id%"><img src="images/button-change.gif" border=0></a></td></tr>');
+}
+--></script>
+
+</table>
+<br><br></center>
