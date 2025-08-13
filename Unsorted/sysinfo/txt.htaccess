@@ -1,0 +1,4 @@
+ErrorDocument 401 /cgi-bin/sysinfo.cgi?action=error&error=401
+ErrorDocument 403 /cgi-bin/sysinfo.cgi?action=error&error=403
+ErrorDocument 404 /cgi-bin/sysinfo.cgi?action=error&error=404
+ErrorDocument 500 /cgi-bin/sysinfo.cgi?action=error&error=500
