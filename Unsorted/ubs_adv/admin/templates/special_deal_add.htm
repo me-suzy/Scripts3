@@ -1,0 +1,49 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1"></head>
+<body aLink="blue" vLink="blue" link="blue" background="images/bg.jpg">
+$headinclude 
+<form method="post" action="admin.php">
+		<input type="hidden" name="send" value="send">
+		<input type="hidden" name="action" value="$action">
+		
+  <table cellpadding=4 cellspacing=1 width="95%" bgcolor="#000000" align="center">
+    <tr> 
+      <td colspan=2 height="38" background="images/cellpic.gif"><font size=2 color="white" face="Tahoma"><b>» 
+        Add A Special Deal (new id: $newid ) <font color="red" size=1>$error</font></b></font></td>
+    </tr>
+    <tr> 
+      <td width="50%" background="images/cat1.jpg"><font size=1 color="black" face="Tahoma"><b>Item's 
+        Name:</b><br>
+        </font></td>
+      <td width="50%" background="images/cat1.jpg"> 
+        <input type="text" name="dealname" maxLength="255" class="input">
+      </td>
+    </tr>
+    <tr> 
+      <td width="50%" background="images/cat1.jpg"><font size=1 color="black" face="Tahoma"><b>Description 
+        :</b></font></td>
+      <td width="50%" background="images/cat1.jpg"> 
+        <textarea name="dealdescription" class="input" cols="70" rows="10"></textarea>
+      </td>
+    </tr>
+	<tr> 
+      <td width="50%" background="images/cat1.jpg"><font size=1 color="black" face="Tahoma"><b>Stock 
+        (how many there are):</b></font></td>
+      <td width="50%" background="images/cat1.jpg">
+        <input type="text" name="amount" maxlength="255" class="input">
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="2" background="images/cat1.jpg"> 
+        <div align="center"><font size=1 color="black" face="Tahoma"></font> 
+          <input type="submit" value="Send" class="inputbtn">
+          <input type="reset" value="Reset" class="inputbtn">
+        </div>
+      </td>
+    </tr>
+  </table>
+</form>
+	</body>
+</html>
