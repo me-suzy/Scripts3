@@ -1,0 +1,133 @@
+<form action="campaigns.php" method=post>
+<input type=hidden name=ch value=update_campaign>
+<input type=hidden name=id value=%id%>
+<script language=JavaScript><!--
+function setVisible (c,form){
+if(c == 1){
+    form.bmonth.disabled = true;
+    form.bday.disabled = true;
+    form.byear.disabled = true;
+    form.emonth.disabled = true;
+    form.eday.disabled = true;
+    form.eyear.disabled = true;
+    form.price.disabled = false;
+    form.pertype.disabled = true;
+
+}
+if(c == 2){
+
+    form.pertype.disabled = false;
+
+    form.bmonth.disabled = true;
+    form.bday.disabled = true;
+    form.byear.disabled = true;
+    form.emonth.disabled = true;
+    form.eday.disabled = true;
+    form.eyear.disabled = true;
+    form.price.disabled = false;
+}
+
+if(c == 3){
+    form.bmonth.disabled = false;
+    form.bday.disabled = false;
+    form.byear.disabled = false;
+    form.emonth.disabled = false;
+    form.eday.disabled = false;
+    form.eyear.disabled = false;
+    form.price.disabled = false;
+    form.pertype.disabled = true;
+}
+
+if(c == 4){
+    form.bmonth.disabled = true;
+    form.bday.disabled = true;
+    form.byear.disabled = true;
+    form.emonth.disabled = true;
+    form.eday.disabled = true;
+    form.eyear.disabled = true;
+    form.price.disabled = true;
+    form.price.value = '';
+    form.pertype.disabled = true;
+
+}
+}
+//--></script>
+
+<br><center>
+<table border=0 cellspacing=4 cellpadding=3>
+
+<tr>
+<td><b>Campaign name:</b></td>
+<td><input type=text name=campaign_name class=txt value="%campaign_name%"></span></td>
+</tr>
+
+<tr>
+<td><b>Campaign link:</b></td>
+<td><input type=text name=campaign_link class=txt value="%campaign_link%"></b></td>
+</tr>
+
+<tr>
+<td colspan=2>
+<table border=0 cellspacing=4 cellpadding=0>
+
+<tr>
+<td colspan=2>
+<input type=radio onClick="setVisible(1,this.form);"name=price_type value=1%type1%><img src="images/bullet.gif" width=16 height=10 border=0 align=absmiddle><span class=title>Per click</span>
+</td>
+
+</tr>
+
+<tr>
+<td colspan=2><br>
+<input type=radio onClick="setVisible(2,this.form);" name=price_type value=3%type3%><img src="images/bullet.gif" width=16 height=10 border=0 align=abdmiddle><span class=title>Per period</span>
+</td>
+</tr>
+
+
+<tr><td colspan=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name=pertype style="width: 130px;">
+              <option value=1%opt1%>Day</option>
+              <option value=2%opt2%>Week</option>
+              <option value=3%opt3%>Month</option>
+              <option value=4%opt4%>Quarter</option>
+              <option value=5%opt5%>Year</option>
+</select>
+</td></tr>
+
+<tr>
+<td colspan=2>
+<input type=radio onClick="setVisible(3,this.form);" name=price_type value=2%type2%><img src="images/bullet.gif" width=16 height=10 border=0 align=absmiddle><span class=title>Per time range</span>
+</td>
+</tr>
+
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Begin:</td><td>%dateform1%</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End:</td>
+<td>%dateform2%</td>
+</tr>
+
+<tr>
+<td colspan=2>
+<input type=radio onClick="setVisible(4,this.form);"name=price_type value=4%type4%><img src="images/bullet.gif" width=16 height=10 border=0 align=absmiddle><span class=title>Per keyword</span>
+</td>
+
+<tr>
+<td colspan=2><br></td>
+</tr>
+
+
+<tr>
+<td><b>Price (<font size=1>$</font>):</b></td>
+<td><input type=text class=txt name=price value="%price%"%price_status%></td>
+</tr>
+</table>
+</td>
+<tr>
+<td colspan=3 align=right><br>
+<input type=image src="images/button-change.gif" border=0></td>
+</tr>
+</table>
+<br></center>
+<br>
+</form>
