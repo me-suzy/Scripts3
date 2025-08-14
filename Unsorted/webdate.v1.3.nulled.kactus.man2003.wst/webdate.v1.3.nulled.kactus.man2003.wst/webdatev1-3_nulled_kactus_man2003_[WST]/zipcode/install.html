@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>webDate Plugin Installation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<p><b><font face="Arial, Helvetica, sans-serif" size="4" color="#000099">webDate 
+  Zip Code Plugin 1.0</font></b><br>
+  <a href="http://www.webscribble.com"><font face="Arial, Helvetica, sans-serif" size="2">http://www.webscribble.com 
+  </font></a></p>
+<p><b><font face="Arial, Helvetica, sans-serif" size="2">Installation Instructions</font></b><font face="Arial, Helvetica, sans-serif" size="2"> 
+  </font></p>
+<ol>
+  <li><font size="2" face="Arial, Helvetica, sans-serif">Unzip all files locally 
+    in a new folder.</font></li>
+  <li><font size="2" face="Arial, Helvetica, sans-serif">Connect to you web server 
+    and upload these files to your public HTML directory. Please maintain the 
+    same folder structure as provided in the zip file. Allow your FTP client to 
+    overwrite any existing files you have.</font></li>
+  <li><font size="2" face="Arial, Helvetica, sans-serif">Set the file permissions 
+    on <b><i>all</i></b> of the files and folders you just uploaded to 777 or 
+    755. A common mistake made when installing this script is that not every file 
+    is set to 755 or 777.</font></li>
+  <li><font face="Arial, Helvetica, sans-serif" size="2">Using phpMyAdmin, or 
+    similar MySQL administration software, execute the contents of <i>dt_zips.sql</i> 
+    to create the database tables used by the plugin.</font></li>
+  <li><font size="2" face="Arial, Helvetica, sans-serif">You have successfully 
+    installed the zip code plugin!</font></li>
+</ol>
+<p align="center"><font size="2" face="Arial, Helvetica, sans-serif"><br>
+  <font size="2" face="Arial, Helvetica, sans-serif"><br>
+  <font color="#FF0000"><strong>Although thoroughly tested without any serious 
+  difficulties, Web Scribbles assumes no responsibility for potential damages 
+  this script may cause. BY USING THIS SOFTWARE YOU AGREE TO THE TERMS AND CONDITIONS 
+  OF OUR <a href="http://www.webscribble.com/products/license.shtml">LICENSE AGREEMENT</a>.</strong></font></font><font color="#FF0000"></font></font></p>
+<p align="center"><font size="2" face="Arial, Helvetica, sans-serif">Unauthorized 
+  distribution of this script is strictly prohibited and will be prosecuted to 
+  the fullest extent of the law.<br>
+  &copy;2002 Web Scribble Solutions, Inc.</font></p>
+</body>
+</html>
+ALTER TABLE `dt_profile` ADD `zipcode` VARCHAR(5) NOT NULL;
