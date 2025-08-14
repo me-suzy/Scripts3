@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<persistence>
+	<object class="News">
+		<table>news</table>
+		<primary-key>id</primary-key>
+	</object>
+
+	<object class="Category">
+		<table>category</table>
+		<primary-key>id</primary-key>
+	</object>
+
+	<group class="NewsGroup">
+		<object>sample.News</object>
+	</group>
+
+	<group class="Categories">
+		<object>sample.Categories</object>
+	</group>
+</persistence>
