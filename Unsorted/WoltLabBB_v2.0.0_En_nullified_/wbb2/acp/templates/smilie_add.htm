@@ -1,0 +1,42 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+<form method="post" action="smilie.php">
+<input type="hidden" name="send" value="send">
+<input type="hidden" name="action" value="$action">
+<input type="hidden" name="sid" value="$session[hash]">
+<table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="95%" align="center">
+  <tr class="tblhead">
+   <td colspan=2>Add Smilie</td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Smilie Name:</b></td>
+   <td><input type="text" name="smilietitle" value="" maxlength="100"></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Path:</b><br>Enter the URL to the smilie.<br>
+Tip: Use "{imagefolder}" instead of the images folder so you can use different smilies for each design packs.</td>
+   <td><input type="text" name="smiliepath" value="" maxlength="250" size="30"></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Smilie Code:</b><br>What is the code for the smilie? e.g.:<br>:)<br>;)<br>:D<br>:smilie:</td>
+   <td><input type="text" name="smiliecode" value="" maxlength="250"></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Sorting Number:</b><br>The number for order in which the smilies are sorted. You can view the sorting number of the other smilies in "Edit Smilies".</td>
+   <td><input type="text" name="smilieorder" value="" maxlength="7"></td>
+  </tr>
+  <tr class="firstrow">
+   <td colspan=2 align="center"><input type="submit" value="Submit"> <input type="reset" value="Reset"></td>
+  </tr>
+ </table>
+</form>
+
+</body>
+
+</html>
