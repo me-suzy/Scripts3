@@ -1,0 +1,8 @@
+<tr>
+ $tds
+ <td colspan="$colspan" class="firstrow" width="100%"><select name="boardorder[$boards[boardid]]">$options</select>&nbsp;<b><a href="../board.php?boardid=$boards[boardid]" target="_blank">$boards[title]</a></b></td>
+ <td class="secondrow"><a href="board.php?action=edit&boardid=$boards[boardid]&sid=$session[hash]">edit</a></td>
+ <td class="secondrow"><a href="board.php?action=del&boardid=$boards[boardid]&sid=$session[hash]">delete</a></td>
+ <td class="secondrow"><a href="board.php?action=empty&boardid=$boards[boardid]&sid=$session[hash]">empty</a></td>
+ <td class="secondrow"><a href="board.php?action=rights&boardid=$boards[boardid]&sid=$session[hash]">rights</a></td>
+</tr>
