@@ -1,0 +1,43 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+<script language="Javascript">
+ <!--
+  function select_all(status) {
+   var sbox = document.tform.elements[4];
+   for(i=0;i<sbox.options.length;i++) sbox.options[i].selected=status;
+  }
+ //-->
+</script>
+</head>
+<body onload="document.tform.search.focus();">
+ <form method="post" action="template.php" name="tform">
+ <input type="hidden" name="sid" value="$session[hash]">
+ <input type="hidden" name="send" value="send">
+ <input type="hidden" name="action" value="$action">
+  <table cellpadding=4 cellspacing=1 width="100%" class="tblborder" align="center">
+   <tr class="tblhead">
+    <td colspan=2>Templates Search & Replace</td>
+   </tr>
+   <tr class="tblsection">
+    <td colspan=2><select class="input" name="templatepackid" onchange="window.location=('template.php?action=$action&sid=$session[hash]&templatepackid='+this.options[this.selectedIndex].value)">
+     <option value="*">All Templates</option>
+     <option value="0"$selected>Default Templates</option>
+     $templatepack_options				
+    </select></td>
+   </tr>
+   $select
+   <tr class="secondrow">
+    <td><b>Search for:</b><br>To find the templates containing a certain word/string, enter the search word(s) and press "Search".</td>
+    <td><input type="text" name="search" maxlength=250>&nbsp;<input type="submit" name="dosearch" value="Search"></td>
+   </tr>
+   <tr class="firstrow">
+    <td><b>Replace with:</b><br>To replace a certain string by another, enter both the search and replace words and press "Replace".</td>
+    <td><input type="text" name="replace" maxlength=250>&nbsp;<input type="submit" name="doreplace" value="Replace"></td>
+   </tr>   
+  </table>
+ </form>
+</body>
+</html>
