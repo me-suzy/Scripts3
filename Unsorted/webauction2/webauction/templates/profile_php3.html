@@ -1,0 +1,102 @@
+<?
+/*
+   Copyright (c), 1999, 2000 - phpauction.org
+   Copyright (c), 2001, 2002 - webauction.de.vu
+
+   Lizenz siehe lizenz.txt & license
+
+   Die neueste Version kostenfrei zum Download unter:
+   http://webauction.de.vu
+
+*/
+
+?>
+
+
+<TABLE WIDTH="100%" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING="0" CELLSPACING="0">
+<TR>
+<TD>
+<!--   -- users profile  ---    -->
+<center><a href="item.php?SESSION_ID=<? print urlencode($sessionIDU); ?>&id=<? echo $auction_id; ?>">
+<? print $std_font.$MSG_138; ?></FONT></a></center>
+<BR>
+
+<BR><CENTER><B><? print $tlt_font.$MSG_206 ?></FONT></B><BR><BR></CENTER>
+<CENTER>
+
+<TABLE WIDTH="400" BORDER="0" CELLSPACING="1" CELLPADDING="1" BGCOLOR="#CCCCCC">
+<TR>
+<TD>
+<TABLE WIDTH="100%" BORDER="0" CELLSPACING="1" CELLPADDING="4" BGCOLOR="#CCCCCC">
+<TR BGCOLOR="#FFFFFF">
+<TD COLSPAN="2">
+<B><? echo $usr_font.$TPL_user_value; ?></FONT></B>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<? print $std_font.$MSG_502; ?>
+
+<? print $TPL_num_feedbacks ?>
+</FONT>
+<BR>
+
+<? print $TPL_rate_ratio_value  ?>
+
+</TR>
+<TR BGCOLOR="#FFFFFF">
+<TD COLSPAN="2">
+<TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="0">
+<TR>
+<TD WIDTH="50%">
+<? print $std_font; ?>
+
+</TD>
+<TD WIDTH="50%" ALIGN="right">
+<? print $std_font; ?>
+<A HREF="./feedback.php?SESSION_ID=<? print urlencode($sessionIDU); ?>&id=<? print $TPL_user_id ?>&faction=show"><? print $MSG_208 ?></A>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR BGCOLOR="#FFFFFF" VALIGN=top>
+<TD WIDHT="40%">
+<? print $std_font.$MSG_209 ?>
+</TD>
+<TD WIDTH="60%">
+<? print $std_font.$TPL_ADC_value ?>
+<BR>
+</TD>
+</TR>
+
+<TR BGCOLOR="#FFFFFF" VALIGN=top>
+<TD WIDHT="40%">
+<? print $std_font.$MSG_210 ?>
+</TD>
+<TD WIDTH="60%">
+<? print $std_font; ?>
+<A HREF="email_request.php?SESSION_ID=<? print urlencode($sessionIDU); ?>&user_id=<? print $TPL_user_id ?>"><? print $MSG_211 ?></A>
+<BR>
+</TD>
+</TR>
+
+<TR  BGCOLOR="#FFFFFF"VALIGN=top>
+<TD WIDHT="40%" VALIGN="top">
+<? print $std_font.$MSG_212 ?>
+</TD>
+<TD WIDTH="60%">
+<? print $std_font; ?>
+<A HREF="active_auctions.php?SESSION_ID=<? print urlencode($sessionIDU); ?>&user_id=<? print $TPL_user_id?>"><? print $MSG_213 ?></A><BR>
+<A HREF="closed_auctions.php?SESSION-ID=<? print urlencode($sessionIDU); ?>&user_id=<? print $TPL_user_id?>"><? print $MSG_214 ?></A>
+<BR>
+</TD>
+</TR>
+
+
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+<BR>
+</TD>
+</TR>
+</TABLE>
