@@ -1,0 +1,75 @@
+#########
+# ABOUT #
+#########
+
+Title:
+EZ-Logger
+
+Coded By:
+Eric [eric1207@gmail.com]
+
+Purpose:
+None (Got bored and started coding)
+
+Notes:
+Yes, if you actually understand the Internet, PHP, etc., I do realize
+I have added so much help information to this script that it is absolutely
+ridiculous, but suprisngly their are actually programmers who think they
+know it all, but don't know the first thing about what an IP address, hostname,?
+or referrer is. Enjoy..
+
+##############
+# HOW TO USE #
+##############
+
+Only email me asking questions if you have tried everything possible
+and you do not know why it's not working or if you've found an error in
+my poorly written code.
+
+To use this, make sure the page you want to use this with has a .PHP
+filename extension and type "<? include ("ezlog.php"); ?>" at the very
+top of that page. Read below for more information about each service.
+
+/* HOW TO LOG  VISITORS */
+
+When logging visitors, create a file called "log.txt" and every visitors
+information will be written to a separate line when they view your website.
+
+/* HOW TO BAN */
+
+IP address's are just a series of numbers describing another persons
+connection to the internet.
+
+To properly ban people, create a file called "banned.txt" and put the
+IP address or hostname of the person you are banning. For every
+person you are banning, start a new line in the file.
+
+So if you want to ban all aol users, verzion users, and 123.456.78.90,
+you're banned.txt contents would looke like this:
+
+aol.com
+verizon.net
+123.456.78.90
+
+If you put ".", everyone is banned because "." is in every hostname and IP.
+If you put "aol.com", aol users are banned because "aol.com" is in their hostname.
+If you put "123.456.78.90", then only the person with that IP is banned.
+If you put "123", anyone with "123" in their hostname or IP is banned.
+
+/* HOW TO LOG REFERRERS */
+
+Referrers are just other websites which have linked your website.
+
+When logging referrers, create a file called "referrers.txt" and every time
+someone clicks a link to your website on another website and 
+
+Pretend aol.com had a link to your website and someone clicked
+it and showed up at your website, well this script would log everything
+about the person that clicked the link and the website that they came from.
+
+/* NOTE */
+
+If you are hosted on a UNIX/Linux server [you would know if you are],
+then chmod banned.txt, log.txt, and referrers.txt to 0666.
+
+Enjoy...
