@@ -1,0 +1,208 @@
+File: faq.txt
+Script Name: vSignup 2.5
+Author: Vincent Ryan Ong
+Email: support@beanbug.net
+
+Description:
+vSignup is a member registration script which utilizes vAuthenticate
+for its security handling. This handy script features email verification,
+sending confirmation email message, restricting email domains that are 
+allowed for membership, and much more.
+
+This script is a freeware but if you want to give donations,
+please send your checks (coz cash will probably be stolen in the
+post office) to:
+
+Vincent Ryan Ong
+Rm. 440 Wellington Bldg.
+655 Condesa St. Binondo, Manila
+Philippines, 1006
+
+
++++++++++++++++++++++++++++++++++++
+FREQUENTLY ASKED QUESTIONS (FAQ's)
++++++++++++++++++++++++++++++++++++
+
+Q1. Can I add new fields to the authuser database and then just modify the auth.php
+	file? I wanted to add fields like email address, birthday, etc. which are user-
+	specific.
+A1. Technically, you can. However, I extremely advise against doing this because 
+	with auth.php being a class, it was meant not to be touched with regard to
+	the functions that it contain. A workaround on your concern is to add the fields
+	to the signup table or create a new one if this is going to be used for other 
+	functions too. Take note that on version 2.5, the user control panel is now
+	available. With any customization that you do here, it WILL NOT reflect on the
+	control panel as it is a completely different file.
+
+Q2. What are levels for?
+A2. Actually, starting on vSignup 2.5, this field is for informational purposes only. 
+	However, you may use this field as the point of authentication. Meaning, you may 
+	restrict access to a page depending on the level of the user that has logged in 
+	(see the Demonstration for case in point). If you don't use levels for such a 
+	function, it won't have any impact at all.
+
+Q3. What are groups for?
+A3. Just like levels, you may use teams/groups as your authentication point. For example, 
+	in vAuthenticate.php, instead of making an if-else statement for the level, we
+	may look at the team/group to asses if the user is allowed to view the secured
+	page. 
+
+Q4. What does an "inactive" status mean?
+A4. An inactive status makes the specific user unable to login and view the secured areas.
+
+Q5.  How do I display the login name or other user details in the secured pages?
+A5. If you want to display the username, all you have to do is display $USERNAME via an
+	"echo" or a "print" statement. However, if you want to display other details such
+	as team, level, or status of the user, you would have to display it like:
+	
+	echo $check["FIELD"]; 
+	or
+	print $check["FIELD"];
+
+	where FIELD is either team, level, or status. Take note that this only works for
+	fields in the authuser table. This does not include the first name, last name, 
+	etc. which are found on the signup table.
+
+Q6. I get this error message when I try to login:
+	Warning: mysql_fetch_array(): supplied argument is not a valid MySQL result 
+	resource in /some/path/public_html/folder/folder/auth.php on line 54
+A6. In PHP, getting an error similar this either means:
+	* You have spelled your database name wrong
+	* You have set your database name wrong
+
+	Take note that PHP is case sensitive. Database is not the same with DataBase.
+	Going back to vSignup, re-check your authconfig.php, signupconfig.php, and auth.php 
+	to see if you have spelled those correctly.
+
+	For those people using CPanel, it seems like even if you create a new database 
+	called "hello", but your CPanel account is let's say, "domain", your database will 
+	have a name of domain_hello instead of "hello". This is a CPanel naming convention
+	and it also applies to the database username.
+
+Q7. I pulled up the login screen and attempted to login but it gives me a "Page not Found" 
+	error with the url of http://www.somedomain.com/<?%20print%20$resultpage%20?>. 
+A7. This is because the page where you have the login portion has a .html extension in its filename
+	instead of .php (or .php3 or .phtml).
+
+Q8. How do I create a backup of my data?
+A8. If you have phpMyAdmin in your website, you can create a dump for your data. This will
+	show you the SQL statements that can be executed to restore the data. For more
+	information on this, please consult your phpMyAdmin users manual.
+
+Q9. Why are there 2 administrator accounts instead of just 1 (only sa)?
+A9. This is for backup purposes. Just in case you forgot the sa password, there's another
+	user who has administrative rights assuming that you did not create other admin
+	accounts.
+
+Q10. Can I delete the sa and admin accounts?
+A10. No. Both cannot be deleted.
+
+Q11. Can I delete the test account?
+A11. No. Actually, there's no logical explanation for this but it wouldn't hurt if it just sits
+	there.
+
+Q12. I want to add some more fields in the signup page, what should I do?
+A12. There are only 3 steps you need to follow:
+	a. Modify the signup page and take note of the field names you're going to give.
+		For example you added a field named "complexion" (the name attribute in 
+		the form's newly added input tag is "complexion"). 
+
+		EXAMPLE: <input type="text" name="complexion" size="20" maxlength="20">
+	
+	b. Create the necessary fields in the signup table. Take note of the positioning of
+		these fields (See if they are situated as the 5th, 8th, etc. field in the
+		table). Taking off where our example has ended, let's say that a field called 
+		"complexion" was added as the last column in the signup table.
+
+	c. Modify process.php with the line that says:
+		$addmember = mysql_query("INSERT INTO signup VALUES 
+		('','$username','$fname','$lname','$email','$country','$zipcode',NOW(),'$confirmkey')");
+	
+		into something lilke:
+		$addmember = mysql_query("INSERT INTO signup VALUES 
+		('','$username','$fname','$lname','$email','$country','$zipcode',NOW(),'$confirmkey'),
+		'$complexion");
+
+		You will notice that we have placed $complexion at the end of the query variable
+		value due to its position in the table. We also used $complexion as the value to
+		store in the table because $complexion holds the value for the signup page's 
+		complexion field.
+
+Q13. What is the $adminemail variable used for (see signupconfig.php)
+A13. This is the admin's email address just in case he/she has opted to receive a notification everytime
+	a visitor signs up. 
+
+Q14. After I change my password, I can't access any of the secured page anymore. Why is this so?
+A14. This is working as designed. Upon logging in, we store the username and password into 2 cookie
+	variables namely, USERNAME and PASSWORD. The authentication will now depend on the
+	values of these cookies regarding the current user. Everytime the user accesses a secured
+	page, USERNAME and PASSWORD is matched with that in the authuser table. If a match is
+	found, the user gets past the first authentication and then goes through the filtering process. 
+	However, if the value in USERNAME and PASSWORD does not match that in the authuser table,
+	the Illegal Access message will be shown.
+	
+	Having noted that, you will realize that once a member changes his/her password in the 
+	Change Password page, the value for USERNAME and PASSWORD did not change. Thus, the
+	if the member tries to access a secured page within the same session (without logging out
+	or closing the browser), he/she will get the Illegal Access page.
+
+Q15. Does vSignup work for sites using an IP address instead of a domain name?
+A15. Starting on version 2.5, sites using an IP address would be able to use vSignup.
+
+Q16. Does vSignup provide data encryption?
+A16. No. However, starting on version 2.5, the password field is now encrypted to provide a more secure 
+	authenticating medium.
+
+Q17. Why is the password field left blank after selecting a username from the list found
+	on the right portion of the page in authuser.php?
+A17. Since the password field from the database is encrypted, auth.php was modified to recognize 
+	that if you leave the password empty upon pressing the Modify button, it won't 
+	change the existing password for the user. However, if you put some value into
+	the said field, auth.php would set it to that value.
+
+Q18. How can I protect a page that is outside the directory where vAuthenticate.php is stored? 
+	For example: 
+		DOMAIN: http://www.mysite.com
+		vSignup INSTALLATION: http://www.mysite.com/vSignup
+		MEMBERS' DIRECTORY: http://www.mysite.com/members
+		vSignup ADMINISTRATION: http://www.mysite.com/vSignup/admin
+A18. Starting with vSignup 2.5, the cookies are site-wide and does not need to have the 
+	vAuthenticate.php exist in the site's root directory. Given this data, to protect the member
+	pages, we would modify the protected pages in the members directory and put these on top:
+
+		<?php	
+			include_once ("../vSignup/auth.php");
+			include_once ("../vSignup/authconfig.php");
+			include_once ("../vSignup/check.php");
+ 		?>
+		
+	* NOTE: Remember that all values on A18 are all based on an example. You have to change this 
+		according to your setup. Please refer to the Demonstration for more examples.
+
+Q19. I installed vAuthenticate and executed createdb.sql successfully. However, when I try to login,
+	I get an error stating that the username and password I entered does not match or that I 
+	entered the wrong password.
+A19. The first thing you need to check is of course, that you're entering the correct username and
+	password combination. These are case sensitive so "access" is not the same as "Access".
+	After this, you need to go to your DB Manager (phpMyAdmin, for example) and make sure that
+	ALL column names in your authuser table is in small caps. There are instances where the level and 
+	status fields become "LEVEL" and "STATUS" respectively (automatically done by MySQL). If
+	any column name (NOT the actual table values, mind you) are in capital letters, rename them 
+	to have all small caps.
+
+Q20. The system does not send out the email either to the member or to the administrator?
+A20. There are quite a number of possible reasons for this. The most prominent ones are found in the
+	Settings page. Make sure you set the proper value to the said settings. Another possibility is
+	that your host does not support the mail() function or has turned it off for some reason. If you
+	are testing this out on your local machine, make sure you can use PHP's mail() function first by
+	doing a series of simple tests (as I am not familiar with it myself). vSignup's mail-sending
+	function was tested online, not on the development server exactly with that reason - the developer
+	is not familiar with the settings needed to make mail() work on his machine.
+
+
+Q21. I have some questions that are not listed here. Where can I contact you for support?
+A21. For support on vSignup, you may send your inquiries to support@beanbug.net
+
+
+----------------------------------------
+Last Modified: November 23, 2004
