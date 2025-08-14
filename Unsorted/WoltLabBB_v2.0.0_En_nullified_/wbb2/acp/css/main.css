@@ -1,0 +1,71 @@
+BODY {
+ BACKGROUND-COLOR: #ababab;
+ COLOR: #000000;
+ FONT-FAMILY: sans-serif;
+ FONT-SIZE: 12px;
+ SCROLLBAR-BASE-COLOR: #ababab;
+ SCROLLBAR-ARROW-COLOR: #000000;
+}
+
+P, TD, TR, TABLE {
+ FONT-FAMILY: sans-serif;
+ FONT-SIZE: 12px;
+}
+
+UL, LI {
+ FONT-FAMILY: sans-serif;
+ FONT-SIZE: 12px;
+}
+
+A:LINK, A:VISITED, A:ACTIVE {
+ COLOR: #000000;
+ TEXT-DECORATION: underline;
+}
+
+A:HOVER {
+ COLOR: #000000;
+ TEXT-DECORATION: none;
+}
+
+SELECT, INPUT, TEXTAREA {
+ FONT-FAMILY: sans-serif;
+ COLOR: #000000;
+ FONT-SIZE: 12px;
+}
+
+.firstrow {
+ BACKGROUND-COLOR: #E2E2E2;
+}
+
+.secondrow {
+ BACKGROUND-COLOR: #CDCDCD;
+}
+
+.tblhead {
+ BACKGROUND-COLOR: #FF9933;
+ COLOR:#000000;
+ FONT-WEIGHT: bold;
+ background-image: url(../images/cellpic.gif);
+}
+
+.tblsection {
+ BACKGROUND-COLOR: #ABABAB;
+ COLOR:#ffffff;
+ FONT-WEIGHT: bold;
+}
+
+
+.tblsection A:LINK, .tblsection A:VISITED, .tblsection A:ACTIVE {
+ COLOR: #ffffff;
+ TEXT-DECORATION: underline;
+}
+
+.tblsection A:HOVER {
+ COLOR: #ffffff;
+ TEXT-DECORATION: none;
+}
+
+.tblborder {
+ BACKGROUND-COLOR: #000000;
+}
+ 
