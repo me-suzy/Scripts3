@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title>The Stickybeak &reg; - Examples</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+ </head>
+ <body>
+  <h1>The Stickybeak</h1>
+
+<hr />
+
+
+
+<h2>Examples</h2>
+
+<ul>
+<li><a href="#image">Image Based Logging</a>
+   <ul>
+    <li><a href="#pixel">Pixel Logging</a>
+    <li><a href="#custom">Using Custom Images</a>
+   </ul>
+<br />
+
+<li><a href="#including">Including The Stickybeak in Webpages</a>
+   <ul>
+    <li><a href="#html">HTML Code</a>
+    <li><a href="#PHPgenerated">PHP Generated Image Tags</a>
+    <li><a href="#javascript">JavaScript Generated Image Tags</a>
+   </ul>
+<br />
+
+<li><a href="#embedded">Embedded PHP</a>
+</ul>
+
+
+<hr />
+<a name="image"></a>
+<h3>Image Based Logging</h3>
+
+<a name="pixel"></a>
+<h4>Pixel Logging</h4>
+
+
+
+<p>The following code will produce a 1x1 transparent pixel which can be used as an image in any webpage. It is available in the file <i>pixel.php</i> in The Stickybeak distribution.</p>
+
+<pre  class="code">
+
+ &lt;?
+
+ $config=array(
+  "mysqlhost" => "localhost", 
+  "mysqldb" => "stickybeak", 
+  "mysqltable" => "stickybeak_logs",    
+  "mysqluser" => "username", 
+  "mysqlpass" => "password",
+  "p3pURL" => "http://www.example.com/w3c/p3p.xml"
+  "pixel" => true 
+
+ );
+
+ include "TheStickybeak.php";
+ $s=new stickybeak($config);
+ $s->log();
+
+ ?&gt;
+
+</pre>
+
+
+
+<a name="custom"></a>
+<h4>Using custom images</h4>
+
+<p>It is possible to configure The Stickybeak to use a specified image instead of the default transparent pixel. This is done by using the <i>image</i> and <i>imagetype</i> variables in the <a href="docs.html#config">configuration array</a>.</p>
+
+<p>The following code is available in the file <i>image.php</i> in The Stickybeak distribution.</p>
+
+
+<pre class="code">
+
+ &lt;?
+
+ $config_image=array(
+  "mysqlhost" => "localhost", 
+  "mysqldb" => "stickybeak", 
+  "mysqltable" => "stickybeak_logs",    
+  "mysqluser" => "username", 
+  "mysqlpass" => "password", 
+  "p3pURL" => "http://www.example.com/w3c/p3p.xml",
+  "image" => "TheStickybeak.png", 
+  "imagetype" => "png"
+ );
+
+ include "TheStickybeak.php";
+ $s=new stickybeak($config_image);
+ $s->log();
+
+?&gt;
+
+</pre>
+
+
+<hr />
+<a name="including"></a>
+<h3>Including The Stickybeak in Webpages</h3> 
+
+
+
+<a name="html"></a>
+<h4>HTML Code</h4>
+
+<p>The simplest way of including an image logger into a webpage is by placing the following HTML somewhere within the page you want to log.</p>
+
+<pre class="code">
+
+&lt;img src="pixel.php"&gt;
+
+</pre>
+
+<br />
+
+<p>The image can also be called from a remote server, allowing centralised logging of multiple websites.</p>
+
+<pre class="code">
+
+&lt;img src="http://www.example.com/pixel.php"&gt;
+
+</pre>
+
+<p>For good measure specify an <i>alt</i>ernative text, width and height in the &lt;img&gt; tag.</p>
+
+<pre class="code">
+
+&lt;img src="pixel.php" width="1" height="1" alt="The Stickybeak" /&gt;
+
+</pre>
+
+<p>One of the limitations of using an image to log accesses to a webpage is that the referrer variable is aways set to be the page that included the HTML calling the image. Under normal circumstances the referrer would be the page containing the link the user had ckicked on to arrive at the page being logged. To ensure that the referrer of the <i>page</i> is logged rather than the referrer of the <i>image</i>, the referrer variable can be passed to the image as GET variables in the URL.</p>
+
+<p>Several other variables may be passed to The Stickybeak via the <i>&lt;img&gt;</i> tag. The value of each variable is base64 encoded to ensure that a valid URL results. The variables that may be passed to The Stickybeak in this manner are:</p>
+
+<ul>
+<li><i>h</i> - The hostname of the server hosting the logged page
+<li><i>u</i> - The requested URI
+<li><i>r</i> - The referrer of the page being logged
+<li><i>p</i> - A user defined variable called <i>page</i>
+<li><i>i</i> - A user defined variable called <i>identifier</i>
+<li><i>q</i> - Query string sent to the page peing logged
+</ul> 
+
+<p>An example of the HTML code required to send additional logging variables to The Stickybeak appears below:</p>
+
+<pre class="code">
+
+&lt;img 
+alt="The Stickybeak" 
+src="http://www.example.com/log.php?
+    h=d3d3Lm5ld2Nhc3RsZW11c2ljLm5ldA==
+   &u=L25ld3MucGhw
+   &r=aHR0cDovL3d3dy5uZXdjYXN0bGVtdXNpYy5uZXQv
+   &p=bmV3cw==" 
+width="1" 
+height="1"  
+&gt;
+
+</pre>
+
+
+<p>Although several of these variables may be the same each time the page is called, others will be different each time the page is called. For this reason it is beneficial to generate the &lt;img&gt; tags dynamically each time the page is requested. This allows the referrer and other variables to be base64 encoded and passed to The Stickybeak as GET variables. Several techniques can be used to dynamically generate the &lt;img&gt; tag including PHP and Javascript. These methods are outlined below.</p>
+
+</p>
+
+
+
+<a name="PHPgenerated"></a>
+<h4>PHP Generated Image Tags</h4>
+
+The following PHP function will return the HTML code required to call The Stickybeak with base65 encoded variables including referrer and the <i>page</i> and <i>identifier</i> user defined variables.</p>
+
+<pre class="code">
+
+
+ function stickybeak_image_code($page="",$identifier=""){
+
+	$string.="      &lt;img alt=\"\" src=\"image.php?";
+	$string.="h=";
+	$string.=base64_encode($_ENV["HTTP_HOST"]);
+	$string.="&u=";
+	$string.=base64_encode($_ENV["REQUEST_URI"]);
+	$string.="&r=";
+	$string.=base64_encode($_ENV[HTTP_REFERER]);
+	if($page){
+		$string.="&p=";
+		$string.=base64_encode($page);
+	}
+	if($identifier){
+		$string.="&i=";
+		$string.=base64_encode($identifier);
+	}
+	if($_ENV["QUERY_STRING"]){
+		$string.="&q=";
+		$string.=base64_encode($_ENV["QUERY_STRING"]);
+	}
+	$string.="\" ";
+	$string.=" width=\"88\" height=\"31\" ";
+	$string.="/&gt;\r\n";
+	return $string;
+ }
+
+
+
+</pre>
+
+<p>In order to use the above function, include the following HTML code somewhere in the page to be logged.</p>
+
+<pre class="code">
+
+&lt;?
+
+ echo stickybeak_image_code("examples","image");
+
+?&gt;
+
+</pre>
+<br />
+<a name="javascript"></a>
+<h4>JavaScript Generated Image Tags</h4>
+
+
+<pre "class="code">
+
+&lt;script type="text/javascript"&gt;
+
+var base64s="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+
+function encode(decStr){
+
+  var bits, dual, i = 0, encOut = '';
+  while(decStr.length >= i + 3){
+    bits =
+    (decStr.charCodeAt(i++) & 0xff) <<16 |
+    (decStr.charCodeAt(i++) & 0xff) <<8  |
+     decStr.charCodeAt(i++) & 0xff;
+    encOut +=
+     base64s.charAt((bits & 0x00fc0000) >>18) +
+     base64s.charAt((bits & 0x0003f000) >>12) +
+     base64s.charAt((bits & 0x00000fc0) >> 6) +
+     base64s.charAt((bits & 0x0000003f));
+    }
+  if(decStr.length -i > 0 && decStr.length -i < 3){
+    dual = Boolean(decStr.length -i -1);
+    bits =
+     ((decStr.charCodeAt(i++) & 0xff) <<16) |
+     (dual ? (decStr.charCodeAt(i) & 0xff) <<8 : 0);
+    encOut +=
+      base64s.charAt((bits & 0x00fc0000) >>18) +
+      base64s.charAt((bits & 0x0003f000) >>12) +
+      (dual ? base64s.charAt((bits & 0x00000fc0) >>6) : '=') +
+      '=';
+    }
+  return encOut
+  }
+
+
+function js_pixel_code(page,identifier){
+	document.write("      &lt;img alt=\"\" src=\"pixel.php?");
+	document.write("h=");
+	document.write(encode(document.domain));
+	document.write("&u=");
+	document.write(encode(document.URL));
+	document.write("&r=");
+	document.write(encode(document.referrer));
+
+	document.write("&p=");
+	document.write(encode(page));
+	if(identifier){
+		document.write("&i=");
+		document.write(encode(identifier));
+	}
+
+	document.write('\" ');
+	document.write(" width=\"1\" height=\"1\" ");
+	document.write("/&gt;\r\n");
+
+	return true;
+}
+
+
+&lt;/script&gt;
+
+
+</pre>
+
+
+
+
+<pre "class="code">
+
+  &lt;script type="text/javascript"&gt;
+    js_pixel_code("examples","javascript_pixel");
+  &lt;/script&gt;
+
+  &lt;noscript>
+    &lt;img src="pixel.php" width="1" height="1" alt="The Stickybeak" /&gt;
+  &lt;/noscript>
+
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr />
+<a name="embedded"></a>
+<h3>Embedded PHP</h3> 
+
+<p>This method of installing The Stickybeak is the only method that does not use image based logging. </p>
+<p>The Stickybeak can be embedded into existing PHP code on a webpage using the code below.</p>
+
+<pre  class="code">
+
+ $config_standard=array(
+  "mysqlhost" => "localhost", 
+  "mysqldb" => "stickybeak", 
+  "mysqltable" => "stickybeak_logs",    
+  "mysqluser" => "username", 
+  "mysqlpass" => "password", 
+  "usecookie" => true
+ );
+
+ include "TheStickybeak.php";
+ $s=new stickybeak($config_standard);
+ $s->log();
+
+</pre>
+<p> When The Stickybeak is embedded in such a way the <i>log()</i> function must be called before any other output has been sent to the browser as it sets a cookie. If cookies are not used the code may be embedded at any stage of the PHP script from which it is called.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br />
+
+   <hr />
+  <small>&copy; 2001-2005 - <i>The Stickybeak</i> is a Registered Australian Trademark</small>
+ </body>
+</html>
+
