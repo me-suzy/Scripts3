@@ -1,0 +1,42 @@
+Some information about the security-option of showlog:
+
+Login required for showlog:
+$login_require = true;			// require login for showlog [ true/false]
+
+Showlogs own loginscreen:
+$login_screen = true;			// show loginscreen [ true/false]
+
+$login[1]["user"] = "all";			// username for showlog login
+$login[1]["pass"] = "all";		// password for showlog login
+$login[1]["right"] = "all";		// userrights [ all/view ]
+
+$login[2]["user"] = "view";		// username for showlog login
+$login[2]["pass"] = "view";		// password for showlog login
+$login[2]["right"] = "view";		// userrights [ all/view ]
+
+Target if login accepted, normally the showlog-file
+$login_accept = "statistics.php";	// name of showlog file for loginscreen
+
+Path or page that'll be shown if user has no right to call showlog
+$login_denied = "../";			// errorpage or errorpath
+
+
+You can use your own loginsystem with showlog.
+$login_screen = false;		// show loginscreen [ true/false]
+In this case you have to call showlog with "?id=xxxxxxxxxxxx" where xxxxxx
+is the session_id and write the session_var $_SESSION["SHOWLOG"] = "view"
+or $_SESSION["SHOWLOG"] = "all" if your login was successfull.
+Maybe you need to modify the session handling of showlog to make it conform
+with your own session handling: in "templates/template.inc.php"
+...
+// --- session control: initialize session -------------------------------------------------
+// --- output parameters: session id
+function session_control() {
+  ini_set("session.use_cookies", 0);
+  ini_set("session.use_trans_sid", 0);
+  ini_set("url_rewriter.tags", "");
+  session_name('id');
+  session_start();
+  return session_id();
+}
+...
