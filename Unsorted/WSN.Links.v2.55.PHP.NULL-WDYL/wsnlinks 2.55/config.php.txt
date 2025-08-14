@@ -1,0 +1,12 @@
+<?php
+   $categoriestable = 'wsnlinks_categories';
+   $linkstable = 'wsnlinks_links'; 
+   $metatable = 'wsnlinks_settings';
+   $commentstable = 'wsnlinks_comments';
+   $languagetable = 'wsnlinks_language';
+   $memberstable = 'wsnlinks_members';
+   $membergroupstable = 'wsnlinks_membergroups';
+   $databasename = 'wsn';
+   $prefix = 'wsnlinks_';
+   $connection = mysql_connect('localhost', 'root', '');
+   mysql_select_db('wsn'); ?>
