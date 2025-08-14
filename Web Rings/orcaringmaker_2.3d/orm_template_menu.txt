@@ -1,0 +1,89 @@
+# Orca Ringmaker 2.3d - Control Panel Template
+#   See the readme.txt file for editing instructions
+
+<div id="orm_control">
+  <h3>%{menu.title}%</h3>
+
+  &{menu.announcement}&
+    <div class="orm_cbox orm_announcement">
+      %{menu.announcement}%
+    </div>
+  &{}&
+
+  <div class="orm_cbox">
+    <ul>
+      <li><a href="%{php.self}%" title="%{menu.hublink.title}%">%{menu.hublink.text}%</a></li>
+      !{udata.logged}!
+        <li><a href="%{php.self}%?Add" title="%{menu.addlink.title}%">%{menu.addlink.text}%</a></li>
+      !{}!
+      &{menu.rndlink}&
+        <li><a href="%{php.self}%?Go&amp;Rand&amp;-1" title="%{menu.rndlink.title}%">%{menu.rndlink.text}%</a></li>
+      &{}&
+      &{menu.hlplink}&
+        <li><a href="%{php.self}%?Help" title="%{menu.hlplink.title}%">%{menu.hlplink.text}%</a></li>
+      &{}&
+    </ul>
+  </div>
+
+  <div class="orm_cbox">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td colspan="2">
+          <a href="%{php.self}%?Stats&{udata.id}&&amp;id=%{udata.id}%&{}&" title="%{menu.stslink.title}%">%{menu.stslink.text}%</a>
+        </td>
+      </tr>
+      <tr>
+        <th>%{menu.stsitem.sites.text}%</th>
+        <td>%{menu.stsitem.sites.data}%</td>
+      </tr>
+      <tr>
+        <th>%{menu.stsitem.2week.text}%</th>
+        <td>%{menu.stsitem.2week.data}%</td>
+      </tr>
+      <tr>
+        <th>%{menu.stsitem.8week.text}%</th>
+        <td>%{menu.stsitem.8week.data}%</td>
+      </tr>
+    </table>
+  </div>
+
+  ={udata.logged:=:0}=
+    <div class="orm_cbox">
+      <form action="%{php.self}%" method="post">
+        <div>
+          <label>
+            %{menu.login.username}%:<br />
+            <input type="text" size="10" name="user" />
+         </label>
+          <label>
+            %{menu.login.password}%:<br />
+            <input type="password" size="10" name="pass" />
+         </label>
+          <input type="hidden" name="event" value="Login" />
+          <input type="submit" value="%{menu.login.submit}%" />
+        </div>
+      </form>
+    </div>
+  ={}=
+  ={udata.logged:!:0}= 
+    <div class="orm_cbox orm_cent">
+      %{menu.login.owner}%<br />
+      <small><a href="%{php.self}%?Logout">%{menu.login.logout}%</a></small>
+    </div>
+
+    <div class="orm_cbox">
+      <ul>
+        ={udata.logged:=:3}=
+          <li><a href="%{php.self}%?Setup" title="%{menu.opt.setup.title}%">%{menu.opt.setup.text}%</a></li>
+        ={}=
+        ={udata.logged:<:3}=
+          <li><a href="%{php.self}%?Edit" title="%{menu.opt.edit.title}%">%{menu.opt.edit.text}%</a></li>
+        ={}= 
+        ={udata.logged:>:1}=
+          <li><a href="%{php.self}%?Admin" title="%{menu.opt.admin.title}%">%{menu.opt.admin.text}%</a></li>
+          <li><a href="%{php.self}%?Email" title="%{menu.opt.email.title}%">%{menu.opt.email.text}%</a></li>
+        ={}=
+      </ul>
+    </div>
+  ={}=
+</div>
