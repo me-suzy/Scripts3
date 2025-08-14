@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>webDate Plugin Installation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<p><b><font face="Arial, Helvetica, sans-serif" size="4" color="#000099">webDate 
+  PayPal Plugin 1.0</font></b><br>
+  <a href="http://www.web-scribble.com"><font face="Arial, Helvetica, sans-serif" size="2">http://www.web-scribble.com 
+  </font></a></p>
+<p><b><font face="Arial, Helvetica, sans-serif" size="2">Installation Instructions</font></b><font face="Arial, Helvetica, sans-serif" size="2"> 
+  </font></p>
+<ol>
+  <li><font size="2" face="Arial, Helvetica, sans-serif">Please replace billing.pml 
+    with the existing file in engine/pages and the other two files with the existing 
+    files in the templates folder. Then, open smartway/conf/conf.xml and add the 
+    follow lines of code below the 2checkout information so it looks like this: 
+    <br>
+    <br>
+    &lt;section name=&quot;2CHECKOUT.COM CONFIGURATION&quot;&gt;<br>
+    &lt;field required=&quot;1&quot; type=&quot;edit&quot; name=&quot;checkout_url&quot; 
+    text=&quot;URL&quot;&gt;https://www.2checkout.com/cgi-bin/Abuyers/purchase.2c&lt;/field&gt;<br>
+    &lt;field required=&quot;1&quot; type=&quot;edit&quot; name=&quot;checkout_id&quot; 
+    text=&quot;Your ID&quot;&gt;16984&lt;/field&gt;<br>
+    &lt;/section&gt;<br>
+    &lt;section name=&quot;PAYPAL CONFIGURATION&quot;&gt;<br>
+    &lt;field required=&quot;1&quot; type=&quot;edit&quot; name=&quot;paypalemail&quot; 
+    text=&quot;PayPal Email&quot;&gt;sales@web-scribble.com&lt;/field&gt;<br>
+    &lt;/section&gt;<br>
+    <br>
+    In the admin area, you will now be able to configure the PayPal information.</font></li>
+  <li><font size="2" face="Arial, Helvetica, sans-serif"><br>
+    <font color="#FF0000"><strong>Although thoroughly tested without any serious 
+    difficulties, Web Scribbles assumes no responsibility for potential damages 
+    this script may cause.</strong></font></font></li>
+</ol>
+<p align="center"><font size="2" face="Arial, Helvetica, sans-serif">Unauthorized 
+  distribution of this script is strictly prohibited and will be prosecuted to 
+  the fullest extent of the law.<br>
+  &copy;2002 Web-Scribble.com</font></p>
+</body>
+</html>
