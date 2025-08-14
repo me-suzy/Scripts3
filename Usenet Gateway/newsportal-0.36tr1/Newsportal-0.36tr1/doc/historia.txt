@@ -1,0 +1,200 @@
+0.36tr1 (27.12.2004)
+*zmiany z v0.36
+- rozszerzona obs³uga CSS
+- dodane ma³e wyj¶cie RSS (extras/rss/backend.php)
+- poprawiona interpretacja strefy czasowej
+- bugfix: article overview parsing
+- poprawka: newsportal nie wykrywa³ pustych plików w spoolu
+- rozszerzone cache'owanie
+- lista grup w index.php te¿ jest cahce'owana
+- rozpoczêta restrukturyzacja kodu
+- jakie¶ niewielkie zmiany
+- zaktualizowane duñskie t³umaczenie, by Rasmus Bog Hansen <moffe@amagerkollegiet.dk>
+- podzia³ g³ównego pliku newsportal.php na kilka mniejszych
+- "p³aski widok" artyku³ów w w±tku
+- thread.php teraz te¿ mo¿e wy¶wietlaæ tylko pierwszy artyku³ w±tku
+- zmiana nazwy niektórych opcji w config.inc.php
+- szybsze renderowanie pojedyñczych artyku³ów
+- poprawiony b³ad przy dekodowaniu za³±czników mime (by Eckhard Voellm, ev@iltis.maxdsl.de)
+- w p³askim widoku, d³ugie artyku³y mog± byæ przyciête po ilu¶ liniach
+- Powinno dzia³aæ z php5
+*zmiany TRanksa:
+- Niewielkie poprawki b³edów
+- Generowany kod to poprawny xhtml 1.1 strict
+
+0.35 TRanx rebuild 1 (4.04.2004)
+*zmiany z v0.35 i v0.35pl1
+- Poprawa b³êdu przy dekodowaniu znaków, by Paulius Bulotas <paulius@kaktusas.org>
+- poprawa b³êdu w index.php: puste linie w groups.txt powodowa³y problemy
+- Poprawa b³êdu: istnia³a mo¿liwo¶æ nadpisania plików na serwerze, by Jordan
+  Russell <jr@quo.to>
+- Zmiana sposobu generowania Message-ID
+- Dodana obs³uga wysy³ania anonimów (bez adresu email)
+
+0.34 TRanx rebuild 3 (20.03.2004)
+- Poprawione odpowiadanie na posty ze znakiem backslash, czyli "\"
+- Zmiana reg-expów odpowiedzialnych za konwertowanie tekstu na linki. Oparte na pomy¶le Jordana Russella
+
+0.34 TRanx rebuild 2 (01.03.2004)
+- Dodana obs³uga stron opartych na modu³ach
+- Niewielkie poprawki
+
+0.34 TRanx rebuild 1 (19.02.2004)
+*Zmiany z v0.34
+- Ma³e poprawki
+- poprawiony b³±d w lib/check.php
+*Zmiany w wersji TRanxa:
+- Poprawiony b³±d przy wy¶wietlaniu w±tków
+- Poprawiony b³±d przy wy¶wietlaniu linków ze znakiem '+'
+
+0.33 TRanx rebuild 1 (13.02.2004)
+*Zmiany z v0.33
+- Mo¿liwo¶æ usuniêcia linków 'mailto:' z thread.php i article.php oraz 
+  automatycznej edycji adresów, aby uczyniæ je niewidoczne dla harvesterów
+  (automatów zbieraj±cych adresy email ze stron i rozsy³aj±cych spam)
+*Zmiany w wersji TRanxa:
+- Poprawiony b³±d przy wy¶wietlaniu tre¶ci z $article_graphicquotes=true
+- Ma³e zmiany przy ukrywaniu e-mali przed harvesterami
+- Dodana zamiana @ na &#0064; w adresach email w thread.php
+- Ma³e uporz±dkowanie generowanego kodu html
+- Zmiana sposobu wy¶wietlania ¼ród³a wiadomo¶ci
+- Naprawiony b³±d: Na niektórych wersjach PHP wysy³anie nowych wiadomo¶ci nie
+  by³o mo¿liwe (powrót do starego sposobu skracania referencji)
+
+0.32 TRanx rebuild 1 (12.02.2004)
+*Zmiany z v0.32
+- Nowy jêzyk: duñski, by Rasmus Bog Hanasen <moffe@amagerkollegiet.dk>
+*Zmiany z v0.31
+- Poprawiony b³±d w w±tkowaniu powoduj±cy wysypanie siê przy niektórych artyku³ach
+- Poprawiony b³±d powoduj±cy problemy ze specyficznymi ustawieniami grup
+- Nowy modu³ sprawdzaj±cy poprawno¶æ niektórych ustawieñ w konfiguracji
+- Poprawiony b³±d w cancel.php
+*Zmiany z v0.30
+- Zmiana sposobu skracania za d³ugich referencji
+- Ma³e poprawki w niemieckim pliku jêzykowym, by Yogi <jo_bo@nexgo.de>
+- Lekkie uporz±dkowanie kodu
+*Zmiany w wersji TRanxa:
+- Ma³e zmiany w funkcj konwertuj±cej URLe na linki
+- Aktualizacja plików jêzykowych (english, polish, deutsch)
+
+0.29 TRanx rebuild 1 (5.02.2004)
+*Zmiany z v0.29:
+- Sortowanie w±tków od najnowszego artyku³u
+- Newsportal teraz dzia³a z serwerem Changi
+- Dodana mo¿liwo¶c indywidualnej konfiguracji dla grup lub hierarchii np.
+  ustawienie dostêpu w trybie "tylko do odczytu", zmiana jêzyka itp.
+*Zmiany w wersji TRanxa:
+- Ma³e zmany i poprawki w deutsch.lang, Podziêkowania dla Yogi <jo_bo@nexgo.de>
+- Poprawione i zmienione formatowanie wy¶wietlanych artyku³ów (format=flowed i
+  Ascii-arty wy¶wietlane poprawnie)
+  
+0.28 TRanx rebuild 3 (2.02.2004)
+- Poprawa dekodowania tematów w QP generowanych przez niektóre czytniki
+- Ulepszenie funkcji konwertuj±cej URLe na hiperlinki
+- Poprawa komentarzy w stylach CSS
+- Poprawa wy¶wietlania cytowanych postów w post.php
+- Poprawa wysy³ania niektórych postów zawieraj±cych delimiter (-- )
+- Ma³e zmiany w funkcji rozpoznaj±cej cytowany tekst
+
+0.28 TRanx rebuild 2 (28.01.2004)
+- Naprawiona funkcja sprawdzaj±ca dostêp do grupy
+- Poprawa wy¶wietlania bloku cytatu z $article_graphicquotes=true;
+- Poprawa generwania paragrafów i wy¶wietlania ich
+
+0.28 TRanx rebuild 1 (25.01.2004)
+*Zmiany z v0.28:
+- Zmiana nazwy zmiennej z $charset na $www_charset
+- Rozbudowanie styli
+- Poprawiony b³ad w wy¶wietlaniu w±tków, zrobi³
+  Gunter Ohrner <G.Ohrner@post.rwth-aachen.de>
+- Zmiana sposobu przekazywani danych do attachment.php
+*Zmiany TRanxa:
+- Zmiana sposobu generowania Message-ID
+- Poprawa generowania wiadomo¶ci do wys³ania w stylu format=flowed
+- Dodanie mimetypów do funkcji rozpoznaj±cej za³±cznik
+- Zmiana nazwy z newsportal.css na style.css
+- Ma³e zmiany w plikach jêzykowych (polish, english, i german)
+- Dodana mo¿liwo¶æ ustalenia sposobu dostêpu do ka¿dej grupy oddzielnie
+- Nag³ówek References: jest teraz skracany do 1000 znaków (jak sugeruje RFC)
+
+0.27 TRanx rebuild 2 (16.01.2004)
+- Dodanie kilku mimetypów do funkcji rozpoznaj±cej za³±cznik
+- Poprawa i zmiana sposobu formatowania wy¶wietlanych postów
+- Poprawa zawijania d³ugich cytowanych linii przy wysy³aniu wiadomo¶ci
+- Dodany skrypt konfiguracyjny (admin.php)
+- Niewielka zmiana w newsportal.css
+
+0.27 TRanx rebuild 1 (10.01.2004)
+*Zmiany z v0.27:
+- Plik jêzykowy z jêzykiem rosyjskim, napisa³ Dmitry E Gouriev,
+  gouriev@icenet.ru
+- Automatyczna konwersja charsetu w wy¶wietlanych artyku³ach za pomoc±
+  rozszerzenia PHP iconv
+- Poprawione niektóre b³êdy HTML w thread.php + usuniêta niepoprawna tabelka,
+  poprawi³ Wolfgang Scheicher <worf@sbox.tu-graz.ac.at>
+*Zmiany TRanxa
+- Poprawione formatowanie wy¶wietlanych artyku³ów
+- Poprawione wy¶wietlanie postów z cytatami zaznaczonymi znakami ":" i "|"
+- Style CSS przeniesione do zewnêtrznego pliku
+- Dodane wy¶wietlanie nag³ówków czytanego posta w fajnej ramce
+- Poprawione niektóre b³êdy HTML w thread.php ;] i powrót do starego sposobu
+  wy¶wietlania go
+
+0.26 TRanx rebuild 2 (7.01.2004)
+- Dodanie mo¿liwo¶ci generowania nag³ówka Message-ID w postach wychodz±cych
+- Dodanie pseudo-obs³ugi wy¶wietlania X-Face'ów
+- Poprawienie dekodowania tematow w niektórych postach
+- Poprawienie wy¶wietlania postów z format=flowed (w tym "-- ")
+
+0.26 TRanx rebuild 1 (4.01.2004)
+*Zmiany z 0.26:
+- Nowy sposób wy¶wietlania grup w index.php
+- Dodanie kolorowania ilo¶ci artyku³ów w index.php
+- Rozró¿nianie i poprawne traktowanie postów z opcj± format=flowed przy
+  czytaniu i pisaniu
+- Lista postów z thread.php jest teraz zapisywana i przechowywana w spoolu jako
+  plik html
+- Dodanie mo¿liwo¶ci wy¶wietlania postów za pomoc± styli (jak Mozilla)
+*Zmiany TRanxa
+- Poprawa funkcji formatuj±cej wy¶wietlany post
+- Zmiana wrotki (Dodanie Message-ID)
+- Zmiany w funkcji zamieniaj±cej zwyk³y tekst na linki
+- Poprawiony b³±d wieszaj±cy skrypt przy w³±czonym kolorowaniu liczby postów,
+  gdy sprawdzana grupa nie istnieje
+- Dodanie komunikatu o braku danej grupy wy¶wietlanego w miejscu ilo¶ci postów
+  ($text_index["no_newsgroup_avaiable"] w english.lang i polish.lang)
+- Poprawa wysy³ania polecenia QUIT do serwera przy odczycie tre¶ci artyku³u
+  (nie by³o wysy³ane)
+
+0.25 TRanx rebuild 8 (30.12.2003)
+- Poprawa cytowania drugiego i wy¿szych poziomów przy odpowiadaniu
+- Poprawa zawijania tekstu przy wysy³aniu wiadomo¶ci
+- Zmiana sposobu wy¶wietlania pola From:
+- Zmiana formatu wy¶wietlania daty w jêzyku polskim (polish.lang)
+- Poprawa wy¶wietlania ¼ród³a wiadomo¶ci w plikach z za³±cznikami i
+  multipart/alternative przy w³±czonym dekodowaniu za³±czników
+- Poprawa b³êdu nie pozwalaj±cego na wy¶wietlenie postów ze s³owem "begin" na
+  pocz±tku linii przy w³±czonym dekodowaniu za³±czników
+
+0.25 TRanx rebuild 7 (28.11.2003)
+- Dodanie kilku stringów do plików jêzykowych (edycja newsportal.php i
+  post.php, english.lang i polish.lang)
+- Dodanie podgl±du ¼ród³a wadomo¶ci
+
+0.25 TRanx rebuild 6 (8.11.2003)
+- Poprawione wy¶wietlanie postów ze spacjami na pocz±tku pierwszego wiersza
+  (wcze¶niej by³y usuwane)
+- Poprawiona obs³uga definiowanego charsetu
+- Uproszczenie funkcji zawijaj±cej wiersze (optycznie bez ró¿nicy)
+
+0.25 TRanx rebuild 5 (od 1) (26.10.2003)
+- Zmiana nazwy z config.inc na config.inc.php
+- Wiêcej nag³ówków, ni¿ temat jest dekodowanych
+- Charset strony i nowych postów jest definiowany w pliku config.inc.php
+- Poprawka w pliku post.php (b³êdny temat przy odpowiedzi)
+- Poprawiona obs³uga za³±czników
+- Poprawa obs³ugi i wspó³pracy newspotralu z dwoma serwerami news
+- Parê innych niezbyt wa¿nych zmian
+
+
+Nieprzet³umaczona histora poprzednich wersji w pliku history.txt
