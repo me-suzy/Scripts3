@@ -1,0 +1,8 @@
+- Webserver mit PHP 4.2 oder neuer
+    z.B. Apache2 oder Microsoft IIS 5
+
+- Browser der 5ten Generation oder neuer
+    z.B. Mozilla, Firefox oder Internet Explorer 6
+
+- (Optional) für anzeigen in der Statuszeile des Browsers:
+    Browser mit eingeschaltetem Javascript
