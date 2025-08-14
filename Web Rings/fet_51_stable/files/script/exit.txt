@@ -1,0 +1,54 @@
+<?php
+$c_time=time();
+require 'fet/settings.php';
+$fet_path=$cfg['FET_PATH'] or exit('<center><font size=2 color=red face=arial><b>Main settings file corrupt, working path not set</b></font></center>');
+$html_path=$cfg['HTML_PATH'] or exit('<center><font size=2 color=red face=arial><b>Main settings file corrupt, HTML path not set</b></font></center>');
+$sf=@file($fet_path.'/data/exit_urls.dat');
+if(!$sf) exit('<center><font size=2 color=red face=arial><b>Exit URLs file not found or empty</b></center>');
+$ch=date('G');
+$cm=date('i');
+$tprc=0;
+foreach($sf as $sfl){
+    list($furl,$fdb,$fhb,$fmb,$fde,$fhe,$fme,$fht)=explode('|',trim($sfl));
+    if(!$furl) continue;
+    $this->exit_urls[$ind]=$furl;
+    $this->exit_st_day[$ind]=$fdb;
+    $this->exit_st_hour[$ind]=$fhb;
+    $this->exit_st_min[$ind]=$fmb;
+    $this->exit_ed_day[$ind]=$fde;
+    $this->exit_ed_hour[$ind]=$fhe;
+    $this->exit_ed_min[$ind]=$fme;
+    $this->exit_prc[$ind]=$fht;
+    if($fdb<1 || $fde<1){
+        $ct_time=$ch*60+$cm;
+        $st_time=$fhb*60+$fmb;
+        $ed_time=$fhe*60+$fme;
+    } else {
+        $st_time=($fdb-1)*60*24+$fhb*60+$fmb;
+        $ed_time=($fde-1)*60*24+$fhe*60+$fme;
+        $ct_time=$cd*60*24+$ch*60+$cm;
+    }
+    if($st_time<$ed_time){
+        if($ct_time>=$st_time && $ct_time<=$ed_time){
+            $active["$furl"]=$fht;
+            $tprc+=$fht;
+        }
+    } else {
+        if($ct_time>=$st_time || $ct_time<=$ed_time){
+            $active["$furl"]=$fht;
+            $tprc+=$fht;
+        }
+    }
+}
+if($tprc>0) $k=100/$tprc;
+else exit('<center><font size=2 color=red face=arial><b>No Active URLs to send</b></center>');
+$tprc=0;
+foreach($active as $aurl=>$aprc){
+    $tprc+=$aprc*$k;
+    $exout["$aurl"]=$tprc;
+}
+$r=mt_rand(0,100);
+foreach($exout as $exurl=>$exprc)
+if($r<=$exprc) break;
+@header('Location: '.$exurl);
+?>
