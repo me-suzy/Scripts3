@@ -1,0 +1,144 @@
+<?
+/*
+   Copyright (c), 1999, 2000 - phpauction.org
+   Copyright (c), 2001, 2002 - webauction.de.vu
+
+   Lizenz siehe lizenz.txt & license
+
+   Die neueste Version kostenfrei zum Download unter:
+   http://webauction.de.vu
+
+*/
+
+?>
+
+
+
+<table width="764" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF" ALIGN=CENTER>
+  <tr  valign=top> 
+    <td width="64%" VALIGN="top" height="52"> 
+      <div align="center">
+        <table width="745" border=0 cellpadding=0 cellspacing=0>
+          <tr> 
+            <td> 
+              <center>
+                <p><b> <font color="#000000" size="2"> 
+                  <?
+   		print $tlt_font.$MSG_028;
+   ?>
+                  </font> </b> </p>
+                <p><br>
+                </p>
+                <form name=sell action="sell_update.php" method="post" enctype="multipart/form-data">
+                  <input type=HIDDEN name="id" value="<? print $id; ?>">
+                  <input type=HIDDEN name="SESSION_ID" value="<? print $sessionIDU; ?>">
+                  <table border="0" cellpadding="5">
+                    <tr> 
+                      <td> </td>
+                      <td width="486"> 
+                        <? print $err_font; ?>
+                        <b> 
+                        <? print $TPL_error_value; ?>
+                        </b></td>
+                    </tr>
+                    <tr> 
+                      <td width="260" valign="top" align="right"> <b> <font color="#000000" size="2"> 
+                        <?
+        	print $std_font.$MSG_017;
+        ?>
+                        </font> </b> </td>
+                      <td width="486"> 
+                        <input type=hidden name=title size=40 value="<? print $title; ?>">
+                        <? print $title; ?>
+                        -Artikelnummer: 
+                        <? print $id; ?>
+                      </td>
+                    </tr>
+                    <tr> 
+                      <td width="204" valign="top" align="right"> <font color="#000000" size="2"> 
+                        <? print $std_font; ?>
+                        <b> <font color="#000000" size="2"> 
+                        <?
+   		print $std_font.$MSG_018;
+   ?>
+                        </font> </b> </font></td>
+                      <td width="486"> <br>
+                        <br>
+                        <font color="#000000" size="2"> 
+                        <? print $description; ?>
+                        <br>
+                        <br>
+                        <font color="#000000" size="2"> 
+                        <textarea rows=10 cols=38 name=description &imgtype=1 value="">Sie können nur die Beschreibungen nur ergänzen!</textarea>
+                        <br>
+                        <br>
+                        </font></font></td>
+                    </tr>
+                    <input type=hidden name="iquantity" size="5" value="<? print $quantity; ?>">
+                    <tr> 
+                      <td width="204" valign="top" align="right"> <b> <font color="#000000" face="arial" size="2"> 
+                        <?
+
+   		print $std_font.$MSG_020;
+   ?>
+                        </font> </b> </td>
+                      <td width="486"> <font color="#000000" face="arial" size="2"> 
+                        <? print $std_font.$MSG_267; ?>
+                        </font> 
+                        <input type=hidden name="minimum_bid" size="10" value="<? print $minimum_bid; ?>">
+                        <? print $minimum_bid; ?>
+                      </td>
+                    </tr>
+                    <input type=hidden size=8 name=location_zip value="<? print $location_zip; ?>">
+                    <tr> 
+                      <td width="204" valign="top" align="right"> <b> <font color="#000000" size="2"> 
+                        <?
+   		print $std_font.$MSG_025;
+   ?>
+                        </font> </b> </td>
+                      <td width="486"> 
+                        <input type=radio name=shipping value="1" <? print $TPL_shipping1_value; ?>>
+                        <font color="#000000" size="2"> 
+                        <? print $std_font.$MSG_031; ?>
+                        <br>
+                        <input type=radio name=shipping value="2" <? print $TPL_shipping2_value; ?>>
+                        <? print $std_font.$MSG_032; ?>
+                        <br>
+                        <input type=checkbox name=international value="1" <? print $TPL_international_value; ?>>
+                        <font color="#000000" size="2"> 
+                        <? print $std_font.$MSG_033; ?>
+                        <br>
+                        </font></font></td>
+                    </tr>
+                    <tr> 
+                      <td width="204" valign="top" align="right"> <b> <font color="#000000" size="2"> 
+                        <?
+   		print $std_font.$MSG_026;
+   ?>
+                        </font> </b> </td>
+                      <td width="486"> <font color="#000000" size="2"> 
+                        <? print $TPL_payments_list; ?>
+                        <br>
+                        </font></td>
+                    </tr>
+                    <tr> 
+                      <td width="204">&nbsp;</td>
+                      <td width="486"> 
+                        <input type="image" name="Input" src="images/aendern.gif" align="bottom" border="0" width="64" height="20">
+                        <br>
+                        <br>
+                        <p></p>
+                      </td>
+                    </tr>
+                  </table>
+                </form>
+              </center>
+            </td>
+          </tr>
+        </table>
+        <BR>
+      </div>
+      </td>
+  </tr>
+</TABLE>
+
