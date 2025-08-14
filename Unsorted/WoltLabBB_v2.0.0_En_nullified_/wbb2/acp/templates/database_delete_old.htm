@@ -1,0 +1,13 @@
+<form method="post" action="database.php" enctype="multipart/form-data">
+ <input type="hidden" name="sid" value="$session[hash]">
+ <input type="hidden" name="action" value="delete_old">
+  <table cellpadding=4 cellspacing=1 width="100%" class="tblborder" align="center">
+   <tr class="tblhead">
+    <td colspan=3>Delete tables from wBB1</td>
+   </tr>
+   <tr>
+    <td class="firstrow"><input type="checkbox" name="sure" value="1">&nbsp;<b>Delete&nbsp;tables?</b></td>
+    <td class="secondrow">To delete the tables, check the checkbox and press the "Delete tables" button.</td>
+    <td class="firstrow"><input type="submit" value="Delete tables"></td>
+   </tr>
+  </table></form>
