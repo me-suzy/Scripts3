@@ -1,0 +1,166 @@
++---------------------------------------------------------------+
+|             vB FTP 1.0 - a FTP client for vBulletin           |
+|    vB Admin CP Integration & Download Ability by Erwin Loh    |
+|       Original stand-alone version by Morten Bojsen-Hansen    |
++---------------------------------------------------------------+
+
+Additional Features (already inbuilt)
+
+1. Password Protect vB FTP.
+---------------------------
+
+In "ftp.php", find:
+
+
+PHP:  
+
+$use_login    =    true;            // Toggle login system (true/false).
+$auto_login    =    true;            // Toggle auto login (true/false).
+$username    =    "";    // Set a username
+$password    =    "";    // Set a password.
+
+
+Enter a username and password in the blank space - it can be ANYTHING you like, it doesn't have to be your real FTP username and password.
+
+This will password protect your vB FTP. You will have to enter that username and password to access this function. This will prevent other admins from accessing your site. 
+
+You can set auto login as well using the variables - basically this means that once you log in with this additional username and password, a cookie will be made, so that you will automatic login the next time. By default this is switched on.
+
+
+2. Toggle functions of FTP on or off.
+------------------------------------
+
+You can switch on or off each function of vB FTP.
+
+In "ftp.php", find:
+
+
+PHP:  
+
+$allow_view    =    true;
+$allow_create    =    true;
+$allow_edit    =    true;
+$allow_chmod    =    true;
+$allow_rename    =    true;
+$allow_delete    =    true;
+$allow_download    =    true;
+$allow_upload    =    true;
+
+
+It's self explanatory. Change it to "false" if you want to switch that function off.
+
+
+3. Type of files you can edit.
+------------------------------
+
+You can set the filename extension of files you want to be able to edit.
+
+In "ftp.php", find:
+
+PHP:  
+
+$text_files    =    array(            // Editable files
+                               "txt",
+                               "php",
+                               "phtml",
+                               "php4",
+                               "php3",
+                               "html",
+                               "htm",
+                               "css",
+                               "xml",
+                               "xsl",
+                               "bat",
+                               "log",
+                               "ini",
+                               "inf",
+                               "cfg",
+                             );
+
+
+
+Just add any extension you like to that list. There are other lists as well underneath this that you can customize.
+
+
+4. Hide files or directories.
+-----------------------------
+
+You can set files or directories to be hidden.
+
+In "ftp.php", find:
+
+
+PHP:  
+
+$ignore_file_strings        =    array(
+                                               ".htaccess",
+                                             );
+$ignore_file_extensions        =    array(
+                                               "foo",
+                                               "bar",
+                                             );
+$ignore_directory_strings    =    array(
+                                               "secret dir",
+                                             );
+
+
+
+
+Just add it to the list. It's self-explanatory.
+
+
+5. Changing the timeout (if you have trouble downloading or uploading large files).
+-----------------------------------
+
+In "ftp.php", find:
+
+
+PHP:  
+
+$use_timeout    =    false;
+$timeout    =    30;
+
+
+
+By default, this is switched off. You can turn it on by changing "false" to "true", and entering the timeout figure in seconds.
+
+
+6. Change the default directory/ Go higher all the way to root dir
+-----------------------------------------------------------------
+
+I made the forum directory the highest directory you can access by default. To change the highest directory you can access-
+
+In "ftp.php", find:
+
+PHP:  
+
+$home_dir    =    "../";
+
+
+Change "../" to the default directory you want to open vB FTP in - put in the full path.
+
+For example:
+
+PHP:  
+
+$home_dir    =    "/home/site/var/www/html/forums";
+
+
+To go to the ROOT directory, replace it with this:
+
+PHP:  
+
+$home_dir    =    "/";
+
+
+There you go! Whatever you put as the default directory is the HIGHEST directory you can go up to.
+
+It works. So you can go as high as you want changing that variable.
+
+
+Enjoy these extra features! They are already in-built in the hack. 
+
+Enjoy!
+
+
+Dr. Erwin Loh
