@@ -1,0 +1,219 @@
+<?
+/*
+   Copyright (c), 1999, 2000 - phpauction.org
+   Copyright (c), 2001, 2002 - webauction.de.vu
+
+   Lizenz siehe lizenz.txt & license
+
+   Die neueste Version kostenfrei zum Download unter:
+   http://webauction.de.vu
+
+*/
+
+?>
+
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--
+
+function SubmitBidForm()
+
+{
+
+	document.bid.submit();
+
+};
+
+//-->
+
+</SCRIPT>
+
+<TABLE WIDTH="100%" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING="0" CELLSPACING="0">
+
+<TR>
+
+<TD>
+
+<CENTER>
+
+<? print $std_font; ?>
+
+<A HREF="item.php?SESSION_ID=<? print $sessionIDU; ?>"><? print $MSG_138; ?></A> |
+
+<A HREF="bidhistory.php?SESSION_ID=<? print $sessionIDU; ?>"><? echo $MSG_105; ?></A> |
+
+<A HREF="email_request.php?SESSION_ID=<? print $sessionIDU; ?>"><? print $MSG_107; ?></A>
+
+</FONT>
+
+</CENTER>
+
+<BR><BR>
+
+<BR><CENTER><B><? print "$tlt_font $MSG_152"; ?></FONT></B></CENTER>
+
+<BR>
+
+<center><? echo $err_font.$TPL_errmsg;?></FONT></center>
+
+<BR>
+
+<FORM name="bid" action="bid.php" method="POST">
+
+<TABLE cellspacing="0" cellpadding="0" border="0">
+
+<TR>
+
+	<TD WIDTH="15%"></TD>
+
+	<TD WIDTH="70%">
+
+	    		<? print $std_font.$MSG_273; ?>
+
+				<BR><BR>
+
+				<IMG SRC="images/linea.gif" WIDTH="100%" HEIGHT="6"><BR>
+
+				<B><? print $MSG_154; ?> </B>
+
+				<IMG SRC="images/linea.gif" WIDTH="100%" HEIGHT="6"><BR>
+
+				<B><? print $MSG_155; ?></B><BR><? echo $TPL_title; ?><BR><BR>
+
+				<B><? print $MSG_156; ?></B><BR>
+
+				</FONT>
+
+
+
+			<TABLE WIDTH="100%" BORDER=0>
+
+			<TR ALIGN=LEFT><TD>
+
+				<!-- <? echo "$currency".number_format($bid,0,",","."); ?> -->
+
+					<TABLE WIDTH="0%" ALIGN=LEFT BORDER=0>
+
+						<TR VALIGN=MIDDLE>
+
+							<TD ALIGN=RIGHT><? print $std_font; ?><? echo $currency; ?></FONT></TD>
+
+							<TD ALIGN=LEFT>
+
+								<INPUT TYPE=TEXT SIZE=5 NAME="bid" VALUE="<? print $bidH; ?>">
+
+								<? print $std_font; ?>(<? print $MSG_283; ?>: <? print $TPL_next_bid; ?>)</FONT>
+
+							</TD>
+
+						</TR>
+
+						<SCRIPT LANGUAGE="PHP"> if ($atype==2): </SCRIPT>
+
+							<TR>
+
+								<TD ALIGN=RIGHT><? print $std_font.$MSG_284; ?>:</FONT></TD>
+
+								<TD ALIGN=LEFT><INPUT TYPE=TEXT SIZE=3 NAME="qty" VALUE="<? print $qtyH; ?>"></TD>
+
+							</TR>
+
+						<SCRIPT LANGUAGE="PHP"> endif; </SCRIPT>
+
+					</TABLE>
+
+			</TD></TR>
+
+
+
+			<TR ALIGN=LEFT><TD>
+
+				<TABLE WIDTH="100%" BORDER="0" CELLPADDING="2" CELLSPACING="0">
+
+				<TR>
+
+					<TD WIDTH="30%" ALIGN="right" VALIGN="bottom">
+
+	    			<? print $std_font.$MSG_047; ?>
+
+                    </FONT>
+                    
+					</TD>
+
+					<TD WIDTH="70%">
+
+	    			<? print $std_font; ?>
+
+					<A TARGET="_blank" HREF="register.php?SESSION_ID=<? print $sessionIDU; ?>"><? print $MSG_163; ?></A>
+
+					</FONT>
+
+					<BR><BR>
+
+					<INPUT TYPE="text" NAME="nick" SIZE="20" VALUE="<? echo $nickH; ?>"><BR>
+
+					</TD>
+
+				</TR>
+
+				<TR>
+
+					<TD WIDTH="30%" ALIGN="right">
+
+	    			<? print $std_font.$MSG_004; ?>
+
+                    </FONT>
+
+					</TD>
+
+					<TD WIDTH="70%">
+
+					<INPUT TYPE="password" NAME="password" SIZE="20"  VALUE=""><BR>
+
+					</TD>
+
+				</TR>
+
+				<TR>
+
+					<TD WIDTH="30%" ALIGN="right">
+
+					</TD>
+
+					<TD WIDTH="70%">
+
+					<INPUT TYPE="hidden" NAME="id" VALUE="<? echo $id; ?>"><BR>
+
+					<INPUT TYPE="hidden" NAME="action" VALUE="bid">
+
+   <INPUT TYPE=submit NAME="">
+
+   <INPUT TYPE=reset NAME="">					</TD>
+
+				</TR>
+
+				</TABLE>
+
+			</TD></TR>
+
+			</TABLE>
+
+	</TD>
+
+	<TD WIDTH="15%">
+
+	</TD>
+
+</TR>
+
+</TABLE>
+
+</FORM>
+
+</TD>
+
+</TR>
+
+</TABLE>
