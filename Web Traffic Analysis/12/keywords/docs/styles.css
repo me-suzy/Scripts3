@@ -1,0 +1,4 @@
+body,table { font-family:Verdana,Helvetica,Arial,sans-serif; font-size:12px; color:#000000; }
+p { font-family:Verdana,Helvetica,Arial,sans-serif; font-size:12px; color:#000000; padding:4px; }
+a:link,a:visited { font-family:Verdana,Helvetica,Arial,sans-serif; font-size:12px; color:#000080; text-decoration:none; }
+a:hover,a:active { font-family:Verdana,Helvetica,Arial,sans-serif; font-size:12px; color:#0000AA; text-decoration:underline; }
