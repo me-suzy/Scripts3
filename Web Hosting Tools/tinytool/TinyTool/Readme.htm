@@ -1,0 +1,933 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Tiny Tool Readme</title>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+    <meta name="generator" content="BBEdit 6.5" />
+    <meta name="generator" content="HTML Tidy for Mac OS, see www.w3.org" />
+<script type="text/javascript" language="Javascript">
+        <!--
+        function obfuscate(name,domain)
+                {
+                var scheme = new Array('m','a','i','l','t','o',':');
+                var directive = '<a href="' + scheme.join('') + name + '&#64;' + domain + '">' + name + '&#64' + domain + '<\/a>';
+                document.write(directive); 
+                } 
+         -->
+    
+</script>
+<style type="text/css">
+        /* <![CDATA[ */
+        body        
+        {
+        	width: auto;
+        	margin: 1em;
+        	padding: 2em;
+        	border-color: maroon;
+        	border-width: medium;
+        	border-style: solid;
+        	background-color: white;
+        	font-size: 100%;
+        }
+
+        tt        
+        {
+        	color: maroon;
+        	font-size: 100%;
+        }
+
+		tt.tiny { font-size: 80%; }
+
+        h4      
+        {
+            margin: 0;
+            padding: .5em;
+            background-color: #000;
+            color: white;
+            font-family: verdana, arial, geneva, tahoma, sans-serif;
+            text-align: center;
+            font-weight: bold;
+            font-size: 14pt;
+            border: 2pt solid gold;
+        }
+        
+        /* ]]> */
+</style>
+  </head>
+
+  <body>
+    <h4>Using Tiny Tool</h4>
+
+    <h3>Table Of Contents</h3>
+
+    <ul compact="compact">
+      <li><b><a href="#license">The GNU GPL License</a></b></li>
+
+      <li><b><a href="#performance">What Tiny Tool Does</a></b></li>
+
+      <li><b><a href="#requirements">Requirements</a></b></li>
+
+      <li>
+        <b><a href="#installing">Installing</a></b> 
+
+        <ul>
+          <li><a href="#installing">Un-zip and Upload</a></li>
+
+          <li><a href="#permissions">Set Permissions</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <b><a href="#editing">Editing Files and Customizing Tiny Tool</a></b> 
+
+        <ul>
+          <li><a href="#edit_config">The <i>config.php </i>file</a></li>
+
+          <li><a href="#flip_flop">Two Forms in <i>Order.php</i></a></li>
+
+          <li><a href="#edit_welcome">The <i>Welcome.php </i>file</a></li>
+
+          <li><a href="#edit_tos"><u>The <i>TOS.htm</i> file</u></a></li>
+        </ul>
+      </li>
+
+      <li>
+        <b><a href="#commentary">Additional Commentary</a></b> 
+
+        <ul>
+          <li><a href="#heredoc">Using <i>heredoc </i>Syntax</a></li>
+
+          <li><a href="#paypal">Your PayPal Setup</a></li>
+
+          <li><a href="#testing">Pre-deployment Testing</a></li>
+
+          <li><a href="#security">Security</a></li>
+
+          <li><a href="#logic">Flowcharts</a></li>
+        </ul>
+      </li>
+    </ul>
+    <a id="license" name="license"></a> 
+    <hr />
+
+    <dl>
+      <dt><b>The GNU GPL License</b></dt>
+
+      <dd>
+        <p>TeaToast Tiny Tool is a bare-bones PHP program that intends to automate new customer subscription processing for small WebHosting enterprises. Copyright (C) 2004 John Sinclair and/or Dennis Turner</p>
+
+        <p>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.</p>
+
+        <p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. For more details see the FULL TEXT of the GNU General Public License at <a href="http://www.teatoast.com/GNU_GPL_LICENSE.HTML" target="_blank">WWW.TEATOAST.COM/GNU_GPL_LICENSE.HTML</a></p>
+
+        <p>Interested parties may contact the authors by email addressed to 
+<script type="text/javascript" language="Javascript">
+obfuscate('authors', 'teatoast.com')
+</script>
+         or by writing to John Sinclair at 2597 West 5400 South, Salt Lake City, Utah 84118</p>
+
+        <p><a href="./Readme.htm">TOP</a></p>
+      </dd>
+    </dl>
+    <a id="performance" name="performance"></a> 
+    <hr />
+
+    <dl>
+      <dt><b>What Tiny Tool Does</b></dt>
+
+      <dd>
+        <p>Tiny Tool co-ordinates the activities of PayPal Subscriptions, PayPal IPN (Instant Payment Notification), and the CPanel WHM (Webhost Manager) to securely complete new account setup.</p>
+
+        <p>Tiny Tool may satisfy the needs of small WebHosts who want to:</p>
+
+        <ul compact="compact">
+          <li>offer instant access to new users</li>
+
+          <li>make their WHM automatically create accounts</li>
+
+          <li>use PayPal Subscriptions to process bankcard payments</li>
+
+          <li>have Paypal manage their customer accounts</li>
+
+          <li>maintain a database of subscribers and payments</li>
+
+          <li>display a welcome page to new subscribers</li>
+
+          <li>email new users their logon and usage instructions</li>
+        </ul>
+
+        <p>Using two program files and a configuration file, plus some ancillary pages to help educate new subscribers, Tiny Tool fully automates your new-user signup process.</p>
+
+        <dl>
+          <dt><i>Process.php</i></dt>
+
+          <dd>The primary program file, called <i>Process.php</i>, accepts customer information posted from an order form. It responds to PayPal's IPN and authenticates the subscription against SQL records. The <i>Process.php</i> module culls spoofs and false signups, and ensures that subscribers are genuine. Once it verifies the legitimacy of a new subscription, <i>Process.php</i> fully fills in the subscriber's SQL record and triggers new account creation in CPanel's WHM .</dd>
+
+          <dt><i>Order.php</i></dt>
+
+          <dd>A program called <i>Order.php</i> generates a new subscriber order form, validates the user input, creates a MySQL record for that user, and offers the potential subscriber a recap of their entered information. Once the user approves, the <i>Order.php</i> module passes the user to PayPal to complete their purchase. PayPal collects the subscriber's details which we'll get back (in <i>Process.php</i>) via IPN.</dd>
+
+          <dt><i>config.php</i></dt>
+
+          <dd>The <i>config.php</i> is the most important file for it contains all the information unique to your particular webhosting enterprise. This is the file you will most want to edit in order to make Tiny Tool work for you. This file contains your database access variables and variables used to access WHM. The config file also holds certain default values for PayPal subscriptions and it holds strings that define your specific product offerings. Site appearance is defined in <i>$head</i> and <i>$foot</i> strings in <i>Order.php</i>. By far the most important contents of <i>config.php</i> are the subscription variables passed to PayPal and package names passed to WHM. We'll go into detail later about how to edit these.</dd>
+
+          <dt><i>IPNlog.sql</i></dt>
+
+          <dd>This is the series of SQL instructions used to create the MySQL table for Tiny Tool to store transaction and subscriber details. It will set up a table in an existing database if you like. It has been designed to save all of the IPN variables that PayPal will be sending to the <i>Process.php</i> program ... perhaps more detail than you care to keep. Minor changes to the SQL layout shouldn't require code changes in <i>Process.php</i> or <i>Order.php</i>.</dd>
+
+          <dt><i>Welcome.php</i></dt>
+
+          <dd>The Welcome page is displayed to each new customer after they finish the PayPal subscription process.The <i>Welcome.php</i> file is HTML code with user-specific details inserted. It is where users re-enter your website after successfully completing the PayPal signup process, so this page is the <i>return</i> URL passed to PayPal.</dd>
+
+          <dt><i>TOS.htm</i></dt>
+
+          <dd>We've included a sample of a Terms Of Service page which you may require your new subscribers to read before starting service with you. It is linked to the order form generated by <i>Order.php</i> and there is a check-off required by the new subscriber to make sure they're aware of this page's content.</dd>
+        </dl>
+
+        <p><a href="./Readme.htm">TOP</a></p>
+      </dd>
+    </dl>
+    <a id="requirements" name="requirements"></a> 
+    <hr />
+
+    <dl>
+      <dt><b>Requirements</b></dt>
+
+      <dd>
+        <dl compact="compact">
+          <dt>PHP 4</dt>
+
+          <dd>Your PHP must have socket support ('enable-sockets') compiled in. You'll need sendmail if you want Tiny Tool to email you or your subscribers. Global variables may be ON or OFF (global variables OFF is highly recommended). Set magic_quotes for your own comfort.</dd>
+
+          <dt>MySQL</dt>
+
+          <dd>You'll need an existing database and a database user. Tiny Tool requires one table which will be added to that existing database.</dd>
+
+          <dt>YOU</dt>
+
+          <dd>You yourself are the most important requirement of all. You should be familiar with phpMyAdmin. You should understand Web Host Manager (WHM). You will absolutely have to have thorough skill with some text editor and an FTP program. Be able to UN-zip a zipped archive. Have a PayPal account and understand the basic concept behind IPN.</dd>
+        </dl>
+
+        <p>If you have defined a few hosting packages in WHM, if you've created and terminated a few accounts by yourself, you probably understand that process well enough to know what the ultimate outcome of Tiny Tool should be.</p>
+
+        <p>If you have configured and installed some PHP programs, you should not have any trouble editing the required variables in the TinyTool <i>config.php</i> file.</p>
+
+        <p>And if you have created a MySQL database and added a database user to it, then you should be able to create the <i>IPNlog</i> table.</p>
+
+        <p>However, if you have never installed or 'tweaked' any PHP/MySQL programs before, then we must dissuade you from starting with a skeletal block of code like TinyTool. TinyTool attempts to pull together several complex subsystems: PayPal's IPN, CPanel's WHM, and MySQL, not to mention the sometimes problematic realm of Form Inputs and User Data Verification. You should be at least minimally familiar with the concepts behind each of those subsystems before you try to bend them to your will. For those persons who don't enjoy tinkering with code, the outright purchase of a commercially available program is perhaps a better value than a free GPL script.</p>
+
+        <p><a href="./Readme.htm">TOP</a></p>
+      </dd>
+    </dl>
+    <a id="installing" name="installing"></a> 
+    <hr />
+
+    <dl>
+      <dt><b>Installing</b></dt>
+
+      <dd>
+        <p>The first step toward using Tiny Tool is to un-ZIP the distribution archive. We don't offer a tar or gzip archive because we would rather you take a look at Tiny Tool on your local machine before you bother putting it on your server. Both Macintosh and PC's will unzip with <a href="http://www.aladdinsys.com/" target="_blank">Aladdin Stuffit</a>.</p>
+
+        <p>You will find Tiny Tool (First release, May 2004) un-zips into eight separate files:</p>
+
+        <ol compact="compact" type="1" start="1">
+          <li>config.php</li>
+
+          <li>Order.php</li>
+
+          <li>Process.php</li>
+
+          <li>Welcome.php</li>
+
+          <li>TOS.htm</li>
+
+          <li>IPNlog.sql</li>
+
+          <li>GNU-GPL.htm</li>
+
+          <li>Readme.htm</li>
+        </ol>
+
+        <p>Item number 1, <i>config.php</i>, must be edited for Tiny tool to work with your particular system. The welcome page (<i>Welcome.php</i>) and the Service Agreement (<i>TOS.htm</i>) must be customized. Two HTML input forms are generated in <i>Order.php</i>; you'll surely want to change their appearance.</p>
+
+        <p>From the above list, only the first five files, items 1 through 5, must be uploaded.</p>
+
+        <ul>
+          <li>Upload via FTP in the ASCII (text) mode, or upload using CPanel's File Manager</li>
+
+          <li>The five files are intended to reside in the same directory</li>
+
+          <li>The name of that directory is unimportant</li>
+
+          <li>The filenames may be changed, however the issue of renaming and moving files around needs further clarification. </li>
+        </ul>
+          
+        <p>If you decide to rename or move files outside the primary Tiny Tool directory, please note the following:</p>
+
+        <ul>
+          <li>To change the name of <i>config.php</i>, find the single 'include' command line near the beginning of <i>Process.php</i>, <i>Order.php</i>, and <i>Welcome.php</i>. Change 'config.php' there to your new filename.</li>
+
+          <li>Since it contains extremely sensitive information, you may wish to put the <i>config.php</i> file outside your public access directory. To do so, change the single 'include' command line near the beginning of <i>Process.php</i>, <i>Order.php</i>, and <i>Welcome.php</i>.</li>
+
+          <li>In <i>Process.php</i> and in <i>Welcome.php</i> there is a 'header()' call that references <i>Order.php</i>. (When someone attempts to directly access either, they are dumped back into the order form.) Change this 'header()' command line if you change the name of <i>Order.php</i>.</li>
+        </ul>
+
+        <p><a href="./Readme.htm">TOP</a></p>
+        <a id="permissions" name="permissions"></a> 
+
+        <p><b>Permissions --</b> The Tiny Tool directory probably needs permission set to 777 (Read/Write/Execute All). The files may need to be 755 (Read/Execute All, Write Owner), and perhaps as loose as 644. "May" and "probably" are purposely vague words because the permission settings you need could be different depending upon your server environment. </p>
+
+        <p>On our server Tiny Tool is using:</p>
+        
+<tt>
+        <ul>
+          <li>chmod 777 drwxrwxrwx the directory</li>
+
+          <li>chmod 644 -rw-r--r-- the files</li>
+        </ul>
+</tt>
+        <blockquote>
+          <p><i><u>Authors' Note</u>:</i> For security reasons we've set up our server so our users can not change ownership of files (CHOWN) by themselves. So we have specific ownership quirks to resolve. You may also.</p>
+
+          <p>Permission levels depend on ownership. For example, in our environment PHP programs run as user 'nobody' and PHP programs create processes owned by 'nobody.' Therefore, when Tiny Tool creates the <i>SCRUB_log.php</i> file (in which Tiny Tool logs failed attempts) that file is owned by 'nobody.' In order for another owner to edit the scrub file, the scrub file must have a CHMOD 777 permission level.</p>
+
+          <p>On the other hand, suppose we use a PHP-based editor such as <a href="http://wacker-welt.de/webadmin/" target="_blank">Daniel Wacker's <i><b>webadmin.php</b></i></a> to access our files and directories. In our system <i>webadmin.php</i> runs as 'nobody' and can edit nobody's files with permission levels as low as 600, but NOT files owned by 'root' unless they are Read/Write All.</p>
+
+          <p>Issues related to ownership and permission crop up between one system and another. We would expect you to use all the security you possibly can while still being able to access the files in question for cleaning, maintenance, editing, and so forth.</p>
+        </blockquote>
+
+        <p><a href="./Readme.htm">TOP</a></p>
+      </dd>
+    </dl>
+    <a id="editing" name="editing"></a> 
+    <hr />
+
+    <dl>
+      <dt><b>Editing Files and Customizing Tiny Tool</b></dt>
+
+      <dd>
+        <p>You'll find Tiny Tool is useless if you do not fully customize the <i>config.php</i> file. We have included a sample Welcome page to instruct new users and a sample Terms Of Service Agreement, both of which need to have the fictional company called <i>Power-Hosting-at-Basic-Prices</i> (phabp.com) replaced by something more poetic.</p>
+
+        <p>First, something you are probably familiar with, but we'll remind you anyway... after editing <i>config.php</i>, or any other Tiny Tool module, save the file in ASCII mode with Unix line endings (<i>\n</i> newline).</p>
+
+        <dl>
+          <dd><a id="edit_config" name="edit_config"></a></dd>
+
+          <dt><b>The config.php file</b></dt>
+
+          <dd>
+            <p>There is a great deal to change in config.php so let's jump right in and take a close look at it.</p>
+
+            <p><b><i><u>MySQL Access</u>:</i></b> Perhaps obvious are the MySQL access variables at the beginning. You have most likely seen these settings before in other PHP configuration files. Provide the name of the database, the user you've added to that database, and that user's password. Generally your host is 'localhost.'</p>
+
+            <dl>
+              <dt><tt>$db_name = "phabp_data";</tt></dt>
+
+              <dd>phabp.com (<i>Power-Hosting-at-Basic-Prices</i>) is a fictitious company we use for demonstration purposes. Please put <b><i>your</i></b> database name between the quotation marks.</dd>
+
+              <dt><tt>$db_user = "phabp_user";</tt></dt>
+
+              <dd><b><i>Your</i></b> database user. Don't forget to <i>add the user</i> to the database if you create them with CPanel.</dd>
+
+              <dt><tt>$db_pass = "snackerly7";</tt></dt>
+
+              <dd><b><i>Your</i></b> password.</dd>
+
+              <dt><tt>$db_host = "localhost";</tt></dt>
+
+              <dd>Leave this as 'localhost' in most cases.</dd>
+
+              <dt><tt>$db_table= "IPNlog";</tt></dt>
+
+              <dd>The default name of the table created by the SQL code in <i>IPNlog.sql</i>. If you want to change the table name do so here in <i>config.php</i> <u>AND</u> in the CREATE TABLE line of <i>IPNlog.sql</i>.</dd>
+            </dl>
+
+            <p><a href="./Readme.htm">TOP</a></p>
+
+            <p><b><i><u>WHM Access</u>:</i></b> To access WHM from Tiny Tool you must supply several values in <i>config.php</i>:</p>
+
+            <dl>
+              <dt><tt>$whm_host = "localhost";</tt></dt>
+
+              <dd>'Localhost' is the same entity used when addressing SQL. If you are sending instructions from a remote host, change <i>$whm_usessl</i> to '1' for yes, meaning you will be using SSL.</dd>
+
+              <dt><tt>$whm_user = "toadybob";</tt></dt>
+
+              <dd><i>$whm_user</i> is the user name you use when you log on to WHM.</dd>
+
+              <dt><tt>$whm_pass = "bebop";</tt></dt>
+
+              <dd><i>$whm_pass</i> is the password you use when you log on to WHM.</dd>
+
+              <dt><tt>$whm_accesshash = "yb9fc20c08x5c8...c200f9c4r2843c";</tt></dt>
+
+              <dd>Your Remote Access Key found in WHM. The access hash is several hundred hexadecimal digits that must be transcribed character for character <b>without spaces or linebreaks</b>.</dd>
+
+              <dt><tt>$whm_usessl = 0;</tt></dt>
+
+              <dd>'0'=no, '1'=yes. Set this to 1 if you are sending instructions from a remote host.</dd>
+            </dl>
+
+            <p>In <i>Process.php</i> Tiny Tool instructs CPanel's Accounting Module to create a new account with this line of code:</p>
+            <tt>
+            createacct($host,$user,$accesshash,$usessl, $acctdomain,$acctuser,$acctpass,$acctplan);
+			</tt> 
+
+            <p>Variables such as <i>$acctdomain</i>, <i>$acctuser</i> and <i>$acctplan</i> are gleaned from the new subscriber's inputs during the signup process. Tiny Tool will generate their password (<i>$acctpass</i>) and email it to them.</p>
+
+            <p><i><u>Authors' Note</u>:</i> The <a href="http://www.cpanel.net/docs/whm/UsingCpanelAccountingPhpModule.htm" target="_blank">CPanel PHP Accounting Module</a> provides an API for manipulating certain WHM abilities with external PHP programs. The CPanel Accounting Module is versatile and talented, however it won't do everything associated with a user account. For example, in <i>Welcome.php</i> we want to do something in WHM that the Accounting Module can't. In that case we use another method -- we post directly to the URL for the WHM page we want to change. Both methods work fine. If you find your version of WHM doesn't respond to Tiny Tool it may be because the Accounting Module isn't being accessed; the URL method would then be useful.</p>
+
+            <p><a href="./Readme.htm">TOP</a></p>
+
+            <p><b><i><u>The IP Factor</u>:</i></b> Most webhosts are setting up accounts called <i>name</i> accounts. Name accounts share one server IP address among many subscribers.</p>
+
+            <blockquote>
+              <tt>$IP_none = "255.255.255.255";</tt>
+            </blockquote>
+
+            <p>Put your server's shared IP address as the value for <i>$IP_none</i> in the configuration file. At the end of the signup process we'll include the IP information in the new subscriber's 'Welcome' message along with their account details. We've put a field in the SQL database for you to store a unique IP number for those subscribers that purchase one later.</p>
+
+            <p><a href="./Readme.htm">TOP</a></p>
+
+            <p><b><i><u>PayPal Subscription Variables</u>:</i></b> Some of these variables are absolutely required in your initial POST to PayPal. The other variables are not required by PayPal but will be useful if you want specific results.</p>
+
+            <table summary="Two URLs">
+              <tr>
+                <td><tt>$post_to_URL = "www.eliteweaver.co.uk";</tt></td>
+
+                <td align="right">use this URL for testing</td>
+              </tr>
+
+              <tr>
+                <td><tt>$post_to_URL = "www.paypal.com";</tt></td>
+
+                <td align="right">use this URL when you go live</td>
+              </tr>
+            </table>
+
+            <p><i>$post_to_URL</i> is the destination of the IPN response. It is a variable and not hard-coded into <i>Process.php</i> because, as you can see, one may wish to post to an IPN test site. <a href="http://eliteweaver.co.uk/" target="_blank">Eliteweaver</a> is by far the most comprehensive IPN test site the authors found. In fact, Tiny Tool would not exist without extensive testing with Eliteweaver's excellent IPN Test.</p>
+
+            <p><i><u>PayPal requires the following variables in every subscription order:</u></i></p>
+
+            <dl>
+              <dt><tt>$business = "sales@phabp.com";</tt></dt>
+
+              <dd>This is YOUR PayPal ID, or email address. This email address must be confirmed and linked to your Verified Business or Premier account. This address is where the money goes so we verify it's in the IPN when PayPal sends it back.</dd>
+
+              <dt><tt>$no_note = "1";</tt></dt>
+
+              <dd>According to PayPal documentation this variable is absolutely required for subscription processing. The field must be included, and the value must be set to 1 according to the PayPal Subscription manual.</dd>
+            </dl>
+
+            <p><i><u>Optionally use these variables to control certain circumstances:</u></i></p>
+
+            <dl>
+              <dt><tt>$sra = "1";</tt></dt>
+
+              <dd><u>R</u>e<u>A</u>ttempt on failure. If set to "1," and the payment fails, the payment will be reattempted two more times. After the third failure, the subscription will be cancelled. If this variable is omitted entirely and a payment fails, no reattempt will occur and the subscription will be immediately cancelled. You will be informed by IPN every step of the way.</dd>
+
+              <dt><tt>$src = "1";</tt></dt>
+
+              <dd><u>R</u>e<u>C</u>urring payments. If set to "1," the payment will recur unless your customer cancels the subscription before the end of the billing cycle. If omitted, the subscription payment will not recur at the end of the billing cycle.</dd>
+
+              <dt><tt>$srt = <font color="#3300FF">null</font>;</tt></dt>
+
+              <dd><u>R</u>ecurring <u>T</u>imes. This is the number of payments which will occur at the regular rate. If omitted, the subscription will continue to renew at the regular rate until it is cancelled. Since endless renewal is the most frequently desired action, we set <i>$srt</i> to null (not the same as "" or an empty string) and let the program test for its presence with empty().</dd>
+
+              <dt><tt>$no_shipping ="1";</tt></dt>
+
+              <dd>Shipping address. If set to '1,' your customer will not be prompted for a shipping address. If omitted or set to '0,' your customer will be prompted to include a shipping address.</dd>
+
+              <dt><tt>$rm = "2";</tt></dt>
+
+              <dd>Return Method. Set to '2' makes all the Subscription variables available to your 'return' URL via POST method. Set to '0' or '1' and they are not. Return Method is often misunderstood. We encourage you to read page 36 of PayPal's new 2004 edition of the <a href="http://www.paypal.com/cgi-bin/webscr?cmd=p%2Fxcl%2Frec%2Fsubscr-manual-outside" target="_blank">Subscriptions and Recurring Payments Manual</a> (PDF format only). We use <i>rm</i> to make subscription variables available to our 'Welcome' page.</dd>
+
+              <dt><tt>$modify = "0";</tt></dt>
+
+              <dd>'0'= new subscription signup only, '1'= modify existing subscription only, '2'= modify existing or signup for new subscriptions. Here's another often misunderstood switch that can be useful. Read pages 21 and 38 of PayPal's new 2004 edition of the <a href="http://www.paypal.com/cgi-bin/webscr?cmd=p%2Fxcl%2Frec%2Fsubscr-manual-outside" target="_blank">Subscriptions and Recurring Payments Manual</a> (PDF format only). For example, you would set <i>modify</i> to '1' or '2' if you wanted subscribers to change from monthly installments to annual payments by themselves. (Hint: We left a 'hook' in <i>Process.php</i> where you could write in a modify routine.)</dd>
+
+              <dt><tt>$currency_code = "USD";</tt></dt>
+
+              <dd>Essential if your currency is something other than US Dollars. If omitted, it defaults to USD, so setting it to USD is actually redundant.</dd>
+
+              <dt><tt>$on0 ="Domain Name";</tt></dt>
+
+              <dd>Tiny Tool uses Option 0 to display the subscriber's domain name.</dd>
+
+              <dt><tt>$on1 ="User Name";</tt></dt>
+
+              <dd>Tiny Tool uses Option 1 to display the subscriber's logon name.</dd>
+
+              <dt><tt>$return = "http://phabp.com/TinyTool/Welcome.php";</tt></dt>
+
+              <dd>This is the <u>complete URL</u> of your welcome page. This is where customers will come back into your website after a successful subscription signup.</dd>
+
+              <dt><tt>$cancel_return = "http://phabp.com/TinyTool/Special-offers.html";</tt></dt>
+
+              <dd>This is the <u>complete URL</u> of a page on your website where PayPal sends users that don't complete the signup process. In other words, those users who cancel rather than complete the PayPal signup procedure. This page is your chance to re-sell a vacillating buyer.</dd>
+            </dl>
+
+            <p><a href="./Readme.htm">TOP</a></p>
+
+            <p><b><i><u>Looking at Package Strings</u>:</i></b> This section is at the heart of Tiny Tool. Package strings make the whole PayPal/WHM interaction occur. Essentially, package strings are the PayPal variables that determine subscription price and duration.</p>
+
+            <p>For example, let's say that at our fictional company <i>Power-Hosting-at-Basic-Prices</i> we sell 3 hosting packages: Value, Major, and Primo. We offer Value and Major on monthly recurring payments or on a single annual payment. Primo we only offer annually. Here's the way we defined them in the <i>config.php</i> file:</p>
+            <tt>$hosting_options = array (<br />
+            &nbsp;&nbsp;"Vm" =&gt; array (<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"a3"=&gt;"6.00",<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"p3"=&gt;"1",<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"t3"=&gt;"M",<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"item_name"=&gt;'VALUE 50 MB and 5 GB for $6 per month',<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"whm_name"=&gt;'phabp_VALUE',<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),<br />
+            <br />
+             &nbsp;&nbsp;"Vy" =&gt; array (<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"a3"=&gt;"61.00",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"p3"=&gt;"1",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"t3"=&gt;"Y",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"item_name"=&gt;'VALUE 50 MB and 5 GB for $61 per year',<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"whm_name"=&gt;'phabp_VALUE',<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),<br />
+            <br />
+             &nbsp;&nbsp;"Mm" =&gt; array (<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"a3"=&gt;"11.00",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"p3"=&gt;"1",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"t3"=&gt;"M",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"item_name"=&gt;'MAJOR 100 MB and 10 GB for $11 per month',<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"whm_name"=&gt;'phabp_MAJOR',<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),<br />
+            <br />
+             &nbsp;&nbsp;"My" =&gt; array (<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"a3"=&gt;"112.00",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"p3"=&gt;"1",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"t3"=&gt;"Y",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"item_name"=&gt;'MAJOR 100 MB and 10 GB for $112 per year',<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"whm_name"=&gt;'phabp_MAJOR',<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),<br />
+            <br />
+             &nbsp;&nbsp;"Py" =&gt; array (<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"a3"=&gt;"27.00",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"p3"=&gt;"1",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"t3"=&gt;"Y",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"item_name"=&gt;'PRIMO 10 MB and 1 GB for $27 per year',<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"whm_name"=&gt;'phabp_PROMO',<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),<br />
+             &nbsp;&nbsp;);</tt> 
+
+            <p>We have put the five possible options that buyers could select into one large array called <i>$hosting_options</i> so we can traverse (walk) the selections with common PHP array functions. Let's dissect the five similar sub-arrays.</p>
+
+            <p><i>$hosting_options</i> is made up of 5 associative arrays that use PayPal variable names as keys. Looking first at our Value plan we see two arrays define Value, first as monthly payments then as an annual term. We arbitrarily chose "Vm" and "Vy" as the name for these arrays. The name isn't important, it's simply a code passed around in <i>Order.php</i> so the program can parse the correct user-selected option.</p>
+
+            <p>It takes three values to tell PayPal how to charge your customers: <i>$a3</i>, <i>$p3</i>, and <i>$t3</i> which are amount, period, and term. (If you use Subscription Trial Periods you would add values for $a1, $t1, $p1, and $a2, $t2, $p2.) In the case of Vy (Value yearly), it costs $61 paid once each year. Therefore amount <i>$a3</i> is '61.00', period <i>$p3</i> is 1, term <i>$t3</i> 'Y' for yearly (case sensitive!).</p>
+
+            <p>(You could offer subscribers that pay a year in advance two free months of service by defining a year thus: period <i>$p3</i> = 14, term <i>$t3</i> = 'M' which means they would only be billed every 14 months.)</p>
+
+            <p>The value assigned to <i>$item_name</i> is the phrase that will appear in the dropdown window on your HTML form. This phrase is also passed to PayPal and will forever appear on the buyer's monthly or annual receipts, so it should remind them what they are paying for.</p>
+
+            <p><i>$whm_name</i> is the WHM package that will be activated when someone subscribes to this particular <i>$hosting_option</i>.</p>
+
+            <p><a href="./Readme.htm">TOP</a></p>
+
+            <p><b><i><u>Discount Strings</u>:</i></b></p>
+
+            <p>If you want to offer coupons, specials, or other discounts, Tiny Tool makes it easy. Essentially you will create a new package string and add it to a master array called <i>$coupon_codes</i>. Discount strings are just package strings, but with new values for the subscription variables. The coupon values overwrite the original price and duration values before the order is sent to PayPal.</p>
+			
+			<p>Lets look at the discounts <i>Power-Hosting-at-Basic-Prices</i> offers:</p>
+
+            <tt>$coupon_codes = array (<br />
+            &nbsp;&nbsp;"legacy" =&gt; array (<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"a3"=&gt;"5.00",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"p3"=&gt;"1",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"t3"=&gt;"M",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"item_name"=&gt;'Loyal Customer Discount -- 20% off',<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"whm_name"=&gt;'phabp_VALUE',<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),<br />
+            <br />
+            &nbsp;&nbsp;"student" =&gt; array<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"a3"=&gt;"7.00",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"p3"=&gt;"4",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"t3"=&gt;"M",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"srt" =&gt; "1",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"item_name"=&gt;'PRIMO Student $7 per Semester',<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"whm_name"=&gt;'phabp_PROMO',<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),<br />
+            <br />
+             &nbsp;&nbsp;"b3g4" =&gt; array (<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"a1"=&gt;"18.00",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"p1"=&gt;"3",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"t1"=&gt;"M",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"a2"=&gt;"0.00",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"p2"=&gt;"1",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"t2"=&gt;"M",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"a3"=&gt;"6.00",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"p3"=&gt;"1",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"t3"=&gt;"M",<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"item_name"=&gt;'Spring Special -- Pay 3 months and get the 4th month FREE',<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"whm_name"=&gt;'phabp_VALUE',<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),<br />
+             &nbsp;&nbsp;);</tt> 
+
+            <p>'legacy' is our Loyal Customer 20% Discount which is probably self-explanatory. It just substitutes a monthly rate that is twenty per cent lower than the regular monthly rate.</p>
+
+            <p>Notice <i>Power-Hosting</i>'s 'Student Special' is offered on a per semester basis and so it terminates after 4 months. This is done with the <i>$srt</i> variable. Normally, all subscriptions default to continuous, never-ending service, but we can override any default we wish in the <i>$coupon_codes</i> or in <i>$hosting_options</i>. PayPal sends Tiny Tool an IPN when a subscription terminates either by user cancellation or, as in this case, when End Of Term (eot) has been reached. When eot happens Tiny Tool tells the CPanel WHM to suspend (but NOT terminate) an account. You'll receive an email notice from PayPal as well as one from Tiny Tool when this happens. Should the 'student' wish to re-start, they could in effect un-suspend their account.</p>
+
+            <p>In the 'Buy 3 Get 4' special (sub-array '$b3g4'), we use PayPal's Subscription Trial Periods. To take advantage of this promotion the subscriber enters 'b3g4' in the Coupon Code box on the HTML Order Form. We instruct PayPal to charge for three months of service all at once, then give a free month of service. After that, subscribers are billed at the regular six-dollar-a-month rate for the Value plan.</p>
+
+            <p>None of the <i>$coupon_codes</i> appear in the dropdown selections; they remain invisible to new subscribers. The only way for a new subscriber to get a discount is to (a) know the proper code, and (b) type it into the blank on the HTML Order Form. Further verifying a subscriber's eligibility is beyond the scope of Tiny Tool. If you wanted, for example, to offer a Triple AAA discount or an employee discount you would have to incorporate some method of verifying a membership number or an employee number.</p>
+
+            <p><a href="./Readme.htm">TOP</a></p>
+
+            <p><b><i><u>Changing the <i>$head</i> and <i>$foot</i> Strings</u>:</i></b></p>
+
+            <p>The Order Form generated by <i>Order.php</i> begins and ends with <i>$head</i> and <i>$foot</i> respectively. Both <i>$head</i> and <i>$foot</i> are simply HTML code enclosed in PHP 'heredoc' syntax. The Tiny Tool authors use heredoc syntax often to define long passages of HTML code. There is no need for endless lines of echo() statements when you use the heredoc syntax. We consider the heredoc construct so important that we've included a longer, more detailed essay below in the <a href="#heredoc">Additional Commentary</a> section of this Readme.</p>
+
+            <p>Since <i>$head</i> and <i>$foot</i> determine the appearance of your order page, you'll probably want to customize the HTML code in them.</p>
+
+            <p><a href="./Readme.htm">TOP</a></p>
+
+            <p><b><i><u>Functions</u>:</i></b></p>
+
+            <p>The essential Tiny Tool functions in <i>config.php</i> are ...</p>
+
+            <dl>
+              <dt><tt>clean_domain($toclean)</tt></dt>
+
+              <dd>Takes a potential domain name and strips away "http://" and "www." as well as any trailing directories and filenames. Returns the basic domain name dot TLD portion of a user input.</dd>
+
+              <dt><tt>valid_domain($tocheck)</tt></dt>
+
+              <dd>Takes the cleaned domain name (from above) and validates the TLD or CC extension. Accommodates all the valid Country Codes like .co.uk and it accommodates new TLDs like .info, .museum, and others.</dd>
+
+              <dt><tt>valid_username($test)</tt></dt>
+
+              <dd>A valid username in CPanel's Web Host Manager must start with a letter, be up to 8 characters long, alphanumeric only.</dd>
+
+              <dt><tt>genpassword($length)</tt></dt>
+
+              <dd>This particular incarnation of a random password generator alternates consonants and vowels to form a somewhat pronounceable password.</dd>
+
+              <dt><tt>LIST_CONTENTS($array,$tab="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;",$indent=1)</tt></dt>
+
+              <dd>Recursively displays contents of an array and sub-arrays. Our thanks go out to Peter Kionga-Kamau (http://www.pmkmedia.com) for this particularly attractive way to visualize array contents. He says it is free for unrestricted use, except sale. $array = array name, $tab = string to use as a tab, $indent = number of tabs to indent result. This function isn't used anywhere in Tiny Tool ... you can delete it. We left it here because it was essential during program development and we thought others might like to have it in their toolbox.</dd>
+            </dl>
+
+            <p><a href="./Readme.htm">TOP</a></p>
+          </dd>
+        </dl>
+        <a id="flip_flop" name="flip_flop"></a> 
+        <hr />
+
+        <dl>
+          <dt><b>Two Forms in <i>Order.php</i></b></dt>
+
+          <dd>
+            <p>The <i>$flip</i> and <i>$flop</i> strings are two large chunks of HTML in <i>Order.php</i> that produce forms for the user. Think of <i>$flip</i> as the <u><i><b>I</b></i></u>nput form and <i>$flop</i> as the <u><i><b>O</b></i></u>utput form. <i>$flip</i> is the form that gathers user inputs: domain name, user name, service option, et cetera. <i>$flop</i> arranges the cleaned and validated inputs on a recap screen for the subscriber's final approval. If approved, <i>$flop</i> POST's the data to PayPal. If the user does not approve, but instead goes back, the <i>$flip</i> form will still be populated with prior inputs so the user can make a change without filling in all the blanks again.</p>
+
+            <p>Since the HTML code has PHP values embedded, it needs to be parsed and re-evaluated each time it is sent to the user's browser. The PHP values in the <i>$flip</i> and <i>$flop</i> strings are not static and therefore cannot be delivered just once from the <i>config.php</i>. To change the form's appearance, you would edit <i>Order.php</i>, specifically the HTML in <i>$flip</i> and <i>$flop</i>. </p>
+
+            <p>[The Tiny Tool authors agree that &lt;table&gt; is a poor way to format an HTML page. We compromised ourselves for the sake of readability and expediency, which you would never do of course.]</p>
+
+            <p><a href="./Readme.htm">TOP</a></p>
+          </dd>
+        </dl>
+        <a id="edit_welcome" name="edit_welcome"></a> 
+        <hr />
+
+        <dl>
+          <dt><b>The Welcome.php file</b></dt>
+
+          <dd>
+            <p>The sample Welcome page re-iterates the customer's subscription details and provides a few basic access instructions. This page isn't meant to be a tutorial, nor will it answer any deep questions. A good FAQ or some well-written articles will accomplish that better. Also, the <a href="http://cpanel.net" target="_blank">CPanel.net</a> documentation is readily available and well-written. </p>
+            
+            <p><b><i>listpkgs()</i></b> -- The CPanel PHP Accounting Module will list all the packages you have defined and will return an array of values for each package. The returned variables give you fifteen pieces of information:</p>
+	<ul compact="compact" type="disc"></li>
+<li>[0] = dedicated IP, yes or no</li>
+<li>[1] = CGI available, yes or no</li>
+<li>[2] = Quota (disk space) in megabytes</li>
+<li>[3] = FrontPage extensions enabled, yes or no</li>
+<li>[4] = Theme</li>
+<li>[5] = FTP Accounts</li>
+<li>[6] = SQL Databases</li>
+<li>[7] = Email Accounts</li>
+<li>[8] = Email Lists</li>
+<li>[9] = Sub-domains</li>
+<li>[10] = Bandwidth in megabytes</li>
+<li>[11] = Shell access, yes or no</li>
+<li>[12] = Parked Domains</li>
+<li>[13] = Addon Domains</li>
+<li>[14] = Features List</li>
+</ul>
+            
+            <p>Because some of these items are of interest to your subscribers, the <i>Welcome.php</i> page pulls specific items from the above list. Also this page provides basic user logon details for CPanel and some very basic Email information of immediate interest to new subscribers.</p>
+            
+            <p>The <i>Welcome.php</i> page emails itself to the user in both Plain Text and Hyper Text formats. As with other large segments of HTML code in Tiny Tool, this page is drafted using php's <i>heredoc</i> syntax.</p>
+            
+            <p>Of interest is the function called <i><b>html2text()</b></i> which translates the HTML into plain text. This is a useful function to have in your toolbox. We didn't put it in <i>config.php</i> with the other functions because it is only used on this one page and therefore just useless overhead in other program modules.</p>
+            
+            <p><a href="./Readme.htm">TOP</a></p>
+          </dd>
+        </dl>
+        <a id="edit_tos" name="edit_tos"></a> 
+        <hr />
+
+        <dl>
+          <dt><b>The TOS.htm file</b></dt>
+
+          <dd>
+            <p>Perhaps you intend your Terms Of Service to be a legal document. If so, consult an attorney. In some jurisdictions such a web page is at best only quasi-legal and semi-binding depending upon (a) how you enforce it, and (b) what laws govern contracts and torts where you operate and where your customer resides. For example, you could (God forbid) wind up in a courtroom on the wrong side of a tortious lawsuit for turning off some schmo's web site.</p>
+
+            <p>Proceed with caution. Be reasonable. Chop anything out of our sample page that doesn't sound right or isn't critical to your well-being. It may be better to operate with no agreement at all than to operate with one that isn't ironclad and 100% all-encompassing. The authors personally work with one reputable and very successful international hosting company that has absolutely no legal page or disclaimers at all.</p>
+
+            <p><a href="./Readme.htm">TOP</a></p>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+    <a id="commentary" name="commentary"></a> 
+    <hr />
+
+    <dl>
+      <dt><b>Additional Commentary</b></dt>
+
+      <dd>
+        <p><a id="heredoc" name="heredoc"></a></p>
+        <hr />
+
+        <dl>
+          <dt><b>Using heredoc Syntax</b></dt>
+
+          <dd>
+            <p>You'll find the <i>$head</i> and <i>$foot</i> strings in <i>config.php</i>, and the <i>$flip</i> and <i>$flop</i> strings in <i>Order.php</i> are defined with PHP's unusual 'heredoc' syntax. Read more <a href="http://php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc" target="_blank">about heredoc</a> in the PHP manual. We frequently use heredoc to define large blocks of HTML because...</p>
+
+            <ul>
+              <li>we can easily cut-and-paste fully refined code from an HTML page into a PHP program</li>
+
+              <li>we need only a single heredoc start and stop tag, not endless lines of echo() or .= instructions</li>
+
+              <li>heredoc simplifies using double quotes in our HTML without escaping them</li>
+
+              <li>heredoc simplifies embedding PHP variables in HTML</li>
+            </ul>
+
+            <p>We've excerpted this from the <a href="http://php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc" target="_blank">PHP manual</a>: "<i>... heredoc text behaves just like a double-quoted string ... this means that you do not need to escape quotes in your here docs</i>". The PHP manual also says: "<i>... variables are expanded, but ... care must be taken when expressing complex variables ...</i>" [which means variables may need curly braces '{' and '}' around them].</p>
+
+            <p>A heredoc definition starts with "<i>&lt;&lt;&lt;identifier</i>." The <i>identifier</i> word can be any valid variable name like 'content,' 'Burger_King,' or '_jitterbug.' The heredoc string continues until it encounters the identifier word again <i>on a line by itself</i>. Here's how the <a href="http://php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc" target="_blank">PHP manual</a> puts it: 
+
+<blockquote>
+"<i>It is very important to note that the line with the closing identifier contains no other characters, except <u>possibly</u> a semicolon (;). That means especially that the identifier <u>may not be indented</u>, and there may not be any spaces or tabs after or before the semicolon. It's also important to realize that the first character before the closing identifier must be a newline as defined by your operating system.</i>"
+</blockquote>
+</p>
+
+            <p><a href="./Readme.htm">TOP</a></p>
+          </dd>
+        </dl>
+
+        <p><a id="paypal" name="paypal"></a></p>
+        <hr />
+
+        <dl>
+          <dt><b>Your PayPal Setup</b></dt>
+
+          <dd><p>Don't forget to:</p>
+          
+            <ul>
+              <li>Enable IPN under your business account's <i>Profile</i> tab. The URL you'll use there is the complete Tiny Tool URL (for example: <i>http://your.domain.com/TinyTool/Process.php</i>).</li>
+            </ul>
+
+            <p>Let's pause for a short commercial announcement.</p>            
+            
+            <p>We use PayPal because we don't want to spend a lot of time keeping books and tracking customer accounts. PayPal keeps a ledger of our Subscribers, provides us with statements and up to the minute balances on demand. PayPal manages recurring payments, debits bankcards on time, and re-attempts failed transactions. PayPal takes care of the SSL and provides maximum security for our Subscribers. PayPal does our screening for us by verifying the Subscriber's address and bankcard. That makes us confident we are supplying legitimate buyers, not rip-off artists, scammers or SPAM ho's.</p>
+
+            <p>PayPal serves our customers by providing them with an account they can use almost everywhere on the Internet. PayPal watches our customers' bankcard expiration date which keeps them up to date, thus helping us retain them with no hassle at all. We even like PayPal Shops and EBay which provide our customers other goods and services that may interest them. And is any other payment processor FDIC insured?</p>
+
+            <p>PayPal does all this for a tiny percentage of each sale. In fact, PayPal takes far less than our bank would if we asked them to process Visa and MasterCard for us.</p>
+
+            <p>PayPal sends us email for every transaction. That alone would be enough, but they've gone the extra mile with super-simple Subscription Buttons and IPN. Where else on the Web can you get instant notification for free with PayPal's degree of security. And no one else provides documentation and support equal to PayPal.</p>
+
+            <p>That's at least ten good reasons why we (and four million other merchants) use PayPal exclusively. </p>
+
+			<p>End of commercial.</p>
+
+            <p><a href="./Readme.htm">TOP</a></p>
+          </dd>
+        </dl>
+
+        <p><a id="testing" name="testing"></a></p>
+        <hr />
+
+        <dl>
+          <dt><b>Pre-deployment Testing</b></dt>
+
+          <dd>
+            <p>Tiny Tool is a small program that executes some complex tasks. It sends and receives data behind the scenes that is critical to your business, your image, and your customers' well-being. You will benefit greatly from extensive testing. The Tiny Tool authors recommend you test Tiny Tool until you feel quite confident that it is functioning properly 100% of the time over a wide range of inputs and in all circumstances.</p>
+
+            <p>Live test your installation. No two ways about it. Go through the subscription process several times yourself to see if the accounts are being created properly in WHM.</p>
+
+            <ul>
+              <li>You may pay your PayPal business account with your PayPal Personal account as long as they are tied to separate bank accounts or separate credit cards.</li>
+
+              <li>Another method is to enlist a friend's help. Afterward, go to PayPal and cancel their subscription(s) and refund the money to their bankcard.</li>
+            </ul>
+
+            <p>Read the <a href="http://www.paypal.com/cgi-bin/webscr?cmd=p%2Fxcl%2Frec%2Fipn-manual-outside" target="_blank">PayPal IPN Manual</a> (PDF format only), pages 19 and 20, for testing tips that you cannot afford to ignore.</p>
+
+            <p>Bear in mind that nuances in your server's setup may cause Tiny Tool to behave differently from how it acts in our environment. If it doesn't exactly fit your needs as it is, perhaps it will at least be a helpful starting place. It's our sincere hope that we'll see other minds working on Tiny Tool and changing the code...</p>
+
+            <ul>
+              <li>to accommodate a wider range of environments</li>
+
+              <li>to offer more functions</li>
+
+              <li>to improve its human interface</li>
+            </ul>
+
+            <p><a href="./Readme.htm">TOP</a></p>
+          </dd>
+        </dl>
+
+        <p><a id="security" name="security"></a></p>
+        <hr />
+
+        <dl>
+          <dt><b>Security</b></dt>
+
+          <dd>
+            <p>Tiny Tool uses a simple and effective method for dis-allowing internet passers-by from directly accessing your <i>Process.php</i> file and triggering their own account creation. Users must first go through the <i>Order.php</i> process which creates an SQL record. If that initial record isn't in your database when an IPN-like posting is received by <i>Process.php</i> then it ignores the request. </p>
+            
+            <p>Additionally, whenever a legitimate user touches the SQL database via the <i>Order.php</i> program, a unique number is generated that must then be present in any IPN post coming to <i>Process.php</i>. (PayPal uses much the same method when they pass a hashed (encoded) IPN value called <i>verify_sign</i>. They expect to get that same value back.)</p>
+            
+            <p>The processing program also verifies that the other subscription parameters match. In other words, a subscriber can only get the service paid for, not some high-grade service at a cheaper price by fabricating a phoney IPN to Tiny Tool.</p>
+            
+            <p><a href="./Readme.htm">TOP</a></p>
+            
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+        <p><a id="logic" name="logic"></a></p>
+        <hr />
+
+<b>Flow Charts and Logic</b>
+
+            <p>The following charts approximate the logic flow in the <i>Order.php</i> and <i>Process.php</i> files:</p>
+
+<tt class="tiny">
+<br />
+File: Order_Form.php<br />
+=======================<br />
+if $_POST['package']&nbsp;&nbsp;&nbsp;&nbsp;( presence of $package indicates form data was submitted )<br />
+&nbsp;&nbsp;set error_tally and localize $_POST['vars'] <br />
+&nbsp;&nbsp;switch($package):<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sift through your services and set package parameters<br />
+&nbsp;&nbsp;endswitch;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;Next, we validate 3 pieces of data: domain name, user name, and <br />
+&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;compliance with a Service Agreement. <br />
+&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;On error, we increment $error_tally.<br />
+&nbsp;&nbsp;if domainname was submitted: <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clean away any overhead like 'http://' or 'www' or trailing directory names, then<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;validate the remaining alpha-numeric content and the TLD or Country Code<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;look through database to see if we've processed it before -- if so, reset form.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;Since we create a database record for every domain name we send to PayPal, &nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;and potential subscribers may cancel out before they complete the entire <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;subscription ritual, we should clean them out from time to time. However, if that <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;previous record is still hanging around, we retrieve it and simply assume the <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;potential customer is vacillating or got interrupted somewhere along the way.<br />
+&nbsp;&nbsp;if username is sent, validate length, alpha-numeric content, and<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;look through database to make sure it is unique<br />
+&nbsp;&nbsp;if 'terms' checkbox is checked, they've read our Service Agreement <br />
+&nbsp;&nbsp;if $error_tally is zero it means the data is error free <br />
+&nbsp;&nbsp;&nbsp;&nbsp;create a new database record<br />
+&nbsp;&nbsp;&nbsp;&nbsp;generate a 'last look' screen for the enduser to double check their entries:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;they can go back and edit or <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;they can continue on to PayPal<br />
+-----------------------------------------------------------------------------------------------<br />
+else <br />
+&nbsp;&nbsp;there's no data to validate so we present the initial data entry form &nbsp;&nbsp;and <br />
+&nbsp;&nbsp;post that form back to this program for validation<br />
+-----------------------------------------------------------------------------------------------<br />
+// the end of Order.php<br />
+<br />
+<br />
+File: Process.PHP<br />
+=======================<br />
+if empty ( $_POST['txn_type'] )<br />
+&nbsp;&nbsp;save this event in the spoof file (SCRUB)<br />
+&nbsp;&nbsp;exit to Order.php<br />
+else<br />
+&nbsp;&nbsp;set static vars for $db:  db_name, db_user, db_pass, db_host, db_table<br />
+&nbsp;&nbsp;set $business_email and $paypalURL,<br />
+&nbsp;&nbsp;make $postipn string<br />
+&nbsp;&nbsp;make $header string<br />
+&nbsp;&nbsp;open socket<br />
+&nbsp;&nbsp;post $domain.$header.$postipn to PayPal<br />
+&nbsp;&nbsp;get $response string<br />
+&nbsp;&nbsp;close socket<br />
+&nbsp;&nbsp;localize $_POST['vars']<br />
+&nbsp;&nbsp;if ( $response == VERIFIED && business_email_address is correct )<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;open DataBase <br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;search DB for txn_id<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;if ( txn_id NOT found ) <br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;search DB for item_number<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;if ( item_number found ) <br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;switch($payment_status):<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;case 'Completed';<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch txn_type<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subscr_payment&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ( valid payment_gross ) <br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;update DB record<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subscr_failed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(payment failed. retry twice then subscr_eot)<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;update DB record<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subscr_signup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ( valid period3 ) && ( valid amount3 )<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;update database record<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;close database<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;post setup variables to WHM's create account function<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subscr_cancel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;update DB record<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;send so-long email to subscriber<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select future-date to terminate WHM acct<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email webmaster<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subscr_eot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;update DB record<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;send so-long email to subscriber<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select future-date to terminate WHM acct<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email webmaster<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subscr_modify&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default:&nbsp;&nbsp;send_money, web_accept, cart&nbsp;&nbsp;( shouldn't ever happen ) <br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endswitch<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;close DB<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;break<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;case 'Pending';<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch pending_reason:<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echeck; break;<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;intl; break;<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;verify; break;<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;address; break;<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;upgrade; break;<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unilateral; break;<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other (default);<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endswitch;<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;break;<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;case 'Failed';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// e-check failed/declined by bank&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; break;<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;case 'Refunded';&nbsp;&nbsp;&nbsp;&nbsp;// merchant refunds&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; break;<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;case 'Canceled';&nbsp;&nbsp;&nbsp;&nbsp;// e-check failed/declined by bank&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; break;<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;case 'Denied';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// merchant denies for one of the pending reasons&nbsp;&nbsp;&nbsp;&nbsp;; <br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;endswitch;<br />
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;close $DB<br />
+-----------------------------------------------------------------------------------------------<br />
+Everything that's NOT a legitimate payment ( like INVALID, spoofs, and <br />
+&nbsp;&nbsp;code errors ) go into a 'spoof' file. <br />
+Anything that falls through the sieve above goes into the 'spoof' file for further investigation.  <br />
+Append date, $response, $_POST['vars'] and $_SERVER['vars'] into spoof file<br />
+Send email to webmaster.<br />
+exit<br />
+-----------------------------------------------------------------------------------------------<br />
+// the end of Process.php <br />
+		</tt>
+            <p><a href="./Readme.htm">TOP</a></p>
+  </body>
+</html>
