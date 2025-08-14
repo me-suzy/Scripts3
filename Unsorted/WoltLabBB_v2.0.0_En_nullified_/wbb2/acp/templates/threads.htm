@@ -1,0 +1,50 @@
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+<form action="threads.php" method="post">
+ <input type="hidden" name="send" value="send">
+ <input type="hidden" name="action" value="$action">
+ <input type="hidden" name="sid" value="$session[hash]">
+ <table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="100%" align="center">
+  <tr class="tblhead">
+   <td colspan=2>View Threads</td>
+  </tr>
+  <tr class="firstrow">
+   <td>Threads in Forum:</td>
+   <td><select name="boardid">$boardid_options</select></td>
+  </tr>
+  <tr class="secondrow">
+   <td>Sort by:</td>
+   <td><select name="sortby">
+    <option value="topic">thread subject</option>
+    <option value="starttime">start time</option>
+    <option value="starter">thread starter</option>
+    <option value="lastposttime" selected>last post time</option>
+    <option value="lastposter">last post author</option>
+    <option value="replycount">number of replies</option>
+    <option value="views">number of views</option>
+   </select> <select name="sortorder">
+    <option value="ASC">in ascending order.</option>
+    <option value="DESC" selected>in descending order.</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td>Show a maximum of:</td>
+   <td><input type="text" name="limit" value="20" maxlength=255> Threads</td>
+  </tr>
+  <tr class="secondrow">
+   <td>Begin with result number:</td>
+   <td><input type="text" name="offset" value="1" maxlength=255></td>
+  </tr>
+  <tr class="firstrow">
+   <td align="center" colspan=2><input type="submit" value="Submit"> <input type="reset" value="Reset"></td>
+  </tr>
+ </table>
+</form>
+</body>
+</html>
