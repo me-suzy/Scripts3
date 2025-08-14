@@ -1,0 +1,106 @@
+============= = Installation de wa-boo v 0.8.5 = ================
+
+1) Décompressez le fichier zip.
+
+2) Copiez l'arborescence dans un répertoire qui sera la racine du site.
+
+3) Créez une base de données MySQL ou utilisez la base dont vous disposez.
+
+4) A l'aide d'un outil du type phpMyAdmin, MySQLFront, éxécutez le script 
+   initial de création des tables (dumps/initial_dump.sql).
+
+5) Configurez les valeurs des variables du fichier includes/global_vars.php.
+
+6) indiquez les paramètres nécessaires à la connexion à la base de données 
+   dans le fichier classes/database_class.php, ligne 18.
+   Ces paramètres sont : 
+   - $host (nom du serveur), 
+   - $db (nom de la base MySQL), 
+   - $user (compte utilisateur), 
+   - $pwd (mot de passe).
+
+
+
+=========== = première utilisation de wa-boo v 0.8.5 = =============   
+
+
+   Vous pouvez alors utiliser le système. Le seul compte actif après cette
+   l'initialisation est un compte de type "godlike" (super-administrateur, 
+   avec tous les droits). le login est "godlike", et le mot de passe "godlike".
+   Il est fortement conseillé de commencer par modifier le login / mot de passe 
+   de ce compte, en se connectant tout en cochant la case "se connecter en tant
+   qu'administrateur" sur l'écran de login.
+   L'utilisateur ayant alors tous les droits, il peut créer des utilisateurs et 
+   des groupes.
+   
+   Les documentation utilisateurs et administrateur / godlike sont accessible 
+   directement au niveau des écrans principaux des différents types d'utilisateur, 
+   en cliquant sur l'icône "?". 
+   
+   
+
+=========== = Aide pour les administrateurs de wa-boo v 0.8.5 = =============
+
+
+Introduction :
+============
+wa-boo est un logiciel de gestion de carnet d'adresse, partageable, multilingue 
+et pratiquant l'import-export de ses données. 
+Fondé sur PHP4 / mySQL, wa-boo est distribué sous licence GPL. 
+
+Généralités : 
+===========
+Les fonctions d'administration de wa-boo permettent de créer, 
+modifier et supprimer les comptes des utilisateurs au sens large, les groupes 
+et les appartenances des utilisateurs aux groupes. 
+wa-boo intègre 3 niveaux d'utilisation : 
+- niveau 'UTILISATEURS', 
+- niveau 'ADMINISTRATEURS', 
+- niveau 'GODLIKE'. 
+
+
+Utilisateurs :
+============ 
+C'est le niveau d'utilisation normal. Chaque utilisateur a son carnet d'adresse privé. 
+Certains utilisateurs sont inscrits dans un ou plusieurs groupes de wa-boo. 
+Ces groupes sont gérés par un ou plusieurs administrateurs 
+
+Administrateurs : 
+===============
+Les Administrateurs gèrent les utilisateurs des groupes. 
+Un administrateur peut administrer un ou plusieurs groupes. 
+Lorsqu'il se loge en tant qu'administrateur, le menu principal propose 
+de choisir un des domaines à gérer. 
+
+Un administrateur peut créer un utilisateur et l'inclure dans un groupe 
+qu'il administre. Un administrateur ne peut modifier et supprimer un utilisateur 
+que si il est administrateur de tous les groupes de l'utilisateur. 
+Dans ce cas, s'il décide de supprimer un utilisateur qui a déjà saisi des contacts privé, 
+tous les contacts seront supprimés avec lui. 
+
+Dans le cas où il n'administre pas tous les groupes de l'utilisateur, 
+il peut pourtant inclure ou exclure cet utilisateur de son groupe, 
+en cochant directement le 'v' à droite du nom de l'utilisateur. 
+Dans ce cas, l'administrateur n'a pas accès à la modification et à la 
+suppression de cet utilisateur, il ne peut que l'inclure / exclure de son groupe. 
+Lorsqu'un utilisateur est exclu d'un groupe par un des administrateurs, 
+le sous-ensemble de ses contacts qui étaient visibles par le groupe ne le sont plus. 
+Néanmoins, ce sous ensemble des contacts de l'utilisateur lui reste attribuée. 
+
+Un utilisateur d'un groupe peut être administrateur d'un autre groupe. 
+Ces profils hybrides sont considérés par le système comme des administrateurs. 
+Cela signifie qu'ils ne sont pas visibles par les autres administrateur 
+
+Godlike : 
+=======
+Les profils Godlike ("comme Dieu") ont accès à toutes les fonctionnalités : 
+- Création, modification et suppression des groupes. 
+- Création / modification / suppression des utilisateurs, des administrateurs et des groupes. 
+- Inclusions / exclusions des utilisateurs et administrateurs. 
+
+=======================================================
+   11/03/2002
+   Alexandre VICQ / [Aaaxl] 
+   axl@nocive.com
+   
+   
