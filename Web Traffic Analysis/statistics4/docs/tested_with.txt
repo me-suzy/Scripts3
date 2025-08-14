@@ -1,0 +1,16 @@
+Tested Browsers
+	Microsoft Internet Explorer 6	[ Windows ]
+	Microsoft Internet Explorer 5	[ Windows ]
+	Firefox				[ Windows | Linux ]
+	Mozilla 1.7				[ Windows | Linux ]
+	Netscape 7				[ Windows | Linux ]
+	Netscape 6				[ Windows | Linux ]
+	Opera 8				[ Windows ]
+	Opera 7				[ Windows ]
+
+Tested Servers
+	Apache 2				[ Windows | Linux ]
+	Microsoft IIS 5			[ Windows ]
+
+Not working
+	Netscape Communicator 4.78	[ Windows ]
