@@ -1,0 +1,57 @@
+Howto install SHOWlog / WEBlog:
+
+- Downloaded SHOWlog? Great!
+
+- unzip statistics4.zip
+
+- (optional) add a additional template to 'templates/'.
+
+- make sure that there are no logfiles in 'logs/'-folder (except a redirector like e.g. index.php)
+
+- do showlog-configuration in 'config/statistics.conf.php'
+    please read 'docs/configuration.txt' for help
+
+- add the logger to your start-page (as in 'example.php')
+    your start-page is the first page a visitor requests (e.g. index.html, index.php, default.html)
+    Installing WEBlog 4.x (weblog.php):
+    !!! This version should be used, because the visitor is logged in every cause, even if the client ignors images !!!
+    At top of page (befor <HTML>):
+  ~ schnip ~
+<?php include_once("statistics/weblog.php"); ?>
+  ~ schnap ~
+  and then between <body>-tags:
+  ~ schnip ~
+<script language="javascript">document.write('<img src="statistics/weblog.php?sh='+screen.height+'&sw='+screen.width+'&sc='+screen.colorDepth+'&res=<?php echo $weblog_id; ?>" width="1" height="1" alt="">');</script>
+<noscript><img src="statistics/weblog.php?res=<?php echo $weblog_id; ?>" width="1" height="1" alt=""></noscript>
+  ~ schnap ~
+    !!! DON'T FORGET to modify the pathes to weblog.php !!!
+
+    Installing WEBlog 3.x (logger.php): 
+    !!! If client ignors images (e.g. Lynx or div. Bots/Crawler) the visitor possible may not be logged !!!
+  ~ schnip ~
+    <script language="javascript">document.write('<img src="statistics/logger.php?sh='+screen.height+'&sw='+screen.width+'&sc='+screen.colorDepth+'&ref=<?php echo (getenv("HTTP_REFERER")); ?>" width="1" height="1" alt="">');</script><noscript><img src="statistics/logger.php?ref=<?php echo getenv("HTTP_REFERER"); ?>" width="1" height="1" alt=""></noscript>
+  ~ schnap ~
+    or, if the start-page isn't php (to log referer via javascript):
+  ~ schnip ~
+  <script language="javascript">document.write('<img src="statistics/logger.php?sh='+screen.height+'&sw='+screen.width+'&sc='+screen.colorDepth+'&ref='+document.referrer+'" width="1" height="1" alt="screen">');</script><noscript><img src="statistics/logger.php?ref=" width="1" height="1" alt="logger"></noscript>
+  ~ schnap ~
+    !!! DON'T FORGET to modify the pathes to logger.php !!!
+
+- Upload the complete SHOWlog-folder to your Webserver
+
+- Change rights of the 'logs/'-folder so that the Webserver has the right to write into this folder.
+    for example: chmod 777
+
+- Upload your modified start-page
+
+- Visit your page
+
+- visit [yourpage]/statistics/statistics.php (or how you named your SHOWlog).
+    now there has to be a first entry ;-)
+    If there is no entry check the rights of the 'logs'-folder again and retry.
+
+- (optional) visit the SHOWlog-projectpage and add some ratings or a nice comment to my guestbook ;-)
+
+
+HINT: defaultlogin for Admin: name: all   password: all 
+HINT: defaultlogin for user: name: view   password: view
