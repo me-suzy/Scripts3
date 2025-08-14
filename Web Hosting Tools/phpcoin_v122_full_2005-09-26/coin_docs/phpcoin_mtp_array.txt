@@ -1,0 +1,574 @@
+
+/**************************************************************
+ * File: 		Documentation: MTP (mail template parameter) Array
+ * Author:	Mike Lansberry (http://phpcoin.com)
+ * Date:		2004-01-04 (V1.2.0)
+ * Changed: 	Stephen M. Kitching, 2005-03-03 (v1.2.2)
+ * License:	DO NOT Remove this text block. See /coin_docs/license.txt
+ *			Copyright © 2003-2004-2005 phpCOIN.com
+ * Notes:
+ *	- General listing of mail template parameter array used in
+ *	  email template.
+**************************************************************/
+
+Notes:
+	- In addition to the $_MTP array of data, the following
+	  arrays are also "in scope" and can be used in the email
+	  templates:
+		- $_CCFG[] array
+		- $_TCFG[] array
+		- $_UVAR[] array
+
+	- Do not reference variables in templates with single
+	  quotes.
+	  	BAD:	$_MTP['from_email']
+	  	GOOD:	$_MTP[from_email]
+
+	- All values should be preformatted when placed in the email
+	  (for example- date as date, currency, etc.)
+
+	- Some arrays are generated from standard function calls.
+	  Reference to one of the functions indicates that all the
+	  variables from that function are also included.
+
+	- In most cases ALL fields are brought back from several
+	  tables. If need to locate, can review schema for field
+	  names. Indicated in array build by, for example:
+			$_clinfo	= $row;
+
+
+
+/**************************************************************
+ * Standard MTP Info Function: Client Info
+ * Name:			get_mtp_client_info( $acl_id )
+ * Filename:		/coin_includes/common.php
+ * Line (approx):	515 (can search function name)
+**************************************************************/
+# Data array
+		$_clinfo					= $row;
+		$_clinfo['numrows']			= $numrows;
+		$_clinfo['cl_join_ts']		= dt_make_datetime ( $row[cl_join_ts], $_CCFG['_PKG_DATE_FORMAT_SHORT_DTTM'] );
+
+		$_clinfo['cl_info'] .= $_LANG['_CLIENTS']['CL_EMAIL_01'].$row[cl_id].$_nl;
+		$_clinfo['cl_info'] .= $_LANG['_CLIENTS']['CL_EMAIL_02'].dt_make_datetime ( $row[cl_join_ts], $_CCFG['_PKG_DATE_FORMAT_SHORT_DTTM'] ).$_nl;
+		$_clinfo['cl_info'] .= $_LANG['_CLIENTS']['CL_EMAIL_03'].$row[cl_user_name].$_nl;
+		$_clinfo['cl_info'] .= $_LANG['_CLIENTS']['CL_EMAIL_04'].$row[cl_email].$_nl;
+		$_clinfo['cl_info'] .= '-------------------'.$_nl;
+		$_clinfo['cl_info'] .= $_LANG['_CLIENTS']['CL_EMAIL_05'].$row[cl_company].$_nl;
+		$_clinfo['cl_info'] .= $_LANG['_CLIENTS']['CL_EMAIL_06'].$row[cl_name_first].' '.$row[cl_name_last].$_nl;
+		$_clinfo['cl_info'] .= $_LANG['_CLIENTS']['CL_EMAIL_07'].$row[cl_addr_01].$_nl;
+		$_clinfo['cl_info'] .= $_LANG['_CLIENTS']['CL_EMAIL_08'].$row[cl_addr_02].$_nl;
+		$_clinfo['cl_info'] .= $_LANG['_CLIENTS']['CL_EMAIL_09'].$row[cl_city].$_nl;
+		$_clinfo['cl_info'] .= $_LANG['_CLIENTS']['CL_EMAIL_10'].$row[cl_state_prov].$_nl;
+		$_clinfo['cl_info'] .= $_LANG['_CLIENTS']['CL_EMAIL_11'].$row[cl_country].$_nl;
+		$_clinfo['cl_info'] .= $_LANG['_CLIENTS']['CL_EMAIL_12'].$row[cl_zip_code].$_nl;
+		$_clinfo['cl_info'] .= $_LANG['_CLIENTS']['CL_EMAIL_13'].$row[cl_phone];
+
+/**************************************************************
+ * Standard MTP Info Function: Helpdesk Trouble Ticket Info
+ * Name:			get_mtp_hdtt_info( $ahd_tt_id )
+ * Filename:		/coin_includes/common.php
+ * Line (approx):	573 (can search function name)
+**************************************************************/
+# Data array
+		$_ttinfo						= $row;
+		$_ttinfo['numrows']				= $numrows;
+		$_ttinfo['hd_tt_id']			= $row[hd_tt_id];
+		$_ttinfo['hd_tt_cl_id']			= $row[hd_tt_cl_id];
+		$_ttinfo['hd_tt_cl_email']		= $row[hd_tt_cl_email];
+		$_ttinfo['hd_tt_time_stamp']	= dt_make_datetime ( $row[hd_tt_time_stamp], $_CCFG['_PKG_DATE_FORMAT_SHORT_DTTM'] );
+		$_ttinfo['hd_tt_priority']		= $row[hd_tt_priority];
+		$_ttinfo['hd_tt_category']		= $row[hd_tt_category];
+		$_ttinfo['hd_tt_subject']		= do_stripslashes($row[hd_tt_subject]);
+
+	#	$_ttinfo['hd_tt_message'] 		.= '------------------------------'.$_nl;
+		$_ttinfo['hd_tt_message'] 		= do_stripslashes($row[hd_tt_message]).$_nl;
+	#	$_ttinfo['hd_tt_message'] 		.= '------------------------------'.$_nl;
+
+		$_ttinfo['hd_tt_cd_id']			= $row[hd_tt_cd_id];
+		$_ttinfo['hd_tt_url']			= $row[hd_tt_url];
+		$_ttinfo['hd_tt_status']		= $row[hd_tt_status];
+		$_ttinfo['hd_tt_closed']		= do_valtostr_open_closed($row[hd_tt_closed]);
+		$_ttinfo['hd_tt_rating']		= do_valtostr_rate_ticket($row[hd_tt_rating]);
+
+		$_ttinfo['cl_company']			= $row[cl_company];
+		$_ttinfo['cl_name_first']		= $row[cl_name_first];
+		$_ttinfo['cl_name_last']		= $row[cl_name_last];
+		$_ttinfo['cl_email']			= $row[cl_email];
+		$_ttinfo['cl_user_name']		= $row[cl_user_name];
+
+		$_ttinfo['dom_domain'] 			= $dom_domain;
+
+/**************************************************************
+ * Standard MTP Info Function: Helpdesk Trouble Ticket Items / Messages Info
+ * Name:			get_mtp_hdti_info( $ahd_tt_id )
+ * Filename:		/coin_includes/common.php
+ * Line (approx):	651 (can search function name)
+**************************************************************/
+# Data array
+		$_tiinfo					= $row;
+		$_tiinfo['numrows']			= $numrows;
+
+		# Get name of user or admin who replied
+			IF 		( $row[hdi_tt_cl_id] != 0 ) { $_name = get_user_name($row[hdi_tt_cl_id], 'user'); }
+			ELSE IF ( $row[hdi_tt_ad_id] != 0 ) { $_name = get_user_name($row[hdi_tt_ad_id], 'admin'); }
+
+			$_tiinfo['tt_msgs'] .= '------------------------------'.$_nl;
+			$_tiinfo['tt_msgs'] .= $_LANG['_HDESK']['HD_EMAIL_01'].$_name.$_nl;
+			$_tiinfo['tt_msgs'] .= $_LANG['_HDESK']['HD_EMAIL_02'].dt_make_datetime ( $row[hdi_tt_time_stamp], $_CCFG['_PKG_DATE_FORMAT_SHORT_DTTM'] ).$_nl;
+			$_tiinfo['tt_msgs'] .= $_LANG['_HDESK']['HD_EMAIL_03'].$_nl;
+			$_tiinfo['tt_msgs'] .= '----------------'.$_nl;
+			$_tiinfo['tt_msgs'] .= do_stripslashes($row[hdi_tt_message]).$_nl;
+		#	$_tiinfo['tt_msgs'] .= '----------------'.$_nl;
+
+/**************************************************************
+ * Standard MTP Info Function: Invoice Info
+ * Name:			get_mtp_invoice_info( $ainvc_id )
+ * Filename:		/coin_includes/common.php
+ * Line (approx):	730 (can search function name)
+**************************************************************/
+# Data array
+		$_ininfo						= $row;
+		$_ininfo['numrows']				= $numrows;
+		$_ininfo['invc_id']				= $row[invc_id];
+		$_ininfo['invc_status']			= $row[invc_status];
+		$_ininfo['invc_deliv_method']	= $row[invc_deliv_method];
+		$_ininfo['invc_delivered']		= do_valtostr_no_yes($row[invc_delivered]);
+		$_ininfo['invc_subtotal_cost']	= $_CCFG['_CURRENCY_PREFIX'].''.do_currency_format ( $row[invc_subtotal_cost] ).'  '.$_CCFG['_CURRENCY_SUFFIX'];
+		$_ininfo['invc_tax_01_percent']	= $row[invc_tax_01_percent];
+		$_ininfo['invc_tax_01_amount']	= $_CCFG['_CURRENCY_PREFIX'].''.do_currency_format ( $row[invc_tax_01_amount] ).'  '.$_CCFG['_CURRENCY_SUFFIX'];
+		$_ininfo['invc_tax_02_percent']	= $row[invc_tax_02_percent];
+		$_ininfo['invc_tax_02_amount']	= $_CCFG['_CURRENCY_PREFIX'].''.do_currency_format ( $row[invc_tax_02_amount] ).'  '.$_CCFG['_CURRENCY_SUFFIX'];
+		$_ininfo['invc_total_cost']		= $_CCFG['_CURRENCY_PREFIX'].''.do_currency_format ( $row[invc_total_cost] ).'  '.$_CCFG['_CURRENCY_SUFFIX'];
+		$_ininfo['invc_total_paid']		= $_CCFG['_CURRENCY_PREFIX'].''.do_currency_format ( $row[invc_total_paid] ).'  '.$_CCFG['_CURRENCY_SUFFIX'];
+		$_ininfo['invc_ts']				= dt_make_datetime ( $row[invc_ts], $_CCFG['_PKG_DATE_FORMAT_SHORT_DT'] );
+		$_ininfo['invc_ts_due']			= dt_make_datetime ( $row[invc_ts_due], $_CCFG['_PKG_DATE_FORMAT_SHORT_DT'] );
+
+		IF ( $row[invc_status] == $_CCFG['INV_STATUS'][3] )
+			{ $_ininfo['invc_ts_paid']	= dt_make_datetime ( $row[invc_ts_paid], $_CCFG['_PKG_DATE_FORMAT_SHORT_DT'] ); }
+		ELSE
+			{ $_ininfo['invc_ts_paid']	= ''; }
+
+		$_ininfo['invc_bill_cycle']		= $_CCFG['INVC_BILL_CYCLE'][$row[invc_bill_cycle]];
+		$_ininfo['invc_terms']			= do_stripslashes($row[invc_terms]);
+		$_ininfo['invc_pay_link']		= do_stripslashes($row[invc_pay_link]);
+
+/**************************************************************
+ * Standard MTP Info Function: Invoice Items Info
+ * Name:			get_mtp_invcitem_info( $ainvc_id )
+ * Filename:		/coin_includes/common.php
+ * Line (approx):	798 (can search function name)
+**************************************************************/
+# Data array
+		$_iiinfo['numrows']					= $numrows;
+
+		$_ii_item_no[$_invc_items_cnt]		= $row[ii_item_no];
+		$_ii_item_name[$_invc_items_cnt]	= $row[ii_item_name];
+		$_ii_item_desc[$_invc_items_cnt]	= $row[ii_item_desc];
+		$_ii_item_cost[$_invc_items_cnt]	= $row[ii_item_cost];
+
+		$_iiinfo['iitems'] .= $_LANG['_INVCS']['INV_EMAIL_01'].$row[ii_item_no].$_nl;
+		$_iiinfo['iitems'] .= $_LANG['_INVCS']['INV_EMAIL_02'].$row[ii_item_name].$_nl;
+		$_iiinfo['iitems'] .= $_LANG['_INVCS']['INV_EMAIL_03'].$row[ii_item_desc].$_nl;
+		$_iiinfo['iitems'] .= $_LANG['_INVCS']['INV_EMAIL_04'].$_CCFG['_CURRENCY_PREFIX'].''.do_currency_format ( $row[ii_item_cost] ).'  '.$_CCFG['_CURRENCY_SUFFIX'];
+
+/**************************************************************
+ * Standard MTP Info Function: Invoice Transaction Info
+ * Name:			get_mtp_trans_info( $ait_id )
+ * Filename:		/coin_includes/common.php
+ * Line (approx):	851 (can search function name)
+**************************************************************/
+# Data array
+		$_itinfo				= $row;
+		$_itinfo['numrows']		= $numrows;
+		$_itinfo['it_id']		= str_pad($row['it_id'],5,'0',STR_PAD_LEFT);
+		$_itinfo['it_ts']		= dt_make_datetime ( $row['it_ts'], $_CCFG['_PKG_DATE_FORMAT_SHORT_DT'] );
+		$_itinfo['it_invc_id']	= $row[it_invc_id];
+		$_itinfo['it_type']		= $_CCFG['INV_TRANS_TYPE'][$row['it_type']];
+		$_itinfo['it_origin']	= $_CCFG['INV_TRANS_ORIGIN'][$row['it_origin']];
+		$_itinfo['it_desc']		= do_stripslashes($row[it_desc]);
+		$_itinfo['it_amount']	= do_currency_format ( ($row['it_amount'] * 1) );
+
+/**************************************************************
+ * Standard MTP Info Function: Order Info
+ * Name:			get_mtp_order_info( $aord_id )
+ * Filename:		/coin_includes/common.php
+ * Line (approx):	891 (can search function name)
+**************************************************************/
+# Data array
+		$_orinfo				= $row;
+		$_orinfo['numrows']		= $numrows;
+		$_orinfo['ord_id']		= $row[ord_id];
+		$_orinfo['ord_ts']		= dt_make_datetime ( $row[ord_ts], $_CCFG['_PKG_DATE_FORMAT_SHORT_DTTM'] );
+		$_orinfo['ord_status']	= $row[ord_status];
+		$_orinfo['ord_domain']	= $row[ord_domain];
+		$_orinfo['vendor_name']	= $row[vendor_name];
+		$_orinfo['prod_name']	= $row[prod_name];
+		$_orinfo['prod_desc']	= $row[prod_desc];
+
+		$_orinfo['order'] .= $_LANG['_ORDERS']['ORD_EMAIL_01'].$row[ord_id].$_nl;
+		$_orinfo['order'] .= $_LANG['_ORDERS']['ORD_EMAIL_02'].dt_make_datetime ( $row[ord_ts], $_CCFG['_PKG_DATE_FORMAT_SHORT_DTTM'] ).$_nl;
+		$_orinfo['order'] .= $_LANG['_ORDERS']['ORD_EMAIL_03'].$row[ord_status].$_nl;
+		$_orinfo['order'] .= '---------------'.$_nl;
+		$_orinfo['order'] .= $_LANG['_ORDERS']['ORD_EMAIL_04'].$row[prod_name].$_nl;
+		$_orinfo['order'] .= $_LANG['_ORDERS']['ORD_EMAIL_05'].$row[prod_desc].$_nl;
+		$_orinfo['order'] .= $_LANG['_ORDERS']['ORD_EMAIL_06'].$_CCFG['_CURRENCY_PREFIX'].''.do_currency_format ( $row[ord_unit_cost] ).'  '.$_CCFG['_CURRENCY_SUFFIX'];
+
+
+
+################################################################
+/**************************************************************
+ * Template ID:	1
+ * Name:			email_password_reset
+ * Filename:		modules/mail/mail_funcs.php
+ * Function:		do_mail_pword_reset
+ * Line (approx):	157 (of get_template function)
+**************************************************************/
+# Set MTP (Mail Template Parameters) array
+	$_MTP['from_email']	= $mail['from'];
+	$_MTP['username']	= $adata['username'];
+	$_MTP['password']	= $_nps;
+	$_MTP['url']		= $_CCFG['_PKG_URL_BASE'].'login.php?w='.$adata['w'].'&o=login';
+	$_MTP['site']		= $_CCFG['_PKG_NAME_SHORT'];
+
+
+/**************************************************************
+ * Template ID:	2
+ * Name:			email_contact_form
+ * Filename:		modules/mail/mail_funcs.php
+ * Function:		do_contact_email
+ * Line (approx):	432 (of get_template function)
+**************************************************************/
+# Set MTP (Mail Template Parameters) array
+	$_MTP['to_name']		= $_cinfo['c_name'];
+	$_MTP['to_email']		= $_cinfo['c_email'];
+	$_MTP['from_name']		= $adata['mc_name'];
+	$_MTP['from_email']		= $adata['mc_email'];
+	$_MTP['subject']		= $adata['mc_subj'];
+	$_MTP['message']		= $adata['mc_msg'];
+	$_MTP['site']			= $_CCFG['_PKG_NAME_SHORT'];
+
+
+
+/**************************************************************
+ * Template ID:	3
+ * Name:			email_contact_client_form
+ * Filename:		modules/mail/mail_funcs.php
+ * Function:		do_contact_client_email
+ * Line (approx):	611 (of get_template function)
+**************************************************************/
+# Set MTP (Mail Template Parameters) array
+	$_MTP['to_name']	= $_ccinfo['cl_name_first'].' '.$_ccinfo['cl_name_last'];
+	$_MTP['to_email']	= $_ccinfo['cl_email'];
+	$_MTP['from_name']	= $_mcinfo['c_name'];
+	$_MTP['from_email']	= $_mcinfo['c_email'];
+	$_MTP['subject']	= $adata['cc_subj'];
+	$_MTP['message']	= $adata['cc_msg'];
+	$_MTP['site']		= $_CCFG['_PKG_NAME_SHORT'];
+
+
+/**************************************************************
+ * Template ID:	4
+ * Name:			email_profile_copy
+ * Filename:		modules/mail/clients_funcs.php
+ * Function:		xxxxxxxx
+ * Line (approx):	831 (of get_template function)
+**************************************************************/
+# Set data array
+	- ALL from function above: get_mtp_client_info
+
+# Set MTP (Mail Template Parameters) array
+	$_MTP['to_name']		= $_MTP['cl_name_first'].' '.$_MTP['cl_name_last'];
+	$_MTP['to_email']		= $_MTP['cl_email'];
+	$_MTP['from_name']		= $_cinfo['c_name'];
+	$_MTP['from_email']		= $_cinfo['c_email'];
+	$_MTP['subject']		= $mail['subject'];
+	$_MTP['site']			= $_CCFG['_PKG_NAME_SHORT'];
+	$_MTP['cl_url']			= $_CCFG['_PKG_URL_BASE'].'mod.php?mod=clients&mode=view&cl_id='.$adata['cl_id'];
+
+
+/**************************************************************
+ * Template ID:	5
+ * Name:			email_order_ack
+ * Filename:		modules/orders/orders_funcs.php
+ * Function:		do_mail_order
+ * Line (approx):	1297 (of get_template function)
+**************************************************************/
+# Set data array
+	- ALL from function above: get_mtp_order_info
+	- ALL from function above: get_mtp_client_info
+
+# Set MTP (Mail Template Parameters) array
+	$_MTP['to_name']		= $_MTP['cl_name_first'].' '.$_MTP['cl_name_last'];
+	$_MTP['to_email']		= $_MTP['cl_email'];
+	$_MTP['from_name']		= $_cinfo['c_name'];
+	$_MTP['from_email']		= $_cinfo['c_email'];
+	$_MTP['subject']		= $mail['subject'];
+	$_MTP['site']			= $_CCFG['_PKG_NAME_SHORT'];
+	$_MTP['ord_url']		= $_CCFG['_PKG_URL_BASE'].'mod.php?mod=orders&mode=view&ord_id='.$adata['ord_id'];
+
+
+/**************************************************************
+ * Template ID:	6
+ * Name:			email_order_copy
+ * Filename:		modules/mail/orders_funcs.php
+ * Function:		do_mail_order
+ * Line (approx):	1295 (of get_template function)
+**************************************************************/
+# Set data array
+	- ALL from function above: get_mtp_order_info
+	- ALL from function above: get_mtp_client_info
+
+# Set MTP (Mail Template Parameters) array
+	$_MTP['to_name']		= $_MTP['cl_name_first'].' '.$_MTP['cl_name_last'];
+	$_MTP['to_email']		= $_MTP['cl_email'];
+	$_MTP['from_name']		= $_cinfo['c_name'];
+	$_MTP['from_email']		= $_cinfo['c_email'];
+	$_MTP['subject']		= $mail['subject'];
+	$_MTP['site']			= $_CCFG['_PKG_NAME_SHORT'];
+	$_MTP['ord_url']		= $_CCFG['_PKG_URL_BASE'].'mod.php?mod=orders&mode=view&ord_id='.$adata['ord_id'];
+
+
+/**************************************************************
+ * Template ID:	7
+ * Name:			email_trans_ack
+ * Filename:		modules/invoices/invoices_funcs.php
+ * Function:		do_mail_invoice
+ * Line (approx):	1141 (of get_template function)
+**************************************************************/
+# Set data array
+	- ALL from function above: get_mtp_invoice_info
+	- ALL from function above: get_mtp_invcitem_info
+	- ALL from function above: get_mtp_client_info
+	- ALL from function above: get_mtp_trans_info
+
+# Set MTP (Mail Template Parameters) array
+	$_MTP['to_name']			= $_MTP['cl_name_first'].' '.$_MTP['cl_name_last'];
+	$_MTP['to_email']			= $_MTP['cl_email'];
+	$_MTP['from_name']			= $_cinfo['c_name'];
+	$_MTP['from_email']			= $_cinfo['c_email'];
+	$_MTP['subject']			= $mail['subject'];
+	$_MTP['site']				= $_CCFG['_PKG_NAME_SHORT'];
+	$_MTP['invc_url']			= $_CCFG['_PKG_URL_BASE'].'mod.php?mod=invoices&mode=view&invc_id='.$adata['invc_id'];
+
+
+/**************************************************************
+ * Template ID:	8
+ * Name:			email_invoice_copy
+ * Filename:		modules/mail/invoices_funcs.php
+ * Function:		do_mail_invoice
+ * Line (approx):	1133 (of get_template function)
+ *
+ * Filename:		modules/mail/invoices_admin.php
+ * Function:		do_auto_invoice_emails
+ * Line (approx):	1129 (of get_template function)
+**************************************************************/
+# Set data array
+	- ALL from function above: get_mtp_invoice_info
+	- ALL from function above: get_mtp_invcitem_info
+	- ALL from function above: get_mtp_client_info
+
+# Set MTP (Mail Template Parameters) array
+	$_MTP['to_name']			= $_MTP['cl_name_first'].' '.$_MTP['cl_name_last'];
+	$_MTP['to_email']			= $_MTP['cl_email'];
+	$_MTP['from_name']			= $_cinfo['c_name'];
+	$_MTP['from_email']			= $_cinfo['c_email'];
+	$_MTP['subject']			= $mail['subject'];
+	$_MTP['site']				= $_CCFG['_PKG_NAME_SHORT'];
+	$_MTP['invc_url']			= $_CCFG['_PKG_URL_BASE'].'mod.php?mod=invoices&mode=view&invc_id='.$adata['invc_id'];
+
+
+/**************************************************************
+ * Template ID:	10
+ * Name:			email_domain_acc_activate
+ * Filename:		modules/domains/domains_funcs.php
+ * Function:		do_mail_domain
+ * Line (approx):	652 (of get_template function)
+**************************************************************/
+# Rebuild Data Array with returned record: Server Account Fields
+	$_MTP								= $row;
+	$_MTP['dom_id']						= $row[dom_id];
+	$_MTP['dom_domain']					= $row[dom_domain];
+	$_MTP['dom_status']					= $row[dom_status];
+	$_MTP['dom_type']					= $row[dom_type];
+	$_MTP['dom_cl_id']					= $row[dom_cl_id];
+	$_MTP['dom_registar']				= $row[dom_registar];
+	$_MTP['dom_ts_expiration']			= dt_make_datetime ( $row[dom_ts_expiration], $_CCFG['_PKG_DATE_FORMAT_SHORT_DT'] );
+	$_MTP['dom_sa_expiration']			= dt_make_datetime ( $row[dom_sa_expiration], $_CCFG['_PKG_DATE_FORMAT_SHORT_DT'] );
+	$_MTP['dom_si_id']					= $row[dom_si_id];
+	$_MTP['dom_ip']						= $row[dom_ip];
+	$_MTP['dom_path']					= $row[dom_path];
+	$_MTP['dom_path_temp']				= $row[dom_path_temp];
+	$_MTP['dom_url_cp']					= $row[dom_url_cp];
+	$_MTP['dom_user_name_cp']			= $row[dom_user_name_cp];
+	$_MTP['dom_user_pword_cp']			= $row[dom_user_pword_cp];
+	$_MTP['dom_user_name_ftp']			= $row[dom_user_name_ftp];
+	$_MTP['dom_user_pword_ftp']			= $row[dom_user_pword_ftp];
+	$_MTP['dom_allow_domains']			= $row[dom_allow_domains];
+	$_MTP['dom_allow_subdomains']		= $row[dom_allow_subdomains];
+	$_MTP['dom_allow_disk_space_mb']	= $row[dom_allow_disk_space_mb];
+	$_MTP['dom_allow_traffic_mb']		= $row[dom_allow_traffic_mb];
+	$_MTP['dom_allow_mailboxes']		= $row[dom_allow_mailboxes];
+	$_MTP['dom_allow_databases']		= $row[dom_allow_databases];
+	$_MTP['dom_enable_www_prefix']		= do_valtostr_no_yes($row[dom_enable_www_prefix]);
+	$_MTP['dom_enable_wu_scripting']	= do_valtostr_no_yes($row[dom_enable_wu_scripting]);
+	$_MTP['dom_enable_webmail']			= do_valtostr_no_yes($row[dom_enable_webmail]);
+	$_MTP['dom_enable_frontpage']		= do_valtostr_no_yes($row[dom_enable_frontpage]);
+	$_MTP['dom_enable_fromtpage_ssl']	= do_valtostr_no_yes($row[dom_enable_fromtpage_ssl]);
+	$_MTP['dom_enable_ssi']				= do_valtostr_no_yes($row[dom_enable_ssi]);
+	$_MTP['dom_enable_php']				= do_valtostr_no_yes($row[dom_enable_php]);
+	$_MTP['dom_enable_cgi']				= do_valtostr_no_yes($row[dom_enable_cgi]);
+	$_MTP['dom_enable_mod_perl']		= do_valtostr_no_yes($row[dom_enable_mod_perl]);
+	$_MTP['dom_enable_asp']				= do_valtostr_no_yes($row[dom_enable_asp]);
+	$_MTP['dom_enable_ssl']				= do_valtostr_no_yes($row[dom_enable_ssl]);
+	$_MTP['dom_enable_stats']			= do_valtostr_no_yes($row[dom_enable_stats]);
+	$_MTP['dom_enable_err_docs']		= do_valtostr_no_yes($row[dom_enable_err_docs]);
+
+# Rebuild Data Array with returned record: Server Info Fields
+	$_MTP['si_id']					= $row[si_id];
+	$_MTP['si_name']				= $row[si_name];
+	$_MTP['si_ip']					= $row[si_ip];
+	$_MTP['si_ns_01']				= $row[si_ns_01];
+	$_MTP['si_ns_01_ip']			= $row[si_ns_01_ip];
+	$_MTP['si_ns_02']				= $row[si_ns_02];
+	$_MTP['si_ns_02_ip']			= $row[si_ns_02_ip];
+	$_MTP['si_cp_url']				= $row[si_cp_url];
+	$_MTP['si_cp_url_port']			= $row[si_cp_url_port];
+
+# Rebuild Data Array with returned record: Clients fields
+	$_MTP['cl_company']				= $row[cl_company];
+	$_MTP['cl_name_first']			= $row[cl_name_first];
+	$_MTP['cl_name_last']			= $row[cl_name_last];
+	$_MTP['cl_email']				= $row[cl_email];
+	$_MTP['cl_user_name']			= $row[cl_user_name];
+
+	$_MTP['cl_info'] .= $_LANG['_DOMS']['DOM_EMAIL_01'].$row[cl_id].$_nl;
+	$_MTP['cl_info'] .= $_LANG['_DOMS']['DOM_EMAIL_02'].dt_make_datetime ( $row[cl_join_ts], $_CCFG['_PKG_DATE_FORMAT_SHORT_DTTM'] ).$_nl;
+	$_MTP['cl_info'] .= $_LANG['_DOMS']['DOM_EMAIL_03'].$row[cl_user_name].$_nl;
+	$_MTP['cl_info'] .= $_LANG['_DOMS']['DOM_EMAIL_04'].$row[cl_email].$_nl;
+	$_MTP['cl_info'] .= '-------------------'.$_nl;
+	$_MTP['cl_info'] .= $_LANG['_DOMS']['DOM_EMAIL_05'].$row[cl_company].$_nl;
+	$_MTP['cl_info'] .= $_LANG['_DOMS']['DOM_EMAIL_06'].$row[cl_name_first].' '.$row[cl_name_last].$_nl;
+	$_MTP['cl_info'] .= $_LANG['_DOMS']['DOM_EMAIL_07'].$row[cl_addr_01].$_nl;
+	$_MTP['cl_info'] .= $_LANG['_DOMS']['DOM_EMAIL_08'].$row[cl_addr_02].$_nl;
+	$_MTP['cl_info'] .= $_LANG['_DOMS']['DOM_EMAIL_09'].$row[cl_city].$_nl;
+	$_MTP['cl_info'] .= $_LANG['_DOMS']['DOM_EMAIL_10'].$row[cl_state_prov].$_nl;
+	$_MTP['cl_info'] .= $_LANG['_DOMS']['DOM_EMAIL_11'].$row[cl_country].$_nl;
+	$_MTP['cl_info'] .= $_LANG['_DOMS']['DOM_EMAIL_12'].$row[cl_zip_code].$_nl;
+	$_MTP['cl_info'] .= $_LANG['_DOMS']['DOM_EMAIL_13'].$row[cl_phone];
+
+
+# Set MTP (Mail Template Parameters) array
+	$_MTP['to_name']		= $_MTP['cl_name_first'].' '.$_MTP['cl_name_last'];
+	$_MTP['to_email']		= $_MTP['cl_email'];
+	$_MTP['from_name']		= $_cinfo['c_name'];
+	$_MTP['from_email']		= $_cinfo['c_email'];
+	$_MTP['subject']		= $mail['subject'];
+	$_MTP['site']			= $_CCFG['_PKG_NAME_SHORT'];
+	$_MTP['cl_url']			= $_CCFG['_PKG_URL_BASE'].'mod.php?mod=clients&mode=view&cl_id='.$row['cl_id'];
+
+
+/**************************************************************
+ * Template ID:	12
+ * Name:			email_helpdesk_tt_update
+ * Filename:		modules/helpdesk/helpdesk_funcs.php
+ * Function:		do_mail_helpdesk_tt
+ * Line (approx):	1223 (of get_template function)
+**************************************************************/
+# Set data array
+	- ALL from function above: get_mtp_hdtt_info
+	- ALL from function above: get_mtp_hdti_info
+	- ALL from function above: get_mtp_client_info
+
+# Set MTP (Mail Template Parameters) array
+	$_MTP['to_name']		= $_req_to_name;
+	$_MTP['to_email']		= $_req_to_email;
+	$_MTP['from_name']		= $_ainfo['c_name'];
+	$_MTP['from_email']		= $_ainfo['c_email'];
+	$_MTP['subject']		= $mail['subject'];
+	$_MTP['site']			= $_CCFG['_PKG_NAME_SHORT'];
+	$_MTP['tt_url']			= $_CCFG['_PKG_URL_BASE'].'mod.php?mod=helpdesk&mode=view&hd_tt_id='.$adata['hd_tt_id'];
+
+
+/**************************************************************
+ * Template ID:	13
+ * Name:			email_helpdesk_tt_alert
+ * Filename:		modules/helpdesk/helpdesk_funcs.php
+ * Function:		do_mail_helpdesk_tt
+ * Line (approx):	1236 (of get_template function)
+**************************************************************/
+# Set data array
+	- ALL from function above: get_mtp_hdtt_info
+	- ALL from function above: get_mtp_hdti_info
+	- ALL from function above: get_mtp_client_info
+
+# Set MTP (Mail Template Parameters) array
+	$_MTP['to_name']		= $_req_to_name;
+	$_MTP['to_email']		= $_req_to_email;
+	$_MTP['from_name']		= $_ainfo['c_name'];
+	$_MTP['from_email']		= $_ainfo['c_email'];
+	$_MTP['subject']		= $mail['subject'];
+	$_MTP['site']			= $_CCFG['_PKG_NAME_SHORT'];
+	$_MTP['tt_url']			= $_CCFG['_PKG_URL_BASE'].'mod.php?mod=helpdesk&mode=view&hd_tt_id='.$adata['hd_tt_id'];
+
+
+/**************************************************************
+ * Template ID:	15
+ * Name:			email_custom_order_request
+ * Filename:		modules/mail/orders_funcs.php
+ * Function:		do_cor_email
+ * Line (approx):	1440 (of get_template function)
+**************************************************************/
+# Set data array
+	$_MTP['cl_name_first']	= $row[cl_name_first];
+	$_MTP['cl_name_last']	= $row[cl_name_last];
+	$_MTP['cl_email']		= $row[cl_email];
+	$_MTP['cl_user_name']	= $row[cl_user_name];
+
+	$_MTP['cl_info'] .= $_LANG['_ORDERS']['COR_EMAIL_01'].$row[cl_id].$_nl;
+	$_MTP['cl_info'] .= $_LANG['_ORDERS']['COR_EMAIL_02'].dt_make_datetime ( $row[cl_join_ts], $_CCFG['_PKG_DATE_FORMAT_SHORT_DTTM'] ).$_nl;
+	$_MTP['cl_info'] .= $_LANG['_ORDERS']['COR_EMAIL_03'].$row[cl_user_name].$_nl;
+	$_MTP['cl_info'] .= $_LANG['_ORDERS']['COR_EMAIL_04'].$row[cl_email].$_nl;
+	$_MTP['cl_info'] .= '-------------------'.$_nl;
+	IF ($_BVO['B16'] == 1) { $_MTP['cl_info'] .= $_LANG['_ORDERS']['COR_EMAIL_05'].$row[cl_company].$_nl; }
+	$_MTP['cl_info'] .= $_LANG['_ORDERS']['COR_EMAIL_06'].$row[cl_name_first].' '.$row[cl_name_last].$_nl;
+	IF ($_BVO['B15'] == 1) { $_MTP['cl_info'] .= $_LANG['_ORDERS']['COR_EMAIL_07'].$row[cl_addr_01].$_nl; }
+	IF ($_BVO['B14'] == 1) { $_MTP['cl_info'] .= $_LANG['_ORDERS']['COR_EMAIL_08'].$row[cl_addr_02].$_nl; }
+	IF ($_BVO['B13'] == 1) { $_MTP['cl_info'] .= $_LANG['_ORDERS']['COR_EMAIL_09'].$row[cl_city].$_nl; }
+	IF ($_BVO['B12'] == 1) { $_MTP['cl_info'] .= $_LANG['_ORDERS']['COR_EMAIL_10'].$row[cl_state_prov].$_nl; }
+	IF ($_BVO['B10'] == 1) { $_MTP['cl_info'] .= $_LANG['_ORDERS']['COR_EMAIL_11'].$row[cl_country].$_nl; }
+	IF ($_BVO['B11'] == 1) { $_MTP['cl_info'] .= $_LANG['_ORDERS']['COR_EMAIL_12'].$row[cl_zip_code].$_nl; }
+	IF ($_BVO['B09'] == 1) { $_MTP['cl_info'] .= $_LANG['_ORDERS']['COR_EMAIL_13'].$row[cl_phone]; }
+
+	$_MTP['cor_info'] .= $_LANG['_ORDERS']['COR_EMAIL_14'].$adata[cor_type].$_nl;
+	IF ($_BVC['B16'] == 1) { $_MTP['cor_info'] .= $_LANG['_ORDERS']['COR_EMAIL_15'].$adata[cor_opt_bill_cycle].$_nl; }
+	IF ($_BVC['B15'] == 1) { $_MTP['cor_info'] .= $_LANG['_ORDERS']['COR_EMAIL_16'].$adata[cor_opt_payment].$_nl; }
+	IF ($_BVC['B14'] == 1) { $_MTP['cor_info'] .= $_LANG['_ORDERS']['COR_EMAIL_17'].$adata[cor_disk].' '.$adata[cor_disk_units].$_nl; }
+	IF ($_BVC['B13'] == 1) { $_MTP['cor_info'] .= $_LANG['_ORDERS']['COR_EMAIL_18'].$adata[cor_traffic].' '.$adata[cor_traffic_units].$_nl; }
+	IF ($_BVC['B12'] == 1) { $_MTP['cor_info'] .= $_LANG['_ORDERS']['COR_EMAIL_19'].$adata[cor_dbs].$_nl; }
+	IF ($_BVC['B11'] == 1) { $_MTP['cor_info'] .= $_LANG['_ORDERS']['COR_EMAIL_20'].$adata[cor_mailboxes].$_nl; }
+	IF ($_BVC['B10'] == 1) { $_MTP['cor_info'] .= $_LANG['_ORDERS']['COR_EMAIL_21'].do_valtostr_no_yes($adata[cor_unique_ip]).$_nl; }
+	IF ($_BVC['B09'] == 1) { $_MTP['cor_info'] .= $_LANG['_ORDERS']['COR_EMAIL_22'].do_valtostr_no_yes($adata[cor_shop_cart]).$_nl; }
+	IF ($_BVC['B08'] == 1) { $_MTP['cor_info'] .= $_LANG['_ORDERS']['COR_EMAIL_23'].do_valtostr_no_yes($adata[cor_sec_cert]).$_nl; }
+	IF ($_BVC['B07'] == 1) { $_MTP['cor_info'] .= $_LANG['_ORDERS']['COR_EMAIL_24'].$adata[cor_site_pages].' pages'.$_nl; }
+	IF ($_BVC['B01'] == 1) { $_MTP['cor_info'] .= $_LANG['_ORDERS']['COR_EMAIL_26'].$adata[cor_optfld_01].$_nl; }
+	IF ($_BVC['B02'] == 1) { $_MTP['cor_info'] .= $_LANG['_ORDERS']['COR_EMAIL_27'].$adata[cor_optfld_02].$_nl; }
+	IF ($_BVC['B03'] == 1) { $_MTP['cor_info'] .= $_LANG['_ORDERS']['COR_EMAIL_28'].$adata[cor_optfld_03].$_nl; }
+	IF ($_BVC['B04'] == 1) { $_MTP['cor_info'] .= $_LANG['_ORDERS']['COR_EMAIL_29'].$adata[cor_optfld_04].$_nl; }
+	IF ($_BVC['B05'] == 1) { $_MTP['cor_info'] .= $_LANG['_ORDERS']['COR_EMAIL_30'].$adata[cor_optfld_05].$_nl; }
+	IF ($_BVC['B06'] == 1)
+		{
+			$_MTP['cor_info'] .= $_LANG['_ORDERS']['COR_EMAIL_25'].$_nl;
+		#	$_MTP['cor_info'] .= '--------------------'.$_nl;
+			$_MTP['cor_info'] .= do_stripslashes($adata[cor_comments]).$_nl;
+		#	$_MTP['cor_info'] .= '--------------------'.$_nl;
+		}
+
+# Set MTP (Mail Template Parameters) array
+	$_MTP['to_name']		= $_MTP['cl_name_first'].' '.$_MTP['cl_name_last'];
+	$_MTP['to_email']		= $_MTP['cl_email'];
+	$_MTP['from_name']		= $_cinfo['c_name'];
+	$_MTP['from_email']		= $_cinfo['c_email'];
+	$_MTP['subject']		= $mail['subject'];
+	$_MTP['site']			= $_CCFG['_PKG_NAME_SHORT'];
+	$_MTP['cl_url']			= $_CCFG['_PKG_URL_BASE'].'mod.php?mod=clients&mode=view&cl_id='.$adata['cl_id'];
