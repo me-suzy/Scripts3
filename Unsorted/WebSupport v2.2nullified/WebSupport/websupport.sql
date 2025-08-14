@@ -1,0 +1,28 @@
+CREATE TABLE WebSupport (
+Ticket INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+Date TEXT NOT NULL,
+Name VARCHAR(50) NOT NULL,
+Username VARCHAR(50) NOT NULL,
+Domain VARCHAR(100),
+Email VARCHAR(50) NOT NULL,
+Problem TEXT NOT NULL,
+Priority VARCHAR(10) NOT NULL,
+Solution TEXT,
+Status ENUM('0','1','2') NOT NULL,
+Ip TEXT,
+Subject TEXT NOT NULL
+);
+
+CREATE TABLE WebSupport_config (
+Script_uri TEXT NOT NULL,
+Admin_uri TEXT NOT NULL,
+Image_uri TEXT NOT NULL,
+Title TEXT NOT NULL,
+NotifyICQ ENUM('0','1') NOT NULL,
+ICQNum TEXT NOT NULL,
+Notify ENUM('0', '1') NOT NULL,
+NotifyWho TEXT NOT NULL,
+LangFile TEXT NOT NULL,
+EnableAuth TEXT NOT NULL,
+AdminPass TEXT NOT NULL
+);
