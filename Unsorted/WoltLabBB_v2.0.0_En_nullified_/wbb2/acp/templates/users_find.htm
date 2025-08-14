@@ -1,0 +1,147 @@
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+<p><b>Simple Search:</b>
+<ul>
+<li><a href="users.php?action=show&sid=$session[hash]">Show all members</a></li>
+<li><a href="users.php?action=show&activation=-1&sid=$session[hash]&sortby=regdate&sortorder=DESC">Show inactivated members</a></li>
+<li><a href="users.php?action=show&blocked=1&sid=$session[hash]">Show blocked members</a></li>
+<li><a href="users.php?action=show&sortby=regdate&sortorder=DESC&limit=20&sid=$session[hash]">Show new members</a></li>
+</ul>
+</p>
+<p><b>Advanced Search:</b></p>
+
+<form method="post" action="users.php">
+<input type="hidden" name="send" value="send">
+<input type="hidden" name="action" value="show">
+<input type="hidden" name="sid" value="$session[hash]">
+ <table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="100%" align="center">
+  <tr class="tblhead">
+   <td colspan=2>Find User</td>
+  </tr>
+  <tr class="tblsection">
+   <td colspan=2>Search Criterias: (Empty fields are not considered in the search.)</td>
+  </tr>
+  <tr class="firstrow">
+   <td>Username contains:</td>
+   <td><input type="text" name="username" value="" maxlength=255></td>
+  </tr>
+  <tr class="secondrow">
+   <td>Email Address contains:</td>
+   <td><input type="text" name="email" value="" maxlength=255></td>
+  </tr>
+  <tr class="firstrow">
+   <td>User Group:</td>
+   <td><select name="groupid">
+    <option value="0">any</option>
+    $group_options
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td>User Rank:</td>
+   <td><select name="rankid">
+    <option value="0">any</option>
+    $rank_options
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td>User Title contains:</td>
+   <td><input type="text" name="title" value="" maxlength=255></td>
+  </tr>
+  <tr class="secondrow">
+   <td>User Text contains:</td>
+   <td><input type="text" name="usertext" value="" maxlength=255></td>
+  </tr>
+  <tr class="firstrow">
+   <td>Signature contains:</td>
+   <td><input type="text" name="signature" value="" maxlength=255></td>
+  </tr>
+  <tr class="secondrow">
+   <td>Homepage contains:</td>
+   <td><input type="text" name="homepage" value="" maxlength=255></td>
+  </tr>
+  <tr class="firstrow">
+   <td>ICQ contains:</td>
+   <td><input type="text" name="icq" value="" maxlength=255></td>
+  </tr>
+  <tr class="secondrow">
+   <td>AIM contains:</td>
+   <td><input type="text" name="aim" value="" maxlength=255></td>
+  </tr>
+  <tr class="firstrow">
+   <td>YIM contains:</td>
+   <td><input type="text" name="yim" value="" maxlength=255></td>
+  </tr>
+  <tr class="secondrow">
+   <td>MSN contains:</td>
+   <td><input type="text" name="msn" value="" maxlength=255></td>
+  </tr>
+  <tr class="firstrow">
+   <td>Gender:</td>
+   <td><select name="gender">
+    <option value="0"></option>
+    <option value="1">male</option>
+    <option value="2">female</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td>Posts count is more than:</td>
+   <td><input type="text" name="userposts_morethen" value="" maxlength=255></td>
+  </tr>
+  <tr class="firstrow">
+   <td>Posts count is less than:</td>
+   <td><input type="text" name="userposts_lessthen" value="" maxlength=255></td>
+  </tr>
+  <tr class="secondrow">
+   <td>Activation Status:</td>
+   <td><select name="activation">
+    <option value="0"></option>
+    <option value="1">activated</option>
+    <option value="-1">not activated</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td>Active on the forums in the last X hours:</td>
+   <td><input type="text" name="lastactivity_in" value="" maxlength=255></td>
+  </tr>
+  <tr class="secondrow">
+   <td>Not active on the forums in the last X hours:</td>
+   <td><input type="text" name="lastactivity_notin" value="" maxlength=255></td>
+  </tr>
+  $morebit
+  <tr class="tblsection">
+   <td colspan=2>Display and Sorting:</td>
+  </tr>
+  <tr class="firstrow">
+   <td>Sort by:</td>
+   <td><select name="sortby">
+    <option value="username">username</option>
+    <option value="email">email address</option>
+    <option value="regdate">registration date</option>
+    <option value="lastactivity">last active time</option>
+    <option value="userposts">user posts</option>
+   </select> <select name="sortorder">
+    <option value="ASC">in ascending order.</option>
+    <option value="DESC">in descending order.</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td>Show a maximum of:</td>
+   <td><input type="text" name="limit" value="200" maxlength=255> users</td>
+  </tr>
+  <tr class="firstrow">
+   <td>Begin with result number:</td>
+   <td><input type="text" name="offset" value="1" maxlength=255></td>
+  </tr>
+  <tr class="firstrow">
+   <td colspan=2 align="center"><input type="submit" value="Search"> <input type="reset" value="Reset"></td>
+  </tr>
+ </table>
+</form>
+</body>
+</html>
