@@ -1,0 +1,10 @@
+[13-Nov-2005 20:51:20] PHP Warning:  Failed opening 'config.php' for inclusion (include_path='.;c:\php4\pear') in d:\phpdev5\www\php super counter v1.02\sc_install.php on line 14
+[13-Nov-2005 20:52:00] PHP Warning:  Failed opening 'config.php' for inclusion (include_path='.;c:\php4\pear') in d:\phpdev5\www\php super counter v1.02\sc_install.php on line 14
+[13-Nov-2005 20:52:01] PHP Warning:  Failed opening 'config.php' for inclusion (include_path='.;c:\php4\pear') in d:\phpdev5\www\php super counter v1.02\sc_install.php on line 14
+[13-Nov-2005 20:53:07] PHP Warning:  Failed opening 'config.php' for inclusion (include_path='.;c:\php4\pear') in d:\phpdev5\www\php super counter v1.02\sc_install.php on line 14
+[13-Nov-2005 20:53:09] PHP Warning:  Failed opening 'config.php' for inclusion (include_path='.;c:\php4\pear') in d:\phpdev5\www\php super counter v1.02\sc_install.php on line 14
+[13-Nov-2005 20:53:10] PHP Warning:  Failed opening 'config.php' for inclusion (include_path='.;c:\php4\pear') in d:\phpdev5\www\php super counter v1.02\sc_install.php on line 14
+[13-Nov-2005 20:54:59] PHP Warning:  Failed opening 'config.php' for inclusion (include_path='.;c:\php4\pear') in d:\phpdev5\www\php super counter v1.02\sc_install.php on line 14
+[13-Nov-2005 20:55:00] PHP Warning:  Failed opening 'config.php' for inclusion (include_path='.;c:\php4\pear') in d:\phpdev5\www\php super counter v1.02\sc_install.php on line 14
+[13-Nov-2005 20:55:23] PHP Warning:  Failed opening 'configphp' for inclusion (include_path='.;c:\php4\pear') in d:\phpdev5\www\php super counter v1.02\sc_install.php on line 14
+[13-Nov-2005 20:55:32] PHP Warning:  Failed opening 'config.php' for inclusion (include_path='.;c:\php4\pear') in d:\phpdev5\www\php super counter v1.02\sc_install.php on line 14
