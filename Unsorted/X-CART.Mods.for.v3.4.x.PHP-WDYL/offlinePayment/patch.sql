@@ -1,0 +1,3 @@
+INSERT INTO `xcart_languages` VALUES ('US', 'print button', 'txt_order_offline_button', 'Open an order form in a new window.', 'Text');
+INSERT INTO `xcart_languages` VALUES ('US', 'Offline Payment Form', 'txt_subtitle_offline',  'Offline Payment Form', 'Text');
+INSERT INTO `xcart_languages` VALUES ('US', 'Simply print this form by pressing the print icon below complete your credit card or send this form with your personal cheque to the address below.  If you are faxing this form fax it to the number shown below.','txt_fax_where', 'Simply print this form by pressing the print icon below complete your credit card or send this form with your personal cheque to the address below.  If you are faxing this form fax it to the number shown below.', 'Text');
