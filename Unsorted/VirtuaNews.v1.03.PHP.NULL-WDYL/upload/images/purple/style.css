@@ -1,0 +1,46 @@
+.form {
+  background-color: #ffffff;
+  font-family: Verdana;
+  font-size: 10px;
+  color: #000000;
+  border: 1px solid #555555;
+}
+
+.header {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.red {
+  color: #FF0000;
+}
+
+.lightfont {
+  color: #ffffff;
+}
+
+body, td {
+  font-family : Verdana,Arial,sans-serif;
+  font-size : 10px;
+  color : #000000;
+}
+
+a:link {
+  text-decoration: none;
+  color : #000066;
+}
+
+a:active {
+  color: #000000;
+  text-decoration: underline;
+}
+
+a:visited {
+  text-decoration: none;
+  color : #000066;
+}
+
+a:hover {
+  color: #000000;
+  text-decoration: underline;
+}
