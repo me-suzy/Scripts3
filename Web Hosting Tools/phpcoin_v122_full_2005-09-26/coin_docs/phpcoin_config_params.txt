@@ -1,0 +1,39 @@
+
+/**************************************************************
+ * File: 		Documentation: Configuration Parameters Table
+ * Author:	Mike Lansberry (http://phpcoin.com)
+ * Date:		2004-01-04 (V1.2.0)
+ * Changed: 	Stephen M. Kitching, 2005-03-03 (v1.2.2)
+ * License:	DO NOT Remove this text block. See /coin_docs/license.txt
+ *			Copyright © 2003-2004-2005 phpCOIN.com
+ * Schema:	See sql file for schema reference
+ * Notes:
+ *			- configuration parameters table notes
+**************************************************************/
+
+Administrator Control Panel access:
+- Administrator Control Panel @ http://www.yoursite.com/phpcoin_dir/coin_admin.php
+- Attempting to access control panel without being logged in will result in a redirect to the login.
+
+-----------------------------------------------------------------------------
+Parameters In General: (admin control panel:parameters)
+- The parameters table is an effort to get package configuration out of files, and into the database for browser editing.
+
+- Parameters appearing in the table, are Global scope so they can be used in pages, siteinfo, mail templates, etc.
+	- As a result- have a frequent statement in a bunch of pages, create a parameter and go.
+
+- Parameters Groups: The "group" for the parameter effects how it is accessed in the package code as follows:
+	- automation        - loaded into the "automation" config array $_ACFG and is accessed via: $_ACFG[the_parameter]
+	- common:			- loaded into the "common" config array $_CCFG and is accessed via: $_CCFG[the_parameter]
+	- theme:			- loaded into the "theme" config array $_TCFG and is accessed via: $_TCFG[the_parameter]
+	- user:				- loaded into the "user" variable array $_UVAR and is accessed via: $_UVAR[the_parameter]
+	- undefined:		- not loaded by the system (disabled)
+
+	** Note- these groups should not be changed in any manner, including translations- DO NOT TRANSLATE.
+
+- Parameters Groups: The "sub-group" for the parameter is purely for grouping and display purposes.
+	- Permits some filtering when the list gets long.
+	- NO EFFECT ON CODING- so can be changed.
+
+- Parameters all have some notes text associated with them. If not displayed, change the setting for:
+	"Parameter Editor Show Notes in Listing" to Yes and the notes should the be displayed.
