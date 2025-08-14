@@ -1,0 +1,18 @@
+<?php
+
+// FET's working dir
+$cfg['FET_PATH']='####FET_WORKING_DIR####';
+
+// Path where all html files are
+$cfg['HTML_PATH']='####FET_HTML_PATH####';
+
+// Site's domain
+$cfg['FET_DOMAIN']='####FET_DOMAIN####';
+
+// Path for Site's toplists templates
+$cfg['FET_TOP_TEMPLATES']='####FET_TOP_TEMPLATES####';
+
+// Path to PHP - usually /usr/local/bin/php but check with your admin first or "whereis php" command from shell prompt
+$cfg['PHP_PATH']='####PHP_PATH####';
+
+?>
