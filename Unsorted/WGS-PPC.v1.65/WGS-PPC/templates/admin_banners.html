@@ -1,0 +1,34 @@
+    <table border="0" cellspacing="1" cellpadding="5">
+      <tr align="center"> 
+        <td colspan="2"> 
+          
+      <h3><font color="#6699CC" size="3">Manage Banners Page</font></h3>
+      
+    </td>
+      </tr>
+      <tr align="center"> 
+        
+    <td colspan="2"><a href="<#addnew#>">Add new</a><br>
+      <br>
+      <table width="100%" border="0" cellspacing="1" cellpadding="5">
+        <tr bgcolor="#d9d9d9"> 
+          <td><b>#</b></td>
+          <td><b>Banner</b></td>
+          <td><b>Status</b></td>
+          <td>&nbsp;</td>
+          <td><b></b></td>
+        </tr>
+        <#banners#> 
+        <tr> 
+          <td colspan="6" height="28"> 
+            <input type="submit" name="Submit" value="Delete Selected" onclick="document.forms.admin.cmd.value='355'; return confirm('Are You sure want to delete selected banners?')">
+            <input type="submit" name="Submit" value="Activate Selected Banners" onclick="document.forms.admin.cmd.value='356'; return confirm('Are You sure want to activate selected banners?')">
+            <input type="submit" name="Submit" value="Deactivate Selected Banners" onclick="document.forms.admin.cmd.value='357'; return confirm('Are You sure want to deactivate selected banners?')">
+            <input type="hidden" name="cmd" value="355">
+          </td>
+        </tr>
+      </table>
+    </td>
+      </tr>
+    </table>
+
