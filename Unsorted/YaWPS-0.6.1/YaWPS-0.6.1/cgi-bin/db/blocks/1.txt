@@ -1,0 +1,12 @@
+<tr>
+<td align="center" class="cat"><a href="http://www.perl.com/" target="_blank"><img alt="Powered by Perl!" border="0" height="31" src="/themes/standard/images/pb_perl.gif" width="88"></a></td>
+</tr>
+<tr>
+<td align="center" class="cat"><a href="http://www.gimp.org/" target="_blank"><img alt="Graphics made by Gimp!" border="0" height="36" src="/themes/standard/images/pb_gimp.gif" width="90"></a></td>
+</tr>
+<tr>
+<td align="center" class="cat"><a href="http://www.gnu.org/" target="_blank"><img alt="Licensed under the GNU GPL!" border="0" height="31" src="/yawps/themes/standard/images/pb_gnugpl.gif" width="88"></a></td>
+</tr>
+<tr>
+<td align="center" class="cat"><a href="http://www.sourceforge.net/" target="_blank"><img alt="Hosted by Sourceforge!" border="0" height="31" src="http://sourceforge.net/sflogo.php?group_id=29456" width="88"></a></td>
+</tr>
