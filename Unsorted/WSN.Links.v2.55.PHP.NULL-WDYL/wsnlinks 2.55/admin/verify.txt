@@ -1,0 +1,3 @@
+<?php
+echo "Verified WSN Links 2.30 or higher";
+?>
