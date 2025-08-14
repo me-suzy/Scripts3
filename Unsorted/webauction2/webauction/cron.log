@@ -1,0 +1,11 @@
+=============== STARTING CRON SCRIPT: 21 09 2002 18:22:52
+++++++ Closing expired auctions
+SELECT * FROM a_auctions WHERE ends<='20020921182252' AND closed='0'
+0 auctions to close
+
+++++++ Archiving old auctions
+SELECT * FROM a_auctions WHERE ends<='20020822182252'
+0 auctions to archive
+SELECT * FROM a_sessions WHERE last_visit<='20020919182252'
+0 sessions to archive
+=========================== ENDING CRON
