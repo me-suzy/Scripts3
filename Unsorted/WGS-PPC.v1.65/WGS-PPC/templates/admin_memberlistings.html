@@ -1,0 +1,36 @@
+    <table border="0" cellspacing="1" cellpadding="5">
+      <tr align="center"> 
+        <td colspan="2"> 
+          
+      <h3><font size="3" color="#6699CC">Listings of &laquo;<#member#>&raquo;</font></h3>
+      
+    </td>
+      </tr>
+      <tr align="center"> 
+        
+    <td colspan="2">
+      <table width="100%" border="0" cellspacing="1" cellpadding="5">
+        <tr bgcolor="#d9d9d9"> 
+          <td><b>Term</b></td>
+          <td><b>Bid</b></td>
+          <td>&nbsp;</td>
+        </tr>
+        <#listings#> 
+        <tr bgcolor="#FCE4CF"> 
+          <td colspan="3" bgcolor="#d9d9d9"><b>&quot;No Matches&quot; bid:</b></td>
+        </tr>
+        <tr bgcolor="#eeeeee"> 
+          <td colspan="3"><#nmbid#></td>
+        </tr>
+        <tr> 
+          <td colspan="6" height="28"> 
+            <input type="submit" name="Submit" value="Delete Selected" onclick="return confirm('Are You sure want to delete selected terms?')">
+			<input type="hidden" name="mid" value="<#mid#>">
+            <input type="hidden" name="cmd" value="5001">
+          </td>
+        </tr>
+      </table>
+    </td>
+      </tr>
+    </table>
+
