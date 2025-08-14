@@ -1,0 +1,90 @@
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+
+<script language="javascript">
+ <!--
+  function update(action,perpage) {
+   if(parent.working.document.bbform) {
+    parent.working.location.href='otherstuff.php?sid=$session[hash]&action='+action+'&perpage='+perpage;
+    window.location.href='otherstuff.php?sid=$session[hash]&action=doing';
+   }
+   else alert('An action is in progress. You cannot start a second one.'); 
+  }
+ //-->
+</script>
+</head>
+
+<body>
+
+<form name="form1">
+ <table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="100%" align="center">
+  <tr class="tblhead">
+   <td colspan=2>Update User Ranks</td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Update Interval:</b><br>Enter the number of members to be updated.</td>
+   <td><input type="text" name="perpage" value="500" maxlength=4></td>
+  </tr>
+  <tr class="secondrow">
+   <td colspan=2 align="center"><input type="button" value="Update" onclick="update(this.form.action.value,this.form.perpage.value)"> <input type="reset" value="Reset"></td>
+  </tr>
+ </table>
+<input type="hidden" name="action" value="ranks">
+</form><br>
+<form name="form2">
+ <table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="100%" align="center">
+  <tr class="tblhead">
+   <td colspan=2>Update Attachments in Thread Display</td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Update Interval:</b><br>Enter the number of threads to be updated.</td>
+   <td><input type="text" name="perpage" value="500" maxlength=4></td>
+  </tr>
+  <tr class="secondrow">
+   <td colspan=2 align="center"><input type="button" value="Update" onclick="update(this.form.action.value,this.form.perpage.value)"> <input type="reset" value="Reset"></td>
+  </tr>
+ </table>
+<input type="hidden" name="action" value="threads">
+</form><br>
+<form name="form3">
+ <table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="100%" align="center">
+  <tr class="tblhead">
+   <td colspan=2>Update Search Index</td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Update Interval:</b><br>Enter the number of threads to be linked together.</td>
+   <td><input type="text" name="perpage" value="100" maxlength=4></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Number of threads not linked to other threads:</b></td>
+   <td>$reindexposts</td>
+  </tr>
+  <tr class="firstrow">
+   <td colspan=2>It is suggested that sometimes the search linking is redone again. <a href="otherstuff.php?sid=$session[hash]&action=delindex">Click here to delete the current links.</a></td>
+  </tr>
+  <tr class="secondrow">
+   <td colspan=2 align="center"><input type="button" value="Update" onclick="update(this.form.action.value,this.form.perpage.value)"> <input type="reset" value="Reset"></td>
+  </tr>
+ </table>
+<input type="hidden" name="action" value="reindex">
+</form>
+<form name="form4">
+ <table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="100%" align="center">
+  <tr class="tblhead">
+   <td colspan=2>Update Users Post Count</td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Update Interval:</b><br>Enter the number of members to be updated.</td>
+   <td><input type="text" name="perpage" value="100" maxlength=4></td>
+  </tr>
+  <tr class="secondrow">
+   <td colspan=2 align="center"><input type="button" value="Update" onclick="update(this.form.action.value,this.form.perpage.value)"> <input type="reset" value="Reset"></td>
+  </tr>
+ </table>
+<input type="hidden" name="action" value="userposts">
+</form>
+</body>
+</html>
