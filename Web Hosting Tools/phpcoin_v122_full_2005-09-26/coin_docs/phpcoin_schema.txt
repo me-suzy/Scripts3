@@ -1,0 +1,789 @@
+
+/**************************************************************
+ * File: 		Documentation: Schema dump
+ * Author:	Mike Lansberry (http://phpcoin.com)
+ * Date:		2004-01-04 (V1.2.0)
+ * Changed: 	Stephen M. Kitching, 2005-03-03 (v1.2.2)
+ * License:	DO NOT Remove this text block. See /coin_docs/license.txt
+ *			Copyright © 2003-2004-2005 phpCOIN.com
+ * Schema:	Main Database
+ * Notes:
+ *			- schema dump for programmer reference
+**************************************************************/
+
+
+# phpMyAdmin SQL Dump
+# version 2.5.6
+# http://www.phpmyadmin.net
+#
+# Host: zeus.cantexgroup.ca
+# Generation Time: Apr 02, 2004 at 11:17 PM
+# Server version: 3.23.56
+# PHP Version: 4.3.4
+#
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_admins`
+#
+
+CREATE TABLE phpcoin_admins (
+  admin_id smallint(6) NOT NULL auto_increment,
+  admin_user_name varchar(30) NOT NULL default '',
+  admin_user_pword varchar(100) NOT NULL default '',
+  admin_name_first varchar(20) NOT NULL default 'none',
+  admin_name_last varchar(20) NOT NULL default 'none',
+  admin_email varchar(50) NOT NULL default 'none',
+  admin_perms int(11) NOT NULL default '0',
+  PRIMARY KEY  (admin_id),
+  UNIQUE KEY user_name (admin_user_name)
+) TYPE=MyISAM COMMENT='Site Admins Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_articles`
+#
+
+CREATE TABLE phpcoin_articles (
+  id int(9) NOT NULL auto_increment,
+  subject varchar(50) NOT NULL default '',
+  topic_id int(11) NOT NULL default '1',
+  cat_id int(11) NOT NULL default '1',
+  time_stamp varchar(10) default NULL,
+  entry mediumtext NOT NULL,
+  followup_cnt int(9) NOT NULL default '0',
+  auto_nl2br tinyint(1) NOT NULL default '1',
+  PRIMARY KEY  (id)
+) TYPE=MyISAM COMMENT='Site Articles Module Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_banned`
+#
+
+CREATE TABLE phpcoin_banned (
+  banned_ip varchar(15) NOT NULL default ''
+) TYPE=MyISAM COMMENT='Site Banned IP Address Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_categories`
+#
+
+CREATE TABLE phpcoin_categories (
+  cat_id int(11) NOT NULL auto_increment,
+  cat_pos smallint(6) NOT NULL default '0',
+  cat_name varchar(50) NOT NULL default '',
+  cat_desc varchar(50) NOT NULL default '',
+  cat_icon smallint(6) NOT NULL default '1',
+  PRIMARY KEY  (cat_id),
+  KEY cat_id (cat_id)
+) TYPE=MyISAM COMMENT='Site Categories Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_clients`
+#
+
+CREATE TABLE phpcoin_clients (
+  cl_id int(11) NOT NULL default '0',
+  cl_join_ts varchar(10) default NULL,
+  cl_status varchar(20) NOT NULL default 'pending',
+  cl_company varchar(50) NOT NULL default '',
+  cl_name_first varchar(20) NOT NULL default '',
+  cl_name_last varchar(20) NOT NULL default '',
+  cl_addr_01 varchar(50) NOT NULL default '',
+  cl_addr_02 varchar(50) NOT NULL default '',
+  cl_city varchar(50) NOT NULL default '',
+  cl_state_prov varchar(50) NOT NULL default '',
+  cl_country varchar(50) NOT NULL default '',
+  cl_zip_code varchar(12) NOT NULL default '',
+  cl_phone varchar(20) NOT NULL default '',
+  cl_email varchar(50) NOT NULL default '',
+  cl_user_name varchar(20) NOT NULL default '',
+  cl_user_pword varchar(50) NOT NULL default '',
+  cl_notes text NOT NULL,
+  cl_groups int(11) NOT NULL default '0',
+  PRIMARY KEY  (cl_id)
+) TYPE=MyISAM COMMENT='Site Clients Module Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_clients_contacts`
+#
+
+CREATE TABLE phpcoin_clients_contacts (
+  contacts_id int(11) NOT NULL auto_increment,
+  contacts_cl_id int(11) NOT NULL default '0',
+  contacts_name_first varchar(20) NOT NULL default '',
+  contacts_name_last varchar(20) NOT NULL default '',
+  contacts_email varchar(50) NOT NULL default '',
+  UNIQUE KEY contacts_id (contacts_id),
+  KEY contacts_cl_id (contacts_cl_id)
+) TYPE=MyISAM;
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_components`
+#
+
+CREATE TABLE phpcoin_components (
+  comp_id mediumint(9) NOT NULL auto_increment,
+  comp_type varchar(20) NOT NULL default '',
+  comp_name varchar(20) NOT NULL default '',
+  comp_mod varchar(20) NOT NULL default '',
+  comp_desc varchar(50) NOT NULL default '',
+  comp_ptitle varchar(50) NOT NULL default '',
+  comp_col_num tinyint(1) NOT NULL default '3',
+  comp_isadmin tinyint(1) NOT NULL default '0',
+  comp_isuser tinyint(1) NOT NULL default '0',
+  comp_status tinyint(1) NOT NULL default '1',
+  PRIMARY KEY  (comp_id),
+  KEY comp_id (comp_id)
+) TYPE=MyISAM COMMENT='Site Components Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_domains`
+#
+
+CREATE TABLE phpcoin_domains (
+  dom_id int(11) NOT NULL auto_increment,
+  dom_cl_id int(11) NOT NULL default '0',
+  dom_domain varchar(50) NOT NULL default '',
+  dom_status tinyint(2) NOT NULL default '0',
+  dom_type tinyint(2) NOT NULL default '0',
+  dom_registrar varchar(32) NOT NULL default '',
+  dom_ts_expiration varchar(10) NOT NULL default '',
+  dom_sa_expiration varchar(10) NOT NULL default '',
+  dom_si_id int(11) NOT NULL default '0',
+  dom_ip varchar(16) NOT NULL default '',
+  dom_path varchar(255) NOT NULL default '',
+  dom_path_temp varchar(255) NOT NULL default '',
+  dom_url_cp varchar(100) NOT NULL default '',
+  dom_user_name_cp varchar(30) NOT NULL default '',
+  dom_user_pword_cp varchar(30) NOT NULL default '',
+  dom_user_name_ftp varchar(30) NOT NULL default '',
+  dom_user_pword_ftp varchar(30) NOT NULL default '',
+  dom_allow_domains smallint(6) NOT NULL default '0',
+  dom_allow_subdomains smallint(6) NOT NULL default '0',
+  dom_allow_disk_space_mb int(11) NOT NULL default '0',
+  dom_allow_traffic_mb int(11) NOT NULL default '0',
+  dom_allow_mailboxes smallint(6) NOT NULL default '0',
+  dom_allow_databases smallint(6) NOT NULL default '0',
+  dom_enable_www_prefix tinyint(1) NOT NULL default '0',
+  dom_enable_wu_scripting tinyint(1) NOT NULL default '0',
+  dom_enable_webmail tinyint(1) NOT NULL default '0',
+  dom_enable_frontpage tinyint(1) NOT NULL default '0',
+  dom_enable_fromtpage_ssl tinyint(1) NOT NULL default '0',
+  dom_enable_ssi tinyint(1) NOT NULL default '0',
+  dom_enable_php tinyint(1) NOT NULL default '0',
+  dom_enable_cgi tinyint(1) NOT NULL default '0',
+  dom_enable_mod_perl tinyint(1) NOT NULL default '0',
+  dom_enable_asp tinyint(1) NOT NULL default '0',
+  dom_enable_ssl tinyint(1) NOT NULL default '0',
+  dom_enable_stats tinyint(1) NOT NULL default '0',
+  dom_enable_err_docs tinyint(1) NOT NULL default '0',
+  dom_notes text NOT NULL,
+  PRIMARY KEY  (dom_id)
+) TYPE=MyISAM COMMENT='Site Domains Module Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_faq`
+#
+
+CREATE TABLE phpcoin_faq (
+  faq_id int(9) NOT NULL auto_increment,
+  faq_position int(9) NOT NULL default '1',
+  faq_time_stamp_mod varchar(10) default NULL,
+  faq_status tinyint(1) NOT NULL default '0',
+  faq_admin tinyint(1) NOT NULL default '0',
+  faq_user tinyint(1) NOT NULL default '0',
+  faq_title varchar(50) NOT NULL default '',
+  faq_descrip mediumtext NOT NULL,
+  PRIMARY KEY  (faq_id)
+) TYPE=MyISAM COMMENT='Site FAQ Module Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_faq_qa`
+#
+
+CREATE TABLE phpcoin_faq_qa (
+  faqqa_id int(9) NOT NULL auto_increment,
+  faqqa_faq_id int(11) NOT NULL default '0',
+  faqqa_position int(9) NOT NULL default '1',
+  faqqa_time_stamp_mod varchar(10) default NULL,
+  faqqa_status tinyint(1) NOT NULL default '0',
+  faqqa_question varchar(255) NOT NULL default '',
+  faqqa_answer mediumtext NOT NULL,
+  faqqa_auto_nl2br tinyint(1) NOT NULL default '1',
+  PRIMARY KEY  (faqqa_id)
+) TYPE=MyISAM COMMENT='Site FAQ Module QA Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_helpdesk`
+#
+
+CREATE TABLE phpcoin_helpdesk (
+  hd_tt_id int(11) NOT NULL default '0',
+  hd_tt_cl_id int(11) NOT NULL default '0',
+  hd_tt_cl_email varchar(50) NOT NULL default '',
+  hd_tt_time_stamp varchar(10) default NULL,
+  hd_tt_priority varchar(20) NOT NULL default '',
+  hd_tt_category varchar(20) NOT NULL default '',
+  hd_tt_subject varchar(50) NOT NULL default '',
+  hd_tt_message text NOT NULL,
+  hd_tt_cd_id int(11) NOT NULL default '0',
+  hd_tt_url varchar(50) NOT NULL default '',
+  hd_tt_status varchar(20) NOT NULL default '',
+  hd_tt_closed int(1) NOT NULL default '0',
+  hd_tt_rating int(1) NOT NULL default '0',
+  PRIMARY KEY  (hd_tt_id)
+) TYPE=MyISAM COMMENT='Site HelpDesk Module Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_helpdesk_msgs`
+#
+
+CREATE TABLE phpcoin_helpdesk_msgs (
+  hdi_tt_id int(11) NOT NULL default '0',
+  hdi_tt_time_stamp varchar(10) default NULL,
+  hdi_tt_cl_id int(11) NOT NULL default '0',
+  hdi_tt_ad_id int(11) NOT NULL default '0',
+  hdi_tt_message text NOT NULL
+) TYPE=MyISAM COMMENT='Site HelpDesk Module Messages Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_icons`
+#
+
+CREATE TABLE phpcoin_icons (
+  icon_id smallint(6) NOT NULL auto_increment,
+  icon_name varchar(32) NOT NULL default '',
+  icon_desc varchar(50) NOT NULL default '',
+  icon_filename varchar(32) NOT NULL default 'default.gif',
+  PRIMARY KEY  (icon_id)
+) TYPE=MyISAM COMMENT='Site Icons Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_invoices`
+#
+
+CREATE TABLE phpcoin_invoices (
+  invc_id int(11) NOT NULL default '0',
+  invc_status varchar(20) NOT NULL default 'draft',
+  invc_deliv_method varchar(10) NOT NULL default '',
+  invc_delivered tinyint(1) NOT NULL default '0',
+  invc_cl_id int(11) NOT NULL default '0',
+  invc_total_cost decimal(10,2) NOT NULL default '0.00',
+  invc_total_paid decimal(10,2) NOT NULL default '0.00',
+  invc_subtotal_cost decimal(10,2) NOT NULL default '0.00',
+  invc_tax_01_percent decimal(3,2) NOT NULL default '0.00',
+  invc_tax_01_amount decimal(10,2) NOT NULL default '0.00',
+  invc_tax_02_percent decimal(3,2) NOT NULL default '0.00',
+  invc_tax_02_amount decimal(10,2) NOT NULL default '0.00',
+  invc_tax_autocalc tinyint(1) NOT NULL default '1',
+  invc_ts varchar(10) default NULL,
+  invc_ts_due varchar(10) default NULL,
+  invc_ts_paid varchar(10) default NULL,
+  invc_bill_cycle tinyint(1) NOT NULL default '1',
+  invc_recurring tinyint(1) NOT NULL default '0',
+  invc_recurr_proc tinyint(4) NOT NULL default '0',
+  invc_pay_link text NOT NULL,
+  invc_terms text NOT NULL,
+  PRIMARY KEY  (invc_id)
+) TYPE=MyISAM COMMENT='Site Invoices Module Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_invoices_items`
+#
+
+CREATE TABLE phpcoin_invoices_items (
+  ii_invc_id int(11) NOT NULL default '0',
+  ii_item_no smallint(4) NOT NULL default '0',
+  ii_item_name varchar(30) NOT NULL default '',
+  ii_item_desc varchar(75) NOT NULL default '',
+  ii_item_cost decimal(10,2) NOT NULL default '0.00',
+  ii_apply_tax_01 tinyint(1) NOT NULL default '1',
+  ii_apply_tax_02 tinyint(1) NOT NULL default '1',
+  ii_calc_tax_02_pb tinyint(1) NOT NULL default '0',
+  PRIMARY KEY  (ii_invc_id,ii_item_no)
+) TYPE=MyISAM COMMENT='Site Invoices Module Items Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_invoices_trans`
+#
+
+CREATE TABLE phpcoin_invoices_trans (
+  it_id bigint(11) NOT NULL auto_increment,
+  it_ts varchar(10) default NULL,
+  it_invc_id int(11) NOT NULL default '0',
+  it_type tinyint(2) NOT NULL default '0',
+  it_origin tinyint(2) NOT NULL default '0',
+  it_desc varchar(50) NOT NULL default '',
+  it_amount decimal(10,2) NOT NULL default '0.00',
+  PRIMARY KEY  (it_id)
+) TYPE=MyISAM COMMENT='Site Invoices Module Transactions Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_mail_archive`
+#
+
+CREATE TABLE phpcoin_mail_archive (
+  ma_id bigint(11) NOT NULL auto_increment,
+  ma_time_stamp varchar(10) default NULL,
+  ma_fld_from varchar(100) NOT NULL default '',
+  ma_fld_recip varchar(100) NOT NULL default '',
+  ma_fld_cc varchar(100) NOT NULL default '',
+  ma_fld_bcc varchar(100) NOT NULL default '',
+  ma_fld_subject varchar(100) NOT NULL default '',
+  ma_fld_message text NOT NULL,
+  PRIMARY KEY  (ma_id)
+) TYPE=MyISAM COMMENT='Site eMail Archive Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_mail_contacts`
+#
+
+CREATE TABLE phpcoin_mail_contacts (
+  mc_id int(11) NOT NULL auto_increment,
+  mc_name varchar(30) NOT NULL default '',
+  mc_email varchar(50) NOT NULL default '',
+  mc_status tinyint(1) NOT NULL default '1',
+  PRIMARY KEY  (mc_id)
+) TYPE=MyISAM COMMENT='Site Mail Contacts Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_mail_queue`
+#
+
+CREATE TABLE phpcoin_mail_queue (
+  mq_id bigint(11) NOT NULL default '0',
+  mq_time_stamp varchar(10) default NULL,
+  mq_fld_from varchar(100) NOT NULL default '',
+  mq_fld_recip varchar(100) NOT NULL default '',
+  mq_fld_cc varchar(100) NOT NULL default '',
+  mq_fld_bcc varchar(100) NOT NULL default '',
+  mq_fld_subject varchar(100) NOT NULL default '',
+  mq_fld_message text NOT NULL,
+  mq_sent_flag tinyint(1) NOT NULL default '0',
+  PRIMARY KEY  (mq_id)
+) TYPE=MyISAM COMMENT='Site eMail Queue Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_mail_templates`
+#
+
+CREATE TABLE phpcoin_mail_templates (
+  mt_id int(11) NOT NULL auto_increment,
+  mt_name varchar(50) NOT NULL default '',
+  mt_text text NOT NULL,
+  PRIMARY KEY  (mt_id)
+) TYPE=MyISAM COMMENT='Site eMail Templates Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_menu_blocks`
+#
+
+CREATE TABLE phpcoin_menu_blocks (
+  block_id smallint(6) NOT NULL auto_increment,
+  block_pos smallint(6) NOT NULL default '0',
+  block_title varchar(30) NOT NULL default '',
+  block_status tinyint(1) NOT NULL default '0',
+  block_admin tinyint(1) NOT NULL default '0',
+  block_user tinyint(1) NOT NULL default '0',
+  block_col char(1) NOT NULL default 'L',
+  PRIMARY KEY  (block_id),
+  UNIQUE KEY block_id (block_id)
+) TYPE=MyISAM COMMENT='Site Menu Blocks Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_menu_blocks_items`
+#
+
+CREATE TABLE phpcoin_menu_blocks_items (
+  block_id smallint(6) NOT NULL default '0',
+  item_id smallint(6) NOT NULL default '0',
+  item_text varchar(30) NOT NULL default '',
+  item_url varchar(100) NOT NULL default '',
+  item_target tinyint(1) NOT NULL default '0',
+  item_type tinyint(1) NOT NULL default '0',
+  item_status tinyint(1) NOT NULL default '1',
+  item_admin tinyint(1) NOT NULL default '0',
+  item_user tinyint(1) NOT NULL default '0',
+  PRIMARY KEY  (block_id,item_id)
+) TYPE=MyISAM COMMENT='Site Menu Blocks Items Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_orders`
+#
+
+CREATE TABLE phpcoin_orders (
+  ord_id int(11) NOT NULL default '0',
+  ord_ts varchar(10) default NULL,
+  ord_ip varchar(16) NOT NULL default '000.000.000.000',
+  ord_status varchar(20) NOT NULL default 'pending',
+  ord_cl_id int(11) NOT NULL default '0',
+  ord_company varchar(50) NOT NULL default '',
+  ord_name_first varchar(20) NOT NULL default '',
+  ord_name_last varchar(20) NOT NULL default '',
+  ord_addr_01 varchar(50) NOT NULL default '',
+  ord_addr_02 varchar(50) NOT NULL default '',
+  ord_city varchar(50) NOT NULL default '',
+  ord_state_prov varchar(50) NOT NULL default '',
+  ord_country varchar(50) NOT NULL default '',
+  ord_zip_code varchar(12) NOT NULL default '',
+  ord_phone varchar(20) NOT NULL default '',
+  ord_email varchar(50) NOT NULL default '',
+  ord_domain varchar(50) NOT NULL default '',
+  ord_domain_action tinyint(1) NOT NULL default '0',
+  ord_user_name varchar(20) NOT NULL default '',
+  ord_user_pword varchar(50) NOT NULL default '',
+  ord_vendor_id smallint(6) NOT NULL default '1',
+  ord_prod_id smallint(6) NOT NULL default '0',
+  ord_unit_cost decimal(10,2) NOT NULL default '0.00',
+  ord_accept_tos tinyint(1) NOT NULL default '0',
+  ord_accept_aup tinyint(1) NOT NULL default '0',
+  ord_referred_by varchar(50) NOT NULL default '',
+  ord_comments text NOT NULL,
+  ord_optfld_01 varchar(50) NOT NULL default '',
+  ord_optfld_02 varchar(50) NOT NULL default '',
+  ord_optfld_03 varchar(50) NOT NULL default '',
+  ord_optfld_04 varchar(50) NOT NULL default '',
+  ord_optfld_05 varchar(50) NOT NULL default '',
+  ord_invc_id int(11) NOT NULL default '0',
+  PRIMARY KEY  (ord_id)
+) TYPE=MyISAM COMMENT='Site Orders Module Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_orders_sessions`
+#
+
+CREATE TABLE phpcoin_orders_sessions (
+  os_s_id varchar(36) NOT NULL default '',
+  os_s_time_init int(11) NOT NULL default '0',
+  os_s_time_last int(11) NOT NULL default '0',
+  os_s_ip varchar(16) NOT NULL default '000.000.000.000',
+  os_ord_processed tinyint(1) NOT NULL default '0',
+  os_ord_ret_processed tinyint(1) NOT NULL default '0',
+  os_ord_id int(11) NOT NULL default '0',
+  os_ord_ts varchar(10) default NULL,
+  os_ord_status varchar(20) NOT NULL default 'pending',
+  os_ord_cl_id int(11) NOT NULL default '0',
+  os_ord_company varchar(50) NOT NULL default '',
+  os_ord_name_first varchar(20) NOT NULL default '',
+  os_ord_name_last varchar(20) NOT NULL default '',
+  os_ord_addr_01 varchar(50) NOT NULL default '',
+  os_ord_addr_02 varchar(50) NOT NULL default '',
+  os_ord_city varchar(50) NOT NULL default '',
+  os_ord_state_prov varchar(50) NOT NULL default '',
+  os_ord_country varchar(50) NOT NULL default '',
+  os_ord_zip_code varchar(12) NOT NULL default '',
+  os_ord_phone varchar(20) NOT NULL default '',
+  os_ord_email varchar(50) NOT NULL default '',
+  os_ord_domain varchar(50) NOT NULL default '',
+  os_ord_domain_action tinyint(1) NOT NULL default '0',
+  os_ord_user_name varchar(20) NOT NULL default '',
+  os_ord_user_pword varchar(50) NOT NULL default '',
+  os_ord_vendor_id smallint(6) NOT NULL default '1',
+  os_ord_prod_id smallint(6) NOT NULL default '0',
+  os_ord_unit_cost decimal(10,2) NOT NULL default '0.00',
+  os_ord_accept_tos tinyint(1) NOT NULL default '0',
+  os_ord_accept_aup tinyint(1) NOT NULL default '0',
+  os_ord_referred_by varchar(50) NOT NULL default '',
+  os_ord_comments text NOT NULL,
+  os_ord_optfld_01 varchar(50) NOT NULL default '',
+  os_ord_optfld_02 varchar(50) NOT NULL default '',
+  os_ord_optfld_03 varchar(50) NOT NULL default '',
+  os_ord_optfld_04 varchar(50) NOT NULL default '',
+  os_ord_optfld_05 varchar(50) NOT NULL default '',
+  os_cor_flag tinyint(1) NOT NULL default '0',
+  os_cor_type varchar(32) NOT NULL default '',
+  os_cor_opt_bill_cycle varchar(32) NOT NULL default '',
+  os_cor_opt_payment varchar(32) NOT NULL default '',
+  os_cor_disk smallint(6) NOT NULL default '0',
+  os_cor_disk_units char(3) NOT NULL default 'Mb',
+  os_cor_traffic smallint(6) NOT NULL default '0',
+  os_cor_traffic_units char(3) NOT NULL default 'Gb',
+  os_cor_dbs smallint(6) NOT NULL default '0',
+  os_cor_mailboxes smallint(6) NOT NULL default '0',
+  os_cor_unique_ip tinyint(1) NOT NULL default '0',
+  os_cor_shop_cart tinyint(1) NOT NULL default '0',
+  os_cor_sec_cert tinyint(1) NOT NULL default '0',
+  os_cor_site_pages tinyint(4) NOT NULL default '0',
+  os_cor_comments text NOT NULL,
+  os_cor_optfld_01 varchar(50) NOT NULL default '',
+  os_cor_optfld_02 varchar(50) NOT NULL default '',
+  os_cor_optfld_03 varchar(50) NOT NULL default '',
+  os_cor_optfld_04 varchar(50) NOT NULL default '',
+  os_cor_optfld_05 varchar(50) NOT NULL default '',
+  PRIMARY KEY  (os_s_id)
+) TYPE=MyISAM COMMENT='Site Orders Module Sessions Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_pages`
+#
+
+CREATE TABLE phpcoin_pages (
+  id int(9) NOT NULL auto_increment,
+  subject varchar(50) NOT NULL default '',
+  topic_id int(11) NOT NULL default '1',
+  cat_id int(11) NOT NULL default '1',
+  time_stamp varchar(10) default NULL,
+  pages_title varchar(50) default NULL,
+  pages_code longtext NOT NULL,
+  pages_block_it tinyint(1) NOT NULL default '0',
+  pages_status tinyint(1) NOT NULL default '0',
+  pages_admin tinyint(1) NOT NULL default '0',
+  pages_link_menu tinyint(1) NOT NULL default '0',
+  pages_link_prev int(11) NOT NULL default '0',
+  pages_link_home int(11) NOT NULL default '0',
+  pages_link_next int(11) NOT NULL default '0',
+  PRIMARY KEY  (id)
+) TYPE=MyISAM COMMENT='Site Pages Module Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_parameters`
+#
+
+CREATE TABLE phpcoin_parameters (
+  parm_id smallint(6) NOT NULL auto_increment,
+  parm_group varchar(10) NOT NULL default 'common',
+  parm_group_sub varchar(10) NOT NULL default 'undefined',
+  parm_type char(1) NOT NULL default 'S',
+  parm_name varchar(50) NOT NULL default '',
+  parm_desc varchar(50) NOT NULL default '',
+  parm_value varchar(100) NOT NULL default '',
+  parm_notes text NOT NULL,
+  PRIMARY KEY  (parm_id)
+) TYPE=MyISAM COMMENT='Site Parameters Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_products`
+#
+
+CREATE TABLE phpcoin_products (
+  prod_id smallint(6) NOT NULL auto_increment,
+  prod_status tinyint(1) NOT NULL default '1',
+  prod_name varchar(20) NOT NULL default '',
+  prod_desc varchar(75) NOT NULL default '',
+  prod_unit_cost decimal(10,2) NOT NULL default '0.00',
+  prod_client_scope int(11) NOT NULL default '0',
+  prod_apply_tax_01 tinyint(1) NOT NULL default '1',
+  prod_apply_tax_02 tinyint(1) NOT NULL default '1',
+  prod_calc_tax_02_pb tinyint(1) NOT NULL default '0',
+  prod_dom_type tinyint(2) NOT NULL default '0',
+  prod_allow_domains smallint(6) NOT NULL default '0',
+  prod_allow_subdomains smallint(6) NOT NULL default '0',
+  prod_allow_disk_space_mb int(11) NOT NULL default '0',
+  prod_allow_traffic_mb int(11) NOT NULL default '0',
+  prod_allow_mailboxes smallint(6) NOT NULL default '0',
+  prod_allow_databases smallint(6) NOT NULL default '0',
+  prod_cg_01 tinyint(1) NOT NULL default '0',
+  prod_cg_02 tinyint(1) NOT NULL default '0',
+  prod_cg_03 tinyint(1) NOT NULL default '0',
+  prod_cg_04 tinyint(1) NOT NULL default '0',
+  prod_cg_05 tinyint(1) NOT NULL default '0',
+  prod_cg_06 tinyint(1) NOT NULL default '0',
+  prod_cg_07 tinyint(1) NOT NULL default '0',
+  prod_cg_08 tinyint(1) NOT NULL default '0',
+  PRIMARY KEY  (prod_id)
+) TYPE=MyISAM COMMENT='Site Products Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_reminders`
+#
+
+CREATE TABLE phpcoin_reminders (
+  overdue_id int(11) NOT NULL auto_increment,
+  overdue_title varchar(50) NOT NULL default '',
+  overdue_active char(1) NOT NULL default '1',
+  overdue_days tinyint(4) NOT NULL default '10',
+  overdue_subject varchar(150) NOT NULL default '',
+  overdue_template text NOT NULL,
+  overdue_cc_support tinyint(1) NOT NULL default '0',
+  UNIQUE KEY overdue_id (overdue_id)
+) TYPE=MyISAM;
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_server_info`
+#
+
+CREATE TABLE phpcoin_server_info (
+  si_id smallint(6) NOT NULL auto_increment,
+  si_name varchar(20) NOT NULL default '',
+  si_ip varchar(15) NOT NULL default '000.000.000.000',
+  si_ns_01 varchar(50) NOT NULL default '',
+  si_ns_01_ip varchar(15) NOT NULL default '000.000.000.000',
+  si_ns_02 varchar(50) NOT NULL default '',
+  si_ns_02_ip varchar(15) NOT NULL default '000.000.000.000',
+  si_cp_url varchar(50) NOT NULL default '',
+  si_cp_url_port int(11) NOT NULL default '0',
+  PRIMARY KEY  (si_id)
+) TYPE=MyISAM COMMENT='Site Server Info Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_sessions`
+#
+
+CREATE TABLE phpcoin_sessions (
+  s_id varchar(36) NOT NULL default '',
+  s_time_init int(11) NOT NULL default '0',
+  s_time_last int(11) NOT NULL default '0',
+  s_ip varchar(16) NOT NULL default '000.000.000.000',
+  s_is_admin tinyint(1) NOT NULL default '0',
+  s_is_user tinyint(1) NOT NULL default '0',
+  s_time_last_contact int(11) NOT NULL default '0',
+  s_time_last_order int(11) NOT NULL default '0',
+  PRIMARY KEY  (s_id)
+) TYPE=MyISAM COMMENT='Site Sessions Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_site_info`
+#
+
+CREATE TABLE phpcoin_site_info (
+  si_id int(11) NOT NULL auto_increment,
+  si_group varchar(32) default NULL,
+  si_name varchar(32) default NULL,
+  si_seq_no int(11) default NULL,
+  si_desc varchar(50) default NULL,
+  si_block_it tinyint(1) NOT NULL default '0',
+  si_title varchar(50) default NULL,
+  si_code longtext,
+  si_status tinyint(1) NOT NULL default '0',
+  si_footer_menu tinyint(1) NOT NULL default '1',
+  PRIMARY KEY  (si_id)
+) TYPE=MyISAM COMMENT='Site SiteInfo Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_topics`
+#
+
+CREATE TABLE phpcoin_topics (
+  topic_id mediumint(9) NOT NULL auto_increment,
+  topic_pos smallint(6) NOT NULL default '0',
+  topic_name varchar(50) NOT NULL default '',
+  topic_desc varchar(50) NOT NULL default '',
+  topic_icon smallint(6) NOT NULL default '1',
+  PRIMARY KEY  (topic_id)
+) TYPE=MyISAM COMMENT='Site Topics Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_vendors`
+#
+
+CREATE TABLE phpcoin_vendors (
+  vendor_id smallint(6) NOT NULL auto_increment,
+  vendor_status tinyint(1) NOT NULL default '0',
+  vendor_name varchar(20) NOT NULL default '',
+  vendor_buy_parm varchar(30) NOT NULL default 'buy',
+  vendor_buy_parm_val varchar(10) NOT NULL default '1',
+  vendor_url varchar(50) NOT NULL default '',
+  vendor_notes text NOT NULL,
+  PRIMARY KEY  (vendor_id)
+) TYPE=MyISAM COMMENT='Site Vendors Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_vendors_prods`
+#
+
+CREATE TABLE phpcoin_vendors_prods (
+  vprod_id smallint(6) NOT NULL auto_increment,
+  vprod_vendor_id smallint(6) NOT NULL default '0',
+  vprod_prod_id smallint(6) NOT NULL default '0',
+  vprod_desc varchar(50) NOT NULL default '',
+  vprod_order_link text NOT NULL,
+  PRIMARY KEY  (vprod_id)
+) TYPE=MyISAM COMMENT='Site Vendor Products Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_versions`
+#
+
+CREATE TABLE phpcoin_versions (
+  v_id smallint(6) NOT NULL auto_increment,
+  v_ts varchar(10) NOT NULL default '',
+  v_ver varchar(8) NOT NULL default '',
+  v_type varchar(10) NOT NULL default 'install',
+  PRIMARY KEY  (v_id)
+) TYPE=MyISAM COMMENT='Package Versions Table';
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `phpcoin_whois`
+#
+
+CREATE TABLE phpcoin_whois (
+  whois_id int(11) NOT NULL auto_increment,
+  whois_server varchar(100) NOT NULL default '',
+  whois_nomatch varchar(15) NOT NULL default '',
+  whois_value varchar(20) NOT NULL default '',
+  whois_display varchar(25) NOT NULL default '',
+  whois_include tinyint(1) NOT NULL default '1',
+  whois_prod_id int(11) NOT NULL default '0',
+  whois_notes text,
+  UNIQUE KEY whois_id (whois_id)
+) TYPE=MyISAM;
