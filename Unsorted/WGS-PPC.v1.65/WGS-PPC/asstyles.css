@@ -1,0 +1,9 @@
+body {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; text-align: center}
+.tborder {  border: #AAAAAA; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px}
+h3 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; color: #000066}
+td {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: normal; color: #000000}
+a{font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #0000CC; text-decoration: underline}
+a:hover{font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #0000CC; text-decoration: none}
+a.menu{font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #E8E8F9; text-decoration: none}
+a.menu:hover{font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #FFFFFF; text-decoration: underline}.tdmenu {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #FFFFFF}
+input { font-family: "Tahoma"; border-color: #666666 #999999 #999999 #666666; border-style: inset; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; font-size: 11px; color: #333333;}
