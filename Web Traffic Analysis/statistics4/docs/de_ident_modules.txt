@@ -1,0 +1,38 @@
+Ein paar Informationen zu den Erkennungsmodulen:
+
+- Bots (SuchroBOTer) werden in einer Botdatei 'config/bots.dat'
+  gelistet, die durch 'modules/ident_bot.inc.php' abgearbeitet wird.
+  In der Botdatei können neue Bots hinzugefügt werden indem man
+  sie mit einem normalen Texteditor bearbeitet.
+  Die letzte Zeile der Botdatei ist das Datum der Botliste (Datum der
+  letzten Änderung) und wird nicht zu Erkennungszwecken genutzt.
+  'modules/ident_bot.inc.php' arbeitet eng mit 'modules/ident_search.inc.php'
+  zusammen.
+
+- Suchmaschinen werden in 'modules/ident_search.inc.php' erkannt. Um
+  diese Dateien zu bearbeiten sind fundierte PHP-Kenntnisse erforderlich.
+
+- Browser und Betriebssysteme weden durch 'modules/ident_browser.inc.php'
+  und 'modules/ident_os.inc.php' erkannt. Um diese Dateien zu bearbeiten
+  sind fundierte PHP-Kenntnisse erforderlich.
+
+- Länderkennungen weden durch 'modules/ident_country.inc.php' erkannt.
+- Ländernamen sind in 'languages/c_de.dat' bzw. 'languages/c_en.dat'
+  definiert.
+- Die Nationalflaggen sind in 'countries/c_flags.dat' definiert.
+
+- Um die IP2Country-Datenbank tu aktuallisieren:
+  Die IP2Country CSV-Datei von 'http://ip-to-country.webhosting.info/'
+  herunterladen und nach 'countries/' enpacken.
+  Dann 'countries/create_ip2c_db.php' aufrufen, dadurch wird eine neue
+  SHOWlogkonforme Version erstellt. Danach kann die .csv-Datei gelöscht
+  werden.
+
+- Sprachen werden durch 'modules/ident_languages.inc.php' erkannt.
+  Diese Erkennungsfunktion benutzt die Nationalflaggen von
+  'modules/ident_country.inc.php'.
+  Die Sprachen werden in 'languages/l_de.dat' bzw 'languages/l_en.dat'
+  definiert.
+  Beispiel (l_en.dat): de-at|at|german (Austria)
+  Beispiel (l_de.dat): de-at|at|Deutsch (Östereich)
+  dies bedeutet: Sprachcode|Fagge|Angezeigter Sprachname
