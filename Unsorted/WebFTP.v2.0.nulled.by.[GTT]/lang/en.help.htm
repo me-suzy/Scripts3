@@ -1,0 +1,158 @@
+<html>
+
+<head>
+ <title>Aide du WebFTP</title>
+ <style>
+  body,td,a,div,p{font-size:10pt;font-family:arial;}
+  blockquote{margin-left:12px;}
+  a.t{text-decoration:none;color:#555555;}
+ </style>
+</head>
+
+<body background="../img/bg.gif">
+
+<a name="top"></a>
+
+<h1 style="margin-bottom:7px;">WebFTP Help</h1>
+<hr>
+
+<a name="con">
+<h2 style="margin-top:7px;"><a href="#top"><img border=0 src="../img/t1.gif"></a> Login Box</h2>
+<blockquote>
+Before you can browse the FTP, you must first log in.<br>
+To do this, you should just fill the fields below :
+
+<a name="user">
+<h3><a href="#top"><img border=0 src="../img/t1.gif"></a> User name :</h3>
+<blockquote>
+ It's the name of your FTP account given by your administrator or hosting service<br>
+ Beware, remember that some FTP servers are case sensitive, so<br>
+ username &laquo; <b>someuser</b> &raquo; and &laquo; <b>SomEUsEr</b> &raquo; are different.
+</blockquote>
+
+<a name="pass">
+<h3><a href="#top"><img border=0 src="../img/t1.gif"></a> Password :</h3>
+<blockquote>
+ It's the password that you chosed or that was given with your username<br>
+ when you signed up. Remember that some servers are case sensitive, so <br>
+ password &laquo; <b>somepass</b> &raquo; and &laquo; <b>SOmEpaSs</b> &raquo; are different.
+</blockquote>
+
+<a name="serv">
+<h3><a href="#top"><img border=0 src="../img/t1.gif"></a> Server and port :</h3>
+<blockquote>
+ This field is not always present, and allows you to chose the FTP<br>
+ server and port you want to connect to. This can be either a hostname<br>
+ like &laquo; <b>ftp.somehost.com</b> &raquo; or an IP address like <b>123.45.6.789</b>
+</blockquote>
+
+<a name="fold">
+<h3><a href="#top"><img border=0 src="../img/t1.gif"></a> Folder :</h3>
+<blockquote>
+ If the field is present, you can enter the home folder you want to<br>
+ enter to once logged. Else, let the default value.
+</blockquote>
+
+<a name="timeout">
+<h3><a href="#top"><img border=0 src="../img/t1.gif"></a> Timeout :</h3>
+<blockquote>
+ If this field is present, you can set the timeout value in seconds<br>
+ before the connection fails and the script interrupts.
+</blockquote>
+
+<a name="trans">
+<h3><a href="#top"><img border=0 src="../img/t1.gif"></a> Transfert mode :</h3>
+<blockquote>
+ If present, you can chose the transfert mode to use for download.<br>
+ ASCII is used only for text files (html, javascript, php) and binary<br>
+ for pictures, videos and programs. If you don't know, set to binary.
+</blockquote>
+
+<a name="pasv">
+<h3><a href="#top"><img border=0 src="../img/t1.gif"></a> Passive FTP mode :</h3>
+<blockquote>
+ If present, you can check this box to enable passive FTP mode.<br>
+ If you can't download files, try to enable passive mode, because some<br>
+ proxy servers block the incoming connections.
+</blockquote>
+
+<a name="ssl">
+<h3><a href="#top"><img border=0 src="../img/t1.gif"></a> Connect with SSL :</h3>
+<blockquote>
+ If present, you can check this box to connect to a secure FTP server.<br>
+ This is only possible if the server has library OpenSSL installed.
+</blockquote>
+</blockquote>
+
+<hr>
+
+<a name="interface">
+<h2 style="margin-top:7px;"><a href="#top"><img border=0 src="../img/t1.gif"></a> Interface buttons</h2>
+<blockquote>
+File handling is done with the icons in the action pannel<br>
+under the list of files. Here are the descriptions of the buttons :
+
+<h3><img border=0 src="../img/del.gif"> Delete files :</h3>
+<blockquote>
+ Once you have selected the files with the checkboxes,<br>
+ click on this button to delete them. The script will ask you<br>
+ for a confirmation because non empty folders are also deleted.
+</blockquote>
+
+<h3><img border=0 src="../img/rename.gif"> Rename files :</h3>
+<blockquote>
+ Once you have selected the files with the checkboxes,<br>
+ click on this button to rename them. The script will prompt you the<br>
+ new names of each file you selected.
+</blockquote>
+
+<h3><img border=0 src="../img/move.gif"> Move files :</h3>
+<blockquote>
+ Once you have selected the files with the checkboxes,<br>
+ click on this button to move them to another directory. The script will<br>
+ ask you the name of the target folder, it can be either absolute or<br>
+ relative. If it doesn't exist, the script attempts to create it.
+</blockquote>
+
+<h3><img border=0 src="../img/ndos.gif"> New Folder :</h3>
+<blockquote>
+ The script asks you the name of the new folder. It can be<br>
+ either absolute or relative.
+</blockquote>
+
+<h3><img border=0 src="../img/edit.gif"> View / Edit file :</h3>
+<blockquote>
+ This button has an odd behaviour. The first time you click on it,<br>
+ the checkboxes of the file will turn into radio buttons.<br>
+ Then you can select the file to view/edit, and click this button again.
+</blockquote>
+
+<h3><img border=0 src="../img/chmod.gif"> Permissions :</h3>
+<blockquote>
+ Once you have selected the files with the checkboxes,<br>
+ click on this button to change their permissions.<br>
+ Script script asks you the octal value for permissions,<br>
+ see the <a class="t" href="http://php.net/chmod" target="_blank">PHP manual</a> about chmod().
+</blockquote>
+
+<h3><img border=0 src="../img/tar.gif"> TAR and download :</h3>
+<blockquote>
+ This button can be disabled by the administrator.<br>
+ It attempt to download the selected files, and create a TAR<br>
+ archive with them, and send back the archive to you. The archive<br>
+ can be compressed with GZIP or BZIP2 if the extensions are presents.
+</blockquote>
+
+<h3><img border=0 src="../img/ftp-site.gif"> Send a SITE command :</h3>
+<blockquote>
+ The script asks you the SITE command to send, and try<br>
+ to execute it on the server. A message will say you if the<br>
+ command failed or not, but you can't get the server answer.
+</blockquote>
+
+</blockquote>
+
+<hr>
+
+</body>
+</html>
