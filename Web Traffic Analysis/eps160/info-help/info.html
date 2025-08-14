@@ -1,0 +1,380 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+<style type="text/css">
+	.regtext {
+		font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size : 11px;
+		color : #708090;
+	}
+	.headline {
+		color : #708090;
+		font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size : 11px;
+		font-weight : bold;
+		margin-bottom : 1px;
+	}
+	.link {
+		color : #708090;
+		font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size : 11px;
+		text-decoration : underline;
+	}
+</style>
+	<title>easyPHPstat ver. 1.6.0 beta 3 - Info</title>
+</head>
+<body>
+ <img src="../img/logo.gif" alt="" border="0">
+ <p>
+  <a class="link" href="#license">End User License Agreement</a>
+  <br>
+  <a class="link" href="#info">Information About easyPHPstat</a>
+  <br>
+  <a class="link" href="#install">Installation of easyPHPstat</a>
+  <br>
+  <a class="link" href="#setup">Setup of easyPHPstat</a>
+  <br>
+  <a class="link" href="#files">Files</a>
+  <br>
+  <a class="link" href="#faq">Frequently Asked Questions</a>
+  <br>
+  <a class="link" href="#setup">Contact and Development</a>
+  <br>
+ </p>
+
+ <a name=license></a>
+ <div class="headline">
+  License Agreement
+ </div>
+ <table width="450">
+  <tr>
+   <td>
+    <div class="regtext">
+     This program is freeware. You're allowed to share it and/or modify it, use it for private
+	 or commercial purpose. You may NOT sell it, either in it's original form, or parts of the
+	 code.<br>
+	 You are NOT permitted to publish this program in its original form as your own.<br>
+	 If you publish this program in its original form, this file must be included.<br>
+     This program is provided "AS IS" with no warranty of any kind. The writer of this program is
+	 of no way responsible for any damages this program may cause.
+    </div>
+   </tr>
+  <td>
+ </table>
+ <br>
+ <a name=info></a>
+ <div class="headline">
+  Information About easyPHPstat
+ </div>
+ <table width="450">
+  <tr>
+   <td>
+    <div class=regtext>
+     easyPHPstat is a web statistic program that does not require the use of a database.<br><br><strong>! This is a beta version and may not function 100%. Contact me if you find any errors.</strong>
+    </div>
+    <br>
+   </td>
+  </tr>
+   <tr>
+   <td>
+    <div class="regtext">
+     The program registers number of visitors, unique visitors (ip pr. day),
+     color depth, screen size, browser, javascript support, operating systems,
+     country (top domain), keywords from search engines, ip, and referrers.
+	</div>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <div class="regtext">
+     The program is easy to install. Setup is done by web and includes layout, css and password protection.
+	</div>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <div class="regtext">
+	 ! Remember that as this program does not use a database, a large website with many visitors will increase the server's workload.<br>
+     Recommend a maximum of 1000 unique visitors a day depending on the server speed.
+    </div>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <div class="regtext">
+     easyPHPstat works with php 4.3 and above. Older versions have not been tested. See F.A.Q for more info.
+	</div>
+   </td>
+  </tr>
+ </table>
+ <br>
+ <a name="install"></a>
+ <div class="headline">
+  Installation of easyPHPstat
+ </div>
+ <table width="450">
+  <tr>
+   <td>
+    <div class="regtext">
+	 Unzip easyPHPstat and save it in a directory on the server (e.g. "/easyphpstat").<br>
+	 ! Remember to change the file rights in the directory "data/*.*" (chmod 666) - Check your ftp clients helpfile on how to accomplish this.<br>
+	 ! Change config.php if needed.
+
+	</div>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <div class=regtext>
+	 ! In the website file you wish to monitor statistics from (e.g. index.html) put the following code in your file. <br><br>
+    </td>
+   </tr>
+  </table>
+  <table width="1000">
+   <tr>
+    <td>
+	 <div class="regtext">
+<pre>
+&lt!-- easyPHPstat code --&gt
+&ltscript type="text/javascript"&gt
+/*&lt![CDATA[*/
+var ref=""+escape(top.document.referrer); var colord = window.screen.colorDepth;
+var res = window.screen.width + "x" + window.screen.height;
+document.write("&ltimg src='http://yoursite.com/easyphpstat/stat.php?referer=" + ref + "&amp;amp;js=yes&amp;amp;color=" + colord + "&amp;amp;res=" + res + "' alt='' /&gt");
+// ]]&gt
+&lt/script&gt&ltnoscript&gt&ltdiv&gt&ltimg src="http://yoursite.com/easyphpstat/stat.php" alt="" /&gt&lt/div&gt
+&lt/noscript&gt
+&lt!-- easyPHPstat code --&gt
+</pre>
+	 </div>
+	</td>
+   </tr>
+  </table>
+  <table width="450">
+   <tr>
+    <td>
+	 <div class="regtext">
+	  ! Remember to change the 2 &ltimg&gt tags to match your website (e.g. http://yoursite.com/easyphpstat/stat.php):
+	 </div>
+    </td>
+   </tr>
+   <tr>
+    <td>
+	<div class="regtext">
+	 Since an image tag "&ltimg&gt" calls the program, there will be a 1x1pixel transparent gif inserted on the page.
+	</div>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <div class="regtext">
+     Remember to reset your stats on use to get the correct start date.
+    </div>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <div class="regtext">
+     To see your stats, use the following url: "http://yoursite.com/easyphpstat".
+    </div>
+   </td>
+  </tr>
+ </table>
+ <br>
+ <a name="setup"></a>
+ <div class="headline">Setup of easyPHPstat</div>
+ <table>
+  <tr>
+   <td>
+    <div class="regtext">
+     Setup is done from the web - Go to "Settings" and press "easyPHPstat Setup".<br>
+     ! Username and Password are initially set to "user" / "abc123"
+    </div>
+   </td>
+  </tr>
+ </table>
+ <br>
+ <a name="files"></a>
+ <div class="headline">Files</div>
+ <table>
+  <tr>
+   <td>
+    <div class="regtext">
+	 Index.php - The file that prints out the stats<br>
+     - Can be edited<br>
+     - Should not be renamed
+	</div>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <div class="regtext"><br>
+     Stat.php - The file that registers the stats<br>
+     - Can be edited<br>
+     - Should not be renamed
+    </div>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <div class="regtext"><br>
+     Setup.php - The setup interface to easyPHPstat<br>
+     - Is run from "index.php"<br>
+     - Can be edited<br>
+     - Should not be renamed
+    </div>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <div class="regtext"><br>
+     Data/*.* - Stored data<br>
+     - Reset from "index.php"<br>
+     - Should not be edited<br>
+     - Should not be renamed<br>
+    </div>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <div class="regtext"><br>
+     Info-help/info.html - This file<br>
+     - Can be deleted
+    </div>
+   </td>
+  </tr>
+ </table>
+ <br>
+ <a name="faq"></a>
+ <div class="headline">Frequently Asked Questions</div>
+ <table width="450">
+  <tr><td valign="top">
+    <div class="regtext">Q:</div>
+	</td><td valign="top">
+	<div class="regtext">I Get this error: "...Warning: fopen("data/filename", "w")..."? </div>
+	</td></tr>
+	<tr><td valign="top">
+	<div class="regtext">A:</div>
+	</td><td valign="top">
+	<div class="regtext">Change the file permission to "chmode 666" in "/data/*.*"</div>
+   </td></tr>
+ </table>
+ <table>
+ <br>
+ <table width="450">
+  <tr><td valign="top">
+    <div class="regtext">Q:</div>
+	</td><td valign="top">
+	<div class="regtext">Chmod doesn't work? </div>
+	</td></tr>
+	<tr><td valign="top">
+	<div class="regtext">A:</div>
+	</td><td valign="top">
+	<div class="regtext">Some windows ftp clients don't support chmode. Use a program like SmartFtp (can be found at www.download.com)</div>
+   </td></tr>
+ </table>
+ <br>
+<table width="450">
+  <tr><td valign="top">
+    <div class="regtext">Q:</div>
+	</td><td valign="top">
+	<div class="regtext">The program doesn't register statistics? </div>
+	</td></tr>
+	<tr><td valign="top">
+	<div class="regtext">A:</div>
+	</td><td valign="top">
+	<div class="regtext">Remember to put the JavaScript code on your page and change the path to match your website</div>
+   </td></tr>
+ </table>
+ <br>
+ <table width="450">
+  <tr><td valign="top">
+    <div class="regtext">Q:</div>
+	</td><td valign="top">
+	<div class="regtext">The program shows all hits as "0"? </div>
+	</td></tr>
+	<tr><td valign="top">
+	<div class="regtext">A:</div>
+	</td><td valign="top">
+	<div class="regtext">A few have reported this error when running easyPHPstat on a WinNT/IIS server.    The problem is caused by the function "flock()". A way to solve this is removing the function. This may cause problems if 2 people are visiting your website at the exact same time </div>
+   </td></tr>
+ </table>
+ <br>
+  <table width="450">
+  <tr><td valign="top">
+    <div class="regtext">Q:</div>
+	</td><td valign="top">
+	<div class="regtext">My webserver is using a php version below 4.2 - What do I do? </div>
+	</td></tr>
+	<tr><td valign="top">
+	<div class="regtext">A:</div>
+	</td><td valign="top">
+	<div class="regtext">Upgrade... :-)</div>
+   </td></tr>
+ </table>
+ <br>
+ <table width="450">
+  <tr><td valign="top">
+    <div class="regtext">Q:</div>
+	</td><td valign="top">
+	<div class="regtext">I still haven't solved my problem? </div>
+	</td></tr>
+	<tr><td valign="top">
+	<div class="regtext">A:</div>
+	</td><td valign="top">
+	<div class="regtext">Check for updates on the webpage below. If you still have problems contact me. If possible please include your webserver's operating system and php version</div>
+   </td></tr>
+ </table>
+ <br>
+ <table width="450">
+  <tr><td valign="top">
+    <div class="regtext">Q:</div>
+	</td><td valign="top">
+	<div class="regtext">I don't know my webserver's operating system or php version? </div>
+	</td></tr>
+	<tr><td valign="top">
+	<div class="regtext">A:</div>
+	</td><td valign="top">
+	<div class="regtext">Use the php function "phpinfo()". It will tell you all you need to know</div>
+   </td></tr>
+ </table>
+ <br>
+ <table width="450">
+  <tr><td valign="top">
+    <div class="regtext">Q:</div>
+	</td><td valign="top">
+	<div class="regtext">Can I edit this code? </div>
+	</td></tr>
+	<tr><td valign="top">
+	<div class="regtext">A:</div>
+	</td><td valign="top">
+	<div class="regtext">Yes. You can do practically anything you want. Remember to read the license agreement</div>
+   </td></tr>
+ </table>
+ <br>
+ <a name="contact"></a>
+ <div class="headline">Contact and development</div>
+ <table width="450">
+  <tr>
+   <td>
+    <div class="regtext">
+     If you find errors, have ideas, need help, or just want to say
+     you like the program, feel free to contact me.<br><br>
+     If you have made any modifications to the code you feel could be useful, please mail it to me.<br><br>
+     Thanks to: <br>
+     - Roberto Crociani for help with configuration and support for Mozilla Firefox.<br><br>
+
+     </div>
+<br>
+<div class="regtext">    - Karsten Brogaard<br>
+     &nbsp;&nbsp;Download, updates and news: <a href="http://harme.dk/php" class="link">http://harme.dk/php</a><br>
+     &nbsp;&nbsp;E-mail: <a class="link" href="mailto:kohaar@harme.dk">php@harme.dk</a><br>
+     &nbsp;&nbsp;Denmark<br>
+    </div>
+   </td>
+  </tr>
+ </table>
+ <br>
+</body>
+</html>
