@@ -1,0 +1,52 @@
+Weblog catches following data:
+	- date/time
+	- IP
+	- Host
+	- Useragent
+	- Referer
+	- browserlanguage
+	- screensize (if clients javascript is enabled)
+	- colordepth (if clients javascript is enabled)
+
+Showlog creates following statistics:
+	- Browser: Browserfamily, Browser details, Javascript
+	- OS: OSfamily, OS details
+	- Referer: Refering Host, Refering Host without subdomain, Referer details
+	- Forwarder
+	- Websearch: Searchengines, query details, robots
+	- hits by day for each month
+	- hits by month for each year
+	- Provider
+	- Countrycodes
+	- IP to Country
+	- Clientlanguages: Languages, language details
+	- Screendata: Screen height and width, colordepth, screentype
+
+Showlog additional overviews:
+	- detailed overview of logfile with filter-functionality
+	- Functions for unknown data - by clicking on Unknown in both statistics
+		- Unknown browser - search with google by clicking agent
+		- Unknown OS - search with google by clicking agent
+		- Unknown searchengine - search with google by clicking agent
+		- Unknown robot - search with google by clicking agent
+		- Unknown IP and LongIP (for IP2Country)
+
+Showlog additional functions:
+	- refering hosts clickable for open in new window
+	- referer details clickable for open in new window
+	- Searchengine host clickable for visit with new window
+	- Searchengine query clickable for visit with new window
+	- logfile details:
+		- referer clickable for visit with new window
+		- links in agent (e.g. bots) clickable for visit with new window
+
+Showlog additional functions in admin-mode:
+	- Overview of Usernames stored in referer
+	- check logfile
+	- download logfile
+	- delete last entry
+	- delete logfile
+
+Additional functions:
+	- Benchmarking
+	- PHP-script to create new IP2Country database
