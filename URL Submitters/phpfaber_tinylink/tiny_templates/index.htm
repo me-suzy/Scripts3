@@ -1,0 +1,117 @@
+<!--=include file="userheader.htm"=-->
+
+</head>
+
+<body bgcolor=white leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
+
+
+<table width=100% height=100% border=0 cellpadding=0 cellspacing=0>
+<tr align=center valign=middle><td>
+<br>
+
+<table border=0 width=300 cellpadding=0 cellspacing=0>
+<tr><td>
+
+<!-- ## LOGO -->
+
+<table width=100% border=0 cellpadding=0 cellspacing=0>
+<tr valign=bottom>
+<td><img src=tiny_images/tr1.gif width=25 height=20><br></td>
+<td width=100% align=center><h1><font color="#666666">Welcome to phpFaber TinyLink!</font></h1><br></td>
+<td><img src=tiny_images/spacer.gif width=25 height=1><br></td>
+</tr>
+</table>
+
+<!-- /## LOGO -->
+
+<!-- ## FORM -->
+
+<table border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td><img src=tiny_images/tr2.gif width=25 height=95><br></td>
+<td background=tiny_images/bg1.gif valign=bottom>
+
+<table border=0 height=80 cellpadding=0 cellspacing=0 background="">
+
+<form name="fomu" action="" method="post">
+<tr valign=middle align=center><td class=wtxt>Please fill in the following field with the URL you want to shorten:<br>(put a copy/past from URL):</td></tr>
+<tr valign=middle align=center><td>
+
+<table border=0 cellpadding=0 cellspacing=0 background="">
+<tr><td><input name="fullurl" type="text" value="http://" size="42" maxlength="2560" style="width:450px; height:20px;FONT-FAMILY: Arial, Helvetica, Sans-serif; BACKGROUND-COLOR: #ffffff ; font-size: 12px; color: #000000;"></td></tr>
+</table>
+
+</td></tr>
+<tr><td>
+
+<table border=0 width=100% cellpadding=0 cellspacing=0 background="">
+<tr>
+<td><img src=tiny_images/spacer.gif width=42 height=1><br></td>
+<td width=100% align=center valign=middle><input type=submit value="Make TinyLink!"></td>
+<td align=right valign=bottom><img src=tiny_images/tr4.gif width=42 height=38><br></td>
+</tr>
+</table>
+
+</td></tr>
+</form></table>
+
+</td>
+<td><img src=tiny_images/tr3.gif width=33 height=95><br></td>
+</tr>
+</table>
+
+<table border=0 width=100% cellpadding=0 cellspacing=0>
+<tr><td align=right><img src=tiny_images/tr5.gif width=365 height=7><br></td></tr>
+</table>
+
+<!-- /## FORM -->
+
+<img src=tiny_images/spacer.gif width=1 height=17><br>
+
+<!-- ## MENU -->
+
+<table border=0 width=100% cellpadding=0 cellspacing=0>
+<tr align=center>
+<td>&nbsp;&nbsp;&#149;&nbsp;<a href="#" class=bmnu>About</a>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&#149;&nbsp;<a href="#" class=bmnu>Why to use TinyLink</a>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&#149;&nbsp;<a href="#" class=bmnu>Information</a>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&#149;&nbsp;<a href="#" class=bmnu>FAQ</a>&nbsp;&nbsp;</td>
+</tr>
+
+<!--=if $randlink =-->
+<tr align=center><td colspan=4 class=cop><br><br>The internet adress: <strong><a href="<!--=$fullurl=-->" target=_blank><!--=$fullurl=--></a></strong> just got converted into a tiny link:<br>
+<br>
+<a style="color:red;" href="<!--=$url_to_index=-->?<!--=$randlink=-->"><strong><!--=$url_to_index=-->?<!--=$randlink=--></strong></a></td></tr>
+<!--=/if=-->
+
+<tr align=center><td colspan=4 class=cop><br><br>Drag and drop this link: <a href="javascript:void(location.href='<!--=$url_to_index=-->?fullurl='+escape(location.href))"  onmouseover="window.status='Convert this page into a tiny link!';return true" onclick="return false"><strong>TinyLink!</strong></a> into your IE favorites menu.<br>After this you can use this service on any page you want!!</td></tr>
+</table>
+
+<!-- /## MENU -->
+
+<img src=tiny_images/spacer.gif width=1 height=40><br>
+
+<!-- ## BANNERS AREA -->
+
+<!--=$ad=-->
+
+<!-- /## BANNERS AREA -->
+
+<img src=tiny_images/spacer.gif width=1 height=45><br>
+
+<!-- ## COPYRIGHT INFO -->
+<div align=center class=cop>
+<b><!--=$records=--></b> links in database. Powered by <a href="http://www.phpfaber.com/i/products/tinylink/" target="_blank"><font class="cop">phpFaber TinyLink</font></a>.<br>
+Copyright &copy; 2004 <a href="http://www.phpfaber.com/" target="_blank"><font class="cop">phpFaber, LLC</font></a>. All rights reserved.
+</div>
+<!-- /## COPYRIGHT INFO -->
+
+</td></tr>
+</table>
+
+<br>
+</td></tr>
+</table>
+
+</body>
+</html>
