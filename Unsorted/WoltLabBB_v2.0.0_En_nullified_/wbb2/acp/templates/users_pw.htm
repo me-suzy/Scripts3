@@ -1,0 +1,31 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+<form method="post" action="users.php">
+<input type="hidden" name="send" value="send">
+<input type="hidden" name="action" value="pw">
+<input type="hidden" name="userid" value="$userid">
+<input type="hidden" name="sid" value="$session[hash]">
+ <table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="100%" align="center">
+  <tr class="tblhead">
+   <td colspan=2>Change Password for "$user[username]"</td>
+  </tr>
+  <tr class="firstrow">
+   <td valign="top"><b>New Password:</b></td>
+   <td><input type="radio" name="mode" value="1" CHECKED> Generate Random Password<br><input type="radio" name="mode" value="2"> <input type="text" name="newpassword" value=""></td>
+  </tr>
+  <tr class="secondrow">
+   <td>Inform User:</td>
+   <td><input type="checkbox" name="sendmail" value="1" CHECKED> Yes</td>
+  </tr>
+ </table>
+ <p align="center"><input type="submit" value="Submit"> <input type="button" value="Close Window" onclick="self.close();"></p>
+</form>
+</body>
+</html>
