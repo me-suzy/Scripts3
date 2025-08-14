@@ -1,0 +1,215 @@
+v4.6.7	30.09.2005 - (Daniel Sokoll)
+	Fix: WEBlog does not log screendata
+	Fix: wrong flaginformation for lv (latvia)
+	Fix: Country not be titled (ip2c) in details
+	Fix: removed additional quotemarks in details (W3C)
+	Added: OS: BSD
+	Added: Bot: Nutch, Regiochannel, W3C Linkcheck, W3C Validator
+	Added: Bot: IRL, Mozdex, Envolk
+	Added: Searchengine: Regiochannel, Search.com, HotBot, Mozdex
+	Added: Searchengine: Envolk
+	Optimization: Logos from Searchengines, Bots, Browser and OS
+
+v4.6.6	25.09.2005 - (Daniel Sokoll)
+	Fix: errormessages if logfiles are not present
+	Fix: hits by day/month hits-display
+	Fix: minor fixes in details
+	Added: Weblog: configure IPs to ignore
+	Added: Weblog: configure server time offset
+	Added: OS: QNX Photon, AtheOS, Risc OS, Unixware, Palm OS
+	Added: Browser: Dillo, Phoenix, AOL, ANTFresco
+	Added: Robotidentification (with logo)
+	Added: Robot-statistic
+	Added: Searchengine logos
+	Added: some more bots to botfile
+	Change: some minor changes
+	Change: New design for 'About SHOWlog'
+	Change: Moved Wget from Browser to Bots
+
+v4.6.5	21.09.2005 - (Daniel Sokoll)
+	Fix: old documentation in package
+	Fix: Wrong path if login denied
+	Fix: minor fix in WEBlog
+	Added: Flags to provider
+	Added: New referer-statistic
+	Added: Browser: Epiphany, W3M
+	Added: OS: XP Prof. x64, OpenBSD, NetBSD, OS X, Darwin
+	Change: removed 'http://' from referers
+	Change: new IP2Country-database (14.09.2005)
+	Change: hide unknown details to viewers
+	Change: New design for 'About SHOWlog'
+	Change: New design for 'details'
+
+v4.6.4	10.09.2005 - (Daniel Sokoll)
+	Fix: not working WEBlog-version in Package
+	Fix: WEBlog did not log referer
+	Fix: Added missing flag-images
+	Fix: Wrong identification for search.com
+	Fix: backroundskale of hits by day / month
+	Added: new bots to botlist
+	Added: hide special referers to viewers
+	Change: referer will be displayed shorten
+	Change: some minor changes in config-file
+	Change: Only known searchengines will be displayed
+	Change: new skale display at hits by day / month
+
+v4.6.3	06.09.2005 - (Daniel Sokoll)
+	Fix: missing flag for language chinese
+	Fix: missing confirmation for deleting entry / logfile
+	Fix: bots not identified in some cases
+	Added: Sreentype statistic
+	Added: Javascript statistic
+	Added: FAVICON to templates
+	Added: Browser: AvantGo
+	Added: OS: SymbianOS and Unix
+	Added: additional inpage-menu (Thanx to Thomas[no] and Max[de] for Idea)
+	Change: WEBlog: entries not shorten anymore
+	Change: SHOWlog: long entries now possible
+
+v4.6.2	31.08.2005 - (Daniel Sokoll)
+	Fix: languagecode in uppercase sometimes
+	Fix: wrong provider-count in some cases
+	Fix: some Warnings on sensitive webservers
+	Fix: screendata-tables have no headers
+	Fix: delete last entry: counter not decrease
+	Added: some more documentations
+	Added: view details to most statistics
+	Added: some more error-checks
+	Change: cleaned up config-file
+	Optimization: sourcecode: less filesize
+
+v4.6.1	26.08.2005 - (Daniel Sokoll)
+	Fix: fixed some minor W3C-warnings
+	Fix: Windows CE identified as Windows 95
+	Fix: referer clickable if unknown
+	Fix: Browser Links identified as Bot
+	Fix: some minor fixes
+	Added: Browser: Wget and ELinks
+	Added: OS: Linux version and Mac OS X
+	Added: some more bots to botfile
+	Added: additional screensize-identifying from agent
+	Added: botlist-date to about showlog
+	Added: many titles
+	Added: some more documentations
+	Change: logout now configurable in config-file
+
+v4.6.0	24.08.2005 - (Daniel Sokoll)
+	Fix: Errormessages in hits by day if there are errors in logfile
+	Fix: Errormessages in hits by day if there are no entries in logfile
+	Fix: Some display fixes
+	Fix: anchors and menuhighlighting now W3C-compatible
+	Fix: some minor fixes
+	Added: filter- / search-system for logfile details
+	Added: downloadsystem for logfile
+	Added: some searchengines to ident_search
+	Added: some countries to ident_country
+	Added: some languages to ident_language
+	Added: highlighting in hits by month like in hits by day
+	Added: Some more data to info
+	Added: localhost to IP2Country
+	Change: renamed countries to domains
+	Change: new IP2Country-database (15.08.2005)
+	Optimization: better template support
+	Optimization: template-reading now much faster
+	Optimization: less memory usage and less runtime
+
+v4.4.1	03.05.2005 - (Daniel Sokoll)
+	Fix: maintain logfile: problem with forwarder of old logfiles
+	Fix: maintain logfile: problem with some broken entries
+	Fix: wrong errormessages in some cases
+	Fix: languages in logfile-details not idetnified in all cases
+	Fix: searchquerries not complete in link
+	Added: many error-checks
+	Added: ip2c-database-version to info
+	Added: some more top-level-domains
+	Added: hide querries from own server
+	Change: browser-image-names unified
+	Change: Weblog now with multi-antireload
+	Change: leave-button now fully configurable
+	Change: new default template
+	Moved: Languagespecific country-files to "languages/"
+	Optimization: cleaned up source
+
+v4.4.0	25.04.2005 - (Daniel Sokoll)
+	Fix: Noticemessages on MS IIS if logfile is empty
+	Fix: Noticemessages on MS IIS if logfile nonexists
+	Fix: close window not laguagespecific
+	Fix: Windows 98 identified as Windows 2003 in some cases
+	Fix: some minor fixes in ident_browser
+	Fix: languages sometimes not logged in right format
+	Fix: wrong returnpath in logfile-details
+	Fix: some problems with languagelogs
+	Fix: problem if referer contains "|"
+	Fix: if no forwarder then marked as bot
+	Fix: Warning on forwarder in some cases
+	Added: ident_searchengine (many Searchengines now identified)
+	Added: Providerstatistics
+	Added: show unknown searchengines
+	Added: Navigationbuttons in headlines (right)
+	Added: print page in headlines (left)
+	Added: Browser: Chimera,Camino,K-Meleon,Mosaic,Links,OmniWeb
+	Added: Browser: IBrowse,AWeb,Voyager,NetPositive
+	Added: OS: CrayOS
+	Added: different icons for Win3x-Win2K and WinXP+
+	Added: family-key in ident_os
+	Added: additional language-identifying from agent
+	Added: screensize and colordepth statistics
+	Added: second language statistic
+	Added: ident_language
+	Added: Ask Google for unknown browser / os
+	Added: hits by month
+	Added: links in agent now clickable
+	Change: removed hardcoded "statistics.php"
+	Change: message if logfile has errors
+	Change: removed some backbuttons
+	Change: switched to .png-grafics
+	Change: countrynames and countryflags in languages, details
+	Change: moved ip2c to countries-directory
+	Change: modified maintain logfile for less data
+	Change: included functions directly into mainfile
+	Change: excluded templatefunctions to templates-file
+	Change: new navigation for hits-by-day
+	Optimization: some nicer icons
+	Optimization: improved performance
+	Optimization: html-source now W3C-Conform completely
+	Removed: vertical statistics - now all stats were horizontally
+
+v4.2.0	06.04.2005 - (Daniel Sokoll)
+	Fix: some HTML-fixes for W3C-conformity
+	Added: templatessystem
+	Added: login / session support
+	Added: userrights: all / view
+	Added: visualisation of bots in hits by day
+	Added: details on browser-statusbar in hits by day
+	Added: logfile details on browser-statusbar
+	Added: show countrynames and countryflags in countries
+	Added: show countrynames and countryflags in languages
+	Added: IP2Country with countrynames and countryflags
+	Added: flags in logfile-details [Country,IP2Country,Browserlanguage]
+	Added: show unknown for ip2country
+	Change: searchengines now with percentbars
+	Change: searchengines now clickable
+	Change: statistics beautyfied
+	Change: hits by day ends with last entry
+	Change: benchmark output now formatted
+	Change: botlist now be generated in own inclusion
+	Optimization: switched to faster color-alternating in tables
+	Optimization: tmpvars instead of tmparrays (less runtime)
+	Optimization: ident_browser.inc.php: less runtime
+	Optimization: ident_os.inc.php: less runtime
+	Removed: about showlog: 'tested with...'
+	Removed: Zero-height/width-images from output
+
+v4.0.2	13.01.2005
+	Fix: PHP-Problems with Apache on SunOS (H.Husemann)
+
+v4.0.1	10.01.2005 - (Daniel Sokoll)
+	Fix: some minor fixes, such as translation errors
+	Optimization: ident_browser.inc.php: runtime
+	Optimization: ident_os.inc.php: runtime
+
+v4.0.0	05.01.2005 - (Daniel Sokoll)
+	v4: release afer complete recoding v3
+	v4: more statistics in much less time
+	v4: laguage support
+	v4: log of browserlanguage and forwarder
