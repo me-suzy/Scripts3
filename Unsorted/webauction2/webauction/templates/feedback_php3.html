@@ -1,0 +1,219 @@
+<?
+/*
+   Copyright (c), 1999, 2000 - phpauction.org
+   Copyright (c), 2001, 2002 - webauction.de.vu
+
+   Lizenz siehe lizenz.txt & license
+
+   Die neueste Version kostenfrei zum Download unter:
+   http://webauction.de.vu
+
+*/
+
+?>
+
+
+
+<SCRIPT Language="JavaScript">
+
+
+
+function SubmitForm(){
+
+	document.addfeedback.submit();
+
+}
+
+
+
+function ResetForm(){
+
+	document.addfeedback.reset();
+
+}
+
+
+
+//-->
+
+</script>
+
+<TABLE WIDTH="100%" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING="0" CELLSPACING="0">
+
+<TR>
+
+<TD>
+
+<center>
+
+<a href="item.php?SESSION_ID=<? print urlencode($sessionIDU); ?>&id=<? echo $auction_id; ?>">
+
+<? print $std_font.$MSG_138; ?></FONT></a>
+
+ |
+
+<a href="profile.php?SESSION_ID=<? print urlencode($sessionIDU); ?>&id=<? echo $id; ?>">
+
+<? print $std_font.$MSG_505; ?></FONT></a>
+
+</center>
+
+<BR>
+
+<CENTER>
+
+<BR>
+
+<? print $tlt_font; ?>
+
+<B><? print $MSG_207; ?></B>
+
+</FONT>
+
+<BR>
+
+
+
+<?
+
+	echo $err_font.$TPL_errmsg;
+
+?>
+
+</FONT>
+
+<BR>
+
+<FORM name=addfeedback action="feedback.php?SESSION_ID=<? print urlencode($sessionIDU); ?>&id=<? echo $id; ?>" method="POST">
+
+<TABLE width="80%" CELLSPACING="0" CELLPADDING="4" BORDER="0">
+
+
+
+
+
+<tr>
+
+	<td COLSPAN=2>
+
+		  <? echo "<B>$usr_font$TPL_nick</FONT></B></FONT>
+
+		           ($std_font$TPL_feedbacks_num)
+
+		           <BR>$TPL_rate_ratio_value
+
+		           <BR><BR>";
+
+		  ?>
+
+
+
+	</td>
+
+</tr>
+
+<tr>
+
+	<td ALIGN=RIGHT>
+
+	<? print $std_font; ?>
+
+	<B><? print $MSG_142; ?>:</B>
+
+	</td>
+
+	<td><INPUT TYPE="text" NAME="TPL_rater_nick" SIZE="20" MAXLENGTH="20" VALUE="<? echo $TPL_rater_nick; ?>"></td>
+
+</tr>
+
+<tr>
+
+	<td ALIGN=RIGHT>
+
+	<? print $std_font; ?>
+
+	<B><? print $MSG_188; ?>:</B>
+
+	</td>
+
+	<td><INPUT TYPE="password" name="TPL_password" SIZE="20" MAXLENGTH="20" VALUE=""></td>
+
+</tr>
+
+<tr>
+
+	<td ALIGN=RIGHT>
+
+	<? print $std_font; ?>
+
+	<B><? print $MSG_503; ?>:</B>
+
+	</td>
+
+	<td><INPUT TYPE="radio" NAME="TPL_rate" value="1"><IMG SRC="./images/estrella_1.gif" WIDTH=19 HEIGHT=18 BORDER=0 ALT="1">
+
+		<INPUT TYPE="radio" NAME="TPL_rate" value="2"><IMG SRC="./images/estrella_2.gif" WIDTH=38 HEIGHT=18 BORDER=0 ALT="2">
+
+		<INPUT TYPE="radio" NAME="TPL_rate" value="3"><IMG SRC="./images/estrella_3.gif" WIDTH=55 HEIGHT=18 BORDER=0 ALT="3">
+
+		<INPUT TYPE="radio" NAME="TPL_rate" value="4"><IMG SRC="./images/estrella_4.gif" WIDTH=73 HEIGHT=18 BORDER=0 ALT="4">
+
+		<INPUT TYPE="radio" NAME="TPL_rate" value="5"><IMG SRC="./images/estrella_5.gif" WIDTH=91 HEIGHT=18 BORDER=0 ALT="5">
+
+	</td>
+
+</tr>
+
+<tr>
+
+	<td ALIGN=RIGHT valign="top">
+
+	<? print $std_font; ?>
+
+	<B>Comentario:</B>
+
+	</td>
+
+	<td><TEXTAREA NAME="TPL_feedback" ROWS="10" COLS="50"><? echo $TPL_feedback; ?></TEXTAREA></td>
+
+</tr>
+
+<tr>
+
+	<td><INPUT TYPE="hidden" name="pg" value="<? echo $pg; ?>"></td>
+
+	<td>
+
+	<BR>
+
+   <INPUT TYPE=submit NAME="">
+
+   <INPUT TYPE=reset NAME="">
+
+	</td>
+
+</tr>
+
+
+
+</TABLE>
+
+	<INPUT type="hidden" name="TPL_nick_hidden" value="<? echo $TPL_nick; ?>">
+
+</FORM>
+
+<BR>
+
+<BR>
+
+</CENTER>
+
+
+
+
+
+</TD>
+
+</TR>
+
+</TABLE>
