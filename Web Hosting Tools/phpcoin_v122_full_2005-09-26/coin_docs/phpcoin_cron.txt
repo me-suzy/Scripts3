@@ -1,0 +1,25 @@
+
+/**************************************************************
+ * File: 		Documentation: Cron
+ * Author:	Mike Lansberry (http://phpcoin.com)
+ * Date:		2004-01-04 (V1.2.0)
+ * Changed: 	Stephen M. Kitching, 2005-03-03 (v1.2.2)
+ * License:	DO NOT Remove this text block. See /coin_docs/license.txt
+ *			Copyright © 2003-2004-2005 phpCOIN.com
+ * Schema:	See sql file for schema reference
+ * Notes:
+ *			- readme
+**************************************************************/
+
+phpCOIN can handle several functions automatically on a schedule.
+
+These functions are in files in the /coin_cron directory, and must be called via cron
+or via Windows Task Scheduler.
+
+If called via cron, you have the option of calling via wget or a similar program
+to simulate the files being called from a web-browser. In that event, you need do
+nothing else other than schedule the jobs.
+
+If you do NOT want to use wget or similar program you can call the files normally,
+but you MUST edit /coin_cron/cron_config.php first, to setup the information that would
+be known IF the files were called via web-browser.
