@@ -1,0 +1,71 @@
+<?php
+
+class Logger{
+    // Makes different types of logs for admin zone
+
+    function access($pass='',$type){
+        global $settings;
+
+        $ld=date('M-d,H:i');
+        $ip=$_SERVER['REMOTE_ADDR'];
+        $plf=@file($settings->log_path.'/access.log');
+        if($type=='success') $msg=$ld.' - IP:'.$ip.', ACCESS GRANTED with the current password';
+        else $msg=$ld.' - IP:'.$ip.', ACCESS DENIED for password: "'.$pass.'"';
+        if(is_array($plf)) $ll=count($plf); else $ll=1;
+        $lw=0;
+        $fp=@fopen($settings->log_path.'/access.log','w');
+        if(!$fp) $this->error('Access log write fault');
+        else {
+            @flock($fp,LOCK_EX);
+            @fwrite($fp,$msg."\n");
+            while($lw<99 && $lw<$ll){
+                if(strlen($plf[$lw])>5) @fwrite($fp,trim($plf[$lw])."\n");
+                $lw++;
+            }
+            @fclose($fp);
+            @chmod($settings->log_path.'/access.log', 0777);
+        }
+    }
+
+    function error($msg){
+        global $settings;
+
+        $ld=date('M-d,H:i:s');
+        $plf=@file($settings->log_path.'/error.log');
+        if(is_array($plf)) $ll=count($plf); else $ll=1;
+        $lw=0;
+        $fp=@fopen($settings->log_path.'/error.log','w');
+        if($fp){
+            @flock($fp,LOCK_EX);
+            @fwrite($fp,$ld.' - '.$msg."\n");
+            while($lw<99 && $lw<$ll){
+                if(strlen($plf[$lw])>5) @fwrite($fp,trim($plf[$lw])."\n");
+                $lw++;
+            }
+            @fclose($fp);
+            @chmod($settings->log_path.'/error.log', 0777);
+        }
+    }
+}
+
+function get_domain($surl){
+    // Returning domain of the given url
+    list($url,)=explode('?',$surl);
+    list($url,)=explode('#',$url);
+    if(substr_count($url,':')>1){
+        list($url_1,$url_2,)=explode(':',$url);
+        $url=$url_1.':'.$url_2;
+    }
+    $prs=@parse_url($url);
+    $dex=explode('.',$prs['host']);
+    if($dex[0]=='www') $st=1; else $st=0;
+    $en=count($dex);
+    $sdom='';
+    for($i=$st;$i<$en;$i++){
+        $sdom.=$dex[$i];
+        if($i<$en-1) $sdom.='.';
+    }
+    return $sdom;
+}
+
+?>
