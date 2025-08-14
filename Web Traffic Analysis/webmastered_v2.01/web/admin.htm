@@ -1,0 +1,120 @@
+<HTML>
+<HEAD>
+<SCRIPT LANGUAGE="javascript">
+<!--
+function linked(url) { 
+target = "linked";w = 600;h = 450;winl = (screen.width - w) / 2;wint = (screen.height - h) / 2; 
+winprops = 'height='+h+',width='+w+',top='+wint+',left='+winl+',scrollbars,resizable'; 
+win = window.open(url, target, winprops);win.self.focus(); 
+} 
+// -->
+</SCRIPT>
+<TITLE>Webmastered v2.01 Control Panel</TITLE>
+<STYLE>
+BODY { font:10px verdana;background:#EEEEEE }
+TABLE { border:1px #CCCCCC solid;background:white }
+TD { font:10px verdana }
+a:link { color:blue }
+a:visited { color:blue }
+a:active { color:red }
+a:hover { color:red;text-decoration:none }
+.mb1 { font-weight:bold }
+.s { background:#EEEEFE;font:10px verdana;border:1px #000000 solid }
+.t { border:1px #000000 solid;color:navy;background:ivory }
+</STYLE>
+</HEAD>
+<BODY>
+<CENTER>
+<H3>Webmastered v2.01 Control Panel</H3>
+
+<P>&nbsp;<P><TABLE WIDTH=500 CELLPADDING=20 CELLSPACING=0 BORDER=0><TR><TD VALIGN=TOP>
+<A HREF="admin.php?action=admin">Account Admin</A>
+<LI> User details.
+<LI> Change admin password.
+<LI> Retrieve a forgotten password.
+<LI> Set time zone. (for Guestbook &amp; Webstats)
+<LI> Set the look and feel of the services below to integrate into your site.
+<P><A HREF="codes.htm">Copy &amp; Paste Codes</A>
+</TD></TR></TABLE>
+<H3>Email Form</H3>
+<TABLE WIDTH=500 CELLPADDING=20 CELLSPACING=0 BORDER=0>
+<TR><TD VALIGN=TOP WIDTH=150>
+<IMG SRC="feedback.gif" WIDTH=150 HEIGHT=120>
+</TD><TD VALIGN=TOP>
+<A HREF="javascript:linked('email.php');">View Email Form</A>
+<LI> Form field validation.
+<LI> Email address error checking.
+<LI> Preview message before submitting.
+<LI> Confirmation after submitting.
+<LI> Autoresponder.
+<LI> Password protected admin.
+<P><A HREF="javascript:linked('email.php?action=admin');">Admin</A>
+<LI> Customise autorespond "thank-you" message.
+</TD></TR></TABLE>
+<H3>Guestbook</H3>
+<P><TABLE WIDTH=500 CELLPADDING=20 CELLSPACING=0 BORDER=0><TR><TD VALIGN=TOP WIDTH=150>
+<IMG SRC="guestbook.gif" WIDTH=150 HEIGHT=120>
+</TD><TD VALIGN=TOP>
+<A HREF="javascript:linked('guestbook.php?action=read');">View Guestbook</A>
+
+<LI> Form field validation.
+<LI> Email address error checking.
+<LI> Preview message before submitting.
+<LI> Confirmation after submitting.
+<LI> Swear filter.
+<LI> 2 x autoresponders.
+<LI> Notification when guestbook is signed.
+<LI> Delete messages.
+<LI> Private message mode.
+<LI> Password protected admin.
+<P><A HREF="javascript:linked('guestbook.php?action=admin');">Admin</A>
+<LI> Delete messages.
+<LI> Set number of posts per page.
+<LI> Customise public &amp; private autorespond "thank-you" messages.
+</TD></TR></TABLE>
+<H3>Mailing List</H3>
+<P><TABLE WIDTH=500 CELLPADDING=20 CELLSPACING=0 BORDER=0><TR><TD VALIGN=TOP WIDTH=150>
+<IMG SRC="mailinglist.gif" WIDTH=150 HEIGHT=120>
+</TD><TD VALIGN=TOP>
+<A HREF="javascript:linked('mail.php');">View Mailing List</A>
+<LI> Email address error checking.
+<LI> Automated subscribe and unsubscribe.
+<LI> Manages up to 2000 subscribers.
+<LI> View subscription list.
+<LI> Autoresponder on subscribtion.
+<LI> Notification of subscription.
+<LI> Notification of unsubscription.
+<LI> Password protected admin.
+<P><A HREF="javascript:linked('mail_admin.php?action=admin');">Admin</A>
+<LI> Customise join up "welcome" message.
+<LI> Mail to subscribers.
+<LI> View subscriber list.
+</TD></TR></TABLE>
+<H3>Website Stats</H3>
+<P><TABLE WIDTH=500 CELLPADDING=20 CELLSPACING=0 BORDER=0><TR><TD VALIGN=TOP WIDTH=150>
+<IMG SRC="webstats.gif" WIDTH=150 HEIGHT=120>
+</TD><TD VALIGN=TOP>
+<A HREF="javascript:linked('stats.php?action=admin');">Website Stats</A>
+<LI>Records visitor's:
+<UL>IP address.
+<BR>Computer platform.
+<BR>Browser type and version.
+<BR>Screen resolution.
+<BR>Page entry.
+<BR>Page views.
+<BR>Referral.
+</UL>
+<LI> Current number of visitors online.
+<LI> Total unique visits.
+<LI> Daily unique visits.
+<LI> Page views graph.
+<LI> Weekly visits graph.
+<LI> Password protected.
+
+</TD></TR></TABLE>
+<P>&nbsp;<P>&nbsp;<P>&nbsp;
+
+
+</CENTER>
+</BODY>
+</HTML>
