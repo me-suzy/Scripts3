@@ -1,0 +1,32 @@
+// Notify when back in stock mod
+// copyright funkydunk.net 2004
+// designed to allow customers to sign up to recieve an automatic email notifying them of when the product is back in stock
+
+apply sql patch: notification.sql in the patch/upgrade section of xcart admin
+
+then unzip the zip file into your xcart directory and upload changed/new files below.
+
+
+new template files:
+
+skin1/modules/stock_notify/addedtolist.tpl
+skin1/modules/stock_notify/stocknotify.tpl
+skin1/modules/stock_notify/notifyme.tpl
+skin1/buttons/notifyme.tpl
+skin1/mail/stock_notify.tpl
+skin1/mail/stock_notify_subj.tpl
+
+amended template files:
+
+skin1/customer/main/product.tpl
+skin1/customer/home_main.tpl
+skin1/main/product_modify.tpl
+
+new php files:
+
+customer/notify.php
+
+amended php files:
+include/product_modify.php
+include/process_product.php
+
