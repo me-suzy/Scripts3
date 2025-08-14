@@ -1,0 +1,312 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+<script language="javascript">
+ <!--
+  function AvatarChange() {
+   var avatars = document.userform.avatarid;
+   if(avatars.options[avatars.selectedIndex].value==0) {
+    document.preview.src='../images/spacer.gif';
+   }
+   else {
+    var temp = avatars.options[avatars.selectedIndex].text.split(".");
+    document.preview.src='../images/avatars/avatar-'+ avatars.options[avatars.selectedIndex].value +'.'+ temp[temp.length-1];
+   }
+  }
+ //-->
+</script>
+</head>
+
+<body>
+<form method="post" action="users.php" name="userform">
+<input type="hidden" name="send" value="send">
+<input type="hidden" name="action" value="$action">
+<input type="hidden" name="sid" value="$session[hash]">
+ $error<table cellpadding=4 cellspacing=1 width="100%" class="tblborder" align="center">
+  <tr class="tblhead">
+   <td colspan=2>Add User</td>
+  </tr>
+  <tr class="tblsection">
+   <td colspan=2>Required Information (All fields are required)</td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Username:</b></td>
+   <td><input type="text" name="username" maxLength="50" value="$username"></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Email:</b></td>
+   <td><input type="text" name="email" maxLength="150" value="$email"></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Password:</b></td>
+   <td><input type="password" name="password" maxLength="50" value="$password"></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>User Group:</b></td>
+   <td><select name="groupid">
+    $group_options
+   </select></td>
+  </tr>
+  <tr class="tblsection">
+   <td colspan=2>Optional Information</td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Custom User Title:</b></td>
+   <td><input type="text" name="title" maxLength="50" value="$title"></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Homepage:</b></td>
+   <td><input type="text" name="homepage" maxLength="250" value="$homepage"></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>ICQ:</b></td>
+   <td><input type="text" name="icq" maxLength="30" value="$icq"></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>AIM:</b></td>
+   <td><input type="text" name="aim" maxLength="30" value="$aim"></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>YIM:</b></td>
+   <td><input type="text" name="yim" maxLength="30" value="$yim"></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>MSN:</b></td>
+   <td><input type="text" name="msn" maxLength="30" value="$msn"></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Birthday:</b></td>
+   <td><table class="firstrow">
+     <tr>
+      <td>Day</td>
+      <td>Month</td>
+      <td>Year</td>
+     </tr>
+     <tr>
+      <td><select name="day">
+       <option value="0"></option>
+       $day_options
+      </select></td>
+      <td><select name="month">
+       <option value="0"></option>
+       $month_options
+      </select></td>
+      <td><input type="text" class="input" name="year" value="$year" maxlength="4" size=5></td>
+     </tr>
+    </table></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Gender:</b></td>
+   <td><select name="gender">
+    <option value="0">No declaration</option>
+    <option value="1"$sel_gender[1]>Male</option>
+    <option value="2"$sel_gender[2]>Female</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td valign="top"><b>User Text:</b></td>
+   <td><textarea rows="6" cols="55" wrap="virtual" name="usertext">$usertext</textarea></td>
+  </tr>
+  <tr class="secondrow">
+   <td valign="top"><b>Signature:</b></td>
+   <td><textarea rows="6" cols="55" wrap="virtual" name="signature">$signature</textarea></td>
+  </tr>
+  $userfields
+  <tr class="tblsection">
+   <td colspan=2>Settings</td>
+  </tr>
+  <tr class="tblsection">
+   <td colspan=2>Registration, Cookies & Privacy</td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Use Ghost-Mode?</b></td>
+   <td><select name="invisible">
+    <option value="1"$sel_invisible[1]>Yes</option>
+    <option value="0"$sel_invisible[0]>No</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Use Cookies?</b></td>
+   <td><select name="nosessionhash">
+    <option value="1"$sel_nosessionhash[1]>Yes</option>
+    <option value="0"$sel_nosessionhash[0]>No</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Remember Me?</b></td>
+   <td><select name="usecookies">
+    <option value="1"$sel_usecookies[1]>Yes</option>
+    <option value="0"$sel_usecookies[0]>No</option>
+   </select></td>
+  </tr>
+  <tr class="tblsection">
+   <td colspan=2>Private Messages, Email & Notification</td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Can the Admins email you?</b></td>
+   <td><select name="admincanemail">
+    <option value="1"$sel_admincanemail[1]>Yes</option>
+    <option value="0"$sel_admincanemail[0]>No</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Show email address?</b></td>
+   <td><select name="showemail">
+    <option value="1"$sel_showemail[1]>Yes</option>
+    <option value="0"$sel_showemail[0]>No</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Can members email you?</b></td>
+   <td><select name="usercanemail">
+    <option value="1"$sel_usercanemail[1]>Yes</option>
+    <option value="0"$sel_usercanemail[0]>No</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Enable email notification by default?</b></td>
+   <td><select name="emailnotify">
+    <option value="1"$sel_emailnotify[1]>Yes</option>
+    <option value="0"$sel_emailnotify[0]>No</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Can members send you private messages?</b></td>
+   <td><select name="receivepm">
+    <option value="1"$sel_receivepm[1]>Yes</option>
+    <option value="0"$sel_receivepm[0]>No</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Email notification on new PM?</b></td>
+   <td><select name="emailonpm">
+    <option value="1"$sel_emailonpm[1]>Yes</option>
+    <option value="0"$sel_emailonpm[0]>No</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Pop Up notification on new PM?</b></td>
+   <td><select name="pmpopup">
+    <option value="1"$sel_pmpopup[1]>Yes</option>
+    <option value="0"$sel_pmpopup[0]>No</option>
+   </select></td>
+  </tr>
+  <tr class="tblsection">
+   <td colspan=2>Forum Display Settings</td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Show other members' signatures?</b></td>
+   <td><select name="showsignatures">
+    <option value="1"$sel_showsignatures[1]>Yes</option>
+    <option value="0"$sel_showsignatures[0]>No</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Show other members' avatars?</b></td>
+   <td><select name="showavatars">
+    <option value="1"$sel_showavatars[1]>Yes</option>
+    <option value="0"$sel_showavatars[0]>No</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Show images in posts?</b></td>
+   <td><select name="showimages">
+    <option value="1"$sel_showimages[1]>Yes</option>
+    <option value="0"$sel_showimages[0]>No</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Threads Display:</b></td>
+   <td><select name="daysprune">
+     <option value="0"$sel_daysprune[0]>Forum Default</option>
+     <option value="1"$sel_daysprune[1]>Anzeige der Themen vom letzten Tag</option>
+     <option value="2"$sel_daysprune[2]>Show threads from the last 2 days</option>
+     <option value="5"$sel_daysprune[5]>Show threads from the last 5 days</option>
+     <option value="10"$sel_daysprune[10]>Show threads from the last 10 days</option>
+     <option value="20"$sel_daysprune[20]>Show threads from the last 20 days</option>
+     <option value="30"$sel_daysprune[30]>Show threads from the last 30 days</option>
+     <option value="45"$sel_daysprune[45]>Show threads from the last 45 days</option>
+     <option value="60"$sel_daysprune[60]>Show threads from the last 60 days</option>
+     <option value="75"$sel_daysprune[75]>Show threads from the last 75 days</option>
+     <option value="100"$sel_daysprune[100]>Show threads from the last 100 days</option>
+     <option value="365"$sel_daysprune[365]>Show threads from last year</option>
+     <option value="1000"$sel_daysprune[1000]>Show all threads</option>
+    </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Posts per page:</b></td>
+   <td><select name="umaxposts">
+     <option value="0"$sel_umaxposts[0]>Forum Default</option>
+     <option value="5"$sel_umaxposts[5]>Show 5 posts per page</option>
+     <option value="10"$sel_umaxposts[10]>Show 10 posts per page</option>
+     <option value="20"$sel_umaxposts[20]>Show 20 posts per page</option>
+     <option value="30"$sel_umaxposts[30]>Show 30 posts per page</option>
+     <option value="40"$sel_umaxposts[40]>Show 40 posts per page</option>
+    </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Threads Structure Display:</b></td>
+   <td><select name="threadview">
+     <option value="1"$sel_threadview[1]>Tree Structure</option>
+     <option value="0"$sel_threadview[0]>Board Structure</option>
+    </select></td>
+  </tr>
+  <tr class="tblsection">
+   <td colspan=2>Date & Time</td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Date Format:</b></td>
+   <td><input type="text" name="udateformat" value="$udateformat"></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Time Format:</b></td>
+   <td><input type="text" name="utimeformat" value="$utimeformat"></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Start of the Week:</b></td>
+   <td><select name="startweek">
+    $startweek_options
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Timezone Offset:</b></td>
+   <td><select name="timezoneoffset">
+    $timezone_options
+   </select></td>
+  </tr>
+  <tr class="tblsection">
+   <td colspan=2>Additional Settings</td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Select Style:</b></td>
+   <td><select name="styleid">
+    <option value="0">Forum Default</option>
+    $style_options
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td valign="top"><b>Choose Avatar:</b></td>
+   <td><table>
+    <tr>
+     <td valign="top"><select name="avatarid" onchange="AvatarChange()">
+      <option value="0">No Avatar</option>
+      $avatar_options
+     </select></td>
+     <td><img src="" border=0 name="preview"></td>
+    </tr>
+   </table>
+  </tr>
+  <tr class="secondrow">
+   <td colspan=2 align="center"><input type="submit" value="Submit"> <input type="reset" value="Reset"></td>
+  </tr>
+ </table>
+</form>
+</body>
+<script language="javascript">
+ <!--
+  AvatarChange();
+ //-->
+</script>
+</html>
