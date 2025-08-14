@@ -1,0 +1,6 @@
+name = Printview default
+version = 1.2.2
+date = 2005-09-19
+author = Daniel Sokoll
+screenshot = printview.jpg
+file = print.zip
