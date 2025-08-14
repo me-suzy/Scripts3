@@ -1,0 +1,212 @@
+<?
+/*
+   Copyright (c), 1999, 2000 - phpauction.org
+   Copyright (c), 2001, 2002 - webauction.de.vu
+
+   Lizenz siehe lizenz.txt & license
+
+   Die neueste Version kostenfrei zum Download unter:
+   http://webauction.de.vu
+
+*/
+
+?>
+
+
+
+
+<SCRIPT Language=Javascript>
+
+
+
+function SubmitSellerForm(){
+
+	document.seller.submit();
+
+}
+
+
+
+
+
+function ResetSellerForm(){
+
+	document.seller.reset();
+
+}
+
+
+
+</SCRIPT>
+
+<TABLE WIDTH="100%" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING="0" CELLSPACING="0">
+
+<TR>
+
+<TD>
+
+<CENTER>
+
+<? print $std_font; ?>
+
+
+
+<A HREF="profile.php?SESSION_ID=<? print $sessionIDU; ?>&user_id=<? print $user_id; ?>">
+
+<?
+
+	print $std_font.$MSG_206;
+
+?>
+
+</FONT>
+
+</A> |
+
+<A HREF="item.php?SESSION_ID=<? print $sessionIDU; ?>&id=<? print $auction_id; ?>">
+
+<?
+
+	print $std_font.$MSG_138;
+
+?>
+
+</FONT>
+
+</A>
+
+</CENTER>
+
+<BR><BR>
+
+<? print $tlt_font; ?>
+
+<BR>
+
+<CENTER><B><? print $MSG_107; ?></B></CENTER>
+
+
+
+<FORM NAME="seller" ACTION="email_request.php?SESSION_ID=<? print $sessionIDU; ?>" METHOD="POST">
+
+
+
+	<TABLE WIDTH=760>
+
+	<TR>
+
+	<TD WIDTH="20%"></TD>
+
+	<TD WIDTH="60%">
+
+	<? print $std_font.$MSG_149; ?>
+
+	</A>
+
+	<BR>
+
+
+
+	<? print $err_font; ?>
+
+	<? print $TPL_error_text; ?>
+
+	</FONT>
+
+
+
+	<BR>
+
+	</TD>
+
+	<TD  WIDTH="20%">
+
+	</TD>
+
+	</TR>
+
+	</TABLE>
+
+
+
+<TABLE WIDTH="760">
+
+	<TR>
+
+		<TD WIDTH="10"></TD>
+
+
+
+		<TD ALIGN=right VALIGN=top>
+
+			<? print $std_font; ?>
+
+			<B><? print $MSG_142; ?></B>
+
+		</TD>
+
+
+
+		<TD>
+
+			<INPUT TYPE="TEXT" NAME="nick" SIZE="25" VALUE="<? print $TPL_nick_value; ?>">
+
+		</TD>
+
+
+
+	</TR>
+
+
+
+	<TR>
+
+		<TD WIDTH="10"></TD>
+
+
+
+		<TD ALIGN=right VALIGN=top>
+
+			<? print $std_font; ?>
+
+			<B><? print $MSG_143; ?></B>
+
+		</TD>
+
+
+
+		<TD VALIGN=top>
+
+			<INPUT TYPE="password" NAME="password" SIZE="25" VALUE="">
+
+			<BR><BR>
+
+			<INPUT TYPE="hidden" NAME="user_id" VALUE="<? print $user_id; ?>">
+
+   <INPUT TYPE=submit NAME="">
+
+   <INPUT TYPE=reset NAME="">
+
+		</TD>
+
+	</TR>
+
+</TABLE>
+
+</FORM>
+
+<CENTER>
+
+
+
+<BR>
+
+<BR>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+
