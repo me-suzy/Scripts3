@@ -1,0 +1,76 @@
+<?
+/*
+   Copyright (c), 1999, 2000 - phpauction.org
+   Copyright (c), 2001, 2002 - webauction.de.vu
+
+   Lizenz siehe lizenz.txt & license
+
+   Die neueste Version kostenfrei zum Download unter:
+   http://webauction.de.vu
+
+*/
+
+?>
+
+<? if(strpos($PHP_SELF,"search")): ?>
+
+
+
+<TABLE WIDTH="765" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING="0" CELLSPACING="0">
+
+<TR>
+
+<TD>
+
+
+<? endif; ?>
+
+
+
+<!-- TABLE WITH CATEGORIES -->
+
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="8" bgcolor="#FFFFFF">
+
+  <TR ALIGN=LEFT>
+
+  <TD COLSPAN=3>
+
+                <? print $TPL_main_value; ?>
+
+  </TD>
+
+  </TR>
+
+  <TR><TD>
+
+  </TD></TR>
+
+  <TR ALIGN=CENTER BGCOLOR="#000066">
+
+        <TD WIDTH="10%"><FONT FACE="Verdana,Helvetica,Arial" SIZE="2" COLOR="#FFFFFF"><? print $std_font.$MSG_167; ?></FONT></TD>
+
+        <TD WIDTH="45%"><FONT FACE="Verdana,Helvetica,Arial" SIZE="2" COLOR="#FFFFFF"><? print $std_font.$MSG_168; ?></FONT></TD>
+
+        <TD WIDTH="15%"><FONT FACE="Verdana,Helvetica,Arial" SIZE="2" COLOR="#FFFFFF"><? print $std_font.$MSG_169; ?></FONT></TD>
+
+        <TD WIDTH="15%"><FONT FACE="Verdana,Helvetica,Arial" SIZE="2" COLOR="#FFFFFF"><? print $std_font.$MSG_170; ?></FONT></TD>
+
+        <TD WIDTH="15%"><FONT FACE="Verdana,Helvetica,Arial" SIZE="2" COLOR="#FFFFFF"><? print $std_font.$MSG_171; ?></FONT></TD></TR>
+
+       <TR><TD>
+       <? print $TPL_auctions_list_value; ?>
+
+       </TD></TR>
+
+
+</TABLE>
+
+<BR>
+
+
+
+</TD>
+</TR>
+</TABLE>
+
+
