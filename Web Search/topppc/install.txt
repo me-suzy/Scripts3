@@ -1,0 +1,14 @@
+---------------------------------------------------------------------
+
+
+ ** INSTALL **
+ 1. Upload all files and directories to your site
+
+ 2. If using UNIX or LINUX (otherwise skip to step 3)
+ chmod include/config.php to 0666
+
+ 3. Run the script to install (include/install.php)
+
+---------------------------------------------------------------------
+
+
