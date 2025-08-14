@@ -1,0 +1,38 @@
+** vB.org hack
+   Simple newsportal & thread-overview page
+
+** Author
+   KuraFire 
+
+** Site
+   www.kurafire.com 
+   (Major renewal scheduled for June. Currently in the running for vB Board of the Month </shameless plugging>)
+
+** Instructions
+
+
+Step 1:
+Open newsportal.php and adjust the variables in the beginning.
+
+
+Step 2:
+Take the newsportal.txt, newsportal_threadbit.txt and newsportal_newsbit.txt files, and put their contents into new custom templates using those names respectively (minus the extension .txt of course :p ).
+
+
+Step 3:
+Upload newsportal.php to your vb's root folder.
+
+
+Step 4:
+Add a link to newsportal.php on your site somewhere, so that people actually know it exists ^_^
+(best link would be: <a href="newsportal.php?s=$session[sessionhash]">Newsportal</a> imo)
+
+
+Optional step '5':
+Install FireFly's hack "Add Who's Online locations in Admin CP" and make an entry for your newsportal.php page. Will work like a charm. 
+
+
+And you're done.
+
+;) Step 6 ;)
+Send feedback to faruk@kurafire.com describing what you find of this semi-hack. ;)
