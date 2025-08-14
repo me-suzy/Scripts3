@@ -1,0 +1,23 @@
+<form>
+<table border="0" cellspacing="0" cellpadding="0" align="center">
+<script language="JavaScript"type="text/javascript">
+<!--
+function goFB(rating){
+openFeedbackWindow('./rating.php?card_id=$card_id&rating=' + rating);
+}
+// -->
+</script>
+<input type="hidden" name="card_id" value="$card_id">
+    <tr> 
+    <td valign="bottom" align="right">Rate this card:&nbsp;&nbsp;</b><br />
+      <font color="#003399">Poor&nbsp;</font><img align="absmiddle" src="img/hand_down.gif" border="0" alt="">&nbsp;</b> 
+    </td>
+    <td align="center" bgcolor="#BBD1F2"><input type="radio" name="rating" value="1" onClick="goFB(this.value);"><br />1 </td>
+    <td align="center" bgcolor="#DDE8F8"><input type="radio" name="rating" value="2" onClick="goFB(this.value);"><br />2 </td>
+    <td align="center" bgcolor="#FFFFFF"><input type="radio" name="rating" value="3" onClick="goFB(this.value);"><br />3 </td>
+    <td align="center" bgcolor="#FEEBEA"><input type="radio" name="rating" value="4" onClick="goFB(this.value);"><br />4 </td>
+    <td align="center" bgcolor="#FDD1D1"><input type="radio" name="rating" value="5" onClick="goFB(this.value);"><br />5 </td>
+    <td valign="bottom"><img align="absmiddle" src="img/hand_up.gif" border="0" alt=""><font color="#CC0000">&nbsp;Excellent</font></td>
+  </tr>
+</table>
+</form>
