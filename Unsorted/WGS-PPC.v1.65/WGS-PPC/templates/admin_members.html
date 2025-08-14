@@ -1,0 +1,49 @@
+    <table border="0" cellspacing="1" cellpadding="5">
+      <tr align="center"> 
+        <td colspan="2"> 
+          
+      <h3><font size="3" color="#6699CC">Members:</font></h3>
+      
+    </td>
+      </tr>
+      <tr align="center"> 
+        
+    <td colspan="2">
+      <table width="100%" border="0" cellspacing="1" cellpadding="5">
+        <tr bgcolor="#d9d9d9"> 
+          <td><a href="<#action#>?menu=2&page=<#page#>&sort=0&d=<#d#>">ID</a></td>
+          <td><a href="<#action#>?menu=2&page=<#page#>&sort=1&d=<#d#>">Member 
+            name</a></td>
+          <td><a href="<#action#>?menu=2&page=<#page#>&sort=2&d=<#d#>">Site name</a></td>
+          <td><a href="<#action#>?menu=2&page=<#page#>&sort=3&d=<#d#>">Site category</a></td>
+          <td><a href="<#action#>?menu=2&page=<#page#>&sort=4&d=<#d#>">Number 
+            of terms</a></td>
+          <td><a href="<#action#>?menu=2&page=<#page#>&sort=5&d=<#d#>">Balance, 
+            <#currency#></a></td>
+          <td><a href="<#action#>?menu=2&page=<#page#>&sort=6&d=<#d#>">Number 
+            of clicks</a></td>
+          <td>&nbsp;</td>
+        </tr>
+        <#members#> 
+        <tr> 
+          <td colspan="6" height="28"> 
+            <input type="submit" name="Submit" value="Block Selected Accounts" onclick="document.forms.admin.cmd.value='3'; return confirm('Are You sure want to block selected members?')">
+			<input type="submit" name="Submit2" value="Unblock Selected Accounts" onclick="document.forms.admin.cmd.value='4'; return confirm('Are You sure want to unblock selected members?')">
+			<input type="submit" name="Submit3" value="Delete Selected Accounts" onclick="document.forms.admin.cmd.value='5'; return confirm('Are You sure want to delete selected members?')">
+            <br>
+            <br>
+            <br>
+            <br>
+            <input type="submit" name="Submit4" value="Send a e-mail to selected members" onclick="document.forms.admin.cmd.value='9'">
+			<input type="submit" name="Submit41" value="Send a e-mail to all members" onclick="document.forms.admin.cmd.value='10'">
+         <input type="hidden" name="cmd" value="3">
+			<input type="hidden" name="page" value="<#page#>">
+			<input type="hidden" name="sort" value="<#sort#>">
+			<input type="hidden" name="d" value="<#d#>">
+          </td>
+        </tr>
+      </table>
+    </td>
+      </tr>
+    </table>
+
