@@ -1,0 +1,175 @@
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>WGS-Expire Documentation</title>
+<style>
+<!--
+.text { color:#000000; font-size:12px; font-family:Verdana,Arial,Helvetica; }
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px" align="center"> 
+  <b><font face="Arial" size="2">WGS-Expire v1.04 Documentation</font></b></p>
+
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px" align="center">&nbsp;
+</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+  <tr>
+    <td width="100%">
+    <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber4">
+      <tr>
+        <td width="100%" bgcolor="#CEE3FD">
+        <p align="center"><font face="Arial" size="2">Server Requirements</font></td>
+      </tr>
+    </table>
+    <div>
+      &nbsp;
+        <p style="MARGIN-TOP: 0; MARGIN-BOTTOM: 0"> <font face="Arial" size="2"> 
+          <img src="button3.gif" border="0" width="8" height="8"> PHP 4.2.0 or 
+          higher</font></p>
+      <p style="MARGIN-TOP: 0; MARGIN-BOTTOM: 0">
+      <font face="Arial" size="2">
+      <img src="button3.gif" border="0" width="8" height="8"> MySQL 3.20.0 or 
+      higher</font></p>
+      <p style="MARGIN-TOP: 0; MARGIN-BOTTOM: 0">
+      <font face="Arial" size="2">
+      <img src="button3.gif" border="0" width="8" height="8"> C</font><font class="text"><font face="Arial" size="2">ron-tab 
+      not required</font></font></p>
+      <p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">&nbsp;</div>
+    <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+      <tr>
+        <td width="100%" bgcolor="#CEE3FD">
+        <p align="center">
+      <font face="Arial" size="2">Installation and Setup</font></td>
+      </tr>
+    </table>
+    <div>
+      <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+      <p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">Setting up WGS-Expire 
+      software is a simple as 1-2-3! With just 7 
+      easy steps, you can get your script running within less than <b>10mins.</b></font></div>
+    <div>
+      <div>
+        <p class="MsoNormal" style="margin-left: 36pt">
+        <font face="Arial" size="2">
+        <span style="font-size: 10pt; font-family: Arial">1.<b>Create a 
+        directory</b>&nbsp;called domains (eg, yoursite.com/domains)&nbsp;and <b>chmod 777</b></span></font></p>
+        <p class="MsoNormal" style="margin-left: 36pt">
+        <font face="Arial" size="2">
+        <span style="font-size: 10pt; font-family: Arial">2.Unzip all files and 
+        upload the file contents to the /domains directory you just created on 
+        your server. And Chmod the following:</span></font></p>
+        <p class="MsoNormal" style="margin-left: 36pt">
+        <font face="Arial" size="2">
+        <span style="font-size: 10pt; font-family: Arial"><font color="#FF0000">
+        Chmod 777</font>: 
+        member/template, register/template, restore/template and config/template
+        <b>folders</b></span></font></p>
+        <p class="MsoNormal" style="margin-left: 36pt">
+        <font face="Arial" size="2">
+        <span style="font-size: 10pt; font-family: Arial"><font color="#FF0000">Chmod 666</font>: /domains/domains.php&nbsp;and&nbsp;all 
+        <b>template files</b> in /member/template, register/template, 
+        restore/template&nbsp;folder and config/template</span></font></p>
+        <p class="MsoNormal" style="margin-left: 36pt">
+        <font face="Arial" size="2">
+        <span style="font-size: 10pt; font-family: Arial">3. Go to&nbsp;<a href="http://www.yoursite.com/domains/config">http://www.yoursite.com/domains/config</a>&nbsp; 
+        and edit mysql DB&nbsp;parameters, click ok&nbsp;and install&nbsp;by running
+        <a href="http://www.yoursite.com/domains/config/install.php">
+        http://www.yoursite.com/domains/config/install.php</a></span></font></p>
+          <p class="MsoNormal" style="margin-left: 36pt"> <font face="Arial" size="2"> 
+            <span style="font-size: 10pt; font-family: Arial">4.Next, change your 
+            admin username and password (Note: Default admin username:admin password:admin)</span></font></p>
+        <p class="MsoNormal" style="margin-left: 36pt">
+        <font face="Arial" size="2">
+        <span style="font-size: 10pt; font-family: Arial">5.Paypal setup: Go to
+        <b>Paypal Options</b> in admin and edit the variables [Note: IPN URL:&nbsp;<a href="http://yoursite.com/domains/ipn.php">http://yoursite.com/domains/ipn.php</a>&nbsp;and 
+        return URL: <a href="http://yoursite.com/domains/member">
+        http://yoursite.com/domains/member</a>. Next, login to your paypal 
+        account at <a href="http://www.paypal.com">Paypal.com</a> and go to the 
+        <b>Profile tab</b> and click on the<b> </b>
+        </span>
+        <span style="font-family: Arial"><b>Instant Payment Notification</b> link 
+        under <b>Selling Preference</b>. Set the IPN url as </span>
+        <span style="font-size: 10pt; font-family: Arial">
+        <font face="Times New Roman" size="3">
+        <a href="http://yoursite.com/domains/ipn.php">
+        <font face="Arial" size="2">http://yoursite.com/domains/ipn.php</font></a><font face="Arial" size="2">&nbsp;</font></font></span></font></div>
+      <div>
+        <p class="MsoNormal" style="margin-left: 36pt">
+        <font face="Arial" size="2">
+        <span style="font-size: 10pt; font-family: Arial">
+        <O:P>6.Cron setup:&nbsp;Male sure&nbsp;cron job path is set as: member/monitor.php and 
+        set time interval you want. To start Cron, click &quot;stop&quot; and then click 
+        &quot;start&quot; to activate fakecron control.</O:P></span></font></p>
+        <O:P>
+        <p class="MsoNormal" style="margin-left: 36pt"><font size="2">
+        <span style="font-family: Arial">7</span></font><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial">.Create 
+        membership plan and edit </span></font>
+        <O:P><font face="Arial" size="2">
+        <span style="font-size: 10pt; font-family: Arial">all other variables in 
+        admin page </span></font></O:P>
+        </p>
+        <O:P>
+        <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber5">
+          <tr>
+            <td width="100%" bgcolor="#CEE3FD">
+            <p align="center"><font face="Arial" size="2">Version History</font></td>
+          </tr>
+        </table>
+        <p class="MsoNormal" style="margin-left: 36pt; margin-top:0; margin-bottom:0">&nbsp;</p>
+        <p class="MsoNormal" style="margin-left: 36pt; margin-top:0; margin-bottom:0">
+        <O:P>
+        <font face="Arial" size="2">Version 1.04:</font></O:P></p>
+        <p class="MsoNormal" style="margin-left: 36pt; margin-top:0; margin-bottom:0">
+        <font face="Arial" size="2">-Domain digger menu fixed <br>
+        -Search string error fixed<br>
+        -Both digger and popularity tools can only run in member site <br>
+        -Yahoo analysis tool add-on<br>
+        -Dmoz analysis tool add-on<br>
+        -Admin now can give access rights to which membership plans can use 
+        yahoo/dmoz, domain digger and link popularity tool</font></p>
+        <p class="MsoNormal" style="margin-left: 36pt; margin-top:0; margin-bottom:0">
+        <O:P>
+        <font face="Arial" size="2">-A few bugs which occur in some servers</font></O:P></p>
+        <p class="MsoNormal" style="margin-left: 36pt; margin-top:0; margin-bottom:0">&nbsp;
+        </p>
+        <p class="MsoNormal" style="margin-left: 36pt; margin-top:0; margin-bottom:0">
+        <font face="Arial" size="2">Version 1.02:</font></p>
+        <p class="MsoNormal" style="margin-left: 36pt; margin-top:0; margin-bottom:0">
+        <font face="Arial" size="2">-Paypal bug fixed</font></p>
+        <p class="MsoNormal" style="margin-left: 36pt; margin-top:0; margin-bottom:0">
+        <font face="Arial" size="2">-Syntax error during user registration when 
+        &quot;News&quot; checkbox is not selected</font></p>
+        <p class="MsoNormal" style="margin-left: 36pt; margin-top:0; margin-bottom:0">
+        <font face="Arial" size="2">-Error in cron status</font></p>
+        <p class="MsoNormal" style="margin-left: 36pt; margin-top:0; margin-bottom:0">
+        <font face="Arial" size="2">-Javascript error in admin</font></p>
+        <p class="MsoNormal" style="margin-left: 36pt; margin-top:0; margin-bottom:0">
+        <font face="Arial" size="2">-Monitor fix during domain name searching</font></p>
+        <p class="MsoNormal" style="margin-left: 36pt; margin-top:0; margin-bottom:0">
+        <font face="Arial" size="2">-Domain Digger add-on</font></p>
+        <p class="MsoNormal" style="margin-left: 36pt; margin-top:0; margin-bottom:0">&nbsp;</p>
+        <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber7">
+      <tr>
+        <td width="100%" bgcolor="#CEE3FD">
+        <p align="center" style="margin-top: 0; margin-bottom: 0"><b>
+        <font size="2" face="Arial">License Agreement 
+              and Disclaimer</font></b></td>
+      </tr>
+    </table>
+        </O:P></O:P></div>
+    </div>
+    </td>
+  </tr>
+</table>
+
+</body>
+
+</html>
