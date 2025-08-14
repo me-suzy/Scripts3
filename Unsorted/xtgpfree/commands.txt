@@ -1,0 +1,44 @@
+These are the commands that you use in xtreme_update.cgi
+
+$account 
+$atype
+$aurl
+$now
+
+##########################################################################
+$account represents the number of images or movies in the gallery
+$atype represents the type of gallery it is
+$aurl represents the url
+$now represents when the last time you updated the list
+##########################################################################
+
+For example the output for the following:
+
+$account[5] $atype[5] Pictures
+
+would look like this:
+
+12 Teen Pictures
+
+##########################################################################
+YOU MUST INCLUDE THE LINE NUMBER AFTER EVERY VARIABLE THAT YOU USE, ALSO THE NUMBER STARTS AT 0.  SO YOUR FIRST GALLERY WOULD BE PRINTED OUT by $account[0] $atype[0] etc...
+##########################################################################
+
+##########################################################################
+Xtreme_out is used to keep track our your out hits.
+For example: xtreme_out.cgi?$aurl[0] --> would keep track of all hits going to your first link
+##########################################################################
+
+##########################################################################
+As for the weekly movies or pictures, these are the commands.
+
+$img1,$down1,$img2,$down2,$mdate
+##########################################################################
+
+##########################################################################
+$img1 is the url to the first image
+$down1 is the url to download the first movie
+$img2 is the url to the second image
+$down2 is the url to download the second movie
+$mdate is the date that the weekly movies were last updated.
+##########################################################################
