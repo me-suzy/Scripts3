@@ -1,0 +1,66 @@
+<?
+/*
+   Copyright (c), 1999, 2000 - phpauction.org
+   Copyright (c), 2001, 2002 - webauction.de.vu
+
+   Lizenz siehe lizenz.txt & license
+
+   Die neueste Version kostenfrei zum Download unter:
+   http://webauction.de.vu
+
+*/
+
+?>
+
+</script>
+<TABLE WIDTH="745" BORDER=0 CELLPADDING="0" CELLSPACING="0">
+<TR>
+<TD>
+
+
+<CENTER>
+
+<?
+	echo $err_font.$TPL_errmsg;
+?>
+</FONT>
+<BR>
+<FORM name=addfeedback action="feedback.php?SESSION_ID=<? urlencode($sessionIDU); ?>&id=<? echo $id; ?>" method="POST">
+<TABLE width="745" CELLSPACING="0" CELLPADDING="0">
+<TR>
+<TD>
+	<TABLE width="745" CELLSPACING="0" CELLPADDING="0">
+
+	<tr>
+		<td ALIGN=right>
+
+		<B>
+		  <? echo "<p align=\"center\">
+		           <BR>$TPL_rate_ratio_value</FONT>
+		           <BR><BR></p>";
+		  ?>
+		</B>
+		</td>
+	</tr>
+
+
+
+	<? echo $echofeed; ?>
+
+
+	</TABLE>
+</TD>
+</TR>
+</TABLE>
+	<INPUT type="hidden" name="TPL_nick_hidden" value="<? echo $TPL_nick; ?>">
+
+<BR>
+
+</TD>
+</TR>
+</TABLE>
+
+
+</TD>
+</TR>
+</TABLE>
