@@ -1,0 +1,272 @@
+<?
+/*
+   Copyright (c), 1999, 2000 - phpauction.org
+   Copyright (c), 2001, 2002 - webauction.de.vu
+
+   Lizenz siehe lizenz.txt & license
+
+   Die neueste Version kostenfrei zum Download unter:
+   http://webauction.de.vu
+
+*/
+
+?>
+
+
+
+<table width="764" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF" ALIGN=CENTER>
+
+  <tr  valign=top>
+
+        <td width="20%" bgcolor="#FFFFFF">
+
+<!--		<TD WIDTH="30%"> -->
+
+
+
+     <!-- ** Tabla Categorias ** -->
+
+          <table width="100%" border="0" cellspacing="0" cellpadding="3">
+
+             <tr>
+
+                 <td bgcolor="#FFFFFF">
+
+                    <center>
+       <FONT COLOR="#FFFFFF"><B></B></FONT>
+      </center>
+
+                  </td>
+
+              </tr>
+
+              <tr valign="top" BGCOLOR="#FFFFFF">
+
+
+     <td>&nbsp; </td>
+
+               </tr>
+
+          </table>
+
+      <!-- ** ** -->
+
+
+
+
+
+        </td>
+
+        <td width="60%" VALIGN="top">
+
+
+
+
+   <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="400">
+    <!-- ** LAST AUCTIONS INSERTED ** -->
+    <TR VALIGN="top">
+     <TD WIDTH="8%">
+     </TD>
+     <TD WIDTH="92%">
+      <TABLE BORDER="0" CELLPADDING="5" CELLSPACING="0" WIDTH="100%">
+       <TR>
+        <TD COLSPAN=2>
+         <p align="center"><B><font color="#000000" size="3"
+                        face="Arial"><b>Hallo
+          <? echo $TPL_name; ?>
+          !</b></font></B></p>
+         <p align="center"><B><font color="#000000" size="3"
+                        face="Arial"> <strong>Willkommen in Ihrem User-Menü.</strong></font>
+          </B> </p>
+        </TD>
+       </TR>
+      </TABLE>
+     </TD>
+    </TR>
+    <!-- ** HIGHER BIDS ** -->
+    <TR VALIGN="top">
+     <TD WIDTH="8%">  </TD>
+     <TD WIDTH="92%"> <BR>
+      <TABLE border="0" cellpadding="5" cellspacing="0" width=\"100%\">
+       <TR>
+        <TD colspan=2> <IMG src="./images/linea.gif" width="370" height="8"><BR>
+         <table width="100%" border="0">
+          <tr>
+           <td width="55%" height="67"><font size="2"><b><a
+                    href="my_account_profil.php?action=login&SESSION_ID=<? print $sessionIDU; ?>&user_id=<? echo $TPL_id_hidden; ?>&TPL_nick=<? echo $TPL_nick; ?>&TPL_password=<? echo $TPL_password; ?>&name=<? echo $TPL_name; ?>"><font color="#000000" face="arial" size="2">Meine
+            Anmeldungsdaten</font></a></b></font></td>
+           <td width="45%" height="67">
+            <font face="arial" size="-2" color="#FF0000">Hier können Sie Ihre Daten ändern</font></p>
+            </td>
+          </tr>
+          <tr>
+           <td width="55%"><font size="2"><b><a
+                    href="profile.php?action=login&SESSION_ID=<? print $sessionIDU; ?>&user_id=<? echo $TPL_id_hidden; ?>&TPL_nick=<? echo $TPL_nick; ?>&TPL_password=<? echo $TPL_password; ?>&name=<? echo $TPL_name; ?>"><font color="#000000" face="arial" size="2">Bewertungen</font></a></b></font></td>
+           <td width="45%"><font face="arial" size="-2" color="#FF0000">Sehen Sie hier Ihre
+            Bewertungen und kontrollieren Sie Ihre laufenden Auktionen.</font>
+           </td>
+          </tr>
+         </table>
+        </TD>
+       </TR>
+      </TABLE>
+     </TD>
+    </TR>
+    <tr valign="top">
+     <td width="8%">  </td>
+     <td width="92%"> <br>
+      <table border="0" cellpadding="5" cellspacing="0" width="90%">
+       <tr>
+        <td colspan=2> <img src="./images/linea.gif" width="370" height="8"><br>
+         <b> </b> <br>
+         <table width="100%" border="0">
+          <tr>
+           <td height="50"><b><a href="my_closed_auctions.php?SESSION_ID=<? print $sessionIDU; ?>&user_id=<? echo $TPL_id_hidden; ?>&TPL_nick=<? echo $TPL_nick; ?>&TPL_password=<? echo $TPL_password; ?>&name=<? echo $TPL_name; ?>"><font color="#000000" face="arial" size="2">Meine
+            beendete Auktionen</font></a></b></td>
+           <td width="45%" height="50"><font face="arial" size="-2" color="#FF0000">Sehen Sie
+            hier Ihre beendeten Auktionen.</font></td>
+          </tr>
+          <tr>
+           <td height="50"><b><a href="my_sells1.php?SESSION_ID=<? print $sessionIDU; ?>&user_id=<? echo $TPL_id_hidden; ?>&TPL_nick=<? echo $TPL_nick; ?>&TPL_password=<? echo $TPL_password; ?>&name=<? echo $TPL_name; ?>"><font color="#000000" face="arial" size="2">Meine
+            Verk&auml;ufe</font></a></b></td>
+           <td width="45%" height="50"><font face="arial" size="-2" color="#FF0000">Sehen Sie
+            hier ihre erfolgreichen abgeschlossen Auktionen.</font></td>
+          </tr>
+          <tr>
+           <td height="50"><b><a href="my_sells2.php?SESSION_ID=<? print $sessionIDU; ?>&user_id=<? echo $TPL_id_hidden; ?>&TPL_nick=<? echo $TPL_nick; ?>&TPL_password=<? echo $TPL_password; ?>&name=<? echo $TPL_name; ?>"><font color="#000000" face="arial" size="2">Meine
+            K&auml;ufe</font></a></b></td>
+           <td width="45%" height="50">
+            <p><font face="arial" size="-2" color="#FF0000">Sehen Sie hier Ihre erfolgreichen
+             K&auml;ufe </font>.<br>
+            </p>
+           </td>
+          </tr>
+         </table>
+        </td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+    <!-- ** ENDING SOON ** -->
+    <TR VALIGN="top">
+     <TD WIDTH="8%" height="99"> 
+     </TD>
+     <TD WIDTH="92%" height="99"> <BR>
+      <TABLE border="0" cellpadding="5" cellspacing="0" width="90%">
+       <TR>
+        <TD colspan=2 height="99"> <IMG src="./images/linea.gif" width="370" height="8"><BR>
+                  <table width="100%" border="0">
+                    <tr>
+                      <td height="53" width="55%"><font size="2"><b><a
+                    href="my_active_auctions.php?SESSION_ID=<? print $sessionIDU; ?>&user_id=<? echo $TPL_id_hidden; ?>&TPL_nick=<? echo $TPL_nick; ?>&TPL_password=<? echo $TPL_password; ?>&name=<? echo $TPL_name; ?>"><font color="#000000" face="arial" size="2">Ihre
+                        aktiven Auktionen</font></a></b></font></td>
+                      <td width="45%" height="53"><font face="arial" size="-2" color="#FF0000">Sehen
+                        Sie hier Ihre aktiven Auktionen.</font></td>
+                    </tr>
+                    <tr>
+                      <td height="53" width="55%"><font size="2"><b><a
+                    href="my_active_auctions_newtime.php?SESSION_ID=<? print $sessionIDU; ?>&user_id=<? echo $TPL_id_hidden; ?>&TPL_nick=<? echo $TPL_nick; ?>&TPL_password=<? echo $TPL_password; ?>&name=<? echo $TPL_name; ?>"><font color="#000000" face="arial" size="2">Verlängern</font></a></b></font></td>
+                      <td width="45%" height="53"><font face="arial" size="-2" color="#FF0000">Verl&auml;ngern
+                        Sie hier Ihre Auktionen auf denen noch kein Gebot ist.</font></td>
+                    </tr>
+                    <tr>
+                      <td height="35" width="55%">
+                        <p><font size="2"><b><font size="2"><b><a
+                    href="my_active_auctions_del.php?SESSION_ID=<? print $sessionIDU; ?>&user_id=<? echo $TPL_id_hidden; ?>&TPL_nick=<? echo $TPL_nick; ?>&TPL_password=<? echo $TPL_password; ?>&name=<? echo $TPL_name; ?>"><font color="#000000" face="arial" size="2">L&ouml;schen</font></a></b></font></b></font></p>
+                      </td>
+                      <td width="45%" height="35"><font face="arial" size="-2" color="#FF0000">L&ouml;schen
+                        Sie hier Ihre aktiven Auktionen auf denen es noch kein
+                        Gebot gibt.</font></td>
+                    </tr>
+                    <tr>
+                      <td height="35" width="55%"><a
+                    href="my_active_auctions_change.php?SESSION_ID=<? print $sessionIDU; ?>&user_id=<? echo $TPL_id_hidden; ?>&TPL_nick=<? echo $TPL_nick; ?>&TPL_password=<? echo $TPL_password; ?>&name=<? echo $TPL_name; ?>"><font color="#000000" face="arial" size="2"><b>&Auml;ndern</font></a></td>
+                      <td width="45%" height="35"><font face="arial" size="-2" color="#FF0000">&Auml;ndern
+                        Sie hier Ihre unbebotenen Auktionen</font></td>
+                    </tr>
+                    <tr>
+                      <td height="35" width="55%"><font color="#000000"></font><b><a
+                    href="my_closed_auctions_restart.php?SESSION_ID=<? print $sessionIDU; ?>&user_id=<? echo $TPL_id_hidden; ?>&TPL_nick=<? echo $TPL_nick; ?>&TPL_password=<? echo $TPL_password; ?>&user_id=<? echo $TPL_id_hidden; ?>&name=<? echo $TPL_name; ?>"><font color="#000000" face="arial" size="2">Neustarten</a></b></td>
+                      <td width="45%" height="35"><font face="arial" size="-2" color="#FF0000">Ausgelaufene
+                        Auktionen neustarten</font></td>
+                    </tr>
+                    <tr>
+                      <td height="35" width="55%"><a
+                    href="my_view_list.php?SESSION_ID=<? print $sessionIDU; ?>&user_id=<? echo $TPL_id_hidden; ?>&TPL_nick=<? echo $TPL_nick; ?>&TPL_password=<? echo $TPL_password; ?>&name=<? echo $TPL_name; ?>"><font color="#000000" face="arial" size="2"><b><font size="2">Meine
+                        Beobachtungsliste</font></b></font></a></td>
+                      <td width="45%" height="35">&nbsp;</td>
+                    </tr>
+                  </table>
+        </TD>
+       </TR>
+      </TABLE>
+     </TD>
+    </TR>
+    <!-- end table started with ** LAST AUCTIONS INSERTED ** -->
+   </TABLE>
+
+      <BR>
+
+    </td>
+
+
+    <td width="20%" valign="top" bgcolor="#FFFFFF">
+
+
+      <!-- ** Tabla <? print $std_font.$MSG_164; ?>s ** -->
+
+
+                <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#FFFFFF">
+
+                  <tr>
+
+                    <td bgcolor="#FFFFFF">
+
+                      <center>
+       <FONT COLOR="#FFFFFF"><B></B></FONT>
+      </center>
+                    </td>
+
+                  </tr>
+
+                  <tr valign="top" BGCOLOR="#FFFFFF">
+
+
+     <td height="200">&nbsp; </td>
+
+                  </tr>
+
+                </table>
+
+      <!-- Tabla Te Informamos ** -->
+
+                <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#FFFFFF">
+
+                  <tr>
+
+                    <td>
+
+                      <center>
+       <FONT COLOR="#FFFFFF"><B></B></FONT>
+      </center>
+
+                    </td>
+
+                  </tr>
+
+                  <tr valign="top" BGCOLOR="#FFFFFF">
+
+                    <td height="200">&nbsp;</td>
+
+                  </tr>
+
+                </table>
+
+
+        </td>
+
+      </tr>
+
+
+</TABLE>
+
