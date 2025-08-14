@@ -1,0 +1,61 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+<script language="Javascript">
+ <!--
+  function select_all(status) {
+   var sbox = document.tform.elements[3];
+   for(i=0;i<sbox.options.length;i++) sbox.options[i].selected=status;
+  }
+ //-->
+</script>
+</head>
+<body>
+ <form method="post" action="template.php">
+ <input type="hidden" name="sid" value="$session[hash]">
+ <input type="hidden" name="action" value="$fileimportAction">
+  <table cellpadding=4 cellspacing=1 width="100%" class="tblborder" align="center">
+   <tr class="tblhead">
+    <td colspan=2>Import Templates</td>
+   </tr>
+   <tr class="firstrow">
+    <td><b>Write in Templates Pack:</b></td>
+    <td><select class="input" name="templatepackid">
+     <option value="0"$selected>Default Templates</option>
+     $templatepack_options				
+    </select></td>
+   </tr>
+   <tr class="secondrow">
+    <td width="100%"><b>Read from Folder:</b><br>Relative path to the main folder of the forums.</td>
+    <td><input type="text" name="templatefolder" value="templates">&nbsp;<input type="button" onclick="window.location=('template.php?action=$action&sid=$session[hash]&templatefolder='+this.form.templatefolder.value)" value="View Content"></td>
+   </tr>
+   $importSelect
+   <tr class="firstrow">
+    <td colspan=2 align="right"><input type="submit" value="Import >>"></td>
+   </tr>
+  </table>
+ </form>
+ <form method="post" action="template.php" name="tform">
+ <input type="hidden" name="sid" value="$session[hash]">
+ <input type="hidden" name="action" value="export">
+  <table cellpadding=4 cellspacing=1 width="100%" class="tblborder" align="center">
+   <tr class="tblhead">
+    <td colspan=2>Export Templates</td>
+   </tr>
+   <tr class="tblsection">
+    <td colspan=2><select class="input" name="templatepackid" onchange="window.location=('template.php?action=$action&sid=$session[hash]&templatepackid='+this.options[this.selectedIndex].value)">
+     <option value="*">All Templates</option>
+     <option value="0"$selected>Default Templates</option>
+     $templatepack_options				
+    </select></td>
+   </tr>
+   $select
+   <tr class="secondrow"">
+    <td colspan=2 align="right"><input type="submit" value="Export >>"></td>
+   </tr>
+  </table>
+ </form>
+</body>
+</html>
