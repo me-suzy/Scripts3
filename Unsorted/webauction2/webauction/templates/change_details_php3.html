@@ -1,0 +1,159 @@
+<?
+/*
+   Copyright (c), 1999, 2000 - phpauction.org
+   Copyright (c), 2001, 2002 - webauction.de.vu
+
+   Lizenz siehe lizenz.txt & license
+
+   Die neueste Version kostenfrei zum Download unter:
+   http://webauction.de.vu
+
+*/
+
+?>
+
+<TABLE WIDTH="100%" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING="0" CELLSPACING="0">
+
+<TR><TD>
+
+
+<CENTER><B><? print $tlt_font.$MSG_509; ?></B>
+
+
+
+
+<FORM NAME=details ACTION="user_login.php?SESSION_ID=<? print $sessionIDU; ?>" METHOD="POST">
+
+          <TABLE WIDTH="700" BGCOLOR="#FFFFFF" BORDER="0" CELLPADDING="5">
+            <TR>
+              <TD> </TD>
+              <TD WIDTH="486"> <? print $err_font; ?> <B> <?
+
+	echo $TPL_errmsg;
+
+?> </B> </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="204" VALIGN="top" ALIGN="right"> <?print $std_font; ?>
+                <B><? print $MSG_002; ?></B> </TD>
+              <TD WIDTH="486">
+                <INPUT TYPE=text NAME=TPL_name SIZE=40 MAXLENGTH=255 VALUE="<? echo $TPL_name; ?>">
+              </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="204" VALIGN="top" ALIGN="right"> <? print $std_font; ?>
+                <B><? print $MSG_003; ?></B> </TD>
+              <TD WIDTH="486">
+                <INPUT TYPE=text NAME=TPL_nick SIZE=20 MAXLENGTH=20  VALUE="<? echo $TPL_nick; ?>">
+                <? print $std_font; ?> <? print $MSG_050; ?> </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="204" VALIGN="top" ALIGN="right"> <? print $std_font; ?>
+                <B><? print $MSG_268; ?></B> </TD>
+              <TD WIDTH="486">
+                <INPUT TYPE=password NAME=TPL_password SIZE=20 MAXLENGTH=20 VALUE="<? echo $TPL_password; ?>">
+                <? print $std_font.$MSG_050; ?> </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="204" VALIGN="top" ALIGN="right"> <? print $std_font; ?>
+                <B><? print $MSG_005; ?></B> </TD>
+              <TD WIDTH="486">
+                <INPUT TYPE=password NAME=TPL_repeat_password SIZE=20 MAXLENGTH=20 VALUE="<? echo $TPL_repeat_password; ?>">
+              </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="204"  VALIGN="top" ALIGN="right"> <? print $std_font; ?>
+                <B><? print $MSG_006; ?></B> </TD>
+              <TD WIDTH="486">
+                <INPUT TYPE=text NAME=TPL_email SIZE=50 MAXLENGTH=50 VALUE="<? echo $TPL_email; ?>">
+              </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="204" VALIGN="top" ALIGN="right"><B><? print $std_font; ?>
+                <?
+
+  		print $std_font.$MSG_252;
+
+  	?></B></TD>
+              <TD WIDTH="486">
+                <INPUT type=text name=TPL_birthdate size=10 maxlength=10 value="<? echo $TPL_birthdate; ?>">
+                <?
+
+  		print $std_font.$MSG_253;
+
+  	?> </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="204" VALIGN="top" ALIGN="right"> <? print $std_font; ?>
+                <B><? print $MSG_009; ?></B> </TD>
+              <TD WIDTH="486">
+                <INPUT TYPE=text NAME=TPL_address SIZE=40 MAXLENGTH=255 VALUE="<? echo $TPL_address; ?>">
+              </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="204" VALIGN="top" ALIGN="right"> <? print $std_font; ?>
+                <B><? print $MSG_010; ?></B> </TD>
+              <TD WIDTH="486">
+                <INPUT TYPE=text NAME=TPL_city SIZE=25 MAXLENGTH=25 VALUE="<? echo $TPL_city; ?>">
+              </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="204" VALIGN="top" ALIGN="right"> <? print $std_font; ?>
+                <B><? print $MSG_011; ?></B> </TD>
+              <TD WIDTH="486">
+                <INPUT TYPE=text NAME=TPL_prov SIZE=10 MAXLENGTH=10 VALUE="<? echo $TPL_prov; ?>">
+              </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="204" VALIGN="top" ALIGN="right"> <? print $std_font; ?>
+                <B><? print $MSG_014; ?></B> </TD>
+              <TD WIDTH="486">
+                <SELECT NAME=TPL_country>
+                  <OPTION VALUE=""> <? print $MSG_015; ?> </OPTION>
+                  <?  echo $country; ?>
+                </SELECT>
+              </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="204" VALIGN="top" ALIGN="right"> <? $std_font; ?> <B><? print $MSG_012; ?></B>
+              </TD>
+              <TD WIDTH="486">
+                <INPUT TYPE=text NAME=TPL_zip SIZE=8 MAXLENGTH=6 VALUE="<? echo $TPL_zip; ?>">
+              </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="204" VALIGN="top" ALIGN="right"> <? print $std_font; ?>
+                <B><? print $MSG_013; ?></B> </TD>
+              <TD WIDTH="486">
+                <INPUT TYPE=text NAME=TPL_phone SIZE=40 MAXLENGTH=40 VALUE="<? echo $TPL_phone; ?>">
+              </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="204" VALIGN="top" ALIGN="right"> <? print $std_font; ?>
+                <B><? print $MSG_222; ?></B> </TD>
+              <TD WIDTH="486"> <? if(!$TPL_rate) $TPL_rate=0; ?> <IMG src="./images/estrella_<? echo $TPL_rate; ?>.gif">
+              </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="204">&nbsp;</TD>
+              <TD WIDTH="486"> <? //print $std_font.$MSG_097; ?> <BR>
+                <BR>
+                <INPUT TYPE=submit NAME="">
+                <INPUT TYPE=reset NAME="">
+              </TD>
+            </TR>
+          </TABLE>
+
+	<INPUT type="hidden" NAME="TPL_id_hidden" VALUE="<? echo $TPL_id_hidden; ?>">
+
+	<INPUT type="hidden" NAME="action" VALUE="update">
+
+</FORM>
+
+</center>
+
+</TD>
+
+</TR>
+
+</TABLE>
