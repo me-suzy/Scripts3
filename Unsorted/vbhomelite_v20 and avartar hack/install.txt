@@ -1,0 +1,351 @@
++-----------------------------------------------+
+| vbHome Lite                                   |
+| Version 2.0                                   |
++-----------------------------------------------+
+| By Nakkid (vBulletin.org hacker)
+| Email(Messenger): nakkid@msn.com
+|
++--------------------------------------------------------------------------+
+| This hack will create a vBulletin(powered) homepage for your website.    |
+|                                                                          |
+| The advantage of this hack is that you can interact better your          |
+| website with vBulletin.                                                  |
+| vbHome (lite) is fully customizable through vBulletin templates, so      |
+| it's very easy to achieve any look or webdesign you want.                |
+|                                                                          |
+| NOTE: You are allowed to use this hack only if you agree not to remove   |
+|       the vbHome Lite link in the custom footer.                         |
++--------------------------------------------------------------------------+
+|
++-----------------------------------------------+
+| TEMPLATES TO CREATE                           |
++-----------------------------------------------+
+| home
+| home_avatar
+| home_headinclude
+| home_header
+| home_footer
+| home_threadbits
+| home_newsbits
+|
+|
++-----------------------------------------------+
+| INSTALL STEPS                                 |
++-----------------------------------------------+
+| 01. First, create a new forum, called NEWS. I recommend you to create
+| a new group also, called Journalists and give them permissions to view it.
+| The best way is to have the NEWS forum hidden to all members, except
+| the Journalists and Administrators. You can do this easy by setting
+| the right permissions in your vBulletin admin panel.
+|
+| NOTE: Don't forget to set the $newsforum variable in index.php to the
+|       right value. For example, if your NEWS forum have the ID 38, your
+|       variable should look like:
+|
+|       $newsforum=38;
+|
+|
+| 02. In index.php, set the rest of variables. Here there are all of them,
+| explained in detail:
+|
+|       $newsposts=15;
+|       - the number of news posts listed on the main homepage.
+|
+|       $maxthreads=30;
+|       - the number of latest threads, listed on the left hand side of
+|       your main homepage.
+|
+|       $maxchars=25;
+|       - how long it will be the latest threads title. If the title is
+|       longer then 25 characters, the extra text will be replaced with
+|       dots.
+|
+|       chdir("/home/path/to/forum");
+|       - the path where your forum/global.php is located. Note that
+|       you must enter the path, not the URL.
+|
+|       If you don't know what is your path, simply create a info.php
+|       file with the content:
+|
+|       <?php phpinfo(32); ?>
+|
+|       and place it where forum/global.php is. Load it in your browser.
+|
+|
+| 03. Customize all your templates (listed below) the way you like.
+|
+|
+| 04. In index.php, you will see this segment of code:
++--------------------------------------------------------------------------+
+// ###############################################################################
+// ## VBULLETIN CODE #############################################################
+
+// ADD HERE YOUR VBULLETIN CODE
+
+// ## END VBULLETIN CODE #########################################################
+// ###############################################################################
++--------------------------------------------------------------------------+
+|
+| To add more vBulletin options into your main homepage, all you have to
+| do is open the specific .php file and copy-paste the code.
+|
+| For example, if you want to add the private messages code, do this:
+|       a. open forum/index.php and find:
+|          //check usergroup of user to see if they can use PMs
+|
+|       b. copy-paste that segment of code into your index.php file.
+|       Was this easy? Yes. ;)
+|
+|
+| 05. Set your {imagesfolder} to the full url. To change this, go to 
+| your admin control panel:
+|
+|       Replacements > Modify > {imagesfolder} > [change original]
+|
+| and change the "Code to insert" to the full url, instead of "images".
+| Example: http://www.yoursite.com/forum/images
+|
+| NOTE: There are 2 templates ("bbcode" and "standarderror") that
+|       require some extra html code altering. Find this code:
+|       $bburl/{imagesfolder}
+|
+|       and replace it with:
+|       {imagesfolder}
+|
+|
+| 06. Set your smilies to the full url. To change this, go to
+| your admin control panel:
+|
+|       Smilies > Modify > [edit]
+|
+| and change the "Path to image" to the full url, instead of "images".
+| Example: http://www.yoursite.com/forum/images/smilies/wink.gif
+|
++-----------------------------------------------+
+| File: index.php (vbHome Lite)                 |
++-----------------------------------------------+
+| Place index.php into your root.
+| NOTE: Don't forget to edit the root path (chdir) and the rest of
+|       custom variables, located at the top of this file.
+|
+|
++-----------------------------------------------+
+| File: vbhome_lite.php (table installer)       |
++-----------------------------------------------+
+| Run the vbhome_lite.php installer in your /admin folder
+| to alter the 'thread' table.
+|
+|
++-----------------------------------------------+
+| File: newthread.php                           |
++-----------------------------------------------+
+| Find:
++--------------------------------------------------------------------------+
+      $postid=$DB_site->insert_id();
++--------------------------------------------------------------------------+
+|
+| BELOW this, add:
++--------------------------------------------------------------------------+
+      if ($forumid==2) {
+        $DB_site->query("UPDATE thread SET articleid=$postid WHERE threadid=$threadid");
+      }
++--------------------------------------------------------------------------+
+| NOTE: '2' is the value of your news forum. Change it to whatever forum ID
+|       you selected.
+|
+|
++-----------------------------------------------+
+| Template: home                                |
++-----------------------------------------------+
+| Place into it the following code:
++--------------------------------------------------------------------------+
+{htmldoctype}
+<html>
+<head>
+<title>$bbtitle Home Page</title>
+$homeheadinclude
+</head>
+<body>
+$homeheader
+<table cellpadding="4" cellspacing="{tableinnerborderwidth}" border="0" {tableinnerextra} width="100%">
+<tr>
+<td width="220" valign="top">$threadbits</td>
+<td width="10">&nbsp;</td>
+<td valign="top">$newsbits</td>
+</tr>
+</table>
+$homefooter
+</body>
+</html>
++--------------------------------------------------------------------------+
+| Customize this template the way you want.
+|
+|
++-----------------------------------------------+
+| Template: home_avatar                         |
++-----------------------------------------------+
+| Place into it the following code:
++--------------------------------------------------------------------------+
+<img src="$bburl/$newsavatarurl" border="0" align="left" vspace="3" width="40" height="40">
++--------------------------------------------------------------------------+
+| Customize this template the way you want.
+|
+|
++-----------------------------------------------+
+| Template: home_header                         |
++-----------------------------------------------+
+| Place into it the following code:
++--------------------------------------------------------------------------+
+<!-- logo and buttons -->
+<center>
+<table border="0" width="{tablewidth}" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top" align="left" background="{imagesfolder}/menu_background.gif"><a href="$bburl/index.php?s=$session[sessionhash]"><img src="{titleimage}" border="0" alt="$bbtitle"></a></td>
+<td valign="bottom" align="right" nowrap background="{imagesfolder}/menu_background.gif">
+<!-- toplinks -->
+<a href="$bburl/usercp.php?s=$session[sessionhash]"><img src="{imagesfolder}/top_profile.gif" alt="Here you can view your subscribed threads, work with private messages and edit your profile and preferences" border="0"></a>
+<a href="$bburl/register.php?s=$session[sessionhash]&action=signup"><img src="{imagesfolder}/top_register.gif" alt="Registration is free!" border="0"></a>
+<a href="$bburl/calendar.php?s=$session[sessionhash]"><img src="{imagesfolder}/top_calendar.gif" alt="Calendar" border="0"></a>
+<a href="$bburl/memberlist.php?s=$session[sessionhash]"><img src="{imagesfolder}/top_members.gif" alt="Find other members" border="0"></a>
+<a href="$bburl/misc.php?s=$session[sessionhash]&action=faq"><img src="{imagesfolder}/top_faq.gif" alt="Frequently Asked Questions" border="0"></a>
+<a href="$bburl/search.php?s=$session[sessionhash]"><img src="{imagesfolder}/top_search.gif" alt="Search" border="0"></a>
+<a href="$bburl/index.php?s=$session[sessionhash]"><img src="{imagesfolder}/top_home.gif" alt="Home" border="0"></a>
+<!-- <a href="$bburl/member.php?s=$session[sessionhash]&action=logout"><img src="{imagesfolder}/top_logout.gif" alt="Logout" border="0"></a>-->
+&nbsp;
+<!-- /toplinks -->
+</td>
+</tr>
+</table>
+<!-- /logo and buttons -->
+
+<!-- content table -->
+<table bgcolor="{pagebgcolor}" width="{tablewidth}" cellpadding="10" cellspacing="0" border="0">
+<tr>
+<td>
++--------------------------------------------------------------------------+
+| Customize this template the way you want.
+|
+|
++-----------------------------------------------+
+| Template: home_footer                         |
++-----------------------------------------------+
+| Place into it the following code:
++--------------------------------------------------------------------------+
+</td>
+</tr>
+</table>
+<!-- /content area table -->
+</center>
+
+<p align="center"><smallfont>
+<!-- Do not remove this copyright notice -->
+Powered by: vbHome (lite) and vBulletin Version $templateversion<br>
+Copyright &copy;2000, 2001, Jelsoft Enterprises Limited.<br>
+<!-- Do not remove this copyright notice -->
+$copyrighttext</smallfont></p>
++--------------------------------------------------------------------------+
+| Customize this template the way you want.
+| NOTE: Do NOT remove the vbHome (lite) link or vBulletin info.
+|
+|
++-----------------------------------------------+
+| Template: home_headinclude                    |
++-----------------------------------------------+
+| Place into it the following code:
++--------------------------------------------------------------------------+
+<meta http-equiv="MSThemeCompatible" content="Yes">
+<style type="text/css">
+BODY {
+  SCROLLBAR-BASE-COLOR: {categorybackcolor};
+  SCROLLBAR-ARROW-COLOR: {categoryfontcolor};
+}
+SELECT {
+  FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+  FONT-SIZE: 11px;
+  COLOR: #000000;
+  BACKGROUND-COLOR: #CFCFCF
+}
+TEXTAREA, .bginput {
+  FONT-SIZE: 12px;
+  FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+  COLOR: #000000;
+  BACKGROUND-COLOR: #CFCFCF
+}
+A:link, A:visited, A:active {
+  COLOR: {linkcolor};
+}
+A:hover {
+  COLOR: {hovercolor};
+}
+#cat A:link, #cat A:visited, #cat A:active {
+  COLOR: {categoryfontcolor};
+  TEXT-DECORATION: none;
+}
+#cat A:hover {
+  COLOR: {categoryfontcolor};
+  TEXT-DECORATION: underline;
+}
+#ltlink A:link, #ltlink A:visited, #ltlink A:active {
+  COLOR: {linkcolor};
+  TEXT-DECORATION: none;
+}
+#ltlink A:hover {
+  COLOR: {hovercolor};
+  TEXT-DECORATION: underline;
+}
+.thtcolor {
+  COLOR: {tableheadtextcolor};
+}
+</style>
+
+$headnewpm
++--------------------------------------------------------------------------+
+| Customize this template the way you want.
+|
+|
++-----------------------------------------------+
+| Template: home_newsbits                       |
++-----------------------------------------------+
+| Place into it the following code:
++--------------------------------------------------------------------------+
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td>$newsavatar <normalfont><b>$newstitle</b><br>
+$newstext<br>
+<br></normalfont></td>
+</tr>
+<tr>
+<td align="right"><smallfont>- by <a href="$bburl/member.php?s=$session[sessionhash]&action=getinfo&userid=$newsuserid">$newsusername</a> on $newsdate <font color={timecolor}>$newstime</font></smallfont></td>
+</tr>
+</table>
+<br>
++--------------------------------------------------------------------------+
+| Customize this template the way you want.
+|
+|
++-----------------------------------------------+
+| Template: home_threadbits                     |
++-----------------------------------------------+
+| Place into it the following code:
++--------------------------------------------------------------------------+
+<table cellpadding="4" cellspacing="0" border="0" {tableinnerextra} width="100%">
+<tr>
+<td bgcolor="$getbgrow">$geticon <normalfont><a href="$bburl/showthread.php?s=$session[sessionhash]&threadid=$getthreadid"><b>$gettitle$getdots</b></a></normalfont><br>
+<smallfont>$getdate <font color={timecolor}>$gettime</font> by <a href="$bburl/member.php?s=$session[sessionhash]&action=getinfo&userid=$getuserid">$getusername</a><br>
+Replies: <b>$getreplys</b></smallfont></td>
+</tr>
+</table>
++--------------------------------------------------------------------------+
+| Customize this template the way you want.
+|
+|
++-----------------------------------------------+
+| FINAL STEPS                                   |
++-----------------------------------------------+
+|
++--------------------------------------------------------------------------+
+| Now that you created all files listed above, is time to go live
+| with your new vBulletin(powered) main homepage.
+|
+| Congratulations!! ;)
++--------------------------------------------------------------------------+
