@@ -1,0 +1,48 @@
+Ein paar Informationen zum Login-System von SHOWlog:
+
+Loginsystem einschalten:
+$login_require = true;			// require login for showlog [ true/false]
+
+Den SHOWlogeigenen Loginbildschirm benutzen:
+$login_screen = true;			// show loginscreen [ true/false]
+
+Benutzer Konfigurieren:
+$login[1]["user"] = "all";			// username for showlog login
+$login[1]["pass"] = "all";		// password for showlog login
+$login[1]["right"] = "all";		// userrights [ all/view ]
+
+$login[2]["user"] = "view";		// username for showlog login
+$login[2]["pass"] = "view";		// password for showlog login
+$login[2]["right"] = "view";		// userrights [ all/view ]
+
+Es können beliebig viele Beutzer angelegt werden.
+
+Ziel wenn das Login im Loginscreen akzeptiert wurde:
+$login_accept = "statistics.php";	// name of showlog file for loginscreen
+
+Pfad / Datei, wenn das Login verwigert wurde:
+$login_denied = "../";			// errorpage or errorpath
+
+
+Man kann ein eigenes Loginsystem benutzen, wenn SHOWlog z.B. in einem Mitgliederbereich liegt.
+Dann den SHOWlogeigenen Loginbildschirm abschalten:
+$login_screen = false;		// show loginscreen [ true/false]
+
+Und SHOWlog mit "?id=xxxxxxxxxxxx" aufrufen, wobei xxxxxx die SessionID ist.
+Außerdem muß eine Sessionvariable mit den Rechten geschrieben werden:
+$_SESSION["SHOWLOG"] = "view" oder $_SESSION["SHOWLOG"] = "all".
+
+Eventuell muß die Sessionverwaltung von SHOWlog angepasst werden:
+in "templates/template.inc.php":
+...
+// --- session control: initialize session -------------------------------------------------
+// --- output parameters: session id
+function session_control() {
+  ini_set("session.use_cookies", 0);
+  ini_set("session.use_trans_sid", 0);
+  ini_set("url_rewriter.tags", "");
+  session_name('id');
+  session_start();
+  return session_id();
+}
+...
