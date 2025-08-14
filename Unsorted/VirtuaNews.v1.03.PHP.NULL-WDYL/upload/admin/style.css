@@ -1,0 +1,139 @@
+a:link {
+  text-decoration: none;
+  color: #015885;
+  background: transparent;
+}
+
+a:active {
+  color: #FF0000;
+  text-decoration: none;
+  background: transparent;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #015885;
+  background: transparent;
+}
+
+a:hover {
+  color: #000000;
+  text-decoration: none;
+  background: transparent;
+}
+
+body {
+  background-color: #5A77B2;
+  margin: 3px
+}
+
+td,div {
+  font-family : Verdana,Arial,sans-serif;
+  color : #000066;
+  font-size:10px;
+  background: transparent;
+}
+
+pre {
+  font-family: verdana,arial,monospace;
+  font-size: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color : #eeeeee;
+  border-width : 2px;
+  border-style : solid;
+  border-color : #ffffff;
+}
+
+table.main {
+  width: 98%;
+  background-color : #eeeeee;
+  border-width : 2px;
+  border-style : solid;
+  border-color : #ffffff;
+}
+
+table.header {
+  width: 98%;
+  background: transparent;
+}
+
+td.header {
+  font-size: 12px;
+  font-weight: bold;
+  color: #ffffff;
+  background: transparent;
+}
+
+td.help {
+  text-align: right;
+  color: #ffffff;
+  background: transparent;
+}
+
+table.menu {
+  width:100%;
+  border:0;
+  background-color : #ffffff;
+}
+
+table.menu_header {
+  width:100%;
+  border:0;
+  background: transparent;
+}
+
+td.menu_header {
+  font-size: 10px;
+  font-weight: bold;
+  color: #ffffff;
+  background: transparent;
+}
+
+td.menu_spacer {
+  height: 4px;
+  background: transparent;
+}
+
+td.menu {
+  background-color : #eeeeee;
+}
+
+td.menu_highlight {
+  background-color : #cccccc;
+}
+
+span.red {
+  color: #FF0000;
+  background: transparent;
+}
+
+span.help {
+  color: #ffffff;
+  background: transparent;
+}
+
+input.form,select.form,textarea.form {
+  background-color: #ffffff;
+  font-family: Verdana;
+  font-size: 10px;
+  color: #000066;
+  border-width : 1px;
+  border-style : solid;
+  border-color : #555555;
+}
+
+textarea.pagehelp {
+  background: transparent;
+  font-family : Verdana;
+  font-size : 10px;
+  color: #000066;
+  border: 0px;
+  scrollbar-DarkShadow-Color : #eeeeee;
+  scrollbar-Track-Color : #eeeeee;
+  scrollbar-Face-Color : #eeeeee;
+  scrollbar-Shadow-Color : #eeeeee;
+  scrollbar-Highlight-Color : #eeeeee;
+  scrollbar-3dLight-Color : #eeeeee;
+  scrollbar-Arrow-Color : #eeeeee;
+}
