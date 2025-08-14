@@ -1,0 +1,26 @@
+SHOWlog benutzt ein Templatesystem mit dem man global die Darstellung ändern kann.
+
+Wenn man ein eigenes Template erstellen möchte braucht man nur einen Ordner mit
+dem Namen des Templates in Template-Verzeichnis anlegen, z.B. 'mein_template'.
+
+Dann muß in diesem Verzeichnis eine HTML-Datei mit dem Namen 'statistics.html' erstellt
+werden. In dieser HTML-Datei muß jeder link zu eigenen Dateien (z.B. Bilder oder .css)
+mit '<%TPLPATH%>' beginnen, z.B. ' href="<%TPLPATH%>statistics.css" '.
+
+Hier eine Auflistung der Tags die von SHOWlog durch die richtigen Daten ersetzt werden:
+  <%VERSION%>			wird durch die SHOWlog-Version ersetzt ($showlog_ver)
+  <%LANGUAGECODE%>	wird durch den Sprachkode ersetzt ($lang_code) z.B. 'de'
+  <%REFRESH%>			an dieser Stelle wird der METATAG 'REFRESH' gesetzt (für logfile-menu)
+  <%TPLPATH%>			wird durch den Pfad zum Template ersetzt
+  <%CONTENT%>			An dieser Stelle wird der Seiteninhalt ausgegeben.
+
+Eine weiter Datei ist notwendig: eine Stylesheetdatei, z.B. 'statistics.css'.
+Die beste Möglichkeit eine eigene Stylesheetdatei zu erstellen ist eine existierende Datei
+z.B. vom 'default'-Template zu kopieren. So kann man keine notwendigen Klassen vergessen.
+
+Wenn ein eigenes Template erstellt wurde und man es freigeben möchte:
+einfach als komprimierte Datei (z.B. .zip) an fli4l@sirsocke.de senden.
+Ich werde sie dann testen und auf der SHOWlog-Projektseite online Stellen (natürlich mit
+Hinweis auf den Entwickler)
+
+Wenn die Templatefunktion angepasst werden muß: 'templates/template.inc.php'
