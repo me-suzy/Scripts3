@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<link rel="stylesheet" type="text/css" href="admin-login-only.css">
+
+	<TITLE>admin-Login-Only - Setup</TITLE>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<meta name="keywords" content="admin-Login-Only, protect, secure, authenticate, verify, make sure, restrict, admin, only">
+		<meta name="description" content="This file is setup.html. It describes how to setup the Globalissa.com software called admin-Login-Only. admin-Login-Only lets you easily protect any web page using a PHP session.">
+		<meta name="author" content="Globalissa - Global I.S. S.A.">
+		<meta name="generator" content="World Impact">
+		<meta name="robots" content="NOINDEX,NOFOLLOW">
+		<meta name="revisit-after" content="7 days">
+		<meta name="distribution" content="Global">
+		<meta name="rating" content="General">
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta name="resource-type" content="document">
+</HEAD>
+
+
+<BODY>
+
+
+<!-- navigation - start -->
+<div align="center">
+	<a href="setup.html">Setup | </a> 
+	<a href="protect.html">Protect | </a> 
+	<a href="tips.php">Tips | </a> 
+	<a href="vote.php">Vote | </a> 
+	<a href="index.html">About</a> 
+</div>
+<br />
+<!-- navigation - end -->
+
+
+
+
+<table width="800">
+<tr>
+	<td>
+		<H1>Setup</H1>
+
+		<H2>Instructions</H2>
+
+
+<p>Follow these instructions to setup admin-Login-Only:</p>
+
+<code>
+<ol>
+	<li>unzip the distribution package into a new folder called &quot;admin-Login-Only&quot;
+	<li>open the file called: <B>secret.php</B> 
+	<li>enter your own values for ADMINUSER, ADMINPASSWORD, ADMINHOME and save
+		<br>Example: <b style="color:green;">define("ADMINUSER", "</b><b style="color:red;">admin</b><b style="color:green;">"); // change the RED text only</b>
+	<li>place all files from the &quot;admin-Login-Only&quot; folder into the web folder which has the file you wish to protect
+		<br>Example - you want to protect: admin.php
+	<li>launch your browser and open the file called <b><a href="admin.php">admin.php</a></b> on your server
+</ol>
+</code>
+
+
+<H2>How to Protect any Page</H2>
+
+<p>
+After completing the setup above it is easy to protect any page. Simply add this one line of code 
+to the top of any page:
+</p>
+
+<p style="font-size:24px;">&lt;?php require_once("adminOnly.php");?&gt;</p>
+
+
+
+<h2>Test admin-Login-Only</h2>
+
+<p><a href="admin.php">Click here to test it out.</a></p>
+
+<ul>
+	<li>Admin User Name: <b>admin</b></li>
+	<li>Admin Password: <b>admin</b></li>
+	<li>default page you will load if successful: <i>admin.php</i></li>
+</ul>
+<p><a href="admin.php">Click here to test it out.</a></p>
+
+
+
+
+<h2>Tips</h2>
+
+<p><a href="tips.php">Click here for tips.</a></p>
+
+
+<h2>Download the Distribution Zip File</h2>
+
+
+<a href="http://www.globalissa.com/download.php?n=1&p=15">
+	<img align="absmiddle" src="images/icons/icon_downloads.jpg" width="32" height="32" border=0 alt="Download"> 
+	http://www.globalissa.com/download.php?n=1&p=15
+</a>
+
+
+
+
+<p><br></p>
+<p><br></p>
+<p><br></p>
+
+
+
+
+
+<p><br></p>
+<p><br></p>
+<p><br></p>		
+
+	</td>
+</tr>
+</table>
+
+
+
+
+<p><br></p>
+<p><br></p>
+<p><br></p>
+
+</BODY>
+</HTML>
