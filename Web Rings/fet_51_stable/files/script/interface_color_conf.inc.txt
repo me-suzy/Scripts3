@@ -1,0 +1,161 @@
+<?
+
+// Interface's all colors are here.
+
+// ----------------------------- Original color scheme ----------------------------------
+// Admin login page
+$color_cfg['Original']['LP_BACKGORUND']='#FFFFFF';               // Login page background
+$color_cfg['Original']['LP_TEXT']='#000000';                     // Login page Text
+$color_cfg['Original']['LP_FORMBORDER']='#000000';               // Password form border
+$color_cfg['Original']['LP_FORMBACKGORUND']='#D1D1D1';           // Password form background
+
+// Buttons
+$color_cfg['Original']['LBUTTONBACKGROUND']='#FFFFFF';         // Light Button Background
+$color_cfg['Original']['LBUTTONBORDER']='#000000';             // Light Button border
+$color_cfg['Original']['LBUTTONTEXT']='#000000';               // Light Button Text
+
+$color_cfg['Original']['DBUTTONBACKGROUND']='CCC11F';         // Dark Button Background
+$color_cfg['Original']['DBUTTONBORDER']='#000000';             // Dark Button border
+$color_cfg['Original']['DBUTTONTEXT']='#000000';               // Dark Button Text
+
+// Input text fields
+$color_cfg['Original']['INPUTBACKGROUND']='#FFFFFF';         // Input Background
+$color_cfg['Original']['INPUTBORDER']='#000000';             // Input border
+$color_cfg['Original']['INPUTTEXT']='#000000';               // Input Text
+
+// Jump menus
+$color_cfg['Original']['SELECTBACKGROUND']='#FFFFFF';         // Input Background
+$color_cfg['Original']['SELECTBORDER']='#000000';             // Input border
+$color_cfg['Original']['SELECTTEXT']='#000000';               // Input Text
+
+// Admin zone
+$color_cfg['Original']['LINK_COLOR']='#0000FF';              // Links color scheme
+$color_cfg['Original']['LINK_VISITED']='#0000FF';
+$color_cfg['Original']['LINK_HOVER']='#0000FF';
+$color_cfg['Original']['LINK_ACTIVE']='#0000FF';
+$color_cfg['Original']['AZ_BACKGROUND']='#F5F5F5';           // Background color
+$color_cfg['Original']['AZ_TEXT']='#000000';                 // Text color
+$color_cfg['Original']['SHADED_TEXT']='#A1A1A1';             // A bit shaded text
+$color_cfg['Original']['TABLE_HEADER_LEFT']='#CCC11F';       // Table header bgcolor unter text
+$color_cfg['Original']['TABLE_HEADER_RIGHT']='#F5F5F5';      // Table header blank part color
+$color_cfg['Original']['BUTTONS_BLOCK']='#756A00';           // Buttons field background color
+$color_cfg['Original']['CELLTEXTCOLOR']='#000000';           // Table cell text color
+$color_cfg['Original']['MAIN_BGCOLOR']='#E9E9E9';            // Table main BG color
+$color_cfg['Original']['STB_BACKGROUND']='#AAAAAA';          // Stats table backgruond
+$color_cfg['Original']['STB_HEADER']='#D1D1D1';              // Stats table header background
+$color_cfg['Original']['NORM_CELL']='#F5F5F5';               // Normal stats cell background
+$color_cfg['Original']['24H_CELL']='#E5E5E5';                // 24h highlighted cell
+$color_cfg['Original']['TRAFFIC_LOW']='#FF3300';             // Trader's colors
+$color_cfg['Original']['TRAFFIC_MED']='#CC9900';
+$color_cfg['Original']['TRAFFIC_HIGH']='#009933';
+$color_cfg['Original']['TRADE_0']='#CC00CC';                 // Trade types colors
+$color_cfg['Original']['TRADE_1']='#009933';
+$color_cfg['Original']['TRADE_2']='#006633';
+$color_cfg['Original']['TRADE_3']='#000000';
+$color_cfg['Original']['TRADE_4']='#CC9900';
+$color_cfg['Original']['TRADE_5']='#003399';
+$color_cfg['Original']['TRADE_6']='#990000';
+$color_cfg['Original']['TRADE_7']='#FF0000';
+$color_cfg['Original']['PROXY_LOW']='#009933';              // Proxy levels colors
+$color_cfg['Original']['PROXY_MED']='#CC9900';
+$color_cfg['Original']['PROXY_HIGH']='#FF3300';
+$color_cfg['Original']['POINTER_COLOR']='#CCFFCC';
+$color_cfg['Original']['MARK_COLOR']='#FFCC99';
+$color_cfg['Original']['FL_HEADER']='#D1D1D1';              // Float window header BG
+$color_cfg['Original']['FL_MAINBG']='#F5F5F5';              // Float window main background
+$color_cfg['Original']['FL_BORDER']='#555555';              // FLoat window border
+$color_cfg['Original']['FL_VALUE']='#CC0000';               // Float window values color
+$color_cfg['Original']['S_VARS']='#009933';                 // Service variables color in the table
+$color_cfg['Original']['IN_CLICK']='#0000FF';
+$color_cfg['Original']['PROD']='#FF0000';
+$color_cfg['Original']['ONDISK']='#009900';                       // Page is on disk
+$color_cfg['Original']['NOTONDISK']='#FF3300';                    // Page is not on disk
+$color_cfg['Original']['ACT_EVENT']='#009933';                     // Ective long Force
+$color_cfg['Original']['INACT_EV']='#FF3300';                      // Inactive long force
+$color_cfg['Original']['HL_HOUR_CELL']='#CCFFCC';                  // Highlihgted current hour cell
+$color_cfg['Original']['PSW_FAIL']='#FF0000';                      // Password change failed
+$color_cfg['Original']['PSW_GOOD']='#00FF00';
+$color_cfg['Original']['UPROD']='#440000';                      // Uniq Prod
+$color_cfg['Original']['X_ALERT']='#FF3300';                    // Checker X-activity found
+$color_cfg['Original']['X_GOOD']='#009933';                     // Not Found
+// -------------------------------------------------------------------------------------
+
+// ----------------------------- Black color scheme ----------------------------------
+// Admin login page
+$color_cfg['Black']['LP_BACKGORUND']='#000000';               // Login page background
+$color_cfg['Black']['LP_TEXT']='#D0D0D0';                     // Login page Text
+$color_cfg['Black']['LP_FORMBORDER']='#D0D0D0';               // Password form border
+$color_cfg['Black']['LP_FORMBACKGORUND']='#151515';           // Password form background
+
+// Buttons
+$color_cfg['Black']['LBUTTONBACKGROUND']='#252525';         // Light Button Background
+$color_cfg['Black']['LBUTTONBORDER']='#707070';             // Light Button border
+$color_cfg['Black']['LBUTTONTEXT']='#B0B0B0';               // Light Button Text
+
+$color_cfg['Black']['DBUTTONBACKGROUND']='#2B2802';         // Dark Button Background
+$color_cfg['Black']['DBUTTONBORDER']='#707070';             // Dark Button border
+$color_cfg['Black']['DBUTTONTEXT']='#B0B0B0';               // Dark Button Text
+
+// Input text fields
+$color_cfg['Black']['INPUTBACKGROUND']='#252525';         // Input Background
+$color_cfg['Black']['INPUTBORDER']='#707070';             // Input border
+$color_cfg['Black']['INPUTTEXT']='#B0B0B0';               // Input Text
+
+// Jump menus
+$color_cfg['Black']['SELECTBACKGROUND']='#252525';         // Input Background
+$color_cfg['Black']['SELECTBORDER']='#707070';             // Input border
+$color_cfg['Black']['SELECTTEXT']='#B0B0B0';               // Input Text
+
+// Admin zone
+$color_cfg['Black']['LINK_COLOR']='#6699FF';              // Links color scheme
+$color_cfg['Black']['LINK_VISITED']='#6699FF';
+$color_cfg['Black']['LINK_HOVER']='#6699FF';
+$color_cfg['Black']['LINK_ACTIVE']='#6699FF';
+$color_cfg['Black']['AZ_BACKGROUND']='#050505';           // Background color
+$color_cfg['Black']['AZ_TEXT']='#D0D0D0';                 // Text color
+$color_cfg['Black']['SHADED_TEXT']='#444444';             // A bit shaded text
+$color_cfg['Black']['TABLE_HEADER_LEFT']='#2B2802';       // Table header bgcolor unter text
+$color_cfg['Black']['TABLE_HEADER_RIGHT']='#050505';      // Table header blank part color
+$color_cfg['Black']['BUTTONS_BLOCK']='#262415';           // Buttons field background color
+$color_cfg['Black']['CELLTEXTCOLOR']='#D0D0D0';           // Table cell text color
+$color_cfg['Black']['MAIN_BGCOLOR']='#101010';            // Table main BG color
+$color_cfg['Black']['STB_BACKGROUND']='#555555';          // Stats table backgruond
+$color_cfg['Black']['STB_HEADER']='#252525';              // Stats table header background
+$color_cfg['Black']['NORM_CELL']='#050505';               // Normal stats cell background
+$color_cfg['Black']['24H_CELL']='#151515';                // 24h highlighted cell
+$color_cfg['Black']['TRAFFIC_LOW']='#DD1100';             // Trader's colors
+$color_cfg['Black']['TRAFFIC_MED']='#AA7700';
+$color_cfg['Black']['TRAFFIC_HIGH']='#009933';
+$color_cfg['Black']['TRADE_0']='#CC00CC';                 // Trade types colors
+$color_cfg['Black']['TRADE_1']='#00EE77';
+$color_cfg['Black']['TRADE_2']='#006633';
+$color_cfg['Black']['TRADE_3']='#000000';
+$color_cfg['Black']['TRADE_4']='#CC9900';
+$color_cfg['Black']['TRADE_5']='#003399';
+$color_cfg['Black']['TRADE_6']='#990000';
+$color_cfg['Black']['TRADE_7']='#FF0000';
+$color_cfg['Black']['PROXY_LOW']='#009933';              // Proxy levels colors
+$color_cfg['Black']['PROXY_MED']='#AA7700';
+$color_cfg['Black']['PROXY_HIGH']='#DD1100';
+$color_cfg['Black']['POINTER_COLOR']='#003300';
+$color_cfg['Black']['MARK_COLOR']='#331100';
+$color_cfg['Black']['FL_HEADER']='#666666';              // Float window header BG
+$color_cfg['Black']['FL_MAINBG']='#090909';              // Float window main background
+$color_cfg['Black']['FL_BORDER']='#AAAAAA';              // FLoat window border
+$color_cfg['Black']['FL_VALUE']='#CC0000';               // Float window values color
+$color_cfg['Black']['S_VARS']='#009933';                 // Service variables color in the table
+$color_cfg['Black']['IN_CLICK']='#6699FF';
+$color_cfg['Black']['PROD']='#FF0000';
+$color_cfg['Black']['ONDISK']='#009900';                       // Page is on disk
+$color_cfg['Black']['NOTONDISK']='#DD1100';                    // Page is not on disk
+$color_cfg['Black']['ACT_EVENT']='#009933';                     // Ective long Force
+$color_cfg['Black']['INACT_EV']='#DD1100';                      // Inactive long force
+$color_cfg['Black']['HL_HOUR_CELL']='#331100';                  // Highlihgted current hour cell
+$color_cfg['Black']['PSW_FAIL']='#FF0000';                      // Password change failed
+$color_cfg['Black']['PSW_GOOD']='#00FF00';
+$color_cfg['Black']['UPROD']='#882200';                      // Uniq Prod
+$color_cfg['Black']['X_ALERT']='#DD1100';                    // Checker X-activity found
+$color_cfg['Black']['X_GOOD']='#009933';                     // Not Found
+// -------------------------------------------------------------------------------------
+
+?>
