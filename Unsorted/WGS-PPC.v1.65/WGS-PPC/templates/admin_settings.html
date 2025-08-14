@@ -1,0 +1,89 @@
+    <table border="0" cellspacing="1" cellpadding="5">
+      <tr align="center"> 
+        <td colspan="2"> 
+          
+      <h4><font color="#6699cc">System settings</font></h4>
+      
+    </td>
+      </tr>
+      <tr align="center"> 
+        
+    <td colspan="2">
+      <span style="color: red; font-family:verdana; font-size: 14px; font-weight:bold"><#error#></span>
+		<table border="0" cellspacing="1" cellpadding="5" width="700">
+			<tr>
+				<td bgcolor="#CCE8FF" width="250"><b>Accept bids automaticaly:</b></td>
+				<td align="right" bgcolor="#eeeeee" onmouseover="this.style.backgroundColor='#6699cc'" onmouseout="this.style.backgroundColor='#eeeeee'"><input type="checkbox" name="accbids" value="1" <#acceptbids#> ></td>
+			</tr>
+			<tr>
+				<td bgcolor="#CCE8FF" width="250"><b>Allow special search to members:</b></td>
+				<td align="right" bgcolor="#eeeeee" onmouseover="this.style.backgroundColor='#6699cc'" onmouseout="this.style.backgroundColor='#eeeeee'"><input type="checkbox" name="allowss" value="1" <#allowss#> ></td>
+			</tr>
+			<tr>
+				<td bgcolor="#CCE8FF" width="250"><b>Allow PayPal IPN:</b></td>
+				<td align="right" bgcolor="#eeeeee" onmouseover="this.style.backgroundColor='#6699cc'" onmouseout="this.style.backgroundColor='#eeeeee'"><input type="checkbox" name="allowipn" value="1" <#allowipn#> ></td>
+			</tr>
+			<tr>
+				<td bgcolor="#CCE8FF" width="250"><b>Allow MSN feeds:</b></td>
+				<td align="right" bgcolor="#eeeeee" onmouseover="this.style.backgroundColor='#6699cc'" onmouseout="this.style.backgroundColor='#eeeeee'"><input type="checkbox" name="allowmsn" value="1" <#allowmsn#> ></td>
+			</tr>
+			<tr>
+				<td bgcolor="#CCE8FF" width="250"><b>Allow Dmoz.org feeds:</b></td>
+				<td align="right" bgcolor="#eeeeee" onmouseover="this.style.backgroundColor='#6699cc'" onmouseout="this.style.backgroundColor='#eeeeee'"><input type="checkbox" name="allowdmoz" value="1" <#allowdmoz#> ></td>
+			</tr>
+			<tr>
+				<td bgcolor="#CCE8FF" width="250"><b>Your Pay Pal Account e-mail:</b></td>
+				<td align="right" bgcolor="#eeeeee" onmouseover="this.style.backgroundColor='#6699cc'" onmouseout="this.style.backgroundColor='#eeeeee'"><input type="text" name="appemail" value="<#appemail#>"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#FFD7D8" width="250"><b>Sign up bonus:</b></td>
+				<td align="right" bgcolor="#eeeeee" onmouseover="this.style.backgroundColor='#6699cc'" onmouseout="this.style.backgroundColor='#eeeeee'"><input type="text" name="bonus" value="<#bonus#>" size="5" maxlength="5"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#FFD7D8" width="250"><b>Minimal bid:</b></td>
+				<td align="right" bgcolor="#eeeeee" onmouseover="this.style.backgroundColor='#6699cc'" onmouseout="this.style.backgroundColor='#eeeeee'"><input type="text" name="minbid" value="<#minbid#>" size="5" maxlength="5"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#FFD7D8" width="250"><b>Minimal bid on &quot;no matches&quot;:</b></td>
+				<td align="right" bgcolor="#eeeeee" onmouseover="this.style.backgroundColor='#6699cc'" onmouseout="this.style.backgroundColor='#eeeeee'"><input type="text" name="nmminbid" value="<#nmminbid#>" size="5" maxlength="5"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#FFD7D8" width="250"><b>Minimal balance:</b></td>
+				<td align="right" bgcolor="#eeeeee" onmouseover="this.style.backgroundColor='#6699cc'" onmouseout="this.style.backgroundColor='#eeeeee'"><input type="text" name="minbal" value="<#minbal#>" size="5" maxlength="5"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#FFD7D8" width="250"><b>Cost of affiliates searches:</b></td>
+				<td align="right" bgcolor="#eeeeee" onmouseover="this.style.backgroundColor='#6699cc'" onmouseout="this.style.backgroundColor='#eeeeee'"><input type="text" name="ascost" value="<#ascost#>" size="5" maxlength="5"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#FFD7D8" width="250"><b>Cost of affiliates clicks:</b></td>
+				<td align="right" bgcolor="#eeeeee" onmouseover="this.style.backgroundColor='#6699cc'" onmouseout="this.style.backgroundColor='#eeeeee'"><input type="text" name="accost" value="<#accost#>" size="5" maxlength="5"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#FFD7D8" width="250"><b>Currency symbol:</b></td>
+				<td align="right" bgcolor="#eeeeee" onmouseover="this.style.backgroundColor='#6699cc'" onmouseout="this.style.backgroundColor='#eeeeee'"><input type="text" name="symbol" value="<#symbol#>" size="5" maxlength="5"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#Dff0df"><b>Number of Popular Searches to Display:</b></td>
+				<td align="right" bgcolor="#eeeeee" onmouseover="this.style.backgroundColor='#6699cc'" onmouseout="this.style.backgroundColor='#eeeeee'">
+				<input type="text" name="topnum" value="<#topnum#>" size="5">
+				</td>
+			</tr>
+			<tr>
+				<td bgcolor="#Dff0df"><b>Number of Searches to Displayed per page:</b></td>
+				<td align="right" bgcolor="#eeeeee" onmouseover="this.style.backgroundColor='#6699cc'" onmouseout="this.style.backgroundColor='#eeeeee'">
+				<select name="dipp"><#dipp#></select>
+				</td>
+			</tr>
+        <tr> 
+          <td colspan="2" height="28"> 
+            <input type="submit" name="Submit" value="Update settings" onclick="document.forms.admin.cmd.value='7'; return confirm('Are You sure want to change settings?')">
+				<input type="submit" name="Submit2" value="Restore previous settings" onclick="document.forms.admin.cmd.value='8'; return confirm('Are You sure want to restore previous settings?')">
+            <input type="hidden" name="cmd" value="7">
+          </td>
+        </tr>
+      </table>
+    </td>
+      </tr>
+    </table>
+
