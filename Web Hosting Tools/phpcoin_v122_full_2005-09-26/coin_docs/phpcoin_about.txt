@@ -1,0 +1,57 @@
+
+/**************************************************************
+ * File: 		Documentation: About phpCOIN
+ * Author:	Mike Lansberry (http://phpcoin.com)
+ * Date:		2004-01-04 (V1.2.0)
+ * Changed: 	Stephen M. Kitching, 2005-03-03 (v1.2.2)
+ * License:	DO NOT Remove this text block. See /coin_docs/license.txt
+ *			Copyright © 2003-2004-2005 phpCOIN.com
+ * Notes:
+ *
+**************************************************************/
+
+/**************************************************************
+ * Introduction: phpCOIN package
+**************************************************************/
+The phpCOIN package (set of scripts) was originally designed
+for (re)sellers of web services, but now can be used by any
+small busines, to manage their clients:
+	- Provides Interface for Client information.
+	- Provides Interface for Client placed orders.
+	- Provides Interface for Admin generated multi-item invoices.
+	- Provides basic contact emails (two-way).
+	- Admin defined products, vendors, and vendor products.
+	- Automated overdue reminders,
+	- And a whole bunch more.
+
+The general requirements for running the phpCOIN package are:
+	- Ability to FTP files to website critical.
+	- A mySQL database on your current website host.
+	- Ability to manage mySQL database (for backup / debug )
+	  (using phpMyAdmin or some equal)
+	- Ability to edit some config files (unix text file)
+	- Website running database server mySQL 3.x.x or better.
+	- Website running php 4.1.2 or better.
+	- Some patience. :)
+
+/**************************************************************
+ * Important stuff
+**************************************************************/
+Some items to resolve right away:
+	- Tab-spaces for all files is:	4-char (spaces / tab)
+	  (may need to adjust editor program preferences)
+
+	- Unix type text file. All files are created and edited
+	  as "unix text" files. Be careful of editors saving in
+	  DOS, or MAC type files- always use unix.
+	  (may need to adjust editor program preferences)
+
+	- Where to install?
+	  Make the decision to either run phpcoin as a website
+	  or as an addon to existing website. Basically you need
+	  to decide on a folder or directory to plop the files in.
+
+	- This is a hobby project, go easy on me :)
+
+	- Congratulations for reading to the bottom of this stuff.
+	  Most just gloss over- you should be commended.
