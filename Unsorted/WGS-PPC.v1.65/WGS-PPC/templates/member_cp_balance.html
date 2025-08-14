@@ -1,0 +1,45 @@
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<table border="0" cellspacing="1" cellpadding="5">
+      <tr align="center"> 
+        <td colspan="2"> 
+          
+      <h4><font size="3" color="#6699CC">Update Balance <#warning#></font></h4>
+	  	<span style="color:#3333cc; font-weight: bold"><#message#></span>
+    </td>
+      </tr>
+      <tr align="center"> 
+        
+    <td colspan="2"><a href="<#ccinfo#>">Modify Payment Info</a></td>  
+      <table width="100%" border="0" cellspacing="0" cellpadding="5">
+        <tr>
+          <td>Current Balance, <#currency#>:</td>
+          <td><#balance#></td>
+        </tr>
+		  
+	       <tr>
+          <td>Amount to add to Balance, <#currency#>:</td>
+          <td>
+            <input type="text" name="amount" size="20" maxlength="20" value="0">
+          </td>
+        </tr>
+        <tr>
+         <td>&nbsp;</td>
+          <td>
+<!--
+				<input type="hidden" name="cmd" value="_xclick">
+				<input type="hidden" name="business" value="<#appemail#>">
+				<input type="hidden" name="item_name" value="Charge PPC Account">
+				<input type="hidden" name="invoice" value="<#member#>">
+				<input type="hidden" name="return" value="<#return#>">
+				<input type="image" src="https://www.paypal.com/images/x-click-but04.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+-->
+            <input type="submit" name="Submit" value="Top Up Balance">
+            <input type="hidden" name="cmd" value="255">
+          </td>
+         
+        </tr>
+      </table>
+    
+      </tr>
+    </table>
+
