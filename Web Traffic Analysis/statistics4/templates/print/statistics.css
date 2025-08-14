@@ -1,0 +1,90 @@
+/* -----------------------------------------------------------------------------
+// - statistics.css - Style Sheet Configuration 'print'
+// -
+// - Creation:			07.04.2005  Daniel Sokoll
+// - Last Changes:	24.08.2005  Daniel Sokoll
+// -------------------------------------------------------------------------- */
+html {
+	overflow-x: auto;
+}
+
+/* --- defaults ------------------------------------------------------------ */
+body, td, tr, b ,h1, a:link, a:visited, a:active, input {
+	color: #000000;
+	font-family: Verdana, Tahoma, Arial, Trebuchet MS, Sans-Serif;
+	font-size: 11px;
+	font-weight: normal;
+	border-width: 1px; 
+	text-decoration: none;
+}
+
+body {
+	background-color: #ffffff;
+	margin-top: 1px;
+	margin-left: 1px;
+}
+
+form {
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+
+b {
+	font-weight: bold;
+}
+
+/* --- links ---------------------------------------------------------------- */
+a:hover {
+	text-decoration: underline;
+}
+
+a.detail:link, a.detail:visited, a.detail:active {
+	font-size: 9px;
+}
+
+a.link:link, a.link:visited, a.link:active {
+	color: #000000;
+	font-weight: bold;
+}
+
+a.link:hover {
+	background : #000000;
+	color : #ffffff;
+	font-weight: bold;
+}
+
+.highlight {
+	background : #000000;
+}
+/* --- specials ------------------------------------------------------------- */
+.head { /* tables (header and counter) and hr-lines */
+	color: #000000;
+	background : #ffffff;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+.tback { /* tables (background) */
+	background : #000000;
+}
+
+.count { /* counter-numbers */
+	font-size: 18px;
+	font-weight: bold;
+	color: #000000;
+}
+
+/* --- Showlog title / name ------------------------------------------------- */
+.header { /* 'SHOW' and Version  */
+	font-size: 17px; 
+	font-weight: bold;
+}
+
+.log { /* 'log' */
+	color: #909090;
+}
+
+/* --- output in logfile details -------------------------------------------- */
+.default {
+	font-size: 9px;
+}
