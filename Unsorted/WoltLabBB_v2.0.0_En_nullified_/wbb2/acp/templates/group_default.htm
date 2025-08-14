@@ -1,0 +1,32 @@
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+<form method="post" action="group.php">
+<input type="hidden" name="send" value="send">
+<input type="hidden" name="action" value="$action">
+<input type="hidden" name="sid" value="$session[hash]">
+ <table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="100%" align="center">
+  <tr class="tblhead">
+   <td colspan="2">Set Default User Groups</td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Default User Group for Visitors:</b></td>
+   <td><select name="default1">$options1</select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Default User Group for Members:</b></td>
+   <td><select name="default2">$options2</select></td>
+  </tr>
+  <tr class="firstrow">
+   <td colspan="2" align="center"><input type="submit" value="Submit"> <input type="reset" value="Reset"></td>
+  </tr>
+ </table>
+</form>
+</body>
+</html>
