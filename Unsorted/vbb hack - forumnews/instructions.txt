@@ -1,0 +1,390 @@
+Forum News hack
+by Justin J. "JJR512" Rebbert
+
+This hack adds news headlines to the top of a forum. The headlines come from an XML source. The 
+headlines are links to the articles. Through the admin cp, add or modify forums system, you can 
+select from a list of sources (or select no news for that forum). There is also a master on/off 
+switch for the entire feature, and you can also select how many headlines will appear.
+
+Support for this hack will be provided only within the vbulletin.org forums. Please go to this 
+thread: http://www.vbulletin.org/forum/showthread.php?s=&threadid=41052
+
+This hack involves database modifications. Please make a backup copy of your database prior to 
+installing this hack. The author of this hack assumes no responsibility for anything.
+
+The XML feeds come from Moreover.com. This service is provided free-of-charge only to non-
+commercial, non-profit, educational, or personal/hobby sites, and may not be used on any for-
+profit site. If you operate a for-profit site, you must contact Moreover.com to discuss
+purchasing the rights to the service.
+
+
+
++-------------------------------------------------------------------------------------------------+
+| I. File Modifications                                                                           |
++-------------------------------------------------------------------------------------------------+
+
++-------------------------------------------------------------------------------------------------+
+| In admin/forum.php, on or around Line 93, FIND:                                                 |
++-------------------------------------------------------------------------------------------------+
+  makeforumchooser("parentid",$parentid,-1,"","No one");
++-------------------------------------------------------------------------------------------------+
+
++-------------------------------------------------------------------------------------------------+
+| Below that, ADD:                                                                                |
++-------------------------------------------------------------------------------------------------+
+  maketableheader("Forum News Options");
+  makechoosercode("Newsfeed for this forum","forumnews","forumnews",-1,"None");
++-------------------------------------------------------------------------------------------------+
+
+                                                 +
+                                                +++
+                                                 +
+
++-------------------------------------------------------------------------------------------------+
+| In admin/forum.php, on or around Line 136, FIND:                                                |
++-------------------------------------------------------------------------------------------------+
+                       styleoverride,allowratings,countposts,moderateattach)
++-------------------------------------------------------------------------------------------------+
+
++-------------------------------------------------------------------------------------------------+
+| CHANGE TO:                                                                                      |
++-------------------------------------------------------------------------------------------------+
+                       styleoverride,allowratings,countposts,moderateattach,forumnewsid)
++-------------------------------------------------------------------------------------------------+
+
+                                                 +
+                                                +++
+                                                 +
+
++-------------------------------------------------------------------------------------------------+
+| In admin/forum.php, on or around Line 141, FIND:                                                |
++-------------------------------------------------------------------------------------------------+
+                       '$styleoverride','$allowratings','$countposts','$moderateattach')");
++-------------------------------------------------------------------------------------------------+
+| CHANGE TO:                                                                                      |
++-------------------------------------------------------------------------------------------------+
+                       '$styleoverride','$allowratings','$countposts','$moderateattach','$forumnews')");
++-------------------------------------------------------------------------------------------------+
+
+                                                 +
+                                                +++
+                                                 +
+
++-------------------------------------------------------------------------------------------------+
+| In admin/forum.php, starting on or around Line 186, FIND:                                       |
++-------------------------------------------------------------------------------------------------+
+  } else {
+    makehiddencode("parentid","0");
+  }
++-------------------------------------------------------------------------------------------------+
+
++-------------------------------------------------------------------------------------------------+
+| Below that, ADD:                                                                                |
++-------------------------------------------------------------------------------------------------+
+  maketableheader("Forum News Options");
+  if ($forum[forumnewsid]) {
+    makechoosercode("Newsfeed for this forum","forumnews","forumnews",$forum[forumnewsid]);
+  } else {
+    makechoosercode("Newsfeed for this forum","forumnews","forumnews",-1,"None");
+  }
++-------------------------------------------------------------------------------------------------+
+
+                                                 +
+                                                +++
+                                                 +
+
++-------------------------------------------------------------------------------------------------+
+| In admin/forum.php, on or around Line 259, FIND:                                                |
++-------------------------------------------------------------------------------------------------+
+                     moderateattach='$moderateattach'
++-------------------------------------------------------------------------------------------------+
+| CHANGE TO:                                                                                      |
++-------------------------------------------------------------------------------------------------+
+                     moderateattach='$moderateattach',forumnewsid='$forumnews'
++-------------------------------------------------------------------------------------------------+
+
+                                                 +
+                                                +++
+                                                 +
+
++-------------------------------------------------------------------------------------------------+
+| In admin/functions.php, on or around Line 2279, FIND:                                           |
++-------------------------------------------------------------------------------------------------+
+// ###################### Start doshutdown #######################
++-------------------------------------------------------------------------------------------------+
+
++-------------------------------------------------------------------------------------------------+
+| Above that, ADD:                                                                                |
++-------------------------------------------------------------------------------------------------+
+// ###################### Start forumnews #######################
+class ForumNews {
+  var $url;                  // URL to article
+  var $headline_text;        // headline
+  var $source;               // name of source
+  var $media_type;           // media type
+  var $cluster;              // ?
+  var $tagline;              // usually blank
+  var $document_url;         // URL to source
+  var $harvest_time;         // time article was added to the Moreover database
+  var $access_registration;  // URL for registration or subscription if needed
+  var $access_status;        // reg, registration needed, sub, subscription needed, to access article, or none
+    
+  function ForumNews ($article) {
+    foreach ($article as $k=>$v)
+      $this->$k = $article[$k];
+  }
+}
+
+function forumnewsreadxml($filename) {
+  // read the raw xml
+  $data = implode("",file($filename));
+  $parser = xml_parser_create();
+  xml_parser_set_option($parser,XML_OPTION_CASE_FOLDING,0);
+  xml_parser_set_option($parser,XML_OPTION_SKIP_WHITE,1);
+  xml_parse_into_struct($parser,$data,$values,$tags);
+  xml_parser_free($parser);
+
+  // loop through the articles
+  foreach ($tags as $key=>$val) {
+    if ($key == "article") {
+      $articleranges = $val;
+      for ($i=0; $i < count($articleranges); $i+=2) {
+        $offset = $articleranges[$i] + 1;
+        $len = $articleranges[$i + 1] - $offset;
+        $tdb[] = forumnewsparsexml(array_slice($values, $offset, $len));
+      }
+    } else {
+      continue;
+    }
+  }
+  return $tdb;
+}
+
+function forumnewsparsexml($avalues) {
+  for ($i=0; $i < count($avalues); $i++)
+    $xml[$avalues[$i]["tag"]] = $avalues[$i]["value"];
+  return new ForumNews($xml);
+}
++-------------------------------------------------------------------------------------------------+
+
+                                                 +
+                                                +++
+                                                 +
+
++-------------------------------------------------------------------------------------------------+
+| In forumdisplay.php, on or around Line 26, FIND:                                                |
++-------------------------------------------------------------------------------------------------+
+	$templatesused.='forumdisplay_loggedinuser,forumdisplay_loggedinusers,forumdisplay_adminoptions,forumdisplay_forumslist,forumdisplay_multipagenav_more,forumdisplay_multipagenav_pagenumber,forumdisplay_multipagenav,forumdisplay_gotonew,forumdisplaybit,forumdisplay_threadslist,forumdisplay_nothreads,forumrules,forumdisplay,forumdisplay_sortarrow,forumdisplay_newthreadlink,forumdisplay_announcementsonly,forumhome_moderator';
++-------------------------------------------------------------------------------------------------+
+
++-------------------------------------------------------------------------------------------------+
+| Below that, ADD:                                                                                |
++-------------------------------------------------------------------------------------------------+
+	if ($forumnewsonoff==1) {
+	  $templatesused.=',forumnewsbit_accessreg,forumnewsbit,forumnews';
+	}
++-------------------------------------------------------------------------------------------------+
+
+                                                 +
+                                                +++
+                                                 +
+
++-------------------------------------------------------------------------------------------------+
+| In forumdisplay.php, on or around Line 64, FIND:                                                |
++-------------------------------------------------------------------------------------------------+
+updateuserforum($forumid);
++-------------------------------------------------------------------------------------------------+
+
++-------------------------------------------------------------------------------------------------+
+| Below that, ADD:                                                                                |
++-------------------------------------------------------------------------------------------------+
+// Begin Forum News
+if ($forumnewsonoff==1) {
+  if ($forumnewidssql=$DB_site->query_first("SELECT forumnewsid FROM forum WHERE forumid=$forumid")) {
+    $forumnewssql=$DB_site->query_first("SELECT * FROM forumnews WHERE forumnewsid='$forumnewidssql[forumnewsid]'");
+  }
+
+  if ($forumnewssql) {
+    $source = "http://p.moreover.com/cgi-local/page?".$forumnewssql[xmlsource]."&o=xml";
+    $parsedxml = forumnewsreadxml($source);
+    $forumnews = "";
+    for ($i=0; $i < $forumnewsmaxarticles; $i+=1) {
+      if ($i<($forumnewsmaxarticles/2)) {
+        $forumdisplay[forumnewscolumn]="left";
+      } else {
+        $forumdisplay[forumnewscolumn]="right";
+      }
+      $eacharticle=get_object_vars($parsedxml[$i]);
+      $forumnews[url] = $eacharticle[url];
+      $forumnews[headline] = $eacharticle[headline_text];
+      $forumnews[sourcename] = $eacharticle[source];
+      $forumnews[media] = $eacharticle[media_type];
+      $forumnews[cluster] = $eacharticle[cluster];
+      $forumnews[tagline] = $eacharticle[tagline];
+      $forumnews[sourceurl] = $eacharticle[document_url];
+      $forumnews[time] = $eacharticle[harvest_time];
+      $forumnews[accessreg] = $eacharticle[access_registration];
+      $forumnews[accessstatus] = $eacharticle[access_status];
+      if ($forumnews[accessstatus]!="" and $forumnews[accessreg]!="") {
+        eval("\$forumnewsaccessregbit .= \"".gettemplate("forumnewsbit_accessreg")."\";");
+      } else {
+        $forumnewsaccessregbit = "";
+      }
+      $forumnews[category] = ucwords($forumnewssql[title]);
+      eval("\$forumdisplaynewsbits$forumdisplay[forumnewscolumn] .= \"".gettemplate("forumnewsbit")."\";");
+    }
+
+    eval("\$forumdisplaynews = \"".gettemplate("forumnews")."\";");
+  }
+}
+// End Forum News
++-------------------------------------------------------------------------------------------------+
+
+                                                 +
+                                                +++
+                                                 +
+
++-------------------------------------------------------------------------------------------------+
+| II. Templates                                                                                   |
++-------------------------------------------------------------------------------------------------+
+
++-------------------------------------------------------------------------------------------------+
+| Create a new template named "forumnews":                                                        |
++-------------------------------------------------------------------------------------------------+
+<br>
+<table cellpadding="{tableouterborderwidth}" cellspacing="0" border="0" bgcolor="{tablebordercolor}" {tableouterextra} width="100%" align="center">
+	<tr>
+		<td>
+			<table cellpadding="4" cellspacing="{tableinnerborderwidth}" border="0" {tableinnerextra} width="100%">
+				<tr id="cat">
+					<td class="item" bgcolor="{categorybackcolor}" colspan="2">
+						<b><normalfont color="{categoryfontcolor}">$forumnews[category]</normalfont></b>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="{firstaltcolor}" width="50%" valign="top"><table>
+$forumdisplaynewsbitsleft
+					</table></td>
+					<td bgcolor="{firstaltcolor}" width="50%" valign="top"><table>
+$forumdisplaynewsbitsright
+					</table></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<br>
++-------------------------------------------------------------------------------------------------+
+
+                                                 +
+                                                +++
+                                                 +
+
++-------------------------------------------------------------------------------------------------+
+| Create a new template named "forumnewsbit":                                                     |
++-------------------------------------------------------------------------------------------------+
+						<tr><td width="100%" align="left" valign="top">
+							<b><smallfont><a href="$forumnews[url]" target="_blank">$forumnews[headline]</a></b>&nbsp;&nbsp;From: <a href="$forumnews[sourceurl] target="_blank">$forumnews[sourcename]</a> <font color={timecolor}>$forumnews[time]</font>$forumnewsaccessregbit</smallfont>
+						</td></tr>
++-------------------------------------------------------------------------------------------------+
+
+                                                 +
+                                                +++
+                                                 +
+
++-------------------------------------------------------------------------------------------------+
+| Create a new template named "forumnewsbit_accessreg":                                           |
++-------------------------------------------------------------------------------------------------+
+<br>(NOTE: <a href="$xmlnews[accessreg]" target="_blank">Registration or subscription</a> <i>may</i> be required to access this article.)
++-------------------------------------------------------------------------------------------------+
+
+                                                 +
+                                                +++
+                                                 +
+
++-------------------------------------------------------------------------------------------------+
+| In template "forumdisplay", FIND:                                                               |
++-------------------------------------------------------------------------------------------------+
+</table>
+
+<br>
+
+$forumdisplay[forumslist]
++-------------------------------------------------------------------------------------------------+
+
++-------------------------------------------------------------------------------------------------+
+| Change to:                                                                                      |
++-------------------------------------------------------------------------------------------------+
+</table>
+
+$forumdisplaynews
+
+$forumdisplay[forumslist]
++-------------------------------------------------------------------------------------------------+
+
+                                                 +
+                                                +++
+                                                 +
+
++-------------------------------------------------------------------------------------------------+
+| III. Database Modifications                                                                     |
++-------------------------------------------------------------------------------------------------+
+
++-------------------------------------------------------------------------------------------------+
+| Perform the following modifications on the database (NOTE: make a backup first!):               |
++-------------------------------------------------------------------------------------------------+
+
++-------------------------------------------------------------------------------------------------+
+ALTER TABLE forum ADD forumnewsid SMALLINT(5) UNSIGNED DEFAULT '0' NOT NULL;
++-------------------------------------------------------------------------------------------------+
+
+                                                 +
+                                                +++
+                                                 +
+
++-------------------------------------------------------------------------------------------------+
+CREATE TABLE forumnews (
+  forumnewsid smallint(5) NOT NULL auto_increment,
+  xmlsource char(100) NOT NULL default '0',
+  title char(250) NOT NULL default '0',
+  PRIMARY KEY  (forumnewsid)
+) TYPE=MyISAM;
++-------------------------------------------------------------------------------------------------+
+
+                                                 +
+                                                +++
+                                                 +
+
++-------------------------------------------------------------------------------------------------+
+INSERT INTO settinggroup (settinggroupid,title,displayorder) VALUES (NULL,'Forum News','32');
++-------------------------------------------------------------------------------------------------+
+
+                                                 +
+                                                +++
+                                                 +
+
++-------------------------------------------------------------------------------------------------+
+INSERT INTO setting (settingid,settinggroupid,title,varname,value,description,optioncode,displayorder) VALUES (NULL,32,'Number of Articles','forumnewsmaxarticles','10','Number of news articles to show in the optional Forum News section. NOTE: Must be an even number!','','2');
++-------------------------------------------------------------------------------------------------+
+
+                                                 +
+                                                +++
+                                                 +
+
++-------------------------------------------------------------------------------------------------+
+INSERT INTO setting (settingid,settinggroupid,title,varname,value,description,optioncode,displayorder) VALUES (NULL,32,'Use Forum News','forumnewsonoff','1','Use the optional Forum News feature, which shows news headlines at the top of a forum? (Feeds for individual forums are set in the forum settings; this is a master setting for the feature.)','yesno','1');
++-------------------------------------------------------------------------------------------------+
+
+                                                 +
+                                                +++
+                                                 +
+
++-------------------------------------------------------------------------------------------------+
+Import the file sources.sql into the database.
++-------------------------------------------------------------------------------------------------+
+
+                                                 +
+                                                +++
+                                                 +
+
+That's it!
