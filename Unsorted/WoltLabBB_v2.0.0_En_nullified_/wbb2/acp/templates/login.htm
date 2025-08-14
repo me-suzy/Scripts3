@@ -1,0 +1,50 @@
+<html>
+
+<head>
+<title>Please login.</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/other.css">
+
+<STYLE TYPE="TEXT/CSS">
+INPUT {
+ FONT-SIZE: 12px;
+ FONT-FAMILY: Tahoma,Helvetica;
+ COLOR: #000000;
+ BACKGROUND-COLOR: #CFCFCF;
+ 
+ border-top-width : 1px;
+ border-right-width : 1px;
+ border-bottom-width : 1px;
+ border-left-width : 1px;
+ text-indent : 2px;
+}
+</STYLE>
+
+</head>
+
+<body onload="document.lform.l_username.focus();">
+ <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+ <table align="center">
+  <tr>
+   <td><img src="images/acp-logo.gif"></td>
+  </tr>
+  <tr><form method="post" action="login.php" name="lform">
+   <td><table align="center">
+    <tr>
+     <td><b>Username:</b></td>
+     <td><input type="text" name="l_username" value="$l_username" maxlength="50"></td>
+    </tr>
+    <tr>
+     <td><b>Password:</b></td>
+     <td><input type="password" name="l_password" maxlength="50"></td>
+    </tr>
+   </table></td>
+  </tr>
+  <tr>
+   <td align="right"><input type="submit" value="Login"></td>
+  </tr>
+  </form>
+ </table>
+ <p align="center">WoltLab Burning Board $boardversion - Admin Control Panel</p>
+</body>
+</html>
