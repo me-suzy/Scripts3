@@ -1,0 +1,14 @@
+<SELECT NAME="id">
+	<OPTION VALUE="0"></OPTION>
+	<OPTION VALUE="6">Kategorie A</OPTION>
+	<OPTION VALUE="2">Kategorie B</OPTION>
+	<OPTION VALUE="3">Kategorie C</OPTION>
+	<OPTION VALUE="1">Kategorie D</OPTION>
+	<OPTION VALUE="7">Kategorie E</OPTION>
+	<OPTION VALUE="8">Kategorie F</OPTION>
+	<OPTION VALUE="9">Kategorie G</OPTION>
+	<OPTION VALUE="10">Kategorie H</OPTION>
+	<OPTION VALUE="11">Kategorie I</OPTION>
+	<OPTION VALUE=""></OPTION>
+	<OPTION VALUE="0">Alle Kategorien</OPTION>
+</SELECT>
