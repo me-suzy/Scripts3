@@ -1,0 +1,219 @@
+A
+{
+ text-decoration: underline;
+ color:#334455; 
+}
+
+a:hover
+{
+ color:#334477;
+ background-color:#EEEEEE; 
+}
+
+BODY
+{ 
+ background: #EEEEEE;
+ color: #000000;
+ font: 12px tahoma;
+ scrollbar-base-color: #EEEEEE;
+ scrollbar-arrow-color: #555555;
+} 
+
+SELECT
+{
+ background: #EEEEEE;
+ color: #000000;
+ font-size: 10px;
+}
+
+INPUT
+{
+ background: #EEEEEE;
+ color: #000000;
+ font-size: 10px;
+}
+
+TEXTAREA
+{
+ background: #EEEEEE;
+ color: #000000;
+ font-size: 12px;
+}
+
+P
+{
+ font: 12px tahoma;
+}
+
+TABLE
+{
+ font: 12px verdana;
+}
+
+H2
+{
+ font-size: 22px;
+ font-family: universal, tahoma, universallight;
+ font-weight: normal;
+}
+
+.nav
+{
+ font-family: verdana, arial;
+ font-size: 12px;
+ background: #EEEEEE;
+ border-width: 0px;
+}
+
+.suggest
+{
+ font-family: verdana, arial;
+ font-size: 12px;
+ background: #EEEEEE;
+ border-style: solid;
+ border-width: 1px;
+ border-color: #EEEEEE;
+}
+
+.link
+{
+ font-family: verdana, arial;
+ font-size: 12px;
+ background: #EEEEEE;
+ border-style: solid;
+ border-width: 1px;
+ border-color: #CCCCCC;
+}
+
+.reciplink
+{
+ font-weight: bold;
+}
+
+.category
+{
+ font-family: verdana, arial;
+ font-size: 12px;
+ background: #EEEEEE;
+ border-style: solid;
+ border-width: 1px;
+ border-color: #CCCCCC;
+}
+
+.commentposter
+{
+ font-family: verdana, arial;
+ font-size: 12px;
+ background: #EEEEEE;
+ border-style: solid;
+ border-width: 1px;
+ border-color: #CCCCCC;
+}
+
+.comment
+{
+ padding: 5px;
+ font-family: verdana, arial;
+ font-size: 12px;
+ background: #EEEEEE;
+ border-style: solid;
+ border-width: 1px;
+ border-color: #CCCCCC;
+}
+
+.commentdate
+{
+ font-size: 9px;
+ text-decoration: italics;
+}
+
+.newlinks
+{
+ text-align: left;
+ padding: 2px;
+ border-color: #CCCCCC;
+ border-style: solid;
+ border-width: 1px;
+ margin: 3px;
+}
+
+.details
+{
+ padding: 10px;
+ margin: 10px;
+ font-family: verdana, arial;
+ font-size: 12px;
+ background: #EEEEEE;
+ border-style: solid;
+ border-width: 1px;
+ border-color: #CCCCCC;
+}
+
+.detailsborder
+{
+ padding: 10px;
+ margin: 10px;
+ font-family: verdana, arial;
+ font-size: 12px;
+ border-style: solid;
+ border-width: 1px;
+ border-color: #CCCCCC;
+}
+
+.labels
+{
+ font-weight: bold;
+}
+
+.grouping
+{
+ border-style: solid;
+ border-width: 1px;
+ border-color: #CCCCCC;
+ padding: 5px;
+ margin: 5px;
+}
+
+.title
+{
+ font-size: 14px;
+}
+
+.important
+{
+ font-weight: bold;
+}
+
+.columnheader
+{
+ text-decoration: underline;
+}
+
+.highlighttext
+{
+ background-color: yellow;
+ font-weight: bold;
+}
+
+.adminmenu
+{
+ border-style: solid;
+ border-color: #EEEEEE;
+ border-width: 1;
+ padding: 6px;
+}
+
+.labelscolumn
+{
+ width: 30%;
+}
+
+.optionscolumn
+{
+ width: 70%;
+}
+
+.categoryname
+{
+ font-weight: bold;
+}
