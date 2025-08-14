@@ -1,0 +1,27 @@
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+<form action="threads.php" method="post">
+ <input type="hidden" name="send" value="send">
+ <input type="hidden" name="action" value="$action">
+ <input type="hidden" name="boardid" value="$boardid">
+ <input type="hidden" name="sid" value="$session[hash]">
+ <table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="100%" align="center">
+  <tr class="tblhead">
+   <td colspan=2>Edit Thread</td>
+  </tr>
+  $spindel
+  $spinmove
+  $spinclose
+  <tr class="firstrow">
+   <td align="center" colspan=2><input type="submit" value="Submit"> <input type="reset" value="Reset"></td>
+  </tr>
+ </table>
+</form>
+</body>
+</html>
