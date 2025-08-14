@@ -1,0 +1,260 @@
+<?
+/*
+   Copyright (c), 1999, 2000 - phpauction.org
+   Copyright (c), 2001, 2002 - webauction.de.vu
+
+   Lizenz siehe lizenz.txt & license
+
+   Die neueste Version kostenfrei zum Download unter:
+   http://webauction.de.vu
+
+*/
+
+?>
+
+
+
+
+<SCRIPT Language=Javascript>
+
+
+
+
+
+function SubmitPrevForm(){
+
+
+
+        document.preview.submit();
+
+
+
+}
+
+
+
+
+
+
+
+function ResetPrevForm(){
+
+
+
+        document.preview.reset();
+
+
+
+}
+
+
+
+
+
+</SCRIPT>
+
+
+
+<TABLE WIDTH=765 BGCOLOR="#FFFFFF" BORDER=0>
+
+<TR>
+
+<TD>
+
+
+
+
+
+<FORM NAME=preview ACTION="sell.php" METHOD="post">
+
+<INPUT TYPE=HIDDEN NAME="SESSION_ID" VALUE="<? print $sessionIDU; ?>">
+        <INPUT TYPE=HIDDEN NAME="action" VALUE="second">
+
+<INPUT TYPE=HIDDEN NAME="suggested_category" VALUE="<? print $suggested_category; ?>">
+        <input type=HIDDEN name="nick" value="<? print $nick; ?>">
+        <input type=HIDDEN name="password" value="<? print $password; ?>">
+        <input type=HIDDEN name="category" value="<? print $cat_id_new; ?>">
+        <input type=HIDDEN name="cat_id" value="<? print $cat_id_new; ?>">
+        <TABLE WIDTH=100% BORDER="0" CELLPADDING="5" ALIGN=CENTER CELLSPACING=0>
+          <TR> 
+            <TD> </TD>
+            <TD WIDTH="486"> 
+              <? print $std_font.$MSG_046; ?>
+              <BR>
+              <? print $err_font; ?>
+              <B> 
+              <? print $TPL_error; ?>
+              </B><BR>
+            </TD>
+          </TR>
+          <TR> 
+            <TD WIDTH="260" VALIGN="top" ALIGN="right"> 
+              <? print $std_font; ?>
+              <B> 
+              <? print $MSG_017; ?>
+              </B> </TD>
+            <TD WIDTH="486"> 
+              <? print $std_font; ?>
+              <? print $TPL_title_value; ?>
+            </TD>
+          </TR>
+          <TR> 
+            <TD WIDTH="204" VALIGN="top" ALIGN="right"> 
+              <? print $std_font; ?>
+              <B> 
+              <? print $MSG_018; ?>
+              </B> </TD>
+            <TD WIDTH="486"> 
+              <? print $std_font; ?>
+              <? print $TPL_description_shown_value; ?>
+            </TD>
+          </TR>
+          <TR> 
+            <TD WIDTH="204" VALIGN="top" ALIGN="right"> 
+              <? print $std_font; ?>
+              <B> 
+              <? print $MSG_019; ?>
+              </B> </TD>
+            <TD WIDTH="486"> 
+              <? print $std_font; ?>
+              <? print $TPL_pict_URL_value; ?>
+            </TD>
+          </TR>
+          <TR> 
+            <TD WIDTH="204" VALIGN="top" ALIGN="right"> 
+              <? print $std_font; ?>
+              <B> 
+              <? print $MSG_020; ?>
+              </B> </TD>
+            <TD WIDTH="486"> 
+              <? print $std_font; ?>
+              <? print $TPL_minimum_bid_value; ?>
+            </TD>
+          </TR>
+          <TR> 
+            <TD WIDTH="204"  VALIGN="top" ALIGN="right"> 
+              <? print $std_font; ?>
+              <B> 
+              <? print $MSG_021; ?>
+              </B> </TD>
+            <TD WIDTH="486"> 
+              <? print $std_font; ?>
+              <? print $TPL_reserve_price_displayed; ?>
+            </TD>
+          </TR>
+          <TR> 
+            <TD WIDTH="204"  VALIGN="top" ALIGN="right"> 
+              <? print $std_font; ?>
+              <B> 
+              <? print $MSG_022; ?>
+              </B> </TD>
+            <TD WIDTH="486"> 
+              <? print $std_font; ?>
+              <? print $TPL_durations_list; ?>
+            </TD>
+          </TR>
+          <TR> 
+            <TD WIDTH="204"  VALIGN="top" ALIGN="right"> 
+              <? print $std_font; ?>
+              <B> 
+              <? print $MSG_261; ?>
+              </B> </TD>
+            <TD WIDTH="486"> 
+              <? print $std_font; ?>
+              <? print $TPL_auction_type; ?>
+            </TD>
+          </TR>
+          <TR> 
+            <TD WIDTH="204"  VALIGN="top" ALIGN="right"> 
+              <? print $std_font; ?>
+              <B> 
+              <? print $MSG_023; ?>
+              </B> </TD>
+            <TD WIDTH="486"> 
+              <? print $std_font; ?>
+              <? print $TPL_countries_list; ?>
+            </TD>
+          </TR>
+          <TR> 
+            <TD WIDTH="204" VALIGN="top" ALIGN="right"> 
+              <? print $std_font; ?>
+              <B> 
+              <? print $MSG_024; ?>
+              </B> </TD>
+            <TD WIDTH="486"> 
+              <? print $std_font; ?>
+              <? print $TPL_location_zip; ?>
+            </TD>
+          </TR>
+          <TR> 
+            <TD WIDTH="204" VALIGN="top" ALIGN="right"> 
+              <? print $std_font; ?>
+              <B> 
+              <? print $MSG_025; ?>
+              </B> </TD>
+            <TD WIDTH="486"> 
+              <? print $std_font; ?>
+              <? print $TPL_shipping_value; ?>
+              <? print $TPL_international_value; ?>
+            </TD>
+          </TR>
+          <TR> 
+            <TD WIDTH="204" VALIGN="top" ALIGN="right"> 
+              <? print $std_font; ?>
+              <B> 
+              <? print $MSG_026; ?>
+              </B> </TD>
+            <TD WIDTH="486"> 
+              <? print $std_font; ?>
+              <? print $TPL_payment_methods; ?>
+            </TD>
+          </TR>
+          <TR> 
+            <TD WIDTH="204" VALIGN="top" ALIGN="right"> 
+              <? print $std_font; ?>
+              <B> 
+              <? print $MSG_027; ?>
+              </B> </TD>
+            <TD WIDTH="486"> 
+              <? print $std_font; ?>
+              <? print $category_name; ?>
+            </TD>
+          </TR>
+          <TR> 
+            <TD WIDTH="204" VALIGN="top" ALIGN="right"> 
+              <? print $std_font; ?>
+            </TD>
+            <TD WIDTH="486"> 
+              <? print $std_font.$$MSG_044; ?>
+              <BR>
+              <? print $MSG_049; ?>
+              <A TARGET="_blank" HREF="register.php?SESSION_ID=<? print $sessionIDU; ?>"> 
+              <? print $MSG_263; ?>
+              </A><BR>
+              <? print $MSG_264; ?>
+              <A HREF='sell.php?mode=recall&SESSION_ID=<? print $sessionIDU; ?>'> 
+              <? print $MSG_265; ?>
+              </A> 
+              <? print $MSG_266; ?>
+              <BR>
+            </TD>
+          </TR>
+          <TR> 
+            <TD WIDTH="204">&nbsp;</TD>
+            <TD WIDTH="486"> 
+              <INPUT TYPE=submit NAME="" VALUE="Auktion endgültig freigeben!">
+            </TD>
+          </TR>
+        </TABLE>
+
+</FORM>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+
+
+
