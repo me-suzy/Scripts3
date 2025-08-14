@@ -1,0 +1,53 @@
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+
+<script language="javascript">
+ <!--
+  function select_all(name) {
+   for (i=0;i<document.bbform.length;i++) {
+    temp=document.bbform.elements[i].name;
+    pos=temp.lastIndexOf('[');
+    fieldname=temp.substr(0,pos);
+    if(fieldname==name) document.bbform.elements[i].checked = true;    
+   }
+  }
+ //-->
+</script>
+
+</head>
+
+<body>
+
+<form method="post" action="group.php" name="bbform">
+<input type="hidden" name="send" value="send">
+<input type="hidden" name="action" value="$action">
+<input type="hidden" name="groupid" value="$groupid">
+<input type="hidden" name="sid" value="$session[hash]">
+ <table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="100%" align="center">
+  <tr class="tblhead">
+   <td colspan="$maxcolspan2">Forum Rights for User Group: "$group[title]"</td>
+  </tr>
+  <tr class="tblsection">
+   <td align="center"><a href="javascript:select_all('boardpermission')">1</a></td>
+   <td align="center"><a href="javascript:select_all('startpermission')">2</a></td>
+   <td align="center"><a href="javascript:select_all('replypermission')">3</a></td>
+   <td colspan="$maxcolspan">Forum</td>
+  </tr>
+  $boardlist
+  <tr class="tblsection">
+   <td colspan="$maxcolspan2">
+   *1: Read
+   *2: Write - Threads
+   *3: Write - Replies
+   </td>
+  </tr>
+  <tr class="secondrow">
+   <td colspan="$maxcolspan2" align="center"><input type="submit" value="Submit"> <input type="reset" value="Reset"></td>
+  </tr>
+ </table>
+</form>
+</body>
+</html>
