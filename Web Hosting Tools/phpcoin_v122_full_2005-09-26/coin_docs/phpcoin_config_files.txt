@@ -1,0 +1,402 @@
+
+/**************************************************************
+ * File: 		Documentation: Configuration Parameters
+ * Author:	Mike Lansberry (http://phpcoin.com)
+ * Date:		2004-01-04 (V1.2.0)
+ * Changed: 	Stephen M. Kitching, 2005-03-03 (v1.2.2)
+ * License:	DO NOT Remove this text block. See /coin_docs/license.txt
+ *			Copyright © 2003-2004-2005 phpCOIN.com
+ * Schema:	See sql file for schema reference
+ * Notes:
+ *			- configuration parameter descriptions
+**************************************************************/
+
+
+/**************************************************************
+ * Introduction: phpCOIN configuration
+**************************************************************/
+This document covers the configuration parameters for the
+phpCOIN package.
+
+Please review this prior to installation.
+
+
+/**************************************************************
+ * Important stuff
+**************************************************************/
+Some items to resolve right away:
+	- Tab-spaces for all files is:	4-char (spaces / tab)
+	  (may need to adjust editor program preferences)
+
+	- Unix type text file. All files are created and edited
+	  as "unix text" files. Be careful of editors saving in
+	  DOS, or MAC type files- always use unix.
+	  (may need to adjust editor program preferences)
+
+	- Where to install?
+	  Make the decision to either run phpcoin as a website
+	  or as an addon to existing website. Basically you need
+	  to decide on a folder or directory to plop the files in.
+
+	- This is a hobby project, go easy on me :)
+
+
+
+/**************************************************************
+ * Most config vars have been moved to the Parameters table
+ * so please see file: phpcoin_parameters.txt
+**************************************************************/
+
+/**************************************************************
+ * Configuration: (db,package,theme)
+**************************************************************/
+Important Parameter File Editing:
+- Configuration Files to be reviewed:
+
+	- File: <site_root><phpcoin_dir>CONFIG.PHP
+		- Typical database parameters
+		- May require other changes, should review.
+		- Various site dependent variables
+
+	- File: <site_root><phpcoin_dir><theme>CONFIG.PHP
+		- Only requires changes if making theme changes.
+		- Theme related parameters: styles, layouts, etc.
+
+
+/**************************************************************
+ * Configuration File: config.php
+**************************************************************/
+- File: <site_root><phpcoin_dir>config.php
+	- Database configuration file
+	- Other parameters and paths
+
+- Parameter Descriptions:
+
+	/****************************************************
+	 * Database Configuration Array
+	****************************************************/
+	- Database Server (type) (only "mysql")
+		- Default "mysql"- do not change
+			$_DBCFG['dbms'] 			= "mysql";
+
+	- Database Host
+		- Default "localhost"- should not need to change
+			$_DBCFG['dbhost'] 			= "localhost";
+
+	- Database User
+		- The database user name
+			$_DBCFG['dbuname'] 			= "username";
+
+	- Database Password
+		- The database user password
+			$_DBCFG['dbpass'] 			= "userpassword";
+
+	- Database Name
+		- The database name
+			$_DBCFG['dbname'] 			= "databasename";
+
+	- Database Table Prefix
+		- The database table prefix to prefix table names.
+			$_DBCFG['table_prefix'] 	= "phpcoin_";
+
+
+	/****************************************************
+	 * Package Configuration Variables
+	****************************************************/
+	- Define theme related settings
+		- Theme name must be a valid existing directory.
+
+		- Hardcode Package Theme- used if DB theme enable = 0
+
+			$_CCFG[_HC_PKG_THEME]			= 'earthtone';
+
+
+		- Enable Database Theme Selection from list below
+
+			$_CCFG[_DB_PKG_THEME_ENABLE]	= 1;
+
+
+		- Page header meta tag for doc type / encoding
+
+			$_CCFG[_PKG_DOC_META_TAG]		= '<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">';
+
+
+	- Define laguage file related settings
+		- Language name must be a valid existing directory.
+
+		- Hardcode Language- used if DB language enable = 0
+
+			$_CCFG[_HC_PKG_LANG]			= 'lang_english';
+
+
+		- Enable Database Language Selection from list below
+
+			$_CCFG[_DB_PKG_LANG_ENABLE]		= 1;
+
+
+	- Offline flag to initiate redirect in core load to the
+	  index_offline.html file. (1=offline,0=normal)
+
+		$_CCFG['_PKG_MODE_OFFLINE'] 	= 1;
+
+
+	- Misc String for Code comparisons
+		- String for "Active" Status comparison.
+		- Must match  $_CCFG['CL_STATUS'][0] in the lang_config.php file
+
+			$_CCFG['_PKG_STR_ACTIVE'] 		= 'active';
+
+
+	- Parse from user input array- gets stripped out of anonymous user input strings.
+	  Replaces with a **** string.
+	  (to add just copy line and change value)
+
+			$_CCFG['PARSE_USER_ENTRY'][]	= '<a';
+			$_CCFG['PARSE_USER_ENTRY'][]	= 'href';
+			$_CCFG['PARSE_USER_ENTRY'][]	= '<img';
+			$_CCFG['PARSE_USER_ENTRY'][]	= '<script';
+			$_CCFG['PARSE_USER_ENTRY'][]	= '<iframe';
+			$_CCFG['PARSE_USER_ENTRY'][]	= 'javascript';
+			$_CCFG['PARSE_USER_ENTRY'][]	= 'vbscript';
+
+
+/**************************************************************
+ * Configuration File Language Related: lang_config.php
+**************************************************************/
+- File: <site_root><phpcoin_dir><lang_dir>lang_config.php
+	- Package configuration file- language related.
+
+- Parameter Descriptions:
+
+	/****************************************************
+	 * Package Configuration Variables
+	****************************************************/
+	> Start System Status Strings- do not edit array except for text for language
+	- Clients Status Select List Params (array string stored)
+		$_CCFG['CL_STATUS'][1]		= 'active';					# For Active Clients
+		$_CCFG['CL_STATUS'][2]		= 'banned';					# For Banned Clients
+		$_CCFG['CL_STATUS'][3]		= 'inactive';				# For In-Active Clients
+		$_CCFG['CL_STATUS'][4]		= 'pending';				# For New Clients (pending)
+		$_CCFG['CL_STATUS'][5]		= 'void';					# For Void Clients
+
+	- Domain Status Select List Params (array position stored)
+		$_CCFG['DOM_STATUS'][1]		= 'n/a';
+		$_CCFG['DOM_STATUS'][2]		= 'Hosted';
+		$_CCFG['DOM_STATUS'][3]		= 'Parked';
+		$_CCFG['DOM_STATUS'][4]		= 'Other';
+
+	- Domain Type Select List Params (array position stored)
+		$_CCFG['DOM_TYPE'][1]		= 'n/a';
+		$_CCFG['DOM_TYPE'][2]		= 'Domain- Hosted';
+		$_CCFG['DOM_TYPE'][3]		= 'Domain- Parked';
+		$_CCFG['DOM_TYPE'][4]		= 'Domain- Redirect';
+		$_CCFG['DOM_TYPE'][5]		= 'SubDomain- Hosted';
+		$_CCFG['DOM_TYPE'][6]		= 'SubDomain- Redirect';
+		$_CCFG['DOM_TYPE'][7]		= 'Other';
+
+	- Help Desk Status Select List Params (array string stored)
+		$_CCFG['HD_TT_STATUS'][1]	= 'Answered';				# For Answered
+		$_CCFG['HD_TT_STATUS'][2]	= 'Awaiting Client';		# For Awaiting Client
+		$_CCFG['HD_TT_STATUS'][3]	= 'Awaiting Support';		# For Awaiting Support
+		$_CCFG['HD_TT_STATUS'][4]	= 'In Progress';			# For In-Progress
+		$_CCFG['HD_TT_STATUS'][5]	= 'Unanswered';				# For Unanswered
+
+	- Invoices Status Select List Params (array string stored)
+		$_CCFG['INV_STATUS'][1]		= 'due';					# For Due (sent and waiting) Invoices
+		$_CCFG['INV_STATUS'][2]		= 'draft';					# For Draft Version of Invoice
+		$_CCFG['INV_STATUS'][3]		= 'overdue';				# For Overdue Invoices
+		$_CCFG['INV_STATUS'][4]		= 'paid';					# For Paid Invoices
+		$_CCFG['INV_STATUS'][5]		= 'pending';				# For Pending (To Be Sent) Invoices
+		$_CCFG['INV_STATUS'][6]		= 'void';					# For Void Invoices
+
+	- Invoices Delivery Method Select List Params (array string stored)
+		$_CCFG['INV_DELIVERY'][1]	= 'email';					# For eMail delivery
+		$_CCFG['INV_DELIVERY'][2]	= 'mail';					# For Mail delivery
+		$_CCFG['INV_DELIVERY'][3]	= 'online';					# For Online delivery
+
+	- Invoices Billing Cycle Select List Params (must correspond to params values below )
+		$_CCFG['INVC_BILL_CYCLE'][0]		= 'Weekly';			# For Weekly
+		$_CCFG['INVC_BILL_CYCLE'][1]		= 'Monthly';		# For Monthly
+		$_CCFG['INVC_BILL_CYCLE'][2]		= 'Quarterly';		# For Quarterly
+		$_CCFG['INVC_BILL_CYCLE'][3]		= 'Semi-Annual';	# For Semi-Annual
+		$_CCFG['INVC_BILL_CYCLE'][4]		= 'Annual';			# For Annual
+		$_CCFG['INVC_BILL_CYCLE'][5]		= 'Other';			# For Other
+
+	- Invoices Billing Cycle Params Values (must correspond to list params above)
+		$_CCFG['INVC_BILL_CYCLE_VAL'][0]	= 7;				# Only one in days
+		$_CCFG['INVC_BILL_CYCLE_VAL'][1]	= 1;				# Months
+		$_CCFG['INVC_BILL_CYCLE_VAL'][2]	= 3;				# Months
+		$_CCFG['INVC_BILL_CYCLE_VAL'][3]	= 6;				# Months
+		$_CCFG['INVC_BILL_CYCLE_VAL'][4]	= 12;				# Months
+		$_CCFG['INVC_BILL_CYCLE_VAL'][5]	= 24;				# Months
+
+	- Invoices Transaction Type Select List Params
+		$_CCFG['INV_TRANS_TYPE'][0]			= 'Debit';			# For Debit
+		$_CCFG['INV_TRANS_TYPE'][1]			= 'Credit';			# For Credit
+		$_CCFG['INV_TRANS_TYPE'][2]			= 'Payment';		# For Payment
+
+	- Invoices Transaction Origin Select List Params
+		$_CCFG['INV_TRANS_ORIGIN'][0]		= 'Invoice';		# For Invoice
+		$_CCFG['INV_TRANS_ORIGIN'][1]		= 'Vendor';
+		$_CCFG['INV_TRANS_ORIGIN'][2]		= 'Credit Card';
+		$_CCFG['INV_TRANS_ORIGIN'][3]		= 'Check';
+		$_CCFG['INV_TRANS_ORIGIN'][4]		= 'Money Order';
+		$_CCFG['INV_TRANS_ORIGIN'][5]		= 'Other';
+
+	- Orders Status Select List Params (array string stored)
+		$_CCFG['ORD_STATUS'][0]		= 'activated';				# For Activated Orders
+		$_CCFG['ORD_STATUS'][1]		= 'cancelled';				# For Cancelled Orders
+		$_CCFG['ORD_STATUS'][2]		= 'confirmed';				# For Confirmed Orders
+		$_CCFG['ORD_STATUS'][3]		= 'duplicate';				# For Duplicate Orders
+		$_CCFG['ORD_STATUS'][4]		= 'pending';				# For New Orders (pending)
+		$_CCFG['ORD_STATUS'][5]		= 'void';					# For Void Orders
+
+	- Orders Domain Action Select List Params (array position stored)
+		$_CCFG['ORD_DOM_ACT'][0]	= 'Existing Domain';		# For Existing Domain
+		$_CCFG['ORD_DOM_ACT'][1]	= 'New Domain From Here';	# For New Domains From Here
+		$_CCFG['ORD_DOM_ACT'][2]	= 'New Domain From Others';	# For New Domains From Others
+		$_CCFG['ORD_DOM_ACT'][3]	= 'Transferring Domain';	# For Transferring Domains
+		$_CCFG['ORD_DOM_ACT'][4]	= 'Other- Need Help';		# For Other- Need Help
+
+	- Order Form Optional Field Label Text Params
+		$_CCFG['ORD_LABEL_OPTFLD_01']	= 'Option 1:';			# Optional Field 1
+		$_CCFG['ORD_LABEL_OPTFLD_02']	= 'Option 2:';			# Optional Field 2
+		$_CCFG['ORD_LABEL_OPTFLD_03']	= 'Option 3:';			# Optional Field 3
+		$_CCFG['ORD_LABEL_OPTFLD_04']	= 'Option 4:';			# Optional Field 4
+		$_CCFG['ORD_LABEL_OPTFLD_05']	= 'Option 5:';			# Optional Field 5
+
+	- Order Form COR Optional Field Label Text Params
+		$_CCFG['COR_LABEL_OPTFLD_01']	= 'Option 1:';			# Optional Field 1
+		$_CCFG['COR_LABEL_OPTFLD_02']	= 'Option 2:';			# Optional Field 2
+		$_CCFG['COR_LABEL_OPTFLD_03']	= 'Option 3:';			# Optional Field 3
+		$_CCFG['COR_LABEL_OPTFLD_04']	= 'Option 4:';			# Optional Field 4
+		$_CCFG['COR_LABEL_OPTFLD_05']	= 'Option 5:';			# Optional Field 5
+
+	> End System Status Strings- do not edit array except for text for language
+	---------------------------------------------------------------------------
+	> Begin Parameters that can be modified (add/delete/edit array and text)
+
+	- Invoices Default Terms String (inserted on new if enabled)
+
+		$_CCFG['INV_TERMS_DEF_LINE_01']	= 'Payment required to be posted / received by closing of due date.';
+		$_CCFG['INV_TERMS_DEF_LINE_01']	.= '';
+		$_CCFG['INV_TERMS_DEF_LINE_01']	.= '';
+
+		$_CCFG['INV_TERMS_DEF_LINE_02']	= 'All late payments will be subjected to a 2% late charge.';
+		$_CCFG['INV_TERMS_DEF_LINE_02']	.= '';
+		$_CCFG['INV_TERMS_DEF_LINE_02']	.= '';
+
+		$_CCFG['INV_TERMS_DEF_LINE_03']	= '';
+		$_CCFG['INV_TERMS_DEF_LINE_03']	.= '';
+		$_CCFG['INV_TERMS_DEF_LINE_03']	.= '';
+
+	- Help Desk Priority Select List Params
+	  (to add just copy line and change value- array NOT sorted for list)
+
+		$_CCFG['HD_TT_PRIORITY'][]	= 'Urgent';
+		$_CCFG['HD_TT_PRIORITY'][]	= 'High Priority';
+		$_CCFG['HD_TT_PRIORITY'][]	= 'Medium Priority';
+		$_CCFG['HD_TT_PRIORITY'][]	= 'Low Priority';
+
+
+	- Help Desk Category Select List Params
+	  (to add just copy line and change value- array sorted for list)
+
+		$_CCFG['HD_TT_CATEGORY'][]	= 'Billing';
+		$_CCFG['HD_TT_CATEGORY'][]	= 'Database Issue';
+		$_CCFG['HD_TT_CATEGORY'][]	= 'Email Issue';
+		$_CCFG['HD_TT_CATEGORY'][]	= 'Feedback';
+		$_CCFG['HD_TT_CATEGORY'][]	= 'FTP Issue';
+		$_CCFG['HD_TT_CATEGORY'][]	= 'General';
+		$_CCFG['HD_TT_CATEGORY'][]	= 'Other Issues';
+		$_CCFG['HD_TT_CATEGORY'][]	= 'Script(s) Issue';
+		$_CCFG['HD_TT_CATEGORY'][]	= 'Server Issue';
+		$_CCFG['HD_TT_CATEGORY'][]	= 'Sub-Domains';
+
+
+	- COR Request Type Select List Params
+	  (to add just copy line and change value- array sorted for list)
+		$_CCFG['COR_REQ_TYPE'][]	= 'Email Only Services';
+		$_CCFG['COR_REQ_TYPE'][]	= 'Hosting Services';
+		$_CCFG['COR_REQ_TYPE'][]	= 'Other';
+		$_CCFG['COR_REQ_TYPE'][]	= 'Webmaster Services';
+
+
+	- COR Option Billing Cycle Select List Params
+	  (to add just copy line and change value- array NOT sorted for list)
+		$_CCFG['COR_OPT_BILL_CYCLE'][]	= 'Monthly';
+		$_CCFG['COR_OPT_BILL_CYCLE'][]	= 'Quarterly';
+		$_CCFG['COR_OPT_BILL_CYCLE'][]	= 'Semi-Annual';
+		$_CCFG['COR_OPT_BILL_CYCLE'][]	= 'Annual';
+
+
+	- COR Option Payment Select List Params
+	  (to add just copy line and change value- array sorted for list)
+
+		$_CCFG['COR_OPT_PAYMENT'][]	= 'Check';
+		$_CCFG['COR_OPT_PAYMENT'][]	= 'Money-Order';
+		$_CCFG['COR_OPT_PAYMENT'][]	= 'Wire Transfer';
+
+	> End Parameters that can be modified (add/delete/edit array and text)
+
+
+/**************************************************************
+ * Theme Configuration File: config.php
+**************************************************************/
+- File: <site_root><phpcoin_dir><theme>config.php
+	- Theme configuration file
+	- Only requires changes if making theme changes.
+	- Theme related parameters: styles, layouts, etc.
+
+- Parameter Descriptions:
+
+	/****************************************************
+	 * Theme Configuration Variables
+	****************************************************/
+	Body Tag Parameters (body class doesn't always work)
+	- Tag- Body Background Color (purple="#9933cc")
+
+			$_TCFG['_TAG_BODY_BACK_COLOR']		= "#00AFAF";
+
+	- Tag- Body Link Color
+
+			$_TCFG['_TAG_BODY_LINK_COLOR']		= "#0000FF";
+
+	- Tag- Body Hover Color
+
+			$_TCFG['_TAG_BODY_HOVER_COLOR']		= "#0000FF";
+
+	- Tag- Body Visited Link Color
+
+			$_TCFG['_TAG_BODY_VLINK_COLOR']		= "#FF0000";
+
+	- Tag- Body Active Link Color
+
+			$_TCFG['_TAG_BODY_ALINK_COLOR']		= "#DC143C";
+
+
+	Table Related Parameters
+	- Tag- Table Border Color
+
+			$_TCFG['_TAG_TABLE_BRDR_COLOR']		= "#000000";
+
+	- Tag- Table Row (TR) / Cell (TD) Background Color (border)
+		- Produces block borders, and therefore color
+
+			$_TCFG['_TAG_TRTD_BKGRND_COLOR']	= "#000000";
+
+
+	- Buttons / Img File URLS
+		- Just to build common text- do not edit
+			$_PARM_PREFIX			= '<img src="'.$_CCFG['_PKG_URL_THEME_IMGS'].'nav/';
+			$_PARM_SUFFIX			= ' border="0" align="middle">';
+
+	- Buttons / Img File URLS typical for all theme images
+		- Image URL for: Typical
+		- In middle of link is actual file name 'cl_menu_usr_admin.gif'
+
+			$_TCFG['_IMG_MU_ADMIN_B']	= $_PARM_PREFIX.'cl_menu_usr_admin.gif'.'" alt="'.$_LANG['_THEME']['ALT_IMG_MU_ADMIN_B'].'"'.$_PARM_SUFFIX;
+
+		- Need only change filename to use a different button.
+		- Button ALT text is language file linked.
+		- To place button anywhere, only need $_TCFG['_IMG_MU_ADMIN_B']
