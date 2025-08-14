@@ -1,0 +1,440 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.73 [en] (X11; U; Linux 2.2.12-20 i686) [Netscape]">
+   <meta name="Author" content="Alex Hart">
+   <title>Download Alex Hart's email program</title>
+</head>
+<body bgcolor="#FFFFFF">
+
+<center>
+<h1>
+aMail</h1></center>
+
+<center>
+<h1>
+Alex Hart's Web Based email Program</h1></center>
+
+<center>
+<h1>
+Download Page</h1></center>
+WELCOME TO VERSION 2.
+<br>IF YOU ARE UPGRADING FROM VERSION 1.X, PLEASE READ THE NOTE BELOW ABOUT
+UPGRADING TO VERSION 2.
+<p>IF YOU GET MY PROGRAM WORKING I WOULD LOVE TO HEAR ABOUT IT.
+<br>I APPRECIATE COMMENTS AND BUG REPORTS TOO.
+<p>I WILL BE TRAVELING THROUGH JULY AND WILL HAVE VERY LITTLE TIME TO REPLY
+TO EMAILS.
+<br>PLEASE BE PATIENT IF YOU NEED A RESPONSE TO AN EMAIL.
+<br>&nbsp;
+<br>&nbsp;
+<br>
+<center>
+<p>THIS PAGE DESCRIBES HOW TO DOWNLOAD AND INSTALL A <b>COMPLETELY FREE,</b>
+<br><b>FEATURE RICH, SIMPLE TO USE</b> WEB-BASED EMAIL PROGRAM.</center>
+
+<p>mail the author at <a href="mailto:aMail@althepal.com">aMail@althepal.com</a>
+<p>1. <a href="#comments">Author's Comments</a>
+<br>2. <a href="#name">Program Name</a>
+<br>3. <a href="#require">Requirements to use this program.</a>
+<br>4. <a href="#BROWSER COMPATIBILITY">Browser and Platform Compatibility</a>
+<br>5. <a href="#features">Features</a>
+<br>6. <a href="#CHANGES IN VERSION 2">Changes in Version 2</a>
+<br>7. <a href="#UPGRADING">Upgrading to Version 2</a>
+<br>8. <a href="#nonfeatures">Non-Features</a>
+<br>9. <a href="#SECURITY">Security</a>
+<br>10. <a href="#TEST ACCOUNT">Test Account</a>
+<br>10. <a href="#dirset">Directory Setup</a>
+<br>11. <a href="#customize">Program Customization</a>
+<br>12. <a href="#userset">User Setup</a>
+<br>13. <a href="#screenshots">Screen Shots</a>
+<br>14. <a href="#download">Download the thing</a>
+<p><a NAME="comments"></a><b>AUTHOR'S COMMENTS</b>
+<br>This program was written by me, Alex Hart, and is freely available.&nbsp;
+I programmed it entirely in Perl, on a Linux system.&nbsp; Most of the
+testing of this program was done in a Linux environment on Netscape, V
+4.7?.&nbsp; It is by no means bug-free, but I fix 'em as they come.&nbsp;
+I'm also sure there are some formatting problems on some systems with some
+browsers.&nbsp; There's only so much I can do, for God's sake. The html
+uses a lot of javascript, and I know some of this breaks down in Windows,
+especially IE.&nbsp; If anyone can fix some of the javascript to work better,
+please send it me the fixes.
+<p>This program was written to be a web based replacement for Outlook Express
+or Netscape Mail. As you can see from the <a href="#screenshots">screen
+shots</a>, aMail looks more like a typical desktop mail application than
+do most web applications.&nbsp; On the main screen there are actually 4
+different frames with information, all tied together with javascript.These
+scripts do not hand out email addresses or do any other account setup other
+than that needed to check and store user mail.&nbsp; Users need to already
+have a POP server account and SMTP server account to read or send mail
+through aMail.&nbsp; <i>I</i> do not need to hand out user accounts so
+my scripts cannot do it.
+<p>I wrote this program to improve my Perl skills and to have a good, web
+based email account.&nbsp; Email is something I use every day, and nothing
+out there looked good enough.&nbsp;&nbsp; I wanted a web based email account
+without ads and without a size limit.&nbsp; I try to put in the exact features
+I'd like to use in my mail program, both features I've seen in other mail
+programs, and some I have never seen.&nbsp; This is a feature rich mail
+program, but there are limitations to web applications.
+<p>This is a work in progress, and probably will be for some time to come.&nbsp;
+I will update the download area every so often.
+<p>If you have any question, comments, suggestions, compliments, hate mail,
+etc. that you would like to send me, you can reach me at
+<br><a href="mailto:aMail@althepal.com">aMail@althepal.com</a>
+<p><a NAME="name"></a><b>PROGRAM NAME</b>
+<br>I'm not sure if this program has a name or not.&nbsp; I initially called
+it aMail, since my name starts with A, and it sounds good.&nbsp; I make
+many mentions in my code to amail.&nbsp; If there is something else out
+there called amail, this has nothing to do with it.&nbsp; If another amail
+entity does exist and this has any legal ramifications, you may want to
+change the references to it, or at least take all mention of it off any
+web pages that are displayed (i.e. The aMail Login screen).
+<p><a NAME="require"></a><b>REQUIREMENTS</b>
+<br>What you need to use this program.
+<p>1. A server, with perl.&nbsp; I use Perl 5.004, or so.&nbsp; Also a
+few perl modules, not in the standard release are needed.&nbsp; Net::POP3,
+MIME::Base64, and possibly others.&nbsp; I think these should do it though.&nbsp;
+Go to cpan.org (or maybe cpan.net), to get any module you need.
+<p>2. A web server that runs scripts, such as Apache.&nbsp; If you have
+access to the error log files, you might have an easier time setting up.
+<p>3. Users who already have a POP and SMTP server they can use for email.
+<p>4. Some Linux skills (minor) to set up the directories and customize
+the program.&nbsp; Really you only need to create directories and edit
+one file.
+<p>5. If you have a Linux box with Netscape 4.7X, I have high confidence
+that all the functions will work and the screen will look like I meant
+it to.&nbsp; But most recent version of browsers on most platforms should
+be sufficient to use most of the features and see enough.
+<p>6. Perl skills, only if you'd like to fix bugs,&nbsp; add features,
+etc.&nbsp; Really, you do not need to know perl to use this mail program.
+<p><a NAME="BROWSER COMPATIBILITY"></a><b>BROWSER&nbsp; and PLATFORM COMPATIBILITY</b>
+<p>This email program was written and tested on a Linux system (Red Hat
+6.1) with Netscape 4.7?.&nbsp; There has been very little testing done
+on other systems.&nbsp; I imagine that the perl code will run the same
+on different platforms and generate the same html for the user, but there
+may be differences that I do not know about.&nbsp; Please let me know if
+you run into problems on other systems.
+<p>The position and placement of the frames looks great on my monitor using
+Linux.&nbsp; It doesn't look as good when I run windows98 with Netscape
+or IE. I guess it's optimized for me and my computer.&nbsp; If you think
+some of the frames are the wrong size, the sizes can be changed by editing
+the file <i>amail.cgi</i>.
+<p>There is a lot of javascript used in the HTML.&nbsp; I try to make everything
+cross-browser compatible, but I can't easily test it all out.&nbsp; In
+the future I will work more on testing it out on different systems.&nbsp;
+Right now, I know that the HTML totally fails on very old browsers.&nbsp;
+I don't know where the cutoff is. I have successfully used it on IE5 and
+Netscape for windows (4.?) but the placement looks worse and some javascript
+fails.&nbsp; If you find javascript errors and know how to fix them, please
+let me know.
+<p><a NAME="features"></a><b>FEATURES</b>
+<br>Following is a partial list of the features in this program.&nbsp;
+The number of features is constantly growing, and many features not present
+in this list are featured in the program.
+<br>o Check email through POP3 account
+<br>o Send email through SMTP account
+<br>o View text and image attachments on web page
+<br>o Save attachments to disk or to web site
+<br>o Add attachments to outgoing mail from upload directory or another
+email
+<br>o Folders :
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; See number of messages,
+number unread, folder size in kB.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Add, rename, delete folders
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Delete all messages from
+folder, mark all messages in folder as read
+<br>o Search : By folder, time, from, subject, body
+<br>o Upload files : Personal area for managing incoming and outgoing attachments
+<br>o Forward or Reply to messages with some or all attachments
+<br>o Resend message without altering, just enter email address.
+<br>o Address Book with Nick Name field for email address shortcuts
+<br>o Add to address book from incoming mail addresses (including other
+recipients.)
+<br>o Add addresses to mail from address book
+<br>o Make Groups from contact list or from an email
+<br>o Change personal info or password
+<br>o Security :
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Password access
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Session time-out
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Log out
+<br>o User creates own account
+<p><a NAME="CHANGES IN VERSION 2"></a><b>CHANGES IN VERSION 2</b>
+<br>Version 2 is a pretty extensive rework of Version 1.&nbsp; Much of
+the time spent on Version 2 was spent cleaning up code and reducing the
+amount of information transfer. <b>All user files are identical except
+for address_book.</b> I'm not that good at keeping track of all the changes,
+but here are a couple of them, in no particular order:
+<br>1. Most javascript moved from frequently accessed pages to static pages.&nbsp;
+This reduces file transmission considerably.
+<br>2. Added groups to the address book, and several ways of creating and
+editing groups.
+<br>3. Added index number to contacts in address_book.&nbsp; This allows
+greater flexibility in dealing with contacts.&nbsp; The <i>address_book</i>
+file has a different format from Version 1 to Version 2.&nbsp; This needs
+to be changed if upgrading. See next session for info on upgrading.
+<br>4. Only show 50 messages at a time in folder.&nbsp; This should reduce
+the bandwidth somewhat.&nbsp; Reworked next message and previous message
+to accommodate this smoothly across screens.
+<br>5. Fixed several bugs which made emails display incorrectly.
+<br>6. Improved New Window option to display the email in a new window.&nbsp;
+This allows greater viewing area for message.
+<br>7. Generally improved communication between windows through javascript.
+<br>8. Added sort functions to folder contents.
+<br>9. Implemented different message filename convention. The filenames
+no longer contain the date.&nbsp; The names are now shorter, sent files
+begin with '1', and received messages begin with 2.&nbsp; I figure this
+will eventually be used to color code different messages.&nbsp; Especially
+when aMail handles multiple email accounts, this will come in handy.&nbsp;
+I'll probably write a script later to update the <i>folders</i> file and
+the message filenames to reflect the new naming convention on existing
+aMail accounts.
+<br>10.&nbsp; Implemented file locks to make sure there are no accidents
+on the <i>folders</i> file.&nbsp; This is a really important file.&nbsp;
+If it is lost, all the emails will still be in the user directory, but
+you'll need to somehow recreate a new <i>folders</i> file.
+<br>11. Made sure that all links in mail message open in new window (or
+at least most of them).
+<p><a NAME="UPGRADING"></a><b>UPGRADING TO VERSION 2, FROM VERSION 1.X</b>
+<br>This only affects aMail users who have already installed Version 1.X
+and have users who have set up an accounts.
+<p>The <i>address_book</i> for users is a different format from Version
+1 to Version 2.&nbsp; The change is that a unique index numbers is added
+to each contact in the book.&nbsp; This is probably something I should
+have had from the beginning, but didn't.&nbsp; The top line is the last
+index number to be assigned, and should be incremented for each new entry.
+I also added groups, but this shouldn't cause any problem. <a href="dir_struct.html#address">See
+<i>address_book</i>
+info</a>
+<p>I wrote a small script which should fix all user <i>address_book</i>
+files by adding an index number to each contact and adding a line at the
+top of each <i>address_book</i> file with the highest index number added.&nbsp;
+Simply put this script into you User area, the directory where all user
+directories are stored, and run this script (add_bkV2.pl).&nbsp; It should
+find all <i>address_book</i> files and alter them.
+<br><a href="download/add_bkV2.pl">download address_book fix script</a>
+<p><a NAME="nonfeatures"></a><b>NON-FEATURES</b>
+<br>This program does not provide email addresses. In other words, when
+users set up an account, they are expected to already have email access.
+I would think it would be easy to add something on during the account setup
+procedure to set up an email account too, but i don't need it.
+<p>No spell check.
+<p>Not very good browser support.
+<p><a NAME="SECURITY"></a><b>SECURITY</b>
+<br>I am not a security expert, and I don't have much to hide, but I did
+try to make this as secure as possible.&nbsp; I make no guarantee how crack
+proof this program is.&nbsp; If you have any suggestions on how to increase
+security, or notice any flaws, please let me know.
+<p>All information sent to or by aMail can be seen by anyone who cares
+enough to look really hard.&nbsp; There is no encryption done by this program
+when sending or receiving information, including any passwords sent to
+the server.&nbsp; Passwords are never sent in the html, so it is very hard
+to accidentally save a page with a password in it.
+<p>The user's aMail password is stored encrypted on the server in the user's
+<i>pass</i>
+file.&nbsp; This is a very minor security precaution, since if someone
+can read the <i>pass</i> file, they can surely read any email stored in
+that directory as well.&nbsp; However, if the user directories are only
+readable and writable by the user name that the web server runs on, no
+one but the web server should be able to read the user's <i>pass</i> file,
+or any of the user's info.&nbsp; The user directories should also not be
+web accessible.
+<p>Each time a user logs in, a session ID is created and is stored in the
+user's <i>sessID</i> file. A new login will overwrite the old <i>sessID</i>
+file and the old ID will not work.&nbsp; The <i>sessID</i> file is removed
+on a logout. Every script that accesses a user's area first checks that
+a proper user name and session ID is given. This info is passed from script
+to script through forms. Each time the session ID is checked, a time check
+is done to see if the session is longer than the $time_til_expire variable
+specified in Amail_common.pm. If the session has lasted longer than the
+number of seconds specified, the session ID will not work.
+<p>The user_info.db file stores all user inputted information except for
+user name and password.&nbsp; This includes pop server and password information.&nbsp;
+This information can be misused and should be protected from prying eyes.
+<p>I took precautions wherever I knew enough to do so on user input.&nbsp;
+User names and passwords are limited to certain characters but most other
+stuff is pretty liberal. I'm really not sure what sort of input would screw
+up the server, but who knows.&nbsp; I think that server side includes are
+not generally run for script generated html, which, if true, should greatly
+limit the damage users can do.
+<p><b>Protecting from unwanted users</b>: If you do not want anyone to
+be able to open an account without permission, there are two options.&nbsp;
+What I did is to put the new_acocunt.cgi script in a new directory which
+is password protected. The login.cgi script needs to point to this new
+directory.&nbsp; Directories can be made password protected by placing
+a .htaccess in the directory. New users will need to know the directory
+password to open a account. Once a user has the password, they can set
+up as many accounts as they wish.
+<br>The other option, which is more secure than the first, is to manually
+run new_account.cgi for each new user. This gives the site operator total
+control over new account.
+<p><a NAME="TEST ACCOUNT"></a><b>TEST ACCOUNT</b>
+<br>If the user name given is althepal, then no changes can be made to
+the <i>folders</i> file for this account except for marking messages as
+read. This was done to allow people to view aMail in operation without
+installing it and without creating an account. The name "althepal" is hardcoded
+in each of the scripts.
+<p><a NAME="dirset"></a><b>DIRECTORY SETUP</b>
+<br>You will need to create three directories to install this email system.&nbsp;
+When the tar file is untarred, the program files will be in ./program ,
+the images in ./images , and the initial user files in ./initialize_user
+.&nbsp; The names you give the directories do not matter.
+<p><i>Program Directory</i> : Used to hold all perl programs.&nbsp; Any
+file ending in cgi or pm need to be placed in here.&nbsp; This directory
+needs web access and needs to be executable through the web.&nbsp; Depending
+on your setup, you may need to place it under your cgi-bin
+<br>directory.
+<p><i>Mail Users Directory</i> : Used to hold all users data.&nbsp; THERE
+SHOULD BE NO WEB ACCESS TO THESE DIRECTORIES OR ANYONE CAN LOOK AT ANYONE'S
+MAIL. The only files you need in this directory is <i>folders.start</i>
+and <i>999999</i>. Each user gets one directory with same name as the user
+name under this directory.&nbsp; The structure necessary for a new user
+is created in the new user process.
+<p><i>Image Directory </i>: All icons, backgrounds, etc. in here.&nbsp;
+Anything ending in .gif or .jpg.
+<p><a href="dir_struct.html">See detailed directory structure and file
+descriptions for more information.</a>
+<p><a NAME="customize"></a><b>PROGRAM CUSTOMIZATION</b>
+<br>The only file that needs to be altered to get these programs to work
+is Amail_common.pm.
+<br>There are five variables that should be changed to customize the script
+to a particular server.
+<p>o File location
+<br>Amail_common.pm makes mention of the user directory and URLs for the
+program directory and the image directory. The user directory variable
+should be a file path on your system, but the references to the URLs should
+be in form of "http://your.domain/directory". Change the two URLs and one
+directory to the ones used on your system.
+<p>the following 3 variables in Amail_common.pm need to be set for your
+environment
+<br>$dir_URL --- set to the url that the perl code is in
+<br>$db_path --- set to the directory path that the user files are in
+<br>$img_URL --- set to the url that the images are in
+<p>o Session time out
+<br>The number of seconds until a session expires can be set with the $time_til_expire
+variable.&nbsp; I have mine set to a high number, so I never really time
+out.
+<p>o Server time
+<br>$time_off_from_NY should be set to the number of seconds behind New
+York time that the server running this script is on.&nbsp; Each user can
+then set their local time in the user_info section.&nbsp; Currently, this
+program can only handle those users in the continental US, who observe
+daylight savings time.&nbsp; It would be a fairly trivial matter to adjust
+the program to fit more areas.
+<p><b>Note for international users</b>: This program was written mainly
+for people in the continental US.&nbsp; For this reason, users are asked
+to enter their time zone, but are only given 4 choices.&nbsp; To workaround
+this, set $time_off_from_NY to 0 and set the user to Eastern Time.&nbsp;
+Then the user will be on the same time as the server.
+<p><a NAME="userset"></a><b>USER SETUP</b>
+<br>Setting up an account is straight forward and entirely done by the
+user.&nbsp; First a user selects a user name and password using the new_accounts.cgi
+script, which can be accessed through the login page. The new_account.cgi
+script adds 2 directories for each user, a user directory named after the
+user and an uploads area beneath this directory. Inside the user directory
+should be the following files : folders, pass, address_book. To see detailed
+information on these files, click the following link.
+<br><a href="dir_struct.html">See more information on user files</a>
+<p>Once the user has an account, the user can login in through the login
+page.&nbsp; Once in the webmail program, the user should add server and
+other information which will be used to receive and send mail.&nbsp; This
+info added by clicking on the user_info button at the top of the screen.&nbsp;
+If everything is working properly the user should be able to access mail.
+<br>&nbsp;
+<p><a NAME="screenshots"></a><b>SCREEN SHOTS</b>
+<br>These screen shots are reduced by a factor of .75.&nbsp; Everything
+is actually much clearer.
+<p><a href="#main screen">Main Screen</a>
+<br><a href="#compose a message">Compose Message</a>
+<br><a href="#address book.">Address Book</a>
+<br><a href="#folder information">Folders</a>
+<br><a href="#uploaded">Personal Disk Space</a>
+<br><a href="#search screen.">Search Screen</a>
+<p>This is the&nbsp;<a NAME="main screen"></a>main amail screen.
+<br>The top tine is the table of contents, or TOC.cgi.
+<br>The orange box on the left, with the Go, Move, and Delete buttons is
+the function.cgi script.&nbsp; The functions work on the window to the
+right, if one or more messages are selected, or the message on the bottom
+otherwise.
+<br>The large window immediately under the table of contents contains brief
+information on all email messages in the folder being shown.
+<br>The bottom half of the window is used to read messages.
+<br><img SRC="images_screenshots/amail_main.jpg" ALT="main amail page" NOSAVE height=408 width=599>
+<p>This is the screen used to&nbsp;<a NAME="compose a message"></a>compose
+a message.&nbsp; Attachments are added using the form on the bottom.&nbsp;
+The link to the address book allows users to insert email addresses from
+their address book.
+<br><img SRC="images_screenshots/amail_compose.jpg" ALT="amail compose screen" NOSAVE height=366 width=493>
+<p>This is the&nbsp;<a NAME="address book."></a>address book.&nbsp; The
+contacts are shown on the top, the groups on the bottom.
+<br><img SRC="images_screenshots/amail_address.jpg" NOSAVE height=316 width=418>
+<p>This is the&nbsp;<a NAME="folder information"></a>folder information
+for the user.
+<br><img SRC="images_screenshots/amail_folders.jpg" NOSAVE height=286 width=343>
+<p>This screen shows the users files that have been&nbsp;<a NAME="uploaded"></a>uploaded
+to the server.
+<br><img SRC="images_screenshots/amail_drive.jpg" NOSAVE height=208 width=415>
+<br>&nbsp;
+<p>This is the&nbsp;<a NAME="search screen."></a>search screen.
+<br><img SRC="images_screenshots/amail_search.jpg" NOSAVE height=354 width=493>
+<br>&nbsp;
+<p><a NAME="download"></a><b>DOWNLOAD IT</b>
+<p>OK, you know enough about it, and now you want it, don't you?&nbsp;
+Well, I'm not going to force anyone here, but I'd love some information
+about the people who are using this program.&nbsp; I promise I won't use
+this info for anything evil.&nbsp; If you like, I'll email you with updates.&nbsp;
+If not, you will probably never hear from me again.
+<br>&nbsp;
+<p>THIS IS ALL OPTIONAL, BUT I'D LIKE IT
+<br>If you've downloaded my email program before, I'd still appreciate
+your email.&nbsp;<form METHOD='POST' action="get_amail.cgi">
+<table BORDER=0 >
+<tr>
+<td ALIGN=RIGHT>Name:</td>
+
+<td><input TYPE='text' NAME='name' SIZE=30></td>
+</tr>
+
+<tr>
+<td ALIGN=RIGHT>email:</td>
+
+<td><input TYPE='text' NAME='email' SIZE=30></td>
+</tr>
+
+<tr>
+<td COLSPAN="2"><input TYPE='checkbox' NAME='optin' VALUE=1>Check this
+box to receive updates on my mail program.</td>
+</tr>
+
+<tr>
+<td ALIGN=RIGHT>Country:</td>
+
+<td><input TYPE='text' NAME='country' SIZE=30></td>
+</tr>
+
+<tr>
+<td ALIGN=RIGHT>City/State:</td>
+
+<td><input TYPE='text' NAME='city_state' SIZE=30></td>
+</tr>
+
+<tr>
+<td ALIGN=RIGHT>How did you hear
+<br>about this?</td>
+
+<td><input TYPE='text' NAME='how_hear' SIZE=30></td>
+</tr>
+
+<tr>
+<td ALIGN=RIGHT>Planned Use:</td>
+
+<td><textarea NAME='usage' rows=10 cols=60 wrap='virtual'></textarea></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER COLSPAN="2"><input TYPE='submit' VALUE='Get Program'></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
