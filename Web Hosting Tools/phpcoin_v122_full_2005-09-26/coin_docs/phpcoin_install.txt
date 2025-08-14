@@ -1,0 +1,157 @@
+
+/**************************************************************
+ * File: 		Documentation: Installation
+ * Author:	Mike Lansberry (http://phpcoin.com)
+ * Date:		2004-01-04 (V1.2.0)
+ * Changed: 	Stephen M. Kitching, 2005-03-03 (v1.2.2)
+ * License:	DO NOT Remove this text block. See /coin_docs/license.txt
+ *			Copyright © 2003-2004-2005 phpCOIN.com
+ * Schema:	See sql file for schema reference
+ * Notes:
+ *			- installation instructions
+**************************************************************/
+
+/**************************************************************
+ * Important stuff
+**************************************************************/
+Some items to resolve right away:
+	- Tab-spaces for all files is:	4-char (spaces / tab)
+	  (may need to adjust editor program preferences)
+
+	- Unix type text file. All files are created and edited
+	  as "unix text" files. Be careful of editors saving in
+	  DOS, or MAC type files- always use unix.
+	  (may need to adjust editor program preferences)
+
+	- Where to install?
+	  Make the decision to either run phpcoin as a website
+	  or as an addon to existing website. Basically you need
+	  to decide on a folder or directory to plop the files in.
+
+	- Backup your database before giving me a whack at it.
+
+
+/**************************************************************
+ * Installation- Short method (feeling lucky)
+**************************************************************/
+- Download zip file, extract files.
+
+- Edit:
+	config.php		- misc site parameters and database settings
+
+- Upload everything to desired folder.
+
+- Make sure required database and user are created.
+
+- Run: http://www.your-site.com/phpcoin_dir/coin_setup/setup.php
+	OR just browse to your website and phpCOIN
+	will automatically redirect you to the setup scripts
+	(requires database password for performing)
+
+- Go to site and perform configuration.
+	Admin URL:		http://your-domain.com/phpcoin_dir/coin_admin.php
+	Default Admin Name:	webmaster
+	Default Password:	your database password entered for install
+
+
+/**************************************************************
+ * Installation- Normal method (better choice)
+**************************************************************/
+- Download latest zip file from website and when prompted,
+  click "save as" to save file to your computer (desktop OK).
+
+  	Typically filename will be like: phpcoin_Vxxx_YYYY-MM-DD.zip
+
+- Using WinZip (or equal) extract the contents of the zip file
+  to a temporary folder on your hard-drive, maintaining path info.
+  The extracted result should be in a folder, named something like:
+
+  	Typically extracted folder will be: phpcoin
+
+- Decide where to install:
+	- As a WebSite:
+		ex. httpdocs/ or public_html/
+
+	- As an addon to existing website:
+		ex. httpdocs/phpcoin/ or public_html/phpcoin/
+
+- Important Parameter File Editing:
+  SEE FOLLOWING SECTION on required configuration file settings.
+
+  	- Make all required configuration settings
+
+- Upload files to your server as follows:
+	- ASCII (all files except images)
+	- BIN	(all image files- .gif, .jpg, etc.)
+
+	As a website:
+	- Copy all files in the phpcoin folder, note- all files
+	  in folder not actual folder, to the root folder of your
+		ex. httpdocs/ or public_html/
+
+	As an addon to a website:
+	- Copy the entire phpcoin folder to the root folder of your
+	  website (ex. httpdocs, public_html) and rename if desired.
+		ex. httpdocs/phpcoin/ or public_html/phpcoin/
+
+- Set permissions- none special, all must be readable and
+  executable as required by your host.
+
+- Make sure required database and user are created.
+
+- Run: http://www.your-site.com/phpcoin_dir/coin_setup/setup.php
+	OR just browse to your website and phpCOIN
+	will automatically redirect you to the setup scripts
+	(requires database password for performing)
+
+- Go to site and perform configuration.
+	Admin URL:		http://your-domain.com/phpcoin_dir/coin_admin.php
+	Default Admin Name:	webmaster
+	Default Password:	your database password entered
+
+- See additional documents for more info on phpCOIN
+
+
+/**************************************************************
+ * Configuration: (pre-installatiion)
+**************************************************************/
+Important Parameter File Editing:
+
+- Required Pre-Installation Parameter Descriptions:
+  The following configuration items need to be set / verified
+  prior to installation.
+
+	- File: <site_root>CONFIG.PHP
+		- Database configuration file
+		- Other website parameters:
+
+		/****************************************************
+		 * Database Configuration Array
+		****************************************************/
+		- Database Server (type) (only "mysql")
+		- Default "mysql"- do not change
+			$_DBCFG['dbms'] 			= "mysql";
+
+		- Database Host
+		- Default "localhost"- should not need to change
+			$_DBCFG['dbhost'] 			= "localhost";
+
+		- Database User
+		- The database user name
+		- Change "username" to your correct value
+			$_DBCFG['dbuname'] 			= "username";
+
+		- Database Password
+		- The database user password
+		- Change "userpassword" to your correct value
+			$_DBCFG['dbpass'] 			= "userpassword";
+
+		- Database Name
+		- The database name
+		- Change "databasename" to your correct value
+			$_DBCFG['dbname'] 			= "databasename";
+
+		- Database Table Prefix
+		- The database table prefix to prefix table names.
+			$_DBCFG['table_prefix'] 	= "phpcoin_";
+
