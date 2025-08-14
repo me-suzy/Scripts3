@@ -1,0 +1,54 @@
+/**************************************************************
+ * File: 		Documentation: phpCOIN What's New
+ * Author:	Stephen M. Kitching (http://phpcoin.com)
+ * Date:		2005-03-08 (v1.2.2)
+ * License:	DO NOT Remove this text block. See /coin_docs/license.txt
+ *			Copyright © 2003-2004-2005 phpCOIN.com
+**************************************************************/
+
+
+XSS ENHANCEMENTS:
+=================
+phpCOIN has undergone radical surgery to eliminate as much as possible
+any xss or sql injection attacks.  This even includes exploits that do
+no harm, but make it appear to the newbie that phpCOIN may be hackable.
+
+
+
+DIRECTORY STRUCTURE CHANGES:
+============================
+The odd web-host servers sites from directories that have /admin in
+the path.  This caused problems with phpCOIN's automatic "where am I"
+code, so to eliminate this issue all phpCOIN sub-directories are now
+prefixed with /coin_
+
+
+
+FILE DOWNLOAD FUNCTIONALITY INCLUDED:
+=====================================
+The 'downloads' add-on is now incorporated into the base phpCOIN package
+
+The URL for displaying downloads is mod.php?mod=downloads.
+
+Downloads will be grouped by "group" on the downloads page.  An admin
+control panel is included so you can change the information in the
+database for the downloads.  To get the files onto the web-server, you
+must still use an FTP client because the Control Panel does not include
+upload capabilities.
+
+
+
+
+SELF-CONTAINED ADD-ONS:
+=======================
+Self-contained add-ons such as htmlarea (WYSIWYG siteinfo/email editing)
+must be placed in the coin_addons directory. To install add-ons to phpCOIN
+such as htmlarea:
+
+	1) Create a folder within coin_addons called /htmlarea
+
+	2) Unzip the contents of the htmlarea download into the folder created
+	   above.
+
+	3) phpCOIN will automatically recognize that this add-on is installed,
+	   and use it where appropriate.
