@@ -1,0 +1,10 @@
+First i've altered the configuration block on top of the following 3 files:
+sc_addhit.php
+sc_clear.php
+sc_information.php
+
+I've gathered the needed data in a file called config.php so you have to insert the data only once and not 3 times, it's also a centralised place for all the configuration data.
+Then this file is included in every php page which needs it.
+Furthermore i also made a php script from the sql database form, for people not having phpmyadmin and also this greatly improves installation, just edit config.txt, upload everything and go to the page maketables.php and you're ready ...
+
+Ghost
