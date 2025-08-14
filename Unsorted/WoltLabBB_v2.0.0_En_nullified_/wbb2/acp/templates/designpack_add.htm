@@ -1,0 +1,207 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+<script language="JavaScript">
+ <!--
+  function changecolor(theelement,color) {
+   theelement.style.backgroundColor = color;
+  }
+ //-->
+</script>
+</head>
+
+<body>
+<form method="post" action="designpack.php" name="bbform">
+<input type="hidden" name="send" value="send">
+<input type="hidden" name="action" value="$action">
+<input type="hidden" name="sid" value="$session[hash]">
+<table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="95%" align="center">
+  <tr class="tblhead">
+   <td colspan=3>Add Design Pack</td>
+  </tr>
+  <tr class="secondrow">
+   <td width="50%"><b>Name of the Design Pack:</b></td>
+   <td colspan=2 width="50%"><input type="text" name="subvariablepackname"></td>
+  </tr>
+  <tr class="tblsection">
+   <td colspan=3>General Settings</td>
+  </tr>
+  <tr class="firstrow">
+   <td width="50%"><b>Background Color:</b></td>
+   <td width="50%"><input type="text" name="bgcolor" onchange="changecolor(this.form.previewbgcolor,this.value)"></td>
+   <td><input type="button" id="previewbgcolor" value="          " DISABLED></td>
+  </tr>
+  <tr class="secondrow">
+   <td width="50%"><b>Text Color:</b></td>
+   <td width="50%"><input type="text" name="textcolor" onchange="changecolor(this.form.previewtextcolor,this.value)"></td>
+   <td><input type="button" id="previewtextcolor" value="          " DISABLED></td>
+  </tr>
+  <tr class="firstrow">
+   <td width="50%"><b>Additional Attributes for the BODY Tag:</b></td>
+   <td colspan=2 width="50%"><input type="text" name="bodytags"></td>
+  </tr>
+  <tr class="tblsection">
+   <td colspan=3>Outer Table</td>
+  </tr>
+  <tr class="secondrow">
+   <td width="50%"><b>Border Color:</b></td>
+   <td width="50%"><input type="text" name="tableoutbordercolor" onchange="changecolor(this.form.previewtableoutbordercolor,this.value)"></td>
+   <td><input type="button" id="previewtableoutbordercolor" value="          " DISABLED></td>
+  </tr>
+  <tr class="firstrow">
+   <td width="50%"><b>Background Color:</b></td>
+   <td width="50%"><input type="text" name="mainbgcolor" onchange="changecolor(this.form.previewmainbgcolor,this.value)"></td>
+   <td><input type="button" id="previewmainbgcolor" value="          " DISABLED></td>
+  </tr>
+  <tr class="secondrow">
+   <td width="50%"><b>Table Width:</b></td>
+   <td colspan=2 width="50%"><input type="text" name="tableoutwidth" value=""></td>
+  </tr>
+  <tr class="tblsection">
+   <td colspan=3>Inner Tables</td>
+  </tr>
+  <tr class="secondrow">
+   <td width="50%"><b>Border Color:</b></td>
+   <td width="50%"><input type="text" name="tableinbordercolor" onchange="changecolor(this.form.previewtableinbordercolor,this.value)"></td>
+   <td><input type="button" id="previewtableinbordercolor" value="          " DISABLED></td>
+  </tr>
+  <tr class="firstrow">
+   <td width="50%"><b>Title Table Color:</b></td>
+   <td width="50%"><input type="text" name="tabletitlecolor" onchange="changecolor(this.form.previewtabletitlecolor,this.value)"></td>
+   <td><input type="button" id="previewtabletitlecolor" value="          " DISABLED></td>
+  </tr>
+  <tr class="secondrow">
+   <td width="50%"><b>Category Table Color:</b></td>
+   <td width="50%"><input type="text" name="tablecatcolor" onchange="changecolor(this.form.previewtablecatcolor,this.value)"></td>
+   <td><input type="button" id="previewtablecatcolor" value="          " DISABLED></td>
+  </tr>
+  <tr class="firstrow">
+   <td width="50%"><b>Alternating Table Color 1:</b></td>
+   <td width="50%"><input type="text" name="tablecolora" onchange="changecolor(this.form.previewtablecolora,this.value)"></td>
+   <td><input type="button" id="previewtablecolora" value="          " DISABLED></td>
+  </tr>
+  <tr class="secondrow">
+   <td width="50%"><b>Alternating Table Color 2:</b></td>
+   <td width="50%"><input type="text" name="tablecolorb" onchange="changecolor(this.form.previewtablecolorb,this.value)"></td>
+   <td><input type="button" id="previewtablecolorb" value="          " DISABLED></td>
+  </tr>
+  <tr class="firstrow">
+   <td width="50%"><b>Tables Width:</b></td>
+   <td colspan=2 width="50%"><input type="text" name="tableinwidth"></td>
+  </tr>
+  <tr class="secondrow">
+   <td width="50%"><b>In-Posts Tables Color:</b><br>(quotes, codes, php codes, attachments, etc)</td>
+   <td width="50%"><input type="text" name="inposttablecolor" onchange="changecolor(this.form.previewinposttablecolor,this.value)"></td>
+   <td><input type="button" id="previewinposttablecolor" value="          " DISABLED></td>
+  </tr>
+  <tr class="tblsection">
+   <td colspan=3>Normal Text Settings</td>
+  </tr>
+  <tr class="firstrow">
+   <td width="50%"><b>Font:</b></td>
+   <td colspan=2 width="50%"><input type="text" name="normalfont"></td>
+  </tr>
+  <tr class="secondrow">
+   <td width="50%"><b>Size:</b></td>
+   <td colspan=2 width="50%"><input type="text" name="normalfontsize"></td>
+  </tr>
+  <tr class="firstrow">
+   <td width="50%"><b>Additional Attributes for the FONT Tag:</b></td>
+   <td colspan=2 width="50%"><input type="text" name="normalfonttags"></td>
+  </tr>
+   <tr class="tblsection">
+   <td colspan=3>Small Text Settings</td>
+  </tr>
+  <tr class="secondrow">
+   <td width="50%"><b>Font:</b></td>
+   <td colspan=2 width="50%"><input type="text" name="smallfont"></td>
+  </tr>
+  <tr class="firstrow">
+   <td width="50%"><b>Size:</b></td>
+   <td colspan=2 width="50%"><input type="text" name="smallfontsize"></td>
+  </tr>
+  <tr class="secondrow">
+   <td width="50%"><b>Additional Attributes for the FONT Tag:</b></td>
+   <td colspan=2 width="50%"><input type="text" name="smallfonttags"></td>
+  </tr>
+  </tr>
+   <tr class="tblsection">
+   <td colspan=3>Other Text Colors</td>
+  </tr>
+  <tr class="firstrow">
+   <td width="50%"><b>Title Table Font Color:</b></td>
+   <td width="50%"><input type="text" name="fontcolorsecond" onchange="changecolor(this.form.previewfontcolorsecond,this.value)"></td>
+   <td><input type="button" id="previewfontcolorsecond" value="          " DISABLED></td>
+  </tr>
+  <tr class="secondrow">
+   <td width="50%"><b>Category Table Font Color:</b></td>
+   <td width="50%"><input type="text" name="fontcolorthird" onchange="changecolor(this.form.previewfontcolorthird,this.value)"></td>
+   <td><input type="button" id="previewfontcolorthird" value="          " DISABLED></td>
+  </tr>
+  <tr class="firstrow">
+   <td width="50%"><b>Time Font Color:</b></td>
+   <td width="50%"><input type="text" name="timecolor" onchange="changecolor(this.form.previewtimecolor,this.value)"></td>
+   <td><input type="button" id="previewtimecolor" value="          " DISABLED></td>
+  </tr>
+  <tr class="secondrow">
+   <td width="50%"><b>Thread Prefixes Font Color:</b>(poll, important, announcement, moved, etc)</td>
+   <td width="50%"><input type="text" name="prefixcolor" onchange="changecolor(this.form.previewprefixcolor,this.value)"></td>
+   <td><input type="button" id="previewprefixcolor" value="          " DISABLED></td>
+  </tr>
+  </tr>
+   <tr class="tblsection">
+   <td colspan=3>Highlighting</td>
+  </tr>
+  <tr class="firstrow">
+   <td width="50%"><b>Start Tag:</b></td>
+   <td colspan=2 width="50%"><input type="text" name="hilightstart"></td>
+  </tr>
+  <tr class="secondrow">
+   <td width="50%"><b>End Tag:</b></td>
+   <td colspan=2 width="50%"><input type="text" name="hilightend"></td>
+  </tr>
+  </tr>
+   <tr class="tblsection">
+   <td colspan=3>Images</td>
+  </tr>
+  <tr class="firstrow">
+   <td width="50%"><b>Images Folder:</b></td>
+   <td colspan=2 width="50%"><input type="text" name="imagefolder" value="images"></td>
+  </tr>
+  <tr class="secondrow">
+   <td width="50%"><b>URL of your Logo:</b></td>
+   <td colspan=2 width="50%"><input type="text" name="imagelogo"></td>
+  </tr>
+  <tr class="firstrow">
+   <td width="50%"><b>URL of your background image:</b></td>
+   <td colspan=2 width="50%"><input type="text" name="imageback"></td>
+  </tr>
+  </tr>
+   <tr class="tblsection">
+   <td colspan=3>Cascading Style Sheets (CSS)</td>
+  </tr>
+  <tr class="secondrow">
+   <td width="50%"><b>URL of your CSS File:</b></td>
+   <td colspan=2 width="50%"><input type="text" name="cssfile"></td>
+  </tr>
+  <tr class="firstrow">
+   <td width="50%" valign="top"><b>CSS Code:</b><br>CSS is added to every pages of the forums in addition or instead of the CSS file (above).</td>
+   <td colspan=2 width="50%"><textarea rows="10" cols="55" wrap="virtual" name="css"></textarea></td>
+  </tr>
+  </tr>
+   <tr class="tblsection">
+   <td colspan=3>Other Options</td>
+  </tr>
+  <tr class="secondrow">
+   <td width="50%"><b>DOCTYPE for the pages:</b></td>
+   <td colspan=2 width="50%"><input type="text" size=40 name="doctype" value="<!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;>"></td>
+  </tr>
+  <tr class="firstrow">
+   <td colspan=3 align="center"><input type="submit" value="Submit"> <input type="reset" value="Reset"></td>
+  </tr>
+ </table>
+</form>
+</body>
+</html>
