@@ -1,0 +1,45 @@
+body {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: normal; color: #000000; text-align: center; background-color: #FFFFFF
+
+        scrollbar-face-color: #eeeeee;
+
+        scrollbar-highlight-color: #FFFFFF;
+
+        scrollbar-shadow-color: #e0e0e0;
+
+        scrollbar-3dlight-color: #efefef;
+
+        scrollbar-arrow-color:  #999999;
+
+        scrollbar-track-color: #EFEFEF;
+
+        scrollbar-darkshadow-color: #cccccc;
+}
+h1 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; color: #C1620B; text-align: center}
+.tborder {  border: #AAAAAA; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px}
+td {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: normal; color: #000000}
+.tdheader {  font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; color: #FCE4CF}
+a.searchmenu{font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #ffffff; text-decoration: underline}
+a.searchmenu:hover{font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #FFFFFF; text-decoration: none}
+a.topmenu{}
+a.topmenu:hover{}
+a.category{font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #000000; text-decoration: none}
+a.category:hover{font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #000000; text-decoration: underline}
+
+a.subcategory{font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: normal; color: #934A09; text-decoration: underline}
+a.subcategory:hover{font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: normal; color: #000000; text-decoration: none}
+
+
+a{font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #000066}
+a:hover{font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #000000; text-decoration: none}.tdlight {  color: #FCE4CF}
+a.sr{font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: normal; color: #934A09}
+a.sr:hover{font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: normal; color: #934A09; text-decoration: none}.tdlight {  color: #FCE4CF}
+
+.blackheader {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #000000}
+.linedelim {  font-size: 3px; background-image: url(../images/linedelim.gif); background-repeat: repeat-x}
+.emptydelim {  font-size: 3px}
+.brownheader {  font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #000000}
+
+input { font-family: "Tahoma"; border-color: #666666 #999999 #999999 #666666; border-style: inset; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; font-size: 11px; color: #333333;}
+
+textarea { font-family: "Tahoma"; border-color: #666666 #999999 #999999 #666666; border-style: inset; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; font-size: 11px; color: #333333;}
+
