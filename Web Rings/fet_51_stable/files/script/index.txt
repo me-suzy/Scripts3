@@ -1,0 +1,152 @@
+<?php
+
+// Main settings file
+require 'settings.php';
+
+// Including service classes
+require 'includes/services.inc.php';
+
+// Including interface settings
+require 'includes/interface_color_conf.inc.php';
+
+// Including settings handler
+require 'includes/settings_uploader.inc.php';
+
+// HTML drawing class
+require 'includes/html_drawer.inc.php';
+
+// Including user cheker
+require 'includes/user_checker.inc.php';
+
+$user=new User_checker;
+$html=new HTML_drawer;
+$settings=new Main_settings;
+$log=new Logger;
+$admin=new Admin_settings;
+$intf=new Interface_settings;
+
+$cmd=$_POST['cmd'] or $cmd=$_GET['cmd'] or $cmd=false;
+
+if(!$user->check_pass()){
+    if($user->pass) $log->access($user->pass,'fail');
+    if(!$wap) $user->ask_pass();
+    else {
+        include 'includes/wap.inc.php';
+        wap_pass_failed();
+        exit;
+    }
+} elseif($cmd=='Send Password' || !$cmd) $log->access($user->pass,'success');
+
+$global=new Global_options();
+
+// Including main functions and variables
+require 'includes/main.inc.php';
+$function=new Service_functions;
+$stats=new Traders_stats;
+$hour_stats=new Full_daily_stats;
+$trader=new Traders_data;
+$new_trader=new New_traders_data;
+
+// Checking if WAP
+$wap=$_GET['wap'];
+if($wap){
+    include 'includes/wap.inc.php';
+    show_wap_stats();
+    exit;
+}
+
+switch ($cmd){
+    case 'edit': $function->edit_one(); break;
+    case 'Groups': $function->show_groups(); break;
+    case 'Create Group': $function->create_group(); break;
+    case 'Add To Group': $function->add_to_group(); break;
+    case 'Remove Trades': $function->remove_trades(); break;
+    case 'Remove Group': $function->remove_group(); break;
+    case 'Add Trades': $function->add_trades(); break;
+    case 'Delete Trades': $function->delete_trades(); break;
+    case 'Blacklist Trades': $function->blacklist_trades(); break;
+    case 'Update Trade': $function->update_trade(); break;
+    case 'Global Parameters': $function->show_global_par(); break;
+    case 'Update Parameters': $function->update_parameters(); break;
+    case 'Add Language': $function->add_language(); break;
+    case 'Delete Languages': $function->delete_languages(); break;
+    case 'Update Factors': $function->update_languages(); break;
+    case 'Special URLs': $function->show_special_urls(); break;
+    case 'Add ExOut URL': $function->add_exout_url(); break;
+    case 'Delete ExOut URLs': $function->delete_exout_urls(); break;
+    case 'Add NoCookie URL': $function->add_nocookie_url(); break;
+    case 'Delete NoCookie URLs': $function->delete_nocookie_urls(); break;
+    case 'Add NoRef URL': $function->add_noref_url(); break;
+    case 'Delete NoRef URLs': $function->delete_noref_urls(); break;
+    case 'Add Filtered URL': $function->add_filtered_url(); break;
+    case 'Delete Filtered URLs': $function->delete_filtered_urls(); break;
+    case 'Add Hit URL': $function->add_lnghit_url(); break;
+    case 'Delete Hit URLs': $function->delete_lnghit_urls(); break;
+    case 'Add Click URL': $function->add_lngclick_url(); break;
+    case 'Delete Click URLs': $function->delete_lngclick_urls(); break;
+    case 'Add Page': $function->add_mainpage(); break;
+    case 'Delete Pages': $function->delete_mainpages(); break;
+    case 'Update Pages': $function->update_mainpages(); break;
+    case 'Accept New Trades': $function->accept_new(); break;
+    case 'Delete New Trades': $function->delete_new(); break;
+    case 'Blacklist New Trades': $function->blacklist_new(); break;
+    case 'Save New Trades': $function->save_new_trades(); break;
+    case 'Global Parameters': $function->show_global_par(); break;
+    case 'Apply Filter': $function->save_filter(); break;
+    case 'Blacklist': $function->show_blacklist(); break;
+    case 'Add to Blacklist': $function->add_new_to_blacklist(); break;
+    case 'Remove from Blacklist': $function->remove_from_blacklist(); break;
+    case 'Short Forces': $function->short_forces(); break;
+    case 'Long Forces': $function->show_events(); break;
+    case 'Add Forces': $function->add_forces(); break;
+    case 'Remove Forces': $function->remove_forces(); break;
+    case 'Update Forces': $function->update_forces(); break;
+    case 'Add Event': $function->add_event(); break;
+    case 'Delete Events': $function->delete_events(); break;
+    case 'Edit Trades': $function->mass_edit(); break;
+    case 'Update Trades': $function->mass_update(); break;
+    case 'Reset Trades': $function->reset_trades(); break;
+    case 'Settings': $function->settings(); break;
+    case 'Save Settings': $function->save_settings(); break;
+    case 'System Logs': $function->show_system_logs(); break;
+    case 'logs': $function->show_system_logs(); break;
+    case 'Link Tracking': $function->link_tracking(); break;
+    case 'Referrers': $function->show_referers(); break;
+    case 'Refresh Referrers': $function->update_referrers(); break;
+    case 'Save New Password': $user->save_pass(); break;
+    case 'detailed': $function->detailed_stats(); break;
+    case 'Toplists': $function->toplists(); break;
+    case 'Add Template': $function->add_template(); break;
+    case 'Delete Templates': $function->delete_templates(); break;
+    case 'Update Templates': $function->update_templates(); break;
+    case 'Update Schedule': $function->update_schedule(); break;
+    case 'Generate Toplists': $function->generate_toplists(); break;
+    case 'Exit Traffic': $function->exit_traffic(); break;
+    case 'Add URL': $function->add_exit(); break;
+    case 'Delete URLs': $function->delete_exits(); break;
+    case 'DB Management': $function->show_backups(); break;
+    case 'Delete Backups': $function->delete_backups(); break;
+    case 'Use Backups': $function->use_backups(); break;
+    case 'Create Backup': $function->backup_traders(); $function->show_backups(); break;
+    case 'Restore Trades': $function->restore_traders(); break;
+    case '24h Stats': $function->day_stats(); break;
+    case 'IP Blacklist': $function->ip_blacklist(); break;
+    case 'Remove IPs': $function->ip_blacklist('remove'); break;
+    case 'Add New IP': $function->ip_blacklist('add'); break;
+    case 'Trades Checker': $function->trades_checker(); break;
+    case 'showx': $function->showx(); break;
+    case 'Add Rule': $function->add_rule(); break;
+    case 'Delete Rule': $function->delete_rule(); break;
+    case 'Stats History': $function->stats_history(); break;
+    case 'Show History': $function->stats_history(); break;
+    case 'Full Reset': $function->full_reset(); break;
+    case 'ssexout': $function->exout_detailed(); break;
+    case 'sscontent': $function->content_detailed(); break;
+    case 'ssnoref': $function->noref_detailed(); break;
+    case 'ssnotrade': $function->notrade_detailed(); break;
+    case 'ssnocookie': $function->nocookie_detailed(); break;
+    case 'ssfiltered': $function->filtered_detailed(); break;
+    default: $function->shortstats(); break;
+}
+
+?>
