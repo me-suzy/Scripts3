@@ -1,0 +1,111 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+<p align="center">Welcome to WoltLab Burning Board Admin Control Panel</p>
+<table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="95%" align="center">
+ <tr class="tblhead">
+  <td colspan=2>wBB Information</td>
+ </tr>
+ <tr class="firstrow">
+  <td><b>Your wBB Version:</b></td>
+  <td>$boardversion</td>
+ </tr>
+ <tr class="secondrow">
+  <td><b>Installation Date:</b></td>
+  <td>$install_date</td>
+ </tr>
+ <tr class="firstrow">
+  <td><b>Members:</b></td>
+  <td>$usercount</td>
+ </tr>
+ <tr class="secondrow">
+  <td><b>Users online:</b></td>
+  <td>$useronlinecount</td>
+ </tr>
+ <tr class="firstrow">
+  <td><b>Posts:</b></td>
+  <td>$postcount ($postsperday per day)</td>
+ </tr>
+ <tr class="secondrow">
+  <td><b>Threads:</b></td>
+  <td>$threadcount ($threadsperday per day)</td>
+ </tr>
+ <tr class="firstrow">
+  <td colspan=2><a href="users.php?action=show&activation=-1&sid=$session[hash]&sortby=regdate&sortorder=DESC">$waiting4Activation users awaiting activation.</a></td>
+ </tr>
+</table><br>$serverinfo
+<table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="95%" align="center">
+<form method="post" action="users.php">
+<input type="hidden" name="send" value="send">
+<input type="hidden" name="action" value="show">
+<input type="hidden" name="sid" value="$session[hash]">
+ <tr class="tblhead">
+  <td colspan=2>Quick User Search</td>
+ </tr>
+ <tr class="firstrow">
+   <td>Username contains:</td>
+   <td><input type="text" name="username" value="" maxlength=255></td>
+  </tr>
+ <tr class="secondrow">
+   <td>Sort by:</td>
+   <td><select name="sortby">
+    <option value="username">username</option>
+    <option value="email">email address</option>
+    <option value="regdate">registration date</option>
+    <option value="lastactivity">last active time</option>
+    <option value="userposts">user posts</option>
+   </select> <select name="sortorder">
+    <option value="ASC">in ascending order.</option>
+    <option value="DESC">in descending order.</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td>Show a maximum of:</td>
+   <td><input type="text" name="limit" value="200" maxlength=255> users</td>
+  </tr>
+  <tr class="secondrow">
+   <td>Begin with result number:</td>
+   <td><input type="text" name="offset" value="1" maxlength=255> <input type="submit" value="Search"></td>
+  </tr></form>
+</table><br>
+<table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="95%" align="center">
+ <tr class="tblhead">
+  <td colspan=3>wBB Development & Support</td>
+ </tr>
+ <tr class="firstrow">
+  <td><b>Idea & Development:</b></td>
+  <td>Marcel "Burntime" Werk</td>
+ </tr>
+ <tr class="secondrow">
+  <td><b>Other Developers:</b></td>
+  <td>Mark "Ronnar" Braue, Benjamin "cyRus-tC" Eggerstedt, Troublegum, Thomas "RaPi" Arndt</td>
+ </tr>
+ <tr class="firstrow">
+  <td><b>Graphics & Layout:</b></td>
+  <td>Arian "Cyrus" Glander, Patrick "PerfectPixel" Splitthof, Maximilian "Caliban" Schönborn</td>
+ </tr>
+ <tr class="secondrow">
+  <td><b>English Translation:</b></td>
+  <td>Laurent "Satelk" le Beau-Martin</td>
+ </tr>
+ <tr class="firstrow">
+  <td><b>Nullified by:</b></td>
+  <td>CyKuH from WTN Team`2002</td>
+ </tr>
+ <tr class="secondrow">
+  <td><b>Distribution: </b></td>
+  <td><!--CyKuH [WTN]-->via WebForum, ForumRU, CGIHEAVEN CREW and associated file dumps</td>
+ </tr>
+ <tr class="firstrow">
+  <td><b>Copyright 2001-2002:</b></td>
+  <td>WoltLab GbR</td>
+ </tr>
+</table>
+</body>
+</html>
