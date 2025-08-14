@@ -1,0 +1,248 @@
+
+/**************************************************************
+ * File: 		Documentation: Now What- Post Installation
+ * Author:	Mike Lansberry (http://phpcoin.com)
+ * Date:		2004-01-04 (V1.2.0)
+ * Changed: 	Stephen M. Kitching, 2005-03-03 (v1.2.2)
+ * License:	DO NOT Remove this text block. See /coin_docs/license.txt
+ *			Copyright © 2003-2004-2005 phpCOIN.com
+ * Schema:	See sql file for schema reference
+ * Notes:
+ *			- post installation tips
+**************************************************************/
+
+/**************************************************************
+ * What Now:
+**************************************************************/
+The following assumes all has installed properly, and are ready
+to go further. So here we go.
+
+In the event you encounter bugs, or have problems with something,
+please visit the forum:
+
+	http://forums.phpcoin.com
+
+If you are unsure how to use a feature or perform an action,
+please visit the user manual
+	http://coin_docs.phpcoin.com
+
+
+The concepts:
+- Admins and Users
+	- Separate entities. User, or better yet- Clients, are
+	  generated when an order is placed. Admin can create.
+	- Initial default is no clients, and one admin as mentioned
+	  in the install doc.
+	- Admins are that administrators- full access.
+	- Clients (users) are limited and can only see what info
+	  pertains to them (their orders, info, etc.).
+
+	NOTE:	It is recommended that the site admin also initiate
+			an order to become a client, cancel before payment.
+			Use site as domain. This will let you test client
+			features, etc..
+
+- Orders
+	- To go to order directly from an icon for a specific product,
+		<a href="mod.php?mod=orders&ord_prod_id=1">Order Prod #1</a>
+
+	- Orders are placed via the Place Orders link and the
+	  following should happen:
+	  - Step 1: User must accepts TOS and AUP policies.
+				Selects product and vendor (payment method).
+	  			OR selects Custom Order request.
+	  			See forum for info on COR:
+	  			http://www.phpcoin.com/addons/ibf/index.php?showtopic=34
+
+	  - Step 2: Fills in required info to setup account.
+	  - Step 4: Place Order / Final confirmation of information.
+	  	- If continued and normal order:
+	  		- Client is created in Clients table
+	  		- Order is created in Orders table, linked to client
+	  		- Domain is put in domains table (will tie in servers)
+	  		- Lookup Vendor Product (prod id and vend id selected)
+	  		  to get the appropriate payment link.
+	  		- Display Payment link on final screen.
+
+	  	- If continued and Custom Order Request (COR):
+	  		- Client is created in Clients table
+	  		- Email sent to site admin and client with summary of the
+	  		  custom order request.
+	  		- Display message and info on final screen.
+
+	  - Step 5: Third Party Billing (normal order)
+	    - User clicks on order payment link provided
+	    - Takes the person to the pay link for the third party
+	      billing site. Out of phpCOIN site / code at this point.
+
+	  - Step 6: Client returns from third party billing (normal order)
+	    - User present with either "buy" or "cancel" message.
+	    - Future will trigger from this.
+
+	  - Step 7: You go from here.
+	  	- Tools are in place to let you send order
+	  	  confirmation emails, server account activation emails.
+	  	- Client can come and login and view their info.
+
+	- Existing clients should login prior to placing orders.
+	  - Will load their information (they can edit).
+	  - A new client will not be created when order placed.
+	  - A existing client can place orders for existing domain, new
+	    clients cannot.
+
+	- Aborted orders. If user does place order (which inserts
+	  into your database) but dosen't click pay link, you'll
+	  get a dead order.
+
+- Support Data
+	- Naturally there is support data that is required for the
+	  site. Things like products, vendors, etc. are required to
+	  be setup. So be sure to review / add (from admin menu)
+	  the following:
+	  - Admin Information
+
+	  - FAQ (Frequently Asked Question) is empty (sorry).
+
+	  - Products- appear in select list when placing order.
+
+	  - Vendors- appear in select list when placing order.
+
+	  - Vendors Products- ties the two together for order link
+
+	  - Mail Contacts- Contact email addresses. Default four
+	    are required and should not be editid except to correct
+	    the address.
+
+	  - SiteInfo Pages- SiteInfo module is for creating / editing
+	    many of the "site info" pages. Pages are created and can
+	    be displayed in content area. The following items are
+	    provided as SiteInfo pages:
+
+	    	- Site Index
+	    	- Announcement (turn on and visible above index)
+	    	- About Us page
+	    	- Acceptable Use Policy (AUP)
+	    	- Banned Code Policy
+	    	- Privacy Policy
+	    	- Terms Of Service (TOS)
+
+		Call a Siteinfo page by ID:
+			<a href="mod.php?mod=siteinfo&id=3">Show SiteInfo #3</a>
+
+		So to edit these, use the Admin SiteInfo editor. HMTL works.
+
+	  - Pages- this module is similar to SiteInfo but with slightly
+	    different options. Pages can be assigned to Topic or
+	    Category. HTML and javascript (should) code works.
+
+		Call a Page by ID:
+			<a href="mod.php?mod=pages&mode=view&id=3">Show Page #3</a>
+
+	  - Menu blocks- required to setup if displaying side menu columns
+	    (like at phpmywebthing.com)
+	    It is recommended that menu columns only be used if going 100%
+	    width (assuming most users are 1024 x 768)
+
+
+- Server Account Activation emails
+	- See forum note on explanation that goes along with this (sorry):
+		http://www.phpcoin.com/addons/ibf/index.php?showtopic=33
+
+
+- Payment Links
+	- See forum note on explanation that goes along with this (sorry):
+		http://www.phpcoin.com/addons/ibf/index.php?showtopic=24
+
+	- Currently (2) billing Vendors are exampled in the package.
+		- Paypal.com
+		- 2Checkout.com
+
+	  Other Billing Vendors will work, provided buy parameter and value
+	  have been properly set in product information.
+
+	- When the client makes it to the screen that displays the payment link,
+	  the code locates and loads the payment link for the vendor product
+	  (see below), and preforms a search and replace for the pre-defined
+	  string and basically inserts the order id number.
+
+		Legacy- to be removed post V1.2.0
+		# Get 2checkout.com params
+			$data['credit_card_processed']	= $_GPV[credit_card_processed];
+			$data['merchant_order_id']		= $_GPV[merchant_order_id];
+
+		# Get PayPal.com params
+			$data['buy']					= $_GPV[buy];
+			$data['order_id'] 				= $_GPV[order_id];
+
+		Current V1.2.0 and later:
+		# Search and replace parameters in string (V1.2)
+			<prod_id>
+			<prod_name>
+			<prod_desc>
+			<prod_unit_cost>
+			<order_id>
+			<ord_unit_cost>
+			<ord_company>
+			<ord_name_first>
+			<ord_name_last>
+			<ord_name_full>
+			<ord_addr_01>
+			<ord_addr_02>
+			<ord_city>
+			<ord_state_prov>
+			<ord_country>
+			<ord_zip_code>
+			<ord_phone>
+			<ord_email>
+			<ord_optfld_01>
+			<ord_optfld_02>
+			<ord_optfld_03>
+			<ord_optfld_04>
+			<ord_optfld_05>
+			# For paypal
+				<return_link_buy>
+				<return_link_cancel>
+
+
+	- Typical Paypal Pay Link:
+
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+		<input type="hidden" name="cmd" value="_xclick">
+		<input type="hidden" name="business" value="orders@your-site.com">
+		<input type="hidden" name="item_name" value="Your-Site: Item 01 Description">
+		<input type="hidden" name="item_number" value="ITM-0001">
+		<input type="hidden" name="amount" value="$39.00">
+		<input type="hidden" name="no_shipping" value="1">
+		<input type="hidden" name="return" value="http://your-site.com/mod.php?mod=orders&mode=return&order_id=xxx&buy=1">
+		<input type="hidden" name="cancel_return" value="http://your-site.com/mod.php?mod=orders&mode=return&order_id=xxx&buy=0">
+		<input type="hidden" name="cn" value="Special Instructions (optional">
+		<input type="image" src="https://www.paypal.com/images/x-click-but01.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+		</form>
+
+		Paypal Pay Link- With replacment variables: (Which makes one cover all for paypal)
+
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+		<input type="hidden" name="cmd" value="_xclick">
+		<input type="hidden" name="business" value="orders@your-site.com">
+		<input type="hidden" name="item_name" value="<prod_desc>">
+		<input type="hidden" name="item_number" value="<prod_name>">
+		<input type="hidden" name="amount" value="<ord_unit_cost>">
+		<input type="hidden" name="no_shipping" value="1">
+		<input type="hidden" name="return" value="<return_link_buy>">
+		<input type="hidden" name="cancel_return" value=<return_link_cancel>
+		<input type="hidden" name="cn" value="Special Instructions (optional">
+		<input type="image" src="https://www.paypal.com/images/x-click-but01.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+		</form>
+
+
+	- Typical 2CheckOut.com (review 2Checkout terms for actual requirements in link text):
+
+		<form method=post action=https://www.2checkout.com/cgi-bin/sbuyers/purchase.2c>
+		<INPUT type="submit" value="Click to pay thru 2CheckOut">
+		<input type=hidden name=sid value=41543>
+		<input type=hidden name=product_id value=1>
+		<input type=hidden name=quantity value=1>
+		<input type=hidden name=merchant_order_id value=xxx>
+		</form><br>
+		Your secure payment will be processed by <A HREF="http://www.2CheckOut.com/" TARGET=_blank> <b><FONT color="#008080">2</FONT><FONT color="#000000">CheckOut</FONT></b></a><br><br>
+
