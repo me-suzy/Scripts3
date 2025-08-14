@@ -1,0 +1,224 @@
+<?
+/*
+   Copyright (c), 1999, 2000 - phpauction.org
+   Copyright (c), 2001, 2002 - webauction.de.vu
+
+   Lizenz siehe lizenz.txt & license
+
+   Die neueste Version kostenfrei zum Download unter:
+   http://webauction.de.vu
+
+*/
+
+?>
+
+
+
+
+<table width="764" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF" ALIGN=CENTER>
+
+  <tr  valign=top>
+
+
+  <td width="20%" bgcolor="#ffffff" height="454">
+   <!--		<TD WIDTH="30%"> -->
+   <!-- ** Tabla Categorias ** -->
+   <table width="100%" border="0" cellspacing="0" cellpadding="3">
+
+             <tr>
+
+                 <td bgcolor="#ffffff">
+
+                    <center>
+       <FONT COLOR="#FFFFFF"><B> </B></FONT>
+      </center>
+
+                  </td>
+
+              </tr>
+
+              <tr valign="top" BGCOLOR="#ffffff">
+
+                  <td>
+
+                      <? print $TPL_categories_value; ?>
+
+                   </td>
+
+               </tr>
+
+          </table>
+
+      <!-- ** ** -->
+
+
+
+
+
+        </td>
+
+
+  <td width="60%" VALIGN="top" height="454">
+   <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="400">
+    <!-- ** LAST AUCTIONS INSERTED ** -->
+    <TR VALIGN="top">
+     <TD WIDTH="8%">
+     </TD>
+     <TD WIDTH="92%">
+      <TABLE BORDER="0" CELLPADDING="5" CELLSPACING="0" WIDTH="100%">
+       <TR>
+        <TD COLSPAN=2>
+         <div align="center"><font color="#000000" size="3"
+                        face="Arial"><b>My Account Login!</b><br>
+          </font><font color="#000000" size="2"
+                        face="Arial">Bitte geben Sie Ihren Benutzernamen und Ihr
+          Passwort an, um sich zu Verifizieren! </font> </div>
+        </TD>
+       </TR>
+      </TABLE>
+     </TD>
+    </TR>
+    <!-- ** HIGHER BIDS ** -->
+    <TR VALIGN="top">
+     <TD WIDTH="8%"> </TD>
+     <TD WIDTH="92%"> <BR>
+      <TABLE border="0" cellpadding="5" cellspacing="0" width=\"100%\">
+       <TR>
+        <TD colspan=2>
+         <div align="center"><IMG src="./images/linea.gif" width="370" height="8"><BR>
+          <p> </p>
+          <form action="my_account_login.php" method="POST">
+           <div align="center">
+            <input type="hidden" name="action" value="login">
+            <table
+    border="0" width="77%">
+             <tr>
+              <td>
+               <div align="center">
+                <center>
+                 <table border="0"
+            cellpadding="3" cellspacing="0" width="97%">
+                  <tr>
+                   <td valign="top" bgcolor="#33CCFF">
+                    <p
+                    align="center"><font color="#FFFFFF" size="2"
+                    face="Arial"><b>My Account User Login</b></font></p>
+                   </td>
+                  </tr>
+                 </table>
+                <p>&nbsp;</p></center>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td>
+               <div align="center">
+                <center>
+                 <table border="0"
+            cellpadding="3" cellspacing="0" width="87%">
+                  <tr>
+                   <td><font size="2" face="Arial">Username:</font></td>
+                   <td><font size="2" face="Arial">
+                    <input
+                    type="text" size="20" name="TPL_nick" value="<? echo $HTTP_COOKIE_VARS[login_TPL_nick]; ?>">
+                    </font></td>
+                  </tr>
+                  <tr>
+                   <td><font size="2" face="Arial">Passwort:</font></td>
+                   <td>
+                    <input type="password" size="20"
+                    name="TPL_password" value="<? echo $HTTP_COOKIE_VARS[login_TPL_password]; ?>">
+                   </td>
+                  </tr>
+                  <tr>
+                   <td>&nbsp;</td>
+                   <td>
+                    <input type="submit" value="Login" name="submit">
+                   </td>
+                  </tr>
+                 </table>
+                </center>
+               </div>
+              </td>
+             </tr>
+            </table>
+           </div>
+          </form>
+          <p><br>
+          </p>
+         </div>
+        </TD>
+       </TR>
+      </TABLE>
+     </TD>
+    </TR>
+    <!-- ** ENDING SOON ** -->
+    <!-- end table started with ** LAST AUCTIONS INSERTED ** -->
+   </TABLE>
+
+
+  </td>
+
+
+
+  <td width="20%" valign="top" bgcolor="#ffffff" height="454">
+   <!-- ** Tabla <? print $std_font.$MSG_164; ?>s ** -->
+   <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#FFFFFF">
+
+                  <tr>
+
+                    <td bgcolor="#ffffffF">
+
+                      <center>
+       <FONT COLOR="#FFFFFF"><B></B></FONT>
+      </center>
+                    </td>
+
+                  </tr>
+
+                  <tr valign="top" BGCOLOR="#ffffff">
+
+                    <td height="200">
+                      <? print $std_font; ?>
+		      <? print $TPL_helptopics; ?>
+
+
+		    </td>
+
+                  </tr>
+
+                </table>
+
+      <!-- Tabla Te Informamos ** -->
+
+                <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#ffffff">
+
+                  <tr>
+
+                    <td>
+
+                      <center>
+       <FONT COLOR="#FFFFFF"><B></B></FONT>
+      </center>
+
+                    </td>
+
+                  </tr>
+
+                  <tr valign="top" BGCOLOR="#ffffff">
+
+                    <td height="200">&nbsp;</td>
+
+                  </tr>
+
+                </table>
+
+
+        </td>
+
+      </tr>
+
+
+</TABLE>
+
+
