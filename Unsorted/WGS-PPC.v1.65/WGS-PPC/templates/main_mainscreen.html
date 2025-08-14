@@ -1,0 +1,131 @@
+<html>
+<head>
+<title>PPC Search</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="css/asppc_styles.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<br>
+<form name="searchform" method="get" action="<#action#>">
+  <table width="770" class="tborder" cellspacing="1" cellpadding="3" border="0">
+    <tr bgcolor="#6699cc"> 
+      <td valign="bottom" align="center" bgcolor="#6699cc"> <br>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>
+              <table border="0" cellspacing="0" cellpadding="3" width="337">
+                <tr> 
+                  <td class="tdheader" width="187"><font color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;Enter 
+                    search query:</font></td>
+                  <td width="138">&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td width="187"> &nbsp;&nbsp;&nbsp; 
+                    <input type="text" name="ss" size="30" maxlength="255">
+                  </td>
+                  <td width="138"> 
+                    <input type="submit" name="search" value="Search">
+                    <input type="hidden" name="cmd" value="1">
+                  </td>
+                </tr>
+                <tr> 
+                  <td colspan="2" class="tdlight"> &nbsp;&nbsp;&nbsp; <a href="#" onClick="window.open('html/__searchtips.html','SearchTips','width=530, height=350'); return false;" class="searchmenu"><font color="#FFFFFF"> 
+                    search tips</font></a><font color="#FFFFFF"> | <a href="<#members_registration#>" class="searchmenu">members 
+                    registration</a> | <a href="<#members_login#>" class="searchmenu">members 
+                    login</a></font></td>
+                </tr>
+              </table>
+              <div align="right"></div>
+              <div align="right"></div>
+            </td>
+            <td> <img src="images/main_title.gif" width="360" height="70"></td>
+          </tr>
+        </table>
+        <br>
+      </td>
+    </tr>
+    <tr bgcolor="#FFCC00"> 
+      <td class="blackheader"> 
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr> 
+            <td width="25%"> 
+              <table border="0" cellspacing="0" cellpadding="0">
+                <tr> 
+                  <td valign="middle">&nbsp;</td>
+                  <td class="blackheader" valign="middle"><font size="1">Search 
+                    settings</font></td>
+                </tr>
+              </table>
+            </td>
+            <td width="25%"> 
+              <table border="0" cellspacing="0" cellpadding="0">
+                <tr> 
+                  <td valign="middle">&nbsp;</td>
+                  <td class="blackheader" valign="middle"><font size="1">Top searches</font></td>
+                </tr>
+              </table>
+            </td>
+            <td> 
+              <table border="0" cellspacing="0" cellpadding="0">
+                <tr> 
+                  <td valign="middle">&nbsp;</td>
+                  <td class="blackheader" valign="middle"><font size="1">Categories</font></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr bgcolor="#FFFFFF" align="center"> 
+      <td class="blackheader"> 
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="top"> 
+            <td width="25%"> 
+              <table border="0" cellspacing="1" cellpadding="4">
+                <tr> 
+                  <td><b><font size="1">Results per page:</font></b></td>
+                  <td> 
+                    <select name="rpp">
+                      <option value="10">10</option>
+                      <option value="20">20</option>
+                      <option value="30">30</option>
+                      <option value="40">40</option>
+                      <option value="50">50</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b><font size="1">Hide summary:</font></b></td>
+                  <td> 
+                    <input type="checkbox" name="hidesummary" value="1">
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td width="25%"> <#topsearches#> </td>
+            <td> <#categories#> </td>
+          </tr>
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr> 
+            <td class="emptydelim" colspan="3">&nbsp;</td>
+          </tr>
+          
+        </table>
+        <br>
+        <#banner1#><br>
+        <br>
+      </td>
+    </tr>
+  </table>
+  <br>
+<table width="750" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td align="right"><b><font size="1" color="#666666">Powered by <a href="http://www.ettica.com">Ettica.com</a> 
+        © 2001, 2002</font></b></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>
