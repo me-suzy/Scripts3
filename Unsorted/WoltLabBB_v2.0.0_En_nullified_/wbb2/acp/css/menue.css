@@ -1,0 +1,40 @@
+BODY {
+	BACKGROUND-COLOR: #E6E6E6;
+	COLOR: navy;
+	FONT-FAMILY: sans-serif;
+	FONT-SIZE: 12px;
+	SCROLLBAR-BASE-COLOR: #ababab;
+	SCROLLBAR-ARROW-COLOR: #000000;
+}
+
+A:LINK, A:VISITED, A:ACTIVE {
+	COLOR: navy;
+	TEXT-DECORATION: none;
+}
+A:HOVER {
+	COLOR: navy;
+	TEXT-DECORATION: underline;
+}
+
+HR {
+	color: Navy;
+	height: 1px;
+}
+
+P {
+    TEXT-INDENT: -25px;
+    MARGIN-LEFT: 25px;
+    MARGIN-TOP: 0px;
+    MARGIN-BOTTOM: 0px;
+}
+
+.firstrow {
+	BACKGROUND-COLOR: #E6E6E6;
+	COLOR: navy;
+	FONT-FAMILY: sans-serif;
+	FONT-SIZE: 12px;
+}
+
+.tblborder {
+	BACKGROUND-COLOR: #000000;
+}
