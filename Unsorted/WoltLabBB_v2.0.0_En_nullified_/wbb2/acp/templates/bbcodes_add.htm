@@ -1,0 +1,51 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+<form method="post" action="bbcodes.php">
+<input type="hidden" name="send" value="send">
+<input type="hidden" name="action" value="add">
+<input type="hidden" name="sid" value="$session[hash]">
+<table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="100%" align="center">
+  <tr class="tblhead">
+   <td colspan=2>Edit BBCode</td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>BBCode tag:</b></td>
+   <td><input type="text" name="bbcodetag" value="" maxlength="250"></td>
+  </tr>
+  <tr class="secondrow">
+   <td valign="top"><b>Replacement:</b><br>{param1} as the first parameter<br>{param2} as the second parameter<br>{param3} as the third parameter</td>
+   <td><textarea cols="50" rows="5" name="bbcodereplacement"></textarea></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Example (for help):</b></td>
+   <td><input type="text" name="bbcodeexample" value="" maxlength="250"></td>
+  </tr>
+  <tr class="secondrow">
+   <td valign="top"><b>Description (for help):</b></td>
+   <td><textarea cols="50" rows="5" name="bbcodeexplanation"></textarea></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Number of Parameters:</b></td>
+   <td><select name="params">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+   </select></td>
+  </tr>
+   <tr class="secondrow">
+   <td><b>max. number of nesting:</b></td>
+   <td><input type="text" name="multiuse" value="" maxlength="3"></td>
+  </tr>
+  <tr class="firstrow">
+   <td colspan=2 align="center"><input type="submit" value="Save"> <input type="reset" value="Reset"></td>
+  </tr>
+ </table>
+</form>
+</body>
+</html>
