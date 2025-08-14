@@ -1,0 +1,26 @@
+    <table border="0" cellspacing="1" cellpadding="5">
+      <tr align="center"> 
+        <td colspan="2"> 
+          
+      <h3><font size="3" color="#6699CC">Filtered words:</font></h3>
+		Add new keyword: <input type="text" name="fkw" size="30" maxlength="255"> <input type="submit" name="add" value="Add" onclick="document.forms.admin.cmd.value='900'"><input type="hidden" name="cmd" value="900">
+    </td>
+      </tr>
+      <tr align="center">       
+    <td colspan="2">
+      <table border="0" cellspacing="1" cellpadding="5">
+        <tr bgcolor="#d9d9d9"> 
+          <td><b>Keyword</b></td>
+          <td>&nbsp;</td>
+        </tr>
+        <#filtered#> 
+        <tr> 
+        <td colspan="6" height="28"> 
+			<input type="submit" name="del" value="Delete selected" onclick="document.forms.admin.cmd.value='901'">
+        </td>
+        </tr>
+      </table>
+    </td>
+      </tr>
+    </table>
+
