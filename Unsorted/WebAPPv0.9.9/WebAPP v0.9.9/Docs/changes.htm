@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>WebAPP - Changes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<p><a href="../Start_Here.htm">Back</a></p>
+<p><a name="Top"></a></p>
+<p>######################################################################<br>
+  # WebAPP - Automated Perl Portal Changelog                            #<br>
+  #######################################################################</p>
+<p>Version 0.9.9 </p>
+<p>Date: 04/03/02 - 1:09 PM EST</p>
+<p><br></p>
+<pre>
+
+
+Banners - FIXED
+Banner Farm - REMOVED
+Banner Edit - FIXED
+Banner Delete - FIXED
+Banner data file - EMPTY 
+
+WEbAPP Database - USING CLEAN BACKUP
+reindex - FIXED
+calendar - REMOVED
+
+forum Notification Removal - ADDED
+
+User.pl - FIXED language when a member must be added by admin to reflect that
+User.pl - SEND admin IM when a member is to be approved.
+User.pl - REMOVED double IM if notification is on
+English.lng - Minor Changes to reflect new additions
+
+New Theme - Standard has been replaced with denden's Theme
+
+Calendar Mod - ADDED (Ted's Mod)
+Showcal.pl - ADDED
+
+install.cgi - FIXED FOR CALENDAR
+install.cgi - ADDED CALENDAR CONFIGURATION
+install.cgi - ADDED CHMOD *.CGI FILES
+
+re-added - CORRECT CONFIG FILES FOR MODS
+
+name change - FINISHED
+
+palm.cgi - SECURITY FEATURES ADDED
+
+Forum.pl - Fixed to show New messages
+fourm_mark.pl - fixed to include stickies
+
+"-w" - REMOVED from all .cgi files
+
+Restrictedmemberlist.dat - REMOVED extra lines at the bottom!
+
+---------------------------
+
+Floyd's Additions added by Carter
+
+images/forum/locked.gif (white background removed)
+images/forums/replymsg.gif (for instantmessage.pl)
+cgi-bin/admin/uploader/upload.cgi (copyright notice edited)
+cgi-gin/cgi-lib/admin.pl (sub createboard typo correction)
+cgi-bin/cgi-lib/downloads.pl (language tag added)
+cgi-bin/cgi-lib/forum_admin.pl (move sticky fix)
+cgi-bin/cgi-lib/help.pl (smily & ubbc support)
+cgi-bin/cgi-lib/instantmessage.pl ("reply" graphic used)
+cgi-bin/cgi-lib/links.pl (latest links fix and language tag added)
+cgi-bin/cgi-lib/newsletter.pl (blank e-mails fixes)
+cgi-bin/db/topics/*all* (new topic categories and test article)
+cgi-bin/lang/english.lng (changed Anonymous Coward to Anonymous)
+
+
+------------------------------
+
+Beta Tester Finds
+
+Changed sports.gif to sport.gif
+
+changed 0.9.5 in sidebar.cgi and admin.cgi of the calendar to 0.9.9
+
+Removed the -w in the palm.cgi file
+
+emailer.pl - Fixed $cgi/? to $cgi?action to post correctly
+
+$err{'008'} - Programm to program
+
+Changed recieved to received
+
+Topics.pl - Post by anonymous user sent IM with no name
+
+Showcal.pl : newsletter.pl - Removed shebang
+
+Spelling errors:
+msg 360 - Referrer (double r)
+msg 476 - Attempt (double t)
+msg 570 - Agreement (not "Ang")
+msg 579 - Accessible
+msg 586 - Technically, AOL should be all caps.
+
+nav 25 - comments misspelled
+
+fixed it correctly by adding the "$lnkcatscount = 0;" as shown below at line 483 of stats.pl
+
+   close(LNKCAT);
+   $lnkcatscount = 0;
+   for ($i = 0; $i < @lnkcatscount; $i++) { $lnkcatscount++; }
+
+Added Line:
+if ($username eq "$anonuser") {error('noguests');}
+To whosonline.pl to stop anonymous viewing of members
+
+install.cgi reworked to catch non cgi-bin directories
+
+Fixed preview code to remove &'s in the $sig 
+
+Fixed banners and ads.pl to accept any type of url and now they count # of banner hits.
+
+xml date bug fixed (there were two.. this was the second one)
+
+Newsletter.pl changed if ($settings[7] ne "$root") Admin Settings
+
+admin.pl - sub remove cat - changed FILE to CAT to fully remove forums
+
+</pre>
+<p></p>
+<p><br>
+</p>
+<p><a href="#Top">Top</a> | <a href="../Start_Here.htm">Back</a></p>
+</body>
+</html>
