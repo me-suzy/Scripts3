@@ -1,0 +1,334 @@
+<html>
+
+<head>
+<title>vBPortal File Edits</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<style type="text/css">
+<!--
+.codebit     { font-family: 'Courier New', Courier, mono }
+body         { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9pt }
+td           { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9pt }
+textarea     { background-color: #EEEEEE }
+-->
+</style>
+</head>
+
+<body bgcolor="#CCCCCC" text="#000000">
+
+<font size="5"><b>vbPortal 3.0 beta pr8.2 </b></font>Change Text Copyright ©2001,
+<a href="http://www.phpportals.com">phpPortals</a><br>
+CMS add-on for vBulletin 2.2 Copyright ©2000, 2001, Jelsoft Enterprises
+Limited.<br>
+<br>
+<table border="1" width="100%" height="4162">
+  <tr>
+    <td height="135" width="142" valign="top"><i><b>Please follow the
+      instructions below to make the necessary changes to your vBulletin files.</b></i></td>
+    <td height="135" width="5345"><b><font size="3">Example:</font></b>
+      <p><b><font size="3">script name:</font></b><i></p>
+      <ul>
+        <li><font color="blue">original code</font>
+        <li><font color="#FF0000"><b>&lt;!-- Where to Insert Text if instructed
+          --&gt;</b></font><font color="blue"><br>
+          <br>
+          </font><textarea rows="1" cols="20">Code to Insert</textarea>
+      </ul>
+      </i></td>
+  </tr>
+  <tr>
+    <td valign="top" height="320" width="142"><b>Changes to admin/index.php:</b>
+      <p><b>This mod will give the admin a quick link from the vB Admin cp to
+      the vbPortal&nbsp; Admin cp... but is entirely optional and you may return
+      to do it at any time.</b></p>
+    </td>
+    <td height="320" width="5345" valign="top"><b><font size="3">admin/index.php:</font><br>
+      Step 1 of 1 find:</b><br>
+      <br>
+      <font color="blue">&lt;td align=&quot;right&quot;&gt;&lt;b&gt;&lt;a href=&quot;../index.php?s=&lt;?php
+      echo $session[sessionhash]; ?&gt;&quot; target=&quot;_blank&quot;&gt;Go to
+      your Forums Home Page&lt;/b&gt;&lt;/b&gt;&lt;/TD&gt;</font>
+      <p><br>
+      <b>* Replace with:</b><br>
+      <br>
+      <textarea cols="90" rows="7">
+<!-- Optional vbPortal text -->
+	 <td align="right"><b><a href="../index.php?s=<?php echo $session[sessionhash]; ?>" target="_blank">Go to your Forums Home Page </a>	<a href="../../admin.php?s=<?php echo $session[sessionhash]; ?>"target="_blank">| vbPortal Admin</a></b></TD>
+<!-- End Optional vbPortal text -->
+		</textarea><br>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" height="264" width="142"><b>Required Change to admin/functions.php:</b>
+      <p><b>This mod adds the var $bburl to the listed functions, this is
+      required for vbPortal 3.0</b></td>
+    <td height="264" width="5345" valign="top"><b><font size="3">admin/functions.php:</font><br>
+      Step 1 of 2 find:</b><br>
+      <br>
+      <font color="blue">// ###################### Start show_nopermission
+      #######################<br>
+      function show_nopermission() {<br>
+      global $bbtitle,$logincode,$url,$scriptpath,$bbuserinfo,$session;</font>
+      <p><br>
+      <b>* Replace with:</b></p>
+      <p><br>
+      <textarea cols="90" rows="6">
+// vbPortal 
+// ###################### Start show_nopermission #######################
+function show_nopermission() {
+  global $bburl,$bbtitle,$logincode,$url,$scriptpath,$bbuserinfo,$session; 
+// End vbPortal 
+		</textarea><br>
+      </p>
+      <p><b>Step 2 of 2 find:</b></p>
+      <p><font color="blue">// ###################### Start make login code
+      #######################<br>
+      function makelogincode() {<br>
+      global $DB_site,$bbuserinfo,$session;</font></p>
+      <p><b>* Replace with:</b></p>
+      <p><textarea cols="90" rows="6">
+// vbPortal 
+// ###################### Start make login code #######################
+function makelogincode() {
+  global $bburl,$DB_site,$bbuserinfo,$session;
+  // End vbPortal 
+		</textarea></p>
+      <p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" height="479" width="142">
+      <p><b>Optional Changes to poll.php</b></p>
+      <p><b>This mod is only necessary to redirect the user back to the home
+      page after voting on the front page poll. I personally prefer being
+      redirected to the poll thread, the vBulletin default.</b></td>
+    <td height="479" width="5345"><b><font size="3">poll.php:</font><br>
+      Step 1 0f 1, find:</b><br>
+      <br>
+      <font color="blue">// redirect<br>
+      eval(&quot;standardredirect(\&quot;&quot;.gettemplate(&quot;redirect_pollvotethanks&quot;).&quot;\&quot;,\&quot;showthread.php?s=$session[sessionhash]&amp;threadid=$threadinfo[threadid]\&quot;);&quot;);<br>
+      } else {<br>
+      eval(&quot;standarderror(\&quot;&quot;.gettemplate(&quot;error_nopolloptionselected&quot;).&quot;\&quot;);&quot;);<br>
+      }<br>
+      }</font><br>
+      <br>
+      <b>* replace with:</b><br>
+      <br>
+      <textarea cols="80" rows="15">
+// vBPortal Begin
+// // redirect
+//    eval("standardredirect(\"".gettemplate("redirect_pollvotethanks")."\",\"showthread.php?s=$session[sessionhash]&threadid=$threadinfo[threadid]\");");
+//  } else {
+//    eval("standarderror(\"".gettemplate("error_nopolloptionselected")."\");");
+//  }
+//}
+   // redirect back to homepage for polls forum votes
+       if($threadinfo[forumid]==$pollsforum){
+  	   // redirect
+  	   eval("standardredirect(\"".gettemplate("redirect_pollvotethanks")."\",\"$nukeurl/index.php?s=$session[sessionhash]\");");
+
+ 	}else{
+	    // redirect
+	    eval("standardredirect(\"".gettemplate("redirect_pollvotethanks")."\",\"showthread.php?s=$session[sessionhash]&threadid=$threadinfo[threadid]\");");
+       }
+
+  } else {
+    eval("standarderror(\"".gettemplate("error_nopolloptionselected")."\");");
+  }
+}
+// vBPortal End
+</textarea></td>
+  </tr>
+  <tr>
+    <td valign="top" height="318" width="142"><b>Optional Changes to
+      newreply.php:</b>
+      <p><b>This mod permits the admin to require moderation on the submittal of
+      News to the news forum, but allows members to comment on the news without
+      moderation.&nbsp;</b></p>
+      <p><b><font color="#FF0000">If you want comments moderated as well do not
+      apply this mod.</font></b></p>
+    </td>
+    <td height="318" width="5345"><b><font size="3">newreply.php:</font><br>
+      Step 1 0f 1, find:</b><br>
+      <br>
+      <font color="blue">// auto bypass queueing for admins/mods<br>
+      if (ismoderator($foruminfo[forumid])) {<br>
+      $visible=1;<br>
+      }</font><br>
+      <br>
+      <b>Immediately after that, insert this:</b><br>
+      <br>
+      <textarea cols="80" rows="8">
+// vBPortal Begin
+  // auto bypass queueing for news forum and polls forum replys
+  if($foruminfo[forumid]==$newsforum or $foruminfo[forumid]==$pollsforum ){
+    $visible=1;
+  }
+// vBPortal End
+</textarea>
+  <tr>
+    <td valign="top" height="77" width="142"></td>
+    <td height="77" width="5345" valign="top"><b><font color="#FF0000" size="4">The
+      Following Script mods are all related to the Topics option, do&nbsp;<br>
+      not apply unless you have, or will be installing the topics tables&nbsp;<br>
+      using the vbpinstall.php install script.</font></b>
+  <tr>
+    <td valign="top" height="443" width="142"><b>Changes to search.php</b>
+      <p><b>This mod enables the topics search when you click on a news topic
+      image or select news category from the drop down box.</b></td>
+    <td height="443" width="5345" valign="top"><b><font size="3">search.php</font><br>
+      Step 1 0f 1, find:</b>
+      <p><font color="blue">// ###################### Start posts by user x
+      #######################</font></p>
+      <p><b>* Immediately above that, insert this:</b></p>
+      <p><textarea cols="80" rows="16">
+// vBPortal Begin Topic search routine
+// ###################### Start posts by topic x #######################
+if ($action=="findtopic") {
+  // get allowable forums:
+  $forumsql=getallforumsql();
+
+  // get topic:
+  $topicsql=" AND post.topic='$topic'";
+
+  $wheresql="1=1".$forumsql.$topicsql;
+
+  if ($getsearch=$DB_site->query_first("SELECT searchid FROM search WHERE query='".addslashes($wheresql)."'")) {
+    $searchid=$getsearch[searchid];
+
+  } else {
+    // get last search for this topic and check floodcheck
+    if ($prevsearch=$DB_site->query_first("SELECT searchid,dateline FROM search WHERE ".iif($bbuserinfo[userid]==0,"ipaddress='$ipaddress'","topic=$topic")." ORDER BY dateline DESC LIMIT 1")) {
+      if (time()-$prevsearch[dateline]<$searchfloodcheck and $searchfloodcheck!=0) { // and !ismoderator()) {
+                                eval("standarderror(\"".gettemplate("error_searchfloodcheck")."\");");
+                                exit;
+      }
+    }
+                // insert query into db
+                $DB_site->query("INSERT INTO search (searchid,query,dateline,querystring,showposts,userid,ipaddress) VALUES (NULL,'".addslashes($wheresql)."',".time().",'".addslashes($query)."',1,$bbuserinfo[userid],'".addslashes($ipaddress)."')");
+                $searchid=$DB_site->insert_id();
+  }
+
+eval("standardredirect(\"".gettemplate("redirect_search")."\",\"search.php?s=$session[sessionhash]&action=showresults&searchid=$searchid\");");
+}
+// vBPortal End
+</textarea>
+  <tr>
+    <td valign="top" height="1252" width="142"><b>Changes to newthread.php:</b>
+      <p>&nbsp;</p>
+    </td>
+    <td height="1252" width="5345" valign="top"><b><font size="3">newthread.php:</font><br>
+      Step 1 0f 3, find:</b><br>
+      <br>
+      <br>
+      <font color="blue">$DB_site-&gt;query(&quot;UPDATE post SET pagetext='&quot;.addslashes($message).&quot;',allowsmilie='$allowsmilie',showsignature='$signature',iconid='$iconid',attachmentid='$attachmentid'
+      WHERE postid='$posts[minpost]'&quot;);</font><br>
+      <br>
+      <b>replace with:</b><br>
+      <br>
+      <textarea cols="80" rows="12">
+// vBPortal Begin
+//$DB_site->query("UPDATE post SET pagetext='".addslashes($message)."',allowsmilie='$allowsmilie',showsignature='$signature',iconid='$iconid',attachmentid='$attachmentid' WHERE postid='$posts[minpost]'");
+$DB_site->query("UPDATE post SET pagetext='".addslashes($message)."',allowsmilie='$allowsmilie',showsignature='$signature',iconid='$iconid',attachmentid='$attachmentid',topic='$topic' WHERE postid='$posts[minpost]'");
+// vBPortal End
+</textarea><br>
+      <br>
+      <b><font size="3">newthread.php:</font><br>
+      Step 2 0f 3, find:</b><br>
+      <br>
+      <font color="blue">// create first post<br>
+      $DB_site-&gt;query(&quot;INSERT INTO post (postid,threadid,title,username,userid,dateline,attachmentid,pagetext,allowsmilie,showsignature,ipaddress,iconid,visible)
+      VALUES (NULL,'$threadid','&quot;.addslashes(htmlspecialchars($subject)).&quot;','&quot;.addslashes($postusername).&quot;','$bbuserinfo[userid]','&quot;.time().&quot;','$attachmentid','&quot;.addslashes($message).&quot;','$allowsmilie','$signature','$ipaddress','$iconid','1')&quot;);</font><br>
+      <br>
+      <b>replace with:</b><br>
+      <br>
+      <textarea cols="80" rows="12">
+// vBPortal Begin
+// create first post
+//      $DB_site->query("INSERT INTO post (postid,threadid,title,username,userid,dateline,attachmentid,pagetext,allowsmilie,showsignature,ipaddress,iconid,visible) VALUES (NULL,'$threadid','".addslashes(htmlspecialchars($subject))."','".addslashes($postusername)."','$bbuserinfo[userid]','".time()."','$attachmentid','".addslashes($message)."','$allowsmilie','$signature','$ipaddress','$iconid','1')");
+	  $DB_site->query("INSERT INTO post (postid,threadid,title,username,userid,dateline,attachmentid,pagetext,allowsmilie,showsignature,ipaddress,iconid,visible,topic) VALUES (NULL,'$threadid','".addslashes(htmlspecialchars($subject))."','".addslashes($postusername)."','$bbuserinfo[userid]','".time()."','$attachmentid','".addslashes($message)."','$allowsmilie','$signature','$ipaddress','$iconid','1','$topic')");
+// vBPortal End
+</textarea><br>
+      <br>
+      <b><font size="3">newthread.php:</font><br>
+      Step 3 0f 3, find:</b><br>
+      <p><font color="blue">eval(&quot;dooutput(\&quot;&quot;.gettemplate(&quot;newthread&quot;).&quot;\&quot;);&quot;);<br>
+      <br>
+      }<br>
+      <br>
+      ?&gt;</font><br>
+      <br>
+      <b>Immediately above it insert this:</b><br>
+      <br>
+      <textarea cols="80" rows="15">
+// vBPortal Begin
+   if($forumid==$newsforum){
+      $toplist = mysql_query("select topicid, topictext from nuke_topics order by topictext");
+       while(list($topicid, $topics) = mysql_fetch_row($toplist)) {
+        if ($topicid==$topic) { $sel = "selected=\"selected\" "; }
+           eval ("\$P_newsselecttopic_list .= \"".gettemplate("P_newsselecttopic_list")."\";");
+	  $sel = "";
+     }
+     eval("\$newthreadheader .= \"".gettemplate('P_newthreadheader')."\";");
+     eval ("\$P_newsselecttopic = \"".gettemplate("P_newsselecttopic")."\";");
+  } else {
+     $newthreadheader = "Post New Thread";
+  }
+// vBPortal End
+</textarea></p>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" height="850" width="142"><b>Changes to editpost.php:</b></td>
+    <td height="850" width="5345" valign="top"><b><font size="3">editpost.php:</font><br>
+      Step 1 0f 2, find:</b><br>
+      <br>
+      <font color="blue">if ($foruminfo[allowsmilies]) {<br>
+      if ($bbuserinfo[showvbcode])<br>
+      $vbcode_smilies = getclickysmilies();<br>
+      eval(&quot;\$disablesmiliesoption = \&quot;&quot;.gettemplate(&quot;newpost_disablesmiliesoption&quot;).&quot;\&quot;;&quot;);<br>
+      } else {<br>
+      $disablesmiliesoption=&quot;&quot;;<br>
+      }</font><br>
+      <br>
+      <br>
+      <b>Immediately after the routine, insert this:</b><br>
+      <br>
+      <textarea cols="80" rows="13">
+// vBPortal Begin
+	if($threadinfo[forumid]==$newsforum and $isfirst ){
+      	 $toplist = mysql_query("select topicid, topictext from nuke_topics order by topictext");
+       while(list($topicid, $topics) = mysql_fetch_row($toplist)) {
+       if ($topicid==$postinfo[topic]) { $sel = "selected=\"selected\" "; }
+          eval ("\$P_newsselecttopic_list .= \"".gettemplate("P_newsselecttopic_list")."\";");
+	  $sel = "";
+        }
+           eval ("\$P_newsselecttopic = \"".gettemplate("P_newsselecttopic")."\";");
+     }
+// vBPortal
+</textarea><br>
+      <br>
+      <b><font size="3">editpost.php:</font><br>
+      Step 2 0f 2, find:</b><br>
+      <br>
+      <font color="blue">$DB_site-&gt;query(&quot;UPDATE post SET title='&quot;.addslashes(htmlspecialchars($title)).&quot;',pagetext='&quot;.addslashes($message).&quot;',allowsmilie='$allowsmilie',showsignature='$signature',iconid='$iconid'$editedbysql$attachmentsql
+      WHERE postid='$postid'&quot;);</font><br>
+      <br>
+      <b>replace with:</b><br>
+      <br>
+      <textarea cols="80" rows="12">
+// vBPortal Begin
+//$DB_site->query("UPDATE post SET title='".addslashes(htmlspecialchars($title))."',pagetext='".addslashes($message)."',allowsmilie='$allowsmilie',showsignature='$signature',iconid='$iconid'$editedbysql$attachmentsql WHERE postid='$postid'");
+$DB_site->query("UPDATE post SET title='".addslashes(htmlspecialchars($title))."',pagetext='".addslashes($message)."',allowsmilie='$allowsmilie',showsignature='$signature',iconid='$iconid'$editedbysql$attachmentsql,topic='$topic' WHERE postid='$postid'");
+// vBPortal End
+</textarea></td>
+  </tr>
+  <tr>
+    <td valign="top" height="116" width="142"></td>
+    <td height="116" width="5345" valign="top">&nbsp;
+      <p>&nbsp;</p>
+      <p><b><font size="3">That's all there is, that was easy wasn't it?</font></b>
+</table>
+
+</body>
