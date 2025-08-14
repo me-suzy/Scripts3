@@ -1,0 +1,942 @@
+/*-------100% Compatible Standard Theme for WebAPP 0.9.8--------*/
+/* This was created for the WebAPP community by DenDen31.  If you find this style sheet */
+/* easier and more flexible to use than the default, he asks that you show your appreciation */
+/* by purchasing a CD from him! (Not required!) Instant-message DenDen31 at WebAPP's website and ask about it! */
+
+/*-----------Page Variables-----------*/
+body {
+	margin: 0%;
+	padding:  0;
+	border-width: 0;
+	border-style: none;
+	border-color: inherit;
+	width: auto;
+	background-color: #000000; /* This will set the base BODY color of your page */
+}
+.pagetable {  
+	background-color: #aaaaaa; /* This sets the background color of your layout */
+	width: 100%;	/* This will set the overall width of your layout */ 
+}
+
+
+/*----------Title Box Prefs-----------*/
+.myheadertable {  
+	background-color: #dddddd; /* Title block background color */
+	width: 100%;
+	border-top: thin solid #ffffff; /* Top border thickness/style/color of this block */
+	border-right: thin solid #666666; /* Right border thickness/style/color of this block */
+	border-left: thin solid #ffffff; /* Left border thickness/style/color of this block */
+	border-bottom: thin solid #666666; /* Bottom border thickness/style/color of this block */
+	border-width: 1px 1px 1px 1px;
+}
+.searchbutton {
+	background-color: #DDDDDD; /* This will change the color of your search button */
+	color: #000000; /* This will change the color of the text on the search button */
+	font-family: arial, helvetica, geneva;
+}
+A.helps:link {
+	color: #003399;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.helps:visited {
+	color: #003399;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.helps:active {
+	color: #003399;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.helps:hover {
+	color: #003399;
+	font-size: 10pt;
+	text-decoration: underline overline;
+	font-family: arial, helvetica, geneva;
+}
+
+/*-----------Navagation Bar Prefs-----------*/
+.navbar {  
+	background-color: #336699;
+	border-top: thin solid #5588bb; /* Top border thickness/style/color of this block */
+	border-right: thin solid #114477; /* Right border thickness/style/color of this block */
+	border-left: thin solid #5588bb; /* Left border thickness/style/color of this block */
+	border-bottom: thin solid #114477; /* Bottom border thickness/style/color of this block */
+	border-width: 1px 1px 1px 1px;
+
+}
+A.nav:link {
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.nav:visited {
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.nav:active {
+	color: #990000;
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.nav:hover {
+	color: #990000;
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+
+/*-----------Banner Prefs-----------*/
+.bannertable {  
+	background-color: #666666; /* Background color for the Banners block */
+	width: 100%; 
+	border-top: thin solid #444444; /* Top border thickness/style/color of this block */
+	border-right: thin solid #ffffff; /* Right border thickness/style/color of this block */
+	border-left: thin solid #444444; /* Left border thickness/style/color of this block */
+	border-bottom: thin solid #ffffff; /* Bottom border thickness/style/color of this block */
+	border-width: 1px 1px 1px 1px;
+}
+.bannertext {
+	color: #ffffff;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+.bannertexttitle {
+	color: #000000;
+	font-weight: bold;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+A.bannerlink:link {
+	color: #000000;
+	font-size: 8pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.bannerlink:visited {
+	color: #000000;
+	font-size: 8pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.bannerlink:active {
+	color: #000000;
+	font-size: 8pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.bannerlink:hover {
+	color: #000000;
+	font-size: 8pt;
+	text-decoration: underline overline;
+	font-family: arial, helvetica, geneva;
+}
+
+/*-----------Menu Prefs-----------*/
+.menutable {  
+	background-color: #336699; /* Background color of yout titles */
+	border-top: thin solid #5588bb; /* Top border thickness/style/color of this block */
+	border-right: thin solid #114477; /* Right border thickness/style/color of this block */
+	border-left: thin solid #5588bb; /* Left border thickness/style/color of this block */
+	border-bottom: thin solid #114477; /* Bottom border thickness/style/color of this block */
+	border-width: 1px 1px 1px 1px;
+	color: #ffffff; /* Text color of your titles */
+	font-weight: bold; /* Style of the title texts */
+	font-size: 10pt; /* size of the title texts */
+	font-family: arial, helvetica, geneva; /* font for your title texts */
+}
+.menubordercolor {  /* This border surrounds the content of each block under it's titleblock */
+	border-top: thin solid #666666; /* Top border thickness/style/color of this block */
+	border-right: thin solid #ffffff; /* Right border thickness/style/color of this block */
+	border-left: thin solid #666666; /* Left border thickness/style/color of this block */
+	border-bottom: thin solid #ffffff; /* Bottom border thickness/style/color of this block */
+	border-width: 1px 1px 1px 1px;
+ 
+}
+.menubackcolor {  
+	background-color: #dddddd; /* Background color for all content blocks under each titleblock */
+	border-top: thin solid #999999; /* Top border thickness/style/color of this block */
+	border-right: thin solid #eeeeee; /* Right border thickness/style/color of this block */
+	border-left: thin solid #999999; /* Left border thickness/style/color of this block */
+	border-bottom: thin solid #eeeeee; /* Bottom border thickness/style/color of this block */
+	border-width: 1px 1px 1px 1px;
+}
+
+/*-------Who's Online? Prefs--------*/
+A.whomenu:link {
+	color: #003399;
+	font-weight: bold;
+	font-size: 8pt;
+	text-decoration: underline;
+	font-family: arial, helvetica, geneva;
+}
+A.whomenu:visited {
+	color: #003399;
+	font-weight: bold;
+	font-size: 8pt;
+	text-decoration: underline;
+	font-family: arial, helvetica, geneva;
+}
+A.whomenu:active {
+	color: #003399;
+	font-weight: bold;
+	font-size: 8pt;
+	text-decoration: underline;
+	font-family: arial, helvetica, geneva;
+}
+A.whomenu:hover {
+	color: #003399;
+	font-weight: bold;
+	font-size: 8pt;
+	text-decoration: underline overline;
+	font-family: arial, helvetica, geneva;
+}
+.whocat {
+	color: #003399;
+	font-weight: bold;
+	font-size: 8pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+
+/*-----------Poll Prefs-----------*/
+.poll {
+	color: #000000;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+.votebutton {
+	background-color: #DDDDDD; /* This will change the color of your vote button */
+	color: #000000; /* This will change the color of the text on the vote button */
+	font-family: arial, helvetica, geneva;
+}
+A.polllink:link {
+	color: #003399;
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.polllink:visited {
+	color: #003399;
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.polllink:active {
+	color: #003399;
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.polllink:hover {
+	color: #003399;
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: underline overline;
+	font-family: arial, helvetica, geneva;
+}
+
+/*-----------Calendar Prefs-----------*/
+.calhead {
+     color: #000000;
+     font-size: 8pt;
+     font-family: arial, helvetica, geneva;
+}
+.calbody {
+     color: #666666;
+     font-size: 8pt;
+     font-family: arial, helvetica, geneva;
+}
+.calhigh {
+     color: #009900;
+     font-weight: bold;
+     font-size: 8pt;
+     font-family: arial, helvetica, geneva;
+}
+.caltoday {
+     color: #003399;
+     font-weight: bold;
+     font-size: 8pt;
+     font-family: arial, helvetica, geneva;
+}
+
+/*-----------Newsletter Prefs-----------*/
+.cat { /* these settings are for the text in your newsletter block (if turned on!) */
+	color: #000000; 
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+.newsletterbutton {
+	background-color: #DDDDDD; /* This will change the color of your submit button */
+	color: #000000; /* This will change the color of the text on the submit button */
+	font-family: arial, helvetica, geneva;
+}
+
+/*-----------News Prefs-----------*/
+.newstextsmall {
+	color: #000000;
+	font-size: 8pt;
+	font-family: arial, helvetica, geneva;
+}
+.newstexttitle {
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+.fullnewstitle {
+	color: #003399;
+	font-weight: bold;
+	font-size: 12pt;
+	font-family: arial, helvetica, geneva;
+}
+.newssubtitle {
+	color: #000000;
+	font-size: 8pt;
+	font-family: arial, helvetica, geneva;
+}
+.newstextnormal {  
+	color: #000000;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+.newsfootertext {  
+	color: #000000;
+	font-size: 8pt;
+	font-family: arial, helvetica, geneva;
+}
+.articlecattitle {
+	color: #003399;
+	font-weight: bold;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+.articlecatempty {
+	color: #888888;
+	font-weight: bold;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+.articlecatnormal {
+	color: #000000;
+	font-weight: bold;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+/* Though this seems to be an error in webAPP, the folowing 2 settings are for the border and backgound 
+for the comment submission block inside an article if there are no comments made!  If there are comments posted, 
+these settings do not show. */
+.commentbordercolor {  
+	border-top: thin solid #FFFFFF; /* Top border thickness/style/color of this block */
+	border-right: thin solid #444444; /* Right border thickness/style/color of this block */
+	border-left: thin solid #FFFFFF; /* Left border thickness/style/color of this block */
+	border-bottom: thin solid #444444; /* Bottom border thickness/style/color of this block */
+	border-width: 1px 1px 1px 1px;
+}
+.commentbackcolor {  
+	background-color: #5588bb; 
+	border-top: thin solid #444444; /* Top border thickness/style/color of this block */
+	border-right: thin solid #ffffff; /* Right border thickness/style/color of this block */
+	border-left: thin solid #444444; /* Left border thickness/style/color of this block */
+	border-bottom: thin solid #ffffff; /* Bottom border thickness/style/color of this block */
+	border-width: 1px 1px 1px 1px;
+
+}
+.newsfootertable {  /* Footer blocks to news articles on front page where the print and comments links are */
+	background-color: #5588bb; 
+	width: 100%; 
+	border-top: thin solid #5588cc; /* Top border thickness/style/color of this block */
+	border-right: thin solid #114477; /* Right border thickness/style/color of this block */
+	border-left: thin solid #5588cc; /* Left border thickness/style/color of this block */
+	border-bottom: thin solid #114477; /* Bottom border thickness/style/color of this block */
+	border-width: 1px 1px 1px 1px;
+}
+A.smallnewslink:link {
+	color: #003399;
+	font-weight: normal;
+	font-size: 8pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.smallnewslink:visited {
+	color: #003399;
+	font-size: 8pt;
+	font-weight: normal;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.smallnewslink:active {
+	color: #003399;
+	font-weight: normal;
+	font-size: 8pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.smallnewslink:hover {
+	color: #003399;
+	font-weight: normal;
+	font-size: 8pt;
+	text-decoration: underline overline;
+	font-family: arial, helvetica, geneva;
+}
+A.newslink:link {
+	color: #003399;
+	font-weight: normal;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.newslink:visited {
+	color: #003399;
+	font-size: 10pt;
+	font-weight: normal;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.newslink:active {
+	color: #003399;
+	font-weight: normal;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva
+}
+A.newslink:hover {
+	color: #003399;
+	font-weight: normal;
+	font-size: 10pt;
+	text-decoration: underline overline;
+	font-family: arial, helvetica, geneva;
+}
+.commenttitleback {  /* News Article Comment message title settings */
+	background-color: #DDDDee; 
+	border-top: thin solid #FFFFFF; /* Top border thickness/style/color of this block */
+	border-right: thin solid #666666; /* Right border thickness/style/color of this block */
+	border-left: thin solid #FFFFFF; /* Left border thickness/style/color of this block */
+	border-bottom: thin solid #666666; /* Bottom border thickness/style/color of this block */
+	border-width: 1px 1px 1px 1px;
+	color: #000000; /* Comment message title text */
+	font-weight: bold;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+.commentsubtitleback {  /* New comment Message subtitle settings */
+	background-color: #ccccDD;
+	border-top: thin solid #FFFFFF; /* Top border thickness/style/color of this block */
+	border-right: thin solid #666666; /* Right border thickness/style/color of this block */
+	border-left: thin solid #FFFFFF; /* Left border thickness/style/color of this block */
+	border-bottom: thin solid #666666; /* Bottom border thickness/style/color of this block */
+	border-width: 1px 1px 1px 1px;
+	color: #000000; /* subtitle text color */
+	font-weight: normal;
+	font-size: 8pt;
+	font-family: arial, helvetica, geneva;
+}
+A.commentlink:link {
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.commentlink:visited {
+	color: #FFFFFF;
+	font-size: 10pt;
+	font-weight: bold;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.commentlink:active {
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.commentlink:hover {
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: underline overline;
+	font-family: arial, helvetica, geneva;
+}
+
+/*---------Forum Prefs-----------*/
+.forumtext {
+	color: #000000;
+	font-weight: normal;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+.forumtextbold {
+	color: #000000;
+	font-weight: bold;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+.forumtitlebackcolor {  /* this is the tablegrid for forum topics and message listings */
+	background-color: #ffffff; /* the lines inside the table take on this color */
+	border-top: thin solid #ffffff; /* Top border thickness/style/color of this entire grid */
+	border-right: thin solid #444444; /* Right border thickness/style/color of this entire grid */
+	border-left: thin solid #ffffff; /* Left border thickness/style/color of this entire grid */
+	border-bottom: thin solid #444444; /* Bottom border thickness/style/color of this entire grid */
+	border-width: 1px 1px 1px 1px;
+
+}
+.boardtitle {  /* These settings are for all the cells INSIDE the title part of the  topics/message listings */
+	background-color: #dddddd; /* Background color of titleboxes */
+	border-top: thin solid #ffffff; /* Top border thickness/style/color of these boxes */
+	border-right: thin solid #666666; /* Right border thickness/style/color of these boxes */
+	border-left: thin solid #ffffff; /* Left border thickness/style/color of these boxes */
+	border-bottom: thin solid #666666; /* Bottom border thickness/style/color of these boxes */
+	border-width: 1px 1px 1px 1px;
+	color: #000000; /*Text settings for your titles in this section */
+	font-weight: bold;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+/* The following 3 sections are for the highlighting of messages in a message listing. the 1st one is for "sticky or locked" messages,
+the other 2 alternate in the message listing and message bodies.  The 2nd one is also for topic listings.  */
+.forumwindow1 {  
+	background-color: #88bbee; 
+	border-top: thin solid #ccccff; /* Top border thickness/style/color of these boxes */
+	border-right: thin solid #336699; /* Right border thickness/style/color of these boxes */
+	border-left: thin solid #ccccff; /* Left border thickness/style/color of these boxes */
+	border-bottom: thin solid #336699; /* Bottom border thickness/style/color of these boxes */
+	border-width: 1px 1px 1px 1px;
+	color: #000000;
+	font-weight: normal;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+.forumwindow2 {  
+	background-color: #ddcccc; 
+	border-top: thin solid #eebbbb; /* Top border thickness/style/color of these boxes */
+	border-right: thin solid #996666; /* Right border thickness/style/color of these boxes */
+	border-left: thin solid #eebbbb; /* Left border thickness/style/color of these boxes */
+	border-bottom: thin solid #996666; /* Bottom border thickness/style/color of these boxes */
+	border-width: 1px 1px 1px 1px;
+	color: #000000;
+	font-weight: normal;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+.forumwindow3 {  
+	background-color: #ccccdd; 
+	border-top: thin solid #EEEEEE; /* Top border thickness/style/color of these boxes */
+	border-right: thin solid #666699; /* Right border thickness/style/color of these boxes */
+	border-left: thin solid #EEEEEE; /* Left border thickness/style/color of these boxes */
+	border-bottom: thin solid #666699; /* Bottom border thickness/style/color of these boxes */
+	border-width: 1px 1px 1px 1px;
+	color: #000000;
+	font-weight: normal;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+A.forumlink:link {
+	color: #003399;
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.forumlink:visited {
+	color: #003399;
+	font-size: 10pt;
+	font-weight: bold;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.forumlink:active {
+	color: #003399;
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.forumlink:hover {
+	color: #003399;
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: underline overline;
+	font-family: arial, helvetica, geneva;
+}
+A.forumnav:link {
+	color: #003399;
+	font-weight: normal;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.forumnav:visited {
+	color: #003399;
+	font-size: 10pt;
+	font-weight: normal;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.forumnav:active {
+	color: #003399;
+	font-weight: normal;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.forumnav:hover {
+	color: #003399;
+	font-weight: normal;
+	font-size: 10pt;
+	text-decoration: underline overline;
+	font-family: arial, helvetica, geneva;
+}
+
+/*-----------Link Prefs-----------*/
+A:link {
+	color: #003399;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A:visited {
+	color: #003399;
+	text-decoration: none
+}
+A:active {
+	color: #003399;
+	text-decoration: underline
+}
+A:hover {
+	color: #003399;
+	text-decoration: underline overline;
+	font-family: arial, helvetica, geneva;
+}
+
+/*-----------Text Prefs-----------*/
+.text {
+	color: #000000;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+.textsmall {
+	color: #000000;
+	font-size: 8pt;
+	font-family: arial, helvetica, geneva;
+}
+.texttitle {
+	color: #003399;
+	font-weight: bold;
+	font-size: 12pt;
+	font-family: arial, helvetica, geneva;
+}
+.time {
+	color: #000000;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+
+/*-----------My Content Prefs-----------*/
+.mycontenttable {  
+	background-color: #dddddd; /* THICK inner border surrounding latest forum posts block on bottom of page (if turned on/color setting only!) */ 
+	width: 100%; 
+	border-top: thin solid #FFFFFF; /* Top border thickness/style/color of this block */
+	border-right: thin solid #FFFFFF; /* Right border thickness/style/color of this block */
+	border-left: thin solid #FFFFFF; /* Left border thickness/style/color of this block */
+	border-bottom: thin solid #FFFFFF; /* Bottom border thickness/style/color of this block */
+	border-width: 1px 1px 1px 1px;
+}
+.mycontenttext {
+	color: #000000;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+.mycontenttexttitle {
+	color: #003399;
+	font-weight: bold;
+	font-size: 12pt;
+	font-family: arial, helvetica, geneva;
+}
+A.mycontentlink:link {
+	color: #003399;
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.mycontentlink:visited {
+	color: #003399;
+	font-size: 10pt;
+	font-weight: bold;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.mycontentlink:active {
+	color: #003399;
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.mycontentlink:hover {
+	color: #003399;
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: underline overline;
+	font-family: arial, helvetica, geneva;
+}
+
+/*-----------Helps Nav Prefs-----------*/
+.helpsnavtable {  /* these setting are for the small block at the bottom of webapp, "help contact stats" etc... */
+	background-color: #dddddd; /* background color */
+	width: 100%; 
+	border-top: thin solid #5588bb; /* Top border thickness/style/color of this block */
+	border-right: thin solid #114477; /* Right border thickness/style/color of this block */
+	border-left: thin solid #5588bb; /* Left border thickness/style/color of this block */
+	border-bottom: thin solid #114477; /* Bottom border thickness/style/color of this block */
+	border-width: 1px 1px 1px 1px;
+}
+.helpsnavtext {
+	color: #000000;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+.helpsnavtexttitle {
+	color: #000000;
+	font-weight: bold;
+	font-size: 12pt;
+	font-family: arial, helvetica, geneva;
+}
+A.helpsnavlink:link {
+	color: #003399;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.helpsnavlink:visited {
+	color: #003399;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.helpsnavlink:active {
+	color: #003399;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.helpsnavlink:hover {
+	color: #003399;
+	font-size: 10pt;
+	text-decoration: underline overline;
+	font-family: arial, helvetica, geneva;
+}
+
+/*-----------WebAPP Footer Prefs-----------*/
+.webapptext {
+	color: #000000;
+	font-size: 8pt;
+	font-family: arial, helvetica, geneva;
+}
+A.webapplink:link {
+	color: #003399;
+	font-size: 8pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.webapplink:visited {
+	color: #003399;
+	font-size: 8pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.webapplink:active {
+	color: #003399;
+	font-size: 8pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.webapplink:hover {
+	color: #003399;
+	font-size: 8pt;
+	text-decoration: underline overline;
+	font-family: arial, helvetica, geneva;
+}
+
+/*-----------Form Prefs------------*/
+.formstexttitle {
+	color: #003399;
+	font-weight: bold;
+	font-size: 12pt;
+	font-family: arial, helvetica, geneva;
+}
+.formstextnormal {
+	color: #000000;
+	font-weight: bold;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+.formstext {
+	color: #000000;
+	font-weight: normal;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+.formstextsmall {
+	color: #000000;
+	font-weight: normal;
+	font-size: 8pt;
+	font-family: arial, helvetica, geneva;
+}
+.button {
+	background-color: #DDDDDD; /* This will change the color of your buttons */
+	color: #000000; /* This will change the color of the text on your buttons */
+	font-family: arial, helvetica, geneva;
+}
+
+/*----------Stats Prefs-----------*/
+.statstextbold {
+	color: #000000;
+	font-weight: bold;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+.statstext {
+	color: #000000;
+	font-weight: normal;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+
+/*-----------IM Prefs-------------*/
+.imtitle {  /* When viewing an instant message, this is the title blocks of the IM list and IM Admin Extras 
+These settings effect EVERY CELL in the title blocks! */
+	background-color: #336699;
+	border-top: thin solid #5588bb; /* Top border thickness/style/color of this block */
+	border-right: thin solid #114477; /* Right border thickness/style/color of this block */
+	border-left: thin solid #5588bb; /* Left border thickness/style/color of this block */
+	border-bottom: thin solid #114477; /* Bottom border thickness/style/color of this block */
+	border-width: 1px 1px 1px 1px;
+ 	color: #ffffff; /* text settings for these cells */
+	font-weight: bold;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+.imselected {  /* When reading an IM, this is the highlighted message listing */
+	background-color: #88bbee; 
+	border-top: thin solid #ccccff; /* Top border thickness/style/color of these boxes */
+	border-right: thin solid #336699; /* Right border thickness/style/color of these boxes */
+	border-left: thin solid #ccccff; /* Left border thickness/style/color of these boxes */
+	border-bottom: thin solid #336699; /* Bottom border thickness/style/color of these boxes */
+	border-width: 1px 1px 1px 1px;
+	color: #000000;
+	font-weight: normal;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+.imwindow1 {  /* First color in the alternating colors of the message listings in IM ssection */
+	background-color: #ddcccc; 
+	border-top: thin solid #eebbbb; /* Top border thickness/style/color of these boxes */
+	border-right: thin solid #996666; /* Right border thickness/style/color of these boxes */
+	border-left: thin solid #eebbbb; /* Left border thickness/style/color of these boxes */
+	border-bottom: thin solid #996666; /* Bottom border thickness/style/color of these boxes */
+	border-width: 1px 1px 1px 1px;
+	color: #000000;
+	font-weight: normal;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+.imwindow2 {  /* Second color in the alternating colors of the message listings in IM ssection */
+	background-color: #ccccdd; 
+	border-top: thin solid #EEEEEE; /* Top border thickness/style/color of these boxes */
+	border-right: thin solid #666699; /* Right border thickness/style/color of these boxes */
+	border-left: thin solid #EEEEEE; /* Left border thickness/style/color of these boxes */
+	border-bottom: thin solid #666699; /* Bottom border thickness/style/color of these boxes */
+	border-width: 1px 1px 1px 1px;
+	color: #000000;
+	font-weight: normal;
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+
+A.newimlink:link {
+	color: #003399;
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.newimlink:visited {
+	color: #003399;
+	font-size: 10pt;
+	font-weight: bold;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.newimlink:active {
+	color: #003399;
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.newimlink:hover {
+	color: #003399;
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: underline overline;
+	font-family: arial, helvetica, geneva;
+}
+A.oldimlink:link {
+	color: #003399;
+	font-weight: normal;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.oldimlink:visited {
+	color: #003399;
+	font-size: 10pt;
+	font-weight: normal;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.oldimlink:active {
+	color: #003399;
+	font-weight: normal;
+	font-size: 10pt;
+	text-decoration: none;
+	font-family: arial, helvetica, geneva;
+}
+A.oldimlink:hover {
+	color: #003399;
+	font-weight: normal;
+	font-size: 10pt;
+	text-decoration: underline overline;
+	font-family: arial, helvetica, geneva;
+}
+
+/*-----------Other Prefs-----------*/
+
+TD {
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
+P {
+	font-size: 10pt;
+	font-family: arial, helvetica, geneva;
+}
