@@ -1,0 +1,168 @@
+<?
+
+/*
+
+
+
+   Copyright (c), 1999, 2000 - phpauction.org
+
+
+
+   This program is free software; you can redistribute it and/or modify
+
+   it under the terms of the GNU General Public License as published by
+
+   the Free Software Foundation (version 2 or later).
+
+
+
+   This program is distributed in the hope that it will be useful,
+
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+
+   GNU General Public License for more details.
+
+
+
+   You should have received a copy of the GNU General Public License
+
+   along with this program; if not, write to the Free Software
+
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+
+
+*/
+
+?>
+
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--
+
+function submitlogin ()
+
+{
+
+	document.user_login.submit ();
+
+}
+
+//-->
+
+</SCRIPT>
+
+<TABLE WIDTH="765" CELLPADDING=0 CELLSPACING=0 BGCOLOR="#FFFFFF" BORDER=0>
+
+<TR>
+
+<TD>
+
+<? print $tlt_font; ?>
+
+<BR>
+
+<CENTER>
+
+<B>
+
+	<?
+
+		print $tlt_font.$MSG_181;
+
+	?>
+
+</B>
+
+
+
+<BR><BR>
+
+<?
+
+	echo $err_font.$TPL_errmsg;
+
+?>
+
+
+
+
+
+        <FORM NAME="user_login" ACTION="login.php?SESSION_ID=<?print $sessionIDU; ?>" METHOD=POST>
+          <TABLE WIDTH="50%" CELLSPACING="0" CELLPADDING="0" BORDER="0">
+
+<TR>
+
+<TD>
+
+<? print $std_font; ?>
+
+<B><? print $MSG_142; ?></B>
+
+</TD>
+
+<TD>
+
+<INPUT TYPE="TEXT" NAME="TPL_nick" SIZE="25" VALUE="<? echo $TPL_nick; ?>">
+
+</TD>
+
+</TR>
+
+
+
+<TR>
+
+<TD>
+
+<? print $std_font; ?>
+
+<B><? print $MSG_004; ?></B>
+
+</TD>
+
+<TD>
+
+<INPUT TYPE="password" NAME="TPL_password" SIZE="25" VALUE="">
+
+</TD>
+
+</TR>
+
+
+
+<TR>
+
+<TD>&nbsp;</TD>
+
+<TD>
+
+<BR>
+
+<INPUT TYPE=submit NAME="">
+
+</TD>
+
+</TR>
+
+
+
+</TABLE>
+
+	<INPUT type="hidden" NAME="action" VALUE="login">
+
+</FORM>
+
+</CENTER>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+
