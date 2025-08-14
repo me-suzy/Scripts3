@@ -1,0 +1,5 @@
+:Newsportal groups
+darkzone.support.newsportal Main newsportal group
+darkzone.support.newsportal.announce Announces about newsportal
+:test groups
+darkzone.test Here you can send test articles
