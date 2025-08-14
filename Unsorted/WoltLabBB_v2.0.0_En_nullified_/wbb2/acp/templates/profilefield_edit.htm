@@ -1,0 +1,67 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+<form method="post" action="profilefield.php">
+<input type="hidden" name="send" value="send">
+<input type="hidden" name="action" value="$action">
+<input type="hidden" name="sid" value="$session[hash]">
+<input type="hidden" name="profilefieldid" value="$_REQUEST[profilefieldid]">
+<table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="100%" align="center">
+  <tr class="tblhead">
+   <td colspan=2>Edit Profile Field</td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Profile Field Name:</b></td>
+   <td><input type="text" name="title" value="$profile[title]" maxlength="100"></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Description:</b><br>You can enter a question, e.g. "Where are you from?"</td>
+   <td><textarea cols="50" rows="5" name="description">$profile[description]</textarea></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Required at registration?</b><br>Do you want this field to be required when someone registers?</td>
+   <td><select name="required">
+		<option value="1"$profilesel[0]>Yes</option>
+		<option value="0"$profilesel[1]>No</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Show in threads?</b><br>Do you want this field to be displayed in the users' posts?</td>
+   <td><select name="showinthread">
+		<option value="1"$profilesel[2]>Yes</option>
+		<option value="0"$profilesel[3]>No</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Hide Profile Field?</b><br>Do you want this field to be only viewable by Administrators?</td>
+   <td><select name="hidden">
+		<option value="1"$profilesel[4]>Yes</option>
+		<option value="0"$profilesel[5]>No</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Max. Length:</b><br>What is the maximum number of characters a user can enter?</td>
+   <td><input type="text" name="maxlength" value="$profile[maxlength]" maxlength="5"></td>
+  </tr>
+   <tr class="firstrow">
+   <td><b>Profile Field Size:</b></td>
+   <td><input type="text" name="fieldsize" value="$profile[fieldsize]" maxlength="3"></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Sorting Number:</b><br>The number for order in which the fields are sorted. You can view the sorting number of the other fields in "Edit Profile Fields".</td>
+   <td><input type="text" name="fieldorder" value="$profile[fieldorder]" maxlength="7"></td>
+  </tr>
+  <tr class="firstrow">
+   <td colspan=2 align="center"><input type="submit" value="Submit"> <input type="reset" value="Reset"></td>
+  </tr>
+ </table>
+</form>
+
+</body>
+
+</html>
