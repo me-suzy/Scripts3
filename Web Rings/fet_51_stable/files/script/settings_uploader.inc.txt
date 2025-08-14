@@ -1,0 +1,1056 @@
+<?php
+
+class Main_settings{
+    // Class to handle all main variables
+
+    var $fet_path;
+    var $html_path;
+    var $php_path;
+    var $templates_path;
+    var $data_path;
+    var $log_path;
+    var $bakup_path;
+    var $version;
+    var $time_string;
+    var $fet_domain;
+
+    function Main_settings(){
+        global $cfg;
+
+        $this->version='5.1';
+        $this->time_string=date('H:i:s - l, jS of F Y');
+        $this->fet_path=$cfg['FET_PATH'];
+        $this->html_path=$cfg['HTML_PATH'];
+        $this->php_path=$cfg['PHP_PATH'];
+        $this->fet_domain=$cfg['FET_DOMAIN'];
+        $this->templates_path=$cfg['FET_TOP_TEMPLATES'];
+        $this->data_path=$this->fet_path.'/data';
+        $this->log_path=$this->fet_path.'/logs';
+        $this->bakup_path=$this->fet_path.'/backups';
+
+    }
+}
+
+class Admin_settings{
+    // Class to handle admin settings
+
+    var $color;
+    var $site_url;
+    var $site_domain;
+    var $list_filtering;
+    var $list_sorting;
+    var $show_h_prod;
+    var $show_h_truin;
+    var $show_h_gluin;
+    var $show_h_lang;
+    var $show_h_nojs;
+    var $show_h_ca;
+    var $show_h_act;
+    var $show_h_cont;
+    var $show_d_prod;
+    var $show_d_ca;
+    var $show_d_act;
+    var $show_d_truin;
+    var $show_d_gluin;
+    var $show_d_nojs;
+    var $show_d_lang;
+    var $show_d_cont;
+    var $show_icq;
+    var $show_wm;
+    var $show_sname;
+    var $show_date;
+    var $show_h_uniq_prod;
+    var $show_d_uniq_prod;
+    var $totals_pos;
+    var $td_cellnum;
+    var $hour_cellnum;
+    var $day_cellnum;
+    var $cur_row;
+    var $as_tradetype;
+    var $as_mintrade;
+    var $as_ratio;
+    var $as_mainpage;
+    var $as_toplist;
+    var $as_clicksorder;
+    var $as_contentskim;
+    var $as_accept_trpr;
+    var $as_accept_dspr;
+    var $as_accept_anpr;
+    var $as_accept_nrh;
+    var $as_accept_nrc;
+    var $as_nojs;
+    var $as_proxy_prc;
+    var $as_nocook_prc;
+    var $as_noref_prc;
+    var $as_domlevel;
+    var $as_opened;
+    var $as_maxsigns;
+    var $trade_rules;
+    var $reported;
+
+    function Admin_settings(){
+        global $settings,$log;
+
+        $sd=@file($settings->data_path.'/admin_settings.dat');
+        if($sd){
+            // Giving variables
+            $this->color=trim($sd[0]) or $this->color='Original';
+            $this->site_url=trim($sd[1]) or $this->site_url='http://'.$_SERVER['SERVER_NAME'].'/';
+            $this->show_h_truin=trim($sd[2]);
+            $this->show_h_gluin=trim($sd[3]);
+            $this->show_h_prod=trim($sd[4]);
+            $this->show_h_nojs=trim($sd[5]);
+            $this->show_h_cont=trim($sd[6]);
+            $this->show_h_ca=trim($sd[7]);
+            $this->show_h_act=trim($sd[8]);
+            $this->show_h_lang=trim($sd[9]);
+            $this->show_d_truin=trim($sd[10]);
+            $this->show_d_gluin=trim($sd[11]);
+            $this->show_d_prod=trim($sd[12]);
+            $this->show_d_nojs=trim($sd[13]);
+            $this->show_d_cont=trim($sd[14]);
+            $this->show_d_ca=trim($sd[15]);
+            $this->show_d_act=trim($sd[16]);
+            $this->show_d_lang=trim($sd[17]);
+            $this->list_filtering=trim($sd[18]);
+            $this->list_sorting=trim($sd[19]);
+            $this->show_icq=trim($sd[20]);
+            $this->totals_pos=trim($sd[21]);
+            $this->my_icq=trim($sd[22]);
+            $this->my_email=trim($sd[23]);
+            $this->show_h_uniq_prod=trim($sd[24]);
+            $this->show_d_uniq_prod=trim($sd[25]);
+            $this->show_wm=trim($sd[26]);
+            $this->show_sname=trim($sd[27]);
+            $this->show_date=trim($sd[28]);
+            $this->show_analyzer=trim($sd[29]);
+            $this->show_checker=trim($sd[30]);
+        } else {
+            // Settings file read problem
+            $log->error('Admin settings file read error');
+            // Giving standart params
+            $this->color='Original';
+            $this->site_url='http://'.$_SERVER['SERVER_NAME'].'/';
+            $this->show_h_truin=0;
+            $this->show_h_gluin=0;
+            $this->show_h_prod=0;
+            $this->show_h_nojs=0;
+            $this->show_h_cont=0;
+            $this->show_h_ca=0;
+            $this->show_h_act=0;
+            $this->show_h_lang=0;
+            $this->show_d_truin=1;
+            $this->show_d_gluin=1;
+            $this->show_d_prod=1;
+            $this->show_d_nojs=1;
+            $this->show_d_cont=1;
+            $this->show_d_ca=1;
+            $this->show_d_act=1;
+            $this->show_d_lang=1;
+            $this->list_filtering=0;
+            $this->list_sorting='hrin';
+            $this->show_icq=1;
+            $this->totals_pos=1;
+            $this->show_h_uniq_prod=1;
+            $this->show_d_uniq_prod=1;
+            $this->show_wm=1;
+            $this->show_sname=1;
+            $this->show_date=0;
+            $this->show_analyzer=1;
+            $this->show_checker=1;
+        }
+        $this->site_domain=get_domain($this->site_url);
+
+        if($this->show_checker){
+            $rep=@file($settings->data_path.'/checker.dat');
+            if($rep){
+                foreach($rep as $rpl){
+                    list($tdom,$ifr,$jsc,$obj,$app)=explode('|',trim($rpl));
+                    if($ifr || $jsc || $obj || $app) $this->reported["$tdom"]=true;
+                }
+            }
+        }
+    }
+
+    function read_autosignup(){
+        global $settings,$global;
+        $sd=@file($settings->data_path.'/auto_signup.dat');
+        if($sd){
+            $this->as_tradetype=trim($sd[0]);
+            $this->as_mintrade=trim($sd[1]);
+            $this->as_ratio=trim($sd[2]);
+            $this->as_mainpage=trim($sd[3]);
+            $this->as_toplist=trim($sd[4]);
+            $this->as_clicksorder=trim($sd[5]);
+            $this->as_contentskim=trim($sd[6]);
+            $this->as_accept_trpr=trim($sd[7]);
+            $this->as_accept_dspr=trim($sd[8]);
+            $this->as_accept_anpr=trim($sd[9]);
+            $this->as_accept_nrh=trim($sd[10]);
+            $this->as_accept_nrc=trim($sd[11]);
+            $this->as_nojs=trim($sd[12]);
+            $this->as_proxy_prc=trim($sd[13]);
+            $this->as_nocook_prc=trim($sd[14]);
+            $this->as_noref_prc=trim($sd[15]);
+            $this->as_domlevel=trim($sd[16]);
+            $this->as_opened=trim($sd[17]);
+            $this->as_maxsigns=trim($sd[18]);
+        } else {
+            $this->as_tradetype=6;
+            $this->as_mintrade=0;
+            $this->as_ratio=1.2;
+            if(is_array($global->main_default)){
+                reset($global->main_default);
+                list($did,$dnm)=each($global->main_default);
+                $this->as_mainpage=$did;
+            } elseif(is_array($global->main_page)){
+                reset($global->main_page);
+                list($did,$dnm)=each($global->main_page);
+                $this->as_mainpage=$did;
+            } else $this->as_mainpage=false;
+            $this->as_toplist=1;
+            $this->as_clicksorder='';
+            $this->as_contentskim=50;
+            $this->as_accept_trpr=1;
+            $this->as_accept_dspr=1;
+            $this->as_accept_anpr=1;
+            $this->as_accept_nrh=1;
+            $this->as_accept_nrc=1;
+            $this->as_nojs=1;
+            $this->as_proxy_prc=100;
+            $this->as_nocook_prc=100;
+            $this->as_noref_prc=100;
+            $this->as_domlevel=0;
+            $this->as_opened=1;
+            $this->as_maxsigns=10;
+        }
+    }
+
+    function save_autosignup(){
+        global $settings,$log;
+        $sf=@fopen($settings->data_path.'/auto_signup.dat','w');
+        if(!$sf){
+            $log->error('Can not access Autosignup settings file for writing');
+            return false;
+        }
+        @flock($sf,LOCK_EX);
+        @fwrite($sf,$this->as_tradetype."\n");
+        @fwrite($sf,$this->as_mintrade."\n");
+        @fwrite($sf,$this->as_ratio."\n");
+        @fwrite($sf,$this->as_mainpage."\n");
+        @fwrite($sf,$this->as_toplist."\n");
+        @fwrite($sf,$this->as_clicksorder."\n");
+        @fwrite($sf,$this->as_contentskim."\n");
+        @fwrite($sf,$this->as_accept_trpr."\n");
+        @fwrite($sf,$this->as_accept_dspr."\n");
+        @fwrite($sf,$this->as_accept_anpr."\n");
+        @fwrite($sf,$this->as_accept_nrh."\n");
+        @fwrite($sf,$this->as_accept_nrc."\n");
+        @fwrite($sf,$this->as_nojs."\n");
+        @fwrite($sf,$this->as_proxy_prc."\n");
+        @fwrite($sf,$this->as_nocook_prc."\n");
+        @fwrite($sf,$this->as_noref_prc."\n");
+        @fwrite($sf,$this->as_domlevel."\n");
+        @fwrite($sf,$this->as_opened."\n");
+        @fwrite($sf,$this->as_maxsigns."\n");
+        @flock($sf,LOCK_UN);
+        @fclose($sf);
+        @chmod($settings->data_path.'/auto_signup.dat', 0777);
+    }
+
+    function read_rules(){
+        global $settings;
+        $sd=@file($settings->data_path.'/rules.dat');
+        if($sd){
+            $ind=0;
+            foreach($sd as $sdl){
+                $rl=trim($sdl);
+                if(strlen($rl)<1) continue;
+                $this->trade_rules[$ind]=$rl;
+                $ind++;
+            }
+        }
+    }
+
+    function save_rules(){
+        global $settings,$log;
+        $sf=@fopen($settings->data_path.'/rules.dat','w');
+        if(!$sf){
+            $log->error('Can not access Trade Rules file for writing');
+            return false;
+        }
+        if(is_array($this->trade_rules)){
+            foreach($this->trade_rules as $rid=>$rln) @fwrite($sf,$rln."\n");
+        }
+        @fclose($fp);
+        @chmod($settings->data_path.'/rules.dat',0777);
+    }
+
+    function save_settings(){
+        global $settings,$log;
+        $sf=@fopen($settings->data_path.'/admin_settings.dat','w');
+        if(!$sf){
+            $log->error('Can not access Admin Settings file for writing');
+            return false;
+        }
+        @flock($sf,LOCK_EX);
+        @fwrite($sf,$this->color."\n");
+        @fwrite($sf,$this->site_url."\n");
+        @fwrite($sf,$this->show_h_truin."\n");
+        @fwrite($sf,$this->show_h_gluin."\n");
+        @fwrite($sf,$this->show_h_prod."\n");
+        @fwrite($sf,$this->show_h_nojs."\n");
+        @fwrite($sf,$this->show_h_cont."\n");
+        @fwrite($sf,$this->show_h_ca."\n");
+        @fwrite($sf,$this->show_h_act."\n");
+        @fwrite($sf,$this->show_h_lang."\n");
+        @fwrite($sf,$this->show_d_truin."\n");
+        @fwrite($sf,$this->show_d_gluin."\n");
+        @fwrite($sf,$this->show_d_prod."\n");
+        @fwrite($sf,$this->show_d_nojs."\n");
+        @fwrite($sf,$this->show_d_cont."\n");
+        @fwrite($sf,$this->show_d_ca."\n");
+        @fwrite($sf,$this->show_d_act."\n");
+        @fwrite($sf,$this->show_d_lang."\n");
+        @fwrite($sf,$this->list_filtering."\n");
+        @fwrite($sf,$this->list_sorting."\n");
+        @fwrite($sf,$this->show_icq."\n");
+        @fwrite($sf,$this->totals_pos."\n");
+        @fwrite($sf,$this->my_icq."\n");
+        @fwrite($sf,$this->my_email."\n");
+        @fwrite($sf,$this->show_h_uniq_prod."\n");
+        @fwrite($sf,$this->show_d_uniq_prod."\n");
+        @fwrite($sf,$this->show_wm."\n");
+        @fwrite($sf,$this->show_sname."\n");
+        @fwrite($sf,$this->show_date."\n");
+        @fwrite($sf,$this->show_analyzer."\n");
+        @fwrite($sf,$this->show_checker."\n");
+        @flock($sf,LOCK_UN);
+        @fclose($sf);
+        @chmod($settings->data_path.'/admin_settings.dat', 0777);
+    }
+}
+
+class Global_options{
+    // All global trade variables
+
+    var $min_hits_old;
+    var $min_hits_new;
+    var $min_prod_old;
+    var $min_prod_new;
+    var $hidden_name;
+    var $hidden_time;
+    var $bot_filter;
+    var $min_click_time;
+    var $fast_to_trade;
+    var $max_hits;
+    var $max_clicks;
+    var $overclicks;
+    var $lang_hits;
+    var $lang_clicks;
+    var $a;
+    var $use_langs;
+    var $langs;
+    var $exout_urls;
+    var $exit_urls;
+    var $nocookie_urls;
+    var $filtered_urls;
+    var $noref_urls;
+    var $main_page;
+    var $main_default;
+    var $lnghit_urls;
+    var $lngclick_urls;
+    var $group;
+    var $in_blacklist;
+    var $short_force;
+    var $short_min;
+    var $short_duration;
+    var $event_st_day;
+    var $event_st_hour;
+    var $event_st_min;
+    var $event_ed_day;
+    var $event_ed_hour;
+    var $event_ed_min;
+    var $event_min;
+    var $events_list;
+    var $top_pages;
+    var $top_sort;
+    var $top_times;
+    var $exit_st_day;
+    var $exit_st_hour;
+    var $exit_st_min;
+    var $exit_ed_day;
+    var $exit_ed_hour;
+    var $exit_ed_min;
+    var $exit_prc;
+
+    function Global_options(){
+        global $settings,$log;
+
+        // Reading main pages
+        $mp=@fopen($settings->data_path.'/main_pages.dat','r');
+        if($mp){
+            @flock($mp,LOCK_EX);
+            $mpd=@fread($mp,filesize($settings->data_path.'/main_pages.dat'));
+            @flock($mp,LOCK_UN);
+            @fclose($mp);
+            $mpe=explode("\n",$mpd);
+            foreach($mpe as $mpl){
+                if(strlen($mpl)<2) continue;
+                list($pid,$pfn,$pdf)=explode('|',trim($mpl));
+                $this->main_page[$pid]=$pfn;
+                $this->main_default[$pid]=$pdf;
+            }
+        } else {
+            $log->error('Main pages settings file not found or not readable');
+            @chmod($settings->data_path.'/main_pages.dat', 0777);
+        }
+
+        // Reading trade global options
+        $go=@fopen($settings->data_path.'/global_options.dat','r');
+        if($go){
+            @flock($go,LOCK_EX);
+            $godat=@fread($go,filesize($settings->data_path.'/global_options.dat'));
+            @flock($go,LOCK_UN);
+            @fclose($go);
+            $goex=explode("\n",$godat);
+            $this->min_hits_old=trim($goex[0]);
+            $this->min_hits_new=trim($goex[1]);
+            $this->min_prod_old=trim($goex[2]);
+            $this->min_prod_new=trim($goex[3]);
+            $this->bot_filter=trim($goex[4]);
+            $this->min_click_time=trim($goex[5]);
+            $this->fast_to_trade=trim($goex[6]);
+            $this->max_hits=trim($goex[7]) or $this->max_hits=500;
+            $this->max_clicks=trim($goex[8]) or $this->max_clicks=500;
+            $this->overclicks=trim($goex[9]);
+            $this->lang_hits=trim($goex[10]);
+            $this->lang_clicks=trim($goex[11]);
+            $this->a[1]=explode('.',trim($goex[12]));
+            $this->a[2]=explode('.',trim($goex[13]));
+            $this->a[3]=explode('.',trim($goex[14]));
+            $this->a[4]=explode('.',trim($goex[15]));
+            $this->a[5]=explode('.',trim($goex[16]));
+            $this->a[6]=explode('.',trim($goex[17]));
+            $this->a[7]=explode('.',trim($goex[18]));
+            $this->a[8]=explode('.',trim($goex[19]));
+            $this->a[9]=explode('.',trim($goex[20]));
+            $this->hidden_name=trim($goex[21]);
+            $this->hidden_time=trim($goex[22]);
+        } else {
+            $log->error('Global trade options file not found or not readable');
+            @chmod($settings->data_path.'/global_options.dat', 0777);
+            $this->min_hits_old=0;
+            $this->min_hits_new=0;
+            $this->min_prod_old=20;
+            $this->min_prod_new=20;
+            $this->bot_filter=3;
+            $this->min_click_time=1;
+            $this->fast_to_trade=1;
+            $this->max_hits=500;
+            $this->max_clicks=500;
+            $this->overclicks=0;
+            $this->lang_hits=0;
+            $this->lang_clicks=0;
+            $this->a[1]=array(50,0,0);
+            $this->a[2]=array(50,0,0);
+            $this->a[3]=array(50,0,0);
+            $this->a[4]=array(50,0,0);
+            $this->a[5]=array(50,0,0);
+            $this->a[6]=array(50,0,0);
+            $this->a[7]=array(50,0,0);
+            $this->a[8]=array(50,0,0);
+            $this->a[9]=array(50,0,0);
+        }
+
+        $lf=@file($settings->data_path.'/lang_factors.dat');
+        if($lf){
+            $this->use_langs=trim($lf[0]) or $this->use_langs=0;
+            $ln=count($lf);
+            for($i=1;$i<$ln;$i++){
+                list($lng,$lft)=explode('|',trim($lf[$i]));
+                if($lft<0) $lft=0;
+                if($lft>300) $lft=300;
+                $this->langs["$lng"]=$lft;
+            }
+        } else $this->use_langs=0;
+    }
+
+    function save_glob_par(){
+        global $settings,$log;
+
+        $pr1=$this->min_hits_old;
+        $pr2=$this->min_hits_new;
+        $pr3=$this->min_prod_old;
+        $pr4=$this->min_prod_new;
+        $pr5=$this->bot_filter;
+        $pr6=$this->min_click_time;
+        $pr7=$this->fast_to_trade;
+        $pr8=$this->max_hits;
+        $pr9=$this->max_clicks;
+        $pr10=$this->overclicks;
+        $pr11=$this->lang_hits;
+        $pr12=$this->lang_clicks;
+        if(is_array($this->a[1])) $pr13=join('.',$this->a[1]);
+        if(is_array($this->a[2])) $pr14=join('.',$this->a[2]);
+        if(is_array($this->a[3])) $pr15=join('.',$this->a[3]);
+        if(is_array($this->a[4])) $pr16=join('.',$this->a[4]);
+        if(is_array($this->a[5])) $pr17=join('.',$this->a[5]);
+        if(is_array($this->a[6])) $pr18=join('.',$this->a[6]);
+        if(is_array($this->a[7])) $pr19=join('.',$this->a[7]);
+        if(is_array($this->a[8])) $pr20=join('.',$this->a[8]);
+        if(is_array($this->a[9])) $pr21=join('.',$this->a[9]);
+        $pr22=$this->hidden_name;
+        $pr23=$this->hidden_time;
+
+        if(!$fp=@fopen($settings->data_path.'/global_options.dat','w')){
+            $log->error('Can not access Global Options file to write');
+            @chmod($settings->data_path.'/global_options.dat', 0777);
+            return false;
+        }
+        @flock($fp,LOCK_EX);
+        @fwrite($fp,$pr1."\n".$pr2."\n".$pr3."\n".$pr4."\n".$pr5."\n".$pr6."\n".$pr7."\n".$pr8."\n".$pr9."\n".$pr10."\n".$pr11."\n".$pr12."\n".$pr13."\n".$pr14."\n".$pr15."\n".$pr16."\n".$pr17."\n".$pr18."\n".$pr19."\n".$pr20."\n".$pr21."\n".$pr22."\n".$pr23."\n");
+        @flock($fp,LOCK_UN);
+        @fclose($fp);
+        @chmod($settings->data_path.'/global_options.dat', 0777);
+        return true;
+    }
+
+    function save_mainpages(){
+        global $settings,$log;
+
+        if(!is_array($this->main_page)) return false;
+        if(!$fp=@fopen($settings->data_path.'/main_pages.dat','w')){
+            $log->error('Can not access Main Pages file to write');
+            @chmod($settings->data_path.'/main_pages.dat', 0777);
+            return false;
+        }
+        @flock($fp,LOCK_EX);
+        ksort($this->main_page);
+        foreach($this->main_page as $mpid=>$mpname){
+            $mpname=str_replace('|','',$mpname);
+            $pdf=$this->main_default[$mpid] or $pdf=0;
+            @fwrite($fp,$mpid.'|'.$mpname.'|'.$pdf."\n");
+        }
+        @flock($fp,LOCK_UN);
+        @fclose($fp);
+        @chmod($settings->data_path.'/main_pages.dat', 0777);
+        return true;
+    }
+
+    function save_langs(){
+        global $settings,$log;
+
+        if(!$fp=@fopen($settings->data_path.'/lang_factors.dat','w')){
+            $log->error('Can not access Languges Settings file for writing');
+            @chmod($settings->data_path.'/lang_factors.dat', 0777);
+            return false;
+        }
+        @flock($fp,LOCK_EX);
+        @fwrite($fp,$this->use_langs."\n");
+        if(is_array($this->langs)){
+            @ksort($this->langs);
+            foreach($this->langs as $lng=>$lfc)
+                @fwrite($fp,$lng.'|'.$lfc."\n");
+        }
+        @flock($fp,LOCK_UN);
+        @fclose($fp);
+        @chmod($settings->data_path.'/lang_factors.dat', 0777);
+        return true;
+    }
+
+    function save_exout_urls(){
+        global $settings,$log;
+        if(!$fp=@fopen($settings->data_path.'/exout_urls.dat','w')){
+            $log->error('Can not access ExOut URLs file for writing');
+            @chmod($settings->data_path.'/exout_urls.dat', 0777);
+            return false;
+        }
+        @flock($fp,LOCK_EX);
+        if(is_array($this->exout_urls)){
+            foreach($this->exout_urls as $url=>$prc){
+                $url=str_replace('|','',$url);
+                if(strlen($url)<1) continue;
+                @fwrite($fp,$url.'|'.$prc."\n");
+            }
+        }
+        @flock($fp,LOCK_UN);
+        @fclose($fp);
+        @chmod($settings->data_path.'/exout_urls.dat', 0777);
+        return true;
+    }
+
+    function save_nocookie_urls(){
+        global $settings,$log;
+        if(!$fp=@fopen($settings->data_path.'/nocookie_urls.dat','w')){
+            $log->error('Can not access NoCookie URLs file for writing');
+            @chmod($settings->data_path.'/nocookie_urls.dat', 0777);
+            return false;
+        }
+        @flock($fp,LOCK_EX);
+        if(is_array($this->nocookie_urls)){
+            foreach($this->nocookie_urls as $url=>$prc){
+                $url=str_replace('|','',$url);
+                if(strlen($url)<1) continue;
+                @fwrite($fp,$url.'|'.$prc."\n");
+            }
+        }
+        @flock($fp,LOCK_UN);
+        @fclose($fp);
+        @chmod($settings->data_path.'/nocookie_urls.dat', 0777);
+        return true;
+    }
+
+    function save_noref_urls(){
+        global $settings,$log;
+        if(!$fp=@fopen($settings->data_path.'/noref_urls.dat','w')){
+            $log->error('Can not access NoRef URLs file for writing');
+            @chmod($settings->data_path.'/noref_urls.dat', 0777);
+            return false;
+        }
+        @flock($fp,LOCK_EX);
+        if(is_array($this->noref_urls)){
+            foreach($this->noref_urls as $url=>$prc){
+                $url=str_replace('|','',$url);
+                if(strlen($url)<1) continue;
+                @fwrite($fp,$url.'|'.$prc."\n");
+            }
+        }
+        @flock($fp,LOCK_UN);
+        @fclose($fp);
+        @chmod($settings->data_path.'/noref_urls.dat', 0777);
+        return true;
+    }
+
+    function save_filtered_urls(){
+        global $settings,$log;
+        if(!$fp=@fopen($settings->data_path.'/filtered_urls.dat','w')){
+            $log->error('Can not access Filtered URLs file for writing');
+            @chmod($settings->data_path.'/filtered_urls.dat', 0777);
+            return false;
+        }
+        @flock($fp,LOCK_EX);
+        if(is_array($this->filtered_urls)){
+            foreach($this->filtered_urls as $url=>$prc){
+                $url=str_replace('|','',$url);
+                if(strlen($url)<1) continue;
+                @fwrite($fp,$url.'|'.$prc."\n");
+            }
+        }
+        @flock($fp,LOCK_UN);
+        @fclose($fp);
+        @chmod($settings->data_path.'/filtered_urls.dat', 0777);
+        return true;
+    }
+
+    function read_exout_urls(){
+        global $settings;
+
+        $ex=@file($settings->data_path.'/exout_urls.dat');
+        if($ex){
+            foreach($ex as $exl){
+                list($exurl,$expr)=explode('|',trim($exl));
+                $this->exout_urls["$exurl"]=$expr;
+            }
+        }
+    }
+
+    function read_nocookie_urls(){
+        global $settings;
+
+        $ex=@file($settings->data_path.'/nocookie_urls.dat');
+        if($ex){
+            foreach($ex as $exl){
+                list($exurl,$expr)=explode('|',trim($exl));
+                $this->nocookie_urls["$exurl"]=$expr;
+            }
+        }
+    }
+
+    function read_noref_urls(){
+        global $settings;
+
+        $ex=@file($settings->data_path.'/noref_urls.dat');
+        if($ex){
+            foreach($ex as $exl){
+                list($exurl,$expr)=explode('|',trim($exl));
+                $this->noref_urls["$exurl"]=$expr;
+            }
+        }
+    }
+
+    function read_filtered_urls(){
+        global $settings;
+
+        $ex=@file($settings->data_path.'/filtered_urls.dat');
+        if($ex){
+            foreach($ex as $exl){
+                list($exurl,$expr)=explode('|',trim($exl));
+                $this->filtered_urls["$exurl"]=$expr;
+            }
+        }
+    }
+
+    function read_langhit_urls(){
+        global $settings;
+
+        $ex=@file($settings->data_path.'/lang_hit_urls.dat');
+        if($ex){
+            foreach($ex as $exl){
+                list($htlng,$hturl)=explode('|',trim($exl));
+                $this->lnghit_urls["$htlng"]=$hturl;
+            }
+        }
+    }
+
+    function save_lnghit_urls(){
+        global $settings,$log;
+        if(!$fp=@fopen($settings->data_path.'/lang_hit_urls.dat','w')){
+            $log->error('Can not access Languages Hits Redirect URLs file for writing');
+            @chmod($settings->data_path.'/lang_hit_urls.dat', 0777);
+            return false;
+        }
+        @flock($fp,LOCK_EX);
+        if(is_array($this->lnghit_urls)){
+            @ksort($this->lnghit_urls);
+            foreach($this->lnghit_urls as $lng=>$url){
+                $url=str_replace('|','',$url);
+                $lng=str_replace('|','',$lng);
+                if(strlen($url)<1 || strlen($lng)<1) continue;
+                @fwrite($fp,$lng.'|'.$url."\n");
+            }
+        }
+        @flock($fp,LOCK_UN);
+        @fclose($fp);
+        @chmod($settings->data_path.'/lang_hit_urls.dat', 0777);
+        return true;
+    }
+
+    function save_lngclick_urls(){
+        global $settings,$log;
+        if(!$fp=@fopen($settings->data_path.'/lang_click_urls.dat','w')){
+            $log->error('Can not access Languages Clicks Redirect URLs file for writing');
+            @chmod($settings->data_path.'/lang_click_urls.dat', 0777);
+            return false;
+        }
+        @flock($fp,LOCK_EX);
+        if(is_array($this->lngclick_urls)){
+            @ksort($this->lngclick_urls);
+            foreach($this->lngclick_urls as $lng=>$url){
+                $url=str_replace('|','',$url);
+                $lng=str_replace('|','',$lng);
+                if(strlen($url)<1 || strlen($lng)<1) continue;
+                @fwrite($fp,$lng.'|'.$url."\n");
+            }
+        }
+        @flock($fp,LOCK_UN);
+        @fclose($fp);
+        @chmod($settings->data_path.'/lang_click_urls.dat', 0777);
+        return true;
+    }
+
+    function read_langclick_urls(){
+        global $settings;
+
+        $ex=@file($settings->data_path.'/lang_click_urls.dat');
+        if($ex){
+            foreach($ex as $exl){
+                list($htlng,$hturl)=explode('|',trim($exl));
+                $this->lngclick_urls["$htlng"]=$hturl;
+            }
+        }
+    }
+
+    function read_groups(){
+        global $settings;
+        $ex=@file($settings->data_path.'/groups.dat');
+        if($ex){
+            foreach($ex as $exl){
+                $grd=explode('|',trim($exl));
+                $grname=$grd[0];
+                if(!$grname) continue;
+                $this->group["$grname"]=array();
+                $grs=count($grd);
+                for($i=1;$i<$grs;$i++){
+                    if(!$grd[$i]) continue;
+                    $this->group["$grname"][]=$grd[$i];
+                }
+            }
+        }
+    }
+
+    function save_groups(){
+        global $settings,$log;
+        if(!$fp=@fopen($settings->data_path.'/groups.dat','w')){
+            $log->error('Can not access Groups file for writing');
+            @chmod($settings->data_path.'/groups.dat', 0777);
+            return false;
+        }
+        @flock($fp,LOCK_EX);
+        if(is_array($this->group)){
+            @ksort($this->group);
+            foreach($this->group as $gr_name=>$gr_trds){
+                if(strlen($gr_name)<1) continue;
+                @fwrite($fp,$gr_name);
+                if(is_array($gr_trds)){
+                    sort($gr_trds);
+                    foreach($gr_trds as $gtrd){
+                        if(strlen($gtrd)<1) continue;
+                        @fwrite($fp,'|'.$gtrd);
+                    }
+                }
+                @fwrite($fp,"\n");
+            }
+        }
+        @flock($fp,LOCK_UN);
+        @fclose($fp);
+        @chmod($settings->data_path.'/groups.dat', 0777);
+        return true;
+    }
+
+    function read_blacklist(){
+        global $settings;
+
+        $bd=@file($settings->data_path.'/blacklist.dat');
+        if($bd){
+            foreach($bd as $bdl){
+                list($bdom,$btime)=explode('|',trim($bdl));
+                if(!$bdom) continue;
+                $this->in_blacklist["$bdom"]=$btime;
+            }
+        }
+    }
+
+    function save_blacklist(){
+        global $settings,$log;
+        if(!$fp=@fopen($settings->data_path.'/blacklist.dat','w')){
+            $log->error('Can not access Blacklist file to write');
+            @chmod($settings->data_path.'/blacklist.dat', 0777);
+            return false;
+        }
+        @flock($fp,LOCK_EX);
+        if(is_array($this->in_blacklist)){
+            foreach($this->in_blacklist as $bld=>$blt){
+                if(!$bld) continue;
+                @fwrite($fp,$bld.'|'.$blt."\n");
+            }
+        }
+        @flock($fp,LOCK_UN);
+        @fclose($fp);
+        @chmod($settings->data_path.'/blacklist.dat', 0777);
+        return true;
+    }
+
+    function read_short_forces(){
+        global $settings;
+        $bd=@file($settings->data_path.'/short_forces.dat');
+        if($bd){
+            foreach($bd as $bdl){
+                list($bdom,$btime,$bmin,$bdur)=explode('|',trim($bdl));
+                if(!$bdom) continue;
+                $this->short_force["$bdom"]=$btime;
+                $this->short_min["$bdom"]=$bmin;
+                $this->short_duration["$bdom"]=$bdur;
+            }
+        }
+    }
+
+    function save_shortforces(){
+        global $settings,$log;
+        if(!$fp=@fopen($settings->data_path.'/short_forces.dat','w')){
+            $log->error('Can not access Short Forces file to write');
+            @chmod($settings->data_path.'/short_forces.dat', 0777);
+            return false;
+        }
+        @flock($fp,LOCK_EX);
+        if(is_array($this->short_force)){
+            foreach($this->short_force as $fdom=>$ftime){
+                if(!$fdom) continue;
+                $fmin=$this->short_min["$fdom"];
+                if($fmin<1) continue;
+                $fdur=$this->short_duration["$fdom"];
+                if($fdur<1) continue;
+                @fwrite($fp,$fdom.'|'.$ftime.'|'.$fmin.'|'.$fdur."\n");
+            }
+        }
+        @flock($fp,LOCK_UN);
+        @fclose($fp);
+        @chmod($settings->data_path.'/short_forces.dat', 0777);
+        return true;
+    }
+
+    function read_toplists(){
+        global $settings;
+        $bd=@file($settings->data_path.'/top_pages.dat');
+        if($bd){
+            foreach($bd as $bdl){
+                list($tpl,$dst,$so)=explode('|',trim($bdl));
+                $this->top_pages["$tpl"]=$dst;
+                $this->top_sort["$tpl"]=$so;
+            }
+        }
+        $tl=@file($settings->data_path.'/top_settings.dat');
+        for($i=0;$i<96;$i++) $this->top_times[$i]=trim($tl[$i]) or $this->top_times[$i]=0;
+    }
+
+    function save_top_pages(){
+        global $settings,$log;
+        if(!$fp=@fopen($settings->data_path.'/top_pages.dat','w')){
+            $log->error('Can not access Toplists file to write');
+            @chmod($settings->data_path.'/top_pages.dat', 0777);
+            return false;
+        }
+        @flock($fp,LOCK_EX);
+        if(is_array($this->top_pages)){
+            ksort($this->top_pages);
+            foreach($this->top_pages as $tplf=>$tpld){
+                $tpls=$this->top_sort["$tplf"] or $tpls=0;
+                @fwrite($fp,$tplf.'|'.$tpld.'|'.$tpls."\n");
+            }
+
+        }
+        @flock($fp,LOCK_UN);
+        @fclose($fp);
+        @chmod($settings->data_path.'/top_pages.dat', 0777);
+        return true;
+    }
+
+    function save_top_times(){
+        global $settings,$log;
+        if(!$fp=@fopen($settings->data_path.'/top_settings.dat','w')){
+            $log->error('Can not access Schedule file to write');
+            @chmod($settings->data_path.'/top_settings.dat', 0777);
+            return false;
+        }
+        @flock($fp,LOCK_EX);
+        for($i=0;$i<96;$i++) @fwrite($fp,$this->top_times[$i]."\n");
+        @flock($fp,LOCK_UN);
+        @fclose($fp);
+        @chmod($settings->data_path.'/top_settings.dat', 0777);
+        return true;
+    }
+
+    function read_exit_urls(){
+        global $settings;
+        $bd=@file($settings->data_path.'/exit_urls.dat');
+        if($bd){
+            $ind=0;
+            foreach($bd as $bdl){
+                list($furl,$fdb,$fhb,$fmb,$fde,$fhe,$fme,$fht)=explode('|',trim($bdl));
+//echo "$fdom - $fdb - $fhb - $fmb - $fde - $fhe - $fme - $ftp - $fht\n";
+                if(!$furl) continue;
+                $this->exit_urls[$ind]=$furl;
+                $this->exit_st_day[$ind]=$fdb;
+                $this->exit_st_hour[$ind]=$fhb;
+                $this->exit_st_min[$ind]=$fmb;
+                $this->exit_ed_day[$ind]=$fde;
+                $this->exit_ed_hour[$ind]=$fhe;
+                $this->exit_ed_min[$ind]=$fme;
+                $this->exit_prc[$ind]=$fht;
+                $ind++;
+            }
+        }
+    }
+
+    function save_exit_urls(){
+        global $settings,$log;
+        if(!$fp=@fopen($settings->data_path.'/exit_urls.dat','w')){
+            $log->error('Can not access Exit URLs file to write');
+            @chmod($settings->data_path.'/exit_urls.dat', 0777);
+            return false;
+        }
+        @flock($fp,LOCK_EX);
+        if(is_array($this->exit_urls)){
+            foreach($this->exit_urls as $evid=>$eurl){
+                if(strlen($eurl)<10) continue;
+                @fwrite($fp,$eurl.'|'.$this->exit_st_day[$evid].'|'.$this->exit_st_hour[$evid].'|'.$this->exit_st_min[$evid].'|'.$this->exit_ed_day[$evid].'|'.$this->exit_ed_hour[$evid].'|'.$this->exit_ed_min[$evid].'|'.$this->exit_prc[$evid]."\n");
+            }
+        }
+        @flock($fp,LOCK_UN);
+        @fclose($fp);
+        @chmod($settings->data_path.'/exit_urls.dat', 0777);
+        return true;
+    }
+
+    function read_long_forces(){
+        global $settings;
+        $bd=@file($settings->data_path.'/long_forces.dat');
+        if($bd){
+            $ind=0;
+            foreach($bd as $bdl){
+                list($fdom,$fdb,$fhb,$fmb,$fde,$fhe,$fme,$fht)=explode('|',trim($bdl));
+//echo "$fdom - $fdb - $fhb - $fmb - $fde - $fhe - $fme - $ftp - $fht\n";
+                if(!$fdom) continue;
+                $this->events_list[$ind]=$fdom;
+                $this->event_st_day[$ind]=$fdb;
+                $this->event_st_hour[$ind]=$fhb;
+                $this->event_st_min[$ind]=$fmb;
+                $this->event_ed_day[$ind]=$fde;
+                $this->event_ed_hour[$ind]=$fhe;
+                $this->event_ed_min[$ind]=$fme;
+                $this->event_min[$ind]=$fht;
+                $ind++;
+            }
+        }
+    }
+
+    function save_long_forces(){
+        global $settings,$log;
+        if(!$fp=@fopen($settings->data_path.'/long_forces.dat','w')){
+            $log->error('Can not access Long Forces file to write');
+            @chmod($settings->data_path.'/long_forces.dat', 0777);
+            return false;
+        }
+        @flock($fp,LOCK_EX);
+        if(is_array($this->events_list)){
+            foreach($this->events_list as $evid=>$evdom){
+                if(!$evdom) continue;
+                @fwrite($fp,$evdom.'|'.$this->event_st_day[$evid].'|'.$this->event_st_hour[$evid].'|'.$this->event_st_min[$evid].'|'.$this->event_ed_day[$evid].'|'.$this->event_ed_hour[$evid].'|'.$this->event_ed_min[$evid].'|'.$this->event_min[$evid]."\n");
+            }
+        }
+        @flock($fp,LOCK_UN);
+        @fclose($fp);
+        @chmod($settings->data_path.'/long_forces.dat', 0777);
+        return true;
+    }
+}
+
+class Interface_settings{
+    // Class to handle interface texts and color settings
+
+    var $color;
+    var $avail_colors;
+
+    function Interface_settings(){
+        global $color_cfg,$admin,$log;
+
+        if(is_array($color_cfg)){
+            reset($color_cfg);
+            while(list($avcol,$coldat)=each($color_cfg)){
+                $this->avail_colors[]=$avcol;
+                if($avcol==$admin->color){
+                    reset($coldat);
+                    while(list($key,$col)=each($coldat)) $this->color["$key"]=$col;
+                }
+            }
+            if(!is_array($this->color)){
+                $this->avail_colors=array(0=>'Original');
+                if($admin->color!='Original'){
+                    // Trying to reload original color set instead of set in admin
+                    if(is_array($color_cfg['Original'])){
+                        reset($color_cfg['Original']);
+                        while(list($key,$txt)=each($color_cfg['Original'])) $this->color["$key"]=$txt;
+                        $log->error('Interface color set "'.$admin->color.'" not found, Original loaded');
+                    }
+                }
+            }
+        }
+        if(!is_array($this->color)){
+            // Fatal Error
+            echo "<center><font face=arial size=2 color=red><b>Interface Color Settings Not loaded<br>please upload correct \"includes/interface_color_conf.inc.php\" settings file</b></font></center>";
+            exit;
+        }
+    }
+}
+
+?>
