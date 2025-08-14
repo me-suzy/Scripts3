@@ -1,0 +1,68 @@
+<?php
+
+function show_wap_stats(){
+    global $admin,$new_trader,$stats,$function,$settings;
+
+    $function->read_stats();
+    $function->read_new_traders();
+
+    if($stats->trades_tot_hour_in>0) $htrp=round($stats->trades_tot_hour_click*100/$stats->trades_tot_hour_in); else $htrp=0;
+    if($stats->tot_hour_in>0) $http=round($stats->tot_hour_click*100/$stats->tot_hour_in); else $http=0;
+    if($stats->tot_day_in>0) $dttp=round($stats->tot_day_click*100/$stats->tot_day_in); else $dttp=0;
+    if($stats->trades_tot_day_in>0) $dtrp=round($stats->trades_tot_day_click*100/$stats->trades_tot_day_in); else $dtrp=0;
+
+    header("Content-Type: text/vnd.wap.wml");
+    echo"<?xml version=\"1.0\"?>";
+    echo "\n<!DOCTYPE wml PUBLIC \"-//WAPFORUM//DTD WML 1.1//EN\"\n\"http://www.wapforum.org/DTD/wml_1.1.xml\">\n<wml>\n";
+    echo "<card id=\"MainCard\" title=\"".$settings->fet_domain."\">\n";
+    echo "<p>\n";
+    echo "<u>Hour Total</u>\n<br/>\n";
+    echo "IN: ".$stats->tot_hour_in."\n<br/>\n";
+    echo "OUT: ".$stats->tot_hour_out."\n<br/>\n";
+    echo "Clicks: ".$stats->tot_hour_click."\n<br/>\n";
+    echo "Content: ".$stats->tot_hour_click_cont."\n<br/>\n";
+    echo "Prod: ".$http."%\n<br/>\n<br/>\n";
+    echo "<u>Hour Trades</u>\n<br/>\n";
+    echo "IN: ".$stats->trades_tot_hour_in."\n<br/>\n";
+    echo "OUT: ".$stats->trades_tot_hour_out."\n<br/>\n";
+    echo "Clicks: ".$stats->trades_tot_hour_click."\n<br/>\n";
+    echo "Content: ".$stats->trades_tot_hour_click_cont."\n<br/>\n";
+    echo "Prod: ".$htrp."%\n<br/>\n<br/>\n";
+    echo "<u>Day Total</u>\n<br/>\n";
+    echo "IN: ".$stats->tot_day_in."\n<br/>\n";
+    echo "OUT: ".$stats->tot_day_out."\n<br/>\n";
+    echo "Clicks: ".$stats->tot_day_click."\n<br/>\n";
+    echo "Content: ".$stats->tot_day_click_cont."\n<br/>\n";
+    echo "Prod: ".$dttp."%\n<br/>\n<br/>";
+    echo "<u>Day Trades</u>\n<br/>\n";
+    echo "IN: ".$stats->trades_tot_day_in."\n<br/>\n";
+    echo "OUT: ".$stats->trades_tot_day_out."\n<br/>\n";
+    echo "Clicks: ".$stats->trades_tot_day_click."\n<br/>\n";
+    echo "Content: ".$stats->trades_tot_day_click_cont."\n<br/>\n";
+    echo "Prod: ".$dtrp."%\n";
+
+    if($new_trader->num>0) echo "<br/>\n<br/>\nNew Trades signed: ".$new_trader->num."\n";
+
+    echo "</p>\n";
+    echo "</card>\n";
+    echo "</wml>\n";
+
+    exit;
+}
+
+function wap_pass_failed(){
+    global $settings;
+
+    header("Content-Type: text/vnd.wap.wml");
+    echo"<?xml version=\"1.0\"?>";
+    echo "\n<!DOCTYPE wml PUBLIC \"-//WAPFORUM//DTD WML 1.1//EN\"\n\"http://www.wapforum.org/DTD/wml_1.1.xml\">\n<wml>\n";
+    echo "<card id=\"MainCard\" title=\"".$settings->fet_domain."\">\n";
+    echo "<p>\n";
+    echo "<b>WRONG PASSWORD!</b>\n<br/>\n";
+    echo "</p>\n";
+    echo "</card>\n";
+    echo "</wml>\n";
+    exit;
+}
+
+?>
