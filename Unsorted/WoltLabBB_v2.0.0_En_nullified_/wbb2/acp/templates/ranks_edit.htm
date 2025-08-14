@@ -1,0 +1,57 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+<form method="post" action="ranks.php">
+<input type="hidden" name="send" value="send">
+<input type="hidden" name="action" value="$action">
+<input type="hidden" name="sid" value="$session[hash]">
+<input type="hidden" name="rankid" value="$_REQUEST[rankid]">
+<table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="95%" align="center">
+  <tr class="tblhead">
+   <td colspan=2>Edit User Rank</td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Rank Title:</b></td>
+   <td><input type="text" name="title" value="$ranks[ranktitle]" maxlength="30"></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>User Group:</b><br>Which user group can obtain this rank?</td>
+   <td><select name="group">
+   $ranks_groupsbit
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Gender:</b><br>Which gender can obtain this rank?</td>
+   <td><select name="gender">
+		<option value="0"$rankgendersel[0]>both</option>
+		<option value="1"$rankgendersel[1]>male</option>
+		<option value="2"$rankgendersel[2]>female</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Required Posts:</b><br>How many posts does a member need to obtain this rank?</td>
+   <td><input type="text" name="quantity" value="$ranks[needposts]" maxlength="30"></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>URL to Rank Graphic? How often should it be repeated?</b><br>Tip: Use {imagefolder}/graphic.gif instead of the 'images' folder so you can use different graphics for each design packs.<br><br>The graphic is repeated the number of times you write it. <br>e.g.<br><br>
+   {imagefolder}/star.gif<br>
+   {imagefolder}/star.gif<br>
+   {imagefolder}/star.gif<br>
+   {imagefolder}/star.gif<br>
+   {imagefolder}/star.gif<br><br>
+   The graphic will be shown 5 times. Please only put one graphic per line.
+   </td>
+   <td><textarea cols="50" rows="15" name="images">$ranks[rankimages]</textarea></td>
+  </tr>
+  <tr class="secondrow">
+   <td colspan=2 align="center"><input type="submit" value="Submit"> <input type="reset" value="Reset"></td>
+  </tr>
+ </table>
+</form>
+</body>
+</html>
