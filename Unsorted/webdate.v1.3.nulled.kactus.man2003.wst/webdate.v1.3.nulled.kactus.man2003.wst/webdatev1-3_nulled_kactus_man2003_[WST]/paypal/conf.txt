@@ -1,0 +1,3 @@
+<section name="PAYPAL CONFIGURATION">
+	<field required="1" type="edit" name="paypalemail" text="PayPal Email">sales@lololoccc.com</field>
+</section>
