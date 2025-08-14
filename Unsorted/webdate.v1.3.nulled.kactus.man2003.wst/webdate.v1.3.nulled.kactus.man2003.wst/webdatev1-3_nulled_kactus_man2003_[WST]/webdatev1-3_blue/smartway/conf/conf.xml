@@ -1,0 +1,69 @@
+<xml>
+	<section name="2CHECKOUT.COM CONFIGURATION">
+		<field required="1" type="edit" name="checkout_url" text="URL">https://www.2checkout.com/cgi-bin/Abuyers/purchase.2c</field>
+		<field required="1" type="edit" name="checkout_id" text="Your ID">your_id</field>
+	</section>
+	<section name="DATABASE CONFIGURATION">
+		<field type="select" name="db_type" text="Select your database type">MySQL			<enum val="MySQL">1</enum>
+			<enum val="PostreSQL">0</enum>
+</field>
+		<field required="1" type="edit" name="db_host" text="Your database host (it may be an IP address)">localhost</field>
+		<field required="1" type="edit" name="db_login" text="Your database username">root</field>
+		<field type="edit" name="db_pswd" text="Your database password"></field>
+		<field required="1" type="edit" name="db_name" text="Database name">webd</field>
+	</section>
+	<section name="SYSTEM ADMINISTRATOR (SUPER USER) CONFIGURATION">
+		<field required="1" type="edit" name="admin_login" text="Administrator login">warezscript</field>
+		<field type="password" name="admin_pswd" text="Administrator password">d2FyZXpzY3JpcHQ=</field>
+		<field required="1" type="edit" name="admin_mail" text="E-mail address">your_email</field>
+		<field type="edit" name="admin_id" text="Security identifier (do not modify)">QMsa34a%er_no-1==</field>
+	</section>
+	<section name="SYSTEM CONFIGURATION">
+		<field required="1" type="edit" name="serialnumber" text="Your serial number">YOUR_SERIAL_HERE</field>
+		<field type="checkbox" name="autoapprove" text="Auto approve profiles?">0</field>
+		<field type="checkbox" name="censor_on" text="Censor words in the censor words list?">on</field>
+		<field type="checkbox" name="profile_in_one_step" text="Force profile completion after registration?">0</field>
+		<field type="checkbox" name="no_verify_email" text="Skip email verification?">0</field>
+		<field type="select" name="max_photos_uploaded" text="Maximum photos allowed">13			<enum val="1">0</enum>
+			<enum val="2">0</enum>
+			<enum val="3">0</enum>
+			<enum val="4">0</enum>
+			<enum val="5">0</enum>
+			<enum val="6">0</enum>
+			<enum val="7">0</enum>
+			<enum val="8">0</enum>
+			<enum val="9">0</enum>
+			<enum val="10">0</enum>
+			<enum val="11">0</enum>
+			<enum val="12">0</enum>
+			<enum val="13">1</enum>
+			<enum val="14">0</enum>
+			<enum val="15">0</enum>
+			<enum val="16">0</enum>
+			<enum val="17">0</enum>
+			<enum val="18">0</enum>
+			<enum val="19">0</enum>
+			<enum val="20">0</enum>
+</field>
+		<field required="1" type="edit" name="trialperiod" text="Trial period (in days)">30</field>
+		<field required="1" type="edit" name="max_browse_pages" text="Max profiles to browse before forcing registration">5</field>
+		<field required="1" type="edit" name="max_video_size" text="Max size for video uploads (KB)">5000</field>
+		<field required="1" type="edit" name="max_image_size" text="Max size for image uploads (KB)">500</field>
+		<field required="1" type="edit" name="max_image_width" text="Max width for image uploads (pixels)">800</field>
+		<field required="1" type="edit" name="max_image_height" text="Max height for image uploads (pixels)">600</field>
+		<field required="1" type="edit" name="records_per_page" text="Number of search results per page">10</field>
+		<field required="1" type="edit" name="timeoutseconds" text="Seconds before a user is no longer considered online">300</field>
+		<field required="1" type="edit" name="root_host" text="URL to website">http://localhost/WebDate/webdatev1-3_blue/</field>
+		<field required="1" type="edit" name="template_dir" text="Path to templates">templates/</field>
+		<field required="1" type="edit" name="mail_template_dir" text="Path to e-mail templates">templates/mail/</field>
+		<field required="1" type="edit" name="system_services_path" text="Path to services folder">modules/</field>
+		<field required="1" type="edit" name="system_kernel_services_path" text="Path to kernel services">modules/kernel/</field>
+		<field required="1" type="edit" name="system_log_path" text="Path to log files">logs/</field>
+		<field required="1" type="edit" name="system_log_file" text="System log file name">system</field>
+		<field type="edit" name="system_log_file_extension" text="System log files extension">.log</field>
+		<field required="1" type="edit" name="system_log_format" text="Log files format">[{DATE} {TIME}]{TAB}{REMOTE_IP}{TAB}{ACTION} {ADD_INFO}</field>
+		<field_topic>System logging parameters</field_topic>
+		<field type="checkbox" name="system_log_h100" text="Log H100 (Authorization of user failed)">0</field>
+		<field type="checkbox" name="system_logs_error" text="Log errors with the log files">0</field>
+	</section>
+</xml>
