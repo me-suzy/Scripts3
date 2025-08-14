@@ -1,0 +1,20 @@
+BODY {
+	COLOR: #ffffff;
+	FONT-FAMILY: sans-serif;
+	FONT-SIZE: 12px;
+	BACKGROUND-COLOR: #808080;
+}
+
+TD {
+	FONT-FAMILY: sans-serif;
+	FONT-SIZE: 12px;
+}
+
+A:LINK, A:VISITED, A:ACTIVE {
+	COLOR: #ffffff;
+	TEXT-DECORATION: none;
+}
+A:HOVER {
+	COLOR: #ffffff;
+	TEXT-DECORATION: none;
+} 
