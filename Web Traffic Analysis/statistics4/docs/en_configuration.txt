@@ -1,0 +1,61 @@
+SHOWlog is to configured in '/config/statistics.conf.php': (SHOWlog v4.6.7)
+
+// --- weblog ---------------------------------------------------------------------------------
+$weblog_showlog_dir = "statistics4/";	-> Path to folder with SHOWlog / WEBlog
+$weblog_anti_reload = 120;			-> time (in minutes) before logging same IP again
+$weblog_time_offset = 0;			-> time (in minutes) that server divers from local time 
+$weblog_ignore_ip = "127.,192.168.";	-> ip-ranges that should not be logged (seperated by ',')
+$weblog_check_for_files = true;		-> check if logfiles exist else create them
+
+// --- language -------------------------------------------------------------------------------
+$lang_code = "de";			-> default language [ de / en ]
+$lang_format = "eu"; 			-> date format [ eu/us ] 	eu:dd.mm.yyyy	us:yyyy-mm-dd
+      Created your own translation? Please send a copy to fli4l@sirsocke.de , Thanx!
+
+// --- display  -------------------------------------------------------------------------------------------
+$page_menu = false;			-> show additional menu on every statistic [ true/false ]
+$detail_length = 30;			-> number of entries per page (logfile view)
+$tpl_to_use = "default";		-> name of template you want to use
+$show_detail_filter = true;		-> enable filter for logfile [ true/false ]
+$benchmark = false;			-> enable benchmark outputs [ true/false ]
+$hide_referer = "";			-> hide this referer to viewers (devided by '|')
+
+// --- login / user ----------------------------------------------------------------------------
+$login_require = false;			-> require login for showlog [ true/false ] if FALSE there is no login needed
+$login_screen = false;			-> show loginscreen [ true/false ] use the showlogown loginscreen
+$login_accept = "statistics.php";	-> SHOWlog path / file if login is accepted
+$login_denied = "../";			-> errorpage or errorpath that is called if login failed
+
+$login[1]["user"] = "all";			-> username for showlog login first user
+$login[1]["pass"] = "all";		-> password for showlog login first user
+$login[1]["right"] = "all";		-> userrights [ all/view ] first user 
+
+$login[2]["user"] = "view";		-> username for showlog login first user
+$login[2]["pass"] = "view";		-> password for showlog login first user
+$login[2]["right"] = "view";		-> userrights [ all/view ] first user 
+
+  all: show everything include deleting-options and name/pass-overview
+  view: view statistics but no deleting-options and no name/pass-overview
+  feel free to create as many users as you like
+
+/ --- leaving-button --- some examples --------------------------------------------------------
+$leave["code"] = "../index.php";	-> by clicking leavebutton on mainmenu page "../index.php" will be opened
+$leave["text"] = "back";		-> leavebutton shows "back" (in german "zurück")
+$leave["logout"] = true;		-> logout if leaving? [true/false] if TRUE the session will be closed
+
+$leave["code"] = "javascript: self.close()";-> by clicking leavebutton on mainmenu page SHOWlog window will be closed
+$leave["text"] = "close";		-> lleavebutton shows "close" (in german "schliessen")
+
+$leave["code"] = "";			-> no button will be shown
+
+
+// --- files -----------------------------------------------------------------------------------
+$log_dir = "logs/";			-> path to logging-files
+$vst_file = $log_dir."visit.dat";	-> name of the anti-reload-file, where IPs were stored for anti_reload_period
+$cnt_file = $log_dir."count.dat";	-> name of the counter-file
+$log_file = $log_dir."log.dat";		-> name of the log-file
+$bak_file = $log_dir."log.bak";		-> name of the backup-file of the log-file, wich is created everytime before a new logentry is done
+$dl_file = $log_dir."backup.dat";	-> name of the backup-time-file, where the date of your last download of logfile is stored
+
+/// --- everything else -----------------------------------------------------------------------
+$sl_vst_since = "2005-08-26";	-> date when visitorcout started (for counter)
