@@ -1,0 +1,35 @@
+		    ActualScripts, Company.
+
+		      INSTALLATION GUIDE
+
+
+ActualCounter v1 installation
+
+1.Extract the zip containing ActualCounter v1. It makes a folder
+ "acounter". You may rename it if you want.
+2.Upload all files on your server into the correct directories.
+3.Set permissions for directories and files. These directories need
+ permission 777:
+ - directory where your php scripts and other directories will live;
+ - "accounts" directory;
+ - "config" directory.
+ Setting permissions for other directories and files are not required
+ on most servers. 
+4.Point your browser to your domain to file "setup.php". Script will
+ automatically fill the necessary fields and will show you confirmative
+ message. In case of the incorrect definition of some parameters, fill
+ the respective fields yourself.You should receive positive result of
+ the testing.
+5.Congratulations! You are ready!
+
+Connect page to ActualCounter v1
+
+1.Point your browser to your domain to file "admin.php".
+2.Click the "Account Settings" button and enter the name of the page on
+ which you want to place HTML code of ActualCounter v1.
+3.Place html code to webpage.
+4.Congratulations! The page is connected!
+
+
+ Copyright:	(c) 2002-2003 ActualScripts, Company. All rights reserved.
+ Source:	http://www.actualscripts.com/
