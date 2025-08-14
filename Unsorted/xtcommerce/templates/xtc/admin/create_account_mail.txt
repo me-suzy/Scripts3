@@ -1,0 +1,10 @@
+{config_load file="lang_$language.conf" section="admin_create_account_mail"} 
+
+{#greeting#} {$NAME},
+
+{#text#}
+
+{#comment#} {$COMMENTS}
+
+{#email#} {$EMAIL}
+{#password#} {$PASSWORD}
