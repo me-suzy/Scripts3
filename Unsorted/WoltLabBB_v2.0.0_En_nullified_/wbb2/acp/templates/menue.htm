@@ -1,0 +1,130 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/menue.css">
+<script language="Javascript">
+<!--
+NS4 = (document.layers) ? 1 : 0;
+IE4 = (document.all) ? 1 : 0;
+NS6 = (document.getElementById) ? 1 : 0;
+
+activmenue = false;
+timerRunning = false;
+
+function checkTimer() {
+ if(timerRunning)  {
+  clearTimeout(timerRunning);
+  timerRunning = false;
+ }
+}
+
+function startTimer() {
+ timerRunning = setTimeout("show();",1000);
+}
+                        
+function show(menue) { 
+ if(activmenue) {
+  checkTimer();
+  if(NS4) document.layers[activmenue].visibility = "hide";
+  if(NS6) document.getElementById(activmenue).style.visibility = "hidden";
+  if(IE4) document.all(activmenue).style.visibility = "hidden";
+  activmenue = false;
+ }
+   
+ if(menue) {
+  if(NS4) {
+   document.layers[menue].visibility = "show";
+   document.layers[menue].bgColor = "FFFFFF";
+   document.layers[menue].onmouseover = checkTimer;
+   document.layers[menue].onmouseout = startTimer;
+  }
+      
+  if(IE4) {
+   document.all(menue).style.visibility = "visible";
+   document.all(menue).onmouseover = checkTimer;
+   document.all(menue).onmouseout = startTimer;
+  }
+      
+  if(NS6) {
+   document.getElementById(menue).style.visibility = "visible";
+   document.getElementById(menue).onmouseover = checkTimer;
+   document.getElementById(menue).onmouseout = startTimer;
+  }
+  activmenue = menue;
+ }
+}
+//-->
+</script>
+</head>
+
+<body>
+  <p><b><a href="options.php?sid=$session[hash]" onmouseover="javascript:show('test');" target="main">Settings</a></b></p>
+ <hr>
+  <p><a href="board.php?action=add&sid=$session[hash]" target="main">Add Forum</a></p>
+  <p><b><a href="board.php?action=view&sid=$session[hash]" target="main">Edit Forums</a></b></p>
+ <hr>
+  <p><a href="users.php?action=add&sid=$session[hash]" target="main">Add User</a></p>
+  <p><b><a href="users.php?action=find&sid=$session[hash]" target="main">Find User</a></b></p>
+  <p><a href="users.php?action=email&userid=all&sid=$session[hash]" target="main">Email all Users</a></p>
+  <p><a href="users.php?action=rate&sid=$session[hash]" target="main">Reset Ratings</a></p>
+ <hr>
+  <p><b><a href="threads.php?action=spinning&sid=$session[hash]" target="main">View Threads</a></b></p>
+  <p><a href="threads.php?action=moderate&sid=$session[hash]" target="main">View Submitted Threads</a></p>
+  <p><a href="threads.php?action=moderateposts&sid=$session[hash]" target="main">View Submitted Posts</a></p>
+ <hr>
+  <p><a href="group.php?action=add&sid=$session[hash]" target="main">Add User Group</a></p>
+  <p><b><a href="group.php?action=view&sid=$session[hash]" target="main">Edit User Groups</a></b></p>
+  <p><a href="group.php?action=default&sid=$session[hash]" target="main">Set Default User Groups</a></p>
+ <hr>
+  <p><a href="style.php?action=add&sid=$session[hash]" target="main">Add Style</a></p>
+  <p><a href="style.php?action=view&sid=$session[hash]" target="main">Edit Styles</a></p>
+  <p><b><a href="style.php?action=import/export&sid=$session[hash]" target="main">Import/Export Style</a></b></p>
+ <hr>
+  <p><a href="designpack.php?action=add&sid=$session[hash]" target="main">Add Design Pack</a></p>
+  <p><b><a href="designpack.php?action=view&sid=$session[hash]" target="main">Edit Design Packs</a></b></p>
+ <hr>
+  <p><a href="template.php?action=add&sid=$session[hash]" target="main">Add Template</a></p>
+  <p><b><a href="template.php?action=view&sid=$session[hash]" target="main">Edit Templates</a></b></p>
+  <p><a href="template.php?action=addpack&sid=$session[hash]" target="main">Add Templates Pack</a></p>
+  <p><a href="template.php?action=viewpack&sid=$session[hash]" target="main">Edit Templates Packs</a></p>
+  <p><b><a href="template.php?action=import/export&sid=$session[hash]" target="main">Import/Export Templates</a></b></p>
+  <p><a href="template.php?action=search&sid=$session[hash]" target="main">Search & Replace Templates</a></p>
+ <hr>
+  <p><a href="avatar.php?action=readfolder&sid=$session[hash]" target="main">Read Avatars Folder</a></p>
+  <p><a href="avatar.php?action=add&sid=$session[hash]" target="main">Add Avatar</a></p>
+  <p><a href="avatar.php?action=view&sid=$session[hash]" target="main">Edit Avatars</a></p>
+ <hr>
+  <p><a href="ranks.php?action=add&sid=$session[hash]" target="main">Add User Rank</a></p>
+  <p><a href="ranks.php?action=view&sid=$session[hash]" target="main">Edit User Ranks</a></p>
+ <hr>
+  <p><a href="smilie.php?action=add&sid=$session[hash]" target="main">Add Smilie</a></p>
+  <p><a href="smilie.php?action=view&sid=$session[hash]" target="main">Edit Smilies</a></p>
+ <hr>
+  <p><a href="icon.php?action=add&sid=$session[hash]" target="main">Add Icon</a></p>
+  <p><a href="icon.php?action=view&sid=$session[hash]" target="main">Edit Icons</a></p>
+ <hr>
+  <p><a href="bbcodes.php?action=add&sid=$session[hash]" target="main">Add BBCode</a></p>
+  <p><a href="bbcodes.php?action=view&sid=$session[hash]" target="main">Edit BBCodes</a></p>
+ <hr>
+  <p><a href="profilefield.php?action=add&sid=$session[hash]" target="main">Add Profile Field</a></p>
+  <p><a href="profilefield.php?action=view&sid=$session[hash]" target="main">Edit Profile Fields</a></p>
+ <hr>
+  <p><b><a href="database.php?action=backup&sid=$session[hash]" target="main">Backup Database</a></b></p>
+  <p><a href="database.php?action=query&sid=$session[hash]" target="main">Query Database</a></p>
+ <hr>
+  <p><b><a href="otherstuff.php?sid=$session[hash]" target="main">Update Information</a></b></p>
+  <p><a href="otherstuff.php?action=wordmatch&sid=$session[hash]" target="main">Search Words Analysis</a></p>
+ <hr>
+  <p><b><a href="otherstuff.php?action=adminsessions&sid=$session[hash]" target="main">Administrator Sessions</a></b></p>
+  <p><a href="otherstuff.php?action=selectstats&sid=$session[hash]" target="main">Statistics</a></p>
+  
+</body>
+</html>
+<DIV ID="test" STYLE="position:absolute; left:9px; top:35px; z-index:1; visibility: hidden">
+<table cellpadding=4 cellspacing=1 class="tblborder" width="200">
+ <tr class="firstrow">
+  <td><u><b>Option Groups:</b></u><br>$optiongroupbit</td>
+ </tr>
+</table>
+</DIV>
