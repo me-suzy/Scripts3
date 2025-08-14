@@ -1,0 +1,52 @@
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+
+<script language="javascript">
+ <!--
+  function sendemail(theform) {
+   if(parent.working.document.bbform) parent.working.location.href='otherstuff.php?sid=$session[hash]&action=loademail';
+   else alert('An action is already in progress, you cannot start a second one.'); 
+  }
+ //-->
+</script>
+</head>
+
+<body>
+
+<form method="post" action="users.php" name="bbform">
+<input type="hidden" name="send" value="send">
+<input type="hidden" name="action" value="$action">
+<input type="hidden" name="userids" value="$userids">
+<input type="hidden" name="sid" value="$session[hash]">
+ <table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="95%" align="center">
+  <tr class="tblhead">
+   <td colspan=2>Send email to the following member(s):</td>
+  </tr>
+  <tr class="firstrow">
+   <td colspan=2>$users</td>
+  </tr>
+  <tr class="tblsection">
+   <td colspan=2>eMail</td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Subject:</b></td>
+   <td><input type="text" name="subject" maxlength=250></td>
+  </tr>
+  <tr class="firstrow">
+   <td valign="top"><b>Message:</b><p>Tip: Use "{username}" instead of the members usernames, it will be replaced by the member's username in the email.</p></td>
+   <td><textarea rows="10" cols="55" wrap="virtual" name="message"></textarea></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Send email as:</b></td>
+   <td><input type="radio" name="emailtype" value="text" CHECKED> Text <input type="radio" name="emailtype" value="html"> HTML</td>
+  </tr>
+  <tr class="secondrow">
+   <td colspan=2 align="center"><input type="button" value="Send" onclick="sendemail(this.form)"> <input type="reset" value="Reset"></td>
+  </tr>
+ </table>
+</form>
+</body>
+</html>
