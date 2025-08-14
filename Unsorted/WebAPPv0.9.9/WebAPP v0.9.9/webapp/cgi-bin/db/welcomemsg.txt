@@ -1,0 +1,2 @@
+Welcome to WebAPP
+WebAPP stands for Web Automated Perl Portal, because that is the total idea behind it.  You should be able to set this site up, and have to work minimally to keep it up.  Included are topics, forums, instant message, who's online, download section, link section, and complete site administration!  Please report any problems or bugs to webapp@attbi.com or visit the project web site http://www.web-app.org <br><br>Thank you<br><br>WebAPP Development Team
