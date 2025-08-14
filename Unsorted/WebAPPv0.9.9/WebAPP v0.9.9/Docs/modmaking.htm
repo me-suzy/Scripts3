@@ -1,0 +1,287 @@
+<html>
+<head>
+<title>WebAPP - Changes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<p><a href="customizingindex.htm">Back</a></p>
+<p><a name="Top"></a></p>
+<center><font size="4"><b>How to make a Mod.</b></font></center>
+<pre>
+So, you have installed WebAPP and you're pretty pleased with yourself, but you think to yourself,
+
+&quot;I want a guestbook for my site!&quot;
+
+Ok then. You have a look at the WebAPP site to see if there is a Guestbook Mod available.
+If there isn't, or you don't like the one(s) on offer, you may want to write your own.
+
+To make your guestbook fit in with the rest of your site, it is best to write a Mod!
+
+Here is how you can do this.
+
+Your basic mod is made up of 5 basic parts (give or take): 
+An index.cgi: which displays the information. (Though you could call it guestbook.cgi!)
+A config.dat file: which holds the Mod information. (This can be made by the installed Mod Manager if you wish!) 
+An admin script: which lets you edit the information. (Though this isn't always required!) 
+A .html file that points to your mod. (Though a link on your main page pointing to the .cgi file is just as good) 
+A Data directory (if required).
+
+If you wish to make use of the Language Support features of WebAPP, you'll have to make a language file too!
+
+Once you have these files you can create a structure for them to be uploaded to your server.
+
+An example structure of a FAQ Mod could look like this: 
+
+/faq.html 
+/cgi-bin/mods/faq 
+/cgi-bin/mods/faq/index.cgi
+/cgi-bin/mods/faq/config.dat
+/cgi-bin/mods/faq/language
+/cgi-bin/mods/faq/language/english.dat 
+/cgi-bin/mods/faq/admin 
+/cgi-bin/mods/faq/admin/admin.cgi
+/cgi-bin/mods/faq/data
+/cgi-bin/mods/faq/data/faq.txt
+/cgi-bin/mods/faq/language
+/cgi-bin/mods/faq/language/english.dat
+
+If all your paths are set right and you have chmod all the .cgi files to 755 you should be ready to go!
+
+Now, some more detail!
+
+
+<b>config.dat Files</b> 
+Before the v0.9.3c release of Mod Manager, the config.dat file had to exist, but now that isn't the case.
+Mod developers need not create a config.dat file now, as the Mod Manager will do it for you.
+
+Here is an example of a v0.9.5 config.dat file. 
+
+$config_vers = "0.9.5";
+$mod_name = "Name";
+$mod_vers = "0.9.5";
+$mod_desc = "Short Description";
+$mod_admin = "0=No, 1=Yes";
+$admin_name = "admin.cgi";
+$lang_support = "0=No, 1=Yes";
+$mod_lang = "english.dat";
+1;
+
+If there are any new developments in the structure of the config.dat files, Mod Manager will let you know!
+
+
+<b>Language Support</b> 
+It is fairly straight forward to create a language file for your mod.
+
+Here is a cut down example of a real Mod language file. 
+
+$linktous{'001'} = "If you would like to exchange banner links with us, please follow these instructions."; 
+$linktous{'002'} = "1. Please save one of the following graphics on your server. DO NOT link directly to it."; 
+$linktous{'003'} = "2. Add our link to your website using the URL "; 
+$linktous{'004'} = "3. Then complete the form below and click Send."; 
+&lt; ----------------- &gt; 
+$linktous{'025'} = "Their site is at"; 
+$linktous{'026'} = "Their banner is at"; 
+$linktous{'027'} = "They have placed our link at"; 
+$linktous{'028'} = "Thank you."; 
+1; 
+
+In the above example, I placed a file called "english.dat" in cgi-bin/mods/linktous/language.
+
+Once you have finished, save your language file as english.dat, for example and then upload it to your site.
+
+
+<b>index.cgi</b>
+Use the script below as your starting point!
+
+#!/usr/bin/perl -w
+$| = 1;
+
+use CGI::Carp qw(fatalsToBrowser);
+
+###############################################################################
+###############################################################################
+# WebAPP - Automated Perl Portal                                              #
+#                                                                             #
+# Copyright (C) 2002 by Carter (carter@mcarterbrown.com)                      #
+#                                                                             #
+# This program is free software; you can redistribute it and/or               #
+# modify it under the terms of the GNU General Public License                 #
+# as published by the Free Software Foundation; either version 2              #
+# of the License, or (at your option) any later version.                      #
+#                                                                             #
+# This program is distributed in the hope that it will be useful,             #
+# but WITHOUT ANY WARRANTY; without even the implied warranty of              #
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the               #
+# GNU General Public License for more details.                                #
+#                                                                             #
+# You should have received a copy of the GNU General Public License           #
+# along with this program; if not, write to the Free Software                 #
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA. #
+#                                                                             #
+#                                                                             #
+# Last modified: 05/13/02                                                     #
+###############################################################################
+###############################################################################
+
+$scriptname = "WebAPP";
+$scriptver = "0.9.5";
+
+eval {
+	require "../../config.pl";
+	require "$sourcedir/subs.pl";
+	require "config.dat";
+	
+
+	if ($IIS != 2) {
+		if ($IIS == 0) {
+			if ($ENV{'SERVER_SOFTWARE'} =~ m!IIS!) { $IIS = 1; }
+		}
+		if (($IIS) && ($0 =~ m!(.*)(\\|\/)!)) { chdir($1); }
+		if ($IIS == 1) { print "HTTP/1.0 200 OK\n"; }
+	}
+};
+if ($@) {
+	print "Content-type: text/html\n\n";
+	print qq~&lt;h1&gt;Software Error:&lt;/h1&gt;
+Execution of &lt;b&gt;$scriptname&lt;/b&gt; has been aborted due a compilation error:&lt;br&gt;
+&lt;pre&gt;$@&lt;/pre&gt;
+&lt;p&gt;If this problem persits, please contact the webmaster and inform him about date and time you've recieved this error.&lt;/p&gt;
+~;
+	exit;
+}
+
+getlanguage();
+ban();
+getcgi();
+getdate();
+logips();
+loadcookie();
+loaduser();
+logvisitors();
+
+####################################
+# A Wonderful Mod By Me!
+####################################
+
+if ($lang_support eq "1") { mod_langsupp(); }
+
+&lt; -The Bulk of Your Script Goes Here, Then finish like...- &gt;
+
+###########################
+sub mod_langsupp {
+###########################
+
+$modlangfail = "0";
+
+if ($username ne $anonuser) {
+		open(FILE, "$memberdir/$username.dat");
+		lock(FILE);
+		@settings = &lt;FILE&gt;;
+		unlock(FILE);
+		close(FILE);
+
+		for( $i = 0; $i &lt; @settings; $i++ ) {
+			$settings[$i] =~ s~[\n\r]~~g;
+		}
+		
+		if ($settings[0] ne $password && $action ne "logout") { error("$err{'002'}"); }
+		else {
+			$realname = $settings[1];
+			$realemail = $settings[2];
+			$userlang = $settings[15];
+		}
+		
+}
+
+		if ($userlang eq "") { $userlang = $language; }
+						
+			 if ($modlangfail ne "1") {
+			 @modlanguage = $userlang;
+			 foreach $rec (@modlanguage){
+			 chomp($rec);
+			 ($modlang,$dummy)=split(/\./,$rec);
+			 }
+			 } else {
+			 @modlanguage = $language;
+			 foreach $rec (@modlanguage){
+			 chomp($rec);
+			 ($modlang,$dummy)=split(/\./,$rec);
+			 }
+		}
+
+eval {
+	require "language/$modlang.dat";
+	
+	if ($IIS != 2) {
+		if ($IIS == 0) {
+			if ($ENV{'SERVER_SOFTWARE'} =~ m!IIS!) { $IIS = 1; }
+		}
+		if (($IIS) && ($0 =~ m!(.*)(\\|\/)!)) { chdir($1); }
+		if ($IIS == 1) { print "HTTP/1.0 200 OK\n"; }
+	}
+};
+
+if ($@) {$modlangfail = "1"; mod_langsuppfail();}
+
+}
+
+########################
+sub mod_langsuppfail {
+########################
+
+eval {
+	require "language/$mod_lang";
+	
+	if ($IIS != 2) {
+		if ($IIS == 0) {
+			if ($ENV{'SERVER_SOFTWARE'} =~ m!IIS!) { $IIS = 1; }
+		}
+		if (($IIS) && ($0 =~ m!(.*)(\\|\/)!)) { chdir($1); }
+		if ($IIS == 1) { print "HTTP/1.0 200 OK\n"; }
+	}
+};
+if ($@) {
+print "Content-type: text/html\n\n";
+print qq~&lt;h1&gt;Software Error:&lt;/h1&gt;
+Execution of &lt;b&gt;$scriptname&lt;/b&gt; has been aborted due a compilation error:&lt;br&gt;
+&lt;pre&gt;$@&lt;/pre&gt;
+&lt;p&gt;If this problem persits, please contact the webmaster and inform him about date and time you've recieved this error.&lt;/p&gt;
+~;
+	exit;
+}
+
+}
+
+1;
+ 
+
+<b>NOTE:</b> If you are writing the admin.cgi script, don't forget to alter the paths!
+
+eval {
+	require "../../../config.pl";
+	require "$sourcedir/subs.pl";
+	require "../config.dat";
+	
+and...
+
+eval {
+	require "../language/$modlang.dat";
+	
+and...
+
+eval {
+	require "../language/$mod_lang";
+	
+
+Well, that should have given you a start!
+
+If you have made a wonderful Mod, then please share it with us!
+</pre>
+<p></p>
+<p><br>
+</p>
+<p><a href="#Top">Top</a> | <a href="customizingindex.htm">Back</a></p>
+</body>
+</html>
+
