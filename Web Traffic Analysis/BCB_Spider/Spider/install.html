@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>BCB Spider Tracker ReadMe</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css">
+<!--
+.tblbrd {
+	border: 2px solid #003366;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #003366;
+}
+a:link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #FF9900;
+	font-weight: bold;
+}
+a:visited {
+	color: #FF9900;
+}
+a:hover {
+	color: #FFCC66;
+}
+-->
+</style>
+<style type="text/css">
+<!--
+body {
+	margin: 2px 0px;
+}
+-->
+</style>
+</head>
+
+<body bgcolor="#DDDDDD">
+<table width="98%" border="0" align="center" cellpadding="4" cellspacing="2" class="tblbrd">
+    <tr> 
+        <th width="240" align="left" bgcolor="#003366"><img src="includes/bcb_spider.jpg" alt="bcb spider logo" width="240" height="180" /></th>
+        <th align="left" bgcolor="#003366"> <center>
+                <h1><font color="#FF9900" face="Verdana, Arial, Helvetica, sans-serif">BCB 
+                    Spider Tracker - Installation</font></h1>
+                <p><font color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif">by:</font><font face="Verdana, Arial, Helvetica, sans-serif"> 
+                    <a href="http://bluecollarbrain.com">www.bluecollarbrain.com</a></font></p>
+            </center></th>
+    </tr>
+</table>
+<br />
+<table width="98%" border="0" align="center" cellpadding="4" cellspacing="0" class="tblbrd">
+    <tr> 
+        <td width="140" valign="top" bgcolor="#003366">
+<div align="right"><font color="#FF9900" size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Description</strong></font></div></td>
+        <td width="4" valign="top" bgcolor="#999999"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">&#8226;</font></td>
+        <td valign="top" bgcolor="#CCCCCC">
+<font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">BCB 
+                Spider Tracker will track hits from Search Engine Bots (aka Spiders) 
+                and record their visits in a database for you (and your site's 
+                <em>human</em> visitors) to view. </font>
+            <font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif"><br />
+                Other Features: </font> 
+            <ul>
+                <li><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">Easily 
+                    add/remove Spiders to track (over 100 spiders tracked AS IS!).</font></li>
+                <li><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">Sort 
+                    Result Pages by Date, Spider, or Pages Crawled</font></li>
+                <li><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">Paginated 
+                    Results - customize how many Results per page you want to 
+                    view.</font></li>
+            </ul>
+            <p><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>NOTE</strong>: 
+                This script <em>only</em> works on files that are parsed by php.</font></p></td>
+    </tr>
+</table>
+<br />
+<table width="98%" border="0" align="center" cellpadding="4" cellspacing="0" class="tblbrd">
+    <tr> 
+        <td width="140" valign="top" bgcolor="#003366">
+<div align="right"><font color="#FF9900" size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Files</strong></font></div></td>
+        <td width="4" valign="top" bgcolor="#999999"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">&#8226;</font></td>
+        <td valign="top" bgcolor="#CCCCCC"><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">
+		Here's a short description of the files included in this package.</font> 
+            <br><br>
+            <table width="80%" border="0" align="center" cellpadding="2" cellspacing="0">
+                <tr> 
+                    <td width="21%"><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">bcb_spider.sql</font></td>
+                    <td width="79%"><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">Use 
+                        this to build the database table used to store spider 
+                        hits.</font></td>
+                </tr>
+                <tr> 
+                    <td><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">install.html</font></td>
+                    <td><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">Umm,yer 
+                        lookin' at it.</font></td>
+                </tr>
+                <tr> 
+                    <td><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">spider_agent_graph.php</font></td>
+                    <td><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">A 
+                        php file that builds a PNG graph image for use in spider_agent_report.php.</font></td>
+                </tr>
+                <tr> 
+                    <td><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">spider_agent_report.php</font></td>
+                    <td><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">A 
+                        report of total visits by each spider that has visited 
+                        your site.</font></td>
+                </tr>
+                <tr> 
+                    <td><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">spider_bcb.php</font></td>
+                    <td><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">The 
+                        main file that will be referenced (by 'include') in every 
+                        page you want to track.</font></td>
+                </tr>
+                <tr> 
+                    <td><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">spider_results.php</font></td>
+                    <td><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">A 
+                        report of all tracked spider visits, including date, spider 
+                        name and page visited.</font></td>
+                </tr>
+                <tr> 
+                    <td><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">spider_config.php</font></td>
+                    <td><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">The 
+                        database configuration file. You will need to edit this 
+                        to reflect your setup.</font></td>
+                </tr>
+                <tr> 
+                    <td><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">bcb_spider.css</font></td>
+                    <td><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">A 
+                        simple style sheet for the report pages.</font></td>
+                </tr>
+                <tr> 
+                    <td><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">bcb_spider.jpg</font></td>
+                    <td><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">Our 
+                        graphic.</font></td>
+                </tr>
+                <tr> 
+                    <td><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">graph_bg.png</font></td>
+                    <td><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">A 
+                        small gradient that will be used as a backround image 
+                        for the spider graph. </font></td>
+                </tr>
+                <tr> 
+                    <td><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">spider_array.php</font></td>
+                    <td><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">Main 
+                        list of spiders that can be tracked.</font></td>
+                </tr>
+                <tr> 
+                    <td><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">spider_functions.php</font></td>
+                    <td><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">Just 
+                        a function that the reports use to modify the date/time 
+                        dispay. </font></td>
+                </tr>
+            </table>
+            <p>&nbsp;</p>
+            </td>
+    </tr>
+</table>
+<br />
+<table width="98%" border="0" align="center" cellpadding="4" cellspacing="0" class="tblbrd">
+    <tr> 
+        <td width="140" valign="top" bgcolor="#003366">
+<div align="right"><font color="#FF9900" size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Requirements</strong></font></div></td>
+        <td width="4" valign="top" bgcolor="#999999"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">&#8226;</font></td>
+        <td bgcolor="#CCCCCC"><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">BCB 
+            Spider Tracker requires php and a MySQL database. That's it - pretty 
+            standard stuff these days.<br/>Also, you should have at least a passing 
+            familiarity with working with your database as I will not go into 
+            detail regarding that aspect of this script (I strongly recommend 
+            using <a href="http://www.phpmyadmin.net">phpMyAdmin</a> for database 
+            administration).</font></td>
+    </tr>
+</table>
+<br />
+<table width="98%" border="0" align="center" cellpadding="4" cellspacing="0" class="tblbrd">
+    <tr> 
+        <td width="140" valign="top" bgcolor="#003366"><div align="right"><font color="#FF9900" size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Installation</strong></font></div></td>
+        <td width="4" align="center" valign="top" bgcolor="#999999"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">&#8226;</font></td>
+        <td bgcolor="#CCCCCC"><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+            Load the <font color="#0066CC"><strong>bcb_spider.sql</strong></font> 
+            file (provided) into your database. <font color="#0066CC"><strong>bcb_spider.sql</strong></font> 
+            will build the table structure the script requires to log the spider 
+            visits to your site. <br />
+            I have included 5 records just for testing purposes, so you can see 
+            the results page even before any spiders crawl your site. Please delete 
+            these records after testing is complete.</font></td>
+    </tr>
+    <tr> 
+        <td bgcolor="#003366">&nbsp;</td>
+        <td width="4" align="center" valign="top" bgcolor="#999999"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">&#8226;</font></td>
+        <td bgcolor="#CCCCCC"><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">Edit 
+            the file <font color="#0066CC"><strong>config/spider_config.php</strong></font> 
+            to reflect your MySQL database setup. The items in <em>italics</em> 
+            <strong><u>must</u></strong> be changed, or you will get errors. DO 
+            NOT remove the quotation marks.<br />
+            Here are the lines you need to edit from a sample spider_config.php 
+            file:</font> <br /> <table width="98%" border="0" cellpadding="4" cellspacing="0" bordercolor="#003366" bgcolor="#FFFFFF">
+                <tr> 
+                    <td>$usernam=&quot;<em>myusername</em>&quot;; <br />
+                        $pass=&quot;<em>mypassword</em>&quot;; <br />
+                        $db=&quot;<em>mydbname</em>&quot;; <br />
+                        $db_host=&quot;<em>myhost</em>&quot;; <br />
+                        $tablename = &quot;bcb_spider&quot;; </td>
+                    <td><font color="#FF9900">// Your MySQL username<br />
+                        // Your MySQL Password<br />
+                        // The name of your MySQL database<br />
+                        // Your MySQL Host<br />
+                        // Change this value only if you rename your db table.</font></td>
+                </tr>
+            </table>
+            <p></p></td>
+    </tr>
+    <tr> 
+        <td bgcolor="#003366">&nbsp;</td>
+        <td width="4" align="center" valign="top" bgcolor="#999999"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">&#8226;</font></td>
+        <td bgcolor="#CCCCCC"><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">FTP 
+            the entire <font color="#0066CC"><strong>Spider</strong></font> folder 
+            (including sub-folders) to your web site. Where you put it is up to 
+            you, but I suggest placing it at the root, so you can browse to it 
+            more easily when you want to check your results page, and so you won't 
+            have to hunt through all the files to change paths to this and that. 
+            </font></td>
+    </tr>
+    <tr> 
+        <td valign="top" bgcolor="#003366"><div align="right"><font color="#FF9900" size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Modify 
+                your pages</strong></font></div></td>
+        <td align="center" valign="top" bgcolor="#999999"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">&#8226;</font></td>
+        <td bgcolor="#CCCCCC"><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">Insert 
+            the following line into any php page you want tracked.</font></p> 
+            <p><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">If 
+                you uploaded the <font color="#0066CC"><strong>Spider</strong></font> 
+                folder to the root of your site, insert this: </font> </p>
+            <blockquote> 
+                <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">&lt;?php 
+                    include $_SERVER['DOCUMENT_ROOT'].&quot;/Spider/includes/spider_bcb.php&quot;; 
+                    ?&gt; </font></p>
+            </blockquote>
+            <p><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">If 
+                you uploaded it somewhere else, insert this, and change <em><font color="#0066CC">mypath</font></em> 
+                to reflect the path you used:</font></p>
+            <blockquote> 
+                <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">&lt;?php 
+                    include $_SERVER['DOCUMENT_ROOT'].&quot;/</font><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><em><font color="#0066CC">mypath</font></em>/Spider/includes/spider_bcb.php&quot;; 
+                    ?&gt; </font></p>
+            </blockquote>
+            <p><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">If 
+                you use a common included header for all the pages of your site, 
+                you can just insert the line in it, and it will work for all your 
+                pages that use that header (nifty, eh?).</font></p></td>
+    </tr>
+    <tr>
+        <td valign="top" bgcolor="#003366"><div align="right"><strong><font color="#FF9900" size="2" face="Verdana, Arial, Helvetica, sans-serif">View 
+                your Results</font></strong></div></td>
+        <td align="center" valign="top" bgcolor="#999999">&#8226;</td>
+        <td bgcolor="#CCCCCC"><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">To 
+            view your results, simply browse to <strong><font color="#0066CC">www.yoursite.com/Spider/spider_results.php</font></strong>. 
+            If you didn't install the folder<font color="#0066CC"><strong> Spider 
+            </strong> <font color="#003366">at the root, just modify the path 
+            to the </font><strong>Spider/spider_results.php </strong><font color="#003366">file.</font></font></font></td>
+    </tr>
+    <tr> 
+        <td valign="top" bgcolor="#003366"><div align="right"><font color="#FF9900" size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Support 
+                / Contact</strong></font></div></td>
+        <td align="center" valign="top" bgcolor="#999999">&#8226;</td>
+        <td bgcolor="#CCCCCC"><p><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                script is provided AS IS, and we at <em><strong>bluecollarbrain</strong></em> 
+                assume no liability for any problem you may encounter due to the 
+                use of this script. That being said, we wouldn't be opposed to 
+                giving a little help if you followed the installation instructions 
+                and can't seem to get it to work. Email any problems you encounter 
+                to <a href="mailto:bassface@bluecollarbrain.com">bassface@bluecollarbrain.com</a>, 
+                and we'll try to help you get it sorted out. </font></p>
+            <p><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">Also, 
+                if you get it working and are liking it, let us know that, too! 
+                Email us at <a href="mailto:bassface@bluecollarbrain.com">bassface@bluecollarbrain.com</a> 
+                with a link to your results page.</font></p></td>
+    </tr>
+    <tr> 
+        <td valign="top" bgcolor="#003366"><div align="right"><strong><font color="#FF9900" size="2" face="Verdana, Arial, Helvetica, sans-serif">Notes</font></strong></div></td>
+        <td align="center" valign="top" bgcolor="#999999">&#8226;</td>
+        <td bgcolor="#CCCCCC"><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">You 
+            may change anything about the results page you want: colors, fonts, 
+            etc. You can change/remove the .jpg, too. We would ask that you leave 
+            the link at the bottom, especially if the page is available for public 
+            view. Thanks.</font></td>
+    </tr>
+</table>
+<br />
+<table width="98%" border="0" align="center" cellpadding="4" cellspacing="0" class="tblbrd">
+    <tr> 
+        <td align="right" valign="top" bgcolor="#003366"><font color="#FF9900" size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Customizing</strong></font></td>
+        <td align="center" valign="top" bgcolor="#999999"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">&#8226;</font></td>
+        <td valign="top" bgcolor="#CCCCCC"><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">There 
+            are a few things you may want to customize about this script. Here's 
+            how to do a few of the ones that we think you'll be most interested 
+            in.</font></td>
+    </tr>
+    <tr> 
+        <td width="140" align="right" valign="top" bgcolor="#003366"> <div align="right"><font color="#FF9900" size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Adding/Deleting 
+                Spiders to Track</strong></font></div></td>
+        <td width="4" align="center" valign="top" bgcolor="#999999"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">&#8226;</font></td>
+        <td valign="top" bgcolor="#CCCCCC"> <p><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">A 
+                little background and what's going on, first. When a search engine's 
+                spider (or anyone for that matter) visits your site, a little 
+                information is given about the visiting machine (NOT personal 
+                information). We can use php to extract pieces of that information, 
+                and from that info we can tell if it's a spider or not. One of 
+                these pieces is called the HTTP_USER_AGENT, which will include 
+                the spider's name. For example, Google's&#8482; current spider 
+                has the HTTP_USER_AGENT </font><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><font color="#0066CC"><strong><br/>
+                Googlebot/2.1 (+http://www.google.com/bot.html)</strong>. </font></font></p>
+            <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">Now 
+                in order for a spider to be tracked by our script, we have to 
+                tell the script what names we want to look out for. Using Google&#8482; 
+                again as our example, we can tell the script to watch out for 
+                any HTTP_USER_AGENT that contains the word <font color="#0066CC"><strong>googlebot</strong>.<font color="#003366"> 
+                A match on the word <font color="#0066CC"><strong>googlebot</strong></font> 
+                will trigger the script to record the time, page visited, and 
+                HTTP_USER_AGENT of the spider into your database. If a match is 
+                NOT made, then nothing happens, and your page loads like it always 
+                has.</font></font></font></font> </p>
+            <p><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">All 
+                names to be watched are kept in the file <font color="#0066CC"><strong>includes/spider_array.php</strong></font>. 
+                So, to add a new spider to track, all we have to do is tell the 
+                script to watch out for a new word. Let's say we want to look 
+                out for the new search engine spider named <strong><font color="#0066CC">GeddyBot/2.0</font></strong>. 
+                Open up the spider_array.php file and add a line to the bottom 
+                of the list, following the format of all the other lines... </font></p>
+            <p><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">$spider_array[] 
+                = &quot;geddybot&quot;;</font></p>
+            <p><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">UpperCase/LowerCase 
+                is not important, and we don't need the entire string of text, 
+                just the unique part that we can use to identify this particular 
+                spider.</font></p>
+            <p><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">That's 
+                it. To delete a spider, just delete the entire line from the spider_array.php 
+                file, and it will no longer be tracked.</font></p></td>
+    </tr>
+    <tr>
+        <td align="right" valign="top" bgcolor="#003366"><div align="right"><font color="#FF9900" size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Number 
+                of Results per Page</strong></font> </div></td>
+        <td align="center" valign="top" bgcolor="#999999"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">&#8226;</font></td>
+        <td valign="top" bgcolor="#CCCCCC"><font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">There 
+            is a variable in the <strong><font color="#0066CC">spider_results.php</font></strong> 
+            page that controls how many results are displayed per page. It is 
+            called <font color="#0066CC"><strong>$limit</strong></font>, and it 
+            is set to <font color="#FF0000">20</font> by default. Just change 
+            that <font color="#FF0000">20</font> to whatever you want, and the 
+            results page will change accordingly.</font></td>
+    </tr>
+</table>
+<div align=center><font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">BCB 
+    SpiderTracker</font><font size="1"><br />
+    </font> <font color="#003366" size="1" face="Verdana, Arial, Helvetica, sans-serif">&copy; 
+    2004 - <A HREF="http://bluecollarbrain.com">www.bluecollarbrain.com</A></font></div>
+</body>
+</html>
