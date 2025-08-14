@@ -1,0 +1,63 @@
+PHP Cron parser documentation
+=============================
+
+This is some rudimentary documentation to explain the purpose and 
+intended use of the Cron Parser class.  Currently, the class exists 
+in isolation, but when Ive worked more on an implementation, Ill 
+post concrete examples and perhaps a complete cron replacement system.
+
+This class does *not* read in your crontab.  It relies on being told a
+schedule from a crontab and parsing that.  A typical implementation would
+be to use a database to store data about cron jobs.  Typically, in
+a two-server environment, serverB's crons would be set to run 2 minutes 
+after serverA's crons were due to run, first checking if the cron on serverA
+actually ran, thus providing cron redundancy.
+
+
+Current functionality
+_____________________
+
+The class has various internal methods, but it is not intended that 
+these be invoked.  Instead, just one method should be used, as follows:
+
+$cron_schedule = "0 5 * * *";//example schedule, (5am each day)
+
+//Constructor - takes cron schedule as an argument
+$cron = new CronParser($cron_schedule);
+
+//getLastRan method - returns array (0=minute, 1=hour, 2=dayOfMonth, 3=month, 4=week, 5=year)
+$lastRan = $cron->getLastRan(); 
+
+//Make a timestamp from the array
+$cron_ran = mktime ( $lastRan[1] ,$lastRan[0],0 , $lastRan[3] ,$lastRan[2], $lastRan[5]);
+
+So, in this example, its obvious that the last ran time was 5am 
+on the current day.  However, this calculation becomes more complex 
+when some other cron schedules are involved, like:
+
+$cron_schedule = "0,12,30-35 5,7-9 * 9-12 0-3,6";
+
+This example asks cron to run a program at a variety of different 
+times, and the last ran time might be last yesterday, last week, 
+last month, or even last year.  So, if you need to know if a cron ran, 
+you can add logging to your app, and then create a CronParser instance 
+to determine when the cron job was due to run last and use fuzzy time 
+comparison between that time and the timestamp of your log entry in your 
+database.
+
+Using this system, you can add an environment variable to your crontab 
+like (HOSTNAME="serverA") and use this in your logging to determine 
+which server ran the cron.  Use logic to run the cron on serverB if 
+serverA failed to log success.
+
+
+Future expansion of this project
+________________________________
+
+The basic parsing of cron schedules has been cracked, and theres no 
+reason why a whole host of PHP applications to control scheduled execution 
+of scripts cant be created, for sysadmin and web management use.  I plan 
+to write some apps that I can release under GPL / LGPL for these purposes.
+
+
+Mick Sear (http://www.ecreate.co.uk, mick@ecreate.co.uk)
