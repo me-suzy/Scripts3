@@ -1,0 +1,219 @@
+A
+{
+ text-decoration: none;
+ color:#A5A5A5; 
+}
+
+a:hover
+{
+ color:#FFEEEE; 
+ background-color:#404040; 
+}
+
+BODY
+{ 
+ background: #000000;
+ color: #FFFFFF;
+ font: 12px tahoma;
+ scrollbar-base-color: #222222;
+ scrollbar-arrow-color: #CCCCCC;
+} 
+
+SELECT
+{
+ background: #000000;
+ color: #FFFFFF;
+ font-size: 10px;
+}
+
+INPUT
+{
+ background: #000000;
+ color: #FFFFFF;
+ font-size: 10px;
+}
+
+TEXTAREA
+{
+ background: #000000;
+ color: #FFFFFF;
+ font-size: 12px;
+}
+
+P
+{
+ font: 12px tahoma;
+}
+
+TABLE
+{
+ font: 12px verdana;
+}
+
+H2
+{
+ font-size: 22px;
+ font-family: universal, tahoma, universallight;
+ font-weight: normal;
+}
+
+.nav
+{
+ font-family: verdana, arial;
+ font-size: 12px;
+ background: #000000;
+ border-width: 0px;
+}
+
+.suggest
+{
+ font-family: verdana, arial;
+ font-size: 12px;
+ background: #000000;
+ border-style: solid;
+ border-width: 1px;
+ border-color: #666666;
+}
+
+.link
+{
+ font-family: verdana, arial;
+ font-size: 12px;
+ background: #101010;
+ border-style: dotted;
+ border-width: 1px;
+ border-color: #666666;
+}
+
+.reciplink
+{
+ font-weight: bold;
+}
+
+.category
+{
+ font-family: verdana, arial;
+ font-size: 12px;
+ background: #222222;
+ border-style: solid;
+ border-width: 1px;
+ border-color: #AAAAAA;
+}
+
+.commentposter
+{
+ font-family: verdana, arial;
+ font-size: 12px;
+ background: #222222;
+ border-style: outset;
+ border-width: 2px;
+ border-color: #555555;
+}
+
+.comment
+{
+ padding: 5px;
+ font-family: verdana, arial;
+ font-size: 12px;
+ background: #222222;
+ border-style: solid;
+ border-width: 2px;
+ border-color: #333333;
+}
+
+.commentdate
+{
+ font-size: 9px;
+ text-decoration: italics;
+}
+
+.newlinks
+{
+ text-align: left;
+ padding: 2px;
+ border-color: #666666;
+ border-style: solid;
+ border-width: 1px;
+ margin: 3px;
+}
+
+.details
+{
+ padding: 10px;
+ margin: 10px;
+ font-family: verdana, arial;
+ font-size: 12px;
+ background: #111111;
+ border-style: solid;
+ border-width: 1px;
+ border-color: #004455;
+}
+
+.detailsborder
+{
+ padding: 10px;
+ margin: 10px;
+ font-family: verdana, arial;
+ font-size: 12px;
+ border-style: outset;
+ border-width: 2px;
+ border-color: #444444;
+}
+
+.labels
+{
+ font-weight: bold;
+}
+
+.grouping
+{
+ border-style: inset;
+ border-width: 1px;
+ border-color: #777777;
+ padding: 5px;
+ margin: 5px;
+}
+
+.title
+{
+ font-size: 14px;
+}
+
+.important
+{
+ font-weight: bold;
+}
+
+.columnheader
+{
+ text-decoration: underline;
+}
+
+.highlighttext
+{
+ background-color: yellow;
+ font-weight: bold;
+}
+
+.adminmenu
+{
+ border-style: inset;
+ border-color: #888888;
+ border-width: 2;
+ padding: 6px;
+}
+
+.labelscolumn
+{
+ width: 30%;
+}
+
+.optionscolumn
+{
+ width: 70%;
+}
+
+.categoryname
+{
+ font-weight: bold;
+}
