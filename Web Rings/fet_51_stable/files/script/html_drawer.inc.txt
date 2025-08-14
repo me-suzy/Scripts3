@@ -1,0 +1,1474 @@
+<?php
+
+class HTML_drawer{
+
+    function button($type,$cmd,$flavor){
+        global $intf;
+
+        if($flavor=='light')
+            echo "<input type='".$type."' style='width=150px; font-family: Verdana; font-size: 11px; background-color: ".$intf->color['LBUTTONBACKGROUND']."; color: ".$intf->color['LBUTTONTEXT']."; border: 1px solid; border-color: ".$intf->color['LBUTTONBORDER']."' name=cmd value='".$cmd."'>";
+        else
+            echo "<input type='".$type."' style='width=150px; font-family: Verdana; font-size: 11px; background-color: ".$intf->color['DBUTTONBACKGROUND']."; color: ".$intf->color['DBUTTONTEXT']."; border: 1px solid; border-color: ".$intf->color['DBUTTONBORDER']."' name=cmd value='".$cmd."'>";
+
+    }
+
+    function input($font_size,$font_weight,$type,$name,$size,$maxlength,$value,$disabled=false){
+        global $intf;
+
+        if($disabled) $dis='disabled';
+        echo "<input type='".$type."' name='".$name."' size='".$size."' maxlength='".$maxlength."' value='".$value."' ".$dis." style='font-family: Verdana; font-size: ".$font_size."px; font-weight: ".$font_weight."; background-color: ".$intf->color['INPUTBACKGROUND']."; color: ".$intf->color['INPUTTEXT']."; border: 1px solid; border-color: ".$intf->color['INPUTBORDER']."'>";
+    }
+
+    function sub_page_header($page_title=''){
+        global $intf,$settings,$admin;
+        echo "<html><head><title>".$admin->site_domain.": FET ".$settings->version.", ".$page_title."</title>
+              <meta http-equiv='content-type' content='text/html; charset=UTF-8'>
+              <style>
+              <!--
+              td {font-family: Verdana;color: ".$intf->color['CELLTEXTCOLOR'].";font-size: 9px;}
+              a:link{color: ".$intf->color['LINK_COLOR'].";TEXT-DECORATION:none;}
+              a:visited{color: ".$intf->color['LINK_VISITED'].";TEXT-DECORATION:none;}
+              a:hover{color: ".$intf->color['LINK_HOVER'].";TEXT-DECORATION:underline;}
+              a:active{color: ".$intf->color['LINK_ACTIVE'].";TEXT-DECORATION:underline;}
+              textarea {font-family: Verdana; font-size: 10px; background-color: ".$intf->color['INPUTBACKGROUND']."; color: ".$intf->color['INPUTTEXT']."; border: 1px solid; border-color: ".$intf->color['INPUTBORDER'].";}
+              .nt{color: ".$intf->color['LINK_COLOR'].";}
+              select {font-family: Verdana; font-size: 10px; background-color: ".$intf->color['SELECTBACKGROUND']."; color: ".$intf->color['SELECTTEXT']."; border: 1px solid; border-color: ".$intf->color['SELECTBORDER'].";}
+              //-->
+              </style>
+              </head>
+              <body bgcolor='".$intf->color['AZ_BACKGROUND']."' text='".$intf->color['AZ_TEXT']."' leftmargin='0' topmargin='0'>
+              <form name=mainform method=POST action='./'>
+              <center>
+        ";
+
+    }
+
+function sign_page_header($page_title=''){
+        global $intf,$settings,$admin;
+        echo "<html><head><title>".$admin->site_domain.": FET ".$settings->version.", ".$page_title."</title>
+              <meta http-equiv='content-type' content='text/html; charset=UTF-8'>
+              <style>
+              <!--
+              td {font-family: Verdana;color: ".$intf->color['CELLTEXTCOLOR'].";font-size: 9px;}
+              a:link{color: ".$intf->color['LINK_COLOR'].";TEXT-DECORATION:none;}
+              a:visited{color: ".$intf->color['LINK_VISITED'].";TEXT-DECORATION:none;}
+              a:hover{color: ".$intf->color['LINK_HOVER'].";TEXT-DECORATION:underline;}
+              a:active{color: ".$intf->color['LINK_ACTIVE'].";TEXT-DECORATION:underline;}
+              //-->
+              </style>
+              </head>
+              <body bgcolor='".$intf->color['AZ_BACKGROUND']."' text='".$intf->color['AZ_TEXT']."' leftmargin='0' topmargin='0'>
+              <form method=POST>
+              <center>
+        ";
+
+    }
+
+    function sub_page_footer(){
+
+        echo "</center></form>
+        </body></html>";
+    }
+
+    function main_page_header($page_title=''){
+        global $intf,$admin,$settings,$trader;
+
+        echo "<html><head><title>".$admin->site_domain.": FET ".$settings->version.", ".$page_title."</title>
+              <meta http-equiv='content-type' content='text/html; charset=UTF-8'>
+              <style>
+              <!--
+              td {font-family: Verdana;color: ".$intf->color['CELLTEXTCOLOR'].";font-size: 9px;}
+              a:link{color: ".$intf->color['LINK_COLOR'].";TEXT-DECORATION:none;}
+              a:visited{color: ".$intf->color['LINK_VISITED'].";TEXT-DECORATION:none;}
+              a:hover{color: ".$intf->color['LINK_HOVER'].";TEXT-DECORATION:underline;}
+              a:active{color: ".$intf->color['LINK_ACTIVE'].";TEXT-DECORATION:underline;}
+              .floater{position:absolute;z-index:200}
+              .fv{color: ".$intf->color['FL_VALUE'].";}
+              .nt{color: ".$intf->color['LINK_COLOR'].";}
+              //-->
+              </style>
+              </head>
+              <body bgcolor='".$intf->color['AZ_BACKGROUND']."' text='".$intf->color['AZ_TEXT']."' leftmargin='0' topmargin='0'>
+              <div id=floater class=floater></div>
+              <script language=javascript>
+              <!--
+                var checkFlag=false;
+                var marked_row=new Array;
+                var domDetect=true;
+                var thePointerColor='".$intf->color['POINTER_COLOR']."';
+                var theMarkColor='".$intf->color['MARK_COLOR']."';
+                var tradesListed=".$trader->listed.";
+                function checkall(hourRows,dayRows,allRows){
+                    var theCells=null;
+                    var kk=null;
+                    var curRow=null;
+                    if(!checkFlag){
+                        for(i=0;i<tradesListed;i++){
+                            document.mainform.cbox[i].checked=true;
+                            marked_row[i]=true;
+                            curRow=document.getElementById('mtr'+i);
+                            if (typeof(document.getElementsByTagName)!='undefined'){theCells=curRow.getElementsByTagName('td');}
+                            else if(typeof(curRow.cells)!='undefined'){theCells=curRow.cells;}
+                            for(kk=0;kk<allRows;kk++){theCells[kk].setAttribute('bgcolor',theMarkColor,0);}
+                        }
+                        checkFlag=true;
+                        return 'Uncheck All';
+                    } else {
+                        for(i=0;i<tradesListed;i++){
+                            document.mainform.cbox[i].checked=false;
+                            marked_row[i]=false;
+                            curRow=document.getElementById('mtr'+i);
+                            if (typeof(document.getElementsByTagName)!='undefined'){theCells=curRow.getElementsByTagName('td');}
+                            else if(typeof(curRow.cells)!='undefined'){theCells=curRow.cells;}
+                            for(kk=0;kk<hourRows+2;kk++){
+                                if (typeof(theCells[kk].getAttribute)!='undefined'){
+                                    theCells[kk].setAttribute('bgcolor','".$intf->color['NORM_CELL']."',0);
+                                } else {
+                                    theCells[kk].style.backgroundColor='".$intf->color['NORM_CELL']."';
+                                }
+                            }
+                            for(kk=hourRows+2;kk<hourRows+5+dayRows;kk++){
+                                if (typeof(theCells[kk].getAttribute)!='undefined'){
+                                    theCells[kk].setAttribute('bgcolor','".$intf->color['24H_CELL']."',0);
+                                } else {
+                                    theCells[kk].style.backgroundColor='".$intf->color['24H_CELL']."';
+                                }
+                            }
+                            for(kk=hourRows+2+dayRows;kk<allRows;kk++){
+                                if (typeof(theCells[kk].getAttribute)!='undefined'){
+                                    theCells[kk].setAttribute('bgcolor','".$intf->color['NORM_CELL']."',0);
+                                } else {
+                                    theCells[kk].style.backgroundColor='".$intf->color['NORM_CELL']."';
+                                }
+                            }
+                        }
+                        checkFlag=false;
+                        return 'Check All';
+                    }
+                }
+                Xoffset=0;Yoffset=20;
+                var nav,old,iex=(document.all),yyy=-10000; if(navigator.appName=='Netscape'){(document.layers)?nav=true:old=true;}
+                if(!old){var skn=(nav)?document.floater:floater.style; if(nav)document.captureEvents(Event.MOUSEMOVE);document.onmousemove=get_mouse;}
+                function pm(msg){
+                    content=msg;
+                    if(!old){yyy=Yoffset; if(nav){skn.document.write(content);skn.document.close();skn.visibility='visible'} if(iex){document.all('floater').innerHTML=content;skn.visibility='visible'}}}
+                function get_mouse(e){
+                    var x=(nav)?e.pageX:event.x+document.body.scrollLeft;
+                    skn.left=x+Xoffset;
+                    var y=(nav)?e.pageY:event.y+document.body.scrollTop;
+                    var wh=document.body.offsetHeight;
+                    if(y>(wh-330)){skn.top=y+yyy-323;} else {skn.top=y+yyy;}
+                }
+                function hd(){
+                    content='';
+                    if(!old){yyy=-10000; if(nav){skn.document.write(content);skn.document.close();skn.visibility='hidden'} if(iex){document.all('floater').innerHTML=content;skn.visibility='hidden'}}
+                }
+                function svhlight(theRow,theAction,lightRows,shadedRows,allRows){
+                    var theCells=null;
+                    if (typeof(theRow.style)=='undefined'){return false;}
+                    if (typeof(document.getElementsByTagName)!='undefined'){theCells=theRow.getElementsByTagName('td');}
+                    else if(typeof(theRow.cells)!='undefined'){theCells=theRow.cells;}
+                    else {return false;}
+                    var newColor=null;
+                    if (typeof(theCells[0].getAttribute)!='undefined') {domDetect=true;} else {domDetect=false;}
+                    if(theAction=='over'){
+                        if (domDetect){
+                            for (kk=0;kk<allRows;kk++){theCells[kk].setAttribute('bgcolor',thePointerColor,0);}
+                        } else {
+                            for (kk=0;kk<allRows;kk++){theCells[kk].style.backgroundColor=thePointerColor;}
+                        }
+                    } else if(theAction=='out'){
+                        for(kk=0;kk<lightRows;kk++){
+                            if (domDetect){
+                                theCells[kk].setAttribute('bgcolor','".$intf->color['NORM_CELL']."',0);
+                            } else {
+                                theCells[kk].style.backgroundColor='".$intf->color['NORM_CELL']."';
+                            }
+                        }
+                        for(kk=lightRows;kk<lightRows+shadedRows;kk++){
+                            if (domDetect){
+                                theCells[kk].setAttribute('bgcolor','".$intf->color['24H_CELL']."',0);
+                            } else {
+                                theCells[kk].style.backgroundColor='".$intf->color['24H_CELL']."';
+                            }
+                        }
+                        for(kk=lightRows+shadedRows;kk<allRows;kk++){
+                            if (domDetect){
+                                theCells[kk].setAttribute('bgcolor','".$intf->color['NORM_CELL']."',0);
+                            } else {
+                                theCells[kk].style.backgroundColor='".$intf->color['NORM_CELL']."';
+                            }
+                        }
+                    }
+                }
+                function hlight(theRow,theRowNum,theAction,lightRows,shadedRows,allRows){
+                    var theCells=null;
+                    if (typeof(theRow.style)=='undefined'){return false;}
+                    if (typeof(document.getElementsByTagName)!='undefined'){theCells=theRow.getElementsByTagName('td');}
+                    else if(typeof(theRow.cells)!='undefined'){theCells=theRow.cells;}
+                    else {return false;}
+                    var newColor=null;
+                    if (typeof(theCells[0].getAttribute)!='undefined') {domDetect=true;} else {domDetect=false;}
+                    if(theAction=='over'){
+                        if(marked_row[theRowNum]){newColor=theMarkColor;} else {newColor=thePointerColor;}
+                        if (domDetect){
+                            for (kk=0;kk<allRows;kk++){theCells[kk].setAttribute('bgcolor',newColor,0);}
+                        } else {
+                            for (kk=0;kk<allRows;kk++){theCells[kk].style.backgroundColor=newColor;}
+                        }
+                    } else if(theAction=='out'){
+                        if(marked_row[theRowNum]){
+                            newColor=theMarkColor;
+                            if (domDetect){
+                                for (kk=0;kk<allRows;kk++){theCells[kk].setAttribute('bgcolor',newColor,0);}
+                            } else {
+                                for (kk=0;kk<allRows;kk++){theCells[kk].style.backgroundColor=newColor;}
+                            }
+                        } else {
+                            for(kk=0;kk<lightRows;kk++){
+                                if (domDetect){
+                                    theCells[kk].setAttribute('bgcolor','".$intf->color['NORM_CELL']."',0);
+                                } else {
+                                    theCells[kk].style.backgroundColor='".$intf->color['NORM_CELL']."';
+                                }
+                            }
+                            for(kk=lightRows;kk<lightRows+shadedRows;kk++){
+                                if (domDetect){
+                                    theCells[kk].setAttribute('bgcolor','".$intf->color['24H_CELL']."',0);
+                                } else {
+                                    theCells[kk].style.backgroundColor='".$intf->color['24H_CELL']."';
+                                }
+                            }
+                            for(kk=lightRows+shadedRows;kk<allRows;kk++){
+                                if (domDetect){
+                                    theCells[kk].setAttribute('bgcolor','".$intf->color['NORM_CELL']."',0);
+                                } else {
+                                    theCells[kk].style.backgroundColor='".$intf->color['NORM_CELL']."';
+                                }
+                            }
+                        }
+                    } else if(theAction=='click'){
+                        if(!marked_row[theRowNum]){
+                            marked_row[theRowNum]=true;
+                            newColor=theMarkColor;
+                        } else {
+                            marked_row[theRowNum]=false;
+                            newColor=thePointerColor;
+                        }
+                        if (domDetect){
+                            for (kk=0;kk<allRows;kk++){theCells[kk].setAttribute('bgcolor',newColor,0);}
+                        } else {
+                            for (kk=0;kk<allRows;kk++){theCells[kk].style.backgroundColor=newColor;}
+                        }
+                    }
+                    return true;
+                }
+                //-->
+                </script>
+              <form name=mainform method=POST action='./'>
+              <center>
+        ";
+    }
+
+    function main_table_header($table_title=''){
+        global $intf,$admin,$settings;
+
+        echo "
+            <table width='95%' border=0 cellspacing=0 cellpadding=0>
+            <tr><td width=400 bgcolor='".$intf->color['TABLE_HEADER_LEFT']."' align=center><font size=2 face=arial><b>".$table_title."</b></font></td>
+            <td bgcolor='".$intf->color['TABLE_HEADER_RIGHT']."'>&nbsp;</td>
+            </tr>
+            <tr>
+            <td bgcolor='".$intf->color['TABLE_HEADER_LEFT']."'>&nbsp;</td>
+            <td bgcolor='".$intf->color['TABLE_HEADER_LEFT']."' align=right><font size=1><b>Local Server's Time: ".$settings->time_string."</b></font>&nbsp;</td>
+            </tr>
+            <tr>
+            <td colspan=2 bgcolor='".$intf->color['BUTTONS_BLOCK']."' align=center>";
+            $this->top_menu();
+            echo "
+            </td></tr>
+            <tr>
+            <td colspan=2 bgcolor='".$intf->color['MAIN_BGCOLOR']."'>
+            <font style='font-size: 5px;'>FET Version ".$settings->version."</font></td></tr>
+            <tr>
+            <td colspan=2 bgcolor='".$intf->color['MAIN_BGCOLOR']."' align=center>
+        ";
+    }
+
+    function main_table_footer(){
+        global $settings,$intf;
+
+        echo "</td></tr>
+            <tr><td colspan=2 bgcolor='".$intf->color['MAIN_BGCOLOR']."' align=right>
+            <font style='font-size: 5px;'>FET Version ".$settings->version."</font></td></tr>
+            <tr><td colspan=2 bgcolor='".$intf->color['BUTTONS_BLOCK']."' align=center>";
+        $this->top_menu();
+        echo '</td></tr></table>';
+    }
+
+    function main_page_footer(){
+
+        echo "</form></center>
+        </body></html>";
+    }
+
+    function script_dmnt(){
+        echo "<script language=javascript>
+                <!--
+                function dmnt(nn,mt){
+                    var v=0;
+                    var s='';
+                    document.write('<select name=new_mintrade['+nn+']>');
+                    for(var i=0;i<=410;i++){
+                        if(i<=100){v=i;}
+                        if(i>100){v=i*5-400;}
+                        if(i>180){v=i*10-1300;}
+                        if(i>230){v=i*50-10500;}
+                        if(v==mt){s=' selected';} else {s='';}
+                        document.write('<option value='+v+s+'>'+v);
+                    }
+                    document.write('</select>');
+                }
+                //-->
+                </script>
+        ";
+    }
+
+    function script_sfdmnt(){
+        echo "<script language=javascript>
+                <!--
+                function sfdmnt(nn,fn){
+                    var v=0;
+                    var s='';
+                    document.write('<select name=new_shortf['+fn+']>');
+                    for(var i=1;i<=410;i++){
+                        if(i<=100){v=i;}
+                        if(i>100){v=i*5-400;}
+                        if(i>180){v=i*10-1300;}
+                        if(i>230){v=i*50-10500;}
+                        if(v==nn){s=' selected';} else {s='';}
+                        document.write('<option value='+v+s+'>'+v);
+                    }
+                    document.write('</select>');
+                }
+                //-->
+                </script>
+        ";
+    }
+
+    function script_dmnt2(){
+        echo "<script language=javascript>
+                <!--
+                function dmnt2(){
+                    var v=0;
+                    var s='';
+                    document.write('<select name=new_mintrade>');
+                    for(var i=1;i<=410;i++){
+                        if(i<=100){v=i;}
+                        if(i>100){v=i*5-400;}
+                        if(i>180){v=i*10-1300;}
+                        if(i>230){v=i*50-10500;}
+                        if(v==5){s=' selected';} else {s='';}
+                        document.write('<option value='+v+s+'>'+v);
+                    }
+                    document.write('</select>');
+                }
+                //-->
+                </script>
+        ";
+    }
+
+    function script_dmnt3(){
+        echo "<script language=javascript>
+                <!--
+                function dmnt3(){
+                    var v=0;
+                    var s='';
+                    document.write(\"<select name=new_mintrade><option value=-1 selected>Don't change\");
+                    for(var i=0;i<=410;i++){
+                        if(i<=100){v=i;}
+                        if(i>100){v=i*5-400;}
+                        if(i>180){v=i*10-1300;}
+                        if(i>230){v=i*50-10500;}
+                        document.write('<option value='+v+'>'+v);
+                    }
+                    document.write('</select>');
+                }
+                //-->
+                </script>
+        ";
+    }
+
+    function script_dmnt4(){
+        echo "<script language=javascript>
+                <!--
+                function dmnt4(){
+                    var v=0;
+                    var s='';
+                    document.write(\"<select name=new_sfhits><option value=-1 selected>Don't change<option value=0>Remove\");
+                    for(var i=1;i<=410;i++){
+                        if(i<=100){v=i;}
+                        if(i>100){v=i*5-400;}
+                        if(i>180){v=i*10-1300;}
+                        if(i>230){v=i*50-10500;}
+                        document.write('<option value='+v+'>'+v);
+                    }
+                    document.write('</select>');
+                }
+                //-->
+                </script>
+        ";
+    }
+
+    function script_evf(){
+        echo "<script language=javascript>
+                <!--
+                function evf(){
+                    var v=0;
+                    var s='';
+                    document.write('<select name=ev_forces>');
+                    for(var i=1;i<=500;i++){
+                        if(i<=100){v=i;}
+                        if(i>100){v=i*5-400;}
+                        if(i>180){v=i*10-1300;}
+                        if(i>230){v=i*50-10500;}
+                        if(i>410){v=i*1000-400000;}
+                        if(v==5){s=' selected';} else {s='';}
+                        document.write('<option value='+v+s+'>'+v);
+                    }
+                    document.write('</select>');
+                }
+                //-->
+                </script>
+        ";
+    }
+
+    function script_sdmnt(){
+        echo "<script language=javascript>
+                <!--
+                function sdmnt(nn){
+                    var v=0;
+                    var s='';
+                    document.write('<select name=new_mintrade>');
+                    for(var i=0;i<=410;i++){
+                        if(i<=100){v=i;}
+                        if(i>100){v=i*5-400;}
+                        if(i>180){v=i*10-1300;}
+                        if(i>230){v=i*50-10500;}
+                        if(v==nn){s=' selected';} else {s='';}
+                        document.write('<option value='+v+s+'>'+v);
+                    }
+                    document.write('</select>');
+                }
+                //-->
+                </script>
+        ";
+    }
+
+    function script_drto(){
+        echo "<script language=javascript>
+                <!--
+                function drto(nn,rt){
+                    var v=0;
+                    var s='';
+                    document.write('<select name=new_ratio['+nn+']>');
+                    for(var i=0;i<=30;i++){
+                        v=i/10;
+                        if(v==rt){s=' selected';} else {s='';}
+                        document.write('<option value='+v+s+'>'+v);
+                    }
+                }
+                //-->
+                </script>
+        ";
+    }
+
+    function script_sdrto(){
+        echo "<script language=javascript>
+                <!--
+                function sdrto(nn){
+                    var v=0;
+                    var s='';
+                    document.write('<select name=new_ratio>');
+                    for(var i=0;i<=30;i++){
+                        v=i/10;
+                        if(v==nn){s=' selected';} else {s='';}
+                        document.write('<option value='+v+s+'>'+v);
+                    }
+                }
+                //-->
+                </script>
+        ";
+    }
+
+    function middle_menu(){
+        global $intf,$admin;
+
+        echo '<table width=475 border=0 cellpadding=0 cellspacing=1>
+            <tr align=center style="padding-top:5px;"><td>';
+            $this->button('submit','Add Trades','light');
+            echo '</td><td>';
+            $this->button('submit','Delete Trades','light');
+            echo '</td><td><input type=button value="Check All" onClick="this.value=checkall('.$admin->hour_cellnum.','.$admin->day_cellnum.','.$admin->td_cellnum.')" style="width=150px; font-family: Verdana; font-size: 11px; background-color: '.$intf->color['LBUTTONBACKGROUND'].'; color: '.$intf->color['LBUTTONTEXT'].'; border: 1px solid; border-color: '.$intf->color['LBUTTONBORDER'].'">
+            </td></tr><tr align=center><td>';
+            $this->button('submit','Edit Trades','light');
+            echo '</td><td>';
+            $this->button('submit','Blacklist Trades','light');
+            echo '</td><td>';
+            $this->button('submit','Reset Trades','light');
+            echo '</td></tr></table>';
+    }
+
+    function new_menu(){
+
+        echo '<table width=475 border=0 cellpadding=0 cellspacing=1>
+            <tr align=center style="padding-top:5px;"><td>';
+            $this->button('submit','Accept New Trades','light');
+            echo '</td><td>';
+            $this->button('submit','Delete New Trades','light');
+            echo '</td><td>';
+            $this->button('submit','Blacklist New Trades','light');
+            echo '</td></tr></table>';
+    }
+
+    function top_menu(){
+
+        echo '<table width=800 border=0 cellpadding=0 cellspacing=1>
+            <tr align=center><td>';
+            $this->button('submit','Main Stats','dark');
+            echo '</td><td>';
+            $this->button('submit','Groups','dark');
+            echo '</td><td>';
+            $this->button('submit','Short Forces','dark');
+            echo '</td><td>';
+            $this->button('submit','Trades Checker','dark');
+            echo '</td><td>';
+            $this->button('submit','Settings','dark');
+            echo '</td></tr><tr align=center><td>';
+            $this->button('submit','24h Stats','dark');
+            echo '</td><td>';
+            $this->button('submit','Toplists','dark');
+            echo '</td><td>';
+            $this->button('submit','Long Forces','dark');
+            echo '</td><td>';
+            $this->button('submit','Blacklist','dark');
+            echo '</td><td>';
+            $this->button('submit','DB Management','dark');
+            echo '</td></tr><tr align=center><td>';
+            $this->button('submit','Stats History','dark');
+            echo '</td><td>';
+            $this->button('submit','Referrers','dark');
+            echo '</td><td>';
+            $this->button('submit','Special URLs','dark');
+            echo '</td><td>';
+            $this->button('submit','Global Parameters','dark');
+            echo '</td><td>';
+            $this->button('submit','System Logs','dark');
+            echo '</td></tr><tr align=center><td>';
+            $this->button('submit','Link Tracking','dark');
+            echo '</td><td>&nbsp;</td><td>';
+            $this->button('submit','Exit Traffic','dark');
+            echo '</td><td>';
+            $this->button('submit','IP Blacklist','dark');
+            echo '</td></tr></table>';
+    }
+
+    function stats_table_header(){
+        global $intf,$admin,$trader;
+
+        $admin->td_cellnum=13;
+        $admin->hour_cellnum=3;
+        $admin->day_cellnum=3;
+        if($admin->show_wm) $admin->td_cellnum++;
+        if($admin->show_h_truin){ $admin->td_cellnum++; $admin->hour_cellnum++; }
+        if($admin->show_h_gluin){ $admin->td_cellnum++; $admin->hour_cellnum++; }
+        if($admin->show_h_prod){ $admin->td_cellnum++; $admin->hour_cellnum++; }
+        if($admin->show_h_nojs){ $admin->td_cellnum++; $admin->hour_cellnum++; }
+        if($admin->show_h_cont){ $admin->td_cellnum++; $admin->hour_cellnum++; }
+        if($admin->show_h_ca){ $admin->td_cellnum++; $admin->hour_cellnum++; }
+        if($admin->show_h_act){ $admin->td_cellnum++; $admin->hour_cellnum++; }
+        if($admin->show_h_lang){ $admin->td_cellnum++; $admin->hour_cellnum++; }
+        if($admin->show_h_uniq_prod){ $admin->td_cellnum++; $admin->hour_cellnum++; }
+        if($admin->show_d_truin){ $admin->td_cellnum++; $admin->day_cellnum++; }
+        if($admin->show_d_gluin){ $admin->td_cellnum++; $admin->day_cellnum++; }
+        if($admin->show_d_prod){ $admin->td_cellnum++; $admin->day_cellnum++; }
+        if($admin->show_d_nojs){ $admin->td_cellnum++; $admin->day_cellnum++; }
+        if($admin->show_d_cont){ $admin->td_cellnum++; $admin->day_cellnum++; }
+        if($admin->show_d_ca){ $admin->td_cellnum++; $admin->day_cellnum++; }
+        if($admin->show_d_act){ $admin->td_cellnum++; $admin->day_cellnum++; }
+        if($admin->show_d_lang){ $admin->td_cellnum++; $admin->day_cellnum++; }
+        if($admin->show_d_uniq_prod){ $admin->td_cellnum++; $admin->day_cellnum++; }
+        if($admin->show_analyzer) $admin->td_cellnum++;
+        $hour_width=$admin->hour_cellnum*50;
+        $day_width=$admin->day_cellnum*50;
+
+        echo "<table width=100% border=0 cellspacing=1 cellpadding=1 bgcolor='".$intf->color['STB_BACKGROUND']."'>
+                <tr><td colspan=".$admin->td_cellnum." bgcolor='".$intf->color['STB_HEADER']."'><table width=100% border=0 cellpadding=0 cellspacing=0><tr><td>
+                &nbsp;Filter trades: <select name=filter style='font-size: 9px; font-family: Verdana; border: 1px solid; border-color: ".$intf->color['SELECTBORDER']."; background-color: ".$intf->color['SELECTBACKGROUND']."; color: ".$intf->color['SELECTTEXT'].";'>
+                <option value=0";
+        if($admin->list_filtering<1) echo " selected";
+        echo ">Show all trades
+                <option value=1";
+        if($admin->list_filtering==1) echo " selected";
+        echo ">Active trades only
+                <option value=2";
+        if($admin->list_filtering>1) echo " selected";
+        echo ">Inactive trades only
+                </select>&nbsp;&nbsp;&nbsp;";
+                $this->button('submit','Apply Filter','light');
+        echo "  <td><td align=right><font size=1>Main trades list: <b>".$trader->num."</b> sites &nbsp;</font></td></tr></table>
+                </td>
+                </tr>
+                <tr align=center>
+                <td rowspan=2 width=15% bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=domain title='Sort by Domains'>Domain</a>";
+        if($admin->show_date) echo "<br><a href=?sort=date title='Sort by Trade Start Date'>Date</a>";
+        echo "</td>";
+        if($admin->show_wm) echo "<td rowspan=2 width=7% bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=webmaster title='Sort by Webmaster'>Webmaster</a></td>";
+        echo "<td rowspan=2 width=5% bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=trade title='Sort by Trade Type'>Trade</a></td>
+                <td width=".$hour_width." colspan=".$admin->hour_cellnum." bgcolor='".$intf->color['STB_HEADER']."' width=26%><b>Last hour</b></td>
+                <td width=".$day_width." colspan=".$admin->day_cellnum." bgcolor='".$intf->color['STB_HEADER']."' width=26%><b>Last 24 hours</b></td>";
+        if($admin->show_analyzer) echo "<td width=5% rowspan=2 bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=analyzer title='Sort by Analyzer Data'>TrA</a></td>";
+        echo "<td width=5% rowspan=2 bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=mintrade title='Sort by Minimum Trade'>HMin</a></td>
+                <td width=5% rowspan=2 bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=setratio title='Sort by Set Ratio'>Ratio</a></td>
+                <td width=5% rowspan=2 bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=return title='Sort by Return Percent'>Return</a></td>
+                <td width=5% rowspan=2 bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=effect title='Sort by Trade Effectivity'>Effect</a></td>
+                <td width=5% rowspan=2 bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=debt title='Sort by Debt'>Debt</a></td>
+                </tr>
+                <tr align=center>
+                <td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=hrin title='Sort by Last Hour Raw Hits'>RawIn</a></td>";
+        if($admin->show_h_truin) echo "<td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=htruin title='Sort by Last Hour Trader Uniq Hits'>TrUin</a></td>";
+        if($admin->show_h_gluin) echo "<td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=hgluin title='Sort by Last Hour Global Uniq Hits'>GlUin</a></td>";
+        echo "<td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=hout title='Sort by Last Hour Outs'>Out</a></td>
+            <td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=hclicks title='Sort by Last Hour Clicks'>Clicks</a></td>";
+        if($admin->show_h_nojs) echo "<td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=hnojs title='Sort by Last Hour No JSCookie clicks'>NoJS</a></td>";
+        if($admin->show_h_cont) echo "<td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=hcont title='Sort by Last Hour Content clicks'>Cont</a></td>";
+        if($admin->show_h_prod) echo "<td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=hprod title='Sort by Last Hour Productivity'>Prod</a></td>";
+        if($admin->show_h_ca) echo "<td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=hca title='Sort by Last Hour CA'>CA</a></td>";
+        if($admin->show_h_act) echo "<td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=hact title='Sort by Last Hour Activity'>ACT</a></td>";
+        if($admin->show_h_uniq_prod) echo "<td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=hupr title='Sort by Last Hour Uniq Prod'>UProd</a></td>";
+        if($admin->show_h_lang) echo "<td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=hlang title='Sort by Last Hour Language factor'>LF</a></td>";
+        echo "<td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=drin title='Sort by 24h Raw Hits'>RawIn</a></td>";       if($admin->show_d_truin) echo "<td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=dtruin title='Sort by 24h Trader Uniq Hits'>TrUin</a></td>";
+        if($admin->show_d_gluin) echo "<td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=dgluin title='Sort by 24h Global Uniq Hits'>GlUin</a></td>";
+        echo "<td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=dout title='Sort by 24h Outs'>Out</a></td>
+            <td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=dclicks title='Sort by 24h Clicks'>Clicks</a></td>";
+        if($admin->show_d_nojs) echo "<td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=dnojs title='Sort by 24h No JSCookie clicks'>NoJS</a></td>";
+        if($admin->show_d_cont) echo "<td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=dcont title='Sort by 24h Content clicks'>Cont</a></td>";
+        if($admin->show_d_prod) echo "<td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=dprod title='Sort by 24h Productivity'>Prod</a></td>";
+        if($admin->show_d_ca) echo "<td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=dca title='Sort by 24h CA'>CA</a></td>";
+        if($admin->show_d_act) echo "<td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=dact title='Sort by 24h Activity'>ACT</a></td>";
+        if($admin->show_d_uniq_prod) echo "<td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=dupr title='Sort by 24h Uniq Prod'>UProd</a></td>";
+        if($admin->show_d_lang) echo "<td bgcolor='".$intf->color['STB_HEADER']."'><a href=?sort=dlang title='Sort by 24h Language factor'>LF</a></td>
+        </tr>";
+    }
+
+    function stats_table_footer(){
+        echo '</table>';
+    }
+
+    function new_trades_table_header(){
+        global $intf,$admin,$new_trader;
+
+        $admin->td_cellnum=13;
+        $admin->hour_cellnum=3;
+        $admin->day_cellnum=3;
+        if($admin->show_wm) $admin->td_cellnum++;
+        if($admin->show_h_truin){ $admin->td_cellnum++; $admin->hour_cellnum++; }
+        if($admin->show_h_gluin){ $admin->td_cellnum++; $admin->hour_cellnum++; }
+        if($admin->show_h_prod){ $admin->td_cellnum++; $admin->hour_cellnum++; }
+        if($admin->show_h_nojs){ $admin->td_cellnum++; $admin->hour_cellnum++; }
+        if($admin->show_h_cont){ $admin->td_cellnum++; $admin->hour_cellnum++; }
+        if($admin->show_h_ca){ $admin->td_cellnum++; $admin->hour_cellnum++; }
+        if($admin->show_h_act){ $admin->td_cellnum++; $admin->hour_cellnum++; }
+        if($admin->show_h_lang){ $admin->td_cellnum++; $admin->hour_cellnum++; }
+        if($admin->show_h_uniq_prod){ $admin->td_cellnum++; $admin->hour_cellnum++; }
+        if($admin->show_d_truin){ $admin->td_cellnum++; $admin->day_cellnum++; }
+        if($admin->show_d_gluin){ $admin->td_cellnum++; $admin->day_cellnum++; }
+        if($admin->show_d_prod){ $admin->td_cellnum++; $admin->day_cellnum++; }
+        if($admin->show_d_nojs){ $admin->td_cellnum++; $admin->day_cellnum++; }
+        if($admin->show_d_cont){ $admin->td_cellnum++; $admin->day_cellnum++; }
+        if($admin->show_d_ca){ $admin->td_cellnum++; $admin->day_cellnum++; }
+        if($admin->show_d_act){ $admin->td_cellnum++; $admin->day_cellnum++; }
+        if($admin->show_d_lang){ $admin->td_cellnum++; $admin->day_cellnum++; }
+        if($admin->show_d_uniq_prod){ $admin->td_cellnum++; $admin->day_cellnum++; }
+        if($admin->show_analyzer) $admin->td_cellnum++;
+        $hour_width=$admin->hour_cellnum*50;
+        $day_width=$admin->day_cellnum*50;
+
+        echo "<table width=100% border=0 cellspacing=1 cellpadding=1 bgcolor='".$intf->color['STB_BACKGROUND']."'>
+                <tr align=center>
+                <td class=nt width=15% bgcolor='".$intf->color['STB_HEADER']."'>Domain</td>";
+        if($admin->show_wm) echo "<td class=nt width=7% bgcolor='".$intf->color['STB_HEADER']."'>Webmaster</td>";
+        echo "<td class=nt width=5% bgcolor='".$intf->color['STB_HEADER']."'>Trade</td>
+                <td class=nt width=5% bgcolor='".$intf->color['STB_HEADER']."'>RawIn</td>";
+        if($admin->show_h_truin) echo "<td class=nt bgcolor='".$intf->color['STB_HEADER']."'>TrUin</td>";
+        if($admin->show_h_gluin) echo "<td class=nt bgcolor='".$intf->color['STB_HEADER']."'>GlUin</td>";
+        echo "<td class=nt bgcolor='".$intf->color['STB_HEADER']."'>Out</td>
+            <td class=nt bgcolor='".$intf->color['STB_HEADER']."'>Clicks</td>";
+        if($admin->show_h_nojs) echo "<td class=nt bgcolor='".$intf->color['STB_HEADER']."'>NoJS</td>";
+        if($admin->show_h_cont) echo "<td class=nt bgcolor='".$intf->color['STB_HEADER']."'>Cont</td>";
+        if($admin->show_h_prod) echo "<td class=nt bgcolor='".$intf->color['STB_HEADER']."'>Prod</td>";
+        if($admin->show_h_ca) echo "<td class=nt bgcolor='".$intf->color['STB_HEADER']."'>CA</td>";
+        if($admin->show_h_act) echo "<td class=nt bgcolor='".$intf->color['STB_HEADER']."'>ACT</td>";
+        if($admin->show_h_uniq_prod) echo "<td class=nt bgcolor='".$intf->color['STB_HEADER']."'>UProd</td>";
+        if($admin->show_h_lang) echo "<td class=nt bgcolor='".$intf->color['STB_HEADER']."'>LF</td>";
+        echo "<td class=nt bgcolor='".$intf->color['STB_HEADER']."'>RawIn</td>";
+        if($admin->show_d_truin) echo "<td class=nt bgcolor='".$intf->color['STB_HEADER']."'>TrUin</td>";
+        if($admin->show_d_gluin) echo "<td class=nt bgcolor='".$intf->color['STB_HEADER']."'>GlUin</td>";
+        echo "<td class=nt bgcolor='".$intf->color['STB_HEADER']."'>Out</td>
+            <td class=nt bgcolor='".$intf->color['STB_HEADER']."'>Clicks</td>";
+        if($admin->show_d_nojs) echo "<td class=nt bgcolor='".$intf->color['STB_HEADER']."'>NoJS</td>";
+        if($admin->show_d_cont) echo "<td class=nt bgcolor='".$intf->color['STB_HEADER']."'>Cont</td>";
+        if($admin->show_d_prod) echo "<td class=nt bgcolor='".$intf->color['STB_HEADER']."'>Prod</td>";
+        if($admin->show_d_ca) echo "<td class=nt bgcolor='".$intf->color['STB_HEADER']."'>CA</td>";
+        if($admin->show_d_act) echo "<td class=nt bgcolor='".$intf->color['STB_HEADER']."'>ACT</td>";
+        if($admin->show_d_uniq_prod) echo "<td class=nt bgcolor='".$intf->color['STB_HEADER']."'>UProd</td>";
+        if($admin->show_d_lang) echo "<td class=nt bgcolor='".$intf->color['STB_HEADER']."'>LF</td>";
+        if($admin->show_analyzer) echo "<td class=nt width=5% bgcolor='".$intf->color['STB_HEADER']."'>TrA</td>";
+        echo "<td class=nt width=5% bgcolor='".$intf->color['STB_HEADER']."'>HMin</td>
+                <td class=nt width=5% bgcolor='".$intf->color['STB_HEADER']."'>Ratio</td>
+                <td class=nt width=5% bgcolor='".$intf->color['STB_HEADER']."'>Return</td>
+                <td class=nt width=5% bgcolor='".$intf->color['STB_HEADER']."'>Effect</td>
+                <td class=nt width=5% bgcolor='".$intf->color['STB_HEADER']."'>Debt</td>
+                </tr>
+        ";
+    }
+
+    function new_trades_table_footer(){
+        echo '</table>';
+    }
+
+    function totals(){
+        global $intf,$admin,$stats;
+
+        $lr=$admin->hour_cellnum+2;
+        if($admin->show_wm) $lr++;
+        $sr=$admin->day_cellnum;
+        $ar=$admin->td_cellnum;
+
+        $tot_names=array('Trades','Bookmarks','Totals');
+
+        echo "<tr><td colspan=".$ar." bgcolor=".$intf->color['MAIN_BGCOLOR']."><b>Trade Totals</b></td></tr>";
+        foreach($tot_names as $tot_name){
+            echo "<tr height=30 onmouseover=\"svhlight(this,'over',".$lr.",".$sr.",".$ar.");\" onmouseout=\"svhlight(this,'out',".$lr.",".$sr.",".$ar.");\"><td bgcolor='".$intf->color['NORM_CELL']."'>&nbsp;&nbsp;<b>".$tot_name."</b></a></td>";
+            if($admin->show_wm) echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+            echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+            echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center><font color='".$intf->color['IN_CLICK']."'>";
+            if($tot_name=='Trades'){
+                if($stats->trades_tot_hour_in>0) $pr=round($stats->trades_tot_hour_in_proxy*100/$stats->trades_tot_hour_in); else $pr=0;
+                echo $stats->trades_tot_hour_in.'</font><br>'.$this->proxy_col($pr);
+            } elseif($tot_name=='Bookmarks'){
+                if($stats->books_tot_hour_in>0) $pr=round($stats->books_tot_hour_in_proxy*100/$stats->books_tot_hour_in); else $pr=0;
+                echo $stats->books_tot_hour_in.'</font><br>'.$this->proxy_col($pr);
+            } else {
+                if($stats->tot_hour_in>0) $pr=round($stats->tot_hour_in_proxy*100/$stats->tot_hour_in); else $pr=0;
+                echo $stats->tot_hour_in.'</font><br>'.$this->proxy_col($pr);
+            }
+            echo "</td>";
+            if($admin->show_h_truin){
+                echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>";
+                if($tot_name=='Trades'){
+                    if($stats->trades_tot_hour_in>0) $pr=round($stats->trades_tot_hour_in_trad_uniq*100/$stats->trades_tot_hour_in); else $pr=0;
+                    echo $stats->trades_tot_hour_in_trad_uniq.'<br><font color="'.$intf->color['SHADED_TEXT'].'">'.$pr.'%</font>';
+                } else echo '-';
+                echo '</td>';
+            }
+            if($admin->show_h_gluin){
+                echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>";
+                if($tot_name=='Trades'){
+                    if($stats->trades_tot_hour_in>0) $pr=round($stats->trades_tot_hour_in_glob_uniq*100/$stats->trades_tot_hour_in); else $pr=0;
+                    echo $stats->trades_tot_hour_in_glob_uniq.'<br><font color='.$intf->color['SHADED_TEXT'].'>'.$pr.'%</font>';
+                } elseif($tot_name=='Bookmarks'){
+                    if($stats->books_tot_hour_in>0) $pr=round($stats->books_tot_hour_in_glob_uniq*100/$stats->books_tot_hour_in); else $pr=0;
+                    echo $stats->books_tot_hour_in_glob_uniq.'<br><font color='.$intf->color['SHADED_TEXT'].'>'.$pr.'%</font>';
+                } else {
+                    if($stats->tot_hour_in>0) $pr=round($stats->tot_hour_in_glob_uniq*100/$stats->tot_hour_in); else $pr=0;
+                    echo $stats->tot_hour_in_glob_uniq.'<br><font color='.$intf->color['SHADED_TEXT'].'>'.$pr.'%</font>';
+                }
+                echo "</td>";
+            }
+            echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>";
+            if($tot_name=='Trades'){
+                if($stats->trades_tot_hour_out>0) $pr=round($stats->trades_tot_hour_out_proxy*100/$stats->trades_tot_hour_out); else $pr=0;
+                echo $stats->trades_tot_hour_out.'<br>'.$this->proxy_col($pr);
+            } elseif($tot_name=='Bookmarks'){
+                echo '-';
+            } else {
+                if($stats->tot_hour_out>0) $pr=round($stats->tot_hour_out_proxy*100/$stats->tot_hour_out); else $pr=0;
+                echo $stats->tot_hour_out.'<br>'.$this->proxy_col($pr);
+            }
+            echo "</td><td bgcolor='".$intf->color['NORM_CELL']."' align=center><font color='".$intf->color['IN_CLICK']."'>";
+            if($tot_name=='Trades'){
+                if($stats->trades_tot_hour_click>0) $pr=round($stats->trades_tot_hour_click_proxy*100/$stats->trades_tot_hour_click); else $pr=0;
+                echo $stats->trades_tot_hour_click.'</font><br>'.$this->proxy_col($pr);
+            } elseif($tot_name=='Bookmarks'){
+                if($stats->books_tot_hour_click>0) $pr=round($stats->books_tot_hour_click_proxy*100/$stats->books_tot_hour_click); else $pr=0;
+                echo $stats->books_tot_hour_click.'</font><br>'.$this->proxy_col($pr);
+            } else {
+                if($stats->tot_hour_click>0) $pr=round($stats->tot_hour_click_proxy*100/$stats->tot_hour_click); else $pr=0;
+                echo $stats->tot_hour_click.'</font><br>'.$this->proxy_col($pr);
+            }
+            echo '</td>';
+            if($admin->show_h_nojs){
+                echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>";
+                if($tot_name=='Trades'){
+                    if($stats->trades_tot_hour_click>0) $pr=round($stats->trades_tot_hour_click_nojs*100/$stats->trades_tot_hour_click); else $pr=0;
+                    echo $stats->trades_tot_hour_click_nojs.'<br><font color="'.$intf->color['SHADED_TEXT'].'">'.$pr.'%</font>';
+                } elseif($tot_name=='Bookmarks'){
+                    if($stats->books_tot_hour_click>0) $pr=round($stats->books_tot_hour_click_nojs*100/$stats->books_tot_hour_click); else $pr=0;
+                    echo $stats->books_tot_hour_click_nojs.'<br><font color="'.$intf->color['SHADED_TEXT'].'">'.$pr.'%</font>';
+                } else {
+                    if($stats->tot_hour_click>0) $pr=round($stats->tot_hour_click_nojs*100/$stats->tot_hour_click); else $pr=0;
+                    echo $stats->tot_hour_click_nojs.'<br><font color="'.$intf->color['SHADED_TEXT'].'">'.$pr.'%</font>';
+                }
+                echo '</td>';
+            }
+            if($admin->show_h_cont){
+                echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>";
+                if($tot_name=='Trades'){
+                    if(($stats->trades_tot_hour_click+$stats->trades_tot_hour_click_cont)>0) $pr=round($stats->trades_tot_hour_click_cont*100/($stats->trades_tot_hour_click+$stats->trades_tot_hour_click_cont)); else $pr=0;
+                    echo $stats->trades_tot_hour_click_cont.'<br><font color="'.$intf->color['SHADED_TEXT'].'">'.$pr.'%</font>';
+                } elseif($tot_name=='Bookmarks'){
+                    if(($stats->books_tot_hour_click+$stats->books_tot_hour_click_cont)>0) $pr=round($stats->books_tot_hour_click_cont*100/($stats->books_tot_hour_click+$stats->books_tot_hour_click_cont)); else $pr=0;
+                    echo $stats->books_tot_hour_click_cont.'<br><font color="'.$intf->color['SHADED_TEXT'].'">'.$pr.'%</font>';
+                } else {
+                    if(($stats->tot_hour_click+$stats->tot_hour_click_cont)>0) $pr=round($stats->tot_hour_click_cont*100/($stats->tot_hour_click+$stats->tot_hour_click_cont)); else $pr=0;
+                    echo $stats->tot_hour_click_cont.'<br><font color="'.$intf->color['SHADED_TEXT'].'">'.$pr.'%</font>';
+                }
+                echo '</td>';
+            }
+            if($admin->show_h_prod){
+                echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center><font color='".$intf->color['PROD']."'>";
+                if($tot_name=='Trades'){
+                    if($stats->trades_tot_hour_in>0) $pr=round($stats->trades_tot_hour_click*100/$stats->trades_tot_hour_in); else $pr=0;
+                    echo $pr.'%';
+                } elseif($tot_name=='Bookmarks'){
+                    if($stats->books_tot_hour_in>0) $pr=round($stats->books_tot_hour_click*100/$stats->books_tot_hour_in); else $pr=0;
+                    echo $pr.'%';
+                } else {
+                    if($stats->tot_hour_in>0) $pr=round($stats->tot_hour_click*100/$stats->tot_hour_in); else $pr=0;
+                    echo $pr.'%';
+                }
+                echo '</font></td>';
+            }
+            if($admin->show_h_ca){
+                echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>";
+                if($tot_name=='Trades'){
+                    if($stats->trades_tot_hour_out>0) $ca=round($stats->trades_tot_hour_click_repeats*100/$stats->trades_tot_hour_out); else $ca=0;
+                    echo $ca.'%';
+                } else echo '-';
+                echo '</td>';
+            }
+            if($admin->show_h_act){
+                echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>";
+                if($tot_name=='Trades'){
+                    if($stats->trades_tot_hour_click>0 && $stats->trades_tot_hour_click_uniq>0 && $stats->trades_tot_hour_in>0){
+                        $ucpr=$stats->trades_tot_hour_click_uniq/$stats->trades_tot_hour_click;
+                        $act=$stats->trades_tot_hour_click/$stats->trades_tot_hour_in/$ucpr;
+                    } else $act=0;
+                    echo round($act,2).'</td>';
+                } else echo '-</td>';
+            }
+            if($admin->show_h_uniq_prod){
+                echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center><font color='".$intf->color['UPROD']."'>";
+                if($tot_name=='Trades'){
+                    if($stats->trades_tot_hour_in_trad_uniq>0){
+                        $hupr=round($stats->trades_tot_hour_click_uniq*100/$stats->trades_tot_hour_in_trad_uniq);
+                    } else $hupr=0;
+                    echo $hupr.'%</font></td>';
+                } else echo '-</td>';
+            }
+            if($admin->show_h_lang) echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+
+            echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center><font color='".$intf->color['IN_CLICK']."'>";
+            if($tot_name=='Trades'){
+                if($stats->trades_tot_day_in>0) $pr=round($stats->trades_tot_day_in_proxy*100/$stats->trades_tot_day_in); else $pr=0;
+                echo $stats->trades_tot_day_in.'</font><br>'.$this->proxy_col($pr);
+            } elseif($tot_name=='Bookmarks'){
+                if($stats->books_tot_day_in>0) $pr=round($stats->books_tot_day_in_proxy*100/$stats->books_tot_day_in); else $pr=0;
+                echo $stats->books_tot_day_in.'</font><br>'.$this->proxy_col($pr);
+            } else {
+                if($stats->tot_day_in>0) $pr=round($stats->tot_day_in_proxy*100/$stats->tot_day_in); else $pr=0;
+                echo $stats->tot_day_in.'</font><br>'.$this->proxy_col($pr);
+            }
+            echo '</td>';
+            if($admin->show_d_truin){
+                echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>";
+                if($tot_name=='Trades'){
+                    if($stats->trades_tot_day_in>0) $pr=round($stats->trades_tot_day_in_trad_uniq*100/$stats->trades_tot_day_in); else $pr=0;
+                    echo $stats->trades_tot_day_in_trad_uniq.'<br><font color="'.$intf->color['SHADED_TEXT'].'">'.$pr.'%</font>';
+                } else echo '-';
+                echo '</td>';
+            }
+            if($admin->show_d_gluin){
+                echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>";
+                if($tot_name=='Trades'){
+                    if($stats->trades_tot_day_in>0) $pr=round($stats->trades_tot_day_in_glob_uniq*100/$stats->trades_tot_day_in); else $pr=0;
+                    echo $stats->trades_tot_day_in_glob_uniq.'<br><font color='.$intf->color['SHADED_TEXT'].'>'.$pr.'%</font>';
+                } elseif($tot_name=='Bookmarks'){
+                    if($stats->books_tot_day_in>0) $pr=round($stats->books_tot_day_in_glob_uniq*100/$stats->books_tot_day_in); else $pr=0;
+                    echo $stats->books_tot_day_in_glob_uniq.'<br><font color='.$intf->color['SHADED_TEXT'].'>'.$pr.'%</font>';
+                } else {
+                    if($stats->tot_day_in>0) $pr=round($stats->tot_day_in_glob_uniq*100/$stats->tot_day_in); else $pr=0;
+                    echo $stats->tot_day_in_glob_uniq.'<br><font color='.$intf->color['SHADED_TEXT'].'>'.$pr.'%</font>';
+                }
+                echo "</td>";
+            }
+            echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>";
+            if($tot_name=='Trades'){
+                if($stats->trades_tot_day_out>0) $pr=round($stats->trades_tot_day_out_proxy*100/$stats->trades_tot_day_out); else $pr=0;
+                echo $stats->trades_tot_day_out.'<br>'.$this->proxy_col($pr);
+            } elseif($tot_name=='Bookmarks'){
+                echo '-';
+            } else {
+                if($stats->tot_day_out>0) $pr=round($stats->tot_day_out_proxy*100/$stats->tot_day_out); else $pr=0;
+                echo $stats->tot_day_out.'<br>'.$this->proxy_col($pr);
+            }
+            echo "</td><td bgcolor='".$intf->color['24H_CELL']."' align=center><font color='".$intf->color['IN_CLICK']."'>";
+            if($tot_name=='Trades'){
+                if($stats->trades_tot_day_click>0) $pr=round($stats->trades_tot_day_click_proxy*100/$stats->trades_tot_day_click); else $pr=0;
+                echo $stats->trades_tot_day_click.'</font><br>'.$this->proxy_col($pr);
+            } elseif($tot_name=='Bookmarks'){
+                if($stats->books_tot_day_click>0) $pr=round($stats->books_tot_day_click_proxy*100/$stats->books_tot_day_click); else $pr=0;
+                echo $stats->books_tot_day_click.'</font><br>'.$this->proxy_col($pr);
+            } else {
+                if($stats->tot_day_click>0) $pr=round($stats->tot_day_click_proxy*100/$stats->tot_day_click); else $pr=0;
+                echo $stats->tot_day_click.'</font><br>'.$this->proxy_col($pr);
+            }
+            echo '</td>';
+            if($admin->show_d_nojs){
+                echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>";
+                if($tot_name=='Trades'){
+                    if($stats->trades_tot_day_click>0) $pr=round($stats->trades_tot_day_click_nojs*100/$stats->trades_tot_day_click); else $pr=0;
+                    echo $stats->trades_tot_day_click_nojs.'<br><font color="'.$intf->color['SHADED_TEXT'].'">'.$pr.'%</font>';
+                } elseif($tot_name=='Bookmarks'){
+                    if($stats->books_tot_day_click>0) $pr=round($stats->books_tot_day_click_nojs*100/$stats->books_tot_day_click); else $pr=0;
+                    echo $stats->books_tot_day_click_nojs.'<br><font color="'.$intf->color['SHADED_TEXT'].'">'.$pr.'%</font>';
+                } else {
+                    if($stats->tot_day_click>0) $pr=round($stats->tot_day_click_nojs*100/$stats->tot_day_click); else $pr=0;
+                    echo $stats->tot_day_click_nojs.'<br><font color="'.$intf->color['SHADED_TEXT'].'">'.$pr.'%</font>';
+                }
+                echo '</td>';
+            }
+            if($admin->show_d_cont){
+                echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>";
+                if($tot_name=='Trades'){
+                    if(($stats->trades_tot_day_click+$stats->trades_tot_day_click_cont)>0) $pr=round($stats->trades_tot_day_click_cont*100/($stats->trades_tot_day_click+$stats->trades_tot_day_click_cont)); else $pr=0;
+                    echo $stats->trades_tot_day_click_cont.'<br><font color="'.$intf->color['SHADED_TEXT'].'">'.$pr.'%</font>';
+                } elseif($tot_name=='Bookmarks'){
+                    if(($stats->books_tot_day_click+$stats->books_tot_day_click_cont)>0) $pr=round($stats->books_tot_day_click_cont*100/($stats->books_tot_day_click+$stats->books_tot_day_click_cont)); else $pr=0;
+                    echo $stats->books_tot_day_click_cont.'<br><font color="'.$intf->color['SHADED_TEXT'].'">'.$pr.'%</font>';
+                } else {
+                    if(($stats->tot_day_click+$stats->tot_day_click_cont)>0) $pr=round($stats->tot_day_click_cont*100/($stats->tot_day_click+$stats->tot_day_click_cont)); else $pr=0;
+                    echo $stats->tot_day_click_cont.'<br><font color="'.$intf->color['SHADED_TEXT'].'">'.$pr.'%</font>';
+                }
+                echo '</td>';
+            }
+            if($admin->show_d_prod){
+                echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center><font color='".$intf->color['PROD']."'>";
+                if($tot_name=='Trades'){
+                    if($stats->trades_tot_day_in>0) $pr=round($stats->trades_tot_day_click*100/$stats->trades_tot_day_in); else $pr=0;
+                    echo $pr.'%';
+                } elseif($tot_name=='Bookmarks'){
+                    if($stats->books_tot_day_in>0) $pr=round($stats->books_tot_day_click*100/$stats->books_tot_day_in); else $pr=0;
+                    echo $pr.'%';
+                } else {
+                    if($stats->tot_day_in>0) $pr=round($stats->tot_day_click*100/$stats->tot_day_in); else $pr=0;
+                    echo $pr.'%';
+                }
+                echo '</font></td>';
+            }
+            if($admin->show_d_ca){
+                echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>";
+                if($tot_name=='Trades'){
+                    if($stats->trades_tot_day_out>0) $ca=round($stats->trades_tot_day_click_repeats*100/$stats->trades_tot_day_out); else $ca=0;
+                    echo $ca.'%';
+                } else echo '-';
+                echo '</td>';
+            }
+            if($admin->show_d_act){
+                echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>";
+                if($tot_name=='Trades'){
+                    if($stats->trades_tot_day_click>0 && $stats->trades_tot_day_click_uniq>0 && $stats->trades_tot_day_in>0){
+                        $ucpr=$stats->trades_tot_day_click_uniq/$stats->trades_tot_day_click;
+                        $act=$stats->trades_tot_day_click/$stats->trades_tot_day_in/$ucpr;
+                    } else $act=0;
+                    echo round($act,2).'</td>';
+                } else echo '-</td>';
+            }
+            if($admin->show_d_uniq_prod){
+                echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center><font color='".$intf->color['UPROD']."'>";
+                if($tot_name=='Trades'){
+                    if($stats->trades_tot_day_in_trad_uniq>0){
+                        $dupr=round($stats->trades_tot_day_click_uniq*100/$stats->trades_tot_day_in_trad_uniq);
+                    } else $dupr=0;
+                    echo $dupr.'%</font></td>';
+                } else echo '-</td>';
+            }
+            if($admin->show_d_lang) echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>-</td>";
+            if($admin->show_analyzer) echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+            echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+            echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>
+                <td bgcolor='".$intf->color['NORM_CELL']."' align=center>";
+            if($tot_name=='Trades'){
+                if($stats->trades_tot_day_in>0) $ret=round($stats->trades_tot_day_out*100/$stats->trades_tot_day_in); else $ret=0;
+                echo $ret.'%';
+            } elseif ($tot_name=='Bookmarks'){
+                echo '-';
+            } else {
+                if($stats->tot_day_in>0) $ret=round($stats->tot_day_out*100/$stats->tot_day_in); else $ret=0;
+                echo $ret.'%';
+            }
+            echo "</td><td bgcolor='".$intf->color['NORM_CELL']."' align=center>";
+            if($tot_name=='Trades'){
+                if($stats->trades_tot_day_out>0) $eff=round($stats->trades_tot_day_click*100/$stats->trades_tot_day_out); else $eff=0;
+                echo $eff.'%';
+            } elseif ($tot_name=='Bookmarks'){
+                echo '-';
+            } else {
+                if($stats->tot_day_out>0) $eff=round($stats->tot_day_click*100/$stats->tot_day_out); else $eff=0;
+                echo $eff.'%';
+            }
+            echo "</td><td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td></tr>";
+        }
+    }
+
+    function internal_vars_row($var_name){
+        global $intf,$stats,$admin;
+
+        $lr=$admin->hour_cellnum+2;
+        if($admin->show_wm) $lr++;
+        $sr=$admin->day_cellnum;
+        $ar=$admin->td_cellnum;
+        switch($var_name){
+            case 'exout': $vn_show='ExOut'; break;
+            case 'noref': $vn_show='NoRef'; break;
+            case 'notrade': $vn_show='NoTrade'; break;
+            case 'nocookie': $vn_show='NoCookie'; break;
+            case 'content': $vn_show='Content'; break;
+            case 'filtered': $vn_show='Filtered'; break;
+        }
+        echo "<tr height=30 onmouseover=\"svhlight(this,'over',".$lr.",".$sr.",".$ar.");\" onmouseout=\"svhlight(this,'out',".$lr.",".$sr.",".$ar.");\"><td bgcolor='".$intf->color['NORM_CELL']."'>&nbsp;&nbsp;<a href=?cmd=ss".$var_name."><font color='".$intf->color['S_VARS']."'><b>".$vn_show."</b></a></td>";
+        if($admin->show_wm) echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+        if($var_name=='noref' || $var_name=='notrade' || $var_name=='filtered'){
+            if($stats->hour_in["$var_name"]>0) $pr=round($stats->hour_in_proxy["$var_name"]*100/$stats->hour_in["$var_name"]); else $pr=0;
+            echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center><font color='".$intf->color['IN_CLICK']."'>".$stats->hour_in["$var_name"]."</font><br>".$this->proxy_col($pr)."</td>";
+        } else echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+        if($admin->show_h_truin) echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+        if($admin->show_h_gluin){
+            if($var_name=='noref' || $var_name=='notrade' || $var_name=='filtered'){
+                if($stats->hour_in["$var_name"]>0) $pr=round($stats->hour_in_glob_uniq["$var_name"]*100/$stats->hour_in["$var_name"]); else $pr=0;
+                echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".$pr."%</td>";
+            } else echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+        }
+        if($var_name=='exout' || $var_name=='content' || $var_name=='filtered'){
+            if($stats->hour_out["$var_name"]>0) $pr=round($stats->hour_out_proxy["$var_name"]*100/$stats->hour_out["$var_name"]); else $pr=0;
+            echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".$stats->hour_out["$var_name"]."<br>".$this->proxy_col($pr)."</td>";
+        } else echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+        if($var_name=='noref' || $var_name=='notrade' || $var_name=='nocookie' || $var_name=='filtered'){
+            if($stats->hour_click["$var_name"]>0) $pr=round($stats->hour_click_proxy["$var_name"]*100/$stats->hour_click["$var_name"]); else $pr=0;
+            echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center><font color='".$intf->color['IN_CLICK']."'>".$stats->hour_click["$var_name"]."</font><br>".$this->proxy_col($pr)."</td>";
+        } else echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+        if($admin->show_h_nojs){
+            if($var_name=='noref' || $var_name=='notrade' || $var_name=='filtered'){
+                if($stats->hour_click["$var_name"]>0) $pr=round($stats->hour_click_nojs["$var_name"]*100/$stats->hour_click["$var_name"]); else $pr=0;
+                echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".$pr."%</td>";
+            } else echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+        }
+        if($admin->show_h_cont){
+            if($var_name=='noref' || $var_name=='notrade' || $var_name=='nocookie')
+                echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".$stats->hour_click_cont["$var_name"]."</td>";
+            else echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+        }
+        if($admin->show_h_prod){
+            if($var_name=='noref' || $var_name=='notrade')
+                echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center><font color='".$intf->color['PROD']."'>".round($stats->hour_prod["$var_name"]*100)."%</font></td>";
+            else echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+        }
+        if($admin->show_h_ca) echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+        if($admin->show_h_act){
+            if($var_name=='noref' || $var_name=='notrade')
+                echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".round($stats->hour_act["$var_name"],2)."</td>";
+            else echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+        }
+        if($admin->show_h_uniq_prod) echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+        if($admin->show_h_lang) echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+
+        if($var_name=='noref' || $var_name=='notrade' || $var_name=='filtered'){
+            if($stats->day_in["$var_name"]>0) $pr=round($stats->day_in_proxy["$var_name"]*100/$stats->day_in["$var_name"]); else $pr=0;
+            echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center><font color='".$intf->color['IN_CLICK']."'>".$stats->day_in["$var_name"]."</font><br>".$this->proxy_col($pr)."</td>";
+        } else echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>-</td>";
+        if($admin->show_d_truin) echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>-</td>";
+        if($admin->show_d_gluin){
+            if($var_name=='noref' || $var_name=='notrade' || $var_name=='filtered'){
+                if($stats->day_in["$var_name"]>0) $pr=round($stats->day_in_glob_uniq["$var_name"]*100/$stats->day_in["$var_name"]); else $pr=0;
+                echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>".$pr."%</td>";
+            } else echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>-</td>";
+        }
+        if($var_name=='exout' || $var_name=='content' || $var_name=='filtered'){
+            if($stats->day_out["$var_name"]>0) $pr=round($stats->day_out_proxy["$var_name"]*100/$stats->day_out["$var_name"]); else $pr=0;
+            echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>".$stats->day_out["$var_name"]."<br>".$this->proxy_col($pr)."</td>";
+        } else echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>-</td>";
+        if($var_name=='noref' || $var_name=='notrade' || $var_name=='nocookie' || $var_name=='filtered'){
+            if($stats->day_click["$var_name"]>0) $pr=round($stats->day_click_proxy["$var_name"]*100/$stats->day_click["$var_name"]); else $pr=0;
+            echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center><font color='".$intf->color['IN_CLICK']."'>".$stats->day_click["$var_name"]."</font><br>".$this->proxy_col($pr)."</td>";
+        } else echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>-</td>";
+        if($admin->show_d_nojs){
+            if($var_name=='noref' || $var_name=='notrade' || $var_name=='filtered'){
+                if($stats->day_click["$var_name"]>0) $pr=round($stats->day_click_nojs["$var_name"]*100/$stats->day_click["$var_name"]); else $pr=0;
+                echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>".$pr."%</td>";
+            } else echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>-</td>";
+        }
+        if($admin->show_d_cont){
+            if($var_name=='noref' || $var_name=='notrade' || $var_name=='nocookie')
+                echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>".$stats->day_click_cont["$var_name"]."</td>";
+            else echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>-</td>";
+        }
+        if($admin->show_d_prod){
+            if($var_name=='noref' || $var_name=='notrade')
+                echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center><font color='".$intf->color['PROD']."'>".round($stats->day_prod["$var_name"]*100)."%</font></td>";
+            else echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>-</td>";
+        }
+        if($admin->show_d_ca) echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>-</td>";
+        if($admin->show_d_act){
+            if($var_name=='noref' || $var_name=='notrade')
+                echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>".round($stats->day_act["$var_name"],2)."</td>";
+            else echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>-</td>";
+        }
+        if($admin->show_d_uniq_prod) echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>-</td>";
+        if($admin->show_d_lang) echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>-</td>";
+        if($admin->show_analyzer) echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>-</td>";
+        echo "</tr>";
+
+    }
+
+    function proxy_col($pr){
+        global $intf;
+
+        if($pr<=30) return "<font color='".$intf->color['PROXY_LOW']."'>".$pr."</font>";
+        elseif($pr<=50) return "<font color='".$intf->color['PROXY_MED']."'>".$pr."</font>";
+        else return "<font color='".$intf->color['PROXY_HIGH']."'>".$pr."</font>";
+    }
+
+    function tip($dom){
+        global $trader,$stats,$intf,$global;
+
+        if($stats->hour_in["$dom"]>0){
+            $htrup=round($stats->hour_in_trad_uniq["$dom"]*100/$stats->hour_in["$dom"]);
+            $hglup=round($stats->hour_in_glob_uniq["$dom"]*100/$stats->hour_in["$dom"]);
+            $hpr=round($stats->hour_click["$dom"]*100/$stats->hour_in["$dom"]);
+        } else {
+            $htrup=0;
+            $hglup=0;
+            $hpr=0;
+        }
+        if($stats->day_in["$dom"]>0){
+            $dtrup=round($stats->day_in_trad_uniq["$dom"]*100/$stats->day_in["$dom"]);
+            $dglup=round($stats->day_in_glob_uniq["$dom"]*100/$stats->day_in["$dom"]);
+            $dpr=round($stats->day_click["$dom"]*100/$stats->day_in["$dom"]);
+        } else {
+            $dtrup=0;
+            $dglup=0;
+            $dpr=0;
+        }
+        if($stats->hour_click["$dom"]>0) $hjspr=round($stats->hour_click_nojs["$dom"]*100/$stats->hour_click["$dom"]); else $hjspr=0;
+        if($stats->day_click["$dom"]>0) $djspr=round($stats->day_click_nojs["$dom"]*100/$stats->day_click["$dom"]); else $djspr=0;
+        $s="<table width=250 border=0 height=299 bgcolor=".$intf->color['FL_BORDER']." cellspacing=1 cellpadding=2><tr>";
+        $s.="<td bgcolor=".$intf->color['FL_HEADER'].">Trade <b>".$dom."</b> brief info</td></tr><tr>";
+        $s.="<td bgcolor=".$intf->color['FL_MAINBG']."><table width=100% height=100% border=0>";
+        $s.="<tr><td width=120>Hour Trade Uniques: </td><td class=fv>".$htrup."%</td></tr>";
+        $s.="<tr><td>Hour Global Uniques: </td><td class=fv>".$hglup."%</td></tr>";
+        $s.="<tr><td>Hour Prod:</td><td class=fv>".$hpr."%</td></tr>";
+        $s.="<tr><td>Hour No JS Cookies:</td><td class=fv>".$hjspr."%</td></tr>";
+        $s.="<tr><td>Hour CA:</td><td class=fv>".round($stats->hour_ca["$dom"]*100)."%</td></tr>";
+        $s.="<tr><td>Hour Activity:</td><td class=fv>".round($stats->hour_act["$dom"],2)."</td></tr>";
+        $s.="<tr><td>24H Trade Uniques:</td><td class=fv>".$dtrup."%</td></tr>";
+        $s.="<tr><td>24H Global Uniques:</td><td class=fv>".$dglup."%</td></tr>";
+        $s.="<tr><td>24H Prod:</td><td class=fv>".$dpr."%</td></tr>";
+        $s.="<tr><td>24H No JS Cookies:</td><td class=fv>".$djspr."%</td></tr>";
+        $s.="<tr><td>24H CA:</td><td class=fv>".round($stats->day_ca["$dom"]*100)."%</td></tr>";
+        $s.="<tr><td>24H Activity:</td><td class=fv>".round($stats->day_act["$dom"],2)."</td></tr>";
+        $pn=count($trader->main_pages["$dom"]);
+        $s.="<tr><td rowspan=".$pn.">Main pages:</td>";
+        $pc=1;
+        foreach($trader->main_pages["$dom"] as $pid){
+            $s.="<td class=fv>".$pc.". ".$global->main_page[$pid]."</td>";
+            $pc++;
+            if($pc<$pn) $s.="</tr><tr>"; else $s.="</tr>";
+        }
+        $s.="<tr><td>Click order:</td><td class=fv>".$trader->click_rule["$dom"]."</td></tr>";
+        $s.="<tr><td>Content skim:</td><td class=fv>".$trader->content_skim["$dom"]."%</td></tr>";
+        $s.="</table></td></tr></table>";
+        return $s;
+    }
+
+    function main_stats_row($dom,$rn){
+        global $admin,$trader,$stats,$intf;
+
+        $lr=$admin->hour_cellnum+2;
+        if($admin->show_wm) $lr++;
+        $sr=$admin->day_cellnum;
+        $ar=$admin->td_cellnum;
+        echo "<tr id=mtr".$rn." onmouseover=\"hlight(this,".$rn.",'over',".$lr.",".$sr.",".$ar.");\" onmouseout=\"hlight(this,".$rn.",'out',".$lr.",".$sr.",".$ar.");\" onmousedown=\"hlight(this,".$rn.",'click',".$lr.",".$sr.",".$ar.");\">
+            <td bgcolor='".$intf->color['NORM_CELL']."' valign=middle height=40>&nbsp;<nobr><a href='".$trader->url["$dom"]."' target=_blank OnMouseOver=\"pm('".$this->tip($dom)."')\"; OnMouseOut=\"hd()\"><font size=1 color='";
+        if($stats->hour_in["$dom"]<($stats->day_in["$dom"]/24*0.2)) echo $intf->color['TRAFFIC_LOW'];
+        elseif($stats->hour_in["$dom"]<($stats->day_in["$dom"]/24*0.4)) echo $intf->color['TRAFFIC_MED'];
+        else echo $intf->color['TRAFFIC_HIGH'];
+        echo "'><b>".$dom."</b></font></a>";
+        if($admin->show_checker && $admin->reported["$dom"]) echo "&nbsp; <a href='?cmd=showx&domain=".$dom."'><font color='".$intf->color['X_ALERT']."' size=1><b>!</b></font></a>";
+        echo "</nobr><br>";
+        if($admin->show_sname) echo "&nbsp;<font color='".$intf->color['SHADED_TEXT']."'>".$trader->site_name["$dom"]."</font><br>";
+        if($admin->show_date) echo "&nbsp;<font color='".$intf->color['SHADED_TEXT']."'><nobr>".date('Y M d, H:i',$trader->time_added["$dom"])."</nobr></font><br>";
+        echo "<input type=checkbox name='checked[]' id=cbox value='".$dom."'>&nbsp;
+            <a href='?cmd=edit&domain=".$dom."' title='Edit trader ".$dom."'>Edit</a>
+            &nbsp; <a href='?cmd=detailed&domain=".$dom."'>Detailed Stats</a>
+            </td>";
+        if($admin->show_wm){
+            echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".$trader->nick["$dom"];
+            if($trader->icq["$dom"] && $admin->show_icq) echo "<br><a href='http://wwp.icq.com/scripts/contact.dll?msgto=".$trader->icq["$dom"]."'><img
+                alt='".$trader->nick["$dom"]."' src='http://wwp.icq.com/scripts/online.dll?icq=".$trader->icq["$dom"]."&amp;img=7' border=0></a>";
+            echo "</td>";
+        }
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center><font color='";
+        if($trader->trade_type["$dom"]==0){ echo $intf->color['TRADE_0']; $trade_name='Stopped';}
+        elseif($trader->trade_type["$dom"]==1){ echo $intf->color['TRADE_1']; $trade_name='Normal';}
+        elseif($trader->trade_type["$dom"]==2){ echo $intf->color['TRADE_2']; $trade_name='Normal+';}
+        elseif($trader->trade_type["$dom"]==3){ echo $intf->color['TRADE_3']; $trade_name='Ratio';}
+        elseif($trader->trade_type["$dom"]==4){ echo $intf->color['TRADE_4']; $trade_name='Capped';}
+        elseif($trader->trade_type["$dom"]==5){ echo $intf->color['TRADE_5']; $trade_name='Boost';}
+        elseif($trader->trade_type["$dom"]==6){ echo $intf->color['TRADE_6']; $trade_name='Quality';}
+        else{ echo $intf->color['TRADE_7']; $trade_name='Quality+';}
+        echo "'>".$trade_name."</font>
+            </td>";
+        if($stats->hour_in["$dom"]>0) $pr=round($stats->hour_in_proxy["$dom"]*100/$stats->hour_in["$dom"]); else $pr=0;
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center><font color='".$intf->color['IN_CLICK']."'>".$stats->hour_in["$dom"]."<br>".$this->proxy_col($pr)."</font></td>";
+        if($admin->show_h_truin){
+            if($stats->hour_in["$dom"]>0) $pr=round($stats->hour_in_trad_uniq["$dom"]*100/$stats->hour_in["$dom"]); else $pr=0;
+            echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".$stats->hour_in_trad_uniq["$dom"]."</font><br><font color='".$intf->color['SHADED_TEXT']."'>".$pr."%</td>";
+        }
+        if($admin->show_h_gluin){
+            if($stats->hour_in["$dom"]>0) $pr=round($stats->hour_in_glob_uniq["$dom"]*100/$stats->hour_in["$dom"]); else $pr=0;
+            echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".$stats->hour_in_glob_uniq["$dom"]."<br><font color='".$intf->color['SHADED_TEXT']."'>".$pr."%</font></td>";
+        }
+        if($stats->hour_out["$dom"]>0) $pr=round($stats->hour_out_proxy["$dom"]*100/$stats->hour_out["$dom"]); else $pr=0;
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".$stats->hour_out["$dom"]."<br>".$this->proxy_col($pr)."</td>";
+        if($stats->hour_click["$dom"]>0) $pr=round($stats->hour_click_proxy["$dom"]*100/$stats->hour_click["$dom"]); else $pr=0;
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center><font color='".$intf->color['IN_CLICK']."'>".$stats->hour_click["$dom"]."</font><br>".$this->proxy_col($pr)."</td>";
+        if($admin->show_h_nojs){
+            if($stats->hour_click["$dom"]>0) $pr=round($stats->hour_click_nojs["$dom"]*100/$stats->hour_click["$dom"]); else $pr=0;
+            echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".$stats->hour_click_nojs["$dom"]."<br><font color='".$intf->color['SHADED_TEXT']."'>".$pr."%</font></td>";
+        }
+        if($admin->show_h_cont){
+            if(($stats->hour_click["$dom"]+$stats->hour_click_cont["$dom"])>0) $pr=round($stats->hour_click_cont["$dom"]*100/($stats->hour_click["$dom"]+$stats->hour_click_cont["$dom"])); else $pr=0;
+            echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".$stats->hour_click_cont["$dom"]."<br><font color='".$intf->color['SHADED_TEXT']."'>".$pr."%</font></td>";
+        }
+        if($admin->show_h_prod) echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center><font color='".$intf->color['PROD']."'>".round($stats->hour_prod["$dom"]*100)."%</prod></td>";
+        if($admin->show_h_ca) echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".round($stats->hour_ca["$dom"]*100)."%</td>";
+        if($admin->show_h_act) echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".round($stats->hour_act["$dom"],2)."</td>";
+        if($admin->show_h_uniq_prod) echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center><font color='".$intf->color['UPROD']."'>".round($stats->hour_uniq_prod["$dom"]*100)."%</font></td>";
+        if($admin->show_h_lang) echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".round($stats->hour_lf["$dom"],2)."</td>";
+
+        if($stats->day_in["$dom"]>0) $pr=round($stats->day_in_proxy["$dom"]*100/$stats->day_in["$dom"]); else $pr=0;
+        echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center><font color='".$intf->color['IN_CLICK']."'>".$stats->day_in["$dom"]."</font><br>".$this->proxy_col($pr)."</td>";
+        if($admin->show_d_truin){
+            if($stats->day_in["$dom"]>0) $pr=round($stats->day_in_trad_uniq["$dom"]*100/$stats->day_in["$dom"]); else $pr=0;
+            echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>".$stats->day_in_trad_uniq["$dom"]."<br><font color=".$intf->color['SHADED_TEXT'].">".$pr."%</font></td>";
+        }
+        if($admin->show_d_gluin){
+            if($stats->day_in["$dom"]>0) $pr=round($stats->day_in_glob_uniq["$dom"]*100/$stats->day_in["$dom"]); else $pr=0;
+            echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>".$stats->day_in_glob_uniq["$dom"]."<br><font color=".$intf->color['SHADED_TEXT'].">".$pr."%</font></td>";
+        }
+        if($stats->day_out["$dom"]>0) $pr=round($stats->day_out_proxy["$dom"]*100/$stats->day_out["$dom"]); else $pr=0;
+        echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>".$stats->day_out["$dom"]."<br>".$this->proxy_col($pr)."</td>";
+        if($stats->day_click["$dom"]>0) $pr=round($stats->day_click_proxy["$dom"]*100/$stats->day_click["$dom"]); else $pr=0;
+        echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center><font color='".$intf->color['IN_CLICK']."'>".$stats->day_click["$dom"]."</font><br>".$this->proxy_col($pr)."</td>";
+        if($admin->show_d_nojs){
+            if($stats->day_click["$dom"]>0) $pr=round($stats->day_click_nojs["$dom"]*100/$stats->day_click["$dom"]); else $pr=0;
+            echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>".$stats->day_click_nojs["$dom"]."<br><font color=".$intf->color['SHADED_TEXT'].">".$pr."%</font></td>";
+        }
+        if($admin->show_d_cont){
+            if(($stats->day_click["$dom"]+$stats->day_click_cont["$dom"])>0) $pr=round($stats->day_click_cont["$dom"]*100/($stats->day_click["$dom"]+$stats->day_click_cont["$dom"])); else $pr=0;
+            echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>".$stats->day_click_cont["$dom"]."<br><font color=".$intf->color['SHADED_TEXT'].">".$pr."%</font></td>";
+        }
+        if($admin->show_d_prod) echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center><font color='".$intf->color['PROD']."'>".round($stats->day_prod["$dom"]*100)."%</font></td>";
+        if($admin->show_d_ca) echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>".round($stats->day_ca["$dom"]*100)."%</td>";
+        if($admin->show_d_act) echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>".round($stats->day_act["$dom"],2)."</td>";
+        if($admin->show_d_uniq_prod) echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center><font color='".$intf->color['UPROD']."'>".round($stats->day_uniq_prod["$dom"]*100)."%</font></td>";
+        if($admin->show_d_lang) echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>".round($stats->day_lf["$dom"],2)."</td>";
+        if($admin->show_analyzer) echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>&nbsp;</td>";
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".$trader->mintrade["$dom"]."</td>
+        <td bgcolor='".$intf->color['NORM_CELL']."' align=center>";
+        if($trader->trade_type["$dom"]==0 || $trader->trade_type["$dom"]==1 || $trader->trade_type["$dom"]==4 || $trader->trade_type["$dom"]==5) echo $trader->set_ratio["$dom"];
+        else echo 'Auto';
+        echo "</td>";
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".round($stats->day_ret["$dom"]*100)."%</td>";
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".round($stats->day_eff["$dom"]*100)."%</td>";
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center><nobr>".round($stats->debt["$dom"],2)."</nobr></td>";
+        echo "</tr>";
+    }
+
+    function newtip($dom){
+        global $new_trader,$stats,$intf,$global;
+
+        if($stats->hour_in["$dom"]>0){
+            $htrup=round($stats->hour_in_trad_uniq["$dom"]*100/$stats->hour_in["$dom"]);
+            $hglup=round($stats->hour_in_glob_uniq["$dom"]*100/$stats->hour_in["$dom"]);
+            $hpr=round($stats->hour_click["$dom"]*100/$stats->hour_in["$dom"]);
+        } else {
+            $htrup=0;
+            $hglup=0;
+            $hpr=0;
+        }
+        if($stats->day_in["$dom"]>0){
+            $dtrup=round($stats->day_in_trad_uniq["$dom"]*100/$stats->day_in["$dom"]);
+            $dglup=round($stats->day_in_glob_uniq["$dom"]*100/$stats->day_in["$dom"]);
+            $dpr=round($stats->day_click["$dom"]*100/$stats->day_in["$dom"]);
+        } else {
+            $dtrup=0;
+            $dglup=0;
+            $dpr=0;
+        }
+        if($stats->hour_click["$dom"]>0) $hjspr=round($stats->hour_click_nojs["$dom"]*100/$stats->hour_click["$dom"]); else $hjspr=0;
+        if($stats->day_click["$dom"]>0) $djspr=round($stats->day_click_nojs["$dom"]*100/$stats->day_click["$dom"]); else $djspr=0;
+        $s="<table width=250 height=299 border=0 bgcolor=".$intf->color['STB_BACKGROUND']." cellspacing=1 cellpadding=2><tr>";
+        $s.="<td bgcolor=".$intf->color['FL_HEADER'].">Trade <b>".$dom."</b> brief info</td></tr><tr>";
+        $s.="<td bgcolor=".$intf->color['NORM_CELL']."><table width=100% height=100% border=0>";
+        $s.="<tr><td width=120>Hour Trade Uniques: </td><td class=fv>".$htrup."%</td></tr>";
+        $s.="<tr><td>Hour Global Uniques: </td><td class=fv>".$hglup."%</td></tr>";
+        $s.="<tr><td>Hour Prod:</td><td class=fv>".$hpr."%</td></tr>";
+        $s.="<tr><td>Hour No JS Cookies:</td><td class=fv>".$hjspr."%</td></tr>";
+        $s.="<tr><td>Hour CA:</td><td class=fv>".round($stats->hour_ca["$dom"]*100)."%</td></tr>";
+        $s.="<tr><td>Hour Activity:</td><td class=fv>".round($stats->hour_act["$dom"],2)."</td></tr>";
+        $s.="<tr><td>24H Trade Uniques:</td><td class=fv>".$dtrup."%</td></tr>";
+        $s.="<tr><td>24H Global Uniques:</td><td class=fv>".$dglup."%</td></tr>";
+        $s.="<tr><td>24H Prod:</td><td class=fv>".$dpr."%</td></tr>";
+        $s.="<tr><td>24H No JS Cookies:</td><td class=fv>".$djspr."%</td></tr>";
+        $s.="<tr><td>24H CA:</td><td class=fv>".round($stats->day_ca["$dom"]*100)."%</td></tr>";
+        $s.="<tr><td>24H Activity:</td><td class=fv>".round($stats->day_act["$dom"],2)."</td></tr>";
+        $pn=count($new_trader->main_pages["$dom"]);
+        $s.="<tr><td rowspan=".$pn.">Main pages:</td>";
+        $pc=1;
+        foreach($new_trader->main_pages["$dom"] as $pid){
+            $s.="<td class=fv>".$pc.". ".$global->main_page[$pid]."</td>";
+            $pc++;
+            if($pc<$pn) $s.="</tr><tr>"; else $s.="</tr>";
+        }
+        $s.="<tr><td>Click order:</td><td class=fv>".$new_trader->click_rule["$dom"]."</td></tr>";
+        $s.="<tr><td>Content skim:</td><td class=fv>".$new_trader->content_skim["$dom"]."%</td></tr>";
+        $s.="</table></td></tr></table>";
+        return $s;
+    }
+
+    function main_stats_new_row($dom,$rn){
+        global $admin,$new_trader,$stats,$intf;
+
+        $lr=$admin->hour_cellnum+5;
+        if($admin->show_wm) $lr++;
+        $sr=$admin->day_cellnum;
+        $ar=$admin->td_cellnum+3;
+        echo "<tr onmouseover=\"hlight(this,".$rn.",'over',".$lr.",".$sr.",".$ar.");\" onmouseout=\"hlight(this,".$rn.",'out',".$lr.",".$sr.",".$ar.");\" onmousedown=\"hlight(this,".$rn.",'click',".$lr.",".$sr.",".$ar.");\">
+            <td bgcolor='".$intf->color['NORM_CELL']."' valign=middle height=40>&nbsp;<nobr><a href='".$new_trader->url["$dom"]."' OnMouseOver=\"pm('".$this->newtip($dom)."')\"; OnMouseOut=\"hd()\" target=_blank><font size=1 color='";
+        if($stats->hour_in["$dom"]<($stats->day_in["$dom"]/24*0.2)) echo $intf->color['TRAFFIC_LOW'];
+        elseif($stats->hour_in["$dom"]<($stats->day_in["$dom"]/24*0.4)) echo $intf->color['TRAFFIC_MED'];
+        else echo $intf->color['TRAFFIC_HIGH'];
+        echo "'><b>".$dom."</b></font></a>";
+        if($admin->show_checker && $admin->reported["$dom"]) echo "&nbsp; <a href='?cmd=showx&domain=".$dom."'><font color='".$intf->color['X_ALERT']."' size=1><b>!</b></font></a>";
+        echo "</nobr><br>
+            <table width=100% border=0 cellpadding=0 cellspacing=0><tr>
+            <td rowspan=2><input type=checkbox name='checked[]' id=cbox value='".$dom."' onclick='cbd();'></td>
+            <td>".date('d M, H:i',$new_trader->time_added["$dom"])."</td></tr>
+            <tr><td><nobr>IP: ".$new_trader->from_ip["$dom"]."</nobr><br>
+            <a href='?cmd=detailed&domain=".$dom."'>Detailed Stats</a></td></tr></table>
+            </td>";
+        if($admin->show_wm){
+            echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".$new_trader->nick["$dom"];
+            if($new_trader->icq["$dom"] && $admin->show_icq) echo "<br><a href='http://wwp.icq.com/scripts/contact.dll?msgto=".$new_trader->icq["$dom"]."'><img
+                alt='".$new_trader->nick["$dom"]."' src='http://wwp.icq.com/scripts/online.dll?icq=".$new_trader->icq["$dom"]."&amp;img=7' border=0></a>";
+            echo "</td>";
+        }
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center><font color='";
+        if($new_trader->trade_type["$dom"]==0){ echo $intf->color['TRADE_0']; $trade_name='Stopped';}
+        elseif($new_trader->trade_type["$dom"]==1){ echo $intf->color['TRADE_1']; $trade_name='Normal';}
+        elseif($new_trader->trade_type["$dom"]==2){ echo $intf->color['TRADE_2']; $trade_name='Normal';}
+        elseif($new_trader->trade_type["$dom"]==3){ echo $intf->color['TRADE_3']; $trade_name='Ratio';}
+        elseif($new_trader->trade_type["$dom"]==4){ echo $intf->color['TRADE_4']; $trade_name='Capped';}
+        elseif($new_trader->trade_type["$dom"]==5){ echo $intf->color['TRADE_5']; $trade_name='Boost';}
+        elseif($new_trader->trade_type["$dom"]==6){ echo $intf->color['TRADE_6']; $trade_name='Quality';}
+        else{ echo $intf->color['TRADE_7']; $trade_name='Quality+';}
+        echo "'>".$trade_name."</font>
+            </td>";
+        if($stats->hour_in["$dom"]>0) $pr=round($stats->hour_in_proxy["$dom"]*100/$stats->hour_in["$dom"]); else $pr=0;
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center><font color='".$intf->color['IN_CLICK']."'>".$stats->hour_in["$dom"]."</font><br>".$this->proxy_col($pr)."</td>";
+        if($admin->show_h_truin){
+            if($stats->hour_in["$dom"]>0) $pr=round($stats->hour_in_trad_uniq["$dom"]*100/$stats->hour_in["$dom"]); else $pr=0;
+            echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".$stats->hour_in_trad_uniq["$dom"]."<br><font color=".$intf->color['SHADED_TEXT'].">".$pr."%</font></td>";
+        }
+        if($admin->show_h_gluin){
+            if($stats->hour_in["$dom"]>0) $pr=round($stats->hour_in_glob_uniq["$dom"]*100/$stats->hour_in["$dom"]); else $pr=0;
+            echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".$stats->hour_in_glob_uniq["$dom"]."<br><font color=".$intf->color['SHADED_TEXT'].">".$pr."%</font></td>";
+        }
+        if($stats->hour_out["$dom"]>0) $pr=round($stats->hour_out_proxy["$dom"]*100/$stats->hour_out["$dom"]); else $pr=0;
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".$stats->hour_out["$dom"]."<br>".$this->proxy_col($pr)."</td>";
+        if($stats->hour_click["$dom"]>0) $pr=round($stats->hour_click_proxy["$dom"]*100/$stats->hour_click["$dom"]); else $pr=0;
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center><font color='".$intf->color['IN_CLICK']."'>".$stats->hour_click["$dom"]."</font><br>".$this->proxy_col($pr)."</td>";
+        if($admin->show_h_nojs){
+            if($stats->hour_click["$dom"]>0) $pr=round($stats->hour_click_nojs["$dom"]*100/$stats->hour_click["$dom"]); else $pr=0;
+            echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".$stats->hour_click_nojs["$dom"]."<br><font color=".$intf->color['SHADED_TEXT'].">".$pr."%</font></td>";
+        }
+        if($admin->show_h_cont){
+            if(($stats->hour_click["$dom"]+$stats->hour_click_cont["$dom"])>0) $pr=round($stats->hour_click_cont["$dom"]*100/($stats->hour_click["$dom"]+$stats->hour_click_cont["$dom"])); else $pr=0;
+            echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".$stats->hour_click_cont["$dom"]."<br><font color=".$intf->color['SHADED_TEXT'].">".$pr."%</font></td>";
+        }
+        if($admin->show_h_prod) echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center><font color='".$intf->color['PROD']."'>".round($stats->hour_prod["$dom"]*100)."%</font></td>";
+        if($admin->show_h_ca) echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".round($stats->hour_ca["$dom"]*100)."%</td>";
+        if($admin->show_h_act) echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".round($stats->hour_act["$dom"],2)."</td>";
+        if($admin->show_h_uniq_prod) echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center><font color='".$intf->color['UPROD']."'>".round($stats->hour_uniq_prod["$dom"]*100)."%</font></td>";
+        if($admin->show_h_lang) echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".round($stats->hour_lf["$dom"],2)."</td>";
+
+        if($stats->day_in["$dom"]>0) $pr=round($stats->day_in_proxy["$dom"]*100/$stats->day_in["$dom"]); else $pr=0;
+        echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center><font color='".$intf->color['IN_CLICK']."'>".$stats->day_in["$dom"]."</font><br>".$this->proxy_col($pr)."</td>";
+        if($admin->show_d_truin){
+            if($stats->day_in["$dom"]>0) $pr=round($stats->day_in_trad_uniq["$dom"]*100/$stats->day_in["$dom"]); else $pr=0;
+            echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>".$stats->day_in_trad_uniq["$dom"]."<br><font color=".$intf->color['SHADED_TEXT'].">".$pr."%</font></td>";
+        }
+        if($admin->show_d_gluin){
+            if($stats->day_in["$dom"]>0) $pr=round($stats->day_in_glob_uniq["$dom"]*100/$stats->day_in["$dom"]); else $pr=0;
+            echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>".$stats->day_in_glob_uniq["$dom"]."<br><font color=".$intf->color['SHADED_TEXT'].">".$pr."%</font></td>";
+        }
+        if($stats->day_out["$dom"]>0) $pr=round($stats->day_out_proxy["$dom"]*100/$stats->day_out["$dom"]); else $pr=0;
+        echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>".$stats->day_out["$dom"]."<br>".$this->proxy_col($pr)."</td>";
+        if($stats->day_click["$dom"]>0) $pr=round($stats->day_click_proxy["$dom"]*100/$stats->day_click["$dom"]); else $pr=0;
+        echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center><font color='".$intf->color['IN_CLICK']."'>".$stats->day_click["$dom"]."</font><br>".$this->proxy_col($pr)."</td>";
+        if($admin->show_d_nojs){
+            if($stats->day_click["$dom"]>0) $pr=round($stats->day_click_nojs["$dom"]*100/$stats->day_click["$dom"]); else $pr=0;
+            echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>".$stats->day_click_nojs["$dom"]."<br><font color=".$intf->color['SHADED_TEXT'].">".$pr."%</font></td>";
+        }
+        if($admin->show_d_cont){
+            if(($stats->day_click["$dom"]+$stats->day_click_cont["$dom"])>0) $pr=round($stats->day_click_cont["$dom"]*100/($stats->day_click["$dom"]+$stats->day_click_cont["$dom"])); else $pr=0;
+            echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>".$stats->day_click_cont["$dom"]."<br><font color=".$intf->color['SHADED_TEXT'].">".$pr."%</font></td>";
+        }
+        if($admin->show_d_prod) echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center><font color='".$intf->color['PROD']."'>".round($stats->day_prod["$dom"]*100)."%</font></td>";
+        if($admin->show_d_ca) echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>".round($stats->day_ca["$dom"]*100)."%</td>";
+        if($admin->show_d_act) echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>".round($stats->day_act["$dom"],2)."</td>";
+        if($admin->show_d_uniq_prod) echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center><font color='".$intf->color['UPROD']."'>".round($stats->day_uniq_prod["$dom"]*100)."%</font></td>";
+        if($admin->show_d_lang) echo "<td bgcolor='".$intf->color['24H_CELL']."' align=center>".round($stats->day_lf["$dom"],2)."</td>";
+        if($admin->show_analyzer) echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>&nbsp;</td>";
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".$new_trader->mintrade["$dom"]."</td>";
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>";
+        if($new_trader->trade_type["$dom"]==0 || $new_trader->trade_type["$dom"]==1 || $new_trader->trade_type["$dom"]==4 || $new_trader->trade_type["$dom"]==5) echo $new_trader->set_ratio["$dom"];
+        else echo 'Auto';
+        echo "</td>";
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".round($stats->day_ret["$dom"]*100)."%</td>";
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".round($stats->day_eff["$dom"]*100)."%</td>";
+        echo "<td bgcolor='".$intf->color['NORM_CELL']."' align=center>".round($stats->debt["$dom"],2)."</td>";
+        echo "</tr>";
+    }
+
+}
+
+?>
