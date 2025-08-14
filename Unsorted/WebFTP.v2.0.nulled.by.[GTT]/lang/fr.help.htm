@@ -1,0 +1,161 @@
+<html>
+
+<head>
+ <title>Aide du WebFTP</title>
+ <style>
+  body,td,a,div,p{font-size:10pt;font-family:arial;}
+  blockquote{margin-left:12px;}
+  a.t{text-decoration:none;color:#555555;}
+ </style>
+</head>
+
+<body background="../img/bg.gif">
+
+<a name="top"></a>
+
+<h1 style="margin-bottom:7px;">Aide du WebFTP</h1>
+<hr>
+
+<a name="con">
+<h2 style="margin-top:7px;"><a href="#top"><img border=0 src="../img/t1.gif"></a> Boîte de connexion</h2>
+<blockquote>
+Pour utiliser le WebFTP, vous devez d'abord vous identifier.<br>
+Pour cela, vous devez entrer vos informations de connexion dans les champs appropriés :
+
+<a name="user">
+<h3><a href="#top"><img border=0 src="../img/t1.gif"></a> Nom d'utilisateur :</h3>
+<blockquote>
+ C'est le nom de votre compte FTP fourni par votre administrateur ou votre hébergeur.<br>
+ Attention, souvenez vous que certains serveurs FTP sont sensibles à la casse, autrement dit<br>
+ les noms &laquo; <b>utilisateur</b> &raquo; et &laquo; <b>UtIlIsaTeUR</b> &raquo; sont différents.
+</blockquote>
+
+<a name="pass">
+<h3><a href="#top"><img border=0 src="../img/t1.gif"></a> Mot de passe :</h3>
+<blockquote>
+ C'est le mot de passe associé à votre nom de compte que vous avez choisi ou qui vous.<br>
+ a été transmis lors de votre inscription. Souvenez vous aussi de la casse des lettres, <br>
+ les mots de passe &laquo; <b>passe</b> &raquo; et &laquo; <b>PaSsE</b> &raquo; sont différents.
+</blockquote>
+
+<a name="serv">
+<h3><a href="#top"><img border=0 src="../img/t1.gif"></a> Serveur et port :</h3>
+<blockquote>
+ Cette option n'est pas toujours disponible mais vous permet de choisir à quel serveur<br>
+ FTP vous souhaitez vous connecter. Ce peut être soit un nom de type &laquo; <b>ftp.serveur.com</b> &raquo;<br>
+ ou une adresse IP de type <b>000.000.000.000</b>
+</blockquote>
+
+<a name="fold">
+<h3><a href="#top"><img border=0 src="../img/t1.gif"></a> Dossier :</h3>
+<blockquote>
+ Si cette option est définie, le script entrera dans le dossier fourni lors de la connexion.<br>
+ Si vous ne savez pas quoi mettre, laissez la valeur par défaut.
+</blockquote>
+
+<a name="timeout">
+<h3><a href="#top"><img border=0 src="../img/t1.gif"></a> Temps maximum :</h3>
+<blockquote>
+ Si ce champ existe, il vous permet de déterminer le temps maximum d'attente<br>
+ de réponse du serveur, en secondes. Après ce délai, la connexion FTP échoue.
+</blockquote>
+
+<a name="trans">
+<h3><a href="#top"><img border=0 src="../img/t1.gif"></a> Mode de transfert :</h3>
+<blockquote>
+ Si ce champ existe, il vous permet de définir le mode de transfert à utiliser pour<br>
+ les téléchargements. Le mode ASCII ne s'applique que pour les fichiers de type texte<br>
+ (html, php, javascript), sinon il faut utiliser le mode binaire par défaut.
+</blockquote>
+
+<a name="pasv">
+<h3><a href="#top"><img border=0 src="../img/t1.gif"></a> Mode FTP passif :</h3>
+<blockquote>
+ Si ce champ existe, il vous permet d'activer le FTP passif, qui peut être nécéssaire<br>
+ avec certains serveurs. Si par exemple la connexion échoue sur un serveur existant, essayez<br>
+ d'activer cette option.
+</blockquote>
+
+<a name="ssl">
+<h3><a href="#top"><img border=0 src="../img/t1.gif"></a> Connexion avec SSL :</h3>
+<blockquote>
+ Si ce champ existe, il vous permet de vous connecter à des serveurs FTP sécurisés.<br>
+ Notez que dans ce cas, le port de connexion pourrait être différent.
+</blockquote>
+</blockquote>
+
+<hr>
+
+<a name="interface">
+<h2 style="margin-top:7px;"><a href="#top"><img border=0 src="../img/t1.gif"></a> Boutons de l'interface</h2>
+<blockquote>
+La gestion des fichiers se fait grâce aux icônes dans la barre d'action,<br>
+située sous la liste des fichiers. Voici la description de ces bouton :
+
+<h3><img border=0 src="../img/del.gif"> Suppression de fichiers :</h3>
+<blockquote>
+ Une fois que vous avez séléctionné les fichiers avec les cases à cocher,<br>
+ cliquez sur ce bouton pour les supprimer. Le script vous demande une confirmation<br>
+ car tous les sous dossiers seront aussi supprimés.
+</blockquote>
+
+<h3><img border=0 src="../img/rename.gif"> Renommer les fichiers :</h3>
+<blockquote>
+ Une fois que vous avez séléctionné les fichiers avec les cases à cocher,<br>
+ cliquez sur ce bouton pour les renommer. Pour chaque fichier ou dossier,<br>
+ le script vous demande le nouveau nom.
+</blockquote>
+
+<h3><img border=0 src="../img/move.gif"> Déplacer les fichiers :</h3>
+<blockquote>
+ Une fois que vous avez séléctionné les fichiers avec les cases à cocher,<br>
+ cliquez sur ce bouton pour les déplacer vers un autre endroit. Le script vous<br>
+ demande le dossier de destination, il peut être absolu (<b>/home/user/f</b>) ou<br>
+ relatif (<b>sousdossier/</b>). Si ce dossier n'existe pas, il sera créé.
+</blockquote>
+
+<h3><img border=0 src="../img/ndos.gif"> Nouveau dossier :</h3>
+<blockquote>
+ Le script vous demande le nom du nouveau dossier; il peut être absolu<br>
+ ou relatif. Afficher ensuite le résultat de la création.
+</blockquote>
+
+<h3><img border=0 src="../img/edit.gif"> Affichage et edition de fichier :</h3>
+<blockquote>
+ Ce bouton a un comportement particulier. Une fois que vous aurez cliqué dessus,<br>
+ les cases à cocher pour la séléction se transforment en cases uniques (radio).<br>
+ Choisissez ensuite le fichier à voir ou éditer, et cliquez encore sur ce bouton.<br>
+ Une fenêtre s'ouvre et vous demande comment ouvrir le fichier.
+</blockquote>
+
+<h3><img border=0 src="../img/chmod.gif"> Permissions :</h3>
+<blockquote>
+ Une fois que vous avez séléctionné les fichiers avec les cases à cocher,<br>
+ cliquez sur ce bouton pour changer les permissions (CHMOD). Le script vous<br>
+ demande alors la valeur des perissions, en octal. Consultez la page du<br>
+ <a class="t" href="http://php.net/chmod" target="_blank">manuel PHP</a> sur les permissions.
+</blockquote>
+
+<h3><img border=0 src="../img/tar.gif"> Création d'archive :</h3>
+<blockquote>
+ Ce bouton n'est pas toujours disponible selon la configuration.<br>
+ Une fois que vous avez séléctionné les fichiers avec les cases à cocher,<br>
+ cliquez sur ce bouton pour en faire un archive TAR qui est ensuite envoyée.<br>
+ Les archives obtenues peuvent être compréssées avec GZIP ou BZIP2 si les<br>
+ librairies sont présentes sur le serveur.
+</blockquote>
+
+<h3><img border=0 src="../img/ftp-site.gif"> Envoi de commande SITE :</h3>
+<blockquote>
+ Ce bouton ne dépend pas des fichiers séléctionnés. Le script vous <br>
+ demande la commande SITE à envoyer, et elle est transmise au serveur<br>
+ Le script affiche si la commande a réussie ou échouée, mais on ne peut<br>
+ pas récupérer la réponse du serveur.
+</blockquote>
+
+</blockquote>
+
+<hr>
+
+</body>
+</html>
