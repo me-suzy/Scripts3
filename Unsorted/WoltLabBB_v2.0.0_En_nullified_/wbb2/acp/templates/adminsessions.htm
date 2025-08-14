@@ -1,0 +1,55 @@
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+<form method="post" action="otherstuff.php">
+<input type="hidden" name="sid" value="$session[hash]">
+<input type="hidden" name="action" value="$action">
+<input type="hidden" name="send" value="send">
+ <table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="100%" align="center">
+  <tr class="tblhead">
+   <td colspan=6>Administrator Sessions</td>
+  </tr>
+  <tr class="tblsection" align="center">
+   <td>&nbsp;</td>
+   <td>User</td>
+   <td>Start Time</td>
+   <td nowrap=nowrap>Last Activity</td>
+   <td nowrap=nowrap>IP Address</td>
+   <td>Browser</td>
+  </tr>
+  $sessionbit
+  <tr class="tblsection">
+   <td colspan=6><table cellpadding=0 cellspacing=0 border=0 width="100%">
+    <tr>
+     <td><input type="submit" value="Delete"> <input type="submit" name="all" value="Delete All"></td></form>
+<form method="post" action="otherstuff.php">
+<input type="hidden" name="sid" value="$session[hash]">
+<input type="hidden" name="action" value="$action">
+<input type="hidden" name="send" value="send">
+<input type="hidden" name="page" value="$page">
+     <td align="right"><select name="sortby">
+      <option value="">Sort by:</option>
+      <option value="username"$s_sortby[username]>User</option>
+      <option value="starttime"$s_sortby[starttime]>Start Time</option>
+      <option value="lastactivity"$s_sortby[lastactivity]>Last Activity</option>
+      <option value="ipaddress"$s_sortby[ipaddress]>IP Address</option>
+      <option value="useragent"$s_sortby[useragent]>Browser</option>
+     </select> <select name="sortorder">
+      <option value="">Order:</option>
+      <option value="ASC"$s_sortorder[ASC]>Ascending</option>
+      <option value="DESC"$s_sortorder[DESC]>Descending</option>
+     </select> <input type="submit" value="Go"></td>
+    </tr>
+   </table></td>
+  </tr>
+ </table>
+ <p align="center">$pagelink</p>
+</form>
+</body>
+</html>
