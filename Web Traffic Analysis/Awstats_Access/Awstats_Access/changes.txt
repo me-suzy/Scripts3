@@ -1,0 +1,5 @@
+1. Cpanel access is now done via SSL
+
+2. Username/Password is no longer appended to the URL. An actual login to cpanel is now performed by Curl. MUCH more secure.
+
+3. Now, images are pulled from yoursite.com/stats/images instead of yoursite.com/images.
