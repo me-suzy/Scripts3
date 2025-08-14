@@ -1,0 +1,27 @@
+{htmldoctype}
+<html>
+<head>
+<title>$bbtitle - Newsportal</title>
+$headinclude
+</head>
+<body>
+$header
+
+<table cellpadding="4" cellspacing="10" border="0" width="{tablewidth}">
+<tr><td colspan="2"><largefont><a href="index.php?s=$session[sessionhash]">$bbtitle</a> &gt; Newsportal</largefont><br /></td></tr><tr>
+<td width="60%" valign="top">
+<table bgcolor="{linkcolor}" border="0" width="100%">
+<tr>
+<td bgcolor="{linkcolor}" align="center"><font color="{pagebgcolor}"><largefont><b>LATEST NEWS</b></largefont></font></td></tr></table>
+$newsbits
+</td>
+<td width="40%" valign="top"><table bgcolor="{linkcolor}" border="0" width="100%"><tr><td bgcolor="{linkcolor}" align="center"><font color="{pagebgcolor}"><largefont><b>LATEST THREADS</b></largefont></font></td></tr></table>
+<table cellpadding="3" bgcolor="{tablebordercolor}" cellspacing="{tableinnerborderwidth}" border="0" width="100%">
+$threadbits
+</table>
+</td>
+</tr>
+</table>
+
+$footer
+</body></html>
