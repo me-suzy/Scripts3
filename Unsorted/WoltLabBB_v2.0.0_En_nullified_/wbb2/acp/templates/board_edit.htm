@@ -1,0 +1,257 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+<form method="post" action="board.php">
+<input type="hidden" name="send" value="send">
+<input type="hidden" name="boardid" value="$boardid">
+<input type="hidden" name="action" value="$action">
+<input type="hidden" name="sid" value="$session[hash]">
+ <table cellpadding=4 cellspacing=1 width="98%" class="tblborder" align="center">
+  <tr class="tblhead">
+   <td colspan=2>» Add Forum</td>
+  </tr>
+  <tr class="tblsection">
+   <td colspan=2>» General Settings</td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Title:</b></td>
+   <td><input type="text" name="title" value="$board[title]" maxLength="70"></td>
+  </tr>
+  <tr class="secondrow">
+   <td valign="top"><b>Description:</b></td>
+   <td><textarea rows="6" cols="55" wrap="virtual" name="description">$board[description]</textarea></td>
+  </tr>
+  <tr class="tblsection">
+   <td colspan=2>» Forum Specifications</td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Forum Type:</b></td>
+   <td><select name="isboard">
+    <option value="1"$sel_isboard[1]>Forum</option>
+    <option value="0"$sel_isboard[0]>Category</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Forum Parent:</b></td>
+   <td><select name="parentid">
+    <option value="0">none</option>
+    $parentid_options
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Closed Forum?</b><br>(No new threads/posts may be started.)</font></td>
+   <td><select name="closed">
+    <option value="1"$sel_closed[1]>Yes</option>
+    <option value="0"$sel_closed[0]>No</option>
+   </select></td>
+  </tr>
+  <tr class="tblsection">
+   <td colspan=2>» Access Rights</td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Hide Forum?</b></td>
+   <td><select name="invisible">
+    <option value="2"$sel_invisible[2]>Yes, for all members</option>
+    <option value="1"$sel_invisible[1]>Yes, except for users with access rights</option>
+    <option value="0"$sel_invisible[0]>No, visible for all users</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td valign="top"><b>Read:</b><br>Which user groups may read threads in this forum?</td>
+   <td>
+    <select name="boardpermission[]" size=5 multiple>
+     <option value="*"$bp_selected>#ALL GROUPS#</option>
+     $bp_options
+    </select><br>
+    (Hold the "Ctrl/Shift" key and click to select multiple groups.)</td>
+   </tr>
+   <tr class="secondrow">
+    <td valign="top"><b>Write - Threads:</b><br>Which user groups may start new threads in this forum?</td>
+    <td><select name="startpermission[]" size=5 multiple>
+     <option value="*"$sp_selected>#ALL GROUPS#</option>
+     $sp_options
+    </select><br>
+    (Hold the "Ctrl/Shift" key and click to select multiple groups.)</td>
+   </tr>
+   <tr class="firstrow">
+    <td valign="top"><b>Write - Replies:</b><br>Which user groups may post new replies in this forum?</b></font></td>
+    <td width="50%"><select name="replypermission[]" size=5 multiple>
+     <option value="*"$rp_selected>#ALL GROUPS#</option>
+     $rp_options
+    </select><br>
+    (Hold the "Ctrl/Shift" key and click to select multiple groups.)</td>
+   </tr>
+   <tr class="tblsection">
+    <td colspan=2>» Other Options</td>
+   </tr>
+   <tr class="secondrow">
+    <td><b>Allow BBCode?</b></td>
+    <td><select name="allowbbcode">
+     <option value="1"$sel_allowbbcode[1]>Yes</option>
+     <option value="0"$sel_allowbbcode[0]>No</option>
+    </select></td>
+   </tr>
+   <tr class="firstrow">
+    <td><b>Allow Images?</b></td>
+    <td><select name="allowimages">
+     <option value="1"$sel_allowimages[1]>Yes</option>
+     <option value="0"$sel_allowimages[0]>No</option>
+    </select></td>
+   </tr>
+   <tr class="secondrow">
+    <td><b>Allow HTML?</b></td>
+    <td><select name="allowhtml">
+     <option value="1"$sel_allowhtml[1]>Yes</option>
+     <option value="0"$sel_allowhtml[0]>No</option>
+    </select></td>
+   </tr>
+   <tr class="firstrow">
+    <td><b>Allow Smilies?</b></td>
+    <td><select name="allowsmilies">
+     <option value="1"$sel_allowsmilies[1]>Yes</option>
+     <option value="0"$sel_allowsmilies[0]>No</option>
+    </select></td>
+   </tr>
+   <tr class="secondrow">
+    <td><b>Allow Icons?</b></td>
+    <td><select name="allowicons">
+     <option value="1"$sel_allowicons[1]>Yes</option>
+     <option value="0"$sel_allowicons[0]>No</option>
+    </select></td>
+   </tr>
+   <tr class="firstrow">
+    <td><b>Allow Polls?</b></td>
+    <td><select name="allowpolls">
+     <option value="1"$sel_allowpolls[1]>Yes</option>
+     <option value="0"$sel_allowpolls[0]>No</option>
+    </select></td>
+   </tr>
+   <tr class="secondrow">
+    <td><b>Allow Attachments?</b></td>
+    <td><select name="allowattachments">
+     <option value="1"$sel_allowattachments[1]>Yes</option>
+     <option value="0"$sel_allowattachments[0]>No</option>
+    </select></td>
+   </tr>
+   <tr class="firstrow">
+    <td><b>Threads Display:</b></td>
+    <td><select name="daysprune">
+     <option value="0"$sel_daysprune[0]>Forum Default</option>
+     <option value="1"$sel_daysprune[1]>Show threads from the last day</option>
+     <option value="2"$sel_daysprune[2]>Show threads from the last 2 days</option>
+     <option value="5"$sel_daysprune[5]>Show threads from the last 5 days</option>
+     <option value="10"$sel_daysprune[10]>Show threads from the last 10 days</option>
+     <option value="20"$sel_daysprune[20]>Show threads from the last 20 days</option>
+     <option value="30"$sel_daysprune[30]>Show threads from the last 30 days</option>
+     <option value="45"$sel_daysprune[45]>Show threads from the last 45 days</option>
+     <option value="60"$sel_daysprune[60]>Show threads from the last 60 days</option>
+     <option value="75"$sel_daysprune[75]>Show threads from the last 75 days</option>
+     <option value="100"$sel_daysprune[100]>Show threads from the last 100 days</option>
+     <option value="365"$sel_daysprune[365]>Show threads from the last year</option>
+     <option value="1000"$sel_daysprune[1000]>Show all threads</option>
+    </select></td>
+   </tr>
+   <tr class="secondrow">
+    <td><b>Threads per page:</b><br>(0 = Forum Default)</td>
+    <td><input type="text" name="threadsperpage" value="$board[threadsperpage]" maxLength="3" value="0"></td>
+   </tr>
+   <tr class="firstrow">
+    <td><b>Replies per page:</b><br>(0 = Forum Default)</td>
+    <td><input type="text" name="postsperpage" value="$board[postsperpage]" maxLength="3" value="0"></td>
+   </tr>
+   <tr class="secondrow">
+    <td><b>Posts Order:</b><br>(in a thread)</td>
+    <td><select name="postorder">
+     <option value="1"$sel_postorder[1]>Newest first</option>
+     <option value="0"$sel_postorder[0]>Oldest first</option>
+    </select></td>
+   </tr>
+   <tr class="firstrow">
+    <td><b>Replies needed for becoming a hot thread:</b><br>(0 = Forum Default)</td>
+    <td><input type="text" name="hotthread_reply" value="$board[hotthread_reply]" maxLength="3" value="0"></td>
+   </tr>
+   <tr class="secondrow">
+    <td><b>Views needed for becoming a hot thread:</b><br>(0 = Forum Default)</td>
+    <td><input type="text" name="hotthread_view" value="$board[hotthread_view]" maxLength="5" value="0"></td>
+   </tr>
+   <tr class="firstrow">
+    <td><b>Posts Count?</b><br>Are the posts made in this forum added to the member's posts count?</td>
+    <td><select name="countuserposts">
+     <option value="1"$sel_countuserposts[1]>Yes</option>
+     <option value="0"$sel_countuserposts[0]>No</option>
+    </select></td>
+   </tr>
+   <tr class="secondrow">
+    <td><b>Moderation - Threads:</b><br>Do new threads need to be approved by a moderator?</td>
+    <td><select name="moderatenewthreads">
+     <option value="1"$sel_moderatenewthreads[1]>Yes</option>
+     <option value="0"$sel_moderatenewthreads[0]>No</option>
+    </select></td>
+   </tr>
+   <tr class="firstrow">
+    <td><b>Moderation - Replies:</b><br>Do new replies need to be approved by a moderator?</td>
+    <td><select name="moderatenewposts">
+     <option value="1"$sel_moderatenewposts[1]>Yes</option>
+     <option value="0"$sel_moderatenewposts[0]>No</option>
+    </select></td>
+   </tr>
+   <tr class="secondrow">
+    <td><b>Use Prefixes:</b><br>Which prefixes does this forum use?</td>
+    <td><select name="prefixuse">
+     <option value="0"$sel_prefixuse[0]>do not use prefixes</option>
+     <option value="1"$sel_prefixuse[1]>use default prefixes</option>
+     <option value="2"$sel_prefixuse[2]>use default and forum prefixes</option>
+     <option value="3"$sel_prefixuse[3]>use forum prefixes</option>
+    </select></td>
+   </tr>
+   <tr class="firstrow">
+    <td valign="top"><b>Prefixes:</b><br>Enter the prefixes which are specific to this forum. Enter one prefix per line.</td>
+    <td><textarea rows="6" cols="55" wrap="virtual" name="prefix">$board[prefix]</textarea></td>
+   </tr>
+   <tr class="tblsection">
+    <td colspan=2>» Password Protect</td>
+   </tr>
+   <tr class="secondrow">
+    <td><b>Passwords:</b></td>
+    <td><input type="password" name="password" value="$board[password]" maxLength="25"></td>
+   </tr>
+   <tr class="tblsection">
+    <td colspan=2>» Set Moderators</td>
+   </tr>
+   <tr class="firstrow">
+    <td valign="top"><b>Moderators for this Forum:</b></td>
+    <td><select name="boardmods[]" size="6" multiple>
+     $mod_options
+    </select><br>
+    (Hold the "Ctrl/Shift" key and click to select multiple moderators.)
+    </td>
+   </tr>
+   <tr class="tblsection">
+    <td colspan=2><b>» Style Options</b></td>
+   </tr>
+   <tr class="secondrow">
+    <td><b>Style for this forum:</b></td>
+    <td><select name="style_set">
+     <option value="">Default Style</option>
+     $style_options
+    </select></td>
+   </tr>
+   <tr class="firstrow">
+    <td><b>Force Style?</b><br>Should users be forced to use this style for this board?</td>
+    <td><select name="enforcestyle">
+     <option value="1"$sel_enforcestyle[1]>Yes</option>
+     <option value="0"$sel_enforcestyle[0]>No</option>
+    </select></td>
+   </tr>
+   <tr class="secondrow">
+    <td colspan=2 align="center"><input type="submit" value="Submit"> <input type="reset" value="Reset"></td>
+   </tr>
+  </table>
+ </form>
+</body>
+</html>
