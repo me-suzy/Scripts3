@@ -1,0 +1,8 @@
+{config_load file="lang_$language.conf" section="create_account_mail"} 
+
+{#greeting#} {if $content.MAIL_GENDER =='m'}{#male#}{else}{#female#}{/if} {$content.MAIL_NAME},
+      
+{#text#}
+      
+{#txt_question#} {$content.MAIL_REPLY_ADDRESS}. 
+{#txt_email#} {$content.MAIL_REPLY_ADDRESS}. 
