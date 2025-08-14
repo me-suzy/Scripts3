@@ -1,0 +1,66 @@
+============= = Installation de wa-boo v 0.8.5 = ================
+
+
+#########################################################
+#                                                       #
+# This script was provided by:                          #
+#                                                       #
+# PHPSelect Web Development Division.                   #
+# http://www.phpselect.com/                             #
+#                                                       #
+# This script and all included modules, lists or        #
+# images, documentation are © 2004                      #
+# PHPSelect (http://www.phpselect.com/) unless          #
+# otherwise stated in the script.                       #
+#                                                       #
+# Purchasers are granted rights to use this script      #
+# on any site they own. There is no individual site     #
+# license needed per site.                              #
+#                                                       #
+# Any copying, distribution, modification with          #
+# intent to distribute as new code will result          #
+# in immediate loss of your rights to use this          #
+# program as well as possible legal action.             #
+#                                                       #
+# This and many other fine scripts are available at     #
+# the above website or by emailing the authors at       #
+# admin@phpselect.com or info@phpselect.com             #
+#                                                       #
+#########################################################
+
+
+
+1) unzip zip file with subdirectories.
+
+2) Copy all files to the final directory on the web server.
+
+3) Create a new MySQL base or use you current base.
+
+4) with phpMyAdmin or MySQLFront, run initial SQL script
+   needed to create tables ("dumps/initial_dump.sql").
+
+5) Please configure file "includes/global_vars.php".
+
+6) set required parameters to access database in file 
+   "classes/database_class.php", line 18.
+   This parameters are : 
+   - $host (server name), 
+   - $db (database MySQL name), 
+   - $user (user account), 
+   - $pwd (password).
+
+
+
+=========== = first use of wa-boo v 0.8.5 = =============   
+
+
+   You can now use the application. The only usable account after this init 
+   stage is a "godlike" account (can do everything). the login is "godlike" 
+   and the password is "godlike".
+   
+   The first thing to do is to log as godlike and to modify your rights (to 
+   access this administration mode, pleas check the admin check box on login 
+   page). Beacuse this user can do everything, he can create both groups and 
+   users.
+   
+   User and admin help are not yet translated in english
