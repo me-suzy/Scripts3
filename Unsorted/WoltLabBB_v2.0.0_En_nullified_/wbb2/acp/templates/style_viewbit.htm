@@ -1,0 +1,9 @@
+<tr class="$rowclass">
+ <td width="33%"><b>$row[stylename]</b></td>
+ <td width="33%"><b>$row[templatepackname]</b></td>
+ <td width="33%"><b>$row[subvariablepackname]</b></td>
+ <td><a href="style.php?action=edit&styleid=$row[styleid]&sid=$session[hash]">edit</a></td>
+ <td><a href="style.php?action=del&styleid=$row[styleid]&sid=$session[hash]">delete</a></td>
+ <td><a href="style.php?action=export&styleid=$row[styleid]&sid=$session[hash]">export</a></td>
+ <td><a href="style.php?action=default&styleid=$row[styleid]&sid=$session[hash]">set</a>&nbsp;$star</td>
+</tr>
