@@ -1,0 +1,11 @@
+1. Go to the stats subdirectory and edit config.php
+
+2. Upload the stats directory to your web site, under public_html (creating public_html/stats)
+
+3. Open a browser to  http://www.yoursite.com/stats  to logon and view your stats!
+
+For more security you can put your config.php file outside the Web Server path, then you can 
+create a new config.php with the line:
+
+<?php include("/home/cpaneluser/config.php"); ?>
+
