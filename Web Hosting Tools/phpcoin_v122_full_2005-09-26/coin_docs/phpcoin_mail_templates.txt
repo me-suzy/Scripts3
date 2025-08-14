@@ -1,0 +1,448 @@
+
+/**************************************************************
+ * File: 		Documentation: Email Templates (Default)
+ * Author:	Mike Lansberry (http://phpcoin.com)
+ * Date:		2004-01-04 (V1.2.0)
+ * Changed: 	Stephen M. Kitching, 2005-03-03 (v1.2.2)
+ * License:	DO NOT Remove this text block. See /coin_docs/license.txt
+ *			Copyright © 2003-2004-2005 phpCOIN.com
+ * Notes:
+ *	- The default email templates provided with the package.
+ *	- Provided for simple replacement if something happens.
+ *	- Can simply select the text below, between the remarks
+ *	  ***/ and /*** and paste into the appropriate mail
+ *	  template editor field for the correct template.
+**************************************************************/
+
+/**************************************************************
+ * Template ID:	1
+ * Name:		email_password_reset
+ * Text:		see below
+**************************************************************/
+Hello $_MTP[username],
+The following email from $_MTP[from_email] was triggered from a request to reset the password for this user name.
+
+The new password is: $_MTP[password]
+
+Please note the password has been reset. If you did not request the password change, we apologize for the inconvenience.
+
+As a reminder, you can go to the following link to login and change you password.
+$_MTP[url]
+
+
+$_MTP[site] Support
+$_MTP[from_email]
+
+/**************************************************************
+ * Template ID:	2
+ * Name:		email_contact_form
+ * Text:		see below
+**************************************************************/
+Hello $_MTP[to_name],
+The following email from $_MTP[from_name] was sent through the $_MTP[site] contact form. Note- the sender has also been copied on this email.
+
+Message as follows:
+-------------------
+To: $_MTP[to_name]
+From: $_MTP[from_name]
+Email: $_MTP[from_email]
+
+Subject: $_MTP[subject]
+
+Message:
+$_MTP[message]
+
+-------------------
+
+/**************************************************************
+ * Template ID:	3
+ * Name:		email_contact_client_form
+ * Text:		see below
+**************************************************************/
+Hello $_MTP[to_name],
+The following email from $_MTP[from_name] was sent through the $_MTP[site] contact client form. Note- the sender may also be copied on this email.
+
+Message as follows:
+-------------------
+To: $_MTP[to_name]
+From: $_MTP[from_name]
+Email: $_MTP[from_email]
+
+Subject: $_MTP[subject]
+
+Message:
+$_MTP[message]
+
+-------------------
+
+/**************************************************************
+ * Template ID:	4
+ * Name:		email_profile_copy
+ * Text:		see below
+**************************************************************/
+Hello $_MTP[to_name],
+The following client profile copy is from $_MTP[site] $_MTP[from_name] department.
+
+-------------------
+$_MTP[cl_info]
+-------------------
+
+This profile information can be edited online at the following link (requires login):
+ $_MTP[cl_url]
+
+Thank you for continuing to choose $_MTP[site] for your web service needs.
+
+ $_MTP[from_name]
+ $_MTP[from_email]
+
+/**************************************************************
+ * Template ID:	5
+ * Name:		email_order_ack
+ * Text:		see below
+**************************************************************/
+Hello $_MTP[to_name],
+The following order acknowledgement is from $_MTP[site] $_MTP[from_name] department.
+
+-------------------
+$_MTP[order]
+-------------------
+
+This order can be monitored online at the following link (requires login):
+ $_MTP[ord_url]
+
+Thank you for continuing to choose $_MTP[site] for your web service needs.
+
+ $_MTP[from_name]
+ $_MTP[from_email]
+
+/**************************************************************
+ * Template ID:	6
+ * Name:		email_order_copy
+ * Text:		see below
+**************************************************************/
+Hello $_MTP[to_name],
+The following order copy is from $_MTP[site] $_MTP[from_name] department.
+
+-------------------
+$_MTP[order]
+-------------------
+
+This order can be monitored online at the following link (requires login):
+ $_MTP[ord_url]
+
+Thank you for continuing to choose $_MTP[site] for your web service needs.
+
+ $_MTP[from_name]
+ $_MTP[from_email]
+
+/**************************************************************
+ * Template ID:	7
+ * Name:		email_trans_ack
+ * Text:		see below
+**************************************************************/
+Hello $_MTP[to_name],
+The following email transaction acknowledgement is from $_MTP[site] $_MTP[from_name] department.
+
+ Invoice ID:    $_MTP[invc_id]
+ Invoice Date:  $_MTP[invc_ts]
+ Date Due:      $_MTP[invc_ts_due]
+ Date Paid:     $_MTP[invc_ts_paid]
+ Status:        $_MTP[invc_status]
+                ----------------------
+ Trans ID:      $_MTP[it_id]
+ Date:          $_MTP[it_ts]
+ Type:          $_MTP[it_type]
+ Origin:        $_MTP[it_origin]
+ Description:   $_MTP[it_desc]
+ Amount:        $_MTP[it_amount]
+                ----------------------
+
+The following is overall account balance with $_MTP[site] and includes all account activity:
+
+ Acc Balance:  $_MTP[cl_balance]
+
+This transaction can be viewed when visiting following link (requires login):
+ $_MTP[invc_url]
+
+Thank you for continuing to choose $_MTP[site] for your web service needs.
+
+ $_MTP[from_name]
+ $_MTP[from_email]
+
+/**************************************************************
+ * Template ID:	8
+ * Name:		email_invoice_copy
+ * Text:		see below
+**************************************************************/
+Hello $_MTP[to_name],
+The following email invoice is from $_MTP[site] $_MTP[from_name] department.
+
+ Invoice ID:    $_MTP[invc_id]
+ Invoice Date:  $_MTP[invc_ts]
+ Date Due:      $_MTP[invc_ts_due]
+ Date Paid:     $_MTP[invc_ts_paid]
+ Billing Cycle: $_MTP[invc_bill_cycle]
+
+ Subtotal Due:  $_MTP[invc_subtotal_cost]
+ Tax-01:        $_MTP[invc_tax_01_amount] ($_MTP[invc_tax_01_percent]%)
+ Tax-02:        $_MTP[invc_tax_02_amount] ($_MTP[invc_tax_02_percent]%)
+                ----------------------
+ Total Due:     $_MTP[invc_total_cost]
+
+(see below for items included in this invoice)
+
+This invoice can be paid by clicking on the Payment Link when visiting following link (requires login):
+ $_MTP[invc_url]
+
+Thank you for continuing to choose $_MTP[site] for your web service needs.
+
+ $_MTP[from_name]
+ $_MTP[from_email]
+
+The following is a list of items included in this invoice:
+-------------------
+$_MTP[iitems]
+-------------------
+
+/**************************************************************
+ * Template ID:	10
+ * Name:		email_domain_acc_activate
+ * Text:		see below
+**************************************************************/
+Hello $_MTP[to_name],
+
+Welcome!  Thank you for choosing $_MTP[site] for your hosting needs.
+
+This email contains vital information about your server account. Please read it thoroughly and print these pages or copy to a safe place.
+
+-------------------------------------------------------------
+1.	General Client Profile Information
+-------------------------------------------------------------
+
+$_MTP[cl_info]
+
+-------------------------------------------------------------
+2.	General Account Information
+-------------------------------------------------------------
+
+To log into your account, please access:
+
+$_MTP[si_cp_url]
+ or:
+https://$_MTP[si_ip]:$_MTP[si_cp_url_port]/login.php3
+
+Server Name:	$_MTP[si_name]
+IP Address:		$_MTP[si_ip]  (shared)
+Domain Name:	$_MTP[dom_domain]
+POP Server:		mail.$_MTP[dom_domain]
+SMTP Server:	mail.$_MTP[dom_domain]
+
+Nameservers:	$_MTP[si_ns_01]  (IP: $_MTP[si_ns_01_ip])
+				$_MTP[si_ns_02]  (IP: $_MTP[si_ns_02_ip])
+
+Plesk Username:	$_MTP[dom_user_name_cp]
+Plesk Password:	$_MTP[dom_user_pword_cp]
+
+FTP Username:	$_MTP[dom_user_name_ftp]
+FTP Password:	$_MTP[dom_user_pword_ftp]
+FTP URL:		ftp.$_MTP[dom_domain]  (once resolved)
+
+Please remember that it will take a short time for your Registrar to process the delegation request and for this new DNS to propagate around the internet. During that time, you will not be able to access this site as normal through a web browser. However, you can still access your site during this period by pointing your browser to:
+
+		http://$_MTP[si_ip]/~$_MTP[dom_user_name_ftp]
+
+Please note that CGI and PHP will not function properly while view your site through this special IP address. It is just a temporary measure to assist you in preparing your site while your new DNS transfer around the net.
+
+You can upload your site by pointing your FTP software to your shared IP address ($_MTP[si_ip]). This means that you do not have to wait for your domain name to be transferred to our servers before you can upload your site. Once your domain has fully propagated around the net, you will be able to access your FTP account via your own domain name.
+
+
+-------------------------------------------------------------
+3.	Once your domain resolves:
+-------------------------------------------------------------
+
+	Your webmail URL is:	http://webmail.$_MTP[dom_domain]
+
+	Your Webstats URL is:	http://$_MTP[dom_domain]/webstat/
+	(stats can also be viewed from control panel)
+
+
+-------------------------------------------------------------
+4.	Setting Up An Email Account
+-------------------------------------------------------------
+
+	Before you can start sending or receiving email, you must
+	set up at least one email account.  To do this, please
+	follow the instructions below:
+
+	1. Log in to the control panel
+		($_MTP[si_cp_url])
+		using your control panel username and password.
+
+	2. Click on the MAIL button.
+
+	3. Enter the mail name that you want to create (i.e. "bob",
+		"editor", "webmaster" etc., not the full address).
+
+	4. Click on the ADD button
+
+	5. Check/Tick the "Mailbox" box
+
+	6. Enter and confirm a password that you would like to use
+
+	7. Scroll down to the bottom and click UPDATE
+
+
+-------------------------------------------------------------
+5.	Billing Information
+-------------------------------------------------------------
+
+For increased security reasons we do not process credit cards ourselves on our servers. Depending on your selection of payment method when ordering, one of two third party processors will be used:
+
+	Paypal:			- Charge will appear as "Paypal"
+	Credit Card:	- Charge will appear as "2CheckOut.com Inc."
+
+Regardless of the method you selected, you will receive an order confirmation email detailing your order information.
+
+If your email addresses changes, please notify us of your new email address and also update your profile in the control panel via the EDIT button.
+
+
+-------------------------------------------------------------
+6.	Support Methods
+-------------------------------------------------------------
+
+When looking for information or support. Please go through the motions:
+(see $_MTP[site] on the Client Tools menu for all these links)
+
+a. FAQ Knowledgebase:
+For general and other information, browse and search our FAQ:
+
+	http://www.yoursite.com/phpcoin/mod.php?mod=faq
+
+
+b. The $_MTP[site] Community:
+We cant stress enough, the importance of joining and participating in our community forums.  Often, you can find the answers to your questions just by searching for keywords or posting a question.  There are other members who can help you out with certain things that are not covered by our normal support options (Programming etc). You can also interact with $_MTP[site] staff, give us feedback and generally discuss our service at a community level.
+
+	http://forums.yoursite.com
+
+Important note: The community is installed on a different server than the primary website. The reason for this is in the event you cannot reach the main site due to server issues, you should be able to reach the community for information and updates.
+
+
+c. HelpDesk:
+If you require assistance please contact our Technical Support Team by submitting a support form. We will be happy to assist you. All support requests MUST be done using our ticket support system, which can be accessed at:
+
+	http://www.yoursite.com/phpcoin/mod.php?mod=helpdesk
+
+
+d. Quick Chat:
+For immediate assistance, check the Quick Chat feature setup on the main site. Simply click on the "Quick Chat" link under the client Tools menu. Login and and quite possibly someone will be there who can assist you.
+
+
+e. Email Support:
+This form of support is mostly used for sales, orders, or basic questions. Please view the Contacts Info link on the main site for up-to-date links for email options.
+
+
+f. Phone Support:
+Currently, $_MTP[site] does not offer phone support.
+
+
+h. Regular Mail:
+
+	$_UVAR[CO_INFO_01_NAME]
+	c/o Customer Service
+	$_UVAR[CO_INFO_02_ADDR_01]
+	$_UVAR[CO_INFO_03_ADDR_02]
+	$_UVAR[CO_INFO_04_CITY], $_UVAR[CO_INFO_05_STATE_PROV]	$_UVAR[CO_INFO_06_POSTAL_CODE]
+	$_UVAR[CO_INFO_07_COUNTRY]
+
+	Phone:	$_UVAR[CO_INFO_08_PHONE]
+	Fax:	$_UVAR[CO_INFO_09_FAX]
+
+Once again, this email contains vital information about your account.
+Please read it thoroughly and print these pages or copy to a safe place.
+
+Thank you again for choosing $_MTP[site] as your service provider.
+
+ $_MTP[from_name]
+ $_MTP[from_email]
+
+/**************************************************************
+ * Template ID:	12
+ * Name:		email_helpdesk_tt_update
+ * Text:		see below
+**************************************************************/
+Hello $_MTP[to_name],
+The following email HelpDesk Ticket is from $_MTP[site] $_MTP[from_name] department and is the result of $_MTP[req_type].
+
+This ticket can be viewed by clicking on the following link (requires login):
+ $_MTP[tt_url]
+
+Thank you for continuing to choose $_MTP[site] for your web service needs.
+
+ $_MTP[from_name]
+ $_MTP[from_email]
+
+------------------------------
+ Ticket ID:    $_MTP[hd_tt_id]
+ Date Opened:  $_MTP[hd_tt_time_stamp]
+ Priority:     $_MTP[hd_tt_priority]
+ Category:     $_MTP[hd_tt_category]
+ Domain:       $_MTP[cd_cl_domain]
+
+ Status:       $_MTP[hd_tt_status]
+ Open/Closed:  $_MTP[hd_tt_closed]
+ Rating:       $_MTP[hd_tt_rating]
+
+ Subject:      $_MTP[hd_tt_subject]
+ Message (below):
+ ----------------
+$_MTP[hd_tt_message]
+------------------------------
+
+The following is a listing of HelpDesk Support Ticket messages to date:
+
+$_MTP[tt_msgs]
+------------------------------
+
+**************************************************************
+ * Template ID:	13
+ * Name:		email_helpdesk_tt_alert
+ * Text:		see below
+**************************************************************/
+ Ticket ID:    $_MTP[hd_tt_id]
+ Priority:     $_MTP[hd_tt_priority]
+ Subject:      $_MTP[hd_tt_subject]
+
+/**************************************************************
+ * Template ID:	15
+ * Name:		email_custom_order_request
+ * Text:		see below
+**************************************************************/
+Hello $_MTP[to_name],
+The following email from $_MTP[from_name] was sent through the $_MTP[site] Custom Order Request system, and is a copy for your records.
+
+We will be contacting you with the results of our processing the information you requested.
+
+The following client profile was created as a result of your order request. In the event you choose to place the order, you can login to place the order.
+
+-------------------
+$_MTP[cl_info]
+-------------------
+
+The following is the information you entered into the Custom Order Request form.
+
+-------------------
+$_MTP[cor_info]
+-------------------
+
+
+Thank you for continuing to choose $_MTP[site] for your web service needs.
+
+ $_MTP[from_name]
+ $_MTP[from_email]
+
+/**************************************************************
+ * Template ID:	xx
+ * Name:		email_xxxx
+ * Text:		see below
+**************************************************************/
+
