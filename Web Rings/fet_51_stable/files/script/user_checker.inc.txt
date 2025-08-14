@@ -1,0 +1,90 @@
+<?
+
+class User_checker{
+    var $pass;
+    var $saved_pass;
+
+    function check_pass(){
+        global $settings,$log;
+
+        $cookie_pass=$_COOKIE['fet_password'] or $cookie_pass='';
+
+        $wap=$_GET['wap'];
+        if($wap) $cookie_pass=$wap;
+
+        $pwf=@file($settings->data_path.'/password.dat');
+        $saved_pass=trim($pwf[0]) or $saved_pass=md5('admin');
+
+        $this->saved_pass=$saved_pass;
+
+        $this->pass=$cookie_pass;
+        if(md5($cookie_pass)==$saved_pass) return true; else return false;
+    }
+
+    function ask_pass(){
+        global $settings,$admin,$intf,$html;
+
+        $site_domain=get_domain($admin->site_url);
+        echo "<html><head><title>".$site_domain.": FET ".$settings->version.", Administrator login</title>
+        <meta http-equiv='content-type' content='text/html; charset=UTF-8'>
+        <script language='javascript'>
+        <!--
+        function fcheck(){
+            document.cookie='fet_password='+document.login.loginpass.value;
+            return true;
+        }
+        //-->
+        </script>
+        </head>
+        <body text='".$intf->color['LP_TEXT']."' bgcolor='".$intf->color['LP_BACKGORUND']."'>
+        <table width=100% border=0 cellpadding=0 cellspacing=0 height=60% bgcolor='".$intf->color['LP_BACKGORUND']."'>
+        <tr align=center><td valign=middle>
+        <form name=login method=post onsubmit='return fcheck()'>
+        <table width=400 height=178 cellpadding='0' cellspacing='1' border=0 bgcolor='".$intf->color['LP_FORMBORDER']."'>
+        <tr bgcolor='".$intf->color['LP_FORMBACKGORUND']."' align=center><td>
+        <b><font face=Verdana size=5>FET ".$settings->version."</font></b><br><br>
+        <b><font face=Verdana size=2>Enter password:</font></b>
+        <br><br>";
+        $html->input(13,'bold','password','loginpass',15,20,'');
+        echo '<br><br>';
+        $html->button('submit','Send Password','light');
+        echo "</td></tr></table>
+        </form>
+        </td></tr></table>
+        </body></html>";
+        exit;
+    }
+
+    function save_pass(){
+        global $settings,$function,$log;
+
+        $old_posted=$_POST['old_password'];
+        $new_posted_1=$_POST['new_password_1'];
+        $new_posted_2=$_POST['new_password_2'];
+        if($new_posted_1!=$new_posted_2) $function->settings(true,1);
+
+        $old_md5=md5($old_posted);
+        if($this->saved_pass!=$old_md5) $function->settings(true,2);
+
+        $fp=@fopen($settings->data_path.'/password.dat.new','w');
+        if(!$fp){
+            $log->error('New password write error');
+            $function->settings(true,3);
+        }
+        $wf=false;
+        @flock($fp,LOCK_EX);
+        if(!@fwrite($fp,md5($new_posted_1)));
+        @flock($fp,LOCK_UN);
+        @fclose($fp);
+        if($wf) $function->settings(true,3);
+        @chmod($settings->data_path.'/password.dat.new',0777);
+        @rename($settings->data_path.'/password.dat.new',$settings->data_path.'/password.dat');
+        setcookie('fet_password',$new_posted_1);
+        $function->settings(true,4);
+    }
+}
+
+
+
+
+?>
