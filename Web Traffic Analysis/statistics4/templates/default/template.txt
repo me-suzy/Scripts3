@@ -1,0 +1,6 @@
+name = SHOWlog default
+version = 2.4.2
+date = 2005-09-19
+author = Daniel Sokoll
+screenshot = default.jpg
+file = default.zip
