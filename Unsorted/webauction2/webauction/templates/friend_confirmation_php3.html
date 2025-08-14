@@ -1,0 +1,122 @@
+<?
+/*
+   Copyright (c), 1999, 2000 - phpauction.org
+   Copyright (c), 2001, 2002 - webauction.de.vu
+
+   Lizenz siehe lizenz.txt & license
+
+   Die neueste Version kostenfrei zum Download unter:
+   http://webauction.de.vu
+
+*/
+
+?>
+
+
+
+<SCRIPT Language=Javascript>
+
+
+
+function SubmitFriendForm(){
+
+	document.friend.submit();
+
+}
+
+
+
+
+
+function ResetFriendForm(){
+
+	document.friend.reset();
+
+}
+
+
+
+</SCRIPT>
+
+<TABLE WIDTH="100%" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING="0" CELLSPACING="0">
+
+<TR>
+
+<TD>
+
+<CENTER>
+
+<FONT FACE="Verdana,Arial, Helvetica, sans-serif" SIZE="2">
+
+<A HREF="item.php?SESSION_ID=<? print $sessionIDU; ?>&id=<? print $TPL_auction_id; ?>"><? print $std_font.$MSG_138; ?></FONT></A>
+
+ |
+
+<A HREF="friend.php?SESSION_ID=<? print $sessionIDU; ?>&id=<? print $TPL_auction_id; ?>"><? print $std_font.$MSG_147; ?></FONT></A>
+
+<!--
+
+<A HREF="bidhistory.php?SESSION_ID=<? print $sessionIDU; ?>&id=<? print $TPL_auction_id; ?>"><? print $std_font.$MSG_105; ?></FONT></A>
+
+
+
+<A HREF="seller.php?id=<? print $TPL_auction_id; ?>"><? print $std_font.$MSG_107; ?></A>
+
+-->
+
+</CENTER>
+
+
+
+
+
+  	 <BR><CENTER><B>
+
+  	 <?
+
+  	 	print $tlt_font.$MSG_139;
+
+  	 ?>
+
+  	 </FONT></B></CENTER>
+
+
+
+
+
+	<CENTER>
+
+	<? print $std_font; ?>
+
+	<BR><BR><B><? print $MSG_017." : ".$item_title; ?></B>
+
+	</FONT>
+
+    </CENTER>
+
+    
+	<CENTER>
+
+	<? print $std_font; ?>
+
+	<BR><BR><B><? print $MSG_146." ".$friend_email; ?></B>
+
+	</FONT>
+
+    </CENTER>
+
+	<BR><BR><BR>
+
+
+
+
+
+
+
+
+
+</TD>
+
+</TR>
+
+</TABLE>
