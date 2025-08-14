@@ -1,0 +1,4 @@
+  <tr bgcolor="{firstaltcolor}"> 
+   <td bgcolor="{firstaltcolor}" width="7" align="center" valign="top"><smallfont>&raquo;</smallfont></td>
+   <td onMouseOver="style.backgroundColor='{tableheadbgcolor}'; style.cursor='hand'" onMouseOut="style.backgroundColor='{firstaltcolor}';" onClick="location.href='showthread.php?s=&threadid=$threadid&goto=lastpost'">&nbsp;<a href="showthread.php?s=&threadid=$threadid&goto=lastpost">$title</a> <smallfont color="{pagebgcolor}">[$replycount]-[$lastposter]</smallfont></td>
+  </tr>
