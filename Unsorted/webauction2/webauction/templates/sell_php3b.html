@@ -1,0 +1,450 @@
+<?
+/*
+   Copyright (c), 1999, 2000 - phpauction.org
+   Copyright (c), 2001, 2002 - webauction.de.vu
+
+   Lizenz siehe lizenz.txt & license
+
+   Die neueste Version kostenfrei zum Download unter:
+   http://webauction.de.vu
+
+*/
+
+?>
+
+
+
+
+<SCRIPT Language=Javascript>
+
+
+
+
+
+
+
+function SubmitSellForm(){
+
+
+
+        document.sell.submit();
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+function ResetSellForm(){
+
+
+
+        document.sell.reset();
+
+
+
+}
+
+
+
+
+
+
+
+function SubmitPrevForm(){
+
+
+
+        document.preview.submit();
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+function ResetPrevForm(){
+
+
+
+        document.preview.reset();
+
+
+
+}
+
+
+
+
+
+
+
+</SCRIPT>
+
+
+
+
+
+<TABLE WIDTH="765" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING=0 CELLSPACING=0>
+
+<TR>
+
+<TD>
+
+<CENTER>
+        <B> 
+        <?
+
+   		print $tlt_font.$MSG_028;
+
+   ?>
+        </B> 
+        <? print $category_merk; ?>
+        <!-- Festpreis 
+  <FORM ACTION="festpreis.php" METHOD="post">
+  <INPUT TYPE=HIDDEN NAME="SESSION_ID" VALUE="<? print $sessionIDU; ?>">
+  <INPUT TYPE=HIDDEN NAME="category" VALUE="<? print $id; ?>">
+  <INPUT TYPE=HIDDEN NAME="cat_id" VALUE="<? print $id; ?>">
+  <INPUT TYPE=HIDDEN NAME="action" VALUE="first">
+  <INPUT TYPE=HIDDEN NAME="user" VALUE="<? print $user; ?>">
+  <INPUT TYPE=HIDDEN NAME="name" VALUE="<? print $name; ?>">
+  <INPUT TYPE=HIDDEN NAME="password" VALUE="<? print $password; ?>">
+  <INPUT TYPE=HIDDEN NAME="country" VALUE="<? print $country; ?>">
+
+  <input type="submit" name="" value="Ihren Artikel lieber zum Festpreis verkaufen!">
+
+  </form>
+-->
+        <!-- Auktion -->
+        <BR>
+
+  <FORM NAME=sell ACTION="sell.php" METHOD="post" ENCTYPE="multipart/form-data">
+
+  <INPUT TYPE=HIDDEN NAME="SESSION_ID" VALUE="<? print $sessionIDU; ?>">
+          <!---
+  <INPUT TYPE=HIDDEN NAME="category" VALUE="<? print $id; ?>">
+  <INPUT TYPE=HIDDEN NAME="cat_id" VALUE="<? print $id; ?>">
+-->
+          <input type=HIDDEN name="category" value="<? print $cat_id_new; ?>">
+          <input type=HIDDEN name="cat_id" value="<? print $cat_id_new; ?>">
+          <input type=HIDDEN name="action" value="first">
+          <input type=HIDDEN name="country" value="<? print $country; ?>">
+          <TABLE WIDTH="100%" BORDER="0" CELLPADDING="5">
+            <TR>
+              <TD></TD>
+              <TD WIDTH="486">
+                <table cellpadding=2 width="227">
+                  <?
+						if(!$HTTP_COOKIE_VARS["$LOGGED_IN_COOKIE"])
+						{
+					?>
+                  <tr> 
+                    <td align=right> 
+                      <? print $std_font.$MSG_047; ?>
+                    </td>
+                    <td> 
+                      <input type=text name="nick" size=15 maxlength=15 value="<? print $nickH; ?>">
+                    </td>
+                  </tr>
+                  <?
+						}
+						else
+						{
+					?>
+                  <tr> 
+                    <td></td>
+                    <td>&nbsp; 
+                  </tr>
+                  <?
+						}
+					?>
+                  <tr> 
+                    <td align=right> 
+                      <? print $std_font.$MSG_048; ?>
+                    </td>
+                    <td> 
+                      <input type=password name="password" size=15 maxlength=15 value="<? print $password; ?>">
+                    </td>
+                  </tr>
+                </table>
+              </TD>
+            </TR>
+            <TR> 
+              <TD> </TD>
+              <TD WIDTH="486"> 
+                <? print $err_font; ?>
+                <B> 
+                <? print $TPL_error_value; ?>
+                </B></TD>
+            </TR>
+            <!--------------- item title --------------------->
+            <TR> 
+              <TD WIDTH="260" VALIGN="top" ALIGN="right"> <B> 
+                <?
+
+        	print $std_font.$MSG_017;
+
+        ?>
+                </B> </TD>
+              <TD WIDTH="486"> 
+                <INPUT TYPE=text NAME=title SIZE=40 maxlength=30 VALUE="<? print $titleH; ?>">
+              </TD>
+            </TR>
+            <!------------------ item description ---------------->
+            <TR> 
+              <TD WIDTH="204" VALIGN="top" ALIGN="right"> 
+                <? print $std_font; ?>
+                <B> 
+                <?
+
+   		print $std_font.$MSG_018;
+
+   ?>
+                </B> </TD>
+              <TD WIDTH="486"> 
+                <TEXTAREA ROWS=10 COLS=38 NAME=description><? print $descriptionH; ?></TEXTAREA>
+              </TD>
+            </TR>
+            <!------------------------- URL of photo ------------------>
+            <TR> 
+              <TD WIDTH="204" VALIGN="top" ALIGN="right"> 
+                <? print $std_font; ?>
+                <B> 
+                <?
+
+   		print $std_font.$MSG_019;
+
+   ?>
+                </B> </TD>
+              <TD WIDTH="486"> 
+                <INPUT TYPE=RADIO NAME="imgtype" VALUE="0" <? print $TPL_imgtype1_SELECTED; ?>>
+                <INPUT TYPE=text SIZE=40 NAME=pict_url VALUE="keinbild.gif">
+              </TD>
+            </TR>
+            <!------------------------- upload photo ------------------------->
+            <TR> 
+              <TD WIDTH="204" VALIGN="top" ALIGN="right"> 
+                <? print $std_font; ?>
+                <B> 
+                <?
+
+   		print $std_font.$MSG_256;
+
+   ?>
+                </B> </TD>
+              <TD WIDTH="486"> 
+                <INPUT TYPE=RADIO NAME="imgtype" VALUE="1" <? print $TPL_imgtype2_SELECTED; ?>>
+                <INPUT TYPE=file SIZE=20 NAME=userfile>
+                <INPUT TYPE=HIDDEN NAME="MAX_FILE_SIZE" VALUE="<? print $MAX_UPLOAD_SIZE; ?>">
+              </TD>
+            </TR>
+            <!------------------------- auction type -------------------------->
+            <TR> 
+              <TD WIDTH="204" VALIGN="middle" ALIGN="right"> <B> 
+                <?
+
+   		print $std_font.$MSG_257;
+
+   ?>
+                </B> </TD>
+              <TD WIDTH="486"> 
+                <? print $TPL_auction_type; ?>
+              </TD>
+            </TR>
+            <!------------------------- quantity of items ------------------------>
+            <TR> 
+              <TD WIDTH="204" VALIGN="middle" ALIGN="right"> <B> 
+                <?
+
+
+
+   		print $std_font.$MSG_258;
+
+   ?>
+                </B> </TD>
+              <TD WIDTH="486"> 
+                <INPUT TYPE=TEXT NAME="iquantity" SIZE="5" VALUE="<? print $iquantity; ?>">
+              </TD>
+            </TR>
+            <!------------------------------ starting bid ------------------------->
+            <TR> 
+              <TD WIDTH="204" VALIGN="top" ALIGN="right"> <B> 
+                <?
+
+
+
+   		print $std_font.$MSG_020;
+
+   ?>
+                </B> </TD>
+              <TD WIDTH="486"> 
+                <? print $std_font.$MSG_267; ?>
+                <INPUT TYPE=text SIZE = 10 NAME=minimum_bid VALUE="<? print $minimum_bid; ?>">
+              </TD>
+            </TR>
+            <!--------------------------------- reserved price ------------------------->
+            <TR> 
+              <TD WIDTH="204"  VALIGN="top" ALIGN="right"> <B> 
+                <?
+
+   		print $std_font.$MSG_021;
+
+   ?>
+                </B> </TD>
+              <TD WIDTH="486"> 
+                <INPUT TYPE=radio NAME="with_reserve" VALUE="no" <? print $TPL_without_reserve_selected; ?>>
+                <? print $std_font; ?>
+                No 
+                <INPUT TYPE=radio NAME="with_reserve" VALUE="yes"
+
+   <? print $TPL_with_reserve_selected; ?>>
+                <? print $std_font.$MSG_030.$MSG_267; ?>
+                <INPUT TYPE=text NAME="reserve_price" SIZE=10 VALUE="<? print $reserve_price; ?>">
+                <? print $std_font.$currency; ?>
+              </TD>
+            </TR>
+
+            <!--------------------------------- Sofortkauf ------------------------->
+            <TR> 
+              <TD WIDTH="204"  VALIGN="top" ALIGN="right"> <B> 
+                <? print $std_font."Sofort-Kauf" ?>
+                </B> </TD>
+              <TD WIDTH="486"> 
+                <input type=radio name="mit_sofortkauf" value="no" <? print $TPL_without_reserve_selected; ?>>
+                  <? print $std_font; ?>
+                  No
+                  <input type=radio name="mit_sofortkauf" value="yes"
+
+   <? print $TPL_with_reserve_selected; ?>>
+                <? print $std_font.$MSG_030.$MSG_267; ?>
+                <input type=text name="sofortkauf" size=10 value="<? print $sofortkauf; ?>">
+                  <? print $std_font.$currency; ?>
+              </TD>
+            </TR>
+            <!------------------------------------- duration ---------------------------->
+            <TR> 
+              <TD WIDTH="204"  VALIGN="top" ALIGN="right"> <B> 
+                <?
+
+   		print $std_font.$MSG_022;
+
+   ?>
+                </B> </TD>
+              <TD WIDTH="486"> 
+                <? print $TPL_durations_list ?>
+              </TD>
+            </TR>
+            <!------------------------------------ country -------------------------------->
+            <TR> 
+              <TD WIDTH="204"  VALIGN="top" ALIGN="right"> <B> 
+                <?
+
+   		print $std_font.$MSG_023;
+
+   ?>
+                </B> </TD>
+              <TD WIDTH="486"> 
+                <? print $TPL_countries_list; ?>
+              </TD>
+            </TR>
+            <!------------------------------------ zip code -------------------------------->
+            <TR> 
+              <TD WIDTH="204" VALIGN="top" ALIGN="right"> <B> 
+                <?
+
+   		print $std_font.$MSG_024;
+
+   ?>
+                </B> </TD>
+              <TD WIDTH="486"> 
+                <INPUT TYPE=text SIZE=8 NAME=location_zip VALUE="<? print $zip; ?>">
+              </TD>
+            </TR>
+            <!--------------------------------- shipping --------------------------------------->
+            <TR> 
+              <TD WIDTH="204" VALIGN="top" ALIGN="right"> <B> 
+                <?
+
+   		print $std_font.$MSG_025;
+
+   ?>
+                </B> </TD>
+              <TD WIDTH="486"> 
+                <INPUT TYPE=radio NAME=shipping VALUE="1" <? print $TPL_shipping1_value; ?>>
+                <? print $std_font.$MSG_031; ?>
+                <BR>
+                <INPUT TYPE=radio NAME=shipping VALUE="2" <? print $TPL_shipping2_value; ?>>
+                <? print $std_font.$MSG_032; ?>
+                <BR>
+                <INPUT TYPE=checkbox NAME=international VALUE="1" <? print $TPL_international_value; ?>>
+                <? print $std_font.$MSG_033; ?>
+                <BR>
+              </TD>
+            </TR>
+            <!--------------------------------- payment methods ---------------------------------------->
+            <TR> 
+              <TD WIDTH="204" VALIGN="top" ALIGN="right"> <B> 
+                <?
+
+   		print $std_font.$MSG_026;
+
+   ?>
+                </B> </TD>
+              <TD WIDTH="486"> 
+                <? print $TPL_payments_list; ?>
+              </TD>
+            </TR>
+            <!------------------------------------ category ----------------------------------------------->
+            <TR> 
+              <TD WIDTH="204" VALIGN="top" ALIGN="right"> <B> 
+                <?
+
+   		print $std_font.$MSG_027;
+
+   ?>
+                </B> </TD>
+              <TD WIDTH="486"> <font color="#000000" face="arial" size="2"> 
+                <? print $TPL_categories_string; ?>
+                <input type=HIDDEN name="category_new" value="<? print $TPL_category_new; ?>">
+                <input type=HIDDEN name="cat_id_new" value="<? print $TPL_cat_id_new; ?>">
+                </font></TD>
+            </TR>
+            <!------------------------------------ suggest a new category ---------------------------------------------->
+            <!--------------------------------------- submit/reset --------------------------------------->
+            <TR> 
+              <TD WIDTH="204">&nbsp;</TD>
+              <TD WIDTH="486"> 
+                <INPUT TYPE=submit NAME="">
+                <INPUT TYPE=reset NAME="">
+              </TD>
+            </TR>
+          </TABLE>
+
+
+
+</FORM>
+
+</center></TD>
+
+</TR>
+
+</TABLE>
+
+
+
