@@ -1,0 +1,1 @@
+IMPORTANT: To use these files, move them to your wimpy folder. These files must be in the same folder on your server as wimpy.php.
