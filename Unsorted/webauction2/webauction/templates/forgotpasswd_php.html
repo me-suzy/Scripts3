@@ -1,0 +1,86 @@
+<?
+/*
+   Copyright (c), 1999, 2000 - phpauction.org
+   Copyright (c), 2001, 2002 - webauction.de.vu
+
+   Lizenz siehe lizenz.txt & license
+
+   Die neueste Version kostenfrei zum Download unter:
+   http://webauction.de.vu
+
+*/
+
+?>
+
+
+
+
+
+<TABLE WIDTH="100%" CELLPADDING=0 CELLSPACING=0 BGCOLOR="#FFFFFF" BORDER=0>
+
+<TR>
+
+<TD>
+
+<? print $tlt_font; ?>
+
+
+<CENTER>
+        <B> <? print $MSG_215; ?> </B> 
+
+<?
+
+	echo $err_font.$TPL_errmsg;
+
+?>
+
+
+
+
+
+<FORM NAME="user_login" ACTION="<? print basename($PHP_SELF); ?>" METHOD=POST>
+
+          <TABLE WIDTH="50%" CELLSPACING="0" CELLPADDING="0" BORDER="0">
+            <TR>
+              <TD colspan="2"> <? print $std_font; ?> <? print $MSG_216; ?>
+              </TD>
+            </TR>
+            <TR>
+              <TD colspan="2">
+			  <font face="Arial,Helvetica,sans-serif" size="2">
+			  Sie haben Ihr Passwort vergessen?<br>
+			  Kein Problem &mdash; geben Sie einfach Ihren aktuellen Benutzernamen in das untere
+			  Textfeld ein und klicken Sie auf &quot;Anfrage senden&quot;.<br>&nbsp;<br>
+			  Ihnen wird dann umgehend ein neues Passwort an die von Ihnen angegebene e-Mail-Adresse
+			  geschickt.<br>&nbsp;<br>
+			  </font>
+              </TD>
+            </TR>
+			<TR>
+              <TD> <? print $std_font; ?> <B><? print $MSG_003; ?> :</B> </TD>
+              <TD>
+                <INPUT TYPE="text" NAME="TPL_username" SIZE="25" VALUE="">
+              </TD>
+            </TR>
+            <TR>
+              <TD>&nbsp;</TD>
+              <TD> <BR>
+                <INPUT TYPE=submit NAME="">
+              </TD>
+            </TR>
+          </TABLE>
+
+	      <INPUT type="hidden" NAME="action" VALUE="ok">
+          <BR>
+          <BR>
+        </FORM>
+
+</CENTER>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+
