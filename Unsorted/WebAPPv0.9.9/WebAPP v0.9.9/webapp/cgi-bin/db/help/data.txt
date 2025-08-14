@@ -1,0 +1,3 @@
+Can I edit the Help?|Yes, you can!
+Can I add more helps?|Yes you can!
+How do I add helps?|Through the admin screen of course!
