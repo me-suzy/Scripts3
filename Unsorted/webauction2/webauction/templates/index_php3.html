@@ -1,0 +1,400 @@
+<?
+/*
+   Copyright (c), 1999, 2000 - phpauction.org
+   Copyright (c), 2001, 2002 - webauction.de.vu
+
+   Lizenz siehe lizenz.txt & license
+
+   Die neueste Version kostenfrei zum Download unter:
+   http://webauction.de.vu
+
+*/
+
+?>
+
+
+
+
+<table width="764" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF" ALIGN=CENTER>
+
+  <tr  valign=top>
+
+        
+    <td width="23%" bgcolor="#ffffff"> 
+      <!--            <TD WIDTH="30%"> -->
+      <!-- ** Tabla Categorias ** -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="3">
+
+             <tr>
+
+                 <td bgcolor="#0066CC">
+
+                    <center>
+
+                    <? print $std_font; ?>
+
+                    <FONT COLOR="#FFFFFF"><B><? print $MSG_276; ?> </B></FONT>
+
+                    
+
+                    </center>
+
+                  </td>
+
+              </tr>
+
+              <tr valign="top" BGCOLOR="#ffffff">
+
+                  <td>
+
+                      <? print $TPL_categories_value; ?>
+
+                   </td>
+
+               </tr>
+
+              <tr BGCOLOR="#ffffff">
+
+                  <td height="100" align="left" valign="bottom">
+
+                    <?
+            
+
+			//-- Get users and auctions counters
+
+
+
+			$query = "select * from ".$dbfix."_counters";
+
+			$result_counters = mysql_query($query);
+
+			if($result_counters){
+
+				$counters  = $sml_font."<B>STATISTIK:<br></B><br>".mysql_result($result_counters,0,"users")."&nbsp;".strtoupper($MSG_231)."<br>".mysql_result($result_counters,0,"auctions")."&nbsp;".strtoupper($MSG_232)."</FONT>";
+
+				print $counters;
+
+			}
+
+            
+
+             ?>
+
+                   </td>
+
+               </tr>
+
+              </tr>
+
+              
+          </table>
+
+      <!-- ** ** -->
+
+
+
+
+
+        </td>
+
+        
+    <td width="61%" VALIGN="top"> 
+      <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="400">
+
+
+                <!-- ** LAST AUCTIONS INSERTED ** -->
+
+                        <TR VALIGN="top">
+
+                                <TD WIDTH="8%">
+
+                                        <IMG SRC="./images/transparent.gif" WIDTH="30" BORDER="0">
+
+                                </TD>
+
+                                <TD WIDTH="92%">
+
+
+
+                    <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+             <tr>
+
+                 <td bgcolor="#0066CC">
+
+                    <center>
+
+                    <? print $std_font; ?>
+
+                    <FONT COLOR="#FFFFFF"><B><? print $MSG_1005; ?> </B></FONT>
+
+                    
+
+                    </center>
+
+                  </td>
+
+              </tr>
+                      <TR>
+
+                        <TD COLSPAN=2>
+
+                            <? print $std_font; ?>
+        
+                            <B><? print $MSG_278; ?></B>
+
+                            
+        
+                                            <table COLS=3><tr><? print $TPL_last_auctions_value; ?></tr></table>
+                        </TD>
+
+                                        </TR>
+
+                                        </TABLE>
+
+                                </TD>
+
+                        </TR>
+
+
+                <!-- ** HIGHER BIDS ** -->
+
+                        <TR VALIGN="top">
+
+                                <TD WIDTH="8%">
+
+
+
+                                        <IMG SRC="./images/transparent.gif" WIDTH="30">
+
+                                </TD>
+
+                                <TD WIDTH="92%">
+
+                                        <BR>
+
+            <TABLE border="0" cellpadding="5" cellspacing="0" width=\"100%\">
+
+              <TR>
+
+                <TD colspan=2> <IMG src="./images/linea.gif" width="370" height="8"><BR>
+
+                <? print $std_font; ?>
+
+                <B><? print $MSG_279; ?></B><BR>
+
+                <table COLS=3><tr><? print $TPL_maximum_bids; ?></tr></TABLE>
+
+                </TD>
+
+              </TR>
+
+            </TABLE>
+
+          </TD>
+
+                        </TR>
+
+
+
+                <!-- ** ENDING SOON ** -->
+
+
+
+                        <TR VALIGN="top">
+
+
+
+          <TD WIDTH="8%"> <IMG SRC="./images/transparent.gif" WIDTH="30">
+
+          </TD>
+
+
+
+          <TD WIDTH="92%"> <BR>
+
+            <TABLE border="0" cellpadding="5" cellspacing="0" width="90%">
+              <TR> 
+                <TD colspan=2> <IMG src="./images/linea.gif" width="370" height="8"><BR>
+                  <? print $std_font; ?>
+                  <B> 
+                  <? print $MSG_280; ?>
+                  </B> <BR>
+                  <table COLS=3><tr>
+                    <? print $TPL_ending_soon_value; ?></tr>
+                  </table>
+                </TD>
+              </TR>
+              <TR> 
+                <TD colspan=2 height="15">&nbsp;</TD>
+              </TR>
+              <TR>
+                <TD colspan=2>
+                  <p><img src="./images/linea.gif" width="370" height="8"></p>
+                  <p> 
+                    <? print $std_font; ?>
+                    <b> 
+                    <? print $MSG_1004; ?></b>
+                    <table COLS=3><tr><? print $TPL_hot_auctions; ?></tr></TABLE>
+                  <p><font color="#FFFFFF" size="1" face="Arial"><strong> </strong></font></p>
+                </TD>
+              </TR>
+            </TABLE>
+
+              </TD>
+
+                        </TR>
+
+                <!-- end table started with ** LAST AUCTIONS INSERTED ** -->
+            
+            </TABLE>
+
+      <BR>
+    </td>
+
+
+    <td width="16%" valign="top" bgcolor="#ffffff"> 
+      <!-- ** Tabla <? print $std_font.$MSG_164; ?>s ** -->
+
+      <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#FFFFFF">
+
+                  <tr>
+
+                    <td bgcolor="#0066CC">
+
+                      <center>
+
+                      <? print $std_font; ?>
+                      <FONT COLOR="#FFFFFF"><B><? print $MSG_281a; ?></B></FONT>
+                      
+                      </center>
+                    </td>
+
+                  </tr>
+
+                  <tr valign="top" BGCOLOR="#ffffff">
+
+                    <td height="100">
+                      <? print $std_font; ?>
+                      <? print $TPL_newstopics; ?>
+                      
+
+                    </td>
+
+                  </tr>
+
+                </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#FFFFFF">
+
+                  <tr>
+
+                    <td bgcolor="#0066CC">
+
+                      <center>
+
+                      <? print $std_font; ?>
+                      <FONT COLOR="#FFFFFF"><B><? print $MSG_281; ?></B></FONT>
+                      
+                      </center>
+                    </td>
+
+                  </tr>
+
+                  <tr valign="top" BGCOLOR="#ffffff">
+
+                    <td height="100">
+                      <? print $std_font; ?>
+                      <? print $TPL_helptopics; ?>
+                      
+
+                    </td>
+
+                  </tr>
+
+                </table>
+
+      <!-- Tabla Te Informamos ** -->
+
+                <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#0066CC">
+
+                  <tr>
+
+                    <td>
+
+                      <center>
+
+                      <? print $std_font; ?>
+
+                      <FONT COLOR="#FFFFFF"><B><? print $MSG_282; ?></B></FONT>
+
+                      </center>
+
+                    </td>
+
+                  </tr>
+
+                  <tr valign="top" BGCOLOR="#ffffff">
+
+                    <td height="50">
+            <p><b><a href="forgotpasswd.php"><font face=Verdana size=2>Passwort vergessen?</font></a></b></p>
+            <p>&nbsp;</p>
+          </td>
+
+                  </tr>
+
+                </table>
+
+      <!-- Tabla Te Informamos ** -->
+
+                <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#0066CC">
+
+                  <tr>
+
+                    <td>
+
+                      <center>
+
+                      <? print $std_font; ?>
+
+                      <FONT COLOR="#FFFFFF"><B><? print "Regionale Suche" ?></B></FONT>
+
+                      </center>
+
+                    </td>
+
+                  </tr>
+
+                  <tr valign="top" BGCOLOR="#ffffff">
+
+                    <td height="200">
+
+
+
+      <form method="GET" action="city_search.php">
+       <input type="hidden" name="action" value="0">
+       <p> <br>
+        <input type="text" name="city" size="18" value="Name der Stadt">
+        <input type="submit" value="Suchen">
+       </p>
+      </form>
+    <p>
+
+      <form method="GET" action="search2.php">
+       <input type="hidden" name="query_search" value="2">
+       <input type="hidden" name="action" value="0">
+       <p><br>
+        <input type="text" name="q" size="10" value="PLZ">
+       <input type="submit" value="Suchen">
+       </p>
+      </form>
+</td>
+
+                  </tr>
+
+                </table>
+
+        </td>
+
+      </tr>
+
+
+</TABLE>
