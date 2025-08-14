@@ -1,0 +1,46 @@
+<html>
+<head>
+<title> keywoRRds - webwoRRks </title>
+<link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body bgcolor="#FFFFFF">
+
+<table border="0" cellpadding="0" cellspacing="0" width="468px">
+<tr><td><img src="./title.jpg" width="468px" height="60px" alt="webwoRRks - keywoRRds" title="webwoRRks - keywoRRds" /></td></tr>
+<tr><td>&nbsp;</td></tr>
+<tr><td align="center"><a href="index.htm">Welcome page!</a> - <a href="admin.htm"><b>Administration</b></a> - <a href="files.htm"><b>Finishing...</b></a></td></tr>
+<tr><td><hr width="468px" color="#3A4E58" /></td></tr>
+<tr><td><p><h3>setup.php</h3><br />
+Before anything else can go ahead, you must customize the file called <i>setup.php</i>. To do this, open it in
+a plain text editor, such as notepad.<br />&nbsp;<br />
+This should all be quite straight-forward.  The MySQL information should be given to you when your
+information is sent to you about your account from your websites host, if they provide you with MySQL access.<br />
+the <i>database name</i> is in case your host only provides you with one database, or you have to set up each
+database you want manually.  If either of the afformentioned cases are true, change this to your databases name,
+for example:<br />
+<ol><li>I sign up to my host.  The information on my account is sent to me, and it has the following included:<br />
+	<ul><li><i>The MySQL server address is "127.0.0.1"</i></li>
+	<li><i>You have been given one database.  The database name is "mydb1234".</i></li>
+	<li><i>Your database login information is as follows;</i></li>
+	<li><i>Username: "user12345"</i></li>
+	<li><i>Password: "qwerty"</i></li></ul> </li>
+	<li>I change the variables values in setup.php as follows:<br />
+	<ul><li><code>$my_host = "127.0.0.1";</code></li>
+	<li><code>$my_user = "user12345";</code></li>
+	<li><code>$my_pass = "qwerty";</code></li>
+	<li><code>$my_db = "mydb1234";</code></li></ul> </li>
+	<li>I save the setup.php file.</li> </ol> <br />&nbsp;<br />
+
+This brings us to the following variables in the setup file, which should be pretty obvious:<br />
+<code>$username = "Admin";<br />
+$password = "qwerty";</code><br />
+This is the login information for the administration page.  <b>Make sure you change it</b> before putting these files
+on your server.  Change the words "Admin" and "qwerty" for any other alpha-numerical strings you like, but be sure to
+keep them contained in quotation marks (" and ")!<br />&nbsp;<br />
+<br />&nbsp;<br />
+<center><a href="admin.htm">Click here to learn how to use the admin panel -&gt;&gt;</a></center>
+</p></td></tr>
+</table>
+
+</body>
+</html>
