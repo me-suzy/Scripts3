@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+<TITLE>Copy &amp; Paste Codes</TITLE>
+<STYLE>
+BODY { font:10px verdana;background:#EEEEEE }
+TABLE { border:1px #CCCCCC solid;background:white }
+TD { font:10px verdana }
+a:link { color:blue }
+a:visited { color:blue }
+a:active { color:red }
+a:hover { color:red;text-decoration:none }
+.mb1 { font-weight:bold }
+.s { background:#EEEEFE;font:10px verdana;border:1px #000000 solid }
+.t { border:1px #000000 solid;color:navy;background:#FFFFFF }
+</STYLE>
+</HEAD>
+<BODY>
+<CENTER>
+<H3>Copy &amp; Paste Codes</H3>
+
+<BR><TABLE WIDTH=600 CELLPADDING=20 CELLSPACING=0 BORDER=0><TR><TD VALIGN=TOP>
+<P ALIGN=RIGHT><A HREF="javascript:history.go(-1)">Back to Control Panel</A>
+<P>1. This javasacript code is for the centered pop-up windows. Paste the following code between the &lt;HEAD&gt; and &lt;/HEAD&gt; tags on every page where the Email Form, Guestbook and Mailing List links will be:
+<P STYLE="color:red">&lt;SCRIPT LANGUAGE="javascript"&gt;
+<BR>&lt;!--
+<BR>function linked(url) {
+<BR>winl = (screen.width - 600) / 2;
+<BR>wint = (screen.height - 450) / 2;
+<BR>winprops = 'height=450, width=600, top='+wint+', left='+winl+', scrollbars, resizable';
+<BR>win = window.open(url, 'linked', winprops);
+<BR>win.self.focus();
+<BR>}
+<BR>// --&gt;
+<BR>&lt;/SCRIPT&gt;
+
+<P>2. Add the following link codes to your pages:
+<P><B>Email Form</B>
+<BR><SPAN STYLE="color:red">&lt;A HREF="javascript:linked('web/email.php');"&gt;</SPAN>(Add image or text)<SPAN STYLE="color:red"></A>&lt;/A&gt;</SPAN>
+
+<P><B>Guestbook</B>
+<BR><SPAN STYLE="color:red">&lt;A HREF="javascript:linked('web/guestbook.php?action=read');"&gt;</SPAN>(Add image or text)<SPAN STYLE="color:red"></A>&lt;/A&gt;</SPAN>
+
+<P><B>Mailing List</B>
+<BR><SPAN STYLE="color:red">&lt;A HREF="javascript:linked('web/mail.php');"&gt;</SPAN>(Add image or text)<SPAN STYLE="color:red"></A>&lt;/A&gt;</SPAN>
+
+<P><B>Website Statistics</B>
+<BR>Add the following code to the bottom of every page you want to track:
+<P STYLE="color:red">&lt;!-- WEBSTATS START --&gt;
+<BR>&lt;SCRIPT LANGUAGE="javascript"&gt;
+<BR>&lt!--
+<BR>rf=escape(document.referrer);wl=window.location;br=navigator.appVersion;
+<BR>sc=screen.width+' x '+screen.height;
+<BR>document.write('&lt;P ALIGN=CENTER STYLE="font:10px verdana">'+
+<BR>'&lt;A HREF="web/stats.php?action=admin" TARGET="_blank"&gt;Website Stats&lt;/A&gt;'+
+<BR>'&lt;SCRIPT LANGUAGE="javascript" SRC="web/stats.php?action=record&'+
+<BR>'referrer='+rf+'&rfe='+wl+'&browser='+br+'&res='+sc+'"&gt;&lt;/SCRIPT&gt;');
+<BR>// --&gt;
+<BR>&lt;/SCRIPT&gt;
+<BR>&lt;!-- WEBSTATS END --&gt;
+<P>&nbsp;
+</TD></TR></TABLE>
+<P>&nbsp;<P>&nbsp;<P>&nbsp;
+</BODY>
+</HTML>
