@@ -1,0 +1,125 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+<script language="Javascript">
+ <!--
+  var saveval="";
+  IE4 = (document.all) ? 1 : 0;
+  
+  function getEditor() {
+   if(!IE4) return 'normal';
+   else {
+    if(document.tform.editor[0].checked) return document.tform.editor[0].value;
+    else return document.tform.editor[1].value;
+   }
+  }
+  
+  function delTemplate() {
+   if(document.tform.templateid.selectedIndex!=-1) window.location=('template.php?action=del&templateid='+document.tform.templateid.options[document.tform.templateid.selectedIndex].value+'&sid=$session[hash]');
+  }
+  
+  function addTemplate() {
+   window.location=('template.php?action=add&templatepackid='+document.tform.templatepackid.options[document.tform.templatepackid.selectedIndex].value+'&editor='+getEditor()+'&sid=$session[hash]');
+  }
+  
+  function editTemplate() {
+   if(document.tform.templateid.selectedIndex!=-1) window.location=('template.php?action=edit&templateid='+document.tform.templateid.options[document.tform.templateid.selectedIndex].value+'&editor='+getEditor()+'&sid=$session[hash]');
+  }
+  
+  function copyTemplate() {
+   if(document.tform.templateid.selectedIndex!=-1) window.location=('template.php?action=copy&templateid='+document.tform.templateid.options[document.tform.templateid.selectedIndex].value+'&editor='+getEditor()+'&sid=$session[hash]');
+  }
+  
+  function seteditor(value) {
+   if(!IE4) value = 'normal';
+   document.cookie = "editor="+value+"; path=/; expires=Wed, 1 Jan 2020 00:00:00 GMT;";
+  }
+  
+  function quick_search(theform,search) {
+   search = search.toLowerCase();
+   if(IE4) keycode=window.event.keyCode;
+   else keycode=0;
+   if(search!='' && search!=saveval && keycode!=8 && keycode!=46) {
+    save=Array();
+    count=0;
+    for(i=0;i<theform.templateid.options.length;i++) {
+     if(theform.templateid.options[i].text.substr(0,search.length)==search) {
+      if(count==0) theform.templateid.options[i].selected=true;
+      save[count]=theform.templateid.options[i].text.toLowerCase();
+      count++;
+     } 
+    }
+    saveval=search;
+    if(IE4 && save.length!=0) shell(save);
+   }
+  }
+  
+  function shell(save) {
+   temp=save[0];
+   z=temp.length;
+   for(i=1;i<save.length;i++) {
+    while(z>0) {
+     if(temp.substr(0,z)==save[i].substr(0,z)) break;
+     else z--;
+    }
+    if(z<=1) break;
+   }
+   oldlength=document.tform.quicksearch.value.length;
+   document.tform.quicksearch.value=temp.substr(0,z);
+   document.tform.quicksearch.select();
+   objRange=document.selection.createRange();
+   objRange.moveStart("character",oldlength);
+   objRange.select();
+   saveval=temp.substr(0,z);
+  }
+  
+ //-->
+</script>	
+</head>
+<body onload="document.tform.quicksearch.focus();">
+ <form onSubmit="return false;" name="tform">
+ <input type="hidden" name="sid" value="$session[hash]">
+ <input type="hidden" name="action" value="$action">
+  <table cellpadding=4 cellspacing=1 width="100%" class="tblborder" align="center">
+   <tr class="tblhead">
+    <td>Edit Templates</td>
+   </tr>
+   <tr class="tblsection">
+    <td><select class="input" name="templatepackid" onchange="window.location=('template.php?action=$action&sid=$session[hash]&templatepackid='+this.options[this.selectedIndex].value)">
+     <option value="0">Default Templates</option>
+     $templatepack_options				
+    </select></td>
+   </tr>
+   <tr class="firstrow">
+    <td>
+     <table width="100%">
+      <tr>
+       <td width="30%" valign="top" class="firstrow">Templates ($count):</td>
+       <td rowspan=2 width="70%" align="right">
+        <select size="20" name="templateid" style="width:95%">
+	 $template_options				
+	</select>
+       </td>
+      </tr>
+      <tr class="firstrow">
+       <td valign="top">
+       <a href="javascript:addTemplate();">Add Template</a><br>
+       <a href="javascript:editTemplate();">Edit Template</a><br>
+       <a href="javascript:copyTemplate();">Copy Template</a><br>
+       <a href="javascript:delTemplate();">Delete Template</a><br><br>
+       <b>Editor Mode:</b><br>
+       <input type="radio" name="editor" value="normal" onclick="seteditor(this.value)"$checked[normal]> normal<br>
+       <input type="radio" name="editor" value="deluxe" onclick="seteditor(this.value)"$checked[deluxe]> deluxe (requires Internet Explorer 5.5 or higher)<br><br>
+       <b>Quick Search:</b><br>
+       <input type="text" name="quicksearch" value="" onKeyup="quick_search(this.form,this.value)">
+	</td>
+      </tr>
+     </table>
+    </td>
+   </tr>
+  </table>
+ </form>
+</body>
+</html>
