@@ -1,0 +1,16 @@
+Installation instructions - product options mod
+
+Unzip file to the xcart directory of your site and upload the changed files:
+
+customer/products.php
+customer/featured_products.php
+
+modules/Product_Options/customer_options_products.php
+
+skin1/customer/main/buy_now.tpl
+skin1_original/customer/main/buy_now.tpl
+
+skin1/modules/Product_Options/customer_options_products.tpl
+skin1_original/modules/Product_Options/customer_options_products.tpl
+
+You will need to ensure that the buy now button is enabled in administration.
