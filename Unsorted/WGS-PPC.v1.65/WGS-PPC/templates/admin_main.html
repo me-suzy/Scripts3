@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>PPC Engine Admin Control Panel</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="css/asppc_styles.css" type="text/css">
+<script>
+	function AcceptBalanceTransfer(amount, dlocation, oamount)
+	{
+		namount = prompt("Transfer amount: ", amount);
+		sum=0;
+		sum = 1*namount+1*oamount;
+		if(namount!=0){
+			document.location.href = dlocation+"&balance="+sum;
+		}
+	}
+</script>
+</head>
+<body><center>
+<form action="<#action#>" method="post" name="admin" enctype="multipart/form-data">
+    <table class="tborder" cellspacing="1" cellpadding="10" bgcolor="#FFFFFF">
+      <tr bgcolor="#6699cc"> 
+        <td valign="bottom" align="right" colspan="2"><img src="../as_images/as_logo_ppc.gif" width="360" height="70"></td>
+	</tr>
+		<tr>
+			<td colspan="2" align="left">
+          <h2><font size="3" color="#6699CC">Admin Control Panel</font></h2>
+			<#account#>
+			</td>
+		</tr>
+      <tr> 
+        <td valign="top" align="left">
+			<a href="<#logoff#>">Log Off</a>
+
+			<ul>
+			<#menu0#><li><a href="<#menu_item0#>" class="category">Main Page</a></li><#/menu0#>
+			<br>
+			<br>	
+			<#menu1#><li><a href="<#menu_item1#>" class="category">Categories</a></li><#/menu1#>
+			<#menu7#><li><a href="<#menu_item7#>" class="category">Keywords filter</a></li><#/menu7#>
+			<#menu3#><li><a href="<#menu_item3#>" class="category">System Settings</a></li><#/menu3#>
+			<#menu12#><li><a href="<#menu_item12#>" class="category">Low-level accounts</a></li><#/menu12#>
+			<#menu8#><li><a href="<#menu_item8#>" class="category">Admin Banners</a></li><#/menu8#>
+			<br>
+			<br>			<br>			
+			<#menu4#><li><a href="<#menu_item4#>" class="category">Listings Statistics</a></li><#/menu4#>
+			<#menu6#><li><a href="<#menu_item6#>" class="category">Banners Statistics</a></li><#/menu6#>
+			<#menu2#><li><a href="<#menu_item2#>" class="category">Members</a></li><#/menu2#>	
+			<#menu15#><li><a href="<#menu_item15#>" class="category">Affiliates</a></li><#/menu15#>
+			<br>
+			<br>		  	<br>
+			<#menu13#><li><a href="<#menu_item13#>" class="category">Payment query</a></li><#/menu13#>
+			<#menu16#><li><a href="<#menu_item16#>" class="category">Get money query</a></li><#/menu16#>
+		  	<#menu9#><li><a href="<#menu_item9#>" class="category">Waiting bids</a></li><#/menu9#>
+			<br>
+			<br>			<br>
+			<#menu10#><li><a href="<#menu_item10#>" class="category">Backup DB</a></li><#/menu10#>
+			<#menu14#><li><a href="<#menu_item14#>" class="category" onclick="return confirm('All current data in DB will be replaced. Are You sure want to continue?')">Restore DB</a></li><#/menu14#>
+		    <#menu11#><li><a href="<#menu_item11#>" class="category">Generate stats report</a></li><#/menu11#>
+			<#menu5#><li><a href="<#menu_item5#>" onclick="return confirm('Are You sure want to CLEAR statistics?')" class="category">Clear Search Log</a></li><#/menu5#>
+			</ul>
+
+		  </td>
+        <td align="center" valign="top">
+		<#content#>
+		</td>
+      </tr>
+    </table>
+</form>
+© <a href="http://www.ettica.com/" target="_blank">Ettica.com</a>
+</center>
+</body>
+</html>
