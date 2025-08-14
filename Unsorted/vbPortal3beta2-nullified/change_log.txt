@@ -1,0 +1,54 @@
+Change log started 09/05/2001 vbPortal 3.0 beta
+
+1. Created on new template "P_error_nopermission_loggedout" actually a duplicate of the vbulletin template, 
+   but with the path defined with $burl. Reverted the vBulletin template back to default. It was causing
+   redirection errors. This new template can be used in place like the downloads script where you want to 
+   restrict to members only.
+
+   e.g.
+    if ($bbuserinfo['userid']==0) {
+	eval("standarderror(\"".gettemplate("P_error_nopermission_loggedout")."\");");
+    }else{
+	$username=$bbuserinfo['username'];
+    }
+
+2. Replaced $vbpvars code snippet in the mainfile with an expanded function called getvbpvars(),
+   this function has been placed in all the included add-ons just after the mainfile.php include,
+   What's it do?
+   It grabs certain vBulletin replacement variables from the current style and converts them to vars,
+   so that you can use them in the addons.
+   e.g. 
+   The {imagesfolder} would be $imagesfolder
+
+   if (!isset($mainfile)) { include("mainfile.php"); }
+   getvbpvars();
+   echo "<br><center><a href=\"download.php\"><img src=\"$imagesfolder/download/down-logo.gif\" border=\"0\" alt=\"\"></a><br><br>";
+
+3. Fixed typos in the P_activetopics_sidebox and P_logoutcode templates
+
+4. Started compiling a vbPortal language file, see \public_html\language\lang-english-vbportal.php
+   It's just the begining, but it's a start.
+
+5. Modified the vbPortal faq script to include vBulletin faq links.
+
+6. Modified the P_themeheader template faq button link to bring up the vbPortal faq, which is why I
+   modified the vbPortal faq in change 5 above.
+
+7. Fixed a bug in the news.php as well as other various bugs...
+
+8. Thanks to Dolby, I have a new logo and top buttons, these are in pr5. maybe he will do the other 
+   images as well, hint!!!
+
+9. 10/09/01 Fixed a bug in the activetopics hat allowed non approved news submitted articles to show.
+
+10. 11/01/01 Updated for vBulletin 2.2 additionally made the following changes.
+	a. Started the creation of a vbPortal admin manual based on the php-nuke manual...
+	   this required the updating of all scripts in the vbPortal admin sub-dirs and
+	   the creation of a new /manual sub-dir.
+	b. Updated lanugage files, this required replacing the config.php, mainfile.pgp, header.php 
+	   and the vbp_includes.php files. Additionally the language sub-dir is replaced and the 
+	   following files deleted from the includes sub-dir. advcustomtablevars.php, vbportal_vars.php
+	   and updted the includes/tablevars.php file.
+
+11. 03/11/02 Updated for vBulletin 2.2.4 additionally made the following changes.
+        a. updated vbPortal to release pr8.1
