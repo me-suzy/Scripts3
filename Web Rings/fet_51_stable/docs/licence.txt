@@ -1,0 +1,34 @@
+FET 5 license.
+
+Authors are not responsible for loss of traffic, financial losses,
+hardware breakdowns and any other losses, which become a result of script usage.
+
+Authors will never publish any informations about script users.
+
+Current version of script distributes as free and you may use it on any number of domains.
+
+For the usage of script authors may take no more than half-percent of the outgoing traffic from your site.
+
+The conditions of current license can be changed at any time without notice.
+
+
+*****************************************************
+
+
+Óñëîâèÿ èñïîëüçîâàíèÿ FET 5
+
+Àâòîðû ñêðèïòà ñíèìàþò ñ ñåáÿ çà ïîòåðè òðàôôèêà, ôèíàíñîâûå ïîòåðè, 
+ïîëîìêè ñåðâåðîâ èëè ëþáîé äðóãîé óùåðá, ïîëó÷åííûé â ðåçóëüòàòå èñïîëüçîâàíèÿ ñêðèïòà.
+
+Àâòîðû ñêðèïòà îáÿçóþòñÿ íå ðàçãëàøàòü èíôîðìàöèþ î ïîëüçîâàòåëÿõ ñêðèïòà.
+
+Ñêðèïò ðàñïðîñòðàíÿåòñÿ êàê áåñïëàòíûé, âû ìîæåòå èñïîëüçîâàòü åãî íà ëþáîì êîëè÷åñòâå äîìåíîâ.
+
+Çà èñïîëüçîâàíèå ñêðèïòà àâòîðû ìîãó çàáèðàòü ñåáå íå áîëåå ïîëîâèíû ïðîöåíòà âûõîäÿùåãî ñ âàøåãî ñàéòà òðàôôèêà.
+
+Óñëîâèÿ äàííîãî ñîãëàøåíèÿ ìîãóò èçìåíÿòüñÿ â ëþáîå âðåìÿ áåç ïðåäóïðåæäåíèÿ ïîëüçîâàòåëåé.
+
+
+******************************************************
+
+
