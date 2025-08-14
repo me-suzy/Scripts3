@@ -1,0 +1,14 @@
+Thank You for registration in Ettica PPC Search Engine!
+
+Your unique ID is <#id#>
+Your login is <#login#>
+Your password is <#pw#>
+
+You can enter Your personal control panel here:
+http://www.ettica.com/ppc/members/
+
+-----------------------------------------------------------------
+PPC Search Engine
+Powered by Ettica.com, 2002
+http://www.ettica.com
+email: ppc@ettica.com
