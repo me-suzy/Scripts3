@@ -1,0 +1,22 @@
+/* CSS only to admin pages */
+BODY	{font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; background-color: #F0F0F0; color: #3F3849;}
+UL	{font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px;}
+LI	{font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px;}
+P	{font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px;}
+TD	{font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px;}
+TR	{font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px;}
+H2	{font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 13px;}
+
+A   	{font-family: Verdana,Arial,Helvetica,sans-serif; text-decoration: none;}
+A:HOVER {font-family: Verdana,Arial,Helvetica,sans-serif; color: #FFAC00; background-color: #595959;}
+A:ACTIVE{font-family: Verdana,Arial,Helvetica,sans-serif; color: #FFAC00; background-color: #595959;}
+
+FORM	{font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 10px;}
+SELECT	{font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 10px;}
+INPUT	{font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 10px;}
+TEXTAREA{font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 10px;}
+
+/* first alternating table background color */
+.firstalt {BACKGROUND-COLOR: #D0D0D0;}
+/* second alternating table background color */
+.secondalt {BACKGROUND-COLOR: #C5C5C5;}
