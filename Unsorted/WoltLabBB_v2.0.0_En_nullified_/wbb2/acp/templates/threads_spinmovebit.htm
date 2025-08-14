@@ -1,0 +1,7 @@
+<tr class="$rowclass">
+ <td valign="top"><a href="../thread.php?threadid=$row[threadid]" target="_blank">$row[topic]</a><br><br><b>Move to:</b><br><select name="newboardid[$row[threadid]]">$boardid_options</select></td>
+ <td><input type="radio" name="movethread[$row[threadid]]" value="onlymove">&nbsp;move<br>
+ <input type="radio" name="movethread[$row[threadid]]" value="movewithredirect" checked>&nbsp;move with link<br>
+ <input type="radio" name="movethread[$row[threadid]]" value="copy">&nbsp;copy<br>
+ <input type="radio" name="movethread[$row[threadid]]" value="0">&nbsp;don't move</td>
+</tr>
