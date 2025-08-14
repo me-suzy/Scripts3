@@ -1,0 +1,200 @@
+FOR UPGRADING FROM VBPORTAL 3.0 RELEASE PR7.X AND PR8 TO RELEASE PR8.1 FOR VBULLETIN 2.2.4
+
+STEPS 1 TRU 3 ARE FOR ALL VERSIONS OF VBPORTAL
+STEPS 4 THRU 13 ARE ONLY FOR THOSE NOT ALREADY AT RELEASE PR8
+
+THE FIRST THREE STEPS CONSIST OF TEMPLATE CHANGES
+
+Template changes for vBulletin 2.2.4 upgrade
+Note: the character # is only used to denote the start and ending of text to change.
+
+1. error_cookieclear template
+a. Revert to original
+
+b. Change original
+Find the following text. 
+
+#######################################################
+<a href="index.php?s=$session[sessionhash]">here</a>
+#######################################################
+
+Replace with the following.
+
+#######################################################
+<a href="$homeurl/index.php?s=$session[sessionhash]">here</a>
+#######################################################
+
+
+2. editpost and newthread templates 
+
+a. Revert to original
+
+b. Change original
+Find the following text. 
+
+#######################
+$posticons
+$vbcode_buttons
+#######################
+
+Replace with the following.
+
+########################
+$posticons
+$P_newsselecttopic
+$vbcode_buttons
+########################
+
+
+
+3. forumhome template
+
+a. Revert to original
+
+b. Change original
+Find the following text.
+
+##################################################################################
+<td align="right"><smallfont>$welcometext<br><b>$newposts</b></smallfont></td>
+##################################################################################
+ 
+Replace with the following.
+
+##################################################################################
+<td align="right"><smallfont>$welcometext<br><b>$newposts $switchdisplay</b></smallfont></td>
+##################################################################################
+
+
+IF UPGRADING FROM VBPORTAL 3.0 RELEASE PR7.X COMPLETE THE FOLLOWING STEPS ALSO
+THESE STEPS ARE NOT NECCESSARY IF YOU HAVE ALREADY UPGRADED TO RELEASE PR8...
+
+4. Copy the new activetopics.php files to their respective includes/sub-directories. Rename your old activetopics.php
+files first so you can revert if neceassary.
+
+5. Replace the P_activetopics_sidebox template with the following new text.
+
+<!-- P_activetopics_sidebox template -->
+<tr>
+<td bgcolor='$vbp_atbc'>
+<smallfont>
+<img src="$aticon"><b>
+<a href="$bburl/showthread.php? 
+postid=$sbpostid\">$sbtitle</a></b><br> 
+<!-- <b>Started By:</b> $startedby <br> -->
+<b>Last Post By:</b> $lastposter<br>
+<b>Posted on:</b> $atpostdate<br>
+$pagetext 
+</smallfont>
+</td>
+</tr>
+<!-- End -->  
+
+6. Copy the new news.php files to the includes/center sub-directory. Rename your old news.php
+file first so you can revert if neceassary.
+
+7. Replace the P_newsbits template with the following new text.
+
+<!-- P_newsbits template -->
+
+<table border='0' cellspacing='0' cellpadding='0' width='100%'>
+	<tr>
+	<td bgcolor='{tablebordercolor}' width='100%' >
+	<table width='100%' border='0' cellspacing='1' cellpadding='3'>
+	<tr>
+	<td bgcolor='{categorybackcolor}' width='100%'><img src='$newsicon'><font size ='2' color = '{categoryfontcolor}'><b> $newstitle</b></font><smallfont><b> Posted by: [<a href='$bburl/member.php?action=mailform&userid=$userid'>$username</a>] on $postdate @ $posttime</b></smallfont>
+	</td>	</tr>
+	<tr>
+	<th bgcolor='{pagebgcolor}' width='100%' align='right'>
+	<table width='100%' border='0' cellspacing='0' cellpadding='0' bordercolor='{pagebgcolor}'>
+	<tr><td bgcolor='{pagebgcolor}' valign='top' align='justify' bordercolor='{pagebgcolor}'>
+	<smallfont>$newsarticle</smallfont>
+	</td> <th bgcolor='{pagebgcolor}' valign='top' align='center' width='54' height='54' nowrap>
+	$P_graphic $postinfo[attachment]
+	</th></tr>
+    </table><smallfont> <a href='$bburl/showthread.php?threadid=$threadid'><b>Read More</b></a><b> $replies </b></smallfont> 
+	<a href='$bburl/printthread.php?threadid=$threadid'><img src='{imagesfolder}/print.gif' border='0'></a> <a href='$bburl/sendtofriend.php?threadid=$threadid'><img src='{imagesfolder}/friend.gif' border='0'></a> <img src='{imagesfolder}/$threadstars' border='0' alt='$thread[votenum] votes - $voteavg average'> 
+	</th>
+	</tr>
+	</table>
+	</td>
+	</tr>
+	</table>
+	<br>
+<!-- End --> 
+
+
+8. Copy the new login.php file to the includes/blocks sub-directory. Rename your old login.php
+file first so you can revert if neceassary.
+
+9. Replace the P_logoutcode template with the following new text.
+
+<!-- P_logoutcode template -->
+<p align="center"><smallfont>Welcome back<br><i>$username</i>. <br>
+You last visited:<br> $bbuserinfo[lastvisitdate].<br>
+You have $newpms[messages] new message(s) since your last visit.<br><br>
+Our newest member <a href="$bburl/member.php?s=$session[sessionhash]&action=getinfo&userid=$newuserid"><br>
+<b><font color="#000000">$newusername</font></b></a><br><br></smallfont><table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#000000" width="100%">
+<tr>
+<td width="100%" bgcolor="{categorybackcolor}">
+<p align="center"><font size = "2" color ="{categoryfontcolor}"><b>Options</b></font></td>
+</tr>
+<tr>
+<td width="100%" bgcolor="{secondaltcolor}"><smallfont>
+<li><smallfont><a href="$bburl/newthread.php?s=$session[sessionhash]&action=newthread&forumid=$newsforum">Submit News</a></smallfont></li>
+<li><smallfont><a href="$bburl/search.php?s=$session[sessionhash]&action=getnew">View New Posts</a></smallfont></li>
+	        <li><smallfont><a href="$bburl/usercp.php?s=$session[sessionhash]">My Info</a></smallfont></li>
+<li><smallfont><a href="$bburl/online.php?s=$session[sessionhash]">$totalonline Users OnLine</a></smallfont></li>
+<li><smallfont><a href="$bburl/member2.php?s=$session[sessionhash]&action=viewlist&userlist=buddy">Your Buddies</a></smallfont></li>
+<li> <smallfont><a href="$bburl/member.php?s=$session[sessionhash]&action=logout">Log out</a></smallfont></li>
+</smallfont><br><br></td>
+</tr>
+</table>
+<p align="center">
+<!-- End -->
+
+
+10. Copy the new footer.php file to your vbportal root and repalce your old footer.php file.
+
+
+11. Create a new template named P_themefooter with the following new text.
+
+<!-- P_themefooter template -->
+<br>
+<center><smallfont>
+<!-- vbPortal bottom Message -->
+    $foot1<br>
+    $foot2<br>
+    $foot3<br>
+    $foot4<br>
+</smallfont></center>
+<!-- End -->
+
+
+
+12. Replace the footer template with the following new text.
+
+<!-- footer template -->
+</td>
+</tr>
+</table>
+<!-- /content area table -->
+</center>
+$closeleftcolumn
+<p align="center">
+  <normalfont><b>&lt; <a href="$contactuslink">Contact Us</a> - <a href="$homeurl">$hometitle</a>
+  <!-- - <a href="$privacyurl">Privacy Statement</a> --> &gt;</b></normalfont>
+</p>
+
+<p align="center"><smallfont>
+<!-- Do not remove this copyright notice -->
+  Powered by: vBulletin Version $templateversion<br>
+  Copyright &copy;2000, 2001, Jelsoft Enterprises Limited.<br>
+<!-- Do not remove this copyright notice -->
+$copyrighttext
+</smallfont></p>
+$themefooter
+<!-- End -->
+
+13. Copy the script addindex to your forums/admin sub-directory and run
+from your browser. This will create a new thread index on pollid. This
+corrects the frontpage poll problem that causes the lag time.
