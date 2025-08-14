@@ -1,0 +1,154 @@
+<?
+/*
+   Copyright (c), 1999, 2000 - phpauction.org
+   Copyright (c), 2001, 2002 - webauction.de.vu
+
+   Lizenz siehe lizenz.txt & license
+
+   Die neueste Version kostenfrei zum Download unter:
+   http://webauction.de.vu
+
+*/
+
+?>
+
+
+
+
+<SCRIPT Language="JavaScript">
+
+
+
+function SubmitForm(){
+
+	document.addfeedback.submit();
+
+}
+
+
+
+function ResetForm(){
+
+	document.addfeedback.reset();
+
+}
+
+
+
+//-->
+
+</script>
+
+<TABLE WIDTH="100%" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING="0" CELLSPACING="0">
+
+<TR>
+
+<TD>
+
+<center>
+
+<a href="item.php?SESSION_ID=<? print urlencode($sessionIDU); ?>&id=<? echo $auction_id; ?>">
+
+<? print $std_font.$MSG_138; ?></FONT></a>
+
+ |
+
+<a href="profile.php?SESSION_ID=<? print urlencode($sessionIDU); ?>&id=<? echo $id; ?>">
+
+<? print $std_font.$MSG_505; ?></FONT></a>
+
+</center>
+
+<BR>
+
+<CENTER>
+
+<BR>
+
+<B><? print $tlt_font.$MSG_222; ?></FONT></B>
+
+</FONT>
+
+<BR>
+
+<?
+
+	echo $err_font.$TPL_errmsg;
+
+?>
+
+</FONT>
+
+<BR>
+
+<FORM name=addfeedback action="feedback.php?SESSION_ID=<? urlencode($sessionIDU); ?>&id=<? echo $id; ?>" method="POST">
+
+<TABLE width="70%" CELLSPACING="0" CELLPADDING="0" BGCOLOR="#EEEEEE">
+
+<TR>
+
+<TD>
+
+	<TABLE width="100%" CELLSPACING="1" CELLPADDING="1">
+
+
+
+	<tr  BGCOLOR="#FFFFFF">
+
+		<td ALIGN=right>
+
+
+
+		<B>
+
+		  <? echo "<B>$usr_font$TPL_nick</FONT></B>
+
+		           ($std_font$TPL_feedbacks_num)
+
+		           <BR>$TPL_rate_ratio_value
+
+		           <BR><BR>";
+
+		  ?>
+
+		</B>
+
+		</td>
+
+	</tr>
+
+
+
+
+
+
+
+	<? echo $echofeed; ?>
+
+
+
+
+
+	</TABLE>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+	<INPUT type="hidden" name="TPL_nick_hidden" value="<? echo $TPL_nick; ?>">
+
+</FORM>
+
+<BR>
+
+
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+
