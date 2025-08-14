@@ -1,0 +1,382 @@
+This file is a list of changes in WSN Links from version to version. No release dates are listed, but the release of 1.00 was in August of 2002. 1.23 was late January of 2003, and 2.00 came about in February.
+
+Releases which were soley bug fixes have been omitted from the list below, and many bug fixes have been omited as this is intended as a feature change list (however a few bug fixes are still listed).
+
+Changes in 2.55:
+- &amp;filled=1 added onto links for searching for member's submitted links and comments in search results (searchall.tpl, searchmembers.tpl). This applies only to english-only installs (multilingual is already correct in 2.54).
+- People with no template set selected will no longer get a parse error message on the admin panel's settings page.
+- An odd host-specific intermitent warning message has been removed. (Seemed to occour on discount-hosting.com, yet not on other safe mode hosts for unknown reasons.)
+- The advanced SQL-level filtering option on the settings page has been repaired to work correctly.
+- Error reporting fix for those on misconfigured hosts which default to showing all notices.
+- Random sort order option tossed into the settings template (you could have added it before anyhow).
+- Tossed in thumbnail.php in case anyone wants to show thumbnails of images. Just use <img src="thumbnail.php?id={LINKID}&thumbwidth=50&thumbheight=50"> to make a 50x50 thumbnail of an attached image.
+- Do in-category searches using this form action in displaylinks.tpl: search.php?filled=1&whichtype=links&catid={CATID}
+- {CATISSUBCATEGORYOF[x]} now available. Example: <IF {CATISSUBCATEGORYOF[2]}>We're in a subcategory of category #2</IF>
+- Various unimportant tiny miscellenia to close off the 2.5x series, such as redirecting non-existent category id numbers to main category list and making custom redirect templates work for member login and password reset.
+
+Changes in 2.54:
+- Now HTML 4.01 transitional DTD compliant HTML, including templates
+- ~35% improvement in speed (thanks to janderk)
+- Paypal processing finally works correctly (thanks to kizer)
+- 2checkout option added to sponorship system
+- 'no matches' text for blank search results, 'no links' text for blank categories
+- {LINKDESCRIPTION[5]} sets number of characters to show at 5, etc.
+- {COMMENTMESSAGE[5]} sets number of characters to show at 5, etc.
+- {MEMBEREMAILDISGUISE} gives person at domain dot com
+- In conditionals: 'is not' repaired to be more reliable
+- In conditionals: numerics quoted properly when compared to a string
+- In conditionals: <IF not {THISMEMBERISADMIN}> and other such not operators repaired to work right
+- In conditionals: >= and <= operators should now work
+- In conditionals: These alternate operators now supported: Equality: =, Greather than: >, Less than: <
+- absolute urls no longer being translated in rewrite mode when they shouldn't be
+- with mod_rewrite on, the 'edit' path linked to on the 'details' page is no longer wrong
+- fixed issue with 2nd and subsequent pages of advanced search results
+- with mix link types=no, the types no longer sort incorrectly over multiple pages
+- comments version of multipage mixtypes=no sort order problem
+- comment submissions which have to be approved by admin now have thanks message indicating that
+- pageselection left and right now shown on comments pages page numbering
+- aliases no longer all go to top of category, they obey ordering rules
+- toplist generator misleading text fixed
+- language items categorytypes and commenttypes now work
+- member list sort order fixed to properly transfer between pages
+- problems with custom checkbox and multiselect fields which prevented proper editing now fixed 
+- simulated cron jobs fixed to not run too often
+- &amp; now properly displayed in language items.
+- comments added by non-admins now have type properly defined)
+- 'updated' repaired to show again by categories with new links
+- bunch of cosmetic errors when upgrading in safe mode have been removed
+
+Changes in 2.53:
+- toplist generator
+- copy/alias as usergroup permission
+- generate html pages 
+- {LINKBASEURL} (gives base domain of site)
+- custom headers and footers using &customheader= or &customfooter= in url
+
+Changes in 2.52:
+- updated templates to use conditionals syntax
+- now shows advanced search terms
+- if templates directory doesn't work, it'll find one that does and use that
+- shaved a decent fraction of a second off execution time, cut number of queries
+- {CATSUBCATS} should now be safe to use
+- debug mode header warnings removed
+- reject any existing link by editing
+- limit links per day
+- set link order for individual categories
+- strict option on url duplication
+- limitation of 100 failed login attempts per day (IP emailed to admin on 100th, account locked for rest of day)
+- override link ordering for category
+- category field: totalcomments (gives total number of comments in category)
+- manual link width
+- require name and password for guests on submission
+- control behavior of redirects
+- admin field options sorted alphabetically
+- personal link lists (and option to alias link over to your list)
+- changes to member integration (should auto-generate needed fields for full functionality, automatically lists new integration files)
+- ability to set number of columns in toplist, as in WSN Gallery
+- {LINKHITSOUTPERDAY}, {LINKHITSOUTPERMONTH}, {LINKHITSINPERDAY} and {LINKHITSINPERMONTH}, {LINKDAYSAGO}
+- locked category selector in name ascending order (Quantum's request)
+- option to check for (disallow) duplicate urls on submission
+- edit expiration date of links
+- set the number of search results per page in your settings
+- template sets now auto-listed if directory exists. to hide one, put 'hide' in the directory name. to make it only visible to admins (to customize before going public) name it with 'adminonly' in the directory name.
+- (As suggested by Quantum) use prefixes to customize language item capitalization:
+U_ makes everything caps (in case you're one of those annoying people capitalizing your marketing slogan)
+L_ makes everything lower case
+P_ capitalizes the first letter of the first word (for if you're beginning a sentance, most likely)
+PALL_ capitalizes the first letter of every word (useful for titles, most likely)
+Example: {P_LANG_GENERAL_COMMENTS} will result in Comments
+- use language items within other language items
+- IPs of link submitters tracked
+- advanced: template variables with paramaters capability
+
+Changes in 2.51:
+- For category moderators, usernames with spaces don't mess things up anymore
+- "No access" template to compliment the language item
+- Conditionals syntax... <IF {MEMBERNEEDSIT}>then use it<OTHERWISE>don't</IF>
+- Use different images for each style, independent of template set. Place images in templates/images_stylename (if directory doesn't exist, it'll use the regular images for the template set)
+- IPs displayed on comments for those who have permission to view them
+- Limit the number of links a member of each usergroup can submit
+- Moderators now own all subcategories of their category, and can submit links at will to all these subcategories (if you choose), and can create subcategories on their own (if you choose)
+- Moderators can now edit comments within threads in categories they own
+- Set to mix types or not for each individual category
+- GZIP compression option in settings, useful for modem users
+- {TOTALSUBCATS} to show how many categories there are including all subcategories, since Quantum wanted it
+- Use YESNO} at the end of a (custom) template variable to make it be a yes/no selector's options selected according to current value
+- Members can email each other through a form (usergroup permission for sender, profile option for recipient)
+- Allowing/disallowing html is now a usergroup permission
+- Report comments
+
+Changes in 2.50:
+- Query numbers are down sharply (execution time improved somewhat)
+- Sponsorship option for use with paypal
+- phpinfo on the admin page as requested by spor, and link to member list there as requested by quantum (IIRC)
+- Custom rating fields. Let users rate as many aspects of each link as you want.
+- Protection against brute-force style hacking: forces a wait of at least 5 seconds between login attempts, so that automated hacking scripts will not be able to try billions of combonations.
+- Use &linkid= in the url to make a particular link's link variables work in a custom template.
+- {NUMBER} works in both toplists and in regular category page link listings, if you want a numbered list.
+- E-mail opt in/out for members.
+- Quantum's custom template, and auto-detection of custom templates
+- {LASTUPDATE} global template variable for Quantum (unrequested, but nicer than his hack)
+- 'updated' image for shine... you'll really want to replace my image with a decent one
+- description character count limit (requested by shine IIRC)
+- suspend/unsuspend for pablo
+- site map for pablo (but I haven't a clue where to put the link to sitemap.php)
+- non-category meta tags (header insert) for jooploco
+- category types, for whoever it was that asked
+- skip directly to category for Paul (I may be the only one to use it, but I need it)
+- Version of din's JS export hack, use custom template with readme's instructions
+- member avatars and signatures
+- link detail page
+- registered members can send custom message when emailing a link
+- rewritten template sets
+- styles are separate from templates
+- styles selectable by visitors, several examples pre-included
+- setting to append something to all external links (for all the people who want links to open in a new window), setting to append something to table defintions.
+- advanced search 'between' ex: where rating between 2 and 4
+- advanced search 'advanced' ex: > 2 or = -1
+- option to auto-approve moderator's submissions to their own category
+- added couple of toplists in member profile template (just as example)
+- option to supply custom url which site uses to reciprocate a link (req by pablo)
+- auto-refesh option on link checker to go to the next set after X seconds (req by pablo)
+- showing hidden links and other admin searching should now use full search templates (req by pablo)
+- category permissions restrictions on edit page
+- customize number of days for update image
+- create/manage link aliases (one link in many categories)
+- edit link only alters supplied fields (greatly simplifies templates)
+- much more control over adding fields, automated support for combo boxes, check boxes and radio buttons
+- category subscriptions. Send email to subscribers when there's a new link or subcategory in the category (or a subcat of it)
+- send emails based on ownerid of links (usually, except comment thread subscription on link submission)
+- check image size if the attachment has image extension. allow restricting width and height in settings.
+- tacked link/cat/comment/member submission info onto bottom of the notification email to admin
+- checkboxes on suspect links
+- secondary default order for for links
+- 'save and reload' option in template editor
+- headerinfo for categories defaults to the regular page headerinfo
+- mod_rewrite shortened category and comment thread URLs option
+- rename field
+- comment types
+- comment approval/disapproval (x of y people found this comment helpful)
+- new debug mode option (actually more of an anti-debug): suppress errors
+- search all option (whichtype=all) which the simple search box now makes use of
+- [INSERTFILE=] file insertions
+- mass-replace language and templates
+- automatic backups
+- validation problems from the betas all fixed
+- easier setup and upgrade: files are chmoded for you, config.php.txt automatically renamed if there's no config.php
+
+Changes in 2.42:
+- admin option to upload sql from file (restore a database backup)
+- expanded fields available in admin advanced options
+
+Changes in 2.43:
+- links remain visible (as old version) while an edit is pending validation
+- hits in tracked without needing in.php link, if it's from the listed reciprocal url page for the link and comes in to a wsn links page
+- advanced search option for 'has any of the words' ('or' instead of 'and')
+- option to not count hits out by administrator
+- censor/replace
+- member system integration files simplified, integration now handled through settings page
+- upgrade now removes duplicates from language
+
+Changes as of 2.41:
+- duplicate and dead link checkers now only check links which haven't already been marked suspect (works like reciprocal link checker)
+- option to replace attachment on edit
+- new link types default to being displayed as regular links (you don't have to have multiple copies in your template if all the types are going to look the same)
+- if you allow members to change their username, they can't change it to one that already exists
+- admin option to upload sql from file (restore a database backup)
+- expanded fields available in admin advanced options
+- fixed mass email issue
+- fixed issues with reciprocal link checker
+- fixed reset fields issue
+
+Notable changes in 2.40:
+
+- optimized speed for those with large numbers of subcategories
+- set number of levels to show in category selector via settings page (see
+readme.txt for a discussion of the tradeoffs with this)
+- regenerate counters utility has been improved for use with large
+directories
+- checks to be sure email address of registering member is unique (unless
+it's blank, in which case it's left up to the required fields setting)
+- when adding categories and links as admin, you can add all options up
+front instead of waiting to edit stuff in later
+- when required fields are missing, user won't lose their data
+- file upload option (see readme.txt for how to de-comment items in the
+templates to turn it on)
+- rewritten admin login process which should speed up logins and hopefully
+reduce problems
+- advanced search option
+- option to run php file at intervals, like a simulated cron job
+- if link is found to be suspect, option to send email to submitter
+- marks it in database field when a link is suspect, allows managing those
+items through link checker
+- member profile pages which other users can view
+- control where new fields are added in the templates by moving the <!-- 
+INSERT NEW FIELDS HERE --> marker
+- optional email notification to link submitter when someone comments on
+their link
+- a sortable member list page
+- 'show queries and execution time to admin only' debug mode option
+- WSN Codes now allow [code=paramater]text[/code] format, and allow
+supplying a description
+- smilies included
+- expire unvalidated members after x hours (useful when you're using email confirmation)
+
+Notable changes in 2.30:
+- the script for upgrading from versions 1.x is fixed and tested... if you're still using a 1.x version, there should no longer be any problem upgrading
+- Line breaks now display correctly in comments
+- Option to order by last edited date, which by default will be creation time
+- ability to add multiple language sets and choose one in profile. ability to export/import language set
+- add/remove usergroup options via add/remove fields page 
+- option to disallow HTML in submissions
+- ability to make custom groups that'll work like recip vs. regular links 
+- admin-customizable required fields for links, cats, comments, members 
+- category moderators 
+- allow members to select their own template set and language via editing profile 
+- IP banning option 
+- Date locale problem has been fixed so dates translate
+- Ability to create WSN Codes for comments, to replace HTML or serve whatever other purpose
+- Option to preview templates before confirming changes 
+- let user change their password
+- mass delete items pending validation 
+- related categories (mult-select list)
+- custom permissions restrictions (via comment at top of template)
+- register while submitting a link
+- validate edits made by members (usergroup permission to require revalidation after edit)
+- dropdown list of links (options available as template var {CATLINKSELECTOR})
+- misc. queries now show correctly in debug mode, while in 2.23 they only show a ;
+- set maximum subcats to show on main page 
+- Change name of admin directory easily (in setting) 
+- fix debug mode so 'only show totals and execution time' works 
+- anti-spam devices for comments
+- fix numlinks and parentnames to be updated when category is edited 
+- registration options: direct, or emailing of validation code to verify email, or validation by admin required
+- ability to reset field x every y time units 
+- Ability to separate out the different link types in search results, like in the category display
+
+Notable changes in 2.22:
+- ability to mass-mail members
+- ability to execute php code on 'advanced' page
+- multi-leveled debug mode
+- ability to limit search to current category by subitting form to search.php?catid={CATID}
+
+Notable changes in 2.20:
+- remote voting code generator
+- page ordering sort bug fixed
+- ability to use a custom condition to filter toplists
+- allow toplists in header and footer
+- setting to set cookie duration for tracking unique in and out hits
+- navigation bit available on suggest link/category pages
+- ability to hide links
+- ability to track in-bound clicks
+- email notification of comments
+- ability to use language vars in templates
+- member system allowing people to register and login
+- usergroup system with admin editable permissons
+- reject link, with custom reason if desired
+- show details during link checks
+- ability to supress header and footer with headerfooter=no in the URL
+- database backup utility
+- counter regeneration utility
+- filter language display for easier language editing
+- ability to delete language variables
+
+Notable changes in 2.11:
+- Alternate login option for those who still have troubles getting to the admin 
+panel
+- Option to mass e-mail users (use responsibly)
+- Fixed bug with ' characters in link/category/comment submissions
+- Counting of hits now only counts uniques (uses cookie to discourage cheating)
+
+Notable changes in 2.10:
+- fixed mozilla login issues
+- fixed problem with user sorting links
+- fixed bug where when mixing recip and regular links, recip links in 
+2nd or later column previously showed as regular links
+- categories will now show 'new' image if any subcategory has a new 
+link, no matter how many levels deep
+- should properly return you to where you came from after editing a link
+- added ability to choose requiring validation of links vs. categories 
+separately
+- added ability to filter links display by a condition
+- checkbox being checked ads the text 'yes' to database... this is just 
+for easier customization with checkboxes being added as new fields
+
+Notable changes in 2.00:
+- Add and remove link and category fields through admin panel 
+- Add and remove settings (preferences variables) through admin panel 
+- Count clickthroughs to each link 
+- E-mail a link (records IP to discourage spam)
+- Indicates on main screen when there's a new link in a category
+- Can show date of submissions
+- PHP code works anywhere in any template
+- Improved efficiency of navigation code and of category dropdown 
+generator code (won't kill your server with recursive SQL calls in deep 
+subcategories anymore)
+- Debug mode: admin option to echo all database queries, show query 
+count for page, and show page execution time. Useful for bug tracking.
+- Custom category templates (template file definable in URL)... or 
+custom anywhere templates to override defaults
+- Rewritten language system, editable and expandable through admin 
+section (no more language.php)
+- 'Comment on link' - visitors can discuss each link
+- Dropdown jump menu of categories
+- Toplists: show the top x links/categories/comments ordered by any 
+field
+- Fixed number of links in category/subcategory code to not rack up 
+such large numbers of queries in large databases
+- 'Copy link' admin option 
+- Admin option to generate static page with all links listed (for SE 
+purposes)
+- Incremental dead/reciprocal link check (no more timeout problems)
+- Option to mix recip and regular links (so they aren't ordered 
+separately, but can still be styled separately)
+- Option to hide a category from listing 
+- 'member' class, as expandable skeleton for interface with preexisting 
+member systems
+- The most significant improvement is that this version is far, far 
+kinder to your server... the number of SQL queries per page is 
+drastically reduced, especially for large databases. 
+
+Notable changes in 1.23:
+- Show subcategories on main page
+- Edit email of link, show email when validating
+- Show category in search
+- Decodes html entities to avoid possible problems with forign character sets
+- PHP templates now included in a less trouble-prone way
+- Simpler compatability with the new paid "Powered by" removal option
+- "Report link" form, allowing visitors to report problems with a link (perhaps a dead link, link with changed content, or in the wrong category)
+- Dropdown category selectors now order according to the admin-specified category order
+
+Notable changes in 1.21 (October 19th, 2002):
+- Can now view collected email addresses 
+- Checks to be sure there's at least an @ sign in the email address if an email is provided, and checks that the title and URL aren't left blank. 
+- If you want to make the email address a required field, open suggest.php and change $emailrequired to true. 
+
+Notable changes in 1.20:
+- cookie based protection against people voting on the same link multiple times
+- advanced admin queries 
+- online instant template editor 
+- reduced number of templates by combining 
+- show newest x links on main page 
+- show highest rated x links or x links with most votes 
+- option to check for duplicate link URLs 
+- option to change admin password 
+- option to change templates directory (switch between themes) 
+- verify reciprocal links 
+- show "new" image by links for x days 
+- allow easy editing of links and categories using cookies 
+
+Notable changes in 1.1x:
+- when voting on a link, you'll be taken back to the category you came from instead of to the main page
+- subcategories will have their number of links in () next to them, like categories 
+- Unlimited levels of subcategories (sub-sub-sub-sub categories)
+- allow submitters to supply email address and be auto-notified when (if) their site is validated 
+- admin option to choose to recieve an email each time a new category or link is suggested (if validation is required)
+- simple search box to search for a keyword in links and display matches
+- improved ability to edit links (will be able to query for groups of links to edit)
+- sessions-based login for admin (cookie-based has been scrapped for the time being, the idea may return in a later version)
+- fixed register globals off incompatability
+
+
+Before 1.10 came 1.00, in which everything was new.
