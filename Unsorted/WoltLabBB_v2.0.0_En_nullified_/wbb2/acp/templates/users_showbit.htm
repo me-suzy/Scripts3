@@ -1,0 +1,14 @@
+<tr class="$rowclass">
+ <td align="center" nowrap>
+ <a href="users.php?action=edit&userid=$row[userid]&sid=$session[hash]"><img src="images/edit.gif" border=0 alt="Edit &quot;$row[username]&quot; Profile"></a>
+ <a href="users.php?action=email&userid[]=$row[userid]&sid=$session[hash]"><img src="images/email.gif" border=0 alt="Send &quot;$row[username]&quot; an email"></a>
+ <a href="users.php?action=delete&userid[]=$row[userid]&sid=$session[hash]"><img src="images/delete.gif" border=0 alt="delete &quot;$row[username]&quot; "></a>
+ <a href="users.php?action=access&userid[]=$row[userid]&sid=$session[hash]"><img src="images/rights.gif" border=0 alt="Edit &quot;$row[username]&quot; rights"></a>
+ <a href="javascript:tostorage('user',$row[userid],'$username')"><img src="images/tostorage.gif" border=0 alt="Add &quot;$row[username]&quot; to storage"></a>
+ </td>
+ <td width="30%"><a href="../profile.php?userid=$row[userid]" target="_blank">$row[username]</a></td>
+ <td width="30%">$row[email]</td>
+ <td width="15%" align="center">$regdate</td>
+ <td width="25%" align="center">$lastactivity</td>
+ <td align="center"><input type="checkbox" name="userid[]" value="$row[userid]"><input type="hidden" name="u$row[userid]" value="$row[username]"></td>
+</tr>
