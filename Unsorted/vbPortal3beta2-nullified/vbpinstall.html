@@ -1,0 +1,272 @@
+<html>
+<head><title>Installation Instructions for vbPortal 3.0</title></head>
+<body>
+<h2>Installation Instructions for vbPortal 3.0</h2>
+<font size="1">vbPortal is Copyright (c) 2001 by William A. Jones</font><br>
+<font size="1">vBulletin is Copyright ©2000, 2001, Jelsoft Enterprises Limited.</font><br>
+<font size="1">Document created by Christec, (elric_red@hotmail.com)</font>
+
+<hr width="25%" align="left">
+<b>Base Requirements</b>
+<br>
+<p>To install vbPortal version 3.0 the following pre-requisites are necessary.
+<ul>
+  <li>vBulletin version 2.2.4
+</ul>
+</p>
+<p>If you don't own vBulletin, you may purchase it through this link
+<a href="http://www.phpportals.com/banners.php?op=click&bid=2">Purchase vBulletin</a><br>
+or you can go to <a href="http://www.phpportals.com">www.phpportals.com</a> and click on the
+vBulletin banner to purchase.
+</p>
+<hr width="25%" align="left">
+<h3>Installing vbPortal (Standard Installation)</h3>
+<p>
+<b>Current Version is <u>vbPortal30pr8_1.zip</u></b><br><br>
+
+These instructions will cover the standard installation of vbPortal and the directory placement of
+vBulletin.  The instructions and examples used in this document are based on default web server settings
+for Windows (NT, 2000) and Linux (RedHat 7.0)<br><br>
+
+<b>Terms:</b><br>
+<b>public_html:</b>
+public_html is used to describe the path to your web site directory. This is the file path and
+<b>not</b> the URL.<br><br>
+Example (Windows): "C:\inetpub\wwwroot\"<br>
+Example (Linux):   "/var/www/html/"
+</p>
+<p>
+<b>Note:</b> If you have already installed vBulletin please make a backup of your database before
+continuing the installation. If vBulletin is not in a sub-directory it is recommended that you move it
+into a sub-directory as listed below.<br><br>
+<b>If you are NOT installing vbPortal into a sub-directory please skip to the<br>
+"Install vBulletin (vBulletin directory placement)" section below</b><br><br>
+
+<hr width="25%" align="left">
+<b>Installing vbPortal (in a sub-directory)</b><br>
+It is possible to install vbPortal into a sub-directory under your web server. You can use any
+sub-directory name that you would like.  In this document <b>vbportal</b> will be used as the
+default sub-directory.<br><br>
+Example (Windows): "C:\inetpub\wwwroot\vbportal\"<br>
+Example (Linux): "/var/www/html/vbportal/"<br>
+URL = http://www.yoursite.com/vbportal/index.php (start page for vbPortal)<br><br>
+
+<b>Note:</b> Keep in mind, in the following examples you will need to add your sub-directory name
+into the appropriate place.<br><br>
+
+Forum sub-directory:<br>
+Example (Windows): "C:\inetpub\wwwroot\vbportal\forums\"<br>
+Example (Linux):   "/var/www/html/vbportal/forums/"<br><br>
+
+config.php file:<br>
+Example (Windows):<br>
+$nukeurl = "http://www.yoursite.com";<br>
+$bburl = "http://www.yoursite.com/vbportal/forums";<br>
+$nukepath = "C:/inetpub/wwwroot/vbportal";<br>
+$vbpath = "C:/inetpub/wwwroot/vbportal/forums";<br><br>
+
+Example (Linux):<br>
+$nukeurl = "http://www.yoursite.com";<br>
+$bburl = "http://www.yoursite.com/vbportal/forums";<br>
+$nukepath = "/var/www/html/vbportal";<br>
+$vbpath = "/var/www/html/vbportal/forums";<br><br>
+
+<b>Additional Note:</b> Additional modifications will be necessary if you are installing into a sub-directory.
+These modifications will be covered at the end of this file, under <u>Installing vbPortal,
+sub-directory, modifications</u><br><br>
+
+<hr width="25%" align="left">
+<b>Install vBulletin (vBulletin directory placement)</b>
+<p>
+<ol>
+<li>vBulletin should be installed under a sub-directory of your web site. The default sub-directory name is
+<b>forums</b>.  You can create any sub-directory name that you like, just make sure you
+replace your sub-directory name with the default name "forums".<br><br>
+
+Example (Windows): "C:\inetpub\wwwroot\forums\"<br>
+Example (Linux):   "/var/www/html/forums/"<br><br>
+
+<li>Complete the installation of vBulletin. The installation of vBulletin is beyond the scope of this
+document.<br>
+<li>Make sure that vBulletin has been installed and configured correctly before continuing.
+</ol>
+</p>
+
+<hr width="25%" align="left">
+<b>Create New Forums</b>
+<p>
+<ol>
+<li>Create two new forums.<br>Use the vBulletin admin control panel to create these new forums.
+One of these forums will be used for vbPortal's front page news section and the second forum will be
+for the vbPortal's front page polls section. You can name these forums whatever you like.<br><br>
+<li>After creating these two new forums hold your mouse pointer over the link of each forum and
+write down the forumid number for each.  The forumid numbers will be used in the vbPortal's
+config.php file to configure the front page news and polls sections.
+</ol>
+</p>
+
+<hr width="25%" align="left">
+<b>Upload and Install vbPortal files</b>
+<p>
+<ol>
+<li>Unzip the vbPortal zip file to a temporary directory on your computer.<br><br>
+Example (Windows): C:\temp\vbPortal\<br>
+Example (Linux): /tmp/vbPortal/<br><br>
+
+<li>Go into the temporary vbPortal "public_html" directory (cd C:\temp\vbPortal\public_html\).
+ Copy all the files including the directories
+(DO NOT CHANGE THE DIRECORIES LAYOUT) to your web servers public_html directory
+(see public_html term above).<br><br>
+Example (Windows): copy files and directories from "C:\temp\vbPortal\public_html\" to "C:\inetpub\wwwroot\"<br>
+Example (Linux): copy files and directories from "/tmp/vbPortal/public_html/" to "/var/www/html/"<br><br>
+<b>Note:</b> During the copying process you may be prompted to overwrite some files.  These are
+gif files that are used for the main image and buttons.  By default it's best just to overwrite
+these gif files.
+</ol>
+</p>
+
+<hr width="25%" align="left">
+<b>Access vbPortal install file</b>
+<p>
+<ol>
+<li>Through a web browser access vbPortal's install file which is located under
+forums/admin/vbpinstall.php.<br><br>
+Example: http://www.yoursite.com/forums/admin/vbpinstall.php<br><br>
+
+<li>Follow through the vbPortal install script and select which option you would like to
+install.<br><br>
+
+<li>At the <b>"Click here for instructions on the vB script mods needed."</b> Click on the link and
+follow the instructions.  Some of these modifications are <b>required</b> and some are <b>optional</b>.
+Please read through this section carefully.<br><br>
+
+<li>There is an additional section that covers <b>TOPICS</b>.
+If you selected the Full Install or Installed TOPICS you will need to make modifications to
+several of the vBulletin php files. Make sure that the modifications are done correctly. To access
+this file again it is located under forums/admin/vbpscripts.html.
+</ol>
+</p>
+
+<hr width="25%" align="left">
+<b>Upload/Import and Configure vbPortal Default Style</b>
+<p>
+<ol>
+<li>Make a back of your existing default vBulletin style set by using the vBulletin admin control
+panel, Styles, Download/Upload option.<br><br>
+
+<li>Depending on your version of vBulletin, (2.2.4, 2.2.5 or 2.2.6) open the Default22x.style.style file in a text editor.  The file is located in the temporary directory under the style directory.<br><br>
+Example (Windows): C:\temp\vbPortal\style\Default226.style<br>
+Example (Linux): /tmp/vbPortal/style/Default226.style<br><br>
+
+Look at the very first line.<br>
+If you are using vBulletin version 2.2.1 it should look like this <b>2.2.1|||</b><br>
+If you are using vBulletin version 2.2.0 it should look like this <b>2.2.0|||</b><br><br>
+
+Make the change to fit your version of vBulletin.(DO NOT CHANGE ANYTHING ELSE, unless you know what
+you are doing.)<br><br>
+
+<li>Upload the Default22x.style set file by using the same Download/Upload
+option. When uploading the Default22x.style set choose to overwrite the "Default" style.<br><br>
+
+<b>Note:</b> If you are having trouble uploading the Default22x.style copy the Default22x.style
+file to the forums/admin/ directory.  Use the vBulletin admin control panel, Styles, Download/Upload, Import
+existing style set (from local computer) option. Change the Style file: (local) name to
+"Default22x.style". If you are still having trouble, close all browser windows and try this process
+again.  This mainly applies to Windows servers.<br><br>
+
+<li>After uploading the Default22x.style correctly you will need to modify a setting under Styles, Modify,
+Default, [font/colors/etc], Image paths. Look for "http://www.yoursite.com/forums/images" and change it
+to match your web site. Save your changes.<br><br>
+
+<li>Now click on Replacements, Modify, Default, expand list. Under Custom Replacements look for this<br>
+"images/smilies is replaced by http://www.yoursite.com/forums/images/smilies".<br>  Click on edit and
+change the www.yoursite.com to match your web site. Save your changes.
+</ol>
+</p>
+
+<hr width="25%" align="left">
+<b>Configure vbPortal's config.php file</b>
+<p>
+<ol>
+<li>Change to the public_html (not the temporary directory) directory and rename or copy the
+config.php.txt file to config.php.  Open the config.php file in a text editor.  The most important
+section of the config.php file is the <b>General Site Configuration</b> section.  The variables
+listed below must be configured correctly.  If they are not correct then your site will not be
+displayed correctly.<br><br>
+
+<b>Default settings</b>
+<table><tr>
+<td>$nukeurl = "http://www.yoursite.com";</td><td>// This is the URL to your vbportal web site</td></tr>
+<tr><td>$bburl = "http://www.yoursite.com/forums";</td><td>// This is the URL to your forums web site</td></tr>
+<tr><td>$nukepath = "/home/public_html";</td><td>// This is the file path to your web directory</td></tr>
+<tr><td>$vbpath = "/home/public_html/forums";</td><td>// This is the file path to your forums directory</td></tr>
+</table>
+<br>
+<b>Note:</b> Windows users may need to use forward slashes instead of back slashes<br>
+Example (Windows):<br>
+$nukeurl = "http://www.yoursite.com";<br>
+$bburl = "http://www.yoursite.com/forums";<br>
+$nukepath = "C:/inetpub/wwwroot";<br>
+$vbpath = "C:/inetpub/wwwroot/forums";<br><br>
+
+Example (Linux):<br>
+$nukeurl = "http://www.yoursite.com";<br>
+$bburl = "http://www.yoursite.com/forums";<br>
+$nukepath = "/var/www/html";<br>
+$vbpath = "/var/www/html/forums";<br><br>
+
+Make the necessary changes to match your web server.<br><br>
+
+<li>Under The News Config section change<br>
+$newsforum=3;<br>
+to match the forumid number of the news forum that you created earlier.<br>
+Do the same for<br>
+$pollsforums=4;<br><br>
+
+<li>If you did a Full Install or installed the TOPICS option find<br>
+$hastopics=0; and change it to<br>
+$hastopics=1;<br>
+This will enable the Topics option.<br><br>
+
+<li>Make any additional changes to the config.php file to suit your needs.<br><br>
+
+<li>Save the changes made to the config.php file.<br>
+</ol>
+That's it.
+</p>
+
+<hr width="100%">
+<b>Installing vbPortal, sub-directory, modifications</b>
+<ol>
+<li>Modify "Main Menu" links<br>
+Access and login to the vbPortal Administration section.  http://www.yoursite.com/vbportal/admin.php<br>
+Click on Side Blocks, under Main Menu click on the edit block icon. (Looks like magnifying glass &
+paper)<br>
+Basically, remove the "/" from the a href=" ..." so it looks like this<br>
+a href="index.php">Home<....<br>
+Do the same thing to the rest of the Main Menu Links<br>
+You will also need to do this to the Administration Block also.<br><br>
+
+<li>Open the config.php file in a text editor.  Look for the $foot1 variable.  Find the<br>
+img src=\"/images/vbp.gif\" and change it to<br>
+img src=\"$nukeurl/images/vbp.gif\"<br><br>
+
+<li>Open includes/blocks/admin.php in a text editor.  Look for this line<br>
+global $bburl,$DB_site,$admin,$prefix,$newsforum,$block_sidetemplate;<br>
+change it to<br>
+global $bburl,$DB_site,$admin,$prefix,$newsforum,$block_sidetemplate,$nukeurl;<br><br>
+
+Find this<br>
+a href=\"admin.php?op=reviews\">"._WREVIEWS."<br>
+change it to this
+a href=\"$nukeurl/admin.php?op=reviews\">"._WREVIEWS."<br><br>
+
+Find this<br>
+a href=\"admin.php?op=links\">"._WLINKS."<br>
+change it to this
+a href=\"$nukeurl/admin.php?op=links\">"._WLINKS."<br><br>
+</ol>
+
+That's it for the Installing vbPortal, sub-directory, modifications section.
+</body>
+</html>
