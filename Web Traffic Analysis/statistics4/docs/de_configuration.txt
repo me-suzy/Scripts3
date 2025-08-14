@@ -1,0 +1,66 @@
+SHOWlog wird in '/config/statistics.conf.php' konfiguriert: (SHOWlog v4.6.7)
+
+// --- weblog ---------------------------------------------------------------------------------
+$weblog_showlog_dir = "statistics4/";	// Pfad zum order mit SHOWlog
+$weblog_anti_reload = 120;			// Zeit in Minuten, bevor die gleiche IP erneut geloggt wird
+$weblog_time_offset = 0;			// Abweichung der Serverzeit (in Minuten) zum lokalen Rechner
+$weblog_ignore_ip = "127.,192.168.";	// IP-Bereiche die nicht geloggt werden sollen (durch ',' getrennt)
+$weblog_check_for_files = true;		// Vor dem loggen immer erst überprüden ob die Logdateien existieren und wenn nicht, dann anlegen.
+
+// --- language -------------------------------------------------------------------------------
+$lang_code = "de";			// Standardsprache [ de/en ] (mehr gibt es z.Zt. noch nicht)
+$lang_format = "eu"; 			// Datumsformat [ eu/us ] 	eu: dd.mm.yyyy        us: yyyy-mm-dd
+      Eigene übersetzung angefertigt? Bitte eine Kopie an fli4l@sirsocke.de , Danke!
+
+// --- display  -------------------------------------------------------------------------------------------
+$page_menu = false;			// Zusätzliches Menu in jeder Statistikseite anzeigen [ true/false ]
+$detail_length = 30;			// Anzahl der angezeigten Einträge pro Seite in der Detailansicht (logfile view)
+$tpl_to_use = "default";		// Name des Templates welches benutzt werden soll
+$show_detail_filter = true;		// Filterformular anzeigen [ true/false ]
+$benchmark = false;			// Benchmarks anzeigen [ true/false ]
+$hide_referer = "";			// Diese Referer für Normalbenutzer verstecken (getrennt durch '|')
+
+// --- login / user ----------------------------------------------------------------------------
+$login_require = true;			// Wird ein Login benötigt? [ true/false ]
+$login_screen = true;			// Eigene Benutzerverwaltung von SHOWlog benutzen? [ true/false ]
+$login_accept = "statistics.php";	// Pfad / Datei die bei erfolgreichen Login aufgerufen wird
+$login_denied = "../";			// Pfad / Datei die bei fehlgeschlagenen Login aufgerufen wird
+
+$login[1]["user"] = "all";			// Benutzerverwaltung von SHOWlog: Benutzername 1.Benutzer
+$login[1]["pass"] = "all";		// Benutzerverwaltung von SHOWlog: Passwort 1.Benutzer
+$login[1]["right"] = "all";		// Benutzerverwaltung von SHOWlog: Rechte 1.Benutzer [ all/view ]
+
+$login[2]["user"] = "view";		// Benutzerverwaltung von SHOWlog: Benutzername 2.Benutzer
+$login[2]["pass"] = "view";		// Benutzerverwaltung von SHOWlog: Passwort 2.Benutzer
+$login[2]["right"] = "view";		// Benutzerverwaltung von SHOWlog: Rechte 2.Benutzer [ all/view ]
+
+  all: zeigt alles an, inklusive des Logfile-menus und der User/Pass-Übersicht
+  view: Alles außer dem Logfile-menu und der User/Pass-Übersicht
+  Einfach soviele Benutzer anlegen, wie benötigt werden
+
+// --- leaving-button ---------------------------------------------------------------------------
+$leave["code"] = "";			// Funktion des Verlassen-Buttons
+$leave["text"] = "back";		// Text des Verlassen-Buttons (muß in den Sprachdateien im Bereich default definiert sein)
+						// (z.B. back oder close)
+$leave["logout"] = true;		// Ausloggen? [ true/false ]
+
+  Beispiele:
+  $leave["code"] = "../index.php";	-> beim anklicken des Verlassen-button wird "../index.php" geladen
+  $leave["text"] = "back";		-> der Button zeigt "zurück" (in englisch "back")
+
+  $leave["code"] = "javascript: self.close()"; -> beim anklicken des Verlassen-button wird das SHOWlog-Fenster geschlossen
+  $leave["text"] = "close";		-> der Button zeigt "schliessen" (in englisch "close")
+
+  $leave["code"] = "";			-> Es wird kein Button angezeigt
+
+
+// --- files -----------------------------------------------------------------------------------
+$log_dir = "logs/";			// Verzeichnis mit den Logdateien
+$vst_file = $log_dir."visit.dat";	// Anti-reload-datei, hier werden die IPs für die anti_reload_period gespeichert
+$cnt_file = $log_dir."count.dat";	// Counter-datei, Besucherzähler
+$log_file = $log_dir."log.dat";		// Log-datei, hier werden die Besucherdaten gespeichert
+$bak_file = $log_dir."log.bak";		// Backup-datei, vor jedem neuen Eintrag wird eine Sicherheitskopie erstellt
+$dl_file = $log_dir."backup.dat";	// In dieser Datei wird das Datum des letzten Logdatei downloads gespeichert
+
+// --- everything else -----------------------------------------------------------------------
+$sl_vst_since = "2005-01-01";		// Besucher seit (für den Besucherzähler)
