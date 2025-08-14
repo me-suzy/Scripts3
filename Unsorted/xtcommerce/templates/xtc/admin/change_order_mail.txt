@@ -1,0 +1,9 @@
+{config_load file="lang_$language.conf" section="change_order_mail"} 
+
+{#greeting#} {$NAME},
+
+{#text#}
+{#comment#} {$NOTIFY_COMMENTS}
+
+{#status#} {$ORDER_STATUS}
+{#text_footer#}
