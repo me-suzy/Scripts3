@@ -1,0 +1,39 @@
+BODY
+{
+	color: #000000;
+	background-color: #FFFFFF;
+}
+
+BODY, td, input, select, button
+{
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 12px;
+	line-height: 14px;
+}
+
+A:link
+{
+	color: #FF0000;
+	text-decoration: none;
+}
+
+A:visited
+{
+	color: #FF0000;
+	text-decoration: none;
+}
+
+A:hover
+{
+	text-decoration: underline;
+}
+
+A:active
+{
+	text-decoration: underline;
+}
+
+.ThinBorder
+{
+  border:1px solid #000000
+}	  
