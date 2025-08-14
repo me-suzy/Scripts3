@@ -1,0 +1,29 @@
+    <table border="0" cellspacing="1" cellpadding="5">
+      <tr align="center"> 
+        <td colspan="2">
+      <h3><font size="3" color="#6699CC">Statistics page</font></h3>
+		Select period: from <#d_from#> to <#d_to#> <input type="submit" name="qw" value="Go"><input type="hidden" name="menu" value="1">
+    </td>
+      </tr>
+    <tr align="center">
+    <td colspan="2"> <b><#sdate#> to <#edate#> Statistics <br>
+      <br>
+      </b> 
+      <table width="100%" border="0" cellspacing="1" cellpadding="5">
+        <tr bgcolor="#d9d9d9"> 
+          <!--          <td><a href="<#action#>?menu=1&sort=0&d=<#d#>">Search Term</a></td>
+          <td><a href="<#action#>?menu=1&sort=1&d=<#d#>">Click Throughs</a></td>
+          <td><a href="<#action#>?menu=1&sort=2&d=<#d#>">Cost</a></td>
+-->
+          <td><b>Search Term</b></td>
+          <td><b>Click Throughs</b></td>
+          <td><b>Percents</b></td>
+          <td><b>Cost, <#currency#></b></td>
+        </tr>
+        <#stats#> 
+        </table></tr>
+      </table>
+    
+      
+    
+
