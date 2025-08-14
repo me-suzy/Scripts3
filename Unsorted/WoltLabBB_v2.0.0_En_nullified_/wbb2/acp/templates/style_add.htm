@@ -1,0 +1,41 @@
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+<form method="post" action="style.php">
+<input type="hidden" name="send" value="send">
+<input type="hidden" name="action" value="$action">
+<input type="hidden" name="sid" value="$session[hash]">
+ <table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="100%" align="center">
+  <tr class="tblhead">
+   <td colspan=2>Add Style</td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Style Name:</b></td>
+   <td><input type="text" name="stylename" value="" maxlength=100></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Templates Pack:</b><br>Select the Templates Pack this Style should use.</td>
+   <td><select name="templatepackid">
+    <option value="0">Default Templates</option>
+    $tplp_options
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Design Pack:</b><br>Select the Design Pack this Style should use.</td>
+   <td><select name="subvariablepackid">
+    $subp_options
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td colspan=2 align="center"><input type="submit" value="Submit"> <input type="reset" value="Reset"></td>
+  </tr>
+ </table>
+</form>
+</body>
+</html>
