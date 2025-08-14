@@ -1,0 +1,7 @@
+<table cellpadding="4" bgcolor="{tablebordercolor}" cellspacing="{tableinnerborderwidth}" border="0" {tableinnerextra} width="100%">
+<tr><td bgcolor="{tableheadbgcolor}"><normalfont color="{tableheadtextcolor}" class="thtcolor"><b>$title</b></normalfont>
+</td></tr>
+<tr><td bgcolor="{firstaltcolor}">
+<normalfont>$message<br />&nbsp;</normalfont>
+<table border="0" cellpadding="3" width="100%"><tr><td><smallfont color="{pagebgcolor}">[by <a href="member.php?s=$session[sessionhash]&action=getinfo&userid=$userid">$user</a> on $dateposted]</smallfont></td><td align="right"><smallfont color="{pagebgcolor}">[<a href="showthread.php?s=$session[sessionhash]&threadid=$threadid">read more</a>]-[$replies]</smallfont></td></tr></table>
+</td></tr></table><br />
