@@ -1,0 +1,165 @@
+                                                   
+BODY {
+	PADDING-LEFT: 15px;
+
+}
+
+
+.text {
+
+	COLOR: #002D00; 
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 10pt; 
+}
+
+.bright {
+	border-right: 1pt solid #999999;
+}
+
+
+.code {
+	PADDING-LEFT: 15px;
+	PADDING-RIGHT: 10px;
+	PADDING-TOP: 10px;
+	PADDING-BOTTOM: 10px;
+
+}
+
+code {
+	FONT-SIZE: 10px; 
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+
+}
+
+.body_left {
+	BACKGROUND-COLOR: #E9ECF5;
+	margin-bottom: 10;
+	margin-top: 10;
+	margin-left: 10;
+	margin-right: 10;
+}
+
+.body_right {
+	BACKGROUND-COLOR: #FFFFFF;
+	margin-bottom: 10;
+	margin-top: 10;
+	margin-left: 20;
+	margin-right: 10;
+
+}
+
+
+H3 {
+	color:#FF6215;
+	FONT-SIZE: 12pt;
+	FONT-WEIGHT: bold;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	PADDING-TOP: 8pt;
+	PADDING-RIGHT: 3%;
+	LINE-HEIGHT: 0%;
+	PADDING-BOTTOM: 0px;
+}
+
+
+H2 {
+	color:#FF6215;
+	FONT-SIZE: 16pt;
+	FONT-WEIGHT: bold;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: underline;
+	PADDING-TOP: 8pt;
+	PADDING-RIGHT: 3%;
+}
+
+H1 {
+	color:#FF6215;
+	FONT-SIZE: 20pt;
+	FONT-WEIGHT: bold;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: underline;
+        text-align: center;
+	LINE-HEIGHT: 0%;
+	PADDING-TOP: 0pt;
+	PADDING-RIGHT: 3%;
+
+}
+
+
+
+
+A {
+	COLOR: #5267A0; FONT-FAMILY: Arial; FONT-SIZE: 10pt;TEXT-DECORATION: none;FONT-WEIGHT: bold;
+}
+A:unknown {
+	COLOR: #FF6215;TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #FF6215;TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #FF6215;TEXT-DECORATION: underline
+}
+
+
+
+
+
+
+
+.defFont {
+	FONT-FAMILY: Verdana,Arial; FONT-SIZE: 8pt; 
+}
+
+.msgFont {
+	COLOR: #5267a0;FONT-FAMILY: Verdana,Arial; FONT-WEIGHT: bold;FONT-SIZE: 10pt; 
+}
+
+
+.dddFont {
+	COLOR: #CCCCCC; FONT-FAMILY: Verdana,Arial; FONT-SIZE: 8pt; 
+}
+
+.pasFont {
+	COLOR: #B5C1D9; FONT-FAMILY: Verdana,Arial; FONT-SIZE: 8pt;   
+}
+
+.selFont {
+	COLOR: #DF8702; FONT-FAMILY: Verdana,Arial; FONT-SIZE: 8pt; 
+}
+
+
+.smallFont {
+	 FONT-SIZE: 7pt; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 4px
+}
+
+
+
+.del_button {
+	COLOR: #CC0000; 
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	FONT-SIZE: 9px; 
+	FONT-WEIGHT: bold;
+	BACKGROUND-COLOR: #FFD7D7; 
+	PADDING-LEFT: 0px; 
+	PADDING-RIGHT: 0px; 
+	PADDING-TOP: 0px; 
+	PADDING-BOTTON: 0px; 
+	CURSOR: hand;
+}
+                      
+.button {
+	COLOR: #5267A0; 
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	FONT-SIZE: 9px; 
+	FONT-WEIGHT: bold;
+	BACKGROUND-COLOR: #DFE0EC; 
+	PADDING-LEFT: 0px; 
+	PADDING-RIGHT: 0px;
+	PADDING-TOP: 0px; 
+	PADDING-BOTTON: 0px; 
+ 	CURSOR: hand;
+}
+
+INPUT.submit {
+	BACKGROUND-COLOR: #FFFFFF; border: #CC6600 1px solid; COLOR: #CC6600; PADDING-LEFT: 3px; WIDTH: 100px
+}
