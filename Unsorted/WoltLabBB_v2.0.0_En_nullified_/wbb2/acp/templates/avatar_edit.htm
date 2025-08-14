@@ -1,0 +1,43 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+<form method="post" action="avatar.php">
+<input type="hidden" name="send" value="send">
+<input type="hidden" name="action" value="$action">
+<input type="hidden" name="sid" value="$session[hash]">
+<input type="hidden" name="avatarid" value="$_REQUEST[avatarid]">
+<table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="95%" align="center">
+  <tr class="tblhead">
+   <td colspan=2>Edit Avatar</td>
+  </tr>
+    <tr class="firstrow">
+   <td><b>File Name:</b></td>
+   <td>$row2[avatarname].$row2[avatarextension]</td>
+  </tr>
+  <tr class="secondrow">
+	<td><b>Image:</b></td>
+	<td>$avatarimage</td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>User Group:</b><br>Which user group can use this avatar?</td>
+   <td><select name="groupid">
+   <option value="0">All Groups</option>
+   $avatar_groupsbit 
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Required Posts:</b><br>How many posts does a member need to have the right to use this avatar?</td>
+   <td><input type="text" name="needposts" value="$row2[needposts]" maxlength="7"></td>
+  </tr>
+  <tr class="firstrow">
+   <td colspan=2 align="center"><input type="submit" value="Submit"> <input type="reset" value="Reset"></td>
+  </tr>
+ </table>
+</form>
+</body>
+</html>
