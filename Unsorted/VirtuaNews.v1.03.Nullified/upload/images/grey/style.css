@@ -1,0 +1,53 @@
+.form {
+  background-color: #ffffff;
+  font-family: Verdana;
+  font-size: 10px;
+  color: #000000;
+  border: 1px solid #555555;
+}
+
+.header {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.red {
+  color: #FF0000;
+}
+
+.lightfont {
+  color: #dddddd;
+}
+
+body, td {
+  font-family : Verdana,Arial,sans-serif;
+  font-size : 10px;
+  color : #000000;
+}
+
+pre {
+  font-family: verdana,arial,monospace;
+  font-size: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+a:link {
+  text-decoration: none;
+  color : #474747;
+}
+
+a:active {
+  color: #666666;
+  text-decoration: underline;
+}
+
+a:visited {
+  text-decoration: none;
+  color : #474747;
+}
+
+a:hover {
+  color: #7E7E7E;
+  text-decoration: underline;
+}
