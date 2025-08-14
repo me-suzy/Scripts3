@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<mvc-config>
+	<form-beans>
+		<form-bean name="newsFormBean" type="sample.NewsFormBean" />
+	</form-beans>
+	<action-mappings>
+		<action path="/AddNews.do" 
+			type="sample.AddNewsAction" 
+			name="newsFormBean" 
+			scope="request" 
+			validate="true">
+			<forward name="success" path="/default/add-success.html" />
+			<forward name="exception" path="/default/add.tpl" />
+		</action> 
+
+		<action path="/ChangeLocale.do" 
+			type="poop.mvc.LocaleAction">
+			<forward name="success" path="/default/default.tpl" />
+		</action> 
+		
+	</action-mappings>
+</mvc-config>
