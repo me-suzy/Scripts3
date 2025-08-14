@@ -1,0 +1,37 @@
+body {background-color:#ffffff;color:#000000;font-family:Verdana, Arial,Helvetica;margin:0 0 0;}
+td {font-family:Arial, Verdana, Helvetica;font-size:12px;font-weight:normal;color:#000000;}
+.b {font-family:Arial, Verdana, Helvetica;font-size:12px;font-weight:bold;color:#000000;}
+.w {font-family:Arial, Verdana, Helvetica;font-size:12px;font-weight:normal;color:#ffffff;}
+.bw {font-family:Arial, Verdana, Helvetica;font-size:12px;font-weight:bold;color:#ffffff;}
+.s {font-family:Arial, Verdana, Helvetica;font-size:10px;font-weight:normal;color:#000000;}
+.red {font-family:Verdana, Arial, Helvetica;font-size:12px;font-weight:normal;color:#a20000;}
+.mn {font-family:Verdana, Helvetica;color:#000000;font-size:9px;font-weight:normal;text-decoration:none;}
+.unread_msg {font-weight : bold;}
+ -- link --
+a:link, a:visited {color:#000000;text-decoration:none;}
+a:active {color:#000000;text-decoration:none;}
+a:hover {color:#000000;text-decoration:underline;}
+
+a.w:link, a.w:visited {color:#FFFFFF;text-decoration:none;}
+a.w:active {color:#FFFFFF;text-decoration:none;}
+a.w:hover {color:#FFFFFF;text-decoration:underline;}
+
+a.n:link, a.n:visited {color:#000000;font-weight:normal;text-decoration:none;}
+a.n:active {color:#000000;font-weight:normal;text-decoration:none;}
+a.n:hover {color:#333333;font-weight:normal;text-decoration:underline;}
+
+a.m:link, a.m:visited {font-family:Verdana, Helvetica;color:#000000;font-size:9px;font-weight:normal;text-decoration:none;}
+a.m:active {font-family:Verdana, Helvetica;color:#000000;font-size:9px;font-weight:normal;text-decoration:none;}
+a.m:hover {font-family:Verdana, Helvetica;color:#333333;font-size:9px;font-weight:normal;text-decoration:underline;}
+
+  -- form -- 
+input.text {font-family:Arial, Verdana, Helvetica;font-size:12px;font-weight:normal;color:#000000;}.profiles {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #AE1600;
+}
+
+.trs { background-color: #0FAFFC; }
+.trth { background-color: #A0DFFE; }
+.trtc { background-color: #EAF9FF; }
+.ptext { color: #57C7FD; }
