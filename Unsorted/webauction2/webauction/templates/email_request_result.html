@@ -1,0 +1,95 @@
+<?
+/*
+   Copyright (c), 1999, 2000 - phpauction.org
+   Copyright (c), 2001, 2002 - webauction.de.vu
+
+   Lizenz siehe lizenz.txt & license
+
+   Die neueste Version kostenfrei zum Download unter:
+   http://webauction.de.vu
+
+*/
+
+?>
+
+
+
+
+<TABLE WIDTH="100%" BGCOLOR="#FFFFFF" BORDER=0 CELLPADDING="0" CELLSPACING="0">
+
+<TR>
+
+<TD>
+
+<CENTER>
+
+<? print $std_font; ?>
+
+
+
+<A HREF="profile.php?SESSION_ID=<? print $sessionIDU; ?>&user_id=<? print $user_id; ?>">
+
+<?
+
+	print $std_font.$MSG_206;
+
+?>
+
+</FONT>
+
+</A> |
+
+<A HREF="item.php?SESSION_ID=<? print $sessionIDU; ?>&id=<? print $auction_id; ?>">
+
+<?
+
+	print $std_font.$MSG_138;
+
+?>
+
+</FONT>
+
+</A>
+
+
+
+</CENTER>
+
+<BR>
+
+<BR>
+
+<CENTER><B><? print $tlt_font.$MSG_107; ?></B></CENTER>
+
+</FONT>
+
+
+
+<BR><BR>
+
+<CENTER>
+
+<?
+
+	print $std_font.$MSG_151;
+
+?>
+
+</FONT>
+
+<B><? print $TPL_nick_value; ?></B>  es: <A HREF="MAILTO:<? print $TPL_email_value; ?>"><? print $TPL_email_value; ?></A></FONT>
+
+<BR><BR><BR>
+
+
+
+<BR>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+
+
