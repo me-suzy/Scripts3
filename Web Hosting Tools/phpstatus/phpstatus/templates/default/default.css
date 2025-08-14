@@ -1,0 +1,56 @@
+body {
+font-size: 14pt;
+font-family: Arial;
+color: #000000;
+}
+
+.copyright {
+font-family: Arial;
+font-size: 10pt;
+color: #CCCCCC;
+}
+
+a:link, a:active, a:visited {
+font-family: Arial;
+font-size: 10pt;
+color: #475F76;
+text-decoration: none;
+}
+
+a:hover{
+font-family: Arial;
+font-size: 10pt;
+color: 475F76;
+text-decoration: underline;
+}
+
+.borderline {
+background: none;
+border: 4px double #000000;
+}
+
+.block-header {
+background: none;
+background-image: url("images/header.jpg");
+}
+
+.header{
+background: none;
+font-family: sans-serif, Helvetica, Arial;
+color: #FFFFFF;
+font-size: 16px;
+text-decoration: none;
+}
+
+.text {
+background: none;
+font-family: sans-serif, Helvetica, Arial;
+color: #000000;
+font-size: 14px;
+text-decoration: none;
+}
+
+.title-back {
+background: none;
+background-image: url("images/title_back.jpg");
+}
