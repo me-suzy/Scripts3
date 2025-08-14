@@ -1,0 +1,448 @@
+                            ActualScripts, Company.
+
+                    DIRECT ACCESS TO ACTUALANALYZER INFORMATION
+
+
+
+Providing access to the ActualAnalyzer's information from external scripts:
+
+//--  Access to visitings statistics for groups/pages  ---------------------
+
+1. add $rf value and the direct access interface:
+
+$rf='<path>';
+require $rf.'direct.php';
+
+<path> - should contain full path to the root's folder of ActualAnalyzer and
+  crowns with "/"
+  (for example: $rf='/var/www/actualscripts.com/analyzer/';)
+
+2. add requested values and function which will receive statistics:
+
+$vals=array();
+$vals[1]='<ID>,<type>,<time>';
+$vals[2]='<ID>,<type>,<time>';
+$vals[3]='<ID>,<type>,<time>';
+...
+$rez = $dbaccess->getVisitings($vals);
+
+<ID> - ID of group/page: should be received browsing
+  'http://your.domain/pro/direct.php?action=getids'
+  (for example: 1)
+<type> - type of statistics: visitors, hosts, reloads, hits
+  (for example: visitors)
+<time> - time interval: total, totalm_2004(totalm_2005 etc.), lastmonth, month,
+  lastweek, week, yesterday, today
+  (for example: total)
+
+3. Congratulations! The array $rez contain requested values.
+
+The sample of PHP script for receiving of total's visitors statistics and total's
+hits statistics for page with ID=1:
+
+<?php
+
+$rf='<path>';
+require $rf.'direct.php';
+
+$vals=array();
+$vals[1]='1,visitors,total';
+$vals[2]='1,hits,total';
+
+$rez = $dbaccess->getVisitings($vals);
+
+//variable $rez[1] have number of visitors
+//variable $rez[2] have number of hits
+echo "<br>total's visitors=".$rez[1];
+echo "<br>total's hits=".$rez[2];
+
+?>
+
+
+
+//--  Access to visitings statistics for time intervals  -------------------
+
+1. add $rf value and the direct access interface:
+
+$rf='<path>';
+require $rf.'direct.php';
+
+<path> - should contain full path to the root's folder of ActualAnalyzer and
+  crowns with "/"
+  (for example: $rf='/var/www/actualscripts.com/analyzer/';)
+
+2. add requested values and function which will receive statistics:
+
+$rez = $dbaccess->getVisTim('<ID>,<type>,<time>');
+
+<ID> - ID of group/page: should be received browsing
+  'http://your.domain/pro/direct.php?action=getids'
+  (for example: 1)
+<type> - type of statistics: visitors, hosts, reloads, hits
+  (for example: visitors)
+<time> - time interval: total, totalm_2004(totalm_2005 etc.), lastmonth, month,
+  lastweek, week, yesterday, today
+  (for example: total)
+
+3. Congratulations! The array $rez contain requested values separated by ','.
+
+The sample of PHP script for receiving of total's visitors statistics
+for page with ID=1:
+
+<?php
+
+$rf='<path>';
+require $rf.'direct.php';
+
+$rez = $dbaccess->getVisTim('1,visitors,total');
+
+reset($rez);
+//rotate subintervals
+while($e=each($rez)) {
+  //variable $e[1]  have statistics for one of time intervals separated by '|'
+  $temp=split("\|",$e[1]);
+  //variable $temp[1] have time interval
+  //variable $temp[0] have value of visiors
+  echo "<br>".$temp[1]."=".$temp[0];
+}
+
+?>
+
+
+
+//--  Access to visitings statistics for groups  ---------------------------
+
+1. add $rf value and the direct access interface:
+
+$rf='<path>';
+require $rf.'direct.php';
+
+<path> - should contain full path to the root's folder of ActualAnalyzer and
+  crowns with "/"
+  (for example: $rf='/var/www/actualscripts.com/analyzer/';)
+
+2. add requested values and function which will receive statistics:
+
+$rez = $dbaccess->getVisGrsPgs('<ID>,<type>,<time>,<length>,<bpos>');
+
+<ID> - ID of group: should be received browsing
+  'http://your.domain/pro/direct.php?action=getids'
+  ID=221 for all groups; (for example: 201)
+<type> - type of statistics: visitors, hosts, reloads, hits
+  (for example: visitors)
+<time> - time interval: total, totalm_2004(totalm_2005 etc.), lastmonth, month,
+  lastweek, week, yesterday, today
+  (for example: total)
+<length> - number of returned records
+  (for example: 10)
+<bpos> - begin position of returned records
+  (for example: 0)
+
+3. Congratulations! The array $rez contain requested values separated by '|'.
+
+The sample of PHP script for receiving of total's visitors statistics for group
+with ID=201:
+
+<?php
+
+$rf='<path>';
+require $rf.'direct.php';
+
+$rez = $dbaccess->getVisGrsPgs('201,visitors,total,10,0');
+
+reset($rez);
+//rotate pages of group
+while($e=each($rez)) {
+  //variable $e[1]  have statistics for one of pages separated by '|'
+  $temp=split("\|",$e[1]);
+  //variable $temp[0] have value of visiors
+  //variable $temp[1] have address of page
+  //variable $temp[2] have name of page/group
+  //variable $temp[3] have ID of page/group
+  echo "<br>".$temp[2]." (".$temp[1].") =".$temp[0];
+}
+
+?>
+
+
+
+//--  Access to visitings statistics from referring servers  ---------------
+
+1. add $rf value and the direct access interface:
+
+$rf='<path>';
+require $rf.'direct.php';
+
+<path> - should contain full path to the root's folder of ActualAnalyzer and
+  crowns with "/"
+  (for example: $rf='/var/www/actualscripts.com/analyzer/';)
+
+2. add requested values and function which will receive statistics:
+
+$rez = $dbaccess->getRefServ('<ID>,<type>,<time>,<length>,<bpos>');
+
+<ID> - ID of group/page: should be received browsing
+  'http://your.domain/pro/direct.php?action=getids'
+  (for example: 1)
+<type> - type of statistics: visitors, hosts, reloads, hits
+  (for example: visitors)
+<time> - time interval: total, totalm_2004(totalm_2005 etc.), lastmonth, month,
+  lastweek, week, yesterday, today
+  (for example: total)
+<length> - number of returned records
+  (for example: 10)
+<bpos> - begin position of returned records
+  (for example: 0)
+
+3. Congratulations! The array $rez contain requested values separated by ','.
+
+The sample of PHP script for receiving of top 10 referring servers by visitors
+for page with ID=1:
+
+<?php
+
+$rf='<path>';
+require $rf.'direct.php';
+
+$rez = $dbaccess->getRefServ('1,visitors,total,10,0');
+
+reset($rez);
+//rotate referring servers
+while($e=each($rez)) {
+  //variable $e[1]  have statistics for one of referring server separated by comma
+  $temp=split(",",$e[1]);
+  //variable $temp[1] have referring server
+  //variable $temp[0] have value of visitors
+  echo "<br>".$temp[1]."=".$temp[0];
+}
+
+?>
+
+
+
+//--  Access to visitings statistics from external referring pages  --------
+
+1. add $rf value and the direct access interface:
+
+$rf='<path>';
+require $rf.'direct.php';
+
+<path> - should contain full path to the root's folder of ActualAnalyzer and
+  crowns with "/"
+  (for example: $rf='/var/www/actualscripts.com/analyzer/';)
+
+2. add requested values and function which will receive statistics:
+
+$rez = $dbaccess->getExtRefPages('<ID>,<type>,<time>,<length>,<bpos>');
+
+<ID> - ID of group/page: should be received browsing
+  'http://your.domain/pro/direct.php?action=getids'
+  (for example: 1)
+<type> - type of statistics: visitors, hosts, reloads, hits
+  (for example: visitors)
+<time> - time interval: total, totalm_2004(totalm_2005 etc.), lastmonth, month,
+  lastweek, week, yesterday, today
+  (for example: total)
+<length> - number of returned records
+  (for example: 10)
+<bpos> - begin position of returned records
+  (for example: 0)
+
+3. Congratulations! The array $rez contain requested values separated by ','.
+
+The sample of PHP script for receiving of top 10 external referring pages
+by visitors for page with ID=1:
+
+<?php
+
+$rf='<path>';
+require $rf.'direct.php';
+
+$rez = $dbaccess->getExtRefPages('1,visitors,total,10,0');
+
+reset($rez);
+//rotate external referring pages
+while($e=each($rez)) {
+  //variable $e[1]  have statistics for one of referring page separated by comma
+  $temp=split(",",$e[1]);
+  //variable $temp[1] have external referring page
+  //variable $temp[0] have value of visitors
+  echo "<br>".$temp[1]."=".$temp[0];
+}
+
+?>
+
+
+
+//--  Access to time intervals values  -------------------------------------
+
+1. add $rf value and the direct access interface:
+
+$rf='<path>';
+require $rf.'direct.php';
+
+<path> - should contain full path to the root's folder of ActualAnalyzer and
+  crowns with "/"
+  (for example: $rf='/var/www/actualscripts.com/analyzer/';)
+
+2. add requested values and function which will receive statistics:
+
+$rez = $dbaccess->getInterval('<interval>');
+
+<interval> - name of requested time interval: today, yesterday, week, lastweek,
+  month, lastmonth, total
+  (for example: total)
+
+3. Congratulations! The variable $rez contain requested values separated by '|'.
+
+The sample of PHP script for receiving of 'total' time interval's value:
+
+<?php
+
+$rf='<path>';
+require $rf.'direct.php';
+
+$rez = $dbaccess->getInterval('total');
+
+$temp=split("\|",$rez);
+//variable $temp[0] have Unix time stamp of beginning of time interval
+//variable $temp[1] have formated value of beginning of time interval
+//variable $temp[2] have Unix time stamp of ending of time interval
+//variable $temp[3] have formated value of ending of time interval
+echo "<br>".$temp[1]."-".$temp[3];
+
+?>
+
+
+
+//--  Access to list of groups  --------------------------------------------
+
+1. add $rf value and the direct access interface:
+
+$rf='<path>';
+require $rf.'direct.php';
+
+<path> - should contain full path to the root's folder of ActualAnalyzer and
+  crowns with "/"
+  (for example: $rf='/var/www/actualscripts.com/analyzer/';)
+
+2. add requested values and function which will receive statistics:
+
+$rez = $dbaccess->getGrsList('<bpos>,<length>');
+
+<bpos> - begin position of returned records
+  (for example: 0)
+<length> - number of returned records
+  (for example: 10)
+
+3. Congratulations! The variable $rez contain requested values.
+
+The sample of PHP script for receiving of the first 10 groups:
+
+<?php
+
+$rf='<path>';
+require $rf.'direct.php';
+
+$rez = $dbaccess->getGrsList('0,10');
+
+reset($rez);
+//rotate groups
+while($e=each($rez)) {
+  //variable $e[0]  ID of group
+  //variable $e[1]  name of group
+  echo "<br>ID=".$e[0]."; Group: ".$e[1];
+}
+
+?>
+
+
+
+//--  Access to list of pages  ---------------------------------------------
+
+1. add $rf value and the direct access interface:
+
+$rf='<path>';
+require $rf.'direct.php';
+
+<path> - should contain full path to the root's folder of ActualAnalyzer and
+  crowns with "/"
+  (for example: $rf='/var/www/actualscripts.com/analyzer/';)
+
+2. add requested values and function which will receive statistics:
+
+$rez = $dbaccess->getPgsList('<bpos>,<length>');
+
+<bpos> - begin position of returned records
+  (for example: 0)
+<length> - number of returned records
+  (for example: 10)
+
+3. Congratulations! The variable $rez contain requested values.
+
+The sample of PHP script for receiving of the first 10 pages:
+
+<?php
+
+$rf='<path>';
+require $rf.'direct.php';
+
+$rez = $dbaccess->getPgsList('0,10');
+
+reset($rez);
+//rotate pages
+while($e=each($rez)) {
+  //variable $e[0]  ID of page
+  //variable $e[1]  name of page
+  echo "<br>ID=".$e[0]."; Page: ".$e[1];
+}
+
+?>
+
+
+
+//--  Access to names of groups/pages  -------------------------------------
+
+1. add $rf value and the direct access interface:
+
+$rf='<path>';
+require $rf.'direct.php';
+
+<path> - should contain full path to the root's folder of ActualAnalyzer and
+  crowns with "/"
+  (for example: $rf='/var/www/actualscripts.com/analyzer/';)
+
+2. add requested values and function which will receive statistics:
+
+$rez = $dbaccess->getGrPgName('<ID1>,<ID2>,<ID3>,...');
+
+<ID> - ID of group: should be received browsing
+  'http://your.domain/pro/direct.php?action=getids'
+  (for example: 201)
+
+3. Congratulations! The variable $rez contain requested values.
+
+The sample of PHP script for receiving of the names of group 201 and page 1:
+
+<?php
+
+$rf='<path>';
+require $rf.'direct.php';
+
+$rez = $dbaccess->getGrPgName('201,1');
+
+reset($rez);
+//rotate groups/pages
+while($e=each($rez)) {
+  //variable $e[0]  ID of page
+  $temp=split("\|",$e[1]);
+  //variable $temp[0]  name of page
+  //variable $temp[1]  url of page
+  echo "<br>ID=".$e[0]."; Name: ".$temp[0]."; URL: ".$temp[1];
+}
+
+?>
+
+
+ Copyright:        (c) 2002-2005 ActualScripts, Company. All rights reserved.
+ Source:        http://www.actualscripts.com/
