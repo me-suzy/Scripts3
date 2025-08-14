@@ -1,0 +1,24 @@
+SHOWlog uses a "simple to use" template-system.
+
+To built your own template just create a folder in the template-directory and name
+it with your desired template-name.
+
+Then create a HTML-file called 'statistics.html' in your folder.
+In this file you have to start every link to your own files (e.g. images, css...)
+with '<%TPLPATH%>', e.g. ' href="<%TPLPATH%>statistics.css" '.
+
+Special vars that will be replaced after reading the template:
+  <%VERSION%>			will be replaced with the SHOWlog version ($showlog_ver)
+  <%LANGUAGECODE%>	replaced by languagecode ($lang_code) e.g. 'de' or 'en'
+  <%REFRESH%>			at this position the METATAG 'REFRESH' will be written
+  <%TPLPATH%>			will be replaced by the template-path
+  <%CONTENT%>			here the content will be shown
+
+A second file is necessary: a Stylesheet-file, e.g. 'statistics.css'.
+The best way to built your own Stylesheet is to copy and modify an existing stylesheet-file
+into your own template-directory, so you can't miss a necessary class.
+
+If you want to share your template, send it as a compressed file (e.g. .zip) to fli4l@sirsocke.de
+I will upload it to the showlog homepage.
+
+If you need to modify the templatefunction: 'templates/template.inc.php'
