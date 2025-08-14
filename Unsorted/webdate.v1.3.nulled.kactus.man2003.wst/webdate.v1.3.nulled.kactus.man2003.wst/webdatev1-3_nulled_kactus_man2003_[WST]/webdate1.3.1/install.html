@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>webDate 1.3.1 Installation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<p><b><font face="Arial, Helvetica, sans-serif" size="4" color="#000099">webDate 
+  v1.3.1</font></b><br>
+  <a href="http://www.webscribble.com"><font face="Arial, Helvetica, sans-serif" size="2">http://www.webscribble.com 
+  </font></a></p>
+<p><b><font face="Arial, Helvetica, sans-serif" size="2">Installation Instructions</font></b><font face="Arial, Helvetica, sans-serif" size="2"> 
+  </font></p>
+<ol>
+  <li><font size="2" face="Arial, Helvetica, sans-serif">Unzip all files locally 
+    into a new folder.</font></li>
+  <li><font size="2" face="Arial, Helvetica, sans-serif">Connect to you web server 
+    using and FTP program such as CuteFTP or SmartFTP and upload these files to 
+    your public HTML directory. Please maintain the same folder structure as provided 
+    in the zip file and overwrite <em>all</em> existing files on your server.</font></li>
+  <li><font size="2" face="Arial, Helvetica, sans-serif">Open conf.xml and add 
+    the following line:<br>
+    <em>&lt;field type=&quot;checkbox&quot; name=&quot;free_im&quot; text=&quot;Allow 
+    nonpaying members to IM?&quot;&gt;0&lt;/field&gt;</em><br>
+    below:<br>
+    <em>&lt;field type=&quot;checkbox&quot; name=&quot;no_verify_email&quot; text=&quot;Skip 
+    email verification?&quot;&gt;0&lt;/field&gt;</em> </font></li>
+  <li><font size="2" face="Arial, Helvetica, sans-serif">Make sure your database 
+    settings are correct and run upgrade.php to update the MySQL tables. Delete 
+    this file once this step is complete.</font></li>
+  <li><font size="2" face="Arial, Helvetica, sans-serif">You have successfully 
+    upgraded webDate to version 1.3.1!</font></li>
+</ol>
+<p align="center"><font size="2" face="Arial, Helvetica, sans-serif"><br>
+  <font color="#FF0000"><strong>Although thoroughly tested without any serious 
+  difficulties, Web Scribbles assumes no responsibility for potential damages 
+  this script may cause. BY USING THIS SOFTWARE YOU AGREE TO THE TERMS AND CONDITIONS 
+  OF OUR <a href="http://www.webscribble.com/products/license.shtml">LICENSE AGREEMENT</a>.</strong></font><br>
+  &copy;2002-2003 Web Scribble Solutions, Inc.</font></p>
+</body>
+</html>
