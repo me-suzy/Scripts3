@@ -1,0 +1,52 @@
+Weblog (weblog.php) sammelt folgende Daten:
+	- Datum / Zeit
+	- IP
+	- Host (Provider)
+	- Browserkennung
+	- Referer
+	- Browsersprache
+	- Bildschirmauflösung (wenn bein Besucher javascript eingeschaltet ist)
+	- Farbtiefe (wenn bein Besucher javascript eingeschaltet ist)
+
+Showlog erstellt folgende Statistiken:
+	- Browser: Browserfamilie, Browserdetails, Javascript
+	- Betriebsystem: Betriebsystemfamilie (z.B. Windows), Beriebsystemdetails (z.B. Windows 2003)
+	- Referer: Zuvor besuchte Webseite (Host), Host ohne Subdomain, Refererdetails
+	- Forwarder
+	- Suchanfragen: Suchmaschinen, Detailierte Suchanfragen, Suchroboter
+	- 'hits by day' für jeden Monat
+	- 'hits by month' für jedes Jahr
+	- Provider
+	- Ländercodes der Provider
+	- IP to Country (Ländercodes anhand der IP-Adresse)
+	- Browsersprachen: Hauptsprache, Dialekt (z.B. de-at für Östereich)
+	- Bildschiermdaten: Bildschirmauflösung, Farbtiefe, Bildschirmtyp
+
+Showlog erstellt zusätzlich folgende Übersichten:
+	- Detailierte Übersicht über die Logdatei mit Filterfunktion
+	- Übersicht über die nicht erkannten Kennungen, wenn man 'Unbekannt' anklickt
+		- Unbekannte Browser - beim klicken erfolgt eine googlesuche in neuem Fenster
+		- Unbekanntes Betriebsystem - beim klicken erfolgt eine googlesuche in neuem Fenster
+		- Unbekannte Suchmaschine - beim klicken erfolgt eine googlesuche in neuem Fenster
+		- Unbekannter Suchrobot - beim klicken erfolgt eine googlesuche in neuem Fenster
+		- Unbekannte IP und LongIP (für IP2Country)
+
+Showlog zusätzliche Funktionen:
+	- Refererhost - durch klick besuchen (in neuem Fenster)
+	- Refererdetails - durch klick besuchen (in neuem Fenster)
+	- Suchmaschine - durch klick besuchen (in neuem Fenster)
+	- Suchanfrage - durch klick ausführen (in neuem Fenster)
+	- Logdateidetails:
+		- Referer durch klick besuchen (in neuem Fenster)
+		- Links in Browserkennung (z.B. bots)- durch klick ausführen (in neuem Fenster)
+
+Showlog zusätzliche Funktionen im Administrationsmodus:
+	- Übersicht über Benutzernamen die im Referer enthalten sein könnten
+	- Logdatei überprüfen und automatisch korrigieren
+	- Logdatei herunterladen
+	- Letzten eintrag löschen
+	- Logdatei löschen
+
+Zusätzliche Funktionen:
+	- Benchmark
+	- PHP-script um eine neue IP2Country-Datenbank zu erstellen 
