@@ -1,0 +1,66 @@
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+<script type="text/javascript" language="javascript">
+<!--
+ function tostorage(mode,id,title) {
+  parent.storage.add(mode,id,title);
+ }
+
+ function select_all(status) {
+  for (i=0;i<document.bbform.length;i++) {
+   if(document.bbform.elements[i].name=="userid[]") document.bbform.elements[i].checked = status;    
+  }
+ }
+ 
+ function validate(theform) {
+  if(theform.action.options[theform.action.selectedIndex].value=='tostorage') {
+   for (i=0;i<theform.length;i++) {
+    if(theform.elements[i].name=="userid[]" && document.bbform.elements[i].checked ) {
+     id = theform.elements[i].value;
+     title = eval('theform.u'+id+'.value');
+     parent.storage.add('user',id,title);
+    }
+   }
+   return false;
+  }
+  else return true;
+ }
+//-->
+</script>
+</head>
+
+<body>
+<form method="post" action="users.php" name="bbform" onSubmit="return validate(this)">
+<input type="hidden" name="sid" value="$session[hash]">
+<table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="100%" align="center">
+ <tr class="tblhead">
+  <td colspan="6">Found Users</td>
+ </tr>
+ <tr class="tblsection">
+  <td>&nbsp;</td>
+  <td>Benutzername</td>
+  <td>eMail</td>
+  <td align="center">Registration Date</td>
+  <td align="center">last activity</td>
+  <td align="center"><input type="checkbox" name="all" value="1" onclick="select_all(this.checked)"></td>
+ </tr>
+ $userbit
+</table>
+<table align="right">
+ <tr>
+  <td><select name="action">
+   <option value="-1">Choose action...</option>
+   <option value="email">send email</option>
+   <option value="delete">delete</option>
+   <option value="access">set rights</option>
+   <option value="tostorage">add to storage</option>
+   <option value="activate">activate</option>
+   <option value="selectstats">show statistics</option>
+  </select> <input type="submit" value="Go"></td>
+ </tr>
+</table>
+</body>
+</html>
