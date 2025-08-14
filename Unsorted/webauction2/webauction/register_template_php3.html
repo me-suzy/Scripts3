@@ -1,0 +1,141 @@
+<?
+/*
+
+   Copyright (c), 1999, 2000 - phpauction.org
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation (version 2 or later).
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+*/
+?>
+
+
+<SCRIPT Language="JavaScript">
+
+function SubmitForm(){
+	document.registration.submit();
+}
+
+function ResetForm(){
+	document.registration.reset();
+}
+
+//-->
+</script>
+
+
+
+<CENTER>
+<? print $tlt_font; ?><BR>
+<B>
+	<? print $MSG_001; ?>
+</B>
+<BR>
+</FONT>
+<FORM NAME=registration ACTION="register.php" METHOD="POST">
+<TABLE WIDTH="700" BORDER="0" CELLPADDING="5">
+
+<TR>
+  <TD>
+  </TD>
+  <TD WIDTH="486">
+
+<FONT FACE="Verdana, Arial, Helvetica, sans-serif" SIZE="2" COLOR="red">
+<B>
+<?
+	if ($TPL_err)
+	{
+		echo $TPL_errmsg;
+	}
+?>
+</B>
+  </TD>
+</TR>
+
+<TR>
+  <TD WIDTH="204" VALIGN="top" ALIGN="right">
+  	<? print $std_font; ?>
+  	<B><? print $MSG_002; ?></B>
+  	</FONT>
+  </TD>
+  <TD WIDTH="486">
+  	<INPUT TYPE=text NAME=TPL_name SIZE=40 MAXLENGTH=255 VALUE="<? echo $TPL_name; ?>">
+  	[<A HREF="help_name.php"><? print $std_font.$MSG_164; ?></A>]
+  </TD>
+</TR>
+
+<TR>
+  <TD WIDTH="204" VALIGN="top" ALIGN="right">
+   <? print $std_font; ?>
+   <B><? print $MSG_003; ?></B>
+   </FONT>
+  </TD>
+  <TD WIDTH="486">
+  	<INPUT TYPE=text NAME=TPL_nick SIZE=20 MAXLENGTH=20  VALUE="<? echo $TPL_nick; ?>">
+  	<? print $std_font.$MSG_050; ?>
+  	</FONT>
+  	[<A HREF="help_nick.php"><? print $std_font.$MSG_164; ?></A>]
+  </TD>
+</TR>
+
+<TR>
+  <TD WIDTH="204" VALIGN="top" ALIGN="right">
+   <? print $std_font; ?>
+   <B><? print $MSG_004; ?></B>
+   </FONT>
+  </TD>
+  <TD WIDTH="486">
+  	<INPUT TYPE=password NAME=TPL_password SIZE=20 MAXLENGTH=20 VALUE="">
+  	<? print $std_font.$MSG_050; ?>
+  	</FONT>
+  	[<A HREF="help_password.php"><? print $std_font.$MSG_164; ?></A>]
+  </TD>
+</TR>
+
+<TR>
+  <TD WIDTH="204" VALIGN="top" ALIGN="right">
+   <? print $std_font; ?>
+   <B><? print $MSG_005; ?></B>
+   </FONT>
+  </TD>
+  <TD WIDTH="486">
+  	<INPUT TYPE=password NAME=TPL_repeat_password SIZE=20 MAXLENGTH=20 VALUE="">
+  </TD>
+</TR>
+
+<TR>
+  <TD WIDTH="204"  VALIGN="top" ALIGN="right">
+   <? print $std_font; ?>
+   <B><? print $MSG_006; ?></B>
+   </FONT>
+  </TD>
+  <TD WIDTH="486">
+  	<INPUT TYPE=text NAME=TPL_email SIZE=50 MAXLENGTH=50 VALUE="<? echo $TPL_email; ?>">
+  	[<A HREF="help_email.php"><? print $std_font.$MSG_164; ?></A>]
+  </TD>
+</TR>
+
+<TR>
+  <TD WIDTH="204">&nbsp;</TD>
+  <TD WIDTH="486">
+   <?// print $std_font.$MSG_097; ?>
+   </FONT>
+	<BR><BR>
+	<INPUT TYPE=hidden NAME="action" VALUE="first">
+   <INPUT TYPE=submit NAME="">
+   <INPUT TYPE=reset NAME="">
+  </TD>
+</TR>
+</TABLE>
+</FORM>
+</CENTER>
