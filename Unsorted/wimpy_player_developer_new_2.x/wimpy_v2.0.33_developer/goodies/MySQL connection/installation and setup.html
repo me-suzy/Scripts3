@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>wimpy</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+body {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	background-color: #14162E;
+}
+a {  color: #003399; text-decoration: none}
+p {  font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #333333}
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #666666;
+}
+a:hover {  color: #003399; text-decoration: underline}
+.fineprint {
+	font-size: 9px;
+}
+.formInsertCode {
+	height: 300px;
+	width: 520px;
+}
+.formInsertPHPhead {
+
+	height: 100px;
+	width: 520px;
+}
+
+-->
+</style>
+</head>
+
+<body leftmargin="20" topmargin="20" marginwidth="20" marginheight="20">
+<table width="98%" border="0" cellpadding="30" cellspacing="0" bgcolor="#FFFFFF">
+		<tr>
+				<td>						<h1>Using MySQL</h1>						<p>To run Wimpy from MySQL, you will first need to edit the <font color="#CC0066"><strong>MySQL configuration variables</strong></font> that are located in the main <font color="#009900"><strong>wimpy.php</strong></font> file in the &quot;MySQL setup section&quot; The following variables need to be set according to your MySQL server settings:</p>						<p><font color="#CC0099">$host = &quot;localhost&quot;;</font> (your host)<br>
+						<font color="#CC0099">$db = &quot;mp3s&quot;;</font> (the database you would like to use... you will have to set this up yourself)<br>
+						<font color="#CC0099">$table = &quot;wimpy&quot;;</font> (the name of the table you would like to use... wimpy will create a new table for you if you so desire)<br>
+						<font color="#CC0099">$user = &quot;username&quot;;</font> (your username for the database)<br>
+				        <font color="#CC0099">$pwd = &quot;1234&quot;;</font> (your password for the database)</p>						<p>The MySQL connection files that are located in the &quot;goodies&quot; folder must be moved to your main wimpy folder and reside next to wimpy.php. This folder should also contain all of your mp3s. Wimpy will not read recursively into directories, so you will need to make sure that your mp3 files are all located in the same directory as <font color="#009900"><strong>wimpy.php</strong></font></p>						<p>If you already have an mp3 database, you can configure Wimpy to run from it, however, there are a couple of required fields that need to be sent into wimpy (You should have a column in your database named &quot;filename&quot;). <font color="#CC0000">It is recommended That you first test out wimpy by letting wimpy create a new table on your database.</font></p>						<p>To have Wimpy set up a table on your database, access the <font color="#009900"><strong>mysql_update.php</strong></font> file. Wimpy will add all of the mp3 files that are located in your wimpy folder. This procedure is also a good way to make sure that your connection username, database and password are set up correctly.</p>						<p>Next,  test wimpy by accessing the <font color="#009900"><strong>text.php<font color="#330099">?</font></strong></font><font color="#330099">with a query string</font>. <br> 
+						        <font color="#CC0000">Example 1:</font><br>
+                  		        <font color="#003366"><strong>test.php?queryWhere=artist&amp;queryValue=coldplay</strong></font><br>
+           		        The two variables that you need to pass in to test.php are <font color="#003366"><strong>queryWhere</strong></font> and <font color="#003366"><strong>queryValue</strong></font>.</p>						<p><font color="#003366"><strong>queryWhere</strong></font> = the column you want to search your database on. </p>						<p><font color="#003366"><strong>queryValue</strong></font> = 	the	value	that	you are searching for. If you want to search for more that one value, then you would seperate|your requests|with|pipes. (It would probably be best to url encode%020your%020requests%020too (not the pipes, just the requests).<br>
+                				<font color="#CC0000">Example 2:</font><br>
+    		        		<font color="#003366"><strong>test.php?queryWhere=artist&amp;queryValue=coldplay|the%020beatles</strong></font> <br>
+   		        		  (there is a pipe &quot;|&quot; between coldplay | and | the beatles)<br>
+       		  The example above would return al of the information from your wimpy table on your database where artist was equal to                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   &quot;coldplay&quot; and &quot;the beatles&quot;</p>						<p>The code that is generated needs to go into a PHP page. An example &quot;test.php&quot; file is included in the MySQL Connection folder.</p>						<p>You can use the Wimpy customization tool (<a href="http://www.wimpyplayer.com/customize" target="_blank">www.wimpyplayer.com/customize</a>) to generate the code required to run wimpy. Obviously you will set the&quot; <strong>Are you running Wimpy from a MySQL database?&quot;</strong> to yes. And you must also put the code into a PHP page. (A page with the.php extension)</p>						<p>&nbsp;</p>						<p>&nbsp;</p>						<p>&nbsp;</p></td>
+  </tr>
+</table>
+</body>
+</html>
