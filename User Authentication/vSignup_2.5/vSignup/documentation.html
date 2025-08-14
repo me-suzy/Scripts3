@@ -1,0 +1,577 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>vSignup 2.5 Documentation</title>
+<style type="text/css">
+<!--
+.style2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	color: #336600;
+}
+.style3 {font-family: Arial, Helvetica, sans-serif}
+.style4 {font-size: 14px}
+.style5 {font-family: Arial, Helvetica, sans-serif; font-size: 14px; }
+.style6 {font-family: Arial, Helvetica, sans-serif; font-weight: bold; }
+.style8 {font-family: Arial, Helvetica, sans-serif; font-size: 14; }
+.style9 {font-size: 14}
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	font-size: 14px;
+	color: #000099;
+}
+.style11 {
+	font-family: "Courier New", Courier, mono;
+	color: #000099;
+}
+.style12 {color: #990000}
+.style15 {color: #336600}
+.style17 {color: #000099}
+-->
+</style>
+</head>
+
+<body>
+<p class="style2">vSignup 2.5 Documentation</p>
+<p class="style3"><strong>Contents:</strong><br>
+  <span class="style4">	1. <a href="#Introduction">Introduction</a><br>
+  2. <a href="#Package">Package Contents</a><br>
+  3. <a href="#Requirements">Requirements</a><br>
+  4. <a href="#Upgrading">Upgrading</a><br>
+  5. <a href="#Installation">Installation</a><br>
+  6. <a href="#Administration">Administration</a><br>
+7. <a href="#Usage">Usage</a><br>
+8. <a href="#Demonstration">Demonstration</a>  </span><span class="style4"><br>
+  9. <a href="#FAQs">FAQ's</a><br>
+  10. <a href="#Changelog">Changelog</a><br>
+11. <a href="#Copyright">Copyright Notice</a><br>
+12. <a href="#Support">Support Information</a> </span></p>
+<hr>
+<hr>
+<p class="style6">Introduction:<a name="Introduction"></a></p>
+<p class="style5">vSignup is a member registration script which utilizes vAuthenticate 
+for its security handling. This handy script features email verification, 
+sending confirmation email message, restricting email domains that are 
+allowed for membership, and much more.</p>
+<p class="style5">vSignup is an offshoot of what vAuthenticate can do. It provides a 
+  member-signup form which integrates well with vAuthenticate to 
+create a powerful signup-and-authentication system for your site.</p>
+<p class="style5"><u>FEATURES:</u><br>
+  <br>
+  1. Speed 
+  - vSignup uses the dynamic-duo of PHP and MySQL which enables 
+  blazing fast transactions where only your server speed dictates 
+  the limit.</p>
+<p class="style5">2. Compactness 
+  - vSignup is very small thus taking up little space allowing  
+  you more room to enhance your site's other features.</p>
+<p class="style5">3. Authentication Settings 
+  - vSignup allows you to configure whether the system will 
+  automatically approve new membership request or not. It also 
+  allows you to turn the email notification on or off. You also have 
+  the option to let the system send the admin an automatic email 
+  message everytime a new member signs up.</p>
+<p class="style5"> 4. Email Verification
+  - vSignup provides a standard email verification function to 
+  ensure that the email address specified in the field is 
+  valid in terms of format.</p>
+<p class="style5"> 5. Email Confirmation Message
+  - vSignup can sends out a confirmation email to the visitor who
+  signed up to make sure that the email address he/she 
+  specified is really his/hers.</p>
+<p class="style5"> 6. Restriction on Email Domains
+  - vSignup allows you to restrict the people who signs up for
+  membership by validating that their email address is in 
+  your list of allowable domains.</p>
+<p class="style5">7. Emailer Profiles
+  - vSignup allows the you to enter multiple Emailer profiles. These
+  profiles allow you to set some predefined email messages to send 
+  to members during confirmation so that there will be a variety 
+  of templates to choose from.</p>
+<p class="style5">8. Password Reminder
+  - vSignup can rest a member's password in case they forget it.</p>
+<hr>
+<p class="style6">Package Contents:<a name="Package"></a></p>
+<table width="80%"  border="1" cellpadding="0" cellspacing="0" bordercolor="#000000">
+  <tr bgcolor="#CCCCCC" class="style5">
+    <td width="27%" valign="top"><div align="center"><span class="style8">Filename</span></div></td>
+    <td width="73%"><div align="center"><span class="style8">Description</span></div></td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">auth.php</td>
+    <td><span class="style9">Authentication class </span></td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">AuthClass.txt</td>
+    <td>Detailed class description for the auth class </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">authconfig.php</td>
+    <td>vAuthenticate path and database configuration file </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">check.php</td>
+    <td>Permission checker on all secured files </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">chgpwd.php</td>
+    <td>Change password utility for members </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">confirm.php</td>
+    <td>Email confirmation file </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">createdb.sql</td>
+    <td>MySQL table and initial data file </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">documentation.html</td>
+    <td>This document </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">failed.php</td>
+    <td>Failed login page </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">faq.txt</td>
+    <td>List of frequently asked questions and its corresponding answer </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">login.php</td>
+    <td>Sample login area (we suggest that you use your own design) </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">logout.php</td>
+    <td>Logout script which destroys the current session</td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">process.php</td>
+    <td>Signup processor</td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">pwdremind.php</td>
+    <td>Password reminder utility for members </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">README.txt</td>
+    <td>Contains the copyright and the initial notes for this script </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">signup.php</td>
+    <td>Sample signup form (we suggest you use your own) </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">signupconfig.php</td>
+    <td>vSignup path and database configuration file </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">vAuthenticate.php</td>
+    <td>This is the result file that is checked upon every login attempt. This will forward users to the proper success page that they should go. </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">admin/authgroup.php</td>
+    <td>Group administration area </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">admin/authuser.php</td>
+    <td>User administration area </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">admin/emailer.php</td>
+    <td>Profiles administration area </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">admin/index.php</td>
+    <td>Administrator home page </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">admin/settings.php</td>
+    <td>Script settings area </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">admin/userdetail.php</td>
+    <td>User details administration area for managing other user information </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">members/bygroup.php</td>
+    <td>Sample authentication based on member's group/team </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">members/bylevel.php</td>
+    <td>Sample authentication based on member's level </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">members/index.php</td>
+    <td>Sample member home page </td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">members/page2.php</td>
+    <td>Sample member page used for direct access</td>
+  </tr>
+  <tr class="style5">
+    <td valign="top">members/userdetail.php</td>
+    <td>Member details page for modification (first name, last name, email, etc.)</td>
+  </tr>
+</table>
+<br>
+<hr>
+<p class="style6">Requirements:<a name="Requirements"></a></p>
+<p class="style5">   <span class="style17">Operating System:</span> Linux, Windows NT/2000 Server Family, Windows XP, Unix<br>
+  <span class="style17">Web Server:</span> Apache (latest release) with mail() function enabled<br>
+  <span class="style17">Scripting:</span> PHP 4.3 above (magic quotes for MySQL recommended to be turned on) [This is NOT yet tested in PHP 5.x] <br>
+  <span class="style17">Database:</span> MySQL (latest stable release)<br>
+  <span class="style17">Database User Interface:</span> phpMyAdmin or any similar types of db manager<br>
+  <span class="style17">Browser:</span> Cookie-Enabled; Javascript-Enabled</p>
+<hr>
+<p class="style6">Upgrading:<a name="Upgrading" id="Upgrading"></a></p>
+<p class="style5"> Upgrading is not really recommended from any lower version of vSignup to this latest version of vSignup due to the drastic schema and business logic changes. if you are running on a previous version of vSignup, it is suggested that you backup your MySQL database or at least the tables associated with vSignup and then re-import the data one table at a time to the new vSIgnup tables. Take note that the password field for the authuser table has changed to 32 character-width and is in an encrypted form. The suggested approach is to clear out the value for the password once you import the old authuser data to the new authuser table. After doing this, execute the following statements in your database user interface such as phpMyAdmin:</p>
+<p class="style10">UPDATE authuser SET passwd=MD5('access') WHERE uname='sa' OR uname='admin'</p>
+<p class="style5">The above statement should set your sa and admin users' password to the proper form. Login to vSignup after this and change each member's password one at a time at the vSignup User Administration page. This should encrypt each member's password using MD5.</p>
+<hr>
+<p class="style6">Installation:<a name="Installation" id="Installation"></a></p>
+<p class="style5">1. Launch your database manager (phpMyAdmin) for MySQL and run the createdb.sql file. </p>
+<p class="style5">2. Modify authconfig.php to match your database settings and your file pathing. </p>
+<p class="style5">3. Modify auth.php to match your database settings.</p>
+<p class="style5">4. Modify signup config to match your database settings, file pathing, and administrator email address.</p>
+<p class="style5">5. You can modify the login.php page to suit your needs or better yet, use your own page and include a login box. One of the rules is that you SHOULD include the authconfig.php in whichever page you will have your login box at (let's say, your index.php). Also, take note of these requirements for the login box:</p>
+<table width="80%"  border="0" cellspacing="0" cellpadding="0">
+  <tr class="style5">
+    <td valign="top"><div align="right">a.&nbsp;</div></td>
+    <td>The page where the login box is located should be a PHP file, not an HTML file. </td>
+  </tr>
+  <tr class="style5">
+    <td width="8%" valign="top"><div align="right">b.&nbsp;</div></td>
+    <td width="92%">Login box's form action parameter should be set to <span class="style11">&lt;?php echo $resultpage; ?&gt;</span> as it gets the value from the authconfig.php that we included.</td>
+  </tr>
+  <tr class="style5">
+    <td valign="top"><div align="right">c.&nbsp;</div></td>
+    <td>The username field should have a name of 'username' without the quotes.</td>
+  </tr>
+  <tr class="style5">
+    <td valign="top"><div align="right">d.&nbsp;</div></td>
+    <td>The password field should have a name of 'password' without the quotes.</td>
+  </tr>
+</table>
+<p class="style5">6. All files under the admin folder must remain that way. The admin folder 
+itself MUST reside inside the folder where vSignup is located. 
+Although you can change this in authconfig.php, it is not recommended 
+to change the line unless you know a great deal about server-side 
+includes and pathname resolution.</p>
+<p class="style5">7. The members directory can be anywhere as vSignup allows you to protect files outside the vSignup folder as long as the protected file is a PHP file and it has proper pathing for the 3 include files (auth.php, authconfig.php, andcheck.php).</p>
+<p class="style5">8. Upload all files to your server using ASCII. You can disregard createdb.sql (we have already used it in step 1), README.txt, documentation.html, AuthClass.txt, and faq.txt as these are not used in the script itself.</p>
+<hr>
+<p class="style6">Administration:<a name="Administration" id="Administration"></a></p>
+<p class="style5">After installation, 5 tables will be created in your database. These tables are: authuser, authteam, emailer, signup, and signupsetup. To administer vSignup, do the following:</p>
+<table width="80%"  border="0" cellspacing="0" cellpadding="0">
+  <tr class="style5">
+    <td width="8%">&nbsp;</td>
+    <td width="92%"><strong>Logging in as an Administrator </strong></td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>1. Pull up the login page and login using either sa or admin for the username </td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>2. Enter 'access' without the quotes for the password</td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>3. Click on the Login button </td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td><strong>Setting up the script features * </strong></td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>1. Click on the Settings link on the top menu </td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>2. Set the radio buttons depending on how you want to control the activation and emailing of notices</td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>3. Select an Emailer Profile to use for the notification (assuming you set the system to automatically send notification email) </td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>4. Enter a list of valid email domains in the text area. This is normally used for intranets or small group of people who don't want to open up the signup process to the whole internet community. </td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td><strong>Maintaining Users </strong></td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>1. Click on the Users link on the top menu </td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>2. To add a user, enter the details and click on Add </td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>3. If you have already entered a user or modified one but still 
+want to enter another, click on the &quot;Add New&quot; button.</td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>4. Once you have saved the user, the User Details link will show beside the team field. Click on this to add user details such as first name, last name, email, country, and zip code. </td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>5. To modify user details, click on the user on the list at the right-hand side of the page. This will pull up the user data and you can modify it. The password field will be set to blank as it is encrypted. If you need to change the password, enter the new password there, if not, leave it blank and it will retain the old password. </td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>6. To delete a user, just select a user from the list and then when the details are in the left-hand area, click on the Delete button. </td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td><strong>Maintaining Teams/Groups</strong></td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>1. Click on the Groups link on the top menu </td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>2. To add a group, enter the details and click on Add </td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>3. If you have already entered a group or modified one but still want to enter another, click on the &quot;Add New&quot; button.</td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>4. To modify group details, click on the group name on the list at the right-hand side of the page. This will pull up the group data and you can modify it.</td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>5. To delete a group, just select a group from the list and then when the details are in the left-hand area, click on the Delete button. Any user assigned to the deleted group will be assigned to the Ungrouped group. </td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>6. If you inactivate a group, you also inactivate all users in the group.</td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td><strong>Setting up Email Profiles </strong></td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>1. Click on the Emailer link on the top menu </td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>2. To add a new profile, enter the details and click on Add </td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>3. If you have already entered a group or modified one but still want to enter another, click on the &quot;Add New&quot; button.</td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>4. To modify profile details, click on the profile name on the list at the right-hand side of the page. This will pull up the profile data and you can modify it.</td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>5. To delete a profile, just select a profile from the list and then when the details are in the left-hand area, click on the Delete button. You can delete any profile except the Password Reminder. </td>
+  </tr>
+  <tr class="style5">
+    <td>&nbsp;</td>
+    <td>6. The name value will appear as the sender name in the actual mail while the email value will appear as the sender's email address when the member receives your mail. </td>
+  </tr>
+</table>
+<p class="style5"><span class="style12">* IMPORTANT:</span><br>
+There are 3 interrelated fields in the Settings page:<br>
+1. <span class="style17">Automatically activate membership upon signup</span> - This will set the member's status as active or inactive. If set to inactive, the administrator must manually activate the user UNLESS the user has an email notification that has the confirmation link URL. <br>
+2. <span class="style17">Send email notification after signing up</span> - This will trigger an email to be sent to the new member. The email that will be sent would depend on the default profile selected.<br>
+3. <span class="style17">Choose default profile if sending email notification</span> - This is the default email that will be sent to the new member ASSUMING that the the system is set to send email notification after signing up. This default profile may or may not contain the confirmation link URL needed to allow the user to activate their membership. </p>
+<p class="style5">Because of this interralationship, it is recommended that if membership is NOT set to be activated automatically, &quot;Send email notification after signing up&quot; should be set to Yes and the default profile should be something that has the confirmation URL in it (via the [[CONFIRM]] key. Any other combination for the said scenario might result in a logic flaw and the administrator will have to activate each member manually. </p>
+<hr>
+<p class="style6">Usage:<a name="Usage" id="Usage"></a></p>
+<p class="style5">Although vSignup works out of the box, it is more likely than not that you will need to make some modifications to the code to match your needs. As such, you will need to have some knowledge on PHP, specifically on condition statements.</p>
+<p class="style5">ALL records in the authuser table contains the following info:<br>
+1. <strong>id</strong> (use $check[&quot;id&quot;] to get the unique id) - this is used for sorting 
+purposes only and can be used as an alternative primary key<br>
+2. <strong>username</strong> (use $check[&quot;uname&quot;] to get the username) - this is the 
+username of the member<br>
+3. <strong>password</strong> (use $check[&quot;passwd&quot;] to get the passwd) - this is the 
+password of the member<br>
+4. <strong>team</strong> (use $check[&quot;team&quot;] to get the team name) - this is the 
+teamname of the member<br>
+5. <strong>level</strong> (use $check[&quot;level&quot;] to get the level) - this is the 
+level of the member<br>
+6. <strong>status</strong> (use $check[&quot;status&quot;] to get the status) - this is the 
+status of the member which can either be active or inactive<br>
+7. <strong>lastlogin</strong> (use $check[&quot;lastlogin&quot;] to get the last login date and time) - 
+this is a timestamp on the last lagin date and time of a member.<br>
+8. <strong>logincount</strong> (use $check[&quot;logincount&quot;] to get count) - this is a 
+counter which increments everytime a member/admin logs in.</p>
+<p class="style5">For example, login to the members area as a member and you'll see that there are 2 examples provided. One is to restrict by level and the 
+other is to restrict by group.</p>
+<p> <span class="style5">You may use auth.php to automatically add users to the DB from your 
+  existing signup form. BUT, to do this, you would need to have an 
+  understanding of what auth.php returns for each transaction 
+  you make. For more info regarding this, check out AuthClass.txt</span></p>
+<p class="style5"> To secure pages, you would need to add the following lines on top of the pages 
+you want to secure:</p>
+<blockquote>
+  <p class="style10"> &lt;?php<br>
+    include_once (&quot;path/to/auth.php&quot;);<br>
+    include_once (&quot;path/to/authconfig.php&quot;);<br>
+    include_once (&quot;path/to/check.php&quot;); <br>
+    ?&gt;</p>
+</blockquote>
+<p class="style5"> where path/to/ refers to the path of the files relative to the current 
+  directory of the file being secured. For an example, please see 
+  page2.php. If you haven' logged in yet or have logged in using a 
+  wrong username and password, you will get an Illegal Access 
+  error on page2.php. However, if you have logged in successfully
+  and without closing the browser, you tried accessing page2.php, 
+you'll notice that you can see the message (2 to 3 lines) in the file.</p>
+<p class="style5"> Take note that adding those &quot;include lines&quot; on top of your secured pages only 
+  facilitate in checking of the username and password combination stored 
+  in the cookie. This is to protect it from direct file access. If you want to add 
+  the necessary authentication code that takes note of the rules
+  (for example, only level 4 members can access this page; or only<br>
+  members from the Friends group/team are allowed to see this page) that 
+  you've made to be available in this file too, you must add some more PHP code for that. Please refer to the demo users for more information.</p>
+<p class="style5">Some files you can directly link to from your website are:<br>
+  1. signup.php (unless you have a different signup form) <br>
+  2. members/userdetail.php (assuming the user is logged in, they can change their details here) <br>
+  3. login.php (unless you have a different login form - like if it is in your index.php)<br>
+  4. logout.php (you can check out the code and use it in your own logout page)<br>
+  5. chgpwd.php (assuming the user is logged in, they can change their password here)<br>
+  6. pwdremind.php</p>
+<p class="style5"><span class="style12">IMPORTANT:</span><br>
+vSignup uses a slightly-modified version of vAuthenticate. If you want to use
+vSignup in your site but you already have vAuthenticate installed, you would have to remove the current install of vAuthenticate before installing 
+vSignup. After you install vSignup, you can then use the vAuthenticate that comes with it.</p>
+<hr>
+<p class="style6">Demonstration:<a name="Demonstration" id="Demonstration"></a></p>
+<p class="style5">Here's a little something to let you test out and learn how to restrict access to pages 
+on a per-group or per-level basis.</p>
+<p class="style5">1. Login as &quot;sa&quot; or &quot;admin&quot; without the quotes<br>
+2. Notice that there are usernames called G1-0001, G1-0002, etc.<br>
+3. Click on these and take note of the team they are a part of and their level.<br>
+4. For you to remember them easily, a convention was used for the usernames.<br>
+<blockquote class="style5">
+G1-0001 stands for the first user under Group 1.<br>
+G1-0002 stands for the second user under Group 1.<br>
+G2-0001 stands for the first user under Group 2.<br>
+... and so on ...
+</blockquote>
+<p class="style5"><br>
+  5. Logoff as &quot;sa&quot; or &quot;admin&quot;<br>
+  6. Login as any of the users (except sa, admin, and test). Take note that their 
+password is by default, &quot;access&quot; (unless you change them of course)<br>
+7. You will be taken to the members' index page. Here, you'll see 2 links for
+demo purposes.<br>
+8. Depending on the user you logged in with and the credentials that come with 
+that user, you might or might not see the intended content for 
+the bygroup.php and bylevel.php.</p>
+<hr>
+<p class="style6">FAQ's:<a name="FAQs" id="FAQs"></a></p>
+<p class="style5">Please refer to the <span class="style15">faq.txt</span> file included with the vSignup 2.5 package.</p>
+<hr>
+<p class="style6">Changelog:<a name="Changelog" id="Changelog"></a></p>
+<blockquote>
+  <p class="style5"><strong>version 2.5</strong><br>
+    - 
+    Added default group option in signup settings<br>
+    - Added default level option in signup settings<br>
+    - Changed authteam table structures to accommodate new password length <br>
+    - Used vAuthenticate 3.0.1 (which fixed some undefined index bugs)<br>
+    - Fixed bug on the possibility of inactivating the sa and/or admin user accounts<br>
+    - Used MD5 for password encryption instead of MySQL's password() function<br>
+    - Allowed sending of information to email using templates<br>
+- Fixed error detection in Emailer administration<br>
+- Added character checking for &quot;'&quot; in auth.php's functions as an anti-SQL Injection measure<br>
+- Changed admin/authuser.php to accomodate new error messages in auth.php for apostrophe character in the username and password fields <br>
+ - Fixed confirm.php's line 46 - extra open parenthesis<br>
+- Password Reminder moved from process.php to pwdreminder.php<br>
+- Changed Password Reminder email template<br>
+- Added random password generation for password reminder<br>
+- Changed vAuthenticate.php to allow global scope for session cookies<br>
+- Changed vAuthenticate and admin files to check group instead of level 
+for consistency and clarity<br>
+- Changed substr_replace usage of process.php to str_replace to get rid of 
+the loops which might affect performance.<br>
+- Changed pwdremind.php to replace strings that are keys according to the
+template set<br>
+- Added User Details page to allow administrators to change user details like
+first name, last name, email address, country, and zip code<br>
+- Added dynamics link to User Details page in authuser.php. If username on 
+authuser.php is blank, link will not show.<br>
+- Changed table schema allowing NULL value for the datejoined field 
+specifically for user details added on a different date (for those
+users added via admin area instead of signup form)<br>
+ - Changed members/index.php to accommodate link for user details<br>
+- Fixed some typographical error in AuthClass.txt</p>
+  <p class="style5"><strong>version 2.1</strong><br>
+    - Removed empty line in auth.php which causes an error on some web
+    servers<br>
+    - Added logout functionality<br>
+    - Used javascript redirection in vAuthenticate.php to preserve original
+    pathing of links on secured page<br>
+    - Fixed a major bug in the admin area where on previous versions of vSignup, assuming a user has 
+    successfully logged into the members area, if he knows the URL 
+    to the admin pages (specially authuser.php and authgroup.php) 
+    he can have access to those pages.<br>
+    - Added security to admin area<br>
+    - Easier navigation in the admin area<br>
+    - Added functionality to allow members to change their own password<br>
+    - Modified authuser.php to avoid passing all user details via GET method
+    when editing the account<br>
+    - Added Password Retrieval function.<br>
+    - Added vSignup settings for administrator.<br>
+    - Added Emailer Profiles.<br>
+    - Revised DB querying method to support latest PHP versions.<br>
+    - Consolidated the 2 DB creation script into 1. </p>
+</blockquote>
+<hr>
+<p class="style6"><strong>Copyright Notice:</strong><a name="Copyright" id="Copyright"></a></p>
+<p class="style5">This script is free for your use. It does not have a licensing agreement yet but future releases will be aligned with the MIT License (which still makes the script free but with a more defined agreement). </p>
+<p class="style5">If you want to give donations,
+  please send your cheques to:</p>
+<p class="style5">Vincent Ryan Ong<br>
+  Rm. 440 Wellington Bldg.<br>
+  655 Condesa St. Binondo, Manila<br>
+  Philippines, 1006</p>
+<hr>
+<p class="style6"><strong>Support Information:</strong><a name="Support" id="Support"></a></p>
+<p class="style5">Please refer to the faq.txt file first before sending me an email as most issues that need clarification are answered there. If your problem is not on the said file, feel free to send a support email to <a href="mailto:support@beanbug.net">support@beanbug.net</a>. </p>
+</body>
+</html>
