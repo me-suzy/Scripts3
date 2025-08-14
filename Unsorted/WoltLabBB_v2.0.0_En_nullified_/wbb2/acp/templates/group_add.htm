@@ -1,0 +1,300 @@
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+<form method="post" action="group.php">
+<input type="hidden" name="send" value="send">
+<input type="hidden" name="action" value="$action">
+<input type="hidden" name="sid" value="$session[hash]">
+ <table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="100%" align="center">
+  <tr class="tblhead">
+   <td colspan=2>Add User Group</td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>User Group Name:</td>
+   <td><input type="text" name="title" value="" maxlength=30></td>
+  </tr>
+  <tr class="tblsection">
+   <td colspan=2>General Rights</td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Can view forums?</b><br>Can this user group view the forums and access them?</td>
+   <td><select name="canviewboard">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Can view forums in offline mode?</b><br>Can this user group view the forums when they are in offline mode? It is suggested that only Administrators have this right.</td>
+   <td><select name="canviewoffboard">
+    <option value="1">Yes</option>
+    <option value="0" selected>No</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Can use the search?</b><br>Can this user group use the search function in the forums?</td>
+   <td><select name="canusesearch">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Can use private messages?</b><br>Can this user group send/recieve private messages?<br><b>Important:</b> Guests cannot use private messages.</td>
+   <td><select name="canusepms">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Can vote in polls?</b><br>Can this user group vote/participate in polls?</td>
+   <td><select name="canvotepoll">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Can rate threads?</b><br>Can this user group rate threads?</td>
+   <td><select name="canratethread">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Can rate members?</b><br>Can this user group rate members?</td>
+   <td><select name="canrateusers">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Can view members list?</b><br>Can this user group view the members list?</td>
+   <td><select name="canviewmblist">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+   </select></td>
+  </tr>
+  <tr class="tblsection">
+   <td colspan=2>Profile Rights</td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Can use avatar?</b><br>Can this user group use avatars?<br><b>Important:</b> Guests cannot use avatars.</td>
+   <td><select name="canuseavatar">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Can upload avatar?</b><br>Can this user group upload their own avatars to the server?<br><b>Achtung:</b> Guests cannot use or upload avatars.</td>
+   <td><select name="canuploadavatar">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Allowed Avatar Extensions:</b><br>(one per line)</td>
+   <td><textarea rows="3" cols="30" name="allowedavatarextensions"></textarea></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Max. Avatar Width (in pixels):</b></td>
+   <td><input type="text" name="maxavatarwidth" value="" maxlength=3></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Max. Avatar Height (in pixels):</b></td>
+   <td><input type="text" name="maxavatarheight" value="" maxlength=3></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Max. Avatar Size (in bytes):</b></td>
+   <td><input type="text" name="maxavatarsize" value="" maxlength=6></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Max. User Text Length:</b></td>
+   <td><input type="text" name="maxusertextlength" value="" maxlength=4></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Max. Signature Length:</b></td>
+   <td><input type="text" name="maxsiglength" value="" maxlength=5></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Max. Images in Signature:</b><br>(-1=unlimited)</td>
+   <td><input type="text" name="maxsigimage" value="" maxlength=3></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Can view other members' profiles?</b><br>Can this user group view the profile of other members?</td>
+   <td><select name="canviewprofile">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+   </select></td>
+  </tr>
+  <tr class="tblsection">
+   <td colspan=2>Calendar Rights</td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Can view Calendar?</b><br>Can this user group view the calendar?</td>
+   <td><select name="canviewcalender">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Can post private events?</b><br>Can this user group post private events?</td>
+   <td><select name="canprivateevent">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Can post public events?</b><br>Can this user group post public events?</td>
+   <td><select name="canpublicevent">
+    <option value="1">Yes</option>
+    <option value="0" selected>No</option>
+   </select></td>
+  </tr>
+  <tr class="tblsection">
+   <td colspan=2>Posting Rights</td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Can start new thread?</b><br>Can this user group start new threads?</td>
+   <td><select name="canstarttopic">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Can reply to own thread?</b><br>Can this user group reply to their own thread?</td>
+   <td><select name="canreplyowntopic">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Can reply to other threads?</b><br>Can this user group reply to other threads?</td>
+   <td><select name="canreplytopic">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Can post threads/replies without moderation?</b><br>Can this user group post new threads/replies without the need of a moderator to approve of the post? This option also depends on the settings of individual forums.</td>
+   <td><select name="canpostwithoutmoderation">
+    <option value="1">Yes</option>
+    <option value="0" selected>No</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Can edit own posts?</b><br>Can this user group edit their own posts?</td>
+   <td><select name="caneditownpost">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Can delete own posts?</b><br>Can this user group delete their own posts?</td>
+   <td><select name="candelownpost">
+    <option value="1">Yes</option>
+    <option value="0" selected>No</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Can close own thread?</b><br>Can this user group close their own threads?</td>
+   <td><select name="cancloseowntopic">
+    <option value="1">Yes</option>
+    <option value="0" selected>No</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Can delete own threads?</b><br>Can this user group delete their own threads?</td>
+   <td><select name="candelowntopic">
+    <option value="1">Yes</option>
+    <option value="0" selected>No</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Can edit own threads?</b><br>Can this user group edit their own threads?</td>
+   <td><select name="caneditowntopic">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Can post polls?</b><br>Can this user group post polls? This option also depends on the settings of individual forums.</td>
+   <td><select name="canpostpoll">
+    <option value="1">Yes</option>
+    <option value="0" selected>No</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Append 'Post edited by...'?</b><br>Do you want to attach 'Post edited by...' to their posts after they have edited them?</td>
+   <td><select name="appendeditnote">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Can pass flood control?</b><br>Can this user group pass flood control?<br>"Flood control" prevents repeated posts to be created within a short period of time.</td>
+   <td><select name="avoidfc">
+    <option value="1">Yes</option>
+    <option value="0" selected>No</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Can upload attachments?</b><br>Can this user group upload attachments?</td>
+   <td><select name="canuploadattachments">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Allowed Attachment Extensions:</b><br>(one per line)</td>
+   <td><textarea rows="3" cols="30" name="allowedattachmentextensions"></textarea></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Max. Attachment Size (in bytes):</b></td>
+   <td><input type="text" name="maxattachmentsize" value="" maxlength=11></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Can download attachments?</b><br>Can this user group download attachments?</td>
+   <td><select name="candownloadattachments">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Max. Images in Posts:</b><br>(-1=unlimited)</td>
+   <td><input type="text" name="maxpostimage" value="" maxlength=3></td>
+  </tr>
+  <tr class="tblsection">
+   <td colspan=2>Administrative Rights</td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Has moderator rights for specific forums?</b><br>With this option, members of this user group can be assigned as moderators for specific forums.</td>
+   <td><select name="ismod">
+    <option value="1">Yes</option>
+    <option value="0" selected>No</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td><b>Has moderator rights for all forums?</b><br>With this option, members of this user group can moderate all the forums.</td>
+   <td><select name="issupermod">
+    <option value="1">Yes</option>
+    <option value="0" selected>No</option>
+   </select></td>
+  </tr>
+  <tr class="secondrow">
+   <td><b>Can use Admin Control Panel?</b><br>With this option, members of this user group can access and use the Admin Control Panel.</td>
+   <td><select name="canuseacp">
+    <option value="1">Yes</option>
+    <option value="0" selected>No</option>
+   </select></td>
+  </tr>
+  <tr class="firstrow">
+   <td colspan=2 align="center"><input type="submit" value="Submit"> <input type="reset" value="Reset"></td>
+  </tr>
+ </table>
+</form>
+</body>
+</html>
