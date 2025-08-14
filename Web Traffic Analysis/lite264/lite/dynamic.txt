@@ -1,0 +1,87 @@
+                    ActualScripts, Company.
+
+                       DYNAMIC HTML-CODE
+
+                      ActualAnalyzer Lite
+
+
+The "Dynamic HTML-code" has a unique identifier in own base, what allows
+identifying the dynamically generated page. This identifier may be generated
+automatically at page loading (by using JavaScript, PHP inclusion etc.) or have
+some predefined values.
+
+
+Predefined values of identifier.
+
+In this case it is necessary to set the selected value for variable "anident="
+in your Dynamic HTML-code. This predefined value will be processed by
+ActualAnalyzer and will be replaced to real value automatically.
+
+1. anident=ADDRESS_PARAMETERS_ALL - for identifier will be used address of page
+with all existing parameters. For example:
+for page "http://domain.com/index.php?id=3&ac=7" the real value of identifier
+will be "domain.com/index.php?id=3&ac=7"
+
+2. anident=PARAMETERS_ALL - for identifier will be used all existing parameters
+of page. For example:
+for page "http://domain.com/index.php?id=3&ac=7" the real value of identifier
+will be "id=3&ac=7"
+
+The predefined value of identifier may be customized for work only with specific
+parameters:
+
+3. anident=ADDRESS_PARAMETERS_INCLUDE_(parameter1)_(parameter2)_... - for
+identifier will be used address of page with specified parameters. For example:
+for page "http://domain.com/index.php?a=3&b=7&c=12" and predefined value of
+identifier "anident=ADDRESS_PARAMETERS_INCLUDE_a_c" the real value of identifier
+will be "domain.com/index.php?a=3&c=12"
+
+4. anident=ADDRESS_PARAMETERS_EXCLUDE_(parameter1)_(parameter2)_... - for
+identifier will be used address of page without of specified parameters.For example:
+for page "http://domain.com/index.php?a=3&b=7&c=12" and predefined value of
+identifier "anident=ADDRESS_PARAMETERS_EXCLUDE_b_c" the real value of identifier
+will be "domain.com/index.php?a=3"
+
+5. anident=PARAMETERS_INCLUDE_(parameter1)_(parameter2)_... - for identifier will
+be used specified parameters of page. For example:
+for page "http://domain.com/index.php?a=3&b=7&c=12" and predefined value of
+identifier "anident=PARAMETERS_INCLUDE_b" the real value of identifier will be
+"b=7"
+
+6. anident=PARAMETERS_EXCLUDE_(parameter1)_(parameter2)_... - for identifier will
+be used all parameters of page without of specified parameters. For example:
+for page "http://domain.com/index.php?a=3&b=7&c=12" and predefined value of
+identifier "anident=PARAMETERS_EXCLUDE_a" the real value of identifier will be
+"b=7&c=12"
+
+
+Automatically generated values of identifier.
+
+In this case the necessary value of identifier for variable "anident=" in your
+Dynamic HTML-code may be generated on any known language (JavaScript, PHP, Perl,
+ASP etc.). For value of identifier usually are used key parameters from address
+of page, but it may be also any other unique string (title, internal name etc.)
+
+Generating of identifier's value by inclusion.
+
+Example of automatic creation of identifier's value from page's parameters by
+using the PHP-inclusion:
+for page "http://domain.com/index.php?id=3" it may be
+"anident=<?php echo($_GET['id']);?>" - the real value after processing of
+PHP-inclusion on page will be "3".
+
+Generating of identifier's value inside of dynamic page.
+
+Example of automatic creation of identifier's value for "Dynamic HTML-code" which
+is directly included into the PHP page:
+for page "http://domain.com/index.php?id=3" it may may be:
+
+global $_GET;
+$ident=$_GET['id'];
+echo<<<AACODE
+Dynamic HTML-code ... anident=$ident ...
+AACODE;
+
+
+ Copyright:     (c) 2002-2005 ActualScripts, Company. All rights reserved.
+ Source:        http://www.actualscripts.com/
