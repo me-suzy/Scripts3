@@ -1,0 +1,22 @@
+MEC STATS 1.13 - http://www.mecstats.com
+END USER LICENSE AGREEMENT
+
+MEC Stats was created by Matt Toigo me@matt-toigo.com - April 5th, 2006
+
+By downloading and installing MEC Stats you agree to the following terms and conditions.
+
+1. You will not redistribute this software by any means. This means that you cannot
+   put up a download for MEC Stats on any website. You can just link
+   to http;//www.mecstats.com instead.
+   
+2. You will not hold MEC Stats or its creator responsible for any damages 
+   to hardware or software that result from using MEC Stats.
+   
+3. You may charge a fee to install MEC Stats for a client but you may not sell it.
+
+If you agree and will abide by all of the above terms in this document, then you
+can install MEC Stats. 
+
+If you do not agree to the above terms than you cannot intall MEC Stats.
+   
+   
