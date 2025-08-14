@@ -1,0 +1,338 @@
+/* ***************************************************************
+* Orca Ringmaker v2.3d
+*  A comprehensive web ring creation and managment script
+* Copyright (C) 2004 GreyWyvern
+*
+* This program may be distributed under the terms of the GPL
+*   - http://www.gnu.org/licenses/gpl.txt
+* 
+* See the readme.txt file for installation instructions.
+*************************************************************** */
+
+/* ***** Main ************************************************* */
+#orm_main {
+  text-align:center;
+}
+#orm_main .orm_warn {
+  color:#ff0000;
+}
+#orm_main form {
+  margin:0px;
+}
+#orm_main img {
+  border-width:0px;
+}
+#orm_main #orm_content {
+  margin-right:19ex;
+}
+#orm_main .orm_drow {
+  color:#000000;
+  background-color:#dddddd;
+}
+#orm_main textarea.orm_tasans {
+  font:normal 95% Arial, sans-serif;
+}
+#orm_main textarea.orm_tacode {
+  text-align:left;
+  font-size:95%;
+}
+#orm_main select {
+  font-size:95%;
+}
+
+
+/* ***** Control Panel **************************************** */
+#orm_control {
+  float:right;
+  width:17ex;
+  border:2px outset #dddddd;
+  position:relative;
+}
+#orm_control h3 {
+  margin:0px;
+  padding:3px;
+  color:#000000;
+  background-color: #dddddd;
+  font-weight:normal;
+}
+#orm_control .orm_cbox {
+  font-size:80%;
+  padding:3px;
+  border-top:1px dashed #bbbbbb;
+  text-align:left;
+}
+#orm_control .orm_cent {
+  text-align:center;
+}
+#orm_control .orm_announcement {
+  text-align:center;
+}
+#orm_control .orm_cbox ul {
+  margin:0px;
+  padding:0px;
+  list-style-type:none;
+  text-align:left;
+}
+#orm_control .orm_cbox table {
+  font-size:100%;
+  width:100%;
+}
+#orm_control .orm_cbox table tr th {
+  text-align:right;
+  padding:0px 3px 0px 0px;
+}
+#orm_control .orm_cbox table tr td {
+  text-align:right;
+  padding:0px 3px 0px 0px;
+}
+#orm_control .orm_cbox form {
+  margin:0px;
+  text-align:right;
+}
+#orm_control .orm_cbox form label {
+  display:block;
+  margin-bottom:3px;
+}
+
+
+/* ***** Success/Error Messages ******************************* */
+#orm_notify {
+  list-style-type:none;
+  padding:0px;
+  margin:5px;
+}
+
+
+/* ***** Default Control Box Layout *************************** */
+.orm_box {
+  font-size:90%;
+  border:2px outset #dddddd;
+  margin:0px auto 1em auto;
+}
+.orm_box thead tr th {
+  padding:3px;
+  font-size:130%;
+  color:#000000;
+  background-color: #dddddd;
+  text-align:left;
+  font-style:normal;
+  font-weight:normal;
+}
+.orm_box thead tr th input {
+  font-size:80% !important;
+  float:right;
+}
+.orm_box tbody tr td {
+  padding:2px;
+  text-align:right;
+}
+.orm_box tbody tr td label {
+  float:left;
+  display:block;
+  font-weight:bold;
+  padding-right:1em;
+}
+.orm_box tbody tr td ul {
+  list-style-type:none;
+  margin:0px;
+  padding:0px;
+}
+.orm_box tbody tr td h4 {
+  font-size:175%;
+  margin:5px;
+  text-align:center;
+}
+.orm_box tbody tr td p {
+  margin:3px;
+  text-align:center;
+}
+.orm_box tbody tr td ul label {
+  float:none;
+  display:inline;
+  padding:0px;
+}
+.orm_box tbody tr td div label {
+  float:none;
+  display:inline;
+  padding:0px;
+}
+
+
+/* ***** Default Statistics Table Layout ********************** */
+.orm_table {
+  font-size:90%;
+  border:2px outset #dddddd;
+  margin:0px auto 1em auto;
+}
+.orm_table thead tr th {
+  font-style:italic;
+  text-align:left;
+}
+.orm_table thead tr th.orm_ttitle {
+  padding:3px;
+  font-size:130%;
+  color:#000000;
+  background-color: #dddddd;
+  text-align:left;
+  font-style:normal;
+  font-weight:normal;
+}
+.orm_table thead tr th.orm_ttitle input, .orm_table thead tr th.orm_ttitle select {
+  font-size:80% !important;
+  float:right;
+}
+.orm_table thead tr th.orm_scol {
+  color:inherit;
+  background-color:transparent;
+  border:3px solid #ffffff;
+  cursor:pointer;
+  cursor:hand;
+}
+.orm_table thead tr th.orm_scol_on {
+  color:#000000;
+  background-color:#dddddd;
+  border:3px inset #dddddd;
+  cursor:pointer;
+  cursor:hand;
+}
+.orm_table thead tr td {   /* ***** NEW FOR v2.3 ***** */
+  color:#000000;
+  background-color: #dddddd;
+  border-top:1px dashed #808080;
+  font-weight:bold;
+  text-align:left;
+  font-size:90%;
+}
+.orm_table tbody tr th {
+  font-style:normal;
+  text-align:left;
+  padding-right:3em;
+  white-space:nowrap;
+  font-weight:normal;
+}
+.orm_table tbody tr th img {
+  vertical-align:middle;
+}
+.orm_table tbody tr td {
+  text-align:center;
+}
+#orca_list {
+  clear:both;
+}
+
+/* ***** Statistics Deep Magic ******************************** */
+.orm_graph {
+  margin:5px auto;
+  border-top:1px dashed #bbbbbb;
+  font-size:100%;
+}
+.orm_graph tr.orm_chartrow th {
+  vertical-align:top;
+  font-size:90%;
+  width:4ex;
+  padding:0px !important;
+}
+.orm_graph tr.orm_chartrow td {
+  vertical-align:bottom;
+  padding-left:1px;
+  height:100px;
+}
+.orm_graph tr.orm_chartrow td.orm_sb {
+  padding-left:0px;
+  border-left:1px dotted #bbbbbb;
+}
+.orm_graph tr.orm_chartrow td div {
+  color:#000000;
+  background-color:#dddddd;
+  overflow:hidden;
+  cursor:crosshair;
+}
+.orm_graph tr.orm_chartrow td div.orm_gmax {
+  color:#000000;
+  background-color:#ff0000;
+}
+.orm_gbase td {
+  border-top:1px dotted #bbbbbb;
+  font-size:90%;
+  padding:1px 2px;
+}
+.orm_graph tr.orm_gbase td.orm_gbl {
+  text-align:left;
+  border-left:1px dotted #bbbbbb;
+}
+.orm_graph tr.orm_gbase td.orm_gbr {
+  text-align:right;
+  border-right:1px dotted #bbbbbb;
+}
+
+
+/* ***** Site Listings **************************************** */
+#orm_site {
+  list-style-type:none;
+  padding:0px;
+  margin:0px;
+}
+#orm_site li {
+  text-align:left;
+  margin-bottom:1ex;
+  border-left:2px solid #bbbbbb;
+  border-top:2px solid #dddddd;
+}
+#orm_site li h2 {
+  font-size:110%;
+  display:inline;
+  padding:3px;
+}
+#orm_site li p {
+  margin:0px;
+  padding:3px;
+  font-size:90%;
+}
+#orm_site li.orm_hr {
+  text-align:center;
+  margin:0.5ex;
+  border:0px none transparent;
+}
+#orm_site li.orm_hr hr {
+  width:75%;
+}
+
+
+/* ***** Ringmaker Help *************************************** */
+#orm_help {
+  text-align:left;
+}
+#orm_help h2 {
+  text-align:center;
+}
+#orm_help h3 {
+  margin:1em 4px 4px 0px;
+  padding-left:0.5em;
+  border-left:0.5em solid #bbbbbb;
+  border-bottom:1px solid #bbbbbb;
+}
+#orm_help p {
+  margin:5px 0px;
+}
+
+
+/* ***** Footer Items ***************************************** */
+#orm_pagin {
+  margin:0px 5% 10px 5%;
+  font-size:90%;
+  text-align:center;
+}
+#orm_pagin_prev {
+  float:left;
+  text-align:right;
+  white-space:nowrap;
+}
+#orm_pagin_page {
+  margin:0px 6em;
+  text-align:center;
+}
+#orm_pagin_next {
+  float:right;
+  text-align:left;
+  white-space:nowrap;
+}
