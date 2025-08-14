@@ -1,0 +1,223 @@
+<?php
+
+// Main settings file
+require 'settings.php';
+
+// Including service classes
+require 'includes/services.inc.php';
+
+// Including interface settings
+require 'includes/interface_color_conf.inc.php';
+
+// Including settings handler
+require 'includes/settings_uploader.inc.php';
+
+// HTML drawing class
+require 'includes/html_drawer.inc.php';
+
+$html=new HTML_drawer;
+$settings=new Main_settings;
+$log=new Logger;
+$admin=new Admin_settings;
+$intf=new Interface_settings;
+
+$global=new Global_options();
+
+// Including main functions and variables
+require 'includes/main.inc.php';
+
+$function=new Service_functions;
+$stats=new Traders_stats;
+$hour_stats=new Full_daily_stats;
+$trader=new Traders_data;
+$new_trader=new New_traders_data;
+
+$cmd=$_POST['cmd'];
+if($cmd=='Start Trade') check_signup();
+
+$admin->read_rules();
+$admin->read_autosignup();
+$function->read_new_traders();
+
+$html->sign_page_header('New Traders Sign Up');
+
+echo "<br>
+<table width=500 border=0 cellpadding=5 cellspacing=1 bgcolor='".$intf->color['STB_BACKGROUND']."'><tr>
+<td bgcolor='".$intf->color['STB_HEADER']."' align=center height=100 colspan=2>
+<b><font face='Verdana' size='6'>FET ".$settings->version."</font></b><br><br><b><font face='Arial' size='3'>New Traders Sign Up</font></b>
+</td></tr>
+<tr>
+<td bgcolor='".$intf->color['NORM_CELL']."' colspan=2><font size=1><br>This site is powered by <a href='http://www.fetcj.com/'>FET ".$settings->version."</a>.<br>You can get your <b>free copy</b> at <a href='http://www.fetcj.com/'>http://www.fetcj.com/</a><br>&nbsp;</font></td>
+</tr>
+<tr><td bgcolor='".$intf->color['NORM_CELL']."' colspan=2></td></tr>
+<tr>
+<td bgcolor='".$intf->color['STB_HEADER']."' align=center colspan=2><font size=1><b>Trade Rules</b></font></td>
+</tr>";
+if(is_array($admin->trade_rules)){
+    echo "<tr><td bgcolor='".$intf->color['NORM_CELL']."' colspan=2><br><font size=2>";
+    foreach($admin->trade_rules as $rtxt){
+        echo "<li>".$rtxt."</li>";
+    }
+    echo "</font><br>&nbsp;</td></tr>";
+}
+echo "<tr><td bgcolor='".$intf->color['NORM_CELL']."' colspan=2></td></tr>
+<tr>
+<td bgcolor='".$intf->color['STB_HEADER']."' align=center colspan=2><font size=1><b>My Info</b></font></td></tr>
+<tr>
+<td bgcolor='".$intf->color['NORM_CELL']."' colspan=2><font size=1><br>
+ICQ #: ".$admin->my_icq."<br>
+E-Mail: ".$admin->my_email."<br>
+URL to Send Traffic to: <a href='".$admin->site_url."' target=_blank>".$admin->site_url."</a><br>
+&nbsp;
+</font></td>
+</tr>
+<tr><td bgcolor='".$intf->color['NORM_CELL']."' colspan=2></td></tr>
+<tr>
+<td bgcolor='".$intf->color['STB_HEADER']."' align=center colspan=2><font size=1><b>Add Trade</b></font></td></tr>
+</tr>";
+if($admin->as_opened>0){
+    if($new_trader->num<$admin->as_maxsigns){
+        echo "
+        <tr>
+        <td width=200 bgcolor='".$intf->color['NORM_CELL']."'><font size=1>URL</font></td>
+        <td bgcolor='".$intf->color['NORM_CELL']."' width=400>";
+        $html->input(11,'normal','text','trade_url',45,165,'http://');
+        echo "</td>
+        </tr>
+        <tr>
+        <td width=200 bgcolor='".$intf->color['NORM_CELL']."'><font size=1>Site Name</font></td>
+        <td bgcolor='".$intf->color['NORM_CELL']."' width=400>";
+        $html->input(11,'normal','text','site_name',45,165,'');
+        echo "</td>
+        </tr>
+        <tr>
+        <td width=200 bgcolor='".$intf->color['NORM_CELL']."'><font size=1>Your Nickname</font></td>
+        <td bgcolor='".$intf->color['NORM_CELL']."' width=400>";
+        $html->input(11,'normal','text','wm_nick',45,165,'');
+        echo "</td>
+        </tr>
+        <tr>
+        <td width=200 bgcolor='".$intf->color['NORM_CELL']."'><font size=1>ICQ #</font></td>
+        <td bgcolor='".$intf->color['NORM_CELL']."' width=400>";
+        $html->input(11,'normal','text','wm_icq',45,165,'');
+        echo "</td>
+        </tr>
+        <tr>
+        <td width=200 bgcolor='".$intf->color['NORM_CELL']."'><font size=1>E-Mail</font></td>
+        <td bgcolor='".$intf->color['NORM_CELL']."' width=400>";
+        $html->input(11,'normal','text','wm_email',45,165,'');
+        echo "</td>
+        </tr>
+        <tr>
+        <td bgcolor='".$intf->color['MAIN_BGCOLOR']."' colspan=2 align=center>";
+        $html->button('submit','Start Trade','light');
+        echo "</td>
+        </tr>";
+    } else echo "<tr><td bgcolor='".$intf->color['NORM_CELL']."' align=center><font size=2><br>Sorry, no new signups for today.<br>Please come back later.<br>&nbsp;</font></td></tr>";
+} else echo "<tr><td bgcolor='".$intf->color['NORM_CELL']."' align=center><font size=2><br>Please contact webmaster for trade.<br>&nbsp;</font></td></tr>";
+echo "
+</table>
+";
+
+$html->sub_page_footer();
+
+function check_signup(){
+    global $trader,$new_trader,$global,$function,$admin,$intf,$html;
+
+    $trade_url=str_replace('|','',$_POST['trade_url']);
+    $site_name=str_replace('|','',$_POST['site_name']);
+    $wm_nick=str_replace('|','',$_POST['wm_nick']);
+    $wm_icq=str_replace('|','',$_POST['wm_icq']);
+    $wm_email=str_replace('|','',$_POST['wm_email']);
+
+    $function->read_traders();
+    $function->read_new_traders();
+    $admin->read_autosignup();
+
+    $global->read_blacklist();
+
+    if(!$trade_url || !stristr($trade_url,'http://') || strlen($trade_url)<11) show_error(1);
+
+    $trade_dom=get_domain($trade_url);
+
+    if($global->in_blacklist["$trade_dom"]) show_error(2);
+
+    if($trader->url["$trade_dom"] || $new_trader->url["$trade_dom"]) show_error(3);
+
+    if($admin->as_domlevel>0 && substr_count($trade_dom,'.')>1) show_error(4);
+
+    $admin->read_autosignup();
+
+    $new_trader->url["$trade_dom"]=$trade_url;
+    $new_trader->set_ratio["$trade_dom"]=$admin->as_ratio;
+    $new_trader->trade_type["$trade_dom"]=$admin->as_tradetype;
+    $new_trader->proxy_an["$trade_dom"]=$admin->as_accept_anpr;
+    $new_trader->proxy_ds["$trade_dom"]=$admin->as_accept_dspr;
+    $new_trader->proxy_tr["$trade_dom"]=$admin->as_accept_trpr;
+    $new_trader->badref_in["$trade_dom"]=$admin->as_accept_nrh;
+    $new_trader->main_pages["$trade_dom"]=array(0=>$admin->as_mainpage);
+    $new_trader->click_rule["$trade_dom"]=$admin->as_clicksorder;
+    $new_trader->content_skim["$trade_dom"]=$admin->as_contentskim;
+    $new_trader->mintrade["$trade_dom"]=$admin->as_mintrade;
+    $new_trader->nocookie_pr["$trade_dom"]=$admin->as_nocook_prc;
+    $new_trader->badref_click["$trade_dom"]=$admin->as_accept_nrc;
+    $new_trader->badref_cl_pr["$trade_dom"]=$admin->as_noref_prc;
+    $new_trader->proxy_cl_pr["$trade_dom"]=$admin->as_proxy_prc;
+    $new_trader->nojs_rule["$trade_dom"]=$admin->as_nojs;
+    $new_trader->site_name["$trade_dom"]=$site_name;
+    $new_trader->e_mail["$trade_dom"]=$wm_email;
+    $new_trader->nick["$trade_dom"]=$wm_nick;
+    $new_trader->icq["$trade_dom"]=$wm_icq;
+    $new_trader->toplist_allowed["$trade_dom"]=$admin->as_toplist;
+    $new_trader->time_added["$trade_dom"]=time();
+    $new_trader->from_ip["$trade_dom"]=$_SERVER['REMOTE_ADDR'];
+
+    $function->write_new_traders();
+
+    $html->sign_page_header('New Traders Sign Up');
+    echo "<br><table width=100% height=70% border=0><tr align=center><td valign=middle>
+        <table width=500 border=0 cellpadding=5 cellspacing=1 bgcolor='".$intf->color['STB_BACKGROUND']."'>
+        <td bgcolor='".$intf->color['STB_HEADER']."' align=center><font size=1><b>Signup Success</b></font></td></tr>
+        <tr>
+        <td bgcolor='".$intf->color['NORM_CELL']."' align=center><br><b><font size=1>Site <u>".$trade_url."</u> has been added to database!<br><br>
+        Please send traffic to<br><a href='".$admin->site_url."' target=_blank>".$admin->site_url."</a> or
+        <a href='".$admin->site_url."?".$trade_dom."' target=_blank>".$admin->site_url."?".$trade_dom."</a>
+        </font></b></br>&nbsp;</td>
+        </tr>
+        </table>
+        </tr></tr>
+        </table>
+    ";
+    $html->sub_page_footer();
+    exit;
+
+}
+
+function show_error($errnum){
+    global $html,$intf;
+
+    $trade_url=str_replace('|','',$_POST['trade_url']);
+    $trade_dom=get_domain($trade_url);
+
+    $html->sign_page_header('New Traders Sign Up');
+    $err_msg[1]='Trade URL possible mistake.';
+    $err_msg[2]='Sorry, your domain is blacklisted.';
+    $err_msg[3]='We already trade with &quot;'.$trade_dom.'&quot;.';
+    $err_msg[4]='Sorry, we accept sites on second level domains only.';
+
+    echo "<table width=100% height=70% border=0><tr align=center><td valign=middle>
+        <table width=500 border=0 cellpadding=5 cellspacing=1 bgcolor='".$intf->color['STB_BACKGROUND']."'>
+        <td bgcolor='".$intf->color['STB_HEADER']."' align=center><font size=1><b>Signup ERROR</b></font></td></tr>
+        <tr>
+        <td bgcolor='".$intf->color['NORM_CELL']."' align=center><br><b><font size=2 color=".$intf->color['X_ALERT'].">".$err_msg[$errnum]."</font></b></br>&nbsp;</td>
+        </tr>
+        </table>
+        </tr></tr>
+        </table>
+    ";
+
+    $html->sub_page_footer();
+    exit;
+}
+
+?>
