@@ -1,0 +1,40 @@
+                    ActualScripts, Company.
+
+                        LOG OF CHANGES
+
+		      ActualAnalyzer Lite
+
+
+Version 2.54:
+- the support of Platform for Privacy Preferences (http://www.w3.org/P3P/) was added;
+- the problems with automatic adding of nonexistent pages were solved;
+- the problems with case sensitivity for pages' addresses were solved;
+Version 2.55:
+- the problems with calendar in control panel were solved;
+Version 2.56:
+- dynamic colors for graphics (support of dark skin)
+- additional skins are excluded from installation pack to reduce size of source pack
+- the bug with count of visitors in last and initial hours of week/month were solved;
+Version 2.61:
+- the problem with "www." prefix in addresses of tracked pages was solved
+- the problem with PHP setting "long arrays" what is turned off by default in
+  latest releases of PHP was solved.
+- the "full referrers" possibilitie was added. Allows to store referrers with parameters.
+- the support of dynamic web sites was added. Allows to track dynamic web sites using
+  any programming language (PHP, Perl, ASP etc.).
+- automatic optimization of database's tables was added;
+Version 2.62:
+- the problem with "daylight time" was resolved.
+- minor bugs were resolved.
+Version 2.63:
+- the ability to work without of privilege "LOCK TABLES" was added. Allows to install on
+  servers where MySQL account does not have of the locking privilege.
+Version 2.64:
+- the repair.php tool was added. Allows automatically repairing the corrupted tables 
+  of the ActualAnalyzer.
+- the compatibility problems with new versions of PHP (5.0.5 and above) was resolved.
+  Were reworked the key() and the next() statements to the each().
+
+
+ Copyright:        (c) 2002-2005 ActualScripts, Company. All rights reserved.
+ Source:        http://www.actualscripts.com/
