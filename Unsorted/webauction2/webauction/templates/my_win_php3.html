@@ -1,0 +1,77 @@
+<?
+/*
+   Copyright (c), 1999, 2000 - phpauction.org
+   Copyright (c), 2001, 2002 - webauction.de.vu
+
+   Lizenz siehe lizenz.txt & license
+
+   Die neueste Version kostenfrei zum Download unter:
+   http://webauction.de.vu
+
+*/
+
+?>
+
+
+<table width="764" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF" ALIGN=CENTER height="86">
+ <tr  valign=top> 
+  <td width="60%" VALIGN="top" height="84"> 
+   <div align="center">
+    <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="400">
+     <!-- ** LAST AUCTIONS INSERTED ** -->
+     <TR VALIGN="top"> 
+      <TD WIDTH="8%">&nbsp; </TD>
+      <TD WIDTH="92%"> 
+       <TABLE BORDER="0" CELLPADDING="5" CELLSPACING="0" WIDTH="100%">
+        <TR> 
+         <TD COLSPAN=2> 
+          <p align="center"><B><font color="#000000" size="3"
+                        face="Arial"><b>Hallo 
+           <? print $name ?>
+           !</b></font></B></p>
+          <p align="center"><B><font color="#000000" size="3"
+                        face="Arial"> <font
+                        color="#000000" size="2" face="Arial">Hier sehen Sie alle 
+           Ihre gewonnen Auktionen</font><strong>.</strong></font> </B> </p>
+         </TD>
+        </TR>
+       </TABLE>
+      </TD>
+     </TR>
+     <!-- ** HIGHER BIDS ** -->
+     <!-- ** ENDING SOON ** -->
+     <!-- end table started with ** LAST AUCTIONS INSERTED ** -->
+    </TABLE>
+    <p>&nbsp;</p>
+    <table border="0" cellpadding="3" cellspacing="0" width="770"
+bgcolor="#003366">
+     <tr> 
+      <td width="140">
+       <p align="center"><font color="#FFFFFF" size="2"
+        face="Arial"><strong>Zuschlagspreis&nbsp;&nbsp;&nbsp;&nbsp;</strong></font>
+      </td>
+      <td width="543">
+       <p><font color="#FFFFFF" size="2"
+        face="Arial"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        Auktion&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></font>
+      </td>
+      <td width="175"><font color="#FFFFFF" size="2" face="Arial"><strong>&nbsp;Kontakt</strong></font> 
+      </td>
+      <td width="186">
+       <p align="center"><font color="#FFFFFF"
+        size="2" face="Arial"><strong>Status</strong></font></p>
+      </td>
+     </tr>
+    </table>
+    <table border=0 cellpadding=5 cellspacing=0 width=770>
+     <td width="731"> 
+      <? print $TPL_maximum_bids; ?>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+   </div>
+  </td>
+ </tr>
+</TABLE>
+
+
