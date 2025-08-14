@@ -1,0 +1,98 @@
+.main {
+	FONT-FAMILY: Verdana, Geneva, Arial, sans-serif;
+	color: #000000;
+	FONT-SIZE: 12px
+}
+
+td.nav {
+	FONT-FAMILY: Verdana, Geneva, Arial, sans-serif;
+	FONT-SIZE: 12px;
+	font-weight: bolder;
+}
+
+td.nav a:link {color: #FF6600}
+td.nav a:hover {color: #FF6600}
+td.nav a:visited {color: #FF6600}
+td.nav a:active {color: #FF6600}
+
+a:link {color: #2F87DE}
+a:hover {color: #2F87DE}
+a:visited {color: #2F87DE}
+a:active {color: #2F87DE}
+
+.bar {
+	background: #3399FF;
+}
+
+.hitbar {
+	background: #3399FF;
+}
+
+.visitbar {
+	background: #66CCFF;
+}
+
+.bluebold {
+	font-weight: bolder
+}
+
+h1 {
+	font-size: 15px;
+	color: #3399FF;
+	font-weight: bolder
+}
+
+h2 {
+	FONT-FAMILY: Verdana, Geneva, Arial, sans-serif;
+	font-size: 20px;
+	color: #FF6600;
+	font-weight: bolder
+}
+h2 a:link {color: #FF6600; text-decoration: none}
+h2 a:hover {color: #FF6600; text-decoration: none}
+h2 a:visited {color: #FF6600; text-decoration: none}
+h2 a:active {color: ##FF6600; text-decoration: none}
+
+/*TABLE TO DISPLAY PAGE RANKINGS*/
+table.pages {
+	FONT-FAMILY: Verdana, Geneva, Arial, sans-serif;
+	color: #000000;
+	FONT-SIZE: 12px;
+	border: 1px solid #3399FF;
+}
+
+table.pages tr.head {
+	font-weight: bolder;
+}
+
+table.pages tr.head td {
+	border-width: 0px;
+	border-bottom: 1px solid #3399FF;
+}
+
+table.pages td {
+	border-bottom: 1px solid #3399FF;
+}
+
+table.pages tr.bottom td {
+	border-bottom: none;
+}
+
+/*STANDARD BOX*/
+table.box {
+	FONT-FAMILY: Verdana, Geneva, Arial, sans-serif;
+	color: #000000;
+	FONT-SIZE: 12px;
+	border: 1px solid #3399FF;
+}
+
+table.box tr.head {
+	font-weight: bolder;
+}
+
+table.box tr.head td {
+	border-width: 0px;
+	border-bottom: 1px solid #3399FF;
+}
+	
+
