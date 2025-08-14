@@ -1,0 +1,27 @@
+Some information about the identify-modules:
+
+- Bots will be identified by plain text in "modules/ident_bot.inc.php". You
+  can modify known bots in "config/bots.dat" with a normal texteditor.
+  The last line of the botlist-file is the botlist-date and will not be used
+  for bot-identifying.
+
+- Searchengines will be identified by "modules/ident_search.inc.php".
+
+- Browser and os will be identified with "modules/ident_browser.inc.php"
+  and "modules/ident_os.inc.php". Here you need massive knowledge of
+  PHP and regular expressions to modify the identify-routine.
+
+- Countries will be identified by "modules/ident_country.inc.php".
+- Countrynames were defined in "languages/c_de.dat" and "languages/c_en.dat".
+- Countryflags were defined in "countries/c_flags.dat".
+- To update the IP2Country-database please download and unzip the .csv-file
+  from "http://ip-to-country.webhosting.info/" to countries-dir.
+  Then call create_ip2c_db.php (in countries-directory) with Webinterface. A
+  new ip2c-database will be generated.
+
+- Languages will be identified by "modules/ident_languages.inc.php".
+  Ident_languages uses the countryflags of "modules/ident_country.inc.php".
+  the languages were defined in "languages/l_de.dat" and "languages/l_en.dat"
+  seperated by "|".
+  Example: en-nz|nz|English (New Zealand)
+  that means: languagecode|flag|shown text
