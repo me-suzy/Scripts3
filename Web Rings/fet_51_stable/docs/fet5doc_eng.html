@@ -1,0 +1,1124 @@
+<html>
+<head>
+<title>FET 5, Users Manual.</title>
+<style>
+<!--
+td {font-family: verdana; font-size:12px; color: #000000;}
+a {color:#0000ff}
+a.visited {color:#0000ff}
+-->
+</style>
+</head>
+<body>
+<center>
+<table width=80% border=0>
+<tr>
+<td>
+<a name=top></a>
+<font size=5><B>FET 5, Users Manual.</b></font><br><br><br>
+
+1. <a href='#install'>Installation</a><br>
+2. <a href='#update'>Upgrade for the versions lower 5.x</a><br>
+3. <a href='#begin'>Getting Started</a><br><br>
+
+<li><a href='#login'>Logging into the administrative section</a></li>
+<li><a href='#mainpages'>Setting main pages (&quot;Global Options&quot; menu)</a></li>
+<li><a href='#addtrade'>Adding/removing/editing trades</a></li>
+<li><a href='#special'>Adding special URLs (&quot;Special URLs&quot; menu)</a></li>
+<br><br>
+4. <a href='#edituser'>Trades' individual settings </a><br>
+<br>
+<li><a href='#tradetype'>Trade type</a></li>
+<li><a href='#mintrade'>Minimal Trade</a></li>
+<li><a href='#ratio'>Ratio</a></li>
+<li><a href='#mainpages'>Main pages</a></li>
+<li><a href='#showintop'>Toplist display</a></li>
+<li><a href='#clickorder'>Individual rule for clicks</a></li>
+<li><a href='#perskim'>Individual skim</a></li>
+<li><a href='#trproxy'>Considering Proxy traffic </a></li>
+<li><a href='#trrefh'>Considering HTTP_REFERERfree hits</a></li>
+<li><a href='#trrefc'>Considering HTTP_REFERER-free clicks</a></li>
+<li><a href='#trnojs'>Considering JS cookie-free traffic</a></li>
+<li><a href='#proxsend'>Managing proxy traffic</a></li>
+<li><a href='#nojssend'>Managing cookie-free traffic</a></li>
+<li><a href='#norefsend'>Managing HTTP_REFERER-free traffic</a></li>
+<li><a href='#sitename'>Site name</a></li>
+<li><a href='#wmname'>Webmasters' name/nickname</a></li>
+<li><a href='#icq'>ICQ number</a></li>
+<li><a href='#emeil'>E-Mail (E-Mail)</a></li><br><br>
+
+5. <a href='#global'>General trade settings (&quot;Global Parameters&quot; menu)</a><br>
+<br>
+<li><a href='#mainpages'>Indicating main pages</a></li>
+<li><a href='#minfortrade'>Trade limitations minimum by traffic</a></li>
+<li><a href='#minprod'>Trade limitations minimum by productivity</a></li>
+<li><a href='#botfilters'>Bot filters</a></li>
+<li><a href='#overclicking'>Non-unique clicksmanagement </a></li>
+<li><a href='#langfactor'>Correcting trade productivity by language</a></li>
+<li><a href='#langredir'>Redirecting certain languages</a></li>
+<li><a href='#hiddenlink'>Managing hidden links</a></li>
+<li><a href='#linkskim'>General skim settings</a></li>
+
+<br><br>   
+
+6. <a href='#forces'>Traffic forces</a><br>
+<br>
+<li><a href='#longforces'>Long forces</a></li>
+<li><a href='#shortforces'>Short forces</a></li>
+<br><br>
+7. <a href='#forces'>Managing exit traffic (&quot;Exit Traffic&quot; menu)</a><br>
+8. <a href='#in'>Ways of accepting traffic to a website</a><br>
+9. <a href='#out'>Out.php parameters</a><br>
+10. <a href='#groups'>Trade groups(&quot;Groups&quot; menu)</a><br>
+11. <a href='#groups'>Creating toplists (&quot;Toplists&quot; menu)</a><br>
+12. <a href='#stats'>Statistics</a><br>
+<br>
+<li><a href='#mainstats'>Main</a></li>
+<li><a href='#24hstats'>Hourly, for the past 24 hours</a></li>
+<li><a href='#history'>History within several days </a></li>
+<li><a href='#linktrack'>Link Tracking (&quot;Link Tracking&quot; menu)</a></li>
+<li><a href='#referrers'>Overview of traffic sources (&quot;Referrers&quot; menu)</a></li>
+<li><a href='#wap'>WAP Stats</a></li>
+<br><br>
+13. <a href='#checker'>Check on traders (&quot;Trades Checker&quot; menu)</a><br>
+14. <a href='#blacklist'>Traders Blacklist (&quot;Blacklist&quot; menu)</a><br> 
+15. <a href='#ipblacklist'>IP blacklist (&quot;IP Blacklist&quot; menu)</a><br> 
+16. <a href='#settings'>Settings (&quot;Settings&quot; menu)</a><br> 
+<li><a href='#rules'>Rules for webmasters</a></li>
+<li><a href='#autosignup'>New trades settings</a></li>
+<li><a href='#info'>Site info</a></li>
+<li><a href='#intf'>Interface settings </a></li>
+<li><a href='#password'>Change password</a></li>
+<li><a href='#reset'>Reset</a></li>
+<br><br>
+17. <a href='#colors'>Individual color settings</a><br> 
+18. <a href='#webmasters'>Webmasters page</a><br>
+<br><br>
+<a href='#ca'>ClickAgain parameter</a><br>
+<a href='#act'>Activity parameter</a><br>
+</td>
+</tr>
+</table>
+<tr>
+</tr>
+</table>
+
+
+<br>
+<table width=80% border=0>
+<tr>
+<td>
+<font size=4><B>System Requirements.</b></font>
+<br><br>
+Apache Web Server<br>
+PHP 4.1.õ and higher installed as Apache module with <b>cURL support</b><br>
+Zend Optimizer<br>
+Crontab
+
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+
+<table width=80% border=0>
+<tr>
+<td>
+<font size=4><B>1. Script Installation.</b></font>
+<a name=install></a>
+<br><br>
+<u>Variant 1</u> - installing on shell.<br><br>
+1. Open sinstall.php file<br>
+2. Declare the required variables:<br><br>
+&nbsp;&nbsp;&nbsp;$html_path - the directory path for your websites html documents (index.html, etc.)<br>
+&nbsp;&nbsp;&nbsp;$fet_domain - domain that will be used for script installation, no www required (e.g.: "mydomain.com")<br>
+&nbsp;&nbsp;&nbsp;$fet_top_templates -  the directory path for your toplist templates<br>
+&nbsp;&nbsp;&nbsp;$php_path - path of PHP compiler (ask server administrator for assistance; normally its /usr/local/bin/php)<br>
+<br>
+3. Create a temporary directory on server (e.g.: install).<br>
+4. Rewrite the files from the installation package to the directory.<br>
+   Note: Files with the .txt extension must be uploaded in ASCII mode, while the .dat extension files must be uploaded in BINARY mode.<br>
+5. Run sinstall.php file using "php sinstall.php" command in shell<br>
+6. Set the Crontab lines that will be given out by the installer in case of a successful completion.<br>
+7. . Delete the temporary directory!!!
+<br>
+<br>
+Installation is complete.<br><br>
+<u>Variant 2</u> - installing fromWEB.<br><br>
+1. Open sinstall.php file<br>
+2. Declare the required variables:<br><br>
+&nbsp;&nbsp;&nbsp;$html_path - the directory path for your websites html documents (index.html, etc.)<br>
+&nbsp;&nbsp;&nbsp;$fet_domain - domain that will be used for script installation, no www required (e.g.: "mydomain.com")<br>
+&nbsp;&nbsp;&nbsp;$fet_top_templates -  the directory path for your toplist templates<br>
+&nbsp;&nbsp;&nbsp;$php_path - path of PHP compiler (ask server administrator for assistance; normally its /usr/local/bin/php)<br>
+<br>
+3. Create a temporary directory on server (e.g.: install).<br>
+4. Rewrite the files from the installation package to the directory.<br>
+   Note: Files with the .txt extension must be uploaded in ASCII mode, while the .dat extension files must be uploaded in BINARY mode.<br>
+5. Open http://www.yourdomain.com/install/winstall.php in your browser<br>
+6. Set the Crontab lines that will be given out by the installer in case of a successful completion.<br>
+7. . Delete the temporary directory!!!
+<br>
+<br>
+Installation is complete.<br><br>
+In cases of an unsuccessful installation, please use the <a href=http://www.fetcj.com/forum/ target=_blank>message board</a> to contact the tech support.
+<br>
+<p align=right><a href=#top>Back to contents</a></p>
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+
+<table width=80% border=0>
+<tr>
+<td>
+<font size=4><B>2. Upgrade for versions lower than 5.x</b></font>
+<a name=update></a>
+<br><br>
+The developers are sorry to admit that it is impossible to carry out automatic upgrades for versions lower than 5.x
+due to database incompatibility, as newer versions possess a wider range of options and features.<br>
+<br>
+However, we have made database importer from the previous versions to 5.x, which is called <b>importer.php</b>. You can
+find it in the installation package. Upload it to the FET catalog after installation and use address 
+<b>http://www.yourdomain.com/fet/importer.php</b> to import trades from prevois version of script.<br><Br>
+Please be patient and install the script from scratch. We really hope its worth the effort.
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+
+<table width=80% border=0>
+<tr>
+<td>
+<font size=4><B>3. Getting Started</b></font>
+<a name=begin></a>
+<br><br>
+<a name=login></a>
+The setup being successful, the entrance to scripts administrator section will be located at:<br><br>
+<b>http://www.yourdomain.com/fet/</b><br><br>
+Originally, the password for the administrator section shall be <b>admin</b>. You will be able to 
+<a href=#password>change</a> it later on.
+<br><br>
+<b>You need to enable JavaScript and cookies for the script to function properly.</b>
+<br><br>
+You also need to set <a href=#mainpages>Main pages</a>to start working with the script. 
+Otherwise users will not be able to see your site. <br>
+We recommend that more experienced users get down to <a href=#global>General settings</a> right away. 
+<br>
+<br>
+<br>
+<font size=2><B>Adding/deleting/editing trades.</b></font>
+<a name=addtrade></a>
+<br><br><br>
+Each time you log into the administrator section you are taken to the trades general stats page.
+The lower part of the page contains the following options:
+<br><br>
+<b>&quot;Add Trades&quot;</b> option<br>
+<br>
+Selecting this option will take you to the Adding trades page. The upper part of the page contains a table consisting
+ of 10 rows for indicating each trades individual characteristics:<br>
+<br>
+<u>Url</u> - trader's url  for accepting traffic<br>
+<u>Site Name</u> - traders site name<br>
+<u>Trade Type</u> - trade type<br>
+<u>Min Trade</u> - minimal trade per hour<br>
+<u>Ratio</u> - trade ratio<br>
+<u>Webmaster</u> - webmasters nickname/name<br>
+<u>ICQ</u> - contact ICQ number<br>
+<u>E-Mail</u> - contact email<br><br>
+
+The table is also designed for indicating general parameters characteristic of all the new trades:
+<br><br>
+<u>Main Page</u> - main page for accepting traffic from traders. Main page must be indicated <a href=#mainpages>beforehand.</a><br>
+<u>Show in toplist</u> - the option allows displaying sites on toplist<br>
+<u>Clicks order</u> - the order of traders clicks distribution<br>
+<u>Content skim</u> - percent sent to content for a given trader<br>
+<u>Accept proxy traffic</u> - the option allows considering proxy traffic<br>
+<u>Accept NoRef hits</u> - the option allows considering hits regardless of HTTP_REFERER or not originating from a traders domain<br>
+<u>Accept NoRef clicks</u> - the option allows considering clicks regardless of  HTTP_REFERER or not originating from your site<br>
+<u>No JSCookie click counts as</u> - the option allows counting clicks not containing a JavaScript cookie<br>
+<u>Proxy traffic % to send</u> - the option allows indicating the amount of proxy traffic to be sent to a trader<br>
+<u>NoCookie traffic % to send</u> - the option allows indicating the amount of nocookie traffic to be sent to a trader.<br>
+<u>NoRef traffic % to send</u> - the option allows indicating the amount of HTTP_REFERER-free traffic to be sent to a trader.<br>
+<br>
+Once youre finished with adding traders, please click on <b>&quot;Save New Trades&quot;</b> to save the changes. 
+<br><br>
+Please read <a href=#edituser>Trades Individual Settings</a> for more information on parameters.
+<br><br>
+Once the traders have been added to the database, you have to allow some time for the script to create stats for them. Updates are carried out once per minute. This is the approximate time the script will need for the trade to appear in the stats. 
+<br>
+<br>
+The general statistics table contains an <b>"Edit"</b> option. Clicking on the option will take you to the 
+<a href=#edituser>Trades Individual Settings</a> page.
+<br>
+<br>
+Removing trades from the database or adding them to <a href=#blacklist>Blacklist</a> is achieved by ticking a box
+ next to the trade sites domain name and clicking on <b>"Delete Trades"</b> or <b>"Blacklist Trades"</b> correspondingly.
+<br>
+<br>
+<br>
+<font size=2><B>Adding special URLs.</b></font>
+<a name=special></a>
+<br><br><br>
+This page allows indicating addresses that will consequently be accepting traffic in cases when it is
+impossible to send it to trade. <br>
+<br>
+If any of the sections below happens to contain more than one address, the traffic will be distributed between
+them in volumes that you will be able to define for each of the addresses.<br><br>
+<u>ExOut traffic URLs</u> - this option is designed for sending non-unique clicks. It works in cases when the script
+ has already sent the user to all of the currently avalable trades and the option that allows sending non-unique 
+ clicks to ExOut is enabled in <a href=#overclicking>General Settings</a>.
+<br>
+<u>NoRef traffic URLs</u> - this option is designed for HTTP_REFERER-free traffic or an incorrect HTTP_REFERER 
+value in cases when its not accepted by any of the currently available trades.The option must be enabled for
+ each and every trade on an <a href=#edituser>individual</a> basis.
+<br>
+<u>NoCookie traffic URLs</u> - this option is available for traffic that does not allow cookies. The settings
+ are also <a href=#edituser>individual</a>.
+<br>
+<u>Filterd traffic URLs</u> - this option is avalable for <a href=#botfilters>bot-filtered</a> traffic.
+<br>
+<br>
+<u>Specific languages Hits redirects URLs</u> - addresses that users will be sent to providing their browsers
+ are set to languages specified as the ones to be redirected. Indicate a language (en, dk, de, ru, en-us, eu-gb) 
+ and the page the users with these languages will be sent to in case they attempt to enter your website. <br>
+<u>Specific languages Clicks redirects URLs</u> - addresses that users with browsers that are set to languages
+ subject to redirect will be sent to. Indicate a language (en, dk, de, ru, en-us, eu-gb) as well as the page
+  users with these languages will be redirected to in case they make clicks within your website. <br>
+<br>
+Traffic sent to addresses mentioned above shall be/shall not be considered a valid click by traders
+depending on settings.
+<br>
+<p align=right><a href=#top>Back to contents</a></p>
+</td></tr></table>
+
+<br>
+<br>
+
+<table width=80% border=0>
+<tr>
+<td>
+<font size=4><B>4. Trades individual settings.</b></font>
+<a name=edituser></a>
+<br><br>
+<br>
+Once you choose to proceed with editing trade, you get to trades individual settings page.<br><br>
+<u>Trade URL</u> - despite the fact that you only enter the URL and leave the domain name out when youre adding
+ the trade, the domain is determined automatically. When editing the trade, you are free to indicate any other
+  address for sending traffic for a particular trade.<br>
+<u>Trade Type</u> - the script allows seven trade types that will surely appear to be sufficient for
+ satisfying your needs in traffic distribution.
+<a name=tradetype></a>
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Stopped</b> - trade has been stopped<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Normal</b> - this trade type is traffic productivity orientated.
+It also considers the quantity of traffic returned by a trader and the set ratio. The important thing
+ here is that there is an attempt to return all the traffic as desired and further develop the trade.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Normal+</b> - this type is quite identical to Normal as far as the way of
+returning traffic is concerned. However, the Ratio is counted automatically, thus making trades more
+active and profitable considering productivity, effectivity and the speed at which the traffic
+ is returned by a trader.<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Ratio</b> - traffic volumes received from the trader and the set Ratio are the 
+main criteria governing this trade type. The main idea is to return more traffic than the trader has sent in Ratio times.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Boost</b> - the basic goal is to send traffic to a given trade no matter what.
+It is recommended for use only with one trade and only in cases when youre entirely sure its worthwhile
+ to do this. This trade type is of top priority among the rest. Almost all of the first clicks will be
+  directed to this trader.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Capped</b> - this one is almost identical to the Normal type. However, it presupposes
+ some limitations by traffic feedback. Feedback is stopped as soon as it has exceeded the set Ratio.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Quality</b> - automatic trade regulation. Priority is given to sites that have a higher
+ <a href=#ca>Click Again</a> parameter. However, trade productivity, feedback and effectivity are also considered<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Quality+</b> - This is an advanced version of Quality trade type that considers
+ the <a href=#activity>activity</a> of the traders traffic.
+<br>
+<br>
+<u>Minimum Hourly Trade</u> - the scripts aim is to keep the trade from falling below a certain value.
+It is recommended to use this option only in cases when the script is unable to determine a _profitable_ trade by
+ itself.<br>
+<a name=mintrade></a>
+<u>Set Ratio</u> - feedback ratio for non-automated trade types.<br>
+<a name=ratio></a>
+<u>Main Pages</u> - it is possible to set up to three pages in rotation for every given trade. 
+Pages are selected from the ones that were added to <a href=#global>general settings</a> beforehand.<br>
+<a name=mainpages></a>
+<u>Show In Toplist</u> - this option allows displaying the trade in the trades top.<br>
+<a name=showintop></a>
+<u>Click Order</u> - the order of clicks distribution for content/trade. It is presented as follows:<br><Br>
+110010101<br><br>
+<a name=clickorder></a>
+where "0" means the click will be directed for trade as defined by the set order, while 1 means it will be
+directed to content if indicated in a href=#out>out.php parameters</a>.
+<br>
+<u>Content skim</u> - individual % sent to content for a given trade, if the Click Order
+parameter has not been indicated or is no longer valid.<br><br>
+<a name=perskim></a>
+"Click Order" and "Content Skim" parameters are only accepted for allowed links.
+ See <a href=#global>general settings</a> and <a href=#out>out.php parameters</a> for further detail. 
+<br>
+<u>Accept proxy traffic</u> - if certain proxy types were not used, the traffic will not be considered
+ as trade relevant and will be treated as filtered. <br>
+<a name=trproxy></a>
+<u>Accept noref hits</u> - in cases when the trader sends ID marked traffic (see <a href=#in>Accepting traffic to
+    site</a>), the traffic received without HTTP_REFERER or received from a domain other than the trades domain,
+     it is allowed not to consider such traffic as a hit.<br>
+<a name=trrefh></a>
+<u>Accept noref clicks</u> - clicks made by a site user do not always contain an HTTP_REFERER. 
+However, they may contain cookies with the value of a trade that needs this click to be counted.
+ It is you who decides whether clicks of the kind should be accepted.  <br>
+<a name=trrefc></a>
+<u>No JSCookie clicks counts as</u>  if a site user does not have cookies installed by JavaScript,
+ but has cookies set in the header through server response, you can make the script consider this type of 
+ a click to be cookie-free.<br>
+<a name=trnojs></a>
+<u>Proxy traffic % to send</u> -  the percent of proxy traffic allowed by a given trader<br>
+<a name=proxsend></a>
+<u>NoCookie traffic % to send</u> - the percent of nocookie traffic that the trader allows<br>
+<a name=nojssend></a>
+<u>NoRef traffic % to send</u> - the percent of HTTP_REFERER-free traffic or traffic with an
+ incorrect HTTP_REFERER that may be sent to a trader.  <br>
+<a name=norefsend></a>
+<u>Site Name</u> - site name that will be displayed in trades top.<br>
+<a name=sitename></a>
+<u>Webmaster</u> - webmasters nickname/name.<br>
+<a name=wmname></a>
+<u>ICQ UIN</u> - contact ICQ number.<br>
+<a name=icq></a>
+<u>E-Mail</u> - contact email<br>
+<a name=emeil></a>
+
+<p align=right><a href=#top>Back to contents</a></p>
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+
+<table width=80% border=0>
+<tr>
+<td>
+<font size=4><B>5. General trade settings.</b></font>
+<a name=global></a>
+<br><br>
+<br>
+
+<font size=2><b>Indicating main pages</b>
+<a name=mainpages></a>
+<br><br>
+"Main Pages" section has a menu containing all the files listed on your sites html directory.
+ Indicate the ones that could be set as main pages for trades. Once youve added the pages, you can
+  set some of them as default pages. In cases when certain pages have not been specified for a given trade,
+   the script will be using the ones set by default. 
+<br><br>
+<font size=2><b>Trade limitations minimum by traffic</b>
+<a name=minfortrade></a>
+<br><br>
+"Minimum Hits for NEW trades required" and "Minimum Hits for MAIN trades required" parameters can be used 
+to indicate the quantity of traffic that the trader must send for the trade to remain active. Trade is ended
+ in cases when it is lower than expected. 
+<br><br>
+<font size=2><b>Trade limitations minimum by productivity</b>
+<a name=minprod></a>
+<br><br>
+"Minimum Productivity for NEW trades required" and "Minimum Productivity for MAIN trades required"
+ parameters serve for indicating the minimum productivity criterion for a traders traffic so that trade
+  remains active. Trade is ended in cases when it is lower than expected. 
+<br><br>
+<font size=2><b>Bot filters</b>
+<a name=bitfilters></a>
+<br><br>
+The script allows several filter types:<br><br>
+1. <u>Manual filtration</u> - this type of bot filtration is carried out through limiting the maximum number
+of hits and clicks from one user<br>
+<u>Maximum Hits per user accepted</u> - limitations are set to the number of hits<br>
+<u>Maximum Clicks per user accepted</u> - limitations are set to the number of clicks 
+The traffic that has been filtered will be marked as filtered.
+<br>
+<br>It is recommended that you set values for a given filtration type in the descending order,
+as errors resulting in ignoring live traffic are highly probable.
+<br><Br>
+2. <u>Automatic filtration</u> - this system is more flexible as compared to the previous one. It considers traffic
+ productivity for a site and sets limitations on an automated basis. Originally the level of filtration appears
+  to be quite moderate  1. However, it can be raised to 3 if required. All levels higher than 3 should be
+   treated with due care.<br><br>
+3. <u>Minimum Click Time accepted, sec</u> - in case the click occurs faster than determined or the pause between
+ the clicks is smaller than set, the traffic shall be considered as filtered, and it can be redirected from the
+  trade to special urls. 
+<br><br>
+<font size=2><b>Managing non-unique clicks</b>
+<a name=overclicking></a>
+<br><br>
+If a site user is excessively active and the script no longer has trades that the user has not yet visited,
+ it is crucial to decide where the user shall be directed to once the following click is made.
+  There are two variants here: s/he either gets to the trade again starting with the very first one the
+   user previously visited or to the special ExOut address. This option allows boosting the uniqueness
+    of the outcoming traffic. 
+<br><br>
+<font size=2><b>Correcting trade productivity by language</b>
+<a name=langfactor></a>
+<br><br>
+To make things simple, let us suppose that every single language in the world originally carries a value that
+ equals to 1 if not specified otherwise. Thus all the traffic coming from traders has weight that 
+ equals to 1 on average insuring normal trade. Now let us suppose that you are not fond of traffic 
+ with the Chinese language set in the browser. You initiate correction by the Chinese language (
+ there are several of them in browser settings - "zh-cn", "zh-hk", "zh-mo", "zh-sg", "zh-tw"). 
+ You indicate these languages in the table and adjust the settings to, say, 0.10, i.e. 10% of the overall 
+ language weight. What we get in the end is the limited weight of the language each time 
+ Chinese users enter the resource plus the productivity correction coefficient lower than 1. Productivity 
+ will look as decreasing although in reality this is not the case. In case of a sufficient quantity of Chinese 
+ traffic traders can decrease their productivity and bring it down to almost as close as 0(depending on your 
+ settings) and the script will stop returning traffic to them, no matter how much of that Chinese traffic 
+ they send. <br><br>
+ Language settings can be found in the lower part of the menu.
+<br><br>
+<font size=2><b>Redirecting certain languages</b>
+<a name=langredir></a>
+<br><br>
+This function lets the script know how to treat a user whose browser contains a language marked for redirect.<br><br>
+<u>Send specific languages Hits to</u> - If it is indeed a hit, it shall be directed to special addresses or to the main page.<br>
+<u>Send specific languages Clicks to</u> - If it is indeed a click, it shall be directed to the trade or to special addresses.<br>
+<br><br>
+Special addresses can be indicated through <a href=#global>general settings. </a>
+<br><br>
+<font size=2><b>Managing hidden links </b>
+<a name=hiddenlink></a>
+<br><br>
+Hidden links are yet another opportunity of bot filtering. Lets take white text on a white background, for example.
+ No one will ever see the text, nor will anyone click on it. However, bots read through html pages and
+  are likely to disregard the fact that its a hidden link. The script will save the bots IP and will
+   write it down in .htaccess. Access to the site from this particular IP will be limited. The period
+    of limitation is indicated in hours.<br><br>
+Indicate the name of the hidden link to the script as well as the period of time during which the IPs that
+ have clicked on the link of the kind shall be blocked.
+<br>
+For the option to work properly it is recommended that you set several hidden links of the following nature:<br><br>
+&lt;a href=/out.php?link=linkname style='color: #ffffff; text-decoration: none'&gt;Best Free stuff&lt;/a&gt;<br><br>
+As you see, not only is the link hidden, but its hidden with the help of a style(it is understood that the
+ background of the page also has color#ffffff). Normally bots are unable to tell the difference between the
+ styles. Thus they will be unable to tell that the link is hidden. 
+<br><br>
+<font size=2><b>General skim settings</b>
+<a name=hiddenlink></a>
+<br><br>
+Managing skim on links like &p=a1 is carried out in <b>p=a# links settings</b>. The option also makes it possible
+ to use the given links for individual skim settings for trades. Visit <a href=#out>out.php parameters</a> section for a
+  detailed description.
+<br>
+<p align=right><a href=#top>Back to contents</a></p>
+</td>
+</tr>
+</table>
+
+<br><br>
+
+<table width=80% border=0>
+<tr>
+<td>
+<font size=4><B>6. Traffic forces.</b></font>
+<a name=forces></a>
+<br><br>
+<br>
+<font size=2><b>Long forces</b>
+<a name=longforces></a>
+<br><br>
+The script keeps a set minimum for trade within a given time. The time period can be anywhere between
+ 1 minute to 1 week (you can also make it work 24 hours a day). If you select Daily instead of any day
+  of the week at the start/finish, the event will be taking place daily at a given time. The tool is extremely
+ useful for keeping toplist positions. 
+<br></br>
+<font size=2><b>Short forces</b>
+<a name=shortforces></a>
+<br><br>
+The option is identical to min trade (see <a href=#mintrade>traders settings</a>).
+ However, its limited in time, in contrast to min trade. For example: You wish to send 1000 hits 
+ within 5 hours. The script must send 200 hits every hour to make it happen.
+ To do this, we select a trader, set hits to 200 and time to 5 hours. As soon as this
+ time is up, the task is erased automatically. The option is useful with new trades when you do
+ not quite know the traders possibilities and min trade seems too risky. 
+<br>
+<p align=right><a href=#top>Back to contents</a></p>
+</td>
+</tr>
+</table>
+
+<br><br>
+
+<table width=80% border=0>
+<tr>
+<td>
+<font size=4><B>7. Managing exit ("Exit Traffic" menu).</b></font>
+<a name=forces></a>
+<br><br>
+<br>
+
+This option allows setting the exit traffic managing script.
+Its quite identical to <A href=#longforces>long forces</a> with the exception of the fact that traffic 
+is distributed according to a set % for every address that is currently active. If there are no active addresses at the moment, a message saying it is impossible to send traffic appears.<br>
+Usage example: 
+ <br>
+      <br>
+      &lt;script&gt;<br>
+      window.open('http://yourdomain.com/exit.php','_blank');<br>
+      &lt;/script&gt;
+<br>
+<p align=right><a href=#top>Back to contents</a></p>
+</td>
+</tr>
+</table>
+
+<br><br>
+
+<table width=80% border=0>
+<tr>
+<td>
+<font size=4><B>8. Ways of accepting traffic to a website.</b></font>
+<a name=in></a>
+<br><br>
+<br>
+
+ Your site allows accepting traffic from traders in two ways:
+      <br>
+      <br>
+      <b>http://www.yourdomain.com/ - </b>a common way of accepting traffic. Incoming traffic is attributed 
+      to traders based on HTTP_REFERER.<br>
+      <br>
+      <b>http://www.yourdomain.com/?traderdomain.com - </b>a way of forcefully attributing traffic to a certain
+       trader without paying attention to HTTP_REFERER or disregarding the fact that it is not present. The crucial
+        moment here is to make sure the traders domain is not followed up by any symbols, as this will lead
+         to ignoring this traffic as belonging to a given trader.
+<br>
+      <br>
+      The second variant is more suitable in cases when traders send exit console traffic or when a more
+       precise consideration of traffic is required. 
+      <br><br>
+      The script is compatible with other scripts: if traders send traffic as <br><br>
+      <b>http://www.yourdomain.com/?id=traderdomain.com</b><br>
+      <b>http://www.yourdomain.com/?ref=traderdomain.com</b><br>
+      <b>http://www.yourdomain.com/?domain=traderdomain.com</b><br>
+      <b>http://www.yourdomain.com/?trader=traderdomain.com</b><br>
+      <b>http://www.yourdomain.com/?ft=traderdomain.com</b><br>
+      <b>http://www.yourdomain.com/?dom=traderdomain.com</b><br>
+      <b>http://www.yourdomain.com/?from=traderdomain.com</b><br>
+      <br>then the current version of the script will handle traffic perfectly and the hits will not be lost.
+
+
+<br>
+<p align=right><a href=#top>Back to contents</a></p>
+</td>
+</tr>
+</table>
+
+<br><br>
+
+<table width=80% border=0>
+<tr>
+<td>
+<font size=4><B>9. Out.php parameters</b></font>
+<a name=out></a>
+<br><br>
+Possible commands for out.php script:<br>
+      <br>
+      <b>out.php</b> - a usual way of sending traffic to a trade<br>
+      <br>
+      <b>link=</b> - a command used for attributing names to links. The names will be displayed in the Link Report
+       stats later on. The option is very good for keeping track of link clickability
+      &nbsp;<p>Example:: <b>out.php?link=picture111
+      - </b>info on clicks will be displayed in the stats named picture 111. <br>
+      <b><br>
+      url=</b> a constant link. Outs to the link shall be attributed to the trader indicated in url= .
+       The option is convenient for the <a href=#toplist>toplist</a>. Example: <b>out.php?url=http://trader.com -
+      </b>out is attributed to <b>trader.com<br>
+      <br>
+      p=</b> this parameter is used only with <b>url=</b>. ÂThe parameter contains the percent of traffic that must
+      be sent precisely to the given url=, while the rest of the traffic goes to trade.
+      Traffic taken to the given url= shall not be attributed to any trader as an out. It shall be considered in the variable 
+      <b>content</b> - number of outs for content.<br>
+      Example: <b>out.php?url=http://content.com/gallery.html&amp;p=80
+      - </b>80% shall be directed to content and 20%- to trade.<br>
+      <b>f=1 </b>1 this parameter is used solely with <b>p=</b>. It means that the first click on a site link of the
+      kind will always be directed to the given  <b>url=</b>
+      = , independent of the value in <b>p=</b>. All the subsequent clicks will be distributed according to <b>p=</b><br>
+      Example:  <b>out.php?url=http://www.realcontentgallery.com/gallery.html&amp;p=80&amp;f=1<br></b>
+      <br>
+      <b>is=1 </b>this parameter is used exclusively together with <b>p=</b>. It indicates a possibility of using
+       an individual trade skim for a given link.
+      <br>
+      Example: <b>out.php?url=http://www.realcontentgallery.com/gallery.html&amp;p=80&amp;f=1&amp;is=1<br></b>
+      <br>
+      See <a href=#edituser>Individual settings</a> for setting the parameters.
+      <br><br>
+      In order to manage the % for content and the first click on content from the administrative section of the script, set
+       <b>&amp;p=a1......&amp;p=a9</b>, where <b>a(number)
+      - </b>is the desired percent value set in the admin.  Let us suppose you wish to set a different % for content for
+       different parts of the html site.<br>
+      Lets say the links in the upper part shall have 50% for content, i.e. we set &amp;p=a1 and 50 for Set # 1 in the
+       administrative section. <br>
+      Links in the middle shall be directed to content by 30%, i.e. we set &amp;p=a2 and 30 for Set #2 in the administrative section. <br>
+      Links below shall have 10%, i.e. we set &amp;p=a3 and 10 for Set #3 in the administrative section. <br>
+      It is each sets individual settings that determine whether content shall be displayed after
+      the first click on links with &amp;p=a(number).<br>
+       The possibility of using individual settings is set for every numbered
+      link separately. <br><br>
+
+      <b>hardlink= </b> the parameter sets hardlink trade. The option has its own peculiarities when working with CJs, but its most
+      likely to be useful for TGPs. For the option to function properly, all the trade links need to have their own names,
+       e.g.: teen1, teen2, teen3, etc. If a user clicks on a link named teen1 and is sent to trader1.com,
+       then consequently, the user will be sent to trader1.com in case if s/he clicks on teen1 again. This is done to connect
+       trades to certain site links for some period of time. Hardlink trade is created, i.e. no hardlink is actually
+       present on the site. It is the script that determines which of the trades will get the user and saves the
+       link for further possible clicks. 
+      <br><br>
+      </b>
+      The last command on the list is constant links. Traffic distribution is carried out within a trade group first, and 
+      then it is transferred to general trade if the user has already visited all the sites within the
+       group. See <A href=#groups>Trade groups ("Groups" menu)</a> for a detailed description.
+        <br><br>
+      Link for group trade:  <b>out.php?group=groupname</b>
+
+<br><br>
+<br>
+
+<br>
+<p align=right><a href=#top>Back to contents</a></p>
+</td>
+</tr>
+</table>
+
+<br><br>
+
+<table width=80% border=0>
+<tr>
+<td>
+<font size=4><B>10. Trade groups ("Groups" menu)</b></font>
+<a name=groups></a>
+<br><br>
+<br>
+This option allows grouping trades together. If your site accepts traffic from various niches, trades from one niche
+should not send traffic from another one. Otherwise this will result in poor clicking. In order to limit certain
+links and set them to work for a particular site type, you can create a group (Teens, for example), add the
+required trades to it and place a link <b>out.php?group=teens</b> in places where a click should take users
+to this particular group. Thus the user that has clicked on the link will initially get to the teens group.
+Group trade is carried out according to the general trade parameters.
+<br>
+<p align=right><a href=#top>Back to contents</a></p>
+</td>
+</tr>
+</table>
+
+
+<br><br>
+
+<table width=80% border=0>
+<tr>
+<td>
+<font size=4><B>11. Creating toplists ("Toplists" menu)</b></font>
+<a name=toplists></a>
+<br><br>
+<br>
+In order to create a toplist, you need special tags that shall be written into the toplist template.
+It is recommended that you create the toplist immediately on the page used as compared to a separate file.
+Here is what you need to insert into the template: <br><br>
+&lt;!--FTOP_TRURL_#--&gt; - - for indicating trades URL <br>
+&lt;!--FTOP_TRNAME_#--&gt; - for indicating site name <br>
+&lt;!--FTOP_TRHITS_#--&gt; - for indicating the number of trade hits <br>
+&lt;!--FDATA--&gt; - for indicating the time when the toplist is being created <br>
+<br>
+The # symbol is substituted by the position on the toplist. Here is an example of a toplist for 10 traders:<br><br>
+&lt;table border=0&gt;<br>
+&lt;tr&gt;&lt;td&gt;&lt;a href=/out.php?url=&lt;!--FTOP_TRURL_1--&gt;&gt;&lt;!--FTOP_TRNAME_1--&gt;&lt;/a&gt; - &lt;!--FTOP_TRHITS_1--&gt;&lt;/td&gt;&lt;/tr&gt;<br>
+&lt;tr&gt;&lt;td&gt;&lt;a href=/out.php?url=&lt;!--FTOP_TRURL_2--&gt;&gt;&lt;!--FTOP_TRNAME_2--&gt;&lt;/a&gt; - &lt;!--FTOP_TRHITS_2--&gt;&lt;/td&gt;&lt;/tr&gt;<br>
+&lt;tr&gt;&lt;td&gt;&lt;a href=/out.php?url=&lt;!--FTOP_TRURL_3--&gt;&gt;&lt;!--FTOP_TRNAME_3--&gt;&lt;/a&gt; - &lt;!--FTOP_TRHITS_3--&gt;&lt;/td&gt;&lt;/tr&gt;<br>
+&lt;tr&gt;&lt;td&gt;&lt;a href=/out.php?url=&lt;!--FTOP_TRURL_4--&gt;&gt;&lt;!--FTOP_TRNAME_4--&gt;&lt;/a&gt; - &lt;!--FTOP_TRHITS_4--&gt;&lt;/td&gt;&lt;/tr&gt;<br>
+&lt;tr&gt;&lt;td&gt;&lt;a href=/out.php?url=&lt;!--FTOP_TRURL_5--&gt;&gt;&lt;!--FTOP_TRNAME_5--&gt;&lt;/a&gt; - &lt;!--FTOP_TRHITS_5--&gt;&lt;/td&gt;&lt;/tr&gt;<br>
+&lt;tr&gt;&lt;td&gt;&lt;a href=/out.php?url=&lt;!--FTOP_TRURL_6--&gt;&gt;&lt;!--FTOP_TRNAME_6--&gt;&lt;/a&gt; - &lt;!--FTOP_TRHITS_6--&gt;&lt;/td&gt;&lt;/tr&gt;<br>
+&lt;tr&gt;&lt;td&gt;&lt;a href=/out.php?url=&lt;!--FTOP_TRURL_7--&gt;&gt;&lt;!--FTOP_TRNAME_7--&gt;&lt;/a&gt; - &lt;!--FTOP_TRHITS_7--&gt;&lt;/td&gt;&lt;/tr&gt;<br>
+&lt;tr&gt;&lt;td&gt;&lt;a href=/out.php?url=&lt;!--FTOP_TRURL_8--&gt;&gt;&lt;!--FTOP_TRNAME_8--&gt;&lt;/a&gt; - &lt;!--FTOP_TRHITS_8--&gt;&lt;/td&gt;&lt;/tr&gt;<br>
+&lt;tr&gt;&lt;td&gt;&lt;a href=/out.php?url=&lt;!--FTOP_TRURL_9--&gt;&gt;&lt;!--FTOP_TRNAME_9--&gt;&lt;/a&gt; - &lt;!--FTOP_TRHITS_9--&gt;&lt;/td&gt;&lt;/tr&gt;<br>
+&lt;tr&gt;&lt;td&gt;&lt;a href=/out.php?url=&lt;!--FTOP_TRURL_10--&gt;&gt;&lt;!--FTOP_TRNAME_10--&gt;&lt;/a&gt; - &lt;!--FTOP_TRHITS_10--&gt;&lt;/td&gt;&lt;/tr&gt;<br>
+&lt;tr&gt;&lt;td&gt;Updated - &lt;!--FDATA--&gt;&lt;/td&gt;&lt;/tr&gt;<br>
+&lt;/table&gt;<br><br>
+This example will create the following toplist:<br><br>
+Super Trader1 - 10223<br>
+Super Trader2 - 9223<br>
+Super Trader3 - 8223<br>
+Super Trader4 - 7223<br>
+Super Trader5 - 6223<br>
+Super Trader6 - 5223<br>
+Super Trader7 - 4223<br>
+Super Trader8 - 3223<br>
+Super Trader9 - 2223<br>
+Super Trader10 - 1223<br>
+<br>Updated - 10:23 12th of June 2005<br><br>
+Once you are done with tags within the template, place the template into the template directory on server.
+Then go to admin->Toplists. The template will appear on the list of templates available for use. Select 
+it and set the file name required for the template as well as the type of trade sorting in the toplist: 
+<br><Br>
+<u>Hits IN</u> - by the number of hits <br>
+<u>Producitivty</u> - by traders traffic productivity <br>
+<u>Effectivity</u> - ïby trade effectivity <br>
+<u>Debt</u> - by current debt <br>
+<br>
+As soon as youre done with the template, you can create a file with the toplist by clicking on "Generate Toplists"
+ or wait till it is generated automatically. The time for the automatic procedure is set in the table below.
+
+<br>
+<p align=right><a href=#top>Back to contents</a></p>
+</td>
+</tr>
+</table>
+
+<br><br>
+
+<table width=80% border=0>
+<tr>
+<td>
+<font size=4><B>12. Statistics</b></font>
+<a name=stats></a>
+<br><br>
+<br>
+<font size=2><b>Main</b>
+<a name=mainstats></a>
+<br><br>
+Every time you log into the administrative section or every time you click on Main Stats,
+you get into the trades main statistics section:
+<br><br>
+<u>Domain</u> - traders domain and links to parameter changes and detailed stats<br>
+<u>Trade</u> - trade type<br>
+<u>RawIn</u> - number of raw hits <br>
+<u>TrUin</u> - number of unique hits from a given trader<br>
+<u>GlUin</u> - number if unique hits as related to site traffic <br>
+<u>NoJS</u> - number of JS cookie-free clicks <br>
+<u>Cont</u> - number of content clicks <br>
+<u>Prod</u> - productivity (apart from content clicks)<br>
+<u>CA</u> - <a href=#ca>Click Again parameter</a><br>
+<u>ACT</u> - <a href=#act>Activity parameter</a><br>
+<u>UProd</u> - unique productivity - unique clicks to unique hits ratio.<br>
+<u>LF</u> - Correction by language coefficient<br>
+<u>HMin</u> - Hourly trade minimum <br>
+<u>Ratio</u> - A set return coefficient <br>
+<u>Return</u> - Return coefficient <br>
+<u>Effect</u> - Trade effectivity <br>
+<u>Debt</u> - Debt to trade <br>
+<br>
+It is possible to sort columns in the descending order. <br>
+In order to limit the list of trades, you can use a filter (see settings above the table).
+ The filter allows displaying only active, only inactive or all of the trades.<br><br>
+If you are not satisfied with the exceeding number of columns, you can adjust the table in <a href=#intf>"Settings"</a>.
+<br><br>
+<font size=2><b>Hourly (for the past 24 hours)</b>
+<a name=24hstats></a>
+<br><br>
+Displays every hour of trade in full detail for the past 24 hours.
+<br><br>
+<font size=2><b>History for several days</b>
+<a name=history></a>
+<br><br>
+It is possible to view trade history for the past 100 days or less. Select the time period in the lower part of the table.
+<br><br>
+<font size=2><b>Clicks on links with names ("Link Tracking" menu) </b>
+<a name=linktrack></a>
+<br><br>
+Displays the number and productivity of clicks on links containing names. There are always at least two links  
+<b>divert</b> links, i.e. clicks on a trade and <b>nodivert</b> links, i.e. clicks on content in cases when &link= was not indicated.
+<br><br>
+<font size=2><b>Traffic source overview ("Referrers" menu) </b>
+<a name=referrers></a>
+<br><br>
+The page displays a list of all the domains your site receieved traffic from. If the list is empty, click on <b>Refresh Referrers</b>
+to view log analysis for the past 24 hours. The left-hand column displays domains sorted by hits, while the column 
+to the right displays domains in the alphabetic order.<br>
+Sites with high traffic volumes may take longer for the option to load. 
+<br><br>
+<font size=2><b>WAP stats</b></a>
+<a name=wap></a>
+<br><br>
+In cases when you are unable to access your computer, but you still want to keep in touch with whats happening with the trade,
+you can use your mobile phone for getting stats via WAP.
+Youll need to type in the following URL in your mobiles browser:<br><br>
+
+<b>http://www.yourdomain.com/fet/?wap=PASSWORD</b><br><br>
+
+where PASSWORD  is the password to the administrative section.
+
+<br>
+<p align=right><a href=#top>Back to contents</a></p>
+</td>
+</tr>
+</table>
+
+<br><br>
+
+<table width=80% border=0>
+<tr>
+<td>
+<font size=4><B>13. Checking on traders ("Trades Checker" menu)</b></font>
+<a name=checker></a>
+<br><br>
+<br>
+This section of the menu allows viewing the results of the traders check on elements that may have influence on 
+traffic quality during the trade. The script does not evaluate the elements, i.e. it does not state whether the 
+elements are harmful or not. However, it displays suspicious elements. Once any of the elements has been found, 
+you can click on Found and the script will display the details on the suspicious element. 
+
+<br>
+<p align=right><a href=#top>Back to contents</a></p>
+</td>
+</tr>
+</table>
+
+<br><br>
+
+<table width=80% border=0>
+<tr>
+<td>
+<font size=4><B>14. Traders Blacklist ("Blacklist" menu)</b></font>
+<a name=blacklist></a>
+<br><br>
+<br>
+
+Its all very simple  the option allows managing traders Blacklist. 
+
+<br>
+<p align=right><a href=#top>Back to contents</a></p>
+</td>
+</tr>
+</table>
+<br><br>
+<table width=80% border=0>
+<tr>
+<td>
+<font size=4><B>15. IP Blacklist ("IP Blacklist" menu)</b></font>
+<a name=ipblacklist></a>
+<br><br>
+<br>
+
+List of IPs blocked after a click on a <a href=hiddenlink>hidden link</a> and time left before the IPs are taken off the list.
+You can also add IPs manually. 
+
+<br>
+<p align=right><a href=#top>Back to contents</a></p>
+</td>
+</tr>
+</table>
+
+<br><br>
+<table width=80% border=0>
+<tr>
+<td>
+<font size=4><B>16. Settings ("Settings" menu)</b></font>
+<a name=settings></a>
+<br><br>
+<br>
+<font size=2><b>Rules for webmasters</b>
+<a name=rules></a>
+<br><br>
+Trade rules for <a href=#webmasters>webmaster page</a> display are set in the "Trade Rules for Webmasters" section. 
+<br><br>
+<font size=2><b>New trades settings</b>
+<a name=autosignup></a>
+<br><br>
+"New Trades Auto Signup Settings" section is designed for settings of trades added through <a href=#webmasters>webmaster page</a>. 
+<br><br>
+<font size=2><b>Site information</b>
+<a name=info></a>
+<br><br>
+"Site's Information" section allows setting site info that will be further displayed on <a href=#webmasters>webmaster page</a>.
+<br><br>
+<font size=2><b>Interface settings</b>
+<a name=intf></a>
+<br><br>
+"Interface settings" serves for setting main stats interface as well as the entire interface in general.
+You can select from the <a href=#colors>PreSet color range</a>, stats columns and other elements. 
+<br><br>
+<font size=2><b>Password Change </b>
+<a name=password></a>
+<br><br>
+You can change your password in the "Password Change" section.
+<br><br>
+<font size=2><b>Full Reset </b>
+<a name=reset></a>
+<br><br>
+Daily site stats are reset to 0.
+<br>
+<p align=right><a href=#top>Back to contents</a></p>
+</td>
+</tr>
+</table>
+
+<br><br>
+<table width=80% border=0>
+<tr>
+<td>
+<font size=4><B>17. Individual color settings</b></font>
+<a name=colors></a>
+<br><br>
+<br>
+
+If you are not satisfied with the existing color range, you can create your own by opening
+<b>interface_color_conf.inc.php</b> php in the installation package. You are free to create
+your own color sets by analogy with the default ones and by following the available file prompts. 
+<br>
+As soon as youre finished with the range, substitute the <b>interface_color_conf.inc.php</b> file on
+server with the new one and select your color range in <a href=#settings>Settings</a>.
+
+<br>
+<p align=right><a href=#top>Back to contents</a></p>
+</td>
+</tr>
+</table>
+
+<br><br>
+<table width=80% border=0>
+<tr>
+<td>
+<font size=4><B>18. Webmasters page </b></font>
+<a name=colors></a>
+<br><br>
+<br>
+
+Webmasters page can be found at  http://www.yourdomain.com/fet/webmasters.php 
+
+<br>
+<p align=right><a href=#top>Back to contents</a></p>
+</td>
+</tr>
+</table>
+
+<br><br>
+<table width=80% border=0>
+<tr>
+<td>
+<font size=4><B>ClickAgain parameter</b></font>
+<a name=ca></a>
+<br><br>
+<br>
+<font size=2><b>ÊDetermining Click Again. </b>
+<br><br>
+
+The Click Again parameter (further defined as ÑÀ) displays the number of surfers that came back
+to the site and made at least one click after they had been directed to a trader by the script.
+Let us draw up a plan of a users actions to make things clearer: <br>
+	<br>
+	1.Surfer comes to your website.<br>
+	2.Surfer makes a click on your website.<br>
+	3.The script sends the surfer to a trader.<br>
+	4.Surfer sees the traders website and evaluates it.<br><br>
+	Next, we get the following possibilities:<br><br>
+	5.1.Surfer likes (dislikes) the traders site, s/he clicks on it several times (doesnt make clicks).
+	Then the surfer closes the traders site and <u>gets back to your site to make clicks on it</u>.
+	In this case the trader will be given a CA. <br>
+	5.2.Surfer likes the traders site more than yours. S/he closes your site and concentrates on the traders site.
+	This will not bring CA to the trader, as you have basically lost your surfer. <br>
+	5.3.Surfer extremely dislikes the traders website (the reasons for it shall be described below).
+	S/he closes both, the traders site and your website  and leaves the place for another resource 
+	that would best suit his/her needs. This situation is obviously even more pessimistic and does not bring CA to the trader.
+	
+<br><br>	
+<font size=2><b>Using Click Again to define trades compatibility.</b>
+<br><br>	
+	
+    In order to determine whether a trader has got a high CA, you can use the lower section of the table
+    in Nain Stats. If a traders CA is 6% higher than average (or more), CA is considered to be high (judging from experience).
+    In contrast, if a traders CA is 5-10% lower than average, CA is considered to be low, but not low enough to be critical.
+    However, CA parameter being more than 10% lower gives reasons to consider it to be very low as well as consider
+    if its really worth the time to continue trade with a given trader.<br><br>
+	Let us get down to some of the possible CA variations for traders and circumstances that determine these variations.<br><br>
+	<u>1. Traders CA is a lot higher than average.</u>
+	<br><br>
+	If a traders CA is high, we are dealing with a situation when, after they see the traders website,
+	surfers close it down and get back to your site. They do make clicks on the traders site as well.
+	However, the number of clicks is insufficient. Conclusion:<br><br>
+	<u><i>The higher the traders CA, the <b>LOWER</b> your traffics external productivity for this trader.</u></i><br><br>
+	Is it good or bad? Obviously, traders are not fond of low productivity traffic, and this fact triggers a negative
+	attitude to the given trade. On the other hand, you can send almost any amounts of traffic to this kind of a trader
+	without any damage to your own site (it sometimes exceeds the returned traffic by 2-3 times), as you know that the
+	surfer is sure to come back to you and make clicks on your site. <br><br>
+	Why do traders often get a very high CA despite the fact that your site and your sites other traders basically
+	have similar designer solutions, quantity of content and preview pictures number? After the surfer is through
+	with a couple of traders and s/he gets to that traders site that stands out among the rest, the user may feel
+	its not exactly what s/he has been looking for. The reason for it is the habit of a given user or any other reason. 
+	<br><br>
+	<u>2. Traders CA is close to average</u><br><Br>
+	It is not crucial whether the traders CA is higher or lower than average.
+	The important thing is that its not critically high/low. This kind of a trader is almost always a suitable one.
+	Youll need to take your time and track the productivity, return and other crucial trade features for evaluation purposes. 
+	<br><br>
+	<u>3. Traders CA is 5-10% lower than average</u>
+	<br><br>
+	Traders with a CA of the kind should be paid special attention to. Traders with a low CA basically take away, or,
+	rather, tempt your surfers, as surfers close down your site and carry on clicking on the traders site. 
+	On the other hand, <u>the lower the CA, the <b>HIGHER</b> your traffics productivity for a given trade</u>.
+	This is a good thing for your trader, as s/he will make sure the trade is always active. In practice, however,
+	excessive trade with a low CA website may take away a sufficient number of your clicks thus decreasing
+	your productivity (keep in mind that your site is closed, and its the traders website that attracts all the attention).
+	This will eventually lead to a debt to other traders.
+	<br><br>
+	What are the main reasons for a traders CA to be a lot lower than average?
+	If your site or your traders sites look plain and ordinary and do not offer much content, a bright website
+	may certainly attract more users. If the number of traders of the kind is quite sufficient, its high time you made
+	changes to the design and layout of your website as well as considered your sites compatibility with these traders.<br><br>
+	<u>Please make sure you take the following info only as a commentary, not a rule to be followed!!! </u>
+	<br><br>It has been noticed that sites with a low CA very often contain things that can not be considered as pleasant:
+	dialers, trojans, popups (often accompanied by various exploits), aggressive ads and the like. A lot of surfers have
+	firewalls that give out alerts about the possible threats to computer security. Naturally, a normal reaction is to close
+	all the sites that trigger the alerts (CA is not attributed to the trader in this case). It would be unreasonable
+	to suspect all traders with a low CA of ignoring fair play. Paying extra attention to them, however, is advisable. 
+	<br><br>
+	<u>4. Traders CA is more than 10% lower than average.</u>
+	<br><br>
+	It is important that you spend your time considering the trade with websites of the kind. Its true that your 
+	traffic will be giving good productivity to your trader. However, the trader will EXCESSIVELY be drawing your
+	clicks to his site. If you have a lot of traders of the kind, its time you thoroughly considered your websites
+	design and structure, as well as its compatibility with these traders. <br><br>
+	By analogy with the previous point, it is very likely that the reason for a very low CA is that the surfer may
+	be scared away by certain site features. This results in closing the site. Practice shows that sites of the kind
+	use scripts that change the users start page to another one, thus stealing traffic (when you click on your site,
+	the traders site is opened in a new window, while the window designed for your site is taken over by another page,
+	although you didnt make any other clicks on your website). However, it would be too shortsighted to make hasty
+	conclusions. It is possible that surfers consider your traders website higher in quality.<br><br>
+	
+	<br><b>Afterword:</b><br><br>
+	We have analyzed the variations of CA for your sites traders. The author recommends that this particular
+	article be taken for information only. You are the one who will have to make conclusions about the CA acceptable
+	for your traders in given circumstances, as the number of sites, as well as their variety, structural and creative
+	peculiarities, are too varied to describe. You will have to use analysis and personal experience in taking certain
+	decisions.
+	<br><br>	
+
+<br>
+<p align=right><a href=#top>Back to contents</a></p>
+</td>
+</tr>
+</table>
+
+
+<br><br>
+<table width=80% border=0>
+<tr>
+<td>
+<font size=4><B>Activity parameter</b></font>
+<a name=act></a>
+<br><br>
+
+You have probably noticed before that unique clicks are a rare kind when it comes down to trade clicks (usually 25-35%),
+while general site productivity is obviously higher than that. The reason for this discrepancy is that users make
+more than one click. The Activity parameter shows the average number of trade clicks made by the traders traffic.
+The higher the parameter, the more motivated the traffic. This is to mean that this traffic will be motivated to
+ click on your traders, too. 
+
+<br>
+<p align=right><a href=#top>Back to contents</a></p>
+</td>
+</tr>
+</table>
+
+
+
+</center>
+</body>
+</html>
