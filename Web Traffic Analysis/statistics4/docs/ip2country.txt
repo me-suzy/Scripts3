@@ -1,0 +1,20 @@
+Daniel Sokoll (http://www.sirsocke.de)
+
+ ip2country.php - identify country from ip for showlog
+
+ i2country function was initially written by http://www.php.net developers,
+ modified (fixed) by Bakr Alsharif (http://SysTurn.com) (opening April 2005),
+ and completely recoded and fastened for weblog / showlog by Daniel Sokoll 
+
+ ip2country uses the IP-to-Country Database provided by WebHosting.Info
+ (http://www.webhosting.info), available from http://ip-to-country.webhosting.info.
+ This script uses the local copy of the ip-to-country.com database
+
+ Modifications of the previous versions of php.net developers and Bakr Alsharif:
+  - Databaseformat:  country code [2 bytes / letters]
+  - completely recoded the identify-routine for much more performance
+  - added 'ip2country_create_db.php' to create SHOWlog/WEBlog-compatible
+    'ip2country.db'-Database.
+  - removed index, because new identify-routine is faster without index
+  - removed 'example.php' from Bakr Alsharif (http://SysTurn.com)
+  - added 'localhost' (127.0.0.1) to database
