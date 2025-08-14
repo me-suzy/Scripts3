@@ -1,0 +1,35 @@
+Technical Details
+
+Bugs
+
+1.)When registering... These 2 errors appear but registration still works as I received a welcome email: 
+Notice: Undefined variable: acctype in /home/domaintracker/domains/register/index.php on line 59
+Notice: Undefined variable: acctype in /home/domaintracker/domains/register/index.php on line 66
+Issue #1 (Errors during registration)
+This error is related to the problem with the link popularity script.
+I have added the line:
+$acctype = $_POST["acctype"];
+at line 59 of /domains/register/index.php.  The script was relying on
+the plain variable $acctype on what is now lines 60 and 67 which was
+empty.
+2.)Login to test/test and the log off does not work
+Issue #2 (Logout does not work)
+Again, same root cause.  I added changed the line:
+if (isset($logout)) {
+to:
+if (isset($_GET["logout"])) {
+at line 24 of /domains/member/index.php to correct this issue.
+3.)click on "add custom domain", there will be error
+Issue #3 (Error on Add Custom Domain)
+Again, same problem.  I added the line:
+$domain = $_GET["domain"];
+to /domains/member/add_monitor.php at line 39 to resolve the error.
+4.)Added: $login = $_SESSION["login"]; in /member/info.php
+5.)Domain digger menu fixed 
+6.)Search string error
+
+Add-ons
+7.)Both digger and popularity tools can only run in member site 
+8.)Yahoo analysis tool add-on
+9.)Dmoz analysis tool add-on
+10.)Admin now can give access rights to which membership plans can use yahoo/dmoz, digger and popularity tool
