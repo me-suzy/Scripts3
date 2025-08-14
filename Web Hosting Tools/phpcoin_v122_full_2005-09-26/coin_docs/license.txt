@@ -1,0 +1,141 @@
+
+END-USER SOFTWARE LICENSE AGREEMENT
+===================================
+
+1. PRE-AMBLE:
+	1.1	Before using this Software, you should carefully read the
+		following terms and conditions.
+
+	1.2	Installing and/or operating this Software indicates your
+		acceptance of these terms and conditions.
+
+	1.3	If you do not agree with these terms and conditions, then
+		do NOT install the software.
+
+
+2. GENERAL:
+	2.1	Cantex Consulting Group, Inc. (CANTEX) provides the software
+		package known as phpCOIN (THE SOFTWARE) and licenses its use
+		to you, the Customer.
+
+	2.2	CANTEX retains ownership of all rights in THE SOFTWARE and
+		of all proprietary technology embodied therein. You
+		acknowledge that the unauthorized distribution or use
+		of THE SOFTWARE or documentation received from CANTEX will
+		cause Material Damage to CANTEX.
+
+	2.3	You assume responsibility for the selection of the programs
+		to achieve intended results, and for the installation, use
+		and results obtained from THE SOFTWARE.
+
+
+3. WARRANTY:
+	3.1	CANTEX DISCLAIMS ALL WARRANTIES, WHETHER EXPRESS OR IMPLIED,
+		WRITTEN OR ORAL, WITH RESPECT TO THE SOFTWARE AND ANY
+		DOCUMENTATION, INCLUDING ALL WARRANTIES OF TITLE AND IMPLIED
+		WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+		PURPOSE.
+
+	3.2	CANTEX CONSULTING GROUP, INC.S LIABILITY FOR DAMAGES TO THE
+		LICENSEE FOR ANY CAUSE WHATSOEVER, REGARDLESS OF THE FORM OF
+		ANY CLAIM OR ACTION, SHALL NOT EXCEED THE TOTAL LICENSE FEE
+		PAID BY THE LICENSEE FOR THE LICENSE TO USE THE SOFTWARE UNDER
+		THIS AGREEMENT.
+
+	3.3	CANTEX CONSULTING GROUP, INC. SHALL IN NO EVENT BE LIABLE FOR
+		ANY DAMAGES RESULTING FROM LOSS OF DATA, PROFITS OR USE OF
+		EQUIPMENT, OR FOR ANY SPECIAL, INCIDENTAL OR CONSEQUENTIAL
+		DAMAGES ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+		PERFORMANCE OF THE SOFTWARE.
+
+
+4. LICENSE:
+	4.1	Based solely on your acceptance in whole of this License, the
+		following non-transferrable and non-exclusive rights have been
+		granted to you when using THE SOFTWARE.
+
+		4.1.1	You may install and run THE SOFTWARE as intended.
+
+		4.1.2	You may alter THE SOFTWARE code as desired for personal use.
+
+		4.1.3	You may create additional functionality in the form of
+				modules, themes, etc., and distribute these items unrestricted.
+				You may obtain financial compensation for these modules,
+				if desired.
+
+		4.1.4	You may obtain financial compensation for sevices related to
+				the installation, customization, or hosting services related
+				to THE SOFTWARE.
+
+		4.1.5	If you provide an additional module or service for which you
+				are receiving compensation, you MUST clearly indicate to your
+				customer that THE SOFTWARE is provided free of charge.
+
+	4.2	Based solely on your acceptance in whole of this License, the
+		following restrictions are in effect when using THE SOFTWARE.
+
+		4.2.1	You may NOT redistribute THE SOFTWARE, in any form, for a fee
+				or financial compensation of any kind.
+
+		4.2.2	You may NOT under any circumstances edit or remove the credit
+				or copyright text in the header of each file.
+
+		4.2.3	You may NOT redistribute THE SOFTWARE without the express
+				written consent of CANTEX.
+
+		4.2.4	You may NOT edit the code to remove the "Powered By phpCOIN"
+				statement from the final html output, or to make it difficult
+				for a human to easily see, without express written consent
+				from CANTEX.
+
+		4.2.5	If you provide themes for THE SOFTWARE, you may append your
+				own "Theme by" link to the "Powered by phpCOIN" statement.
+
+		4.2.6	You may NOT edit the code to modify or remove the
+				'<meta name="generator" content="phpcoin">' html output from
+				THE SOFTWARE.
+
+		4.2.7	You may NOT, in any manner, convey to others that the Author
+				of this software is anyone other than Mike Lansberry if THE
+				SOFTWARE is version 1.2.0 or lower, or CANTEX is THE SOFTWARE
+				is version 1.2.1 or higher.
+
+		4.2.8	You may NOT remove portions of THE SOFTWARE code for the
+				purpose of creating standalone scripts.
+
+		4.2.9	You must upload this file with THE SOFTWARE installation,
+				in the /coin_docs folder to permit version and/or license
+				verification.
+
+
+5. TERM:
+	5.1 This License is effective until terminated.
+
+	5.2	You may terminate this License at any time by destroying THE SOFTWARE
+		along with any copies, modifications and merged portions in any form.
+
+	5.3	The License will also terminate if you fail to comply with any term or
+		condition of this Agreement. You agree upon such termination  to
+		destroy THE SOFTWARE together with all copies, modifications and merged
+		portions in any form.
+
+
+6. ENTIRE AGREEMENT:
+	6.1	This License is the entire agreement between you and CANTEX and
+		supersedes any prior agreement or understanding relating to the
+		subject matter of this License.
+
+
+7. GOVERNING LAW:
+	7.1	This License shall be governed by the laws of Nova Scotia, Canada
+		and is subject to the exclusive jurisdiction of Nova Scotia courts.
+
+	7.2	CANTEX reserves the right, but not the obligation, to pursue legal
+		action for violation if the License in any court, in any country
+		whatsoever.
+
+
+8. RESTRICTED RIGHTS LEGEND:
+	8.1	Use, duplication, or disclosure by the US Government is subject to
+		restrictions as set forth in subparagraph (c)(I)(ii) of the Rights
+		in Technical Data and Computer Software clause at DFARS 252.227-70
