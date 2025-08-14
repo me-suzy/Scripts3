@@ -1,0 +1,16 @@
+FONT, TD, BODY, P, DIV { font-family: Arial, sans-serif; font-size: 12px }
+body {    scrollbar-base-color: #CFCDC8;
+          scrollbar-arrow-color: #FFFFFF;
+		  scrollbar-track-color: #F9F8F4;
+	      scrollbar-darkshadow-color: #CFCDC8;
+		  scrollbar-shadow-color: #CFCDC8;
+     }
+INPUT, SELECT, TEXTAREA, FORM { font-family: Arial, sans-serif; font-size: 11px }
+a { font-family: Arial, sans-serif; color: #336699; text-decoration: none }
+a:active { font-family: Arial, sans-serif; color: #336699; text-decoration: none }
+a:visited { font-family: Arial, sans-serif; color: #336699; text-decoration: none }
+a:hover { font-family: Arial; color: #3399FF; text-decoration: none }
+
+.error 		 {COLOR: #FF0000; FONT-SIZE: 11px; FONT-WEIGHT: bold; FONT-FAMILY: Tahoma,Arial,Helvetica,sans-serif; TEXT-DECORATION: none}
+.title { font-family: Arial, sans-serif; background: none; color: #000000; font-size: 16px; font-weight: bold; text-decoration: none }
+.footer  {COLOR: #808080; FONT-SIZE: 10px; FONT-WEIGHT: normal; FONT-FAMILY: Tahoma,Arial,Helvetica,sans-serif; TEXT-DECORATION: none}
