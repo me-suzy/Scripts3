@@ -1,0 +1,2 @@
+darkzone.support.newsportal y
+darkzone.support.newsportal.announce n
