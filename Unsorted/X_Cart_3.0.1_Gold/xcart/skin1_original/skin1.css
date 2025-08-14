@@ -1,0 +1,136 @@
+BODY,P,DIV,TH,TD,P,INPUT,SELECT,TEXTAREA {
+	COLOR: #550000; FONT-FAMILY: Verdana, Arial, Helvetica; FONT-SIZE: 10px;
+}
+A {
+	COLOR: #330000; TEXT-DECORATION: none;
+}
+A:hover {
+	COLOR: #550000; TEXT-DECORATION: underline;
+}
+
+
+BODY { margin: 0px }
+
+.background {
+	BACKGROUND-COLOR: #FFFBD3;
+}
+.MenuTitleLine {
+    BACKGROUND-COLOR: #FF8600;
+}
+.WhiteLine {
+	BACKGROUND-COLOR: #FFFBD3;
+}
+.OrangeLine {
+	BACKGROUND-COLOR: #FF6600;
+}
+.TableTop {
+	BACKGROUND-COLOR: #FFFBD3;
+}
+.TableLeft {
+	BACKGROUND-COLOR: #FFD44C;
+}
+.TableRight {
+	BACKGROUND-COLOR: #FFD44C;
+}
+.TableCenter {
+	BACKGROUND-COLOR: #ffffff;
+}
+.TableBottom {
+	COLOR: #000000; FONT: 8px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableTopSearchListBox {
+	COLOR: #000000; FONT: 9px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableTopTextPromotion {
+	COLOR: #000000; FONT: 8px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableTopTextNumberOfArticles {
+	COLOR: #000000; FONT: bold 10px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableTopLabel {
+	COLOR: #000000; FONT: bold 12px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableLeftTitles {
+	COLOR: #330000; FONT: bold 10px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableLeftElements {
+	COLOR: #000000; FONT: 10px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableLeftAuthLabels {
+	COLOR: #000000; FONT: bold 9px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableCenterHomePageTitle {
+	COLOR: #000000; FONT: bold 12px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableCenterSmallText {
+	COLOR: #000000; FONT: 10px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableCenterSmallTextOrange {
+	COLOR: #FF3300; FONT: 10px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableCenterTableTitleOrange {
+	COLOR: #FF3300; FONT: bold 12px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableCenterProductTitleBlue {
+	COLOR: #000000; FONT: bold 12px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableCenterProductTitleOrange {
+	COLOR: #FF3300; FONT: bold 12px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableCenterProductDetails {
+	COLOR: #000000; FONT: 10px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableCenterProductPriceBlue {
+	COLOR: #000000; FONT: bold 12px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableCenterProductPriceOrange {
+	COLOR: #FF3300; FONT: bold 10px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableCenterProductListPriceBlue {
+	COLOR: #000000; FONT: 10px Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: right;
+}
+.TableCenterSubCategoryListQuantityBlue {
+	COLOR: #000000; FONT: 10px Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: right;
+}
+.TableCenterSubCategoryListTitleBlue {
+	COLOR: #330000; FONT: bold 10px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableCenterSubCategoryListTitleBlue:hover {
+	COLOR: #000000; FONT: bold 10px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableCenterNavigationPath {
+	COLOR: #CC6666; FONT: bold 10px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableCenterPartnerPromotionTitleOrange {
+	COLOR: #551100; FONT: bold 11px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableCenterCustomerForm {
+	COLOR: #330000; FONT: bold 10px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableCenterCustomerFormOrange {
+	COLOR: #FF3300; FONT: bold 10px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableCenterErrorMessageOrange {
+	COLOR: #FF3300; FONT: bold 10px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableRightNewsTitle {
+	COLOR: #330000; FONT: bold 10px Verdana, Arial, Helvetica, sans-serif;
+}
+.TableRightNewsContent {
+	COLOR: #000000; FONT: 10px Verdana, Arial, Helvetica, sans-serif;
+}
+.StarStyle {
+	COLOR: #FF0000;
+}
+.CategoriesList {
+	FONT-SIZE: x-small;
+}
+.StatisticsBar {
+    BACKGROUND-COLOR: #A8BCC8;
+}
+.MarketPrice {
+	FONT-SIZE: x-small;
+}
+.DialogBorder {
+	BACKGROUND-COLOR: #FF8600;
+}
