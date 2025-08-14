@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML><HEAD><TITLE>WebAPP - Install Manually</TITLE>
+
+<META content="text/html; charset=iso-8859-1" http-equiv=Content-Type>
+
+<META content="MSHTML 5.00.3502.4856" name=GENERATOR></HEAD>
+
+<BODY bgColor=#ffffff text=#000000>
+
+<P><A href="http://www.web-app.org/docs/Start_Here.htm">Back</A></P>
+
+<P>....For Some of the basics, as to"<B> Where Is</B>" and "<B>How To 's</B>" <A 
+
+href="http://www.web-app.org/docs/faqhelp.htm">See Our FAQ HELP 
+
+Section</A></P>
+
+<P><A name=Top></A>...Step 1: CHECKING REQUIREMENTS<BR>You'll need some webspace 
+
+that has perl 5.x enabled. If you are unsure, please contact your web host. 
+
+You'll need a web browser (IE4.5+, or NN4.5+) and an FTP client to upload the 
+
+files.<BR>You'll also need your path to perl, it's usually "#!/usr/bin/perl", 
+
+but could be "#!/usr/local/bin/perl", if you are unsure ask your web host. "<B> 
+
+As with most web hosts you can find documentation for all your paths.</B>" as 
+
+well as Chmod requirements for cgi, pl and text files.</P>
+
+<P>...Step 2: CREATE DIRECTORIES<BR>Unzip the distribution. Open your FTP client 
+
+and log into your web server with the hostname, username and password your web 
+
+host has given you.<BR>Upload the entire WebAPP directory in ASCII-Mode(!) 
+
+except of all images directory (upload them in binary mode) somewhere CGI 
+
+scripts are executable.<BR>You should now have the following directory 
+
+structure:</P>/index.html<BR>/cgi-bin<BR>/cgi-bin/cgi-lib<BR>/cgi-bin/admin<BR>/cgi-bin/admin/banners<BR>/cgi-bin/admin/blocks<BR>/cgi-bin/admin/blocks/left<BR>/cgi-bin/admin/blocks/right<BR>/cgi-bin/admin/logs<BR>/cgi-bin/admin/fileman<BR>/cgi-bin/admin/downloads<BR>/cgi-bin/admin/links<BR>/cgi-bin/admin/themes<BR>/cgi-bin/db<BR>/cgi-bin/db/banners<BR>/cgi-bin/db/blocks<BR>/cgi-bin/db/download<BR>/cgi-bin/db/fileman<BR>/cgi-bin/db/fileman/pass<BR>/cgi-bin/db/forum<BR>/cgi-bin/db/forum/messages<BR>/cgi-bin/db/lang<BR>/cgi-bin/db/links<BR>/cgi-bin/db/members<BR>/cgi-bin/db/poll<BR>/cgi-bin/db/stats<BR>/cgi-bin/db/topics<BR>/cgi-bin/db/topics/articles<BR>/cgi-bin/mods<BR>/images<BR>/images/avatars<BR>/images/banners<BR>/images/english<BR>/images/forum<BR>/images/forum/smilies<BR>/images/french<BR>/images/german<BR>/images/portuguese<BR>/images/stats<BR>/images/topics<BR>/themes<BR>/themes/custom<BR>/themes/custom/images/english<BR>/themes/custom/images/french<BR>/themes/custom/images/german<BR>/themes/custom/images/portuguese<BR>/themes/graphics<BR>/themes/graphics/images/english<BR>/themes/graphics/images/french<BR>/themes/graphics/images/german<BR>/themes/graphics/images/portuguese<BR>/themes/standard<BR>/themes/standard/images/english<BR>/themes/standard/images/french<BR>/themes/standard/images/german<BR>/themes/standard/images/portuguese<BR><BR>
+
+<P>...Step 3: SET PERMISSIONS<BR>Now chmod your folders 777 Set Your Cgi and pl 
+
+files at 755 and at first try Chmod at 644<BR>for text files."<B> Please note, 
+
+ALL SERVERS ARE NOT CREATED EQUAL, SOME HOSTING COMPANIES HAVE THIER SERVERS SET 
+
+TO DIFFERENT STANDARDS"</B>" , if 644 does not work for the server your site , 
+
+you may either have to change to 666 or 777. Your hosting company should be able 
+
+to answer any questions you may have as to the security of your files and thier 
+
+settings.<BR></P>
+
+<P>...Step 4: SET UP CONFIG.PL AND INDEX.CGI AND ALL FILES IN ADMIN DIRECTORIES 
+
+AND SUBDIRECTORIES<BR>Open config.pl (in the WebAPP cgi-bin directory) and edit 
+
+the following variables under "General Settings":<BR>$pageurl = 
+
+"http://yourdomain.here/pagedir";<BR>$mailprogram = "/usr/sbin/sendmail -t"; or 
+
+"/usr/lib/sendmail -t";<BR>$basedir = 
+
+"/absolute/serverpath/to/website";<BR>$baseurl = 
+
+"http://yourdomain.here";<BR>$scriptdir = 
+
+"/absolute/serverpath/to/WebAPP";<BR>$scripturl = 
+
+"http://yourdomain.here/cgi-bin/";<BR>Check if the other paths, etc are set 
+
+correctly.<BR>Open index.cgi and enter the correct path to perl (i.e. 
+
+#!/usr/bin/perl).<BR>Do the same things with all files in the admin 
+
+subdirectory.<BR>Now chmod 755 (owner rwx, group rx, others rx) index.cgi:<BR>Do 
+
+the same things with all files in the admin subdirectory.</P>
+
+<P>Getting Started:<BR></P>
+
+<UL>
+
+  <LI><B>Make sure your permissions are set correctly for the server you are 
+
+  hosted on!</B> 
+
+  <LI><B>Check and recheck your paths. If Unsure of Requirements Check Your 
+
+  Host. Your host should have all these listed under support!</B> </LI></UL><BR>
+
+<P>...Step 5: LOGIN TO WebAPP<BR>Open your web browser and go to the URL 
+
+http://www.mydomain.com/cgi-bin/index.cgi (you will substitute in your domain 
+
+name and directories to match the names you have chosen in the steps 
+
+above).<BR>Click on "Login" and login using "admin" as username and "webapp" as 
+
+password. Edit the admin profile (i.e. change the admin password!).</P>
+
+<P>Second, to give admin / moderator privileges to a member: Log in as admin, 
+
+goto memberlist, and choose the member. Now click on edit-profile. You as admin 
+
+will have a drop down menu to choose a privilege. Choose administrator if you 
+
+wish them to have the ability to edit / delete messeges in the forum.</P>
+
+<P>To give access to the site (ability to publish news / change polls / add 
+
+forums) goto to your site admin section and under that will be a choice for 
+
+limitied admin privileges. Enter the persons name you wish to give privileges to 
+
+and hit enter.</P>
+
+<P>....For Some of the basics, as to"<B> Where Is</B>" and "<B>How To 's</B>" <A 
+
+href="http://www.web-app.org/docs/faqhelp.htm">See Our FAQ HELP 
+
+Section</A></P>
+
+<P>Send any questions / comments / suggestions to 
+
+carter@mcarterbrown.com<BR></P>
+
+<P><A href="http://www.web-app.org/docs/Docs/manualinstall.htm#Top">Top</A> | <A 
+
+href="http://www.web-app.org/docs/Start_Here.htm">Back</A></P>
+
+<DIV></DIV></BODY></HTML>
+
