@@ -1,0 +1,53 @@
+<?
+/*
+   Copyright (c), 1999, 2000 - phpauction.org
+   Copyright (c), 2001, 2002 - webauction.de.vu
+
+   Lizenz siehe lizenz.txt & license
+
+   Die neueste Version kostenfrei zum Download unter:
+   http://webauction.de.vu
+
+*/
+
+?>
+
+
+<table width="764" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF" ALIGN=CENTER height="86">
+ <tr  valign=top>
+  <td width="60%" VALIGN="top" height="84">
+   <div align="center">
+    <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="428">
+     <!-- ** LAST AUCTIONS INSERTED ** -->
+     <TR VALIGN="top">
+      <TD WIDTH="2%">&nbsp; </TD>
+      <TD WIDTH="98%">
+       <TABLE BORDER="0" CELLPADDING="5" CELLSPACING="0" WIDTH="100%">
+        <TR>
+         <TD COLSPAN=2>
+          <p align="center"><font
+                        color="#000000" size="3" face="Arial"><b>Hallo
+           <? print $name ?>
+           ! </b><br>
+           <font
+                        color="#000000" size="2" face="Arial">Hier sehen Sie alle
+           Ihre </font></font><font color="#000000" size="2" face="Arial">Bebotenen<font
+                        color="#000000" size="3" face="Arial"> </font>Auktionen
+           auf <? print $SITE_NAME_MANUELL ?></font><b><a href="my_active_auctions.php?sessionIDU=<? print $SESSION_ID ?>&TPL_id_hidden=<? print $user_id ?>&user_id=<? print $user_id ?>&TPL_nick=<? print $TPL_nick ?>&TPL_password=<? print $TPL_password ?>&TPL_name=<? print $name ?>"><font size="2" face="Arial" color="#008000">Alle
+           Auktionen anzeigen!</font></a></b> </p>
+          </TD>
+        </TR>
+       </TABLE>
+      </TD>
+     </TR>
+     <!-- ** HIGHER BIDS ** -->
+     <!-- ** ENDING SOON ** -->
+     <!-- end table started with ** LAST AUCTIONS INSERTED ** -->
+    </TABLE>
+    <p>&nbsp;</p>
+   </div>
+  </td>
+ </tr>
+</TABLE>
+
+
