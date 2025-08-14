@@ -1,0 +1,25 @@
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+<form method="post" action="options.php">
+<table cellpadding=4 cellspacing=1 border=0 class="tblborder" width="100%" align="center">
+ <tr class="tblhead">
+  <td colspan=2>Settings: $optiongroup[title]</td>
+ </tr>
+ $optionbit
+ <tr class="firstrow">
+  <td colspan=2 align="center"><input type="submit" value="Submit"> <input type="reset" value="Reset"></td>
+ </tr>
+</table>
+<input type="hidden" name="send" value="send">
+<input type="hidden" name="optiongroupid" value="$optiongroupid">
+<input type="hidden" name="sid" value="$session[hash]">
+<input type="hidden" name="action" value="$action">
+</form>
+</body>
+</html>
