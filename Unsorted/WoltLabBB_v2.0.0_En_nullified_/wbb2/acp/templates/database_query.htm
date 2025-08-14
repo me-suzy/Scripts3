@@ -1,0 +1,67 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+ <form method="post" action="database.php">
+ <input type="hidden" name="sid" value="$session[hash]">
+ <input type="hidden" name="action" value="extra">
+  <table cellpadding=4 cellspacing=1 width="100%" class="tblborder" align="center">
+   <tr class="tblhead">
+    <td colspan=2>Repair/Optimize Tables</td>
+   </tr>
+   <tr class="tblsection">
+    <td colspan=2><table cellpadding=0 cellspacing=0 width="100%" class="tblsection">
+     <tr>
+      <td width="50%" align="center">Tables</td>
+      <td width="50%" align="center">Options</td>
+     </tr>
+    </table></td>
+   </tr>
+   <tr class="firstrow">
+    <td width="50%" align="center">
+     <select size="10" name="tables[]" multiple>
+      $table_options
+     </select>
+    </td>
+    <td width="50%" valign="top">
+    <b>Action:</b><br>
+    <input type="radio" name="what" value="1" CHECKED> Optimize selected table(s)<br>
+    Optimizing the tables might free some space. This option is highly recommended after the deletion of many data records.<br><br>
+    <input type="radio" name="what" value="2"> Repair selected table(s)<br>
+    This option is only necessary if a table is damaged and there are errors.
+    </td>
+   </tr>
+   <tr class="secondrow"">
+    <td colspan=2 align="right"><input type="submit" value="Start >>"></td>
+   </tr>
+  </table></form>
+   <form method="post" action="database.php" enctype="multipart/form-data">
+ <input type="hidden" name="sid" value="$session[hash]">
+ <input type="hidden" name="send" value="send">
+ <input type="hidden" name="action" value="query">
+  <table cellpadding=4 cellspacing=1 width="100%" class="tblborder" align="center">
+   <tr class="tblhead">
+    <td colspan=2>Execute SQL query on the database $sqldb</td>
+   </tr>
+   <tr class="firstrow">
+    <td><b>From a file on the server:</b> (.sql or .sql.gz)</td>
+    <td><input type="text" name="filename" value="backup_wbb2_xyz.sql"></td>
+   </tr>
+   <tr class="secondrow">
+    <td><b>From a file on your computer:</b> (.sql or .sql.gz)</td>
+    <td><input type="file" name="uploadfile"></td>
+   </tr>
+   <tr class="firstrow">
+    <td valign="top"><b>Enter SQL Query:</b><br><br><b>Warning:</b> This function is for advanced users only. This could delete some data, so be careful, it cannot be undone.</td>
+    <td><textarea cols="50" rows="5" name="query"></textarea></td>
+   </tr>
+   <tr class="secondrow"">
+    <td colspan=2 align="right"><input type="submit" value="Start >>"></td>
+   </tr>
+  </table></form>
+  $delete_old
+</body>
+</html>
