@@ -1,0 +1,33 @@
+AlexaSurf.com's Alexa Toolbar Tracker PHP Script
+
+Installation is very easy.
+
+1. Create a new MySQL database
+
+2. Insert alexa.sql
+
+CREATE TABLE `useragent` (
+  `alexa_id` int(100) NOT NULL auto_increment,
+  `alexa_agent` text NOT NULL,
+  `alexa_ip` text NOT NULL,
+  `import_date` timestamp(14) NOT NULL,
+  PRIMARY KEY  (`alexa_id`)
+);
+
+3. Edit alexa_config.php : 
+
+$dbhost = 'localhost'; //most common is localhost
+$dbuser = 'your_username';
+$dbpass = 'your_password';
+$dbname = 'your_database_name';
+$site = 'www.yoursite.com'; // no following slash or http://
+
+4. Save and upload all of your files to your root directory (in most cases httpdocs, www, or public_html).
+
+5. Any file you wish to track put this in your file <? include "http://www.yoursite.com/alexa.php"; ?>
+
+6. At this point we test everything is working ok by visiting http://www.yoursite.com/alexa.php with IE + Alexa toolbar installed. Now after you have tested inserting into the database, go to http://www.yoursite.com/alexa_display.php and make sure the script recorded your entry.
+
+7. Anywhere on your site you wish to display the amount of Alexa Toolbar visiotrs just add this: <? include "http://www.yoursite.com/alexa_visits.php"; ?>
+
+8. Signup for our AutoSurf program over at AlexaSurf.com, you will receive visitors to your website with only the Alexa Toolbar installed. This will lower your alexa ranking.
