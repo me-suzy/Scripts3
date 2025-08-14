@@ -1,0 +1,8 @@
+<tr class="$rowclass">
+ <td><a href="../thread.php?threadid=$row[threadid]" target="_blank">$row[topic]</a></td>
+ <td>$row[starter]</td>
+ <td><input type="radio" name="threadaction[$row[threadid]]" value="0" checked>&nbsp;none</td>
+ <td><input type="radio" name="threadaction[$row[threadid]]" value="del">&nbsp;delete</td>
+ <td><input type="radio" name="threadaction[$row[threadid]]" value="move">&nbsp;move</td>
+ <td><input type="radio" name="threadaction[$row[threadid]]" value="close">&nbsp;close</td>
+</tr>
