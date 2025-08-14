@@ -1,0 +1,7 @@
+<tr class="$rowclass">
+ <td width="100%"><b>$row[title]</b></td>
+ <td><a href="group.php?action=edit&groupid=$row[groupid]&sid=$session[hash]">edit</a></td>
+ <td><a href="group.php?action=del&groupid=$row[groupid]&sid=$session[hash]">delete</a></td>
+ <td><a href="group.php?action=rights&groupid=$row[groupid]&sid=$session[hash]">forum rights</a></td>
+ <td nowrap>$row[count] (<a href="users.php?action=show&groupid=$row[groupid]&sid=$session[hash]">show</a>)</td>
+</tr>
