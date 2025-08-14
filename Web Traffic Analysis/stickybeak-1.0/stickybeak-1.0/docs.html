@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title>The Stickybeak &reg; - Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+ </head>
+ <body>
+  <h1>The Stickybeak</h1>
+
+<hr />
+<a name="top"></a>
+<h2>Documentation</h2>
+
+<p>This file is part of The Stickybeak Distribution Package. </p>
+
+
+
+
+<h3>Table of Contents</h3>
+<ul>
+<li><a href="#prerequisites">Prerequisites</a> 
+<li><a href="#installation">Installation </a>
+<li><a href="#config">Configuring The Stickybeak </a>
+<li><a href="#exampleconfig">Example Configuration File</a>
+
+<li><a href="#structure">Log Structure</a> 
+
+
+<li><a href="#crossdomain">Cross Domain Tracking</a>
+
+<li><a href="#p3p">Platform for Privacy Preferences (P3P)</a>
+
+
+<li><a href="#copyright">License</a> 
+<li><a href="#copyright">Copyright</a> 
+</ul>
+
+
+
+<hr />
+
+<a name="prerequisites"></a>
+<h3>Prerequisites</h3>
+
+<p>
+<ul>
+<li>A web site with the ability to run <a href="http://www.php.net/">PHP</a> scripts. 
+<li>Access to an installation of the <a href="http://www.php.net/">MySQL</a> relational Database. 
+<li>The Stickybeak distribution file (<a href="http://www.stickybeak.com/download.php">stickybeak-x.x.zip</a>). </p>
+</ul>
+
+<p>New versions of The Stickybeak are occasionally available at: <a href="http://www.stickybeak.com/">www.stickybeak.com</a>.</p>
+
+
+<a href="#top">Table Of Contents</a>
+<hr />
+<a name="installation"></a>
+<h3>Installation</h3>
+
+
+<p>There are several different ways to call The Stickybeak from your web pages. Each method needs a different kind of code snippet which must be added to your web pages. The Stickybeak Code Generator can be used to create these snippets, alternately javascript or PHP may be used to generate the code to include the logging image. The Stickybeak may also be called directly from existing PHP code without the need for image based logging. The table below summarizes the characteristics of different methods of invoking the logger: </p>
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+<tr>
+<td><strong>Calling Method</strong></td><td><strong>JavaScript + Image</strong></td><td><strong>HTML + Image</strong></td><td><strong>PHP + Image</strong></td><td><strong>Embedded PHP</strong></td></tr>
+<tr>
+<td>Referrer Logging</td><td>yes</td><td>no</td><td>yes</td><td>yes</td></tr> 
+<tr>
+<td>Cross Domain Tracking</td><td>yes</td><td>yes</td><td>yes</td><td>no</td></tr> 
+<tr>
+<td>Tracks all activity (including robots like googlebot)</td><td>no</td><td>no</td><td>no</td><td>yes</td></tr> 
+<tr>
+<td>User Configured Variable Logging</td><td>yes</td><td>no</td><td>yes</td><td>yes</td></tdr>
+</table> 
+
+
+
+<p>For examples of each of the different methods of installation see the <a href="examples.html">examples</a>.</p>
+
+
+
+
+
+
+
+<a href="#top">Table Of Contents</a>
+<hr />
+<a name="config"></a>
+<h3>Configuring The Stickybeak</h3>
+
+<h4>Database Connection Parameters</h4>
+<ul>
+<li><i>mysqlhost</i> - The hostname of the MySQL installation
+<li><i>mysqldb</i> - The MySQL database to log to
+<li><i>mysqltable</i> - Database table used to store log entries 
+<li><i>mysqluser</i> - MySQL Username
+<li><i>mysqlpass</i> - MySQL password
+</ul>
+  
+<h4>Cookie parameters</h4>
+<ul>
+<li><i>usecookie</i> - Set to true if cookies are to be used  
+<li><i>cookiename</i> - The name of the cookie used for user identification 
+<li><i>cookienumchars</i> - The number of characters contained in the sessionID 
+<li><i>cookiealphabet</i> - A list of valid characters to use when generating the sessionID 
+</ul> 
+
+
+<h4>P3P Policy Location</h4>  
+<ul>
+<li><i>p3pURL</i> - location of <a href="#p3p">p3p policy</a> ... required for cross domain tracking
+</ul>
+
+<h4>Image Configuration</h4>
+<ul>
+<li><i>image</i> - Set to true if an image is to be used for logging
+<li><i>imagetype</i> - The filetype of the image to be used (png/jpg/gif)
+<li><i>pixel</i> - Set to true if pixel based logging is required
+<li><i>colour</i> - The HEX colour of the pixel to be generated (set to false if a transparent pixel is required)
+</ul>
+
+<a href="#top">Table Of Contents</a>
+<hr />
+<a name="exampleconfig"></a>
+<h3>Example Configuration File</h3>
+
+<pre class="code">
+ $config=array(
+
+ // Database Connection Parameters
+   "mysqlhost" => "localhost", 
+   "mysqldb" => "stickybeak", 
+   "mysqltable" => "stickybeak_logs",    
+   "mysqluser" => "stickybeak_username", 
+   "mysqlpass" => "stickybeak_password", 
+  
+ // cookie parameters
+   "usecookie" => true, 
+   "cookiename" => "ID",  
+   "cookienumchars" => 16, 
+   "cookiealphabet" => "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",  
+  
+ // location of p3p policy ... required for cross domain tracking  
+   "p3pURL" => "http://www.example.com/w3c/p3p.xml",
+
+ // image information
+   "image" => "TheStickybeak.png", 
+   "imagetype" => "png", 
+   "pixel" => false
+
+ );
+
+</pre>
+
+<p>The above configuration file will log table <i>stickybeak_logs</i> in database <i>stickybeak</i> on server <i>localhost</i>. The Stickybeak will connect to the database as user <i>stickybeak_username</i> and password <i>stickybeak_password</i>.</p>
+
+<p>A cookie named <i>ID</i> will be set with a value 16 characters long comprising of a combination of all the upper and lower case letters and the numbers 0-10. The cookie will refer to a <a href="#p3p">P3P Policy</a> at <i>http://www.example.com/w3c/p3p.xml</i>.</p>
+
+ <p>An image in PNG format will be generated using the seed file <i>TheStickybeak.png</i>. This image can be displayed as part of an HTML page while also logging user activity. </p>
+
+<p><a href="examples.html">More Configuration Examples</a>.</p>
+
+
+<a href="#top">Table Of Contents</a>
+<hr />
+<a name="structure"></a>
+<h3>Log Structure</h3>
+
+<ul>
+<li><strong>ID</strong> - Automatically generated number used to uniquely identify the log entry in the MySQL database
+<li><strong>sessionID</strong> - The value read from the loggers sessionID variable
+<li><strong>LOGYEAR</strong> - The year of the log entry
+<li><strong>LOGMONTH</strong> - Month of the log entry
+<li><strong>LOGDAY</strong> - Day of the month the entry was logged
+<li><strong>LOGHOUR</strong> - Hour of the day
+<li><strong>LOGMINUTE</strong> - Minute componant of the log time
+<li><strong>LOGSECOND</strong> - Second componant of the log time
+<li><strong>REMOTE_ADDR</strong> - The IP address if the remote computer
+<li><strong>HTTP_REFERER</strong> - URL of the referring page
+<li><strong>REQUEST_METHOD</strong> - The HTTP method used to request the page (GET/POST etc)
+<li><strong>unixtime</strong> - The usix timestamp at the time The Stickybeak was invoked
+<li><strong>mysqltime</strong> - MySQL formatted datetime
+<li><strong>HTTP_USER_AGENT</strong> - User agent variable sent by the users browser
+<li><strong>REMOTE_PORT</strong> - The remote port used in the TCP/IP connection
+<li><strong>SCRIPT_NAME</strong> - The name of the file where The Stickybeak is called from
+<li><strong>HTTP_CONNECTION</strong> 
+<li><strong>HTTP_ACCEPT_LANGUAGE</strong> - The language settings of the browser making the request
+<li><strong>HTTP_ACCEPT</strong> - A list of mime types the broser is set to accept
+<li><strong>QUERY_STRING</strong> - The query string passed to the logging page (if any)
+<li><strong>SERVER_PROTOCOL</strong> - eg HTTP/1.0
+<li><strong>GATEWAY_INTERFACE</strong> - eg CGI/1.1
+<li><strong>REMOTE_HOST_NAME</strong> - The hostname of the remote computer, resulting from a reverse DNS lookup of REMOTE_ADDR
+<li><strong>DOCUMENT_URL</strong> - The full URL of the PHP script from which the logging occurs
+<li><strong>HTTP_HOST</strong> - The hostname of the server being logged
+<li><strong>REQUEST_URI</strong> - The URI of the resource being logged
+<li><strong>page</strong> - User defined variable
+<li><strong>identifier</strong> - User defined variable
+</ul>
+
+
+<br />
+
+<p>Use the following code to create one or more tables in your MySQL database. This code is contained in The Stickybeak distribution file as <i>TheSTickybeak.sql</i></p>
+
+<pre class="code">
+
+ CREATE TABLE `stickybeak_logs` (
+  `ID` int(11) NOT NULL auto_increment,
+  `sessionID` varchar(32) NOT NULL default '',
+  `LOGYEAR` smallint(6) NOT NULL default '0',
+  `LOGMONTH` tinyint(6) NOT NULL default '0',
+  `LOGDAY` tinyint(4) NOT NULL default '0',
+  `LOGHOUR` tinyint(4) NOT NULL default '0',
+  `LOGMINUTE` tinyint(4) NOT NULL default '0',
+  `LOGSECOND` tinyint(4) NOT NULL default '0',
+  `REMOTE_ADDR` varchar(15) NOT NULL default '',
+  `HTTP_REFERER` tinytext,
+  `REQUEST_METHOD` varchar(15) default NULL,
+  `unixtime` int(11) NOT NULL default '0',
+  `mysqltime` datetime NOT NULL default '0000-00-00 00:00:00',
+  `HTTP_USER_AGENT` tinytext,
+  `REMOTE_PORT` smallint(9) default NULL,
+  `SCRIPT_NAME` tinytext,
+  `HTTP_CONNECTION` tinytext,
+  `HTTP_ACCEPT_LANGUAGE` tinytext,
+  `HTTP_ACCEPT` text,
+  `QUERY_STRING` tinytext,
+  `SERVER_PROTOCOL` tinytext,
+  `GATEWAY_INTERFACE` tinytext,
+  `REMOTE_HOST_NAME` tinytext,
+  `DOCUMENT_URL` varchar(255) NOT NULL default '',
+  `HTTP_HOST` varchar(255) NOT NULL default '',
+  `REQUEST_URI` varchar(255) NOT NULL default '',
+  `page` varchar(32) NOT NULL default '',
+  `identifier` varchar(32) NOT NULL default '',
+  PRIMARY KEY  (`ID`)
+ ) TYPE=MyISAM;
+
+</pre>
+
+<p>It is possible to log to many seperate database tables using a single installation of The Stickybeak. In order to create additional log tables change the table name on line 1 of the above code from <i>stickybeak_logs</i> to something else and re-execute the SQL.</p>
+
+
+
+
+
+
+<a href="#top">Table Of Contents</a>
+<hr />
+<a name="crossdomain"></a>
+<h3>Cross Domain Tracking</h3>
+
+<p>The Stickybeak uses cookies to track users. Cookies can only be read by the pages on the domain name from which they were set. As a result of this it is difficult to continue to identify a user as their web browsing takes them from one domain to another</p>
+
+<p>The Stickybeak uses images by default for logging. The image file may be called from a remote server, such that the location of the logging mechanism need not be on the same server as the webpage being logged. Many different sites on different domains and servers may be tracked using a single image. Because the image is always called from the same server regardless of the location of the page being logged, the same cookie can be used for all sites calling the image. </p>
+
+<a href="#top">Table Of Contents</a>
+<hr />
+<a name="p3p"></a>
+<h3>Platform for Privacy Preferences (P3P)</h3>
+
+<p>A P3P policy or </>Compact Privacy Policy</i> is a way of announcing to a browser particular ccharacteristics of a sites privacy policy. It allows the user to make predertmined choices about allowing or disallowing cookies based on the announced characteristics. P3P is based on established W3C specifications, which include HTTP, Extensible Markup Language (XML) and Resource Description Format (RDF).</a>
+
+<p>Microsoft's Internet Explorer 6.0 (IE6) and Windows XP contains new privacy features based on the specifications of the Platform for Privacy Preferences Project (P3P). The default settings in IE6 block cookies that are set from domains other than that hosting the requested page. The Stickybeak relies on the ability to be able to set cookies from an image that may be hosted on another domain. IE6 will accept cookies from an external domain if an appropriate P3P policy is in place on the site that sets the cookies. At time of writing Internet Explorer 6 was by far the most used browsers. It is likely that other browsers will incorporate p3p technology into their architecture. </p>
+
+
+
+<p>For example the compact policy which corresponds to this document is:</p>
+
+    <strong>CP="NOI CURa ADMa DEVa TAIa OUR BUS IND UNI COM NAV INT"</strong>
+
+
+<p>This compact policy is sent by the Web server along with the cookies it describes. The following table explains the meaning of each field in the compact policy.</p>
+
+<ul>
+<li><strong>CP=</strong> - This is the compact policy header; it indicates that what follows is a P3P compact policy.
+<li><strong>NOI</strong> - No identifiable information is collected, so no access is possible.
+<li><strong>CURa</strong> - The data is used for completion of the current activity.
+<li><strong>ADMa</strong> - The data is used for site administration.
+<li><strong>DEVa</strong> - The data is used for research and development.
+<li><strong>TAIa</strong> - The data is used for tailoring the site.
+<li><strong>OUR</strong> - The data is given to ourselves and our agents.
+<li><strong>BUS</strong> - Our business practices specify how long the data will be kept.
+<li><strong>IND</strong> - The data will be kept indefinitely.
+<li><strong>UNI</strong> - Unique identifiers are collected.
+<li><strong>COM</strong> - Computer information is collected.
+<li><strong>NAV</strong> - Navigation and clickstream data is collected.
+<li><strong>INT</strong> - Interactive data is collected.
+</ul>
+
+<p>For example, the P3P policy for this site contains 2 files, <a href="w3c/p3p.xml">p3p.xml</a> and <a href="w3c/policy.xml">policy.xml</a>.</p>
+
+<p>File p3p.xml:</p>
+
+
+<pre class="code">
+
+&lt;META xmlns="http://www.w3.org/2001/09/P3Pv1"&gt;
+ &lt;POLICY-REFERENCES&gt;
+  &lt;POLICY-REF about="/w3c/policy.xml#pixel"&gt;
+   &lt;INCLUDE&gt;/*&lt;/INCLUDE&gt;
+   &lt;COOKIE-INCLUDE name="*" value="*" domain="*" path="*"/&gt;
+  &lt;/POLICY-REF&gt;
+ &lt;/POLICY-REFERENCES&gt;
+&lt;/META&gt;
+
+
+</pre>
+
+<p>File policy.xml:</p>
+
+
+<pre class="code">
+
+&lt;?xml version="1.0"?&gt;
+&lt;POLICIES xmlns="http://www.w3.org/2002/01/P3Pv1"&gt;
+  &lt;EXPIRY max-age="86400"/&gt;
+  &lt;POLICY
+                discuri="http://www.stickybeak.com/privacy.html"
+                xml:lang="en"
+                name="pixel"&gt;
+ &lt;ENTITY&gt;
+  &lt;DATA-GROUP&gt;
+    &lt;DATA ref="#business.contact-info.telecom.telephone.number"&gt;(+61) 0407 280 127&lt;/DATA&gt;
+    &lt;DATA ref="#business.contact-info.online.email"&gt;privacy@stickybeak.com&lt;/DATA&gt;
+    &lt;DATA ref="#business.contact-info.online.uri"&gt;http://www.thestickybeak.com/&lt;/DATA&gt;
+    &lt;DATA ref="#business.contact-info.postal.organization"&gt;The Stickybeak&lt;/DATA&gt;
+    &lt;DATA ref="#business.contact-info.postal.street"&gt;PO Box 985&lt;/DATA&gt;
+    &lt;DATA ref="#business.contact-info.postal.city"&gt;Newcastle&lt;/DATA&gt;
+    &lt;DATA ref="#business.contact-info.postal.stateprov"&gt;NSW&lt;/DATA&gt;
+    &lt;DATA ref="#business.contact-info.postal.postalcode"&gt;2300&lt;/DATA&gt;
+    &lt;DATA ref="#business.contact-info.postal.country"&gt;Australia&lt;/DATA&gt;
+    &lt;DATA ref="#business.name"&gt;The Stickybeak&lt;/DATA&gt;
+  &lt;/DATA-GROUP&gt;
+ &lt;/ENTITY&gt;
+ &lt;ACCESS&gt;&lt;nonident/&gt;&lt;/ACCESS&gt;
+ &lt;STATEMENT&gt;
+        &lt;EXTENSION optional="yes"&gt;
+            &lt;GROUP-INFO
+                xmlns="http://www.software.ibm.com/P3P/editor/extension-1.0.html"
+                name="Basic information"/&gt;
+        &lt;/EXTENSION&gt;
+    &lt;CONSEQUENCE&gt;
+        Data collected from all Web users: access logs, and search strings (if entered).
+    &lt;/CONSEQUENCE&gt;
+    &lt;PURPOSE&gt;&lt;admin/&gt;&lt;current/&gt;&lt;develop/&gt;&lt;/PURPOSE&gt;
+    &lt;RECIPIENT&gt;&lt;ours/&gt;&lt;/RECIPIENT&gt;
+    &lt;RETENTION&gt;&lt;indefinitely/&gt;&lt;/RETENTION&gt;
+    &lt;DATA-GROUP&gt;
+    &lt;DATA ref="#dynamic.clickstream"/&gt;
+    &lt;DATA ref="#dynamic.http"/&gt;
+    &lt;DATA ref="#dynamic.searchtext"/&gt;
+    &lt;/DATA-GROUP&gt;
+    &lt;/STATEMENT&gt;
+    &lt;STATEMENT&gt;
+        &lt;EXTENSION optional="yes"&gt;
+            &lt;GROUP-INFO 
+                xmlns="http://www.software.ibm.com/P3P/editor/extension-1.0.html" 
+                name="Cookies"/&gt;
+        &lt;/EXTENSION&gt;
+    &lt;CONSEQUENCE&gt;
+        Cookies are used to track visitors to our site, 
+        so we can better understand what portions of our site best serve you.
+    &lt;/CONSEQUENCE&gt;
+    &lt;PURPOSE&gt;&lt;develop/&gt;&lt;tailoring/&gt;&lt;/PURPOSE&gt;
+    &lt;RECIPIENT&gt;&lt;ours/&gt;&lt;/RECIPIENT&gt;
+    &lt;RETENTION&gt;&lt;business-practices/&gt;&lt;/RETENTION&gt;
+    &lt;DATA-GROUP&gt;
+    &lt;DATA ref="#dynamic.cookies" optional="yes"&gt;&lt;CATEGORIES&gt;&lt;uniqueid/&gt;&lt;/CATEGORIES&gt;&lt;/DATA&gt;
+    &lt;/DATA-GROUP&gt;
+  &lt;/STATEMENT&gt;
+ &lt;/POLICY&gt;
+&lt;/POLICIES&gt;
+
+
+</pre>
+
+For more information about P3P see:
+
+<ul>
+<li><a href="http://www.w3.org/P3P/">P3P public overview</a>
+<li><a href="http://www.w3.org/TR/p3pdeployment">P3P deployment guide</a>
+<li><a href="http://www.microsoft.com/presspass/press/2001/mar01/PrivacyToolsIEfs.asp">Microsoft P3P Implementation in IE6</a>
+<li><a href="http://www.softsteel.co.uk/tutorials/P3P/">P3P Tutorial</a>
+<li><a href="http://www.awardsites.com/tutorials/w3c/p3p_privacy-01.htm">Creating a P3P Compliant Privacy Policy</a>
+<li><a href="http://www.w3.org/P3P/validator.html">P3P Validator</a>
+</ul>
+
+
+
+
+<br />
+
+
+
+
+
+
+
+<a href="#top">Table Of Contents</a>
+<hr />
+<a name="license"></a>
+<h3>License</h3>
+
+
+
+
+<p>The Stickybeak is available as free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a> for more details. </p>
+
+<p>You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA to request a copy.</p>
+
+<a href="#top">Table Of Contents</a>
+<hr />
+<a name="copyright"></a>
+<h3>Copyright</h3>
+
+<p>Copyright (C) 2001-2005, <a href="http://aj.id.au/">Andrew Goodwin</a>. All rights reserved. </p>
+
+
+   <hr />
+  <small>&copy; 2001-2005 - <i>The Stickybeak</i> is a Registered Australian Trademark</small>
+ </body>
+</html>
