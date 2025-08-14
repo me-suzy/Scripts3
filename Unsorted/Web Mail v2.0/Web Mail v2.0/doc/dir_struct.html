@@ -1,0 +1,217 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.73 [en] (X11; U; Linux 2.2.12-20 i686) [Netscape]">
+   <meta name="Author" content="Alex Hart">
+   <title>aMail Directory Structure and File Descriptions</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#0000EE" vlink="#551A8B" alink="#FF0000">
+&nbsp;
+<center>
+<p><font size=+4>aMail</font>
+<br><font size=+4>Directory Structure and File Descriptions</font></center>
+
+<p><img SRC="images_screenshots/dir_struct.gif" NOSAVE height=180 width=276 align=TEXTTOP>
+<br><a href="#User_area">User_area directory</a>
+<br><a href="#folders.start">folders.start file</a>
+<br><a href="#999999">999999 file</a>
+<br><a href="#User_name">User_name directory</a>
+<br><a href="#www">www directory</a>
+<br><a href="#images">images directory</a>
+<br><a href="#programs">Mail_program directory</a>
+<p><a NAME="User_area"></a><b><font size=+2>User_area directory</font></b>
+: All user data is stored here.&nbsp; <b>There should be no web access
+to this area.</b>&nbsp; Permissions of all files under this are need to
+be readable and writeable (600) by the web server. Users each have their
+own directory.&nbsp; The <i>folders.start</i> file needs to be in here.
+The full system path to this directory should be reflected in the <b>$db_path</b>
+variable of <i>Amail_common.pm.</i>
+<p><a NAME="folders.start"></a><b><i><font size=+1>folders.start</font></i></b>
+: Initial <i><a href="#folders contents">folders</a></i> file each user
+is given upon creation of an account.&nbsp; Contains Inbox, Trash, and
+Sent folders, and the fact that each contains no messages, no unread messages,
+and has a size of 0Kb.
+<p><a NAME="999999"></a><b><font size=+1>999999</font></b> : This is the
+initial mail message that is automatically included in each new user account.&nbsp;
+This file can be easily changed, but the folders.start should be updated
+to reflect an relevant changes.
+<p><a NAME="User_name"></a><b><font size=+1>User_name directory</font></b>
+: One directory per user containing all messages and user data.
+<br>The files in this directory are as follows:
+<br>-- <i>###### </i>(any filename consisting of only numbers is a complete
+email including headers.&nbsp; As of Version 2, filenames starting with
+1 are sent mails, while filanames starting with 2 are incoming message.)
+<br>-- <i>######.deleted </i>( messages permanently deleted from Trash,
+should be cleaned up periodically)
+<br>-- <i>uploads</i> (dir for user file storage.&nbsp; Contains files
+users saved from emails, or uploaded using upload script.)
+<br>-- <i>folders</i> (stores incoming and outgoing message and folder
+information inlcuding header details for each message) <a href="#folders contents">see
+below</a>
+<br>-- <i>folders.undo</i> (last copy of folders, unless checked mail backup)
+<br>-- <i>folders.undo2</i> (another backup, it sucks to lose folders)
+<br>-- <i>address_book</i> (all contact and group information) <a href="#address">see
+below</a>
+<br>-- <i>pass</i> (stores aMail password encrypted)
+<br>-- <i>sessID</i> (stores unique session ID which is a randomly generated
+number created upon aMail login, time session started(perl epoch time),
+and number of seconds user is off from server time)
+<br>-- user_info.db (perl hash file containing user's personal data (name,
+email, server info, time zone, etc.)
+<p><a NAME="address"></a><b><i>address_book </i>contents<i>:</i></b>
+<p>The first line of <i>address_book</i> keeps track of the highest index
+number assigned to a contact in your address book.&nbsp; Each contact is
+identified by an index number.&nbsp; The next contact added should have
+an index one higher than this number. All contact numbers are not necessarily
+present in the file since contacts can be deleted.
+<p>The second line of <i>address_book</i>, through the first blank line,
+store all individual contact information.
+<br>The contact information is comma delimited.
+<br>The contact fields stored, in this order are :
+<br>[0]Nickname
+<br>[1]Last Name
+<br>[2]First Name
+<br>[3]email address
+<br>[4]index number.
+<br>Any of these fields except for index number can be blank.
+<p>All lines after the blank line contain the group information.
+<br>The group info is '|' delimited.
+<br>The three fields for groups are :
+<br>[0]Group Name
+<br>[1]Number of contacts in group
+<br>[2]contacts in group, comma delimited
+<br>The group contacts can be stored as the index numbers of the contacts
+or as email addresses.&nbsp; Index numbers are preceded by an '@'.
+<p>Sample <i>address_book</i>
+<br>&lt;--
+<br>&lt;-- Start sample address_book
+<br><tt>7</tt>
+<br><tt>al,Hart,Alex,alex@hart.net,3</tt>
+<br><tt>atp,althepal,,althepal@althepal.com,4</tt>
+<p><tt>First|2|@4,@3</tt>
+<br>--> End sample <i>address_book</i>
+<br>-->
+<p>This example is explained as follows:
+<br>7 contacts have been added so far, so the next new entry will have
+an index number of 8.
+<p>Only 2 contacts are now present.&nbsp; The first one has a nickname
+of 'al', full name is 'Alex Hart', email address is 'alex@hart.net, and
+the index number is 3.&nbsp; The second entry has the same format, but
+no First Name was entered.
+<p>There is one group in <i>address_book</i>.&nbsp; The group is named
+'First', it has 2 contacts stored in it, and the contacts are those entries
+with index numbers 3 and 4.
+<br>&nbsp;
+<p><a NAME="folders contents"></a><b><i>folders contents:</i></b>
+<p>The file <i>folders</i> stores several details about all mail messages,
+including which folder each is in, whether or not the message was read,
+and some static information about the message.
+<p>The first part of "folders", up to the blank line, contains information
+about the folders themselves.
+<br>This information is comma delimited.&nbsp; Folder information is updated
+during any operation which changes the folder contents or state.
+<br>The folder fields are :
+<br>[0] - Folder Name
+<br>[1] - Number Of Messages
+<br>[2] - Number of Unread messages
+<br>[3] - Size Of Folder (bytes).
+<p>The second part of "<i>folders</i>", after the blank line, contains
+details about the messages.
+<br>These fields are delimited by '|'.&nbsp; All '|' and '%' are encoded
+to avoid confusion.
+<br>The message field are :
+<br>[0] - message has been read or not 0/1 - this always starts as 0, then
+changed to 1 when read
+<br>[1] - folder name
+<br>[2] - from (if message was sent by user then this is the 'to' field
+instead
+<br>[3] - the subject sent in the message ('- none -' if no subject is
+given)
+<br>[4] - date - in epoch seconds (perl lingo for the number of seconds
+since a long time ago)
+<br>[5] - message filename - filenames are also the Message ID (MID)
+<br>[6] - whether or not message has an attachment 0/1
+<br>[7] - message size (bytes)
+<p><a NAME="www"></a><font size=+2><b>www directory</b> </font>: this directory
+is not actually necessary, but seems to be a common convention for an area
+with web access.&nbsp; All directories below this should be web accessible.
+<p><a NAME="images"></a><b><font size=+1>images directory</font></b> :
+stores all images used by scripts.&nbsp; Directory should be readable and
+executable(500) while images should be readable(400) by the web server.
+You can name it anything you like, but the <b>$img_URL</b> variable in
+the <i>Amail_common.pm</i> script needs to reflect the location.
+<p><a NAME="programs"></a><b><font size=+1>Programs directory </font></b>:
+All scripts used by aMail are stored in here.&nbsp; Directory and all contents
+should be readable and executable(500) by the web server. Again, any name
+works here, just update <b>$dir_URL</b> accordingly in <i>Amail_common.pm</i>.
+<p>This is a very basic overview of what each script does. You'll just
+have to read the code to figure out what's really going on.
+<p><i>Amail_common.pm </i>-- This is the amail perl Module with many of
+the common functions used by the scripts. If you can't find a function,
+it's probably in here. Customization of amail(listing your server name,
+time_zone, etc) is done in here.
+<p><i>TOC.cgi</i> -- Table of Contents for amail.&nbsp; The main purpose
+of this script is for showing the main options available to amail users.&nbsp;
+This script is called by amail.cgi as the top frame of the mail screen
+(the top 25 pixels). Calling Check Mail, Compose, Folders, Address Book,
+Search, user Info, Your Files, and Logout are all done here.&nbsp; In addition,
+much of the javascript used in the mail program is put here since TOC is
+usually just loaded once.&nbsp; Since this screen is never reloaded, several
+forms are stored here to keep track of state information.
+<p><i>address.cgi</i> -- This is the Address book script.&nbsp; It handles
+all input and editting of <i>address_book</i>, where all contacts and groups
+are stored.&nbsp; Can be called by TOC, compose, read_mess, whenever the
+<i>address_book</i>
+is needed.
+<p><i>amail.cgi</i> -- This script checks user name and password and sets
+up a session if they check out.&nbsp; If all is well, this sets up the
+frames for amail and loads in TOC, functions, pop, and read_mess.
+<p><i>change_pass.cgi</i> -- Used to change user password.&nbsp; Called
+by user_info.
+<p><i>compose.cgi </i>-- Sets up input screen for composing mail.&nbsp;
+Also sends mail.&nbsp; Reply, Fwd, resend are all part of compose.&nbsp;
+Also does attachment handling, both inserting files and other attachments
+from other emails.
+<p><i>download.cgi </i>-- Short script.&nbsp; Opens a file and sends it
+for downloading to client side disk.
+<p><i>drive.cgi </i>-- Manages uploads directory for user.&nbsp; Stores
+and lists files in the directory.
+<p><i>dump.cgi </i>-- handy script for debugging.&nbsp; Sends all form
+data to browser.&nbsp; NOT USED in any script except for debugging.
+<p><i>folders.cgi </i>-- Shows folders, and their information.&nbsp; All
+folder operations (rename, delete, etc) are done here.&nbsp; Adding folders
+can be done here, but may also occur in pop or read_mess.
+<p><i>functions.cgi </i>-- This is the screen with the folder list as well
+as the move, delete, and go buttons.&nbsp; Very little is actually done
+in this script.&nbsp; Most of the information gathered by this script is
+sent to pop or read_mess. There is a good amount of javascript here.
+<p><i>line.cgi </i>-- This is sorta dumb, but this script loads a black
+page. This is the line between the folder contents screen and the message
+screen. It's a script because some cgi directories only run scripts and
+do not accept html.&nbsp; This is called by amail.cgi to fill in the middle
+frame.
+<p><i>login.cgi </i>-- This is the login screen.&nbsp; It can give some
+status info, but mainly sends login data on to amail.cgi.
+<p><i>new_account.cgi </i>-- Creates a new account.
+<p><i>pop.cgi </i>-- This script fills the upper main window showing the
+folder contents.&nbsp; In addition, this script checks for new mail and
+moves and deletes messages.
+<p><i>read_mess.cgi</i> -- This script fills in the lower main window showing
+the message contents.&nbsp; Move, delete, mark-as-read, is also done in
+this script.
+<p><i>search.cgi</i> -- Displays search form and performs search operation.
+Results are then sent to pop.cgi for listing.&nbsp; Once the search is
+complete, a list of the results is saved and altered as necessary by pop.cgi
+and read_mess.cgi.
+<p><i>show_attach.cgi</i> -- Decodes and displays attachments for viewing
+or downloading.
+<p><i>start_message.cgi</i> -- Simple script which fills in the message
+window by default until a message is loaded.&nbsp; There is a form included
+in the html which is needed for some of the javascripts.
+<p><i>user_info.cgi </i>-- Edit user information.
+<p><i>wait_reply.cgi </i>-- Displays a message to the user that a mail
+is being sent.&nbsp; This is only used when resending a message.
+<br>&nbsp;
+</body>
+</html>
