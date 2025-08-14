@@ -1,0 +1,32 @@
+.smallfont {  font-family: Tahoma, Arial; font-size: 9px}
+.normalfont { font-family: Tahoma, Arial; font-size: 10px}
+a.buton:visited { color: #003399; text-decoration: none }
+a.buton:hover { color: #333333; text-decoration: none }
+a.buton:link { color: #003399; text-decoration: none }
+input.seachbox {  font-family: Tahoma, Verdana, Arial; font-size: 11px; border-color: #666666 #FFFFFF #FFFFFF #666666; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px}
+input.button { font-family: Tahoma, Verdana, Arial; font-size: 11px; border-color: #FFFFFF #999999 #999999 #FFFFFF; background-color: #CCCCCC; color: #333333; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px}
+a:visited { color: #333333; text-decoration: none }
+a:hover { color: #003399; text-decoration: underline }
+a:link { color: #333333; text-decoration: none }
+.mediumfont { font-family: Arial, Tahoma; font-size: 9px }
+.bigfont { font-family: Tahoma, Arial; font-size: 11px}
+
+BODY {  
+        scrollbar-face-color: #eeeeee;
+
+        scrollbar-highlight-color: #FFFFFF;
+
+        scrollbar-shadow-color: #e0e0e0;
+
+        scrollbar-3dlight-color: #efefef;
+
+        scrollbar-arrow-color:  #999999;
+
+        scrollbar-track-color: #EFEFEF;
+
+        scrollbar-darkshadow-color: #cccccc;
+
+    }
+
+input { font-family: "Tahoma"; border-color: #666666 #999999 #999999 #666666; border-style: inset; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; font-size: 11px; color: #333333;}
+textarea { font-family: "Tahoma"; border-color: #666666 #999999 #999999 #666666; border-style: inset; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; font-size: 11px; color: #333333;}
