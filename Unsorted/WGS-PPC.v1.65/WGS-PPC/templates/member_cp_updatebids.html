@@ -1,0 +1,32 @@
+    <table border="0" cellspacing="1" cellpadding="5">
+      <tr align="center"> 
+        <td colspan="2"> 
+          
+      <h3><font size="3" color="#6699CC">Update bids Page</font></h3>
+      
+    </td>
+      </tr>
+      <tr align="center"> 
+        
+    <td colspan="2"><a href="<#allto1#>" onclick="return confirm('Are You sure want to change all bids to maximal?')">Change All bids to Your maximal value</a> | <a href="<#alltoavg#>" onclick="return confirm('Are You sure want to change all bids to average?')">Change All bids to Your average value</a> | <a href="<#alltomin#>" onclick="return confirm('Are You sure want to change all bids to minimal?')">Change All bids to Your minimal value</a><br>
+      <br>
+      <table width="100%" border="0" cellspacing="1" cellpadding="5">
+        <tr bgcolor="#d9d9d9"> 
+          <td><b>Search Term</b></td>
+          <td><b>Cost Position</b></td>
+          <td><b>Popularity</b></td>
+          <td><b>Add to become #1, <#currency#></b></td>
+          <td><b>New bid, <#currency#></b></td>
+        </tr>
+        <#bids#> 
+        <tr> 
+          <td colspan="6" height="28"> 
+            <input type="submit" name="Submit" value="Update bids">
+            <input type="hidden" name="cmd" value="7">
+          </td>
+        </tr>
+      </table>
+    </td>
+      </tr>
+    </table>
+
