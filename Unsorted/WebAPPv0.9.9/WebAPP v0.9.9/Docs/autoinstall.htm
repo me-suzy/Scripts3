@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML><HEAD><TITLE>WebAPP - Install Automatically</TITLE>
+
+<META content="text/html; charset=iso-8859-1" http-equiv=Content-Type>
+
+<META content="MSHTML 5.00.3502.4856" name=GENERATOR></HEAD>
+
+<BODY bgColor=#ffffff text=#000000>
+
+<P><A href="http://www.web-app.org/docs/Start_Here.htm">Back</A></P>
+
+<P>....For Some of the basics, as to"<B> Where Is</B>" and "<B>How To 's</B>" <A 
+
+href="http://www.web-app.org/docs/faqhelp.htm">See Our FAQ HELP 
+
+Section</A></P>
+
+<P><A name=Top></A>...Step 1: CHECKING REQUIREMENTS<BR>You'll need some webspace 
+
+that has perl 5.x enabled. If you are unsure, please contact your web host. 
+
+You'll need a web browser (IE4.5+, or NN4.5+) and a FTP client to upload the 
+
+files.<BR>You'll also need your path to perl, it's usually "#!/usr/bin/perl", 
+
+but could be "#!/usr/local/bin/perl", if you are unsure ask your web host. 
+
+"<B>Most hosts have support pages with all your paths etc.</B>" as well as Chmod 
+
+requirements for cgi, pl and text files.</P>
+
+<P>...Step 2: CREATE DIRECTORIES<BR>Open WebAPP. Upload all files to your main 
+
+directory so your directory now looks like 
+
+this:<BR>/index.html<BR>/cgi-bin<BR>/cgi-bin/cgi-lib<BR>/cgi-bin/admin<BR>/cgi-bin/admin/banners<BR>/cgi-bin/admin/blocks<BR>/cgi-bin/admin/blocks/left<BR>/cgi-bin/admin/blocks/right<BR>/cgi-bin/admin/logs<BR>/cgi-bin/admin/fileman<BR>/cgi-bin/admin/downloads<BR>/cgi-bin/admin/links<BR>/cgi-bin/admin/themes<BR>/cgi-bin/db<BR>/cgi-bin/db/banners<BR>/cgi-bin/db/blocks<BR>/cgi-bin/db/download<BR>/cgi-bin/db/fileman<BR>/cgi-bin/db/fileman/pass<BR>/cgi-bin/db/forum<BR>/cgi-bin/db/forum/messages<BR>/cgi-bin/db/lang<BR>/cgi-bin/db/links<BR>/cgi-bin/db/members<BR>/cgi-bin/db/poll<BR>/cgi-bin/db/stats<BR>/cgi-bin/db/topics<BR>/cgi-bin/db/topics/articles<BR>/cgi-bin/mods<BR>/images<BR>/images/avatars<BR>/images/banners<BR>/images/english<BR>/images/forum<BR>/images/forum/smilies<BR>/images/french<BR>/images/german<BR>/images/portuguese<BR>/images/stats<BR>/images/topics<BR>/themes<BR>/themes/custom<BR>/themes/custom/images/english<BR>/themes/custom/images/french<BR>/themes/custom/images/german<BR>/themes/custom/images/portuguese<BR>/themes/graphics<BR>/themes/graphics/images/english<BR>/themes/graphics/images/french<BR>/themes/graphics/images/german<BR>/themes/graphics/images/portuguese<BR>/themes/standard<BR>/themes/standard/images/english<BR>/themes/standard/images/french<BR>/themes/standard/images/german<BR>/themes/standard/images/portuguese<BR><BR>
+
+<P>... Step 3: SET PERMISSIONS<BR>Make sure you chmod all files ending with .cgi 
+
+and pl to 755. Folders need to be 777 and Text Files 644 "<B> Please note,ALL 
+
+SERVERS ARE NOT CREATED EQUAL, SOME HOSTING COMPANIES HAVE THIER SERVERS SET TO 
+
+DIFFERENT STANDARDS</B>" , if 644 does not work for the server your site , you 
+
+may either have to change to 666 or 777. Your hosting company should be able to 
+
+answer any questions you may have as to the security of your files and thier 
+
+settings.</P>
+
+<P>... Step 4: SETUP CONFIG.PL FILE<BR>To do this, log into 
+
+www.yourdomainpath.com/index.html, this will bring you directly to the 
+
+install.cgi folder. If permissions were set correctly and #!/usr/bin/perl is 
+
+correct then everything should be fine. Follow the install procedures. The 
+
+install process will set up your config.pl, and rewrite your html index file to 
+
+reflect your new web page.</P>
+
+<P>... Step 5: DELETE INSTALL.CGI<BR>When all is finished IMMEDIATELY delete 
+
+your install.cgi file. Do not forget to do this as this file controls and edits 
+
+your config.pl folder.</P>
+
+<P>... Step 6: LOG IN NORMALLY<BR>Log into your webpage normally. Username: 
+
+admin Password: webapp<BR>Enjoy!</P>
+
+<P>....For Some of the basics, as to"<B> Where Is</B>" and "<B>How To 's</B>" <A 
+
+href="http://www.web-app.org/docs/faqhelp.htm">See Our FAQ HELP 
+
+Section</A></P>
+
+<P><A href="http://www.web-app.org/docs/Docs/autoinstall.htm#Top">Top</A> | <A 
+
+href="http://www.web-app.org/docs/Start_Here.htm">Back</A></P></BODY></HTML>
+
