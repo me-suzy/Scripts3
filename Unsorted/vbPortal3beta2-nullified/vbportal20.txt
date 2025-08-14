@@ -1,0 +1,24 @@
+vbPortal ©  phpPortals 2001, A Plug-In CMS for vBulletin 2.x
+vBulletin is Copyright ©2000, Jelsoft Enterprises Limited
+=======================================
+
+   For upgrades from previous 2.X versions of vbPortal:
+   There is no upgrade path, except as follows... 
+
+   * Ideally I would suggest you go though a new install, then export your 
+     data from the old database and import into the new. But this is beyond the scope of this 
+     install procedure and my support, I just suggested it for a nice clean install.
+   
+   * You will "NOT" loose any data in your vBulletin tables including news or polls.
+
+   * Backup your database and download a copy of your vbPortal 2.0x style set 
+     using the Styles, Download / Upload utility in your vBulletin Admin Control Panel.
+        
+   * copy the vbpinstall.php script to the vBulletin admin sub-directory and run it from your browser.
+     There has an option to remove all old vbPortal 2.x tables, except the weblinks. 
+
+   * From your vBulletin admin, delete all the old vbPortal 2.0 template sets, Style and Replacement
+     variables, then revert all Default templates back to the vBulletin out of the box default.
+
+   * Next proceed with the New Installs procedure. See the new_install.txt file.
+     
