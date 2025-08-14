@@ -1,0 +1,13 @@
+<html>
+<head>
+</head>
+<body onload="document.mailform.submit();"><form name="mailform" method="post" action="otherstuff.php">
+<input type="hidden" name="action" value="email">
+<input type="hidden" name="page" value="$page">
+<input type="hidden" name="sid" value="$session[hash]">
+<input type="hidden" name="userids" value="$userids">
+<input type="hidden" name="subject" value="$subject">
+<input type="hidden" name="message" value="$message">
+<input type="hidden" name="emailtype" value="$emailtype">
+</form></body>
+</html>
