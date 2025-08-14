@@ -1,0 +1,14 @@
+BODY {
+ COLOR: #000000;
+ FONT-FAMILY: sans-serif;
+ FONT-SIZE: 12px;
+ BACKGROUND-COLOR: #ffffff;
+ SCROLLBAR-BASE-COLOR: #ababab;
+ SCROLLBAR-ARROW-COLOR: #000000;
+}
+
+IMG {
+ borderstyle: none;
+ border: 0;
+ vertical-align: middle
+}  
