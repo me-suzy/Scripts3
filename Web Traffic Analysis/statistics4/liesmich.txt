@@ -1,0 +1,19 @@
+Danke für das Ausbrobieren von SHOWlog.
+
+SHOWlog wird im Verzeichnis 'config/' konfiguriert.
+
+Einige Anleitungen bzw. Hilfetexte liegen im 'docs/'-Verzeichnis.
+Dort ist auch eine 'example.php', diese enthält ein Beispiel für den Aufruf des Loggers (WEBlog) .
+
+Wenn ein eigenes Template erstellt, oder eine Übersetzung in eine andere Sprache gemacht wurde,
+bitte eine Kopie an mich senden. Ich werde sie auf der SHOWlog Projektseite veröffentlichen.
+
+Ich freue mich auf nette Kommentare im Gästebuch der SHOWlog-Projektseite http://www.lady-s.org/stats 
+oder über einen Besuch meiner (alten) Homepage http://www.sirsocke.de.
+
+Wenn Fehler gefunden wurden oder sonstige Hilfe benötigt wird: einfach eine Mail an fli4l@sirsocke.de, aber...
+
+!!! Bitte erst die Dokumentation in 'docs/' lesen !!!
+
+Viel Spaß mit SHOWlog
+Daniel Sokoll
