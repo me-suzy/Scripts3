@@ -1,0 +1,157 @@
+.f8
+{
+    FONT-SIZE: 8pt
+}
+.f9
+{
+    FONT-SIZE: 9pt
+}
+.f10
+{
+    FONT-SIZE: 10pt
+}
+.f11
+{
+    FONT-SIZE: 11pt
+}
+.f12
+{
+    FONT-SIZE: 12pt
+}
+.f14
+{
+    FONT-SIZE: 14pt
+}
+.b1
+{
+    COLOR: #FFFFFF;
+    FONT-WEIGHT: bold;
+    BACKGROUND-COLOR: #666666;
+    BORDER-WIDTH: 1;
+    WIDTH: 78;
+    height: 25;
+    border-top-color: #CCCCCC;
+    border-left-color: #CCCCCC;
+    border-bottom-color: #000000;
+    border-right-color: #000000;
+}
+.b2
+{
+    BACKGROUND-COLOR: #CCCCCC;
+    BORDER-WIDTH: 1;
+    width: 238;
+    height: 25;
+}
+.b3
+{
+    BACKGROUND-COLOR: #CCCCCC;
+}
+.b4
+{
+    COLOR: #FFFFFF;
+    FONT-WEIGHT: bold;
+    BACKGROUND-COLOR: #666666;
+    BORDER-WIDTH: 1;
+    width: 260;
+    height: 25;
+}
+.b5
+{
+    COLOR: #FFFFFF;
+    FONT-WEIGHT: bold;
+    BACKGROUND-COLOR: #666666;
+    BORDER-WIDTH: 1;
+    width: 140;
+    height: 25;
+}
+.b6
+{
+    COLOR: #FFFFFF;
+    FONT-WEIGHT: bold;
+    BACKGROUND-COLOR: #666666;
+    BORDER-WIDTH: 1;
+    width: 60;
+    height: 25;
+}
+.b7
+{
+    BACKGROUND-COLOR: #CCCCCC;
+    BORDER-WIDTH: 1;
+    width: 76;
+    height: 25;
+}
+.b8
+{
+    BACKGROUND-COLOR: #CCCCCC;
+    BORDER-WIDTH: 1;
+    width: 60;
+    height: 25;
+}
+.b22
+{
+    BACKGROUND-COLOR: #CCCCCC;
+    BORDER-WIDTH: 1;
+    width: 378;
+    height: 25;
+}
+.b33
+{
+    BACKGROUND-COLOR: #CCCCCC;
+    width: 25;
+    height: 25;
+}
+.b44
+{
+    BACKGROUND-COLOR: #CCCCCC;
+    width: 190;
+    height: 25;
+}
+.b55
+{
+    BACKGROUND-COLOR: #CCCCCC;
+    width: 140;
+    height: 25;
+}
+.b66
+{
+    BACKGROUND-COLOR: #CCCCCC;
+    BORDER-WIDTH: 1;
+    width: 316;
+    height: 25;
+}
+.box1
+{
+    width: 280;
+}
+.box2
+{
+    width: 308;
+}
+.box3
+{
+    width: 228;
+}
+.box4
+{
+    width: 518;
+}
+.box5
+{
+    width: 355;
+}
+.box6
+{
+    width: 435;
+}
+.box7
+{
+    width: 570;
+}
+.box8
+{
+    width: 125;
+}
+.box9
+{
+    width: 345;
+}
