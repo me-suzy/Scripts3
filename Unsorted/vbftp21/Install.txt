@@ -1,0 +1,93 @@
++---------------------------------------------------------------+
+|             vB FTP 2.1 - a FTP client for vBulletin           |
+| vB Admin CP Integration, Download, Search & CHMOD by Erwin Loh|
+|       Original stand-alone version by Morten Bojsen-Hansen    |
++---------------------------------------------------------------+
+
+Have you ever wanted to edit, download or upload files to your server or edit one of your forum PHP files, but have no access to an FTP client?
+
+Well, this is the hack for you. It basically adds a secure FTP interface to your vB Admin CP. You can edit, delete, download, upload, create, or move files, OR do the same for directories, all from within the comfort of your Admin CP through your browser.
+
+Features
+--------
+
+1) Integrated into vB Admin CP - uses Admin CP cp.css style
+2) Create, delete, rename directories
+3) Create, delete, rename, edit, upload or download files
+4) Ability to view and change CHMOD of files and directories (if this is set up on your server!)
+5) View, Zoom In/ Zoom Out with GIF/ JPG files
+6) Different icons for different types of file (configurable)
+7) Ability to password protect the vB FTP file (configurable)
+8) FTP functions straight from within your Admin CP!!!
+
+Version 2.0 - Added search feature to file edit, and ability to view and change CHMOD of files and directory.
+
+Version 2.1 - fixed a IMAGE viewing cache bug
+
+Installation
+------------
+
+YOU MUST FOLLOW ALL THESE STEPS FOR THIS TO WORK PROPERLY!
+
+1) If your server is running Linux, there's nothing to change. If it's running Windows, then in line 13 of "ftp.php" change $os to 1. Do NOT change anything else in "ftp.php" unless you know what you're doing!
+
+2) Upload "ftp.php" to your /admin folder.
+
+3) Create a folder called "tmp" in your forum directory, and CHMOD it 777.
+
+4) Create a subdirectory called "ftp" in your /images folder and upload the image files into this subdirectory.
+
+5) Edit your /admin/index.php file:
+
+Find:
+
+#################################
+
+<center><a href="index.php?s=<?php echo $session[sessionhash]; ?>&action=home"> Control Panel Home </a></center>
+<table width="100%" border="0" cellspacing="0" cellpadding="<?php echo iif($cpnavjs,2,5); ?>" id="navtable">
+
+<tr><td><hr></td></tr>
+
+#################################
+
+BELOW, add:
+
+#################################
+
+<tr><td>
+<table width="100%" border="0" cellspacing="0" cellpadding="2" id="navtable">
+<?php maketableheader("SQL Queries"); ?>
+</table>
+<a href="ftp.php"> vBFTP </a>
+</td></tr>
+<tr><td><hr></td></tr>
+
+#################################
+
+
+vB FTP is now working. You can view and browse your forum directory now, and view the contents of files, as well as download files. If you want to edit, upload and create files or directories, you need to give yourself permission to do this.
+
+7) CHMOD 777 all the directories and files on your server that you wish to have the power to edit using vB FTP. If you don't do this, you can still use vB FTP, and view the contents of files and download files, but you won't be able to change them, or upload files.
+
+Finish!
+
+Once this is installed, you can just click on the "vBFTP" link in your Admin CP on the left column underneath your "Control Panel Home" to access this.
+
+For more advance options, you can change the rest of the variables in "ftp.php", but only if you want to and know what to do. Otherwise, leave it alone. :)
+
+Additional Features (already inbuilt)
+----------------------------------------------
+
+1. Password Protect vB FTP.
+2. Toggle functions of FTP on or off.
+3. Type of files you can edit.
+4. Hide files or directories.
+5. Changing the timeout (if you have trouble downloading or uploading large files).
+6. Going higher in the directory structure, all the way up to ROOT
+
+I have added a textfile to the ZIP called "ExtraFeatures.txt" with instructions on how to do this.
+
+
+Enjoy!
+
+Dr. Erwin Loh
