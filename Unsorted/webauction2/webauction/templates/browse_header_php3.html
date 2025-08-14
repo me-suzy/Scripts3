@@ -1,0 +1,33 @@
+<?
+/*
+   Copyright (c), 1999, 2000 - phpauction.org
+   Copyright (c), 2001, 2002 - webauction.de.vu
+
+   Lizenz siehe lizenz.txt & license
+
+   Die neueste Version kostenfrei zum Download unter:
+   http://webauction.de.vu
+
+*/
+
+?>
+
+
+<!-- TABLE WITH CATEGORIES -->
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=0 CELLSPACING=0 ALIGN=CENTER bgcolor=ffffff>
+
+<TR ALIGN=LEFT>
+	<TD COLSPAN=3>
+        <? print $std_font; ?><A HREF="browse.php?SESSION_ID=<? print $sessionIDU; ?>&id=0"><? print $std_font.$MSG_287; ?></A> : <? print
+        $TPL_categories_string; ?><p><font face="Arial, Helvetica, Verdana, Sans-serif" size="2">
+        <br>
+              <A HREF="browse.php?SESSION_ID=<? print $sessionIDU; ?>&id=<? print $id; ?>">Normal</a> 
+              || <A HREF="browse_all_new.php?SESSION_ID=<? print $sessionIDU; ?>&id=<? print $id; ?>">Heute 
+              neu</a> || <A HREF="browse_all_end.php?SESSION_ID=<? print $sessionIDU; ?>&id=<? print $id; ?>">Enden 
+              heute</a> || <A HREF="browse_preis.php?SESSION_ID=<? print $sessionIDU; ?>&id=<? print $id; ?>">Nach 
+              Preisen sortiert</a></font> <BR>
+
+
+
+
+
