@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<mvc-config>
+	<action-mappings>
+		<action path="/Test.do" type="poop.tests.TestAction" />
+	</action-mappings>
+</mvc-config>
