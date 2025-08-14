@@ -1,0 +1,1 @@
+<b><a href="$link&page=$temppage">next &raquo;</a></b> 
