@@ -1,0 +1,61 @@
+<!-- ***** Orca Ringmaker - Help Text ************************ -->
+
+<h2>Orca Ringmaker Help</h2>
+
+<h3>What is this?</h3>
+<p>
+  A webring is a convenient system of linking together a group of similarly-themed sites in a circular fashion.
+  The link on one member site leads to the next, and so on until you arrive back where you started.
+  Different links can also take you backwards or to a random site in the ring with equal ease.
+</p>
+<p>
+  The Orca Ringmaker uses a central hub system to make creating and managing a single webring fun, easy and reliable.
+</p>
+
+<h3>How do I join?</h3>
+<p>
+  If you have a website which matches the theme of this ring, you can easily request that your site be added by clicking the &quot;<a href="?Add">Add Site</a>&quot; link in the Control Panel.
+  Select a username and password (alphanumerics only) for your account and then just fill out the form with your site information.
+</p>
+<p>
+  The webmaster running this web ring may have enabled the Image Authentication section of the Add Site process.
+  In this case, an image containing some lines and numbers will appear along with a small input box.
+  To confirm your application, just type the numbers you see into the input box below the image.
+</p>
+<p>
+  Once you've submitted your site, you will receive a fragment of HTML code which contains and/or delivers the navigation bar for this ring.
+  You will need to paste this code on your webpage at the URI you submitted with your application.
+</p>
+<p>
+  Once the navigation bar is active at your site, a ring administrator will review your application and, if found acceptable, will approve your site for membership.
+</p>
+
+<h3>I've joined this ring, now what?</h3>
+<p>
+  If you've submitted a site, whether or not your site has been approved, you can log in to your account using the Control Panel.
+  From here you can click &quot;Edit Details&quot; to bring up your personal member control panel where you can change almost any element of your account, and even remove your site from the ring altogether.
+</p>
+<p>
+  If your site has been approved, you can change your account status freely between <em>Active</em> and <em>Hibernating</em>.
+  When your site is hibernating, clicks from the ring will not be directed to your site.
+  Use this feature when you expect your site to be down or under construction, and don't want to break the ring.
+</p>
+<p>
+  The Orca Ringmaker also keeps detailed statistics which you can visit either by clicking the &quot;<a href="?Stats">Statistics</a>&quot; link in the Control Panel, or one of the small icons next to each Site Title on the Ring Hub.
+  The icon links will reveal in-depth statistics about each site in the ring.
+  Make sure you check them out to keep track of how your site is doing!
+</p>
+
+<h3>What are Hits &amp; Clicks?</h3>
+<p>
+  A &quot;Hit&quot; is recorded whenever a user <em>arrives</em> at a site because of a Ringmaker link.
+  Arrivals via the Ring Hub links and from Navigation Bars on other member sites will all add Hits to your site totals.
+</p>
+<p>
+  A &quot;Click&quot; is recorded whenever a user <em>leaves</em> a member site via a Ringmaker link.
+  Direct Clicks from the Ring Hub aren't recorded, only those from member Navigation Bars' &quot;Next&quot;, &quot;Previous&quot; and &quot;Random&quot; links.
+  Because of this, the Clicks totals are accurate reflections of how much the Ringmaker Navigation Bars are being used.
+</p>
+<p>
+  Essentially, total Hits are how many visitors a site is <em>receiving</em> because of ring membership, while total Clicks are how many visitors a site is <em>generating</em> for the rest of the ring.
+</p>
