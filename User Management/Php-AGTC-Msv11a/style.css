@@ -1,0 +1,49 @@
+/* 
+// *************************************************************************************************
+// Title: 		PHP AGTC-Membership system v1.1a
+// Developed by: Andy Greenhalgh
+// Email:		andy@agtc.co.uk
+// Website:		agtc.co.uk
+// Copyright:	2005(C)Andy Greenhalgh - (AGTC)
+// Licence:		GPL, You may distribute this software under the terms of this General Public License
+// *************************************************************************************************
+// CSS Document */
+
+.standardText a:hover {text-decoration:none;
+color:#FF0000;
+font-family:Arial, Helvetica, sans-serif;
+font-size:x-small;
+}
+
+
+.standardText {text-decoration:none;
+color:#3333FF;
+font-family:Arial, Helvetica, sans-serif;
+font-size:x-small;
+}
+.smallTextBlack {
+font-family:Arial, Helvetica, sans-serif;
+font-size:xx-small;
+color:#000000;
+
+
+}
+.smallErrorText {
+font-family:Arial, Helvetica, sans-serif;
+font-size:xx-small;
+color:#FF0000;
+
+
+}
+
+
+table {border: 1px solid #3333ff;
+}
+td {border: 1px solid #dddddd;
+padding-left: 2px;
+padding-right: 2px;
+font-family: Arial, Helvetica, sans-serif;
+font-size:x-small;
+color:#000000
+
+}
