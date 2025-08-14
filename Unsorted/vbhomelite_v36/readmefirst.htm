@@ -1,0 +1,502 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>vbHome (lite) Install Instructions - by TECK</title>
+</head>
+
+<body>
+
+<center>
+<table cellpadding="1" cellspacing="0" border="0" bgcolor="#555576" width="720">
+<tr>
+<td>
+<table cellpadding="4" cellspacing="0" border="0" style="font-family: Verdana; font-size: 10px" width="100%">
+<tr>
+<td bgcolor="#555576"><b><font color="#FFF788" style="font-size: 15px">vbHome 
+(lite) v3.6 Install Instructions</font></b> <font color="#FFF788">&nbsp; By TECK 
+(vBulletin.org Hacker)</font></td>
+</tr>
+<tr>
+<td bgcolor="#DFDFDF"><b>INTRODUCTION</b></td>
+</tr>
+<tr>
+<td bgcolor="#F1F1F1">This script will create a vBulletin (powered) homepage for 
+your website.<br>
+<br>
+The advantage of this script is that you can interact better your web site with 
+vBulletin.<br>
+<font color="#000080">vbHome (lite)</font> is fully customizable through 
+vBulletin templates, so it's very easy to achieve any look or web design you 
+want.<br>
+<br>
+<b>Please
+<a href="http://www.vbulletin.org/forum/misc.php?action=install&threadid=36756" target="_blank">
+click here</a> to show at <font color="#000080">vbulletin.org</font> that you 
+installed my script. Thank you for your support.</b><br>
+<br>
+<font color="#FF0000"><b>IMPORTANT</b></font><br>
+You ARE NOT allowed to REMOVE or MODIFY the copyright text at the bottom of the 
+page.<br>
+You ARE NOT allowed to ALTER in any way the URL links listed in the copyright 
+text.<br>
+You ARE NOT allowed to DISTRIBUTE the contents of downloaded .zip file.<br>
+You ARE NOT allowed to COPY ANY PARTS of the code and use it for distribution.<br>
+<br>
+<font color="#FF0000"><b>NOTE</b></font><br>
+If you <font color="#000080">upgrade from a lower version</font>, make sure you 
+upload ONLY the <font color="#000080">vbHome (lite)</font> <font color="#FF0000">
+index.php</font> and <font color="#FF0000">article.php</font> files,<br>
+onto your server.<br>
+Then, set again your <font color="#000080">vbHome (lite)</font> options, since 
+they are reset to default values.<br>
+Also, compare your previous performed steps with the new ones, added below.<br>
+<br>
+<b>Read carefully and complete the following steps:</b></td>
+</tr>
+<tr>
+<td bgcolor="#DFDFDF"><b>STEP 1</b></td>
+</tr>
+<tr>
+<td bgcolor="#F1F1F1">Open <font color="#FF0000">template.php</font> file 
+(located in <font color="#FF0000">/admin/forum</font> folder) and perform the 
+code change listed below.<br>
+<table border="0" style="font-family: Verdana; font-size: 10px" cellpadding="0" cellspacing="4">
+<tr>
+<td>FIND:</td>
+</tr>
+<tr>
+<td bgcolor="#FFFFCC" style="font-family: Courier New">&nbsp; $only['getinfo'] = 
+'User Info Display';</td>
+</tr>
+<tr>
+<td>BELOW, ADD:</td>
+</tr>
+<tr>
+<td bgcolor="#FFFFCC" style="font-family: Courier New">&nbsp; $only['home'] = 
+'Home Page';</td>
+</tr>
+</table>
+<p>Save the file.</td>
+</tr>
+<tr>
+<td bgcolor="#DFDFDF"><b>STEP 2</b></td>
+</tr>
+<tr>
+<td bgcolor="#F1F1F1"><font color="#000080">Complete this step ONLY if you want 
+to use the avatar feature.</font><br>
+Open <font color="#FF0000">member.php</font> file (located in
+<font color="#FF0000">/forum</font> folder) and perform the code change listed 
+below.<br>
+<table border="0" style="font-family: Verdana; font-size: 10px" cellpadding="0" cellspacing="4">
+<tr>
+<td>FIND:</td>
+</tr>
+<tr>
+<td bgcolor="#FFFFCC" style="font-family: Courier New">&nbsp; $avatars=$DB_site-&gt;query(&quot;SELECT 
+*</td>
+</tr>
+<tr>
+<td>REPLACE WITH:</td>
+</tr>
+<tr>
+<td bgcolor="#FFFFCC" style="font-family: Courier New">&nbsp; if (in_array($bbuserinfo['usergroupid'], 
+array(6, $articlegroup))) {<br>
+&nbsp;&nbsp;&nbsp; $avatars=$DB_site-&gt;query(&quot;SELECT *</td>
+</tr>
+<tr>
+<td>FIND:</td>
+</tr>
+<tr>
+<td bgcolor="#FFFFCC" style="font-family: Courier New">&nbsp; $pagenav = 
+getpagenav($totalavatars,&quot;member.php?s=$session[sessionhash]&amp;action=editavatar&amp;perpage=$perpage&quot;);</td>
+</tr>
+<tr>
+<td>REPLACE WITH:</td>
+</tr>
+<tr>
+<td bgcolor="#FFFFCC" style="font-family: Courier New">&nbsp;&nbsp;&nbsp; $pagenav 
+= getpagenav($totalavatars,&quot;member.php?s=$session[sessionhash]&amp;action=editavatar&amp;perpage=$perpage&quot;);<br>
+&nbsp; }</td>
+</tr>
+</table>
+<p>Save the file.</td>
+</tr>
+<tr>
+<td bgcolor="#DFDFDF"><b>STEP 3</b></td>
+</tr>
+<tr>
+<td bgcolor="#F1F1F1">Open <font color="#FF0000">newthread.php</font> file 
+(located in <font color="#FF0000">/forum</font> folder) and perform the code 
+change listed below.<br>
+<table border="0" style="font-family: Verdana; font-size: 10px" cellpadding="0" cellspacing="4">
+<tr>
+<td>FIND:</td>
+</tr>
+<tr>
+<td bgcolor="#FFFFCC" style="font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+$postid=$DB_site-&gt;insert_id();</td>
+</tr>
+<tr>
+<td>BELOW, ADD:</td>
+</tr>
+<tr>
+<td bgcolor="#FFFFCC" style="font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if ($foruminfo['forumid']==$articleforum) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $DB_site-&gt;query(&quot;UPDATE thread SET 
+articleid='$postid' WHERE threadid='$threadid'&quot;);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</td>
+</tr>
+</table>
+<p>Save the file.</td>
+</tr>
+<tr>
+<td bgcolor="#DFDFDF"><b>STEP 4</b></td>
+</tr>
+<tr>
+<td bgcolor="#F1F1F1">Open <font color="#000080">vbHome (lite)</font>
+<font color="#FF0000">index.php</font> file and change the default server path:<br>
+<span style="font-family: Courier New; background-color: #FFFFCC">chdir('/wwwroot');</span><br>
+<br>
+to your website full server path, for example:<br>
+<span style="font-family: Courier New; background-color: #FFFFCC">chdir('/home/website/forum');</span><br>
+<br>
+If you are not sure how to do this, create a file with the content:<br>
+<span style="font-family: Courier New; background-color: #FFFFCC">&lt;?php 
+phpinfo(32); ?&gt;</span> <br>
+<br>
+Save it as <font color="#FF0000">info.php</font> and upload it onto your
+<font color="#FF0000">/forum</font> folder.<br>
+When you open info.php in your browser, you will see there a list of environment 
+options set as default by your host.<br>
+One of them is called:<font color="#FF0000"><br>
+_SERVER[&quot;PATH_TRANSLATED&quot;]<br>
+<br>
+</font>That's what you are looking for. The path to your folder.<br>
+All you have to do now is copy that path onto your <font color="#000080">vbHome 
+(lite)</font> index.php file.<br>
+<br>
+Save the file.</td>
+</tr>
+<tr>
+<td bgcolor="#DFDFDF"><b>STEP 5</b></td>
+</tr>
+<tr>
+<td bgcolor="#F1F1F1"><font color="#000080">Complete this step ONLY if you want 
+to use the avatar feature.</font><br>
+Open <font color="#FF0000">modifyavatar</font> template (located in
+<font color="#FF0000">User Option Templates</font> section) and perform the code 
+change listed below.<br>
+<table border="0" style="font-family: Verdana; font-size: 10px" cellpadding="0" cellspacing="4">
+<tr>
+<td>FIND:</td>
+</tr>
+<tr>
+<td bgcolor="#FFFFCC" style="font-family: Courier New">&lt;tr&gt;<br>
+&nbsp; &lt;td bgcolor=&quot;{firstaltcolor}&quot; align=&quot;center&quot; colspan=&quot;2&quot;&gt;<br>
+&nbsp; &lt;normalfont&gt;&lt;b&gt;Choose your avatar from the available list:&lt;/b&gt;&lt;/normalfont&gt;&lt;/td&gt;<br>
+&lt;/tr&gt;<br>
+&lt;tr&gt;<br>
+&nbsp; &lt;td bgcolor=&quot;{secondaltcolor}&quot; colspan=&quot;2&quot; align=&quot;center&quot;&gt;<br>
+&nbsp; &lt;table bgcolor=&quot;{tablebordercolor}&quot; border=&quot;0&quot; cellspacing=&quot;1&quot; 
+cellpadding=&quot;10&quot;&gt;<br>
+&nbsp; $avatarlist<br>
+&nbsp; &lt;/table&gt;<br>
+&nbsp; &lt;normalfont&gt;Displaying Avatars $limitlower to $limitupper of $totalavatars&lt;br&gt;$pagenav&lt;/normalfont&gt;<br>
+&nbsp; &lt;/td&gt;<br>
+&lt;/tr&gt;</td>
+</tr>
+<tr>
+<td>REPLACE WITH:</td>
+</tr>
+<tr>
+<td bgcolor="#FFFFCC" style="font-family: Courier New">&lt;tr&gt;<br>
+&nbsp; &lt;td bgcolor=&quot;{secondaltcolor}&quot; colspan=&quot;2&quot; align=&quot;center&quot;&gt;<br>
+&nbsp; &lt;table bgcolor=&quot;{tablebordercolor}&quot; border=&quot;0&quot; cellspacing=&quot;1&quot; 
+cellpadding=&quot;10&quot;&gt;<br>
+&nbsp; $avatarlist<br>
+&nbsp; &lt;normalfont&gt;$pagenav&lt;/normalfont&gt;&lt;/table&gt;<br>
+&nbsp; &lt;/td&gt;<br>
+&lt;/tr&gt;</td>
+</tr>
+</table>
+<p>Save the file.</td>
+</tr>
+<tr>
+<td bgcolor="#DFDFDF"><b>STEP 6</b></td>
+</tr>
+<tr>
+<td bgcolor="#F1F1F1">Open vBulletin Admin Control Panel and set your
+<font color="#FF0000">{imagesfolder}</font> replacement variable to your full 
+website URL, like that:<br>
+<font color="#000080">Replacements &gt; Modify &gt; [expand list] &gt; {imagesfolder} &gt; 
+[change original]</font><br>
+<br>
+and change the <font color="#000080">Code to insert</font> to the full URL, 
+instead of your current value, <font color="#FF0000">images</font>.<br>
+Example: <font color="#000080">http://www.yoursite.com/forum/images</font><br>
+<br>
+Also, change the <font color="#FF0000">{titleimage}</font> replacement variable 
+to your full website URL.<br>
+Example: <font color="#000080">http://www.yoursite.com/forum/images/vBulletin_logo.gif</font><br>
+<br>
+<font color="#FF0000"><b>IMPORTANT</b></font><br>
+There are 2 vBulletin templates (template <font color="#FF0000">bbcode</font> 
+and template <font color="#FF0000">standarderror</font>) that require some extra 
+html code modifications.<br>
+In these 2 templates, perform the replacement listed below.<br>
+<table border="0" style="font-family: Verdana; font-size: 10px" cellpadding="0" cellspacing="4">
+<tr>
+<td>FIND:</td>
+</tr>
+<tr>
+<td bgcolor="#FFFFCC" style="font-family: Courier New">$bburl/{imagesfolder}</td>
+</tr>
+<tr>
+<td>REPLACE WITH:</td>
+</tr>
+<tr>
+<td bgcolor="#FFFFCC" style="font-family: Courier New">{imagesfolder}</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td bgcolor="#DFDFDF"><b>STEP 7</b></td>
+</tr>
+<tr>
+<td bgcolor="#F1F1F1">Still in your vBulletin Admin Control Panel, set your
+<font color="#000080">smilies</font> URL to your full website URL, like that:<br>
+<font color="#000080">Smilies &gt; Modify &gt; [edit]</font><br>
+<br>
+and change the <font color="#000080">Path to image</font> to the full URL, 
+instead of your current value, <font color="#FF0000">images</font>.<br>
+Example: <font color="#000080">http://www.yoursite.com/forum/images/smilies/wink.gif</font></td>
+</tr>
+<tr>
+<td bgcolor="#DFDFDF"><b>STEP 8</b></td>
+</tr>
+<tr>
+<td bgcolor="#F1F1F1">Still in your vBulletin Admin Control Panel, set your
+<font color="#000080">journalist avatars</font> URL to your full website URL, 
+like that:<br>
+<font color="#000080">Avatars &gt; Modify &gt; [edit]</font><br>
+<br>
+and change the <font color="#000080">Path to image</font> to the full URL, 
+instead of your current value, <font color="#FF0000">images</font>.<br>
+Example: <font color="#000080">http://www.yoursite.com/forum/images/avatars/journalist.gif</font><br>
+<br>
+The default avatars will be from now your staff images. I recommend you to use 
+pictures. They will work the same way like normal avatars, with the exception 
+that they will be viewed only by your staff. The rest of members will be able to 
+upload their own custom avatars, as usual.<br>
+<br>
+If you don't want to allow avatars uploads, simply disable the
+<font color="#FF0000">Upload Avatar</font> option, in <font color="#000080">
+Avatars</font> section of<br>
+your Admin Control Panel.</td>
+</tr>
+<tr>
+<td bgcolor="#DFDFDF"><b>STEP 9</b></td>
+</tr>
+<tr>
+<td bgcolor="#F1F1F1">Still in your vBulletin Admin Control Panel, create a new 
+usergroup, called <font color="#FF0000">Journalists</font> (or whatever is more 
+appropriate for your site) and assign to it the right permissions. You could 
+also use a default usergroup, for example <font color="#FF0000">Moderators</font> 
+(id 7).<br>
+Remember what usergroup ID it's generated, you will need to enter this value in
+<font color="#000080">vbHome (lite) Options</font>.</td>
+</tr>
+<tr>
+<td bgcolor="#DFDFDF"><b>STEP 10</b></td>
+</tr>
+<tr>
+<td bgcolor="#F1F1F1">Still in your vBulletin Admin Control Panel, create a new 
+forum, called <font color="#FF0000">Web Site News</font> (or whatever is more 
+appropriate for your site).<br>
+In <font color="#000080">vbHome (lite)</font> v3.4, permissions are set 
+according to your forum, so if you set your news forum as private, people will 
+not have access to your home page.</td>
+</tr>
+<tr>
+<td bgcolor="#DFDFDF"><b>STEP 11</b></td>
+</tr>
+<tr>
+<td bgcolor="#F1F1F1">Upload all files onto your folder. The following order is 
+recommended:<br>
+<br>
+[ROOT FOLDER] - upload here your <font color="#000080">vbHome (lite)</font>
+<font color="#FF0000">index.php</font> file<br>
+---[FORUM] - upload here your <font color="#000080">vbHome (lite)</font>
+<font color="#FF0000">printarticle.php</font> and <font color="#000080">
+vBulletin</font> <font color="#FF0000">newthread.php</font> file<br>
+------[ADMIN] - upload here your <font color="#000080">vbHome (lite)</font>
+<font color="#FF0000">vbhlinstall.php</font> and <font color="#000080">vBulletin</font>
+<font color="#FF0000">template.php</font> file<br>
+------[IMAGES] - upload here your <font color="#FF0000">arrow.gif</font>,
+<font color="#FF0000">articleemail.gif</font>, <font color="#FF0000">
+articleprint.gif</font> files</td>
+</tr>
+<tr>
+<td bgcolor="#DFDFDF"><b>FINAL STEP</b></td>
+</tr>
+<tr>
+<td bgcolor="#F1F1F1">Run the <font color="#000080">vbHome (lite)</font>
+<font color="#FF0000">vbhlinstall.php</font> script installer.<br>
+It will update the database with all needed settings to work together with your 
+vBulletin forum.<br>
+<br>
+<b><font color="#FF0000">NOTE</font></b><br>
+If you performed an uninstall-install process, your old articles will not show 
+anymore on your <font color="#000080">vbHome (lite)</font> page.<br>
+Simply run the <font color="#000080">vbHome (lite)</font> <font color="#FF0000">
+vbhlindex.php</font> file, to update them. This will update any old threads you 
+want to display.<br>
+<br>
+<b>Please
+<a href="http://www.vbulletin.org/forum/misc.php?action=install&threadid=36756" target="_blank">
+click here</a> to show at <font color="#000080">vbulletin.org</font> that you 
+installed my script. Thank you for your support.</b><br>
+<br>
+CONGRATULATIONS! You are ready to go.<br>
+Take a look below to find out what options you have available in your new home 
+(vBulletin powered) page.</td>
+</tr>
+<tr>
+<td bgcolor="#DFDFDF"><b>VBHOME (LITE) SETTINGS</b></td>
+</tr>
+<tr>
+<td bgcolor="#F1F1F1">Now that you finished all the hardcore code and settings, 
+is time for you to tweak your <font color="#000080">vbHome (lite)</font>,<br>
+to perform the way you want.<br>
+All <font color="#000080">vbHome (lite)</font> options are located onto your 
+vBulletin Admin Control Panel.<br>
+I will explain to you in detail what each option does. Let's start shall we?<br>
+<br>
+First, click on <font color="#000080">vBulletin Options</font> link. You will 
+see a new group created by the installer, called <font color="#FF0000">vbHome 
+Page</font>.<br>
+The following options are available:<br>
+<br>
+ARTICLES FORUM<br>
+When you create a new forum, in our case <font color="#FF0000">Web Site News</font>, 
+vBulletin automatically assigns a forum ID to it.<br>
+In this option, you enter your forum ID from where the articles will be clipped 
+onto the <font color="#000080">vbHome (lite)</font> front page.<br>
+<br>
+JOURNALISTS GROUP<br>
+Enter here the usergroup ID value you generated in step 9. vBulletin uses 2 
+types of avatar groups, default and custom<br>
+(user uploaded). 99.99% of the cases, the default group is not used.<br>
+<font color="#000080">vbHome (lite)</font> will use this group to store your 
+journalists pictures or avatars.<br>
+<br>
+The way are set the code changes, it will enable this default group of avatars 
+to be viewed only by administrators and members who belong onto
+<font color="#FF0000">Journalists</font> group. So if you have avatars enabled 
+on your site, a normal user who wants to add his(her) avatar will not see the 
+images.<br>
+<br>
+NUMBER OF ARTICLES DISPLAYED<br>
+Option Self explanatory. Set to 0 if you want to have unlimited articles 
+displayed.<br>
+<br>
+MAXIMUM CHARACTERS PER ARTICLE<br>
+How long the article will be in characters. Set to 0 if you want to have 
+unlimited number of characters.<br>
+<br>
+ENABLE HTML CODE<br>
+This option MUST be used ONLY if you enable HTML code in your
+<font color="#FF0000">Web Site News</font> forum.<br>
+<b><font color="#FF0000">WARNING</font></b><br>
+Enabling HTML code in your forums is a <font color="#FF0000">potential security 
+risk</font>!<br>
+<br>
+ENABLE SMILIES<br>
+Option Self explanatory. You can disable it if you don't want to display smilies 
+in your articles.<br>
+By disabling this option <font color="#000080">your web site performance will 
+increase</font>, since <font color="#FF0000">you perform 1 query less</font>.<br>
+<br>
+MAXIMUM NUMBER OF LATEST THREADS<br>
+<font color="#000080">vbHome (lite)</font> is wise enough to display the latest 
+threads posted to your forums, ONLY if a user have permissions to view them. If 
+you have a private forum, the latest threads will not be displayed if the logged 
+in user doesn't have permissions to access the forum.<br>
+In this option, select the number of threads to display onto your
+<font color="#000080">vbHome (lite)</font> page. Set to 0 if you want to have 
+unlimited number of threads.<br>
+<br>
+LATEST THREADS TITLE LENGTH<br>
+How long the thread title will be in characters. Set to 0 to unlimited number of 
+characters.<br>
+<br>
+ENABLE WEB SITE SEARCH<br>
+Option Self explanatory. You can disable it if you don't want to enable search 
+from your <font color="#000080">vbHome (lite)</font> page.<br>
+<br>
+ENABLE PRIVATE MESSAGES<br>
+Option Self explanatory. You can disable it if you don't have enabled private 
+messages in your forums.<br>
+By disabling this option <font color="#000080">your web site performance will 
+increase</font>, since <font color="#FF0000">you perform 1 query less</font>.<br>
+<br>
+ENABLE ADVERTISEMENTS<br>
+Option Self explanatory. You can disable it if you don't want to display 
+advertisements onto your web site.<br>
+<br>
+ENABLE AFFILIATE LINKS<br>
+Option Self explanatory. You can disable it if you don't want to display links 
+onto your web site.<br>
+<br>
+ENABLE POLL<br>
+Option Self explanatory. You can disable it if you don't want to display polls 
+onto your web site.<br>
+By disabling this option <font color="#000080">your web site performance will 
+increase</font>, since <font color="#FF0000">you perform 2 queries less</font>.<br>
+<br>
+ENABLE SMILIES IN POLL QUESTION<br>
+Option Self explanatory. You can disable it if you don't want to display smilies 
+in your poll questions.<br>
+By disabling this option <font color="#000080">your web site performance will 
+increase</font>, since <font color="#FF0000">you perform 1 query less</font>.<br>
+<br>
+ALLOWED USERS TO POST A POLL<br>
+What's great about this option is the possibility you have to display polls 
+posted only from specific users.<br>
+Since the vBulletin is flexible enough to let you start a poll in any forum,
+<font color="#000080">vbHome (lite)</font> will display only the latest poll 
+from a small group of users.<br>
+In other words, not everyone who post a poll can have it displayed on the
+<font color="#000080">vbHome (lite)</font> page.<br>
+Also the poll is based on forum permissions, so if you post a poll onto a 
+private forum, only users who have permissions to view that specific forum will 
+be able to view it onto <font color="#000080">vbHome (lite)</font> page also.<br>
+<br>
+An interesting idea I came up with is this:<br>
+Create a user called <font color="#000080">THE POLLER</font> and assign it 
+permissions to post polls onto your <font color="#000080">vbHome (lite)</font> 
+page.<br>
+If you want to enable only one user over all your web site, enter the value
+<font color="#FF0000">XX</font> onto the text box, where <font color="#FF0000">
+XX</font> is the user ID assigned by vBulletin.<br>
+Example: Allowed Users to post a poll&nbsp; <font color="#FF0000">1</font><br>
+<br>
+If you want to to have several users posting polls, use commas to separate each 
+user.<br>
+Example:&nbsp; Allowed Users to post a poll&nbsp; <font color="#FF0000">
+1,5,28,582</font></td>
+</tr>
+</table>
+</center></td>
+</tr>
+</table>
+</center>
+
+</body>
+
+</html>
