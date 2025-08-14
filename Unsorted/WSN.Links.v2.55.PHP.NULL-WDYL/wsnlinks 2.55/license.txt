@@ -1,0 +1,18 @@
+WSN Links License Agreement
+----------------------------
+
+You may use this script on both commercial and non commercial websites, provided you follow these conditions:
+
+- You can run no more than three (3) simultanious WSN Links directories per $29.95 purchase. Running more than 3 without making another purchase is a violation of U.S. and international copyright law. 
+
+- Note that these three installations are for the person/organization for whom the license is purchased, and cannot be shared by giving a third of a license to a non-connected person for one install of their own. A license can be transfered in full, but not split into pieces.
+
+- You may not redistribute (or resell) this script from your own site or from anywhere else without special permission (purchase of rights) from the author. You may, of course, provide links on your site to http://www.wsnlinks.com
+
+- You may not use code from any of the files contained in WSN Links in any other script unless that script is not redistributed and is limited to only functioning on a website for which you have purchased WSN Links, or unless you've obtained special permission from the author. 
+
+- You may edit/alter/expand the source code of this script as much as you like, providing you do not redistribute your changes without permission.
+
+Note that this script is provided "as is" and no guarantees are expressed or implied. If you do not find it satisfactory or cannot manage to install the script, refunds are easily obtainable for 20 days after purchase... however refunds cannot be promised if too much time has passed, for obvious reasons (although they may still be offered depending on the circumstances). 
+
+Support is offered on the forum and and via email.
